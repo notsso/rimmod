@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef>
+	
+		<defName>Spirituality</defName>
+		<label>spirituality</label>
+		<description>Otherworldly energy.</description>
+		<defaultLabelColor>(0.6, 0.3, 0.9)</defaultLabelColor>
+		<initialSeverity>0.5</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<minSeverity>0</minSeverity>
+		<tendable>false</tendable>
+		<isBad>false</isBad>
+		
+		<stages>
+			<li>
+				<minSeverity>0.0</minSeverity>
+				<label>истощение</label>
+			</li>
+			<li>
+				<minSeverity>0.4</minSeverity>
+				<label>ослабление</label>
+			</li>
+			<li>
+				<minSeverity>0.8</minSeverity>
+				<label>стабильное</label>
+			</li>
+		</stages>
+	
+	</HediffDef>
+
+</Defs>
