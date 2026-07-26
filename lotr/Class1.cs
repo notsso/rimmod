@@ -1,12 +1,13 @@
 ﻿using HarmonyLib;
+
 using Verse;
+
 using RimWorld;
 
 namespace lotr {
 
     [DefOf]
-    public static class Lotr_DefOf
-    {
+    public static class Lotr_DefOf {
         public static HediffDef Spirituality;
 
         static Lotr_DefOf() {
@@ -19,8 +20,7 @@ namespace lotr {
 
         [StaticConstructorOnStartup]
         public static class Main {
-            static Main()
-            {
+            static Main() {
                 var harmony = new Harmony("nar.lotr");
                 harmony.PatchAll();
             }
@@ -39,7 +39,7 @@ namespace lotr {
                 if (spiritualityHediff != null) {
 
                     Hediff hediff = HediffMaker.MakeHediff(spiritualityHediff, __result, null);
-                    
+
                     hediff.Severity = Rand.Range(0.3f, 0.7f);
 
                     __result.health.AddHediff(hediff, null, null);
