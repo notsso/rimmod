@@ -6,18 +6,18 @@ indent_style = space
 
 # Xml files
 [*.xml]
-indent_size = 2
+indent_size = 4
 
 # Xml project files
 [*.{csproj,fsproj,vbproj,proj,slnx}]
-indent_size = 2
+indent_size = 4
 
 # Xml config files
 [*.{props,targets,config,nuspec}]
-indent_size = 2
+indent_size = 4
 
 [*.json]
-indent_size = 2
+indent_size = 4
 
 # C# files
 [*.cs]
