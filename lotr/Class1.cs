@@ -32,7 +32,7 @@ namespace lotr {
 
                 if (__result == null || __result.health == null) return;
 
-                if (!__result.RaceProps.Humanlike) return;
+                if (__result.RaceProps.IsMechanoid) return;
 
                 HediffDef spiritualityHediff = Lotr_DefOf.Spirituality;
 
