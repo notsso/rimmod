@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="PotionBase">
+
+        <thingClass>ThingWithComps</thingClass>
+        <defName>Hunter9_Potion</defName>
+        <label>hunter's potion</label>
+        <description>Potion, that can be used to become beyonder of Hunter's pathway.</description>
+        <descriptionHyperlinks>
+            <HediffDef>Hunter9_Hediff</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Potions/Hunter9_Potion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <ingestible>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>Hunter9_Hediff</hediffDef>
+                    <severity>0.01</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+
+    </ThingDef>
+
+</Defs>

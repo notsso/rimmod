@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef Name="PotionBase" Abstract="True">
+
+        <thingClass>ThingWithComps</thingClass>
+        <category>Item</category>
+        <drawerType>MapMeshOnly</drawerType>
+        <useHitPoints>true</useHitPoints>
+        <healthAffectsPrice>false</healthAffectsPrice>
+        <selectable>true</selectable>
+        <rotatable>false</rotatable>
+        <techLevel>Medieval</techLevel>
+        <socialPropernessMatters>true</socialPropernessMatters>
+        <altitudeLayer>Item</altitudeLayer>
+        <stackLimit>1</stackLimit>
+        <canDeteriorateUnspawned>true</canDeteriorateUnspawned>
+        <alwaysHaulable>True</alwaysHaulable>
+        <pathCost>10</pathCost>
+        <burnableByRecipe>false</burnableByRecipe>
+        <resourceReadoutPriority>Last</resourceReadoutPriority>
+        <drawGUIOverlay>true</drawGUIOverlay>
+        <allowedArchonexusCount>10</allowedArchonexusCount>
+
+        <statBases>
+
+            <Mass>0.1</Mass>
+            <MaxHitPoints>20</MaxHitPoints>
+            <Flammability>0</Flammability>
+            <DeteriorationRate>100</DeteriorationRate>
+            <Beauty>0</Beauty>
+        
+        </statBases>
+        
+        <thingCategories>
+            <li>BeyonderPotions</li>
+        </thingCategories>
+        
+        <comps>
+            <li Class="CompProperties_Forbiddable" />
+        </comps>
+        
+        <ingestible>
+        
+            <preferability>NeverForNutrition</preferability>
+            <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+            <defaultNumToIngestAtOnce>1</defaultNumToIngestAtOnce>
+            <chairSearchRadius>1</chairSearchRadius>
+            <foodType>Processed</foodType>
+            <baseIngestTicks>100</baseIngestTicks>
+            <ingestSound>Ingest_Pill</ingestSound>
+            <ingestHoldUsesTable>false</ingestHoldUsesTable>
+            <ingestCommandString>Take {0}</ingestCommandString>
+            <ingestReportString>Taking {0}.</ingestReportString>
+        
+        </ingestible>
+
+        <recipeMaker>
+        
+            <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+            <workSkill>Intellectual</workSkill>
+            <effectWorking>Cook</effectWorking>
+            <soundWorking>Recipe_CookMeal</soundWorking>
+        
+        </recipeMaker>
+
+    </ThingDef>
+
+</Defs>

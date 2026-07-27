@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef>
+	
+		<hediffClass>HediffWithComps</hediffClass>
+		<defName>Hunter9_Hediff</defName>
+		<label>hunter</label>
+		<description>This person became 9 sequence beyonder - hunter</description>
+		<defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<minSeverity>0</minSeverity>
+		<tendable>false</tendable>
+		<isBad>false</isBad>
+		
+		<stages>
+			<li>
+				<minSeverity>0.0</minSeverity>
+				<label>лох</label>
+			</li>
+			<li>
+				<minSeverity>0.4</minSeverity>
+				<label>нормик</label>
+			</li>
+			<li>
+				<minSeverity>0.8</minSeverity>
+				<label>смешарик</label>
+			</li>
+		</stages>
+	
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>0.5</severityPerDay>
+            </li>
+        </comps>
+
+	</HediffDef>
+
+</Defs>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+    <ThingCategoryDef>
+        <defName>BeyonderPotions</defName>
+        <label>beyonder potions</label>
+        <parent>Manufactured</parent>
+        <resourceReadoutRoot>false</resourceReadoutRoot>
+        <iconPath>UI/Icons/ThingCategories/BeyonderPotions</iconPath>
+    </ThingCategoryDef>
+
+</Defs>
