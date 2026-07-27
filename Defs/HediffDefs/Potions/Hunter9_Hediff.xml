@@ -3,9 +3,9 @@
 
 	<HediffDef>
 	
-		<hediffClass>HediffWithComps</hediffClass>
+		<hediffClass>lotr.Hunter9_Hediff</hediffClass>
 		<defName>Hunter9_Hediff</defName>
-		<label>hunter</label>
+		<label>Hunter potion</label>
 		<description>This person became 9 sequence beyonder - hunter</description>
 		<defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>

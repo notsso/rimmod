@@ -52,4 +52,17 @@ namespace lotr {
 
     }
 
+    public class Spirituality : HediffWithComps {
+        public override string SeverityLabel {
+            get {
+                string baseLabel = base.SeverityLabel;
+                string percent = (this.Severity).ToStringPercent();
+
+                if (!baseLabel.NullOrEmpty()) {
+                    return $"{baseLabel} ({percent})";
+                }
+                return percent;
+            }
+        }
+    }
 }

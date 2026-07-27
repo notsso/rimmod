@@ -2,7 +2,8 @@
 <Defs>
 
 	<HediffDef>
-	
+
+        <hediffClass>lotr.Spirituality</hediffClass>
 		<defName>Spirituality</defName>
 		<label>spirituality</label>
 		<description>Otherworldly energy.</description>
@@ -27,6 +28,12 @@
 				<label>стабильное</label>
 			</li>
 		</stages>
+
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>1</severityPerDay>
+            </li>
+        </comps>
 	
 	</HediffDef>
 
