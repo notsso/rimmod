@@ -35,6 +35,12 @@
             </li>
         </comps>
 
+		<abilities>
+
+			<li>Cast_Fireball</li>
+
+		</abilities>
+
 	</HediffDef>
 
 </Defs>
