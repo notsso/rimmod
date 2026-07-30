@@ -55,15 +55,6 @@
         
         </ingestible>
 
-        <recipeMaker>
-        
-            <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
-            <workSkill>Intellectual</workSkill>
-            <effectWorking>Cook</effectWorking>
-            <soundWorking>Recipe_CookMeal</soundWorking>
-        
-        </recipeMaker>
-
     </ThingDef>
 
 </Defs>

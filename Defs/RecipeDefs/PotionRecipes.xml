@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <RecipeDef>
+        <defName>Hunter9_PotionRecipe</defName>
+        <label>brew hunter's potion</label>
+        <description>Brew a mysterious potion of the Hunter pathway.</description>
+        <jobString>Brewing hunter's potion.</jobString>
+        
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>1000</workAmount>
+    
+        <ingredients>
+        <li>
+            <filter>
+                <thingDefs>
+                    <li>Cloth</li>
+                </thingDefs>
+            </filter>
+            <count>1</count>
+        </li>
+        </ingredients>
+        
+        <products>
+            <Hunter9_Potion>1</Hunter9_Potion>
+        </products>
+        
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        
+        <researchPrerequisite>Brewing</researchPrerequisite>
+    </RecipeDef>
+</Defs>
