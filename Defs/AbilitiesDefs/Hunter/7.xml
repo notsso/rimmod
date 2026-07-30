@@ -29,7 +29,7 @@
     </ThingDef>
 
     <AbilityDef>
-
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_Fireball</defName>
         <label>огненный шар</label>
         <description>кусок огня</description>
