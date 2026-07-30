@@ -5,10 +5,11 @@
 
         <defName>Proj_Fireball</defName>
         <label>огненный шар</label>
+        <thingClass>Projectile_Explosive</thingClass>
 
         <graphicData>
 
-            <texPath>Things/Projectile/Rocket</texPath>
+            <texPath>Projectiles/Ability_projectile</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>TransparentPostLight</shaderType>
             <color>(255, 120, 0)</color>
@@ -32,8 +33,8 @@
         <defName>Cast_Fireball</defName>
         <label>огненный шар</label>
         <description>кусок огня</description>
-        <iconPath>UI\Icons\Abilities\Hunter\Fireball</iconPath>
-        <cooldownTicksRange>60000</cooldownTicksRange>
+        <iconPath>UI/Icons/Abilities/Hunter/Fireball</iconPath>
+        <cooldownTicksRange>60</cooldownTicksRange>
         <hostile>true</hostile>
 
         <verbProperties>
@@ -42,7 +43,6 @@
             <range>25</range>
             <warmupTime>1.5</warmupTime>
             <hasStandardCommand>true</hasStandardCommand>
-            <defaultProjectile>Proj_Fireball</defaultProjectile>
 
             <targetParams>
 
@@ -53,6 +53,14 @@
             </targetParams>
 
         </verbProperties>
+
+        <comps>
+
+            <li Class="CompProperties_AbilityLaunchProjectile">
+                <projectileDef>Proj_Fireball</projectileDef>
+            </li>
+
+        </comps>
 
     </AbilityDef>
 
