@@ -2,9 +2,11 @@
 <Defs>
 
     <ThingDef ParentName="BaseBullet">
+    <ThingDef ParentName="BaseBullet">
 
         <defName>Proj_Fireball</defName>
         <label>огненный шар</label>
+        <thingClass>Projectile_Explosive</thingClass>
         <thingClass>Projectile_Explosive</thingClass>
 
         <graphicData>
@@ -18,10 +20,10 @@
 
         <projectile>
 
-            <speed>40</speed>
+            <speed>50</speed>
             <damageDef>Flame</damageDef>
-            <damageAmountBase>30</damageAmountBase>
-            <explosionRadius>2.9</explosionRadius>
+            <damageAmountBase>10</damageAmountBase>
+            <explosionRadius>1.0</explosionRadius>
             <ai_IsIncendiary>true</ai_IsIncendiary>
 
         </projectile>
@@ -29,13 +31,19 @@
     </ThingDef>
 
     <AbilityDef>
-
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_Fireball</defName>
         <label>огненный шар</label>
         <description>кусок огня</description>
         <iconPath>UI/Icons/Abilities/Hunter/Fireball</iconPath>
         <cooldownTicksRange>60</cooldownTicksRange>
         <hostile>true</hostile>
+
+        <comps>
+            <li Class="CompProperties_AbilityLaunchProjectile">
+                <projectileDef>Proj_Fireball</projectileDef>
+            </li>
+        </comps>
 
         <verbProperties>
 
