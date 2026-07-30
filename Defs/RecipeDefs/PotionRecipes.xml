@@ -21,6 +21,14 @@
             </filter>
             <count>1</count>
         </li>
+        <li>
+            <filter>
+                <thingDefs>
+                    <li>lotr_BoarCrystallizedSpleen</li>
+                </thingDefs>
+            </filter>
+            <count>1</count>
+        </li>
         </ingredients>
         
         <products>

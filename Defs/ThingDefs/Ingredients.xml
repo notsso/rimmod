@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>lotr_BoarCrystallizedSpleen</defName>
+    <label>кристаллизованная селезенка кабана</label>
+    <description>Потусторонний орган активированной болотной свиньи. Он частично превратился в кристалл, накопивший в себе ядовитую энергию болот. Ключевой ингредиент для зелий Охотника.</description>
+    <graphicData>
+      <texPath>Placeholder</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <color>(100, 180, 100)</color>
+    </graphicData>
+    
+    <statBases>
+      <MarketValue>250</MarketValue>
+      <Mass>0.3</Mass> 
+    </statBases>
+    
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+
+</Defs>

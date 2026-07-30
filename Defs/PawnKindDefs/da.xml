@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>lotr_ActivatedMarshBoarKind</defName>
+    <label>активированная болотная свинья</label>
+    <race>lotr_ActivatedMarshBoar</race>
+    <combatPower>120</combatPower>
+    <ecoSystemWeight>0.6</ecoSystemWeight>
+    
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Placeholder</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <drawSize>1.1</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Placeholder</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <drawSize>1.4</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Placeholder</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <drawSize>1.8</drawSize>
+          <color>(90, 130, 90)</color>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+</Defs>

@@ -6,7 +6,7 @@
         <thingClass>ThingWithComps</thingClass>
         <defName>Hunter9_Potion</defName>
         <label>hunter's potion</label>
-        <description>Potion, that can be used to become beyonder of Hunter's pathway.</description>
+        <description>Флакон с бурлящей красной жидкостью. Выпив его, пешка пробудит в себе силу Охотника.</description>
         <descriptionHyperlinks>
             <HediffDef>Hunter9_Hediff</HediffDef>
         </descriptionHyperlinks>
