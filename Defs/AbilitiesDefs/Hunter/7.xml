@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <ThingDef ParentName="BaseProjectile">
+    <ThingDef ParentName="BaseBullet">
 
         <defName>Proj_Fireball</defName>
         <label>огненный шар</label>
@@ -33,7 +33,7 @@
         <label>огненный шар</label>
         <description>кусок огня</description>
         <iconPath>UI\Icons\Abilities\Hunter\Fireball</iconPath>
-        <cooldownTicks>600</cooldownTicks>
+        <cooldownTicksRange>60000</cooldownTicksRange>
         <hostile>true</hostile>
 
         <verbProperties>
