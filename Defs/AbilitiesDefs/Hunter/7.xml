@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="BaseProjectile">
+
+        <defName>Proj_Fireball</defName>
+        <label>огненный шар</label>
+
+        <graphicData>
+
+            <texPath>Things/Projectile/Rocket</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+            <color>(255, 120, 0)</color>
+
+        </graphicData>
+
+        <projectile>
+
+            <speed>40</speed>
+            <damageDef>Flame</damageDef>
+            <damageAmountBase>30</damageAmountBase>
+            <explosionRadius>2.9</explosionRadius>
+            <ai_IsIncendiary>true</ai_IsIncendiary>
+
+        </projectile>
+
+    </ThingDef>
+
+    <AbilityDef>
+
+        <defName>Cast_Fireball</defName>
+        <label>огненный шар</label>
+        <description>кусок огня</description>
+        <iconPath>UI\Icons\Abilities\Hunter\Fireball</iconPath>
+        <cooldownTicks>600</cooldownTicks>
+        <hostile>true</hostile>
+
+        <verbProperties>
+
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>25</range>
+            <warmupTime>1.5</warmupTime>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>Proj_Fireball</defaultProjectile>
+
+            <targetParams>
+
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+
+            </targetParams>
+
+        </verbProperties>
+
+    </AbilityDef>
+
+</Defs>
