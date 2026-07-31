@@ -2,7 +2,7 @@
 <Defs>
 
   <ThingDef ParentName="ResourceBase">
-    <defName>lotr_BoarCrystallizedSpleen</defName>
+    <defName>lotr_MarshBoarCrystallizedSpleen</defName>
     <label>кристаллизованная селезенка кабана</label>
     <description>Потусторонний орган активированной болотной свиньи. Он частично превратился в кристалл, накопивший в себе ядовитую энергию болот. Ключевой ингредиент для зелий Охотника.</description>
     <graphicData>

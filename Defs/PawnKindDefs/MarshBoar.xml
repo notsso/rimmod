@@ -2,33 +2,33 @@
 <Defs>
 
   <PawnKindDef ParentName="AnimalKindBase">
-    <defName>lotr_ActivatedMarshBoarKind</defName>
+    <defName>lotr_MarshBoar</defName>
     <label>активированная болотная свинья</label>
-    <race>lotr_ActivatedMarshBoar</race>
+    <race>lotr_MarshBoarRace</race>
     <combatPower>120</combatPower>
     <ecoSystemWeight>0.6</ecoSystemWeight>
     
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Placeholder</texPath>
-          <graphicClass>Graphic_Single</graphicClass>
-          <drawSize>1.1</drawSize>
+          <texPath>Things/Animal/MarshBoar/MarshBoar</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2</drawSize>
         </bodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Placeholder</texPath>
-          <graphicClass>Graphic_Single</graphicClass>
-          <drawSize>1.4</drawSize>
+          <texPath>Things/Animal/MarshBoar/MarshBoar</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3</drawSize>
         </bodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Placeholder</texPath>
-          <graphicClass>Graphic_Single</graphicClass>
-          <drawSize>1.8</drawSize>
-          <color>(90, 130, 90)</color>
+          <texPath>Things/Animal/MarshBoar/MarshBoar</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4</drawSize>
+          <color>(200, 200, 200)</color>
         </bodyGraphicData>
       </li>
     </lifeStages>

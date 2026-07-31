@@ -2,8 +2,8 @@
 <Defs>
 
   <ThingDef ParentName="AnimalThingBase">
-    <defName>lotr_ActivatedMarshBoar</defName>
-    <label>активированная болотная свинья</label>
+    <defName>lotr_MarshBoarRace</defName>
+    <label>Болотная свинья</label>
     <description>Опасный кабан-ищейка, мутировавший под воздействием потусторонней энергии на ядовитых болотах. Обладает невероятным нюхом и огромной выносливостью. Почуяв кровь, он будет преследовать жертву километрами. Его внутренние органы подверглись частичной кристаллизации.</description>
     
     <statBases>
@@ -38,13 +38,16 @@
     </tools>
 
     <race>
-      <!-- ИСПРАВЛЕНИЕ ДЛЯ 1.6: Точное имя ванильного скелета кабана/свиньи -->
+      <thinkTreeMain>lotr_MarshBoarTree</thinkTreeMain>
       <body>QuadrupedAnimalWithHooves</body>
-      <baseBodySize>1.3</baseBodySize>
+      <baseBodySize>1.1</baseBodySize>
       <baseHealthScale>1.8</baseHealthScale>
       <baseHungerRate>0.5</baseHungerRate>
       <leatherDef>Leather_Pig</leatherDef>
       <meatDef>Meat_Pig</meatDef>
+
+      <foodType>OmnivoreRoughAnimal</foodType>
+      <predator>false</predator>
       
       <manhunterOnDamageChance>0.50</manhunterOnDamageChance>
       <manhunterOnTameFailChance>0.20</manhunterOnTameFailChance>
@@ -63,12 +66,20 @@
         <li>
           <def>AnimalAdult</def>
           <minAge>0.5</minAge>
+          <soundWounded>Pawn_Wildboar_Wounded</soundWounded>
+          <soundDeath>Pawn_Wildboar_Death</soundDeath>
+          <soundCall>Pawn_Wildboar_Call</soundCall>
+          <soundAngry>Pawn_Wildboar_Angry</soundAngry>
         </li>
       </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+      <soundEating>Herbivore_Eat</soundEating>
     </race>
 
     <butcherProducts>
-      <lotr_BoarCrystallizedSpleen>1</lotr_BoarCrystallizedSpleen>
+      <lotr_MarshBoarCrystallizedSpleen>1</lotr_MarshBoarCrystallizedSpleen>
     </butcherProducts>
   </ThingDef>
 

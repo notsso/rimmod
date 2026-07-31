@@ -10,13 +10,13 @@
         <workSkill>Intellectual</workSkill>
         <effectWorking>Cook</effectWorking>
         <soundWorking>Recipe_Drug</soundWorking>
-        <workAmount>1000</workAmount>
+        <workAmount>100</workAmount>
     
         <ingredients>
         <li>
             <filter>
                 <thingDefs>
-                    <li>Cloth</li>
+                    <li>MedicineHerbal</li>
                 </thingDefs>
             </filter>
             <count>1</count>
@@ -24,7 +24,7 @@
         <li>
             <filter>
                 <thingDefs>
-                    <li>lotr_BoarCrystallizedSpleen</li>
+                    <li>lotr_MarshBoarCrystallizedSpleen</li>
                 </thingDefs>
             </filter>
             <count>1</count>

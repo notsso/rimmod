@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThinkTreeDef>
+    <defName>lotr_MarshBoarTree</defName>
+    <insertTag>Animal_PreMain</insertTag>
+    
+    <thinkRoot Class="ThinkNode_Priority">
+      <subNodes>
+        
+        <!-- Сначала кабан оценивает силы и решает — драться или бежать -->
+        <li Class="lotr.JobGiver_MarshBoarAI" />
+
+        <!-- ИСПРАВЛЕНИЕ: Поле ссылки на дерево в RimWorld называется treeDef -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Downed</treeDef>
+        </li>
+        <li Class="ThinkNode_Subtree">
+          <treeDef>MentalStateCritical</treeDef>
+        </li>
+        <li Class="ThinkNode_Subtree">
+          <treeDef>MentalStateNonCritical</treeDef>
+        </li>
+        
+        <!-- Стандартное дикое поведение (блуждание) -->
+        <li Class="JobGiver_WanderCurrentRoom">
+          <maxDanger>Deadly</maxDanger>
+        </li>
+        <li Class="JobGiver_WanderAnywhere">
+          <maxDanger>Deadly</maxDanger>
+        </li>
+        
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+</Defs>
