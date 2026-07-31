@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <NeedDef>
+        <defName>lotr_SpiritualityNeed</defName>
+        <needClass>lotr.Need_Spirituality</needClass>
+        <label>духовность</label>
+        <description>Запас потусторонней энергии пешки, необходимый для использования магических способностей.</description>
+        <listPriority>500</listPriority> <!-- Позиция шкалы в списке (выше или ниже еды) -->
+        <major>true</major>
+    </NeedDef>
+
+</Defs>

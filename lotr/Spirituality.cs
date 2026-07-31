@@ -1,11 +1,26 @@
-﻿using HarmonyLib;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+using HarmonyLib;
 
 using Verse;
 
 using RimWorld;
 
-namespace lotr {
+using UnityEngine;
+using System.Net.NetworkInformation;
 
+namespace lotr {
+    [StaticConstructorOnStartup]
+    public static class ModInitializer {
+        static ModInitializer() {
+            var harmony = new Harmony("nar.lotr");
+            harmony.PatchAll();
+        }
+    }
+
+    /*
     [DefOf]
     public static class Lotr_DefOf {
         public static HediffDef Spirituality;
@@ -64,6 +79,48 @@ namespace lotr {
                 return percent;
             }
         }
+    } */
+
+    public class Need_Spirituality : Need {
+        // Настройка скорости регенерации духовности (в час)
+        private const float RegenerationPerHour = 0.04f;
+
+        public const float MaxInternalValue = 1f;
+
+        public override float MaxLevel => GetFinalSpirituality();
+
+        public Need_Spirituality(Pawn pawn) : base(pawn) {
+            this.threshPercents = new System.Collections.Generic.List<float> { 0.2f, 0.4f, 0.8f };
+        }
+
+        public override void SetInitialLevel() {
+            this.CurLevel = 0.8f;
+        }
+
+        // Этот метод игра вызывает автоматически каждые 150 тиков для всех потребностей
+        public override void NeedInterval() {
+            if (IsFrozen) return;
+
+            // Пассивная регенерация духовности со временем до максимума
+            if (this.CurLevel < this.MaxLevel) {
+                // Потребности обновляются интервалами по 150 тиков (это 1/16 игрового часа)
+                this.CurLevel += (RegenerationPerHour / 16f);
+            }
+        }
+
+        // Метод для расчета бонусов/штрафов к МАКСИМАЛЬНОМУ объему духовности
+        private float GetFinalSpirituality() {
+            float finalSpirituality = 1.0f;
+
+            Hediff hunter9_Hediff = pawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("Hunter9_Hediff"));
+
+            float multiplier = 1f;
+            if (hunter9_Hediff != null) multiplier += 0.2f;
+
+            finalSpirituality *= multiplier;
+
+            return finalSpirituality;
+        }
     }
 
     public class Ability_SpendSpirituality : Ability {
@@ -79,21 +136,15 @@ namespace lotr {
             if (result) {
                 Pawn caster = this.pawn;
                 if (caster?.health != null) {
-                    // Находим хедифф духовности по его DefName
-                    Hediff spirituality = caster.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("Spirituality"));
+                    Need_Spirituality spirituality = this.pawn.needs?.TryGetNeed<Need_Spirituality>();
+
                     if (spirituality != null) {
-                        // Базовая стоимость (15%)
                         float finalCost = 0.15f;
 
-                        // Проверяем модификатор от Охотника
-                        if (caster.health.hediffSet.HasHediff(DefDatabase<HediffDef>.GetNamed("Hunter9_Hediff"))) {
-                            finalCost *= 0.80f; // Скидка 20%
-                        }
+                        // различные баффы/дебаффы к цене, но пока я сомневаюсь
 
-                        // Отнимаем духовность
-                        spirituality.Severity -= finalCost;
+                        spirituality.CurLevel -= finalCost;
 
-                        // Текст над головой пешки
                         string textPct = $"-{(finalCost * 100f).ToString("F0")}% Духовности";
                         MoteMaker.ThrowText(caster.DrawPos, caster.Map, textPct, 3f);
                     }
@@ -108,18 +159,16 @@ namespace lotr {
                 return true;
             }
 
-            Hediff spirituality = this.pawn?.health?.hediffSet?.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("Spirituality"));
+            Need_Spirituality spirituality = this.pawn.needs?.TryGetNeed<Need_Spirituality>();
+
             if (spirituality == null) {
                 reason = "Нет духовной энергии.";
                 return true;
             }
 
-            float finalCost = 0.15f; // Та же стоимость для проверки
-            if (this.pawn.health.hediffSet.HasHediff(DefDatabase<HediffDef>.GetNamed("Hunter9_Hediff"))) {
-                finalCost *= 0.80f;
-            }
+            float finalCost = 0.15f;
 
-            if (spirituality.Severity < finalCost) {
+            if (spirituality.CurLevel < finalCost) {
                 reason = $"Недостаточно духовности (Нужно {(finalCost * 100f).ToString("F0")}%).";
                 return true;
             }
@@ -141,6 +190,92 @@ namespace lotr {
 
                 return percent;
             }
+        }
+    }
+
+    [HarmonyPatch(typeof(Pawn), "GetGizmos")]
+    public static class Patch_Pawn_GetGizmos {
+        public static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> __result, Pawn __instance) {
+            // Возвращаем оригинальные гизмо, но если это наш колонист — добавляем шкалу в самый ТОР (начало)
+            if (__instance.IsColonistPlayerControlled) {
+                Need spiritualityNeed = __instance.needs?.AllNeeds.FirstOrDefault(n => n.def.defName == "lotr_SpiritualityNeed");
+                if (spiritualityNeed != null) {
+                    yield return new SpiritualityNeedGizmo(spiritualityNeed);
+                }
+            }
+
+            foreach (var gizmo in __result) {
+                yield return gizmo;
+            }
+        }
+    }
+
+    public class SpiritualityNeedGizmo : Gizmo {
+        private readonly Need need;
+
+        // Фиксированная ширина шкалы духовности на панели управления пешкой
+        public override float GetWidth(float maxWidth) => 140f;
+
+        // Сортировка: сдвигаем гизмо в крайнее левое положение панели (левее Draft)
+        public override float Order => -10005f;
+
+        public SpiritualityNeedGizmo(Need need) {
+            this.need = need;
+        }
+
+        public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, Verse.GizmoRenderParms parms) {
+            // Формируем базовые границы элемента (высота стандартного гизмо — 75f)
+            Rect rect = new Rect(topLeft.x, topLeft.y, GetWidth(maxWidth), 75f);
+
+            GUI.DrawTexture(rect, TexUI.GrayBg);
+
+            // Если игрок навел мышь на этот гизмо, рисуем стандартную рамку подсветки
+            if (Mouse.IsOver(rect)) {
+                Widgets.DrawHighlight(rect);
+            }
+
+            // Создаем внутренний контейнер с отступами
+            Rect innerRect = rect.ContractedBy(6f);
+
+            // 1. Отрисовка названия потребности мелким шрифтом
+            Text.Font = GameFont.Tiny;
+            Rect labelRect = new Rect(innerRect.x, innerRect.y, innerRect.width, 18f);
+            Widgets.Label(labelRect, need.LabelCap);
+
+            // 2. Отрисовка полосы прогресса (Progress Bar)
+            Rect barRect = new Rect(innerRect.x, innerRect.y + 22f, innerRect.width, 24f);
+
+            // Генерируем сплошные текстуры для наполнения шкалы духовности
+            Texture2D barTex = SolidColorMaterials.NewSolidColorTexture(new Color(0.3f, 0.5f, 0.7f, 0.6f)); // Цвет шкалы
+            Texture2D bgTex = SolidColorMaterials.NewSolidColorTexture(new Color(0.1f, 0.1f, 0.1f, 0.5f));  // Цвет подложки
+
+            // Заполняем прогресс-бар текущим процентным соотношением
+            Widgets.FillableBar(barRect, need.CurLevelPercentage, barTex, bgTex, doBorder: true);
+
+            // 3. Выравнивание и отрисовка текста поверх шкалы ("Текущее / Максимальное") в масштабе 100
+            Text.Anchor = (UnityEngine.TextAnchor)TextAnchor.MiddleCenter;
+
+            // Умножаем на 100f, чтобы перевести внутренний диапазон (0..1) в игровой (0..100)
+            int currentDisplayVal = Mathf.RoundToInt(need.CurLevel * 100f);
+            int maxDisplayVal = Mathf.RoundToInt(need.MaxLevel * 100f);
+
+            string valueText = $"{currentDisplayVal} / {maxDisplayVal}";
+            Widgets.Label(barRect, valueText);
+            Text.Anchor = (UnityEngine.TextAnchor)TextAnchor.UpperLeft;
+
+            // Добавление всплывающей подсказки (Tooltip) при наведении курсора
+            TooltipHandler.TipRegion(rect, () => $"{need.def.description}\n\nТекущее значение: {need.CurLevelPercentage:P0}", need.def.GetHashCode());
+
+            // Обработка клика по шкале — открывает у пешки вкладку "Потребности" (Needs)
+            if (Widgets.ButtonInvisible(rect)) {
+                MainTabWindow_Inspect mainTabWindow = (MainTabWindow_Inspect)MainButtonDefOf.Inspect.TabWindow;
+                Find.MainTabsRoot.SetCurrentTab(MainButtonDefOf.Inspect);
+                InspectPaneUtility.OpenTab(typeof(ITab_Pawn_Needs));
+
+                return new GizmoResult(GizmoState.Interacted);
+            }
+
+            return new GizmoResult(GizmoState.Clear);
         }
     }
 }

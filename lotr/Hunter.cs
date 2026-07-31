@@ -38,17 +38,20 @@ namespace lotr {
         protected virtual void CheckSpiritualityAndSanity() {
             if (this.pawn == null || this.pawn.health == null) return;
 
-            Hediff spirituality = this.pawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("Spirituality"));
+            Need_Spirituality spirituality = this.pawn.needs.TryGetNeed<Need_Spirituality>();
+            if (spirituality == null) return;
+
+
             Hediff sanityLoss = this.pawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("lotr_SanityLoss"));
 
-            if (spirituality == null || spirituality.Severity <= 0.2f) {
+            if (spirituality.CurLevel <= 0.2f) {
                 if (sanityLoss == null) {
                     HediffDef sanityDef = DefDatabase<HediffDef>.GetNamed("lotr_SanityLoss");
                     HealthUtility.AdjustSeverity(this.pawn, sanityDef, 0.01f);
                 } else {
                     sanityLoss.Severity += 0.01f;
                 }
-            } else if (spirituality.Severity > 0.30f && sanityLoss != null) {
+            } else if (spirituality.CurLevel > 0.30f && sanityLoss != null) {
                 sanityLoss.Severity -= 0.01f;
             }
 
