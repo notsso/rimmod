@@ -6,9 +6,8 @@
     <label>кристаллизованная селезенка кабана</label>
     <description>Потусторонний орган активированной болотной свиньи. Он частично превратился в кристалл, накопивший в себе ядовитую энергию болот. Ключевой ингредиент для зелий Охотника.</description>
     <graphicData>
-      <texPath>Placeholder</texPath>
+      <texPath>Things/Ingredient/MarshBoarCrystallizedSpleen</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <color>(100, 180, 100)</color>
     </graphicData>
     
     <statBases>
