@@ -92,6 +92,7 @@ namespace lotr {
             };
 
             IEnumerable<Pawn> alliesNearby = GenRadial.RadialCellsAround(primaryTarget.Position, CrowdCheckRadius, true)
+                .Where(c => c.InBounds(map))
                 .SelectMany(c => c.GetThingList(map))
                 .OfType<Pawn>()
                 .Where(p => belongsToSameGroup(p) && !p.Downed && !p.Dead);

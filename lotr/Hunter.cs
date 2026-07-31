@@ -6,7 +6,10 @@ using Verse;
 using RimWorld;
 
 namespace lotr {
-    public class Hunter9_Hediff : HediffWithComps {
+    public abstract class Beyonder_Hediff : HediffWithComps {
+        private int sanityTickCounter = 0;
+
+        // Общее для всех отображение процентов
         public override string SeverityLabel {
             get {
                 string baseLabel = base.SeverityLabel;
@@ -20,13 +23,58 @@ namespace lotr {
             }
         }
 
+        // Общая логика безумия тикает для ВСЕХ потусторонних
+        public override void Tick() {
+            base.Tick();
+
+            sanityTickCounter++;
+            if (sanityTickCounter >= 60) {
+                sanityTickCounter = 0;
+                CheckSpiritualityAndSanity();
+            }
+        }
+
+        // Общий метод проверки рассудка.
+        protected virtual void CheckSpiritualityAndSanity() {
+            if (this.pawn == null || this.pawn.health == null) return;
+
+            Hediff spirituality = this.pawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("Spirituality"));
+            Hediff sanityLoss = this.pawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("lotr_SanityLoss"));
+
+            if (spirituality == null || spirituality.Severity <= 0.2f) {
+                if (sanityLoss == null) {
+                    HediffDef sanityDef = DefDatabase<HediffDef>.GetNamed("lotr_SanityLoss");
+                    HealthUtility.AdjustSeverity(this.pawn, sanityDef, 0.01f);
+                } else {
+                    sanityLoss.Severity += 0.01f;
+                }
+            } else if (spirituality.Severity > 0.30f && sanityLoss != null) {
+                sanityLoss.Severity -= 0.01f;
+            }
+
+            if (sanityLoss != null && sanityLoss.Severity >= 1.0f) {
+                this.pawn.Kill(null, sanityLoss);
+
+                if (this.pawn.Faction == Faction.OfPlayer) {
+                    Find.LetterStack.ReceiveLetter(
+                        "Потеря контроля",
+                        $"{this.pawn.LabelShort} полностью потерял контроль над потусторонними силами. Разум пешки окончательно разрушился, вызвав мгновенную смерть тела.",
+                        LetterDefOf.Death,
+                        this.pawn
+                    );
+                }
+            }
+        }
+    }
+
+    public class Hunter9_Hediff : Beyonder_Hediff {
         private int ticksCounter = 0;
 
         public override void Tick() {
             base.Tick();
 
+            // Специфичная логика Охотника: регенерация ран
             ticksCounter++;
-            // Будем запускать проверку лечения каждые 180 тиков (примерно раз в 3 секунды реального времени)
             if (ticksCounter >= 180) {
                 ticksCounter = 0;
                 TryHealWounds();
@@ -36,24 +84,15 @@ namespace lotr {
         private void TryHealWounds() {
             if (this.pawn == null || this.pawn.health == null) return;
 
-            float healAmount = 0f;
-            switch (this.CurStageIndex) {
-                case 0: // Стадия: лох
-                    healAmount = 0.1f;
-                    break;
-                case 1: // Стадия: нормик
-                    healAmount = 0.2f;
-                    break;
-                case 2: // Стадия: смешарик
-                    healAmount = 0.3f;
-                    break;
-            }
+            float healAmount = 0.1f;
+            if (this.CurStageIndex == 1) healAmount = 0.2f;
+            if (this.CurStageIndex == 2) healAmount = 0.3f;
 
             if (healAmount <= 0f) return;
 
             List<Hediff_Injury> injuries = this.pawn.health.hediffSet.hediffs
                 .OfType<Hediff_Injury>()
-                .Where(x => x.CanHealNaturally())
+                .Where(x => x.Severity > 0f)
                 .ToList();
 
             if (injuries.Any()) {

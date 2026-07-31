@@ -103,9 +103,7 @@ namespace lotr {
             return result;
         }
 
-        // ИСПРАВЛЕНИЕ: Используем точное имя метода GizmoDisabled(out string reason) с твоего скриншота
         public override bool GizmoDisabled(out string reason) {
-            // Сначала проверяем базовые ванильные запреты (кулдаун, паралич и т.д.)
             if (base.GizmoDisabled(out reason)) {
                 return true;
             }
@@ -128,6 +126,21 @@ namespace lotr {
 
             reason = null;
             return false;
+        }
+    }
+
+    public class SanityLoss : HediffWithComps {
+        public override string SeverityLabel {
+            get {
+                string baseLabel = base.SeverityLabel;
+                string percent = (this.Severity).ToStringPercent();
+
+                if (!baseLabel.NullOrEmpty()) {
+                    return $"{baseLabel} ({percent})";
+                }
+
+                return percent;
+            }
         }
     }
 }

@@ -20,11 +20,11 @@
 				<label>истощение</label>
 			</li>
 			<li>
-				<minSeverity>0.4</minSeverity>
+				<minSeverity>0.2</minSeverity>
 				<label>ослабление</label>
 			</li>
 			<li>
-				<minSeverity>0.8</minSeverity>
+				<minSeverity>0.6</minSeverity>
 				<label>стабильное</label>
 			</li>
 		</stages>

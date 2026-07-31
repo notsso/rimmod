@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>lotr_SanityLossThought</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass> <!-- Ванильный класс, который привязывает мысль к Хедиффу -->
+    <hediff>lotr_SanityLoss</hediff> <!-- Привязка к нашему хедиффу безумия -->
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <!-- Мысль для стадии 1: Иллюзии -->
+      <li>
+        <label>потусторонний шепот</label>
+        <description>В моей голове постоянно кто-то шепчет... Они говорят о скрытых истинах и призывают меня охотиться. Мне страшно.</description>
+        <baseMoodEffect>-5</baseMoodEffect> <!-- Минус 15 к настроению -->
+      </li>
+      <!-- Мысль для стадии 2: Одержимость -->
+      <li>
+        <label>нарастающее безумие</label>
+        <description>Голоса стали громче! Я едва контролирую свои руки! Кровь... вокруг должна быть кровь!</description>
+        <baseMoodEffect>-10</baseMoodEffect> <!-- Минус 25 к настроению -->
+      </li>
+      <!-- Мысль для стадии 3: Мутация плоти -->
+      <li>
+        <label>угасание разума</label>
+        <description>Я... больше... не... человек...</description>
+        <baseMoodEffect>-20</baseMoodEffect> <!-- Тотальный депресняк -->
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>
