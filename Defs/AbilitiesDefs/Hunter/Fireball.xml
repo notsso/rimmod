@@ -2,7 +2,6 @@
 <Defs>
 
     <ThingDef ParentName="BaseBullet">
-    <ThingDef ParentName="BaseBullet">
 
         <defName>Proj_Fireball</defName>
         <label>огненный шар</label>
