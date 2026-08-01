@@ -1,7 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 
+using HarmonyLib;
+
 using Verse;
+using Verse.AI;
 
 using RimWorld;
 
@@ -101,6 +104,27 @@ namespace lotr {
             if (injuries.Any()) {
                 Hediff_Injury worstInjury = injuries.OrderByDescending(x => x.Severity).First();
                 worstInjury.Severity -= healAmount;
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(Pawn_JobTracker), "EndCurrentJob")]
+    public static class Patch_Pawn_JobTracker_EndCurrentJob {
+        [HarmonyPrefix]
+        public static void Prefix(Pawn_JobTracker __instance, JobCondition condition, bool startNewJob, bool canReturnToPool, ref bool __state) {
+            if (__instance.curJob != null && __instance.curJob.def == JobDefOf.Hunt && condition == JobCondition.Succeeded) {
+                __state = true;
+            }
+        }
+
+        [HarmonyPostfix]
+        public static void Postfix(Pawn_JobTracker __instance, JobCondition condition, bool startNewJob, bool canReturnToPool, ref bool __state, Pawn ___pawn) {
+            if (__state && ___pawn != null && ___pawn.IsColonist) {
+                Hediff hediff = ___pawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("Hunter9_Hediff"));
+
+                if (hediff != null) {
+                    hediff.Severity += 0.5f;
+                }
             }
         }
     }
