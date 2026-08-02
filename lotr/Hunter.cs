@@ -101,7 +101,6 @@ namespace lotr {
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
             base.Apply(target, dest);
 
-            // Проверяем, что цель — это живая пешка
             Pawn targetPawn = target.Pawn;
             Pawn caster = parent.pawn;
 
@@ -109,32 +108,47 @@ namespace lotr {
                 return;
             }
 
-            // Игнорируем союзников (опционально, если хотите провоцировать только врагов)
             if (targetPawn.Faction == caster.Faction) {
                 return;
             }
 
-            // Механика провокации: заставляем цель атаковать кастера
             ProvokePawn(targetPawn, caster);
+
+            if (targetPawn.RaceProps.ToolUser || targetPawn.RaceProps.IsMechanoid) {
+                if (caster.health?.hediffSet?.hediffs != null) {
+                    foreach (var hediff in caster.health.hediffSet.hediffs) {
+                        if (hediff is Beyonder_Hediff beyonderHediff) {
+                            float severityIncrement = 0.05f;
+                            float oldSeverity = beyonderHediff.Severity;
+                            beyonderHediff.Severity += severityIncrement;
+
+                            float diff = beyonderHediff.Severity - oldSeverity;
+                            if (diff > 0.0f) {
+                                string messageText = $"{caster.LabelShortCap} успешно спровоцировал врага! Зелье усвоено на {severityIncrement.ToStringPercent()}.";
+                                Messages.Message(messageText, caster, MessageTypeDefOf.SilentInput, historical: false);
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
         }
 
         private void ProvokePawn(Pawn victim, Pawn aggressor) {
-            // 1. Сбрасываем текущее действие жертвы
+            if (victim == null || aggressor == null) return;
+
             victim.jobs.StopAll();
 
-            // 2. Создаем новую задачу атаки в ближнем бою (или дальнем, если нужно)
-            // JobDefOf.AttackMelee заставит пешку бежать к агрессору и бить его
+            victim.mindState.enemyTarget = aggressor;
+
             Job tauntJob = JobMaker.MakeJob(JobDefOf.AttackMelee, aggressor);
 
-            // Устанавливаем высокий приоритет, чтобы задача не сбросилась сразу
-            tauntJob.expiryInterval = 600; // Провокация длится 10 секунд (600 тиков)
+            tauntJob.expiryInterval = 600;
             tauntJob.checkOverrideOnExpire = true;
             tauntJob.playerForced = true;
 
-            // 3. Отдаем приказ пешке
             victim.jobs.StartJob(tauntJob, JobCondition.InterruptForced, null, false, true);
 
-            // Визуальный эффект (текст над головой)
             MoteMaker.ThrowText(victim.DrawPos, victim.Map, "Provoked!", 3f);
         }
     }
