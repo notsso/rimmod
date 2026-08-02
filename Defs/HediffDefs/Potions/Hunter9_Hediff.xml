@@ -44,9 +44,7 @@
 					<MeleeDodgeChance>3</MeleeDodgeChance> <!-- Шанс уклонения -->
 					<ShootingAccuracyPawn>2</ShootingAccuracyPawn> <!-- Меткость стрельбы -->
 					<GeneralLaborSpeed>0.15</GeneralLaborSpeed> <!-- Скорость работы +15% -->
-					
-					<!-- ЗАГОТОВКА ДЛЯ БУДУЩЕГО: Сюда вы впишете свои кастомные StatDef для владения оружием -->
-					<!-- <lotr_WeaponMastery>1.5</lotr_WeaponMastery> -->
+                    <InjuryHealingFactor>0.2</InjuryHealingFactor>
 				</statOffsets>
 
 				<capMods>
@@ -58,6 +56,7 @@
 						<capacity>Sight</capacity>
 						<offset>0.15</offset> <!-- Зрение +15% (сильно повышает точность и качество работы) -->
 					</li>
+                    
 				</capMods>
 			</li>
 			<li>
@@ -73,6 +72,7 @@
 					<MeleeDodgeChance>6</MeleeDodgeChance>
 					<ShootingAccuracyPawn>5</ShootingAccuracyPawn>
 					<GeneralLaborSpeed>0.30</GeneralLaborSpeed>
+                    <InjuryHealingFactor>0.5</InjuryHealingFactor>
 				</statOffsets>
 
 				<capMods>

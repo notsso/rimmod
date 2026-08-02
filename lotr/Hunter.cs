@@ -119,13 +119,15 @@ namespace lotr {
             base.Tick();
 
             // Специфичная логика Охотника: регенерация ран
+            /*
             ticksCounter++;
             if (ticksCounter >= 180) {
                 ticksCounter = 0;
                 TryHealWounds();
-            }
+            }*/
         }
 
+        // disabled, for now
         private void TryHealWounds() {
             if (this.pawn == null || this.pawn.health == null) return;
 
