@@ -124,7 +124,7 @@ namespace lotr {
 
                             float diff = beyonderHediff.Severity - oldSeverity;
                             if (diff > 0.0f) {
-                                string messageText = $"{caster.LabelShortCap} успешно спровоцировал врага! Зелье усвоено на {severityIncrement.ToStringPercent()}.";
+                                string messageText = $"{caster.LabelShortCap} успешно спровоцировал врага! Зелье усвоено на {diff.ToStringPercent()}.";
                                 Messages.Message(messageText, caster, MessageTypeDefOf.SilentInput, historical: false);
                             }
                             break;
