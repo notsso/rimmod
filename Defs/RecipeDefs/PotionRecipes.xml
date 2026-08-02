@@ -41,4 +41,46 @@
         
         <researchPrerequisite>Brewing</researchPrerequisite>
     </RecipeDef>
+
+    <RecipeDef>
+        <defName>Hunter8_PotionRecipe</defName>
+        <label>brew provoker's potion</label>
+        <description>Brew a mysterious potion of the Hunter pathway.</description>
+        <jobString>Brewing provoker's potion.</jobString>
+        
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+    
+        <ingredients>
+        <li>
+            <filter>
+                <thingDefs>
+                    <li>MedicineHerbal</li>
+                </thingDefs>
+            </filter>
+            <count>1</count>
+        </li>
+        <li>
+            <filter>
+                <thingDefs>
+                    <li>lotr_MarshBoarCrystallizedSpleen</li>
+                </thingDefs>
+            </filter>
+            <count>2</count>
+        </li>
+        </ingredients>
+        
+        <products>
+            <Hunter8_Potion>1</Hunter8_Potion>
+        </products>
+        
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        
+        <researchPrerequisite>Brewing</researchPrerequisite>
+    </RecipeDef>
 </Defs>

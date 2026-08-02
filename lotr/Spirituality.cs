@@ -9,7 +9,6 @@ using Verse;
 using RimWorld;
 
 using UnityEngine;
-using System.Net.NetworkInformation;
 
 namespace lotr {
     [StaticConstructorOnStartup]
@@ -49,16 +48,18 @@ namespace lotr {
 
         // Метод для расчета бонусов/штрафов к МАКСИМАЛЬНОМУ объему духовности
         private float GetFinalSpirituality() {
-            float finalSpirituality = 1.0f;
+            float result = 1f;
 
-            Hediff hunter9_Hediff = pawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("Hunter9_Hediff"));
+            var hediffs = pawn.health?.hediffSet?.hediffs;
+            if (hediffs != null) {
+                for (int i = 0; i < hediffs.Count; i++) {
+                    if (hediffs[i] is Beyonder_Hediff beyonderHediff) {
+                        result *= beyonderHediff.SpiritualityFactor;
+                    }
+                }
+            }
 
-            float multiplier = 1f;
-            if (hunter9_Hediff != null) multiplier += 0.2f;
-
-            finalSpirituality *= multiplier;
-
-            return finalSpirituality;
+            return result * 1.0f;
         }
     }
 

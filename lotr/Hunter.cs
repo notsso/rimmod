@@ -13,6 +13,8 @@ using UnityEngine;
 namespace lotr {
     // Специфичная логика Охотника
     public class Hunter9_Hediff : Beyonder_Hediff {
+        public override float SpiritualityFactor => 1.2f;
+
         // private int ticksCounter = 0;
 
         public override void Tick() {
@@ -87,8 +89,11 @@ namespace lotr {
         }
     }
 
-    public class Hunter8_Hediff : Hunter9_Hediff { }
+    public class Hunter8_Hediff : Hunter9_Hediff {
+        public override float SpiritualityFactor => 1.5f;
+    }
 
+    // абилка провокация
     public class CompAbilityEffect_Provoke : CompAbilityEffect {
         // Получаем доступ к настройкам из XML (если нужно)
         public new CompProperties_AbilityProvoke Props => (CompProperties_AbilityProvoke)props;

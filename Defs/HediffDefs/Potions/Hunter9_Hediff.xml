@@ -96,17 +96,13 @@
             <li Class="HediffCompProperties_SeverityPerDay">
                 <severityPerDay>0.5</severityPerDay>
             </li>
-            <li Class="HediffCompProperties_GiveAbility">
-				<abilityDef>Cast_Fireball</abilityDef>
-			</li>
         </comps>
-        <!--
+        
 		<abilities>
 
 			<li>Cast_Fireball</li>
 
 		</abilities>
-        -->
 
 	</HediffDef>
 

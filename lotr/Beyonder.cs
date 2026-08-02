@@ -14,6 +14,33 @@ namespace lotr {
     public abstract class Beyonder_Hediff : HediffWithComps {
         private int sanityTickCounter = 0;
 
+        public virtual float SpiritualityFactor => 1f;
+
+        private bool isFullyAbsorbed = false;
+
+        public override float Severity {
+            get => base.Severity;
+            set {
+                base.Severity = value;
+
+                if (base.Severity >= 1f && !isFullyAbsorbed) {
+                    isFullyAbsorbed = true;
+                    OnPotionFullyAbsorbed();
+                }
+            }
+        }
+
+        protected virtual void OnPotionFullyAbsorbed() {
+            string messageText = $"{pawn.LabelShort} полностью усвоил зелье \"{def.LabelCap}\". Теперь он может продвинуться.";
+
+            Messages.Message(messageText, pawn, MessageTypeDefOf.PositiveEvent);
+        }
+
+        public override void ExposeData() {
+            base.ExposeData();
+            Scribe_Values.Look(ref isFullyAbsorbed, "isFullyAbsorbed", false);
+        }
+
         // Общее для всех отображение процентов
         public override string SeverityLabel {
             get {
@@ -107,6 +134,39 @@ namespace lotr {
                 };
 
                 yield return cogitationButton;
+            }
+        }
+    }
+
+    // класс, для зелий потусторонних, которые продвигают
+    public class IngestionOutcomeDoer_SequenceAdvance : IngestionOutcomeDoer {
+        // Поля будут настраиваться через XML
+        public HediffDef hediffToRemove; // Что ищем
+        public HediffDef hediffToGive; // На что меняем
+        public float severity;
+
+        protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount) {
+            if (pawn == null) return;
+
+            // Ищем старый Hediff
+            Hediff oldHediff = pawn.health?.hediffSet?.GetFirstHediffOfDef(hediffToRemove);
+
+            if (oldHediff != null && oldHediff.Severity >= 1.0f) {
+                // Если нашли: удаляем его
+                pawn.health.RemoveHediff(oldHediff);
+
+                // И добавляем новый (Hunter8)
+                Hediff newHediff = HediffMaker.MakeHediff(hediffToGive, pawn);
+                newHediff.Severity = severity;
+                pawn.health.AddHediff(newHediff);
+
+                // Сообщение игроку (опционально)
+                Messages.Message($"{pawn.LabelShort} успешно продвинулся.", pawn, MessageTypeDefOf.PositiveEvent);
+            } else {
+                pawn.Kill(null);
+
+                // Сообщение о смерти
+                Messages.Message($"{pawn.LabelShort} погиб, выпив зелье без подготовки!", TargetInfo.Invalid, MessageTypeDefOf.NegativeEvent);
             }
         }
     }
