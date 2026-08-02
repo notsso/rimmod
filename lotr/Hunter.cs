@@ -60,7 +60,7 @@ namespace lotr {
                 sanityLoss.Severity -= 0.01f;
             }
 
-            if (sanityLoss != null && sanityLoss.Severity >= 1.0f) {
+            if (sanityLoss != null && sanityLoss.Severity >= 0.95f && Rand.Chance(0.1f)) {
                 this.pawn.Kill(null, sanityLoss);
 
                 if (this.pawn.Faction == Faction.OfPlayer) {
@@ -73,8 +73,45 @@ namespace lotr {
                 }
             }
         }
+
+        // кнопка для когитации
+        public override IEnumerable<Gizmo> GetGizmos() {
+            // Сначала возвращаем базовые кнопки
+            if (base.GetGizmos() != null) {
+                foreach (Gizmo gizmo in base.GetGizmos()) {
+                    yield return gizmo;
+                }
+            }
+
+            // Проверяем, что пешка может выполнять команды игрока
+            if (pawn != null && pawn.IsColonistPlayerControlled) {
+                // Создаем и настраиваем кнопку действия
+                Command_Action cogitationButton = new Command_Action {
+                    defaultLabel = "Заняться когитацией",
+                    defaultDesc = "Погрузиться в ментальный транс для стабилизации Сиквенций, очищения разума и восстановления духовных сил.",
+
+                    icon = TexCommand.GatherSpotActive,
+
+                    action = delegate {
+                        // Безопасно создаем задачу когитации
+                        JobDef jobDef = DefDatabase<JobDef>.GetNamed("lotr_CogitationJob", false);
+                        if (jobDef != null) {
+                            Job cogitationJob = JobMaker.MakeJob(jobDef);
+
+                            // Заставляем пешку немедленно бросить текущие дела (Misc) и начать когитацию
+                            pawn.jobs.TryTakeOrderedJob(cogitationJob, JobTag.Misc);
+                        } else {
+                            Log.Error("[LOTR Mod] Ошибка: Не найден JobDef с именем lotr_CogitationJob в XML!");
+                        }
+                    }
+                };
+
+                yield return cogitationButton;
+            }
+        }
     }
 
+    // Специфичная логика Охотника
     public class Hunter9_Hediff : Beyonder_Hediff {
         private int ticksCounter = 0;
 
@@ -136,7 +173,7 @@ namespace lotr {
                 if (hediff != null) {
                     float victimBodySize = __state;
                     float severityIncrement = factor * victimBodySize;
-                    // severityIncrement = Mathf.Clamp(severityIncrement, 0.02f, 0.40f);
+                    severityIncrement = Mathf.Clamp(severityIncrement, 0.02f, 0.40f);
 
                     hediff.Severity += severityIncrement;
 

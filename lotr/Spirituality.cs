@@ -20,67 +20,6 @@ namespace lotr {
         }
     }
 
-    /*
-    [DefOf]
-    public static class Lotr_DefOf {
-        public static HediffDef Spirituality;
-
-        static Lotr_DefOf() {
-            DefOfHelper.EnsureInitializedInCtor(typeof(Lotr_DefOf));
-        }
-    }
-
-
-    public class first_class {
-
-        [StaticConstructorOnStartup]
-        public static class Main {
-            static Main() {
-                var harmony = new Harmony("nar.lotr");
-                harmony.PatchAll();
-            }
-        }
-
-        [HarmonyPatch(typeof(PawnGenerator), "GeneratePawn", new[] { typeof(PawnGenerationRequest) })]
-        public static class Patch_PawnGenerator_GeneratePawn {
-            public static void Postfix(Pawn __result) {
-
-                if (__result == null || __result.health == null) return;
-
-                if (__result.RaceProps.IsMechanoid) return;
-
-                HediffDef spiritualityHediff = Lotr_DefOf.Spirituality;
-
-                if (spiritualityHediff != null) {
-
-                    Hediff hediff = HediffMaker.MakeHediff(spiritualityHediff, __result, null);
-
-                    hediff.Severity = Rand.Range(0.3f, 0.7f);
-
-                    __result.health.AddHediff(hediff, null, null);
-
-                }
-
-            }
-
-        }
-
-    }
-
-    public class Spirituality : HediffWithComps {
-        public override string SeverityLabel {
-            get {
-                string baseLabel = base.SeverityLabel;
-                string percent = (this.Severity).ToStringPercent();
-
-                if (!baseLabel.NullOrEmpty()) {
-                    return $"{baseLabel} ({percent})";
-                }
-                return percent;
-            }
-        }
-    } */
-
     public class Need_Spirituality : Need {
         // Настройка скорости регенерации духовности (в час)
         private const float RegenerationPerHour = 0.04f;
@@ -104,7 +43,7 @@ namespace lotr {
             // Пассивная регенерация духовности со временем до максимума
             if (this.CurLevel < this.MaxLevel) {
                 // Потребности обновляются интервалами по 150 тиков (это 1/16 игрового часа)
-                this.CurLevel += (RegenerationPerHour / 16f);
+                this.CurLevel += (RegenerationPerHour / 16f) * (this.MaxLevel);
             }
         }
 
@@ -276,6 +215,48 @@ namespace lotr {
             }
 
             return new GizmoResult(GizmoState.Clear);
+        }
+    }
+
+    // при поглощении зелья у пешки высасывается часть духовности
+    public class IngestionOutcomeDoer_DrainSpirituality : IngestionOutcomeDoer {
+        public float drainPercent; // xml
+
+        protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount) {
+            if (pawn == null || pawn.needs == null) return;
+
+            NeedDef spiritualityNeedDef = DefDatabase<NeedDef>.GetNamed("lotr_SpiritualityNeed", false);
+
+            if (spiritualityNeedDef != null) {
+                Need spiritualityNeed = pawn.needs.TryGetNeed(spiritualityNeedDef);
+
+                if (spiritualityNeed != null) {
+                    spiritualityNeed.CurLevelPercentage -= drainPercent * spiritualityNeed.MaxLevel;
+                }
+            }
+        }
+    }
+
+    // при поглощении зелья дает пешку Hediff с каким то Severity (прописано в xml)
+    public class IngestionOutcomeDoer_GiveHediffRange : IngestionOutcomeDoer {
+        public HediffDef hediffDef; // xml
+
+        public FloatRange severityRange; // xml
+
+        protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount) {
+            if (pawn == null || hediffDef == null) return;
+
+            float randomSeverity = severityRange.RandomInRange;
+
+            Hediff existingHediff = pawn.health.hediffSet.GetFirstHediffOfDef(hediffDef);
+
+            if (existingHediff != null) {
+                existingHediff.Severity += randomSeverity;
+            } else {
+                Hediff hediff = HediffMaker.MakeHediff(hediffDef, pawn);
+                hediff.Severity = randomSeverity;
+                pawn.health.AddHediff(hediff);
+            }
         }
     }
 }
