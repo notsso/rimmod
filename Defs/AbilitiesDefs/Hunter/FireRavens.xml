@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <AbilityDef>
+
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        <defName>Cast_FireRavens</defName>
+        <label>огненные вороны</label>
+        <description>Создает трех мистических ворон из багрового пламени вокруг заклинателя. Вороны обладают собственным разумом, автоматически набрасываются на ближайших врагов и взрываются при гибели.</description>
+        <iconPath>UI/Icons/Abilities/Hunter/Provoking</iconPath> <!-- Путь к вашей иконке способности -->
+        <cooldownTicksRange>1800</cooldownTicksRange> <!-- Кулдаун 30 секунд -->
+        <targetRequired>False</targetRequired>
+        <aiCanUse>true</aiCanUse>
+        
+        <comps>
+            <li Class="lotr.CompProperties_AbilityLaunchFireRavens">
+                <compClass>lotr.CompAbilityEffect_LaunchFireRavens</compClass>
+                <ravenPawnKind>lotr_FireRavenKind</ravenPawnKind> 
+            </li>
+        </comps>
+
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>0.5</warmupTime>
+            <range>0</range>
+            <targetParams>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+
+    </AbilityDef>
+
+</Defs>

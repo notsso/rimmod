@@ -356,7 +356,7 @@ namespace lotr {
 
             // Загружаем и кэшируем все кадры в память заранее
             Vector2 drawSize = new Vector2(1.3f, 1.3f);
-            Color flameColor = new Color(1f, 0.27f, 0f);
+            Color flameColor = new Color(0f, 0f, 0f); // unnecessary
 
             for (int i = 0; i < totalFrames; i++) {
                 // Собираем пути строго по вашей структуре папок

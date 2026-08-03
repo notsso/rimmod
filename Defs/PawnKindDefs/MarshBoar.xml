@@ -1,6 +1,89 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>lotr_MarshBoarRace</defName>
+    <label>Болотная свинья</label>
+    <description>Опасный кабан-ищейка, мутировавший под воздействием потусторонней энергии на ядовитых болотах. Обладает невероятным нюхом и огромной выносливостью. Почуяв кровь, он будет преследовать жертву километрами. Его внутренние органы подверглись частичной кристаллизации.</description>
+    
+    <statBases>
+      <MoveSpeed>5.5</MoveSpeed>
+      <MarketValue>450</MarketValue>
+      <ComfyTemperatureMin>-25</ComfyTemperatureMin>
+      <ComfyTemperatureMax>50</ComfyTemperatureMax>
+      <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+      <Wildness>1</Wildness> 
+    </statBases>
+
+    <tools>
+      <li>
+        <label>бивни</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>14</power>
+        <cooldownTime>1.8</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>зубы</label>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>1.6</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+      </li>
+    </tools>
+
+    <race>
+      <thinkTreeMain>lotr_MarshBoarTree</thinkTreeMain>
+      <body>QuadrupedAnimalWithHooves</body>
+      <baseBodySize>1.1</baseBodySize>
+      <baseHealthScale>1.8</baseHealthScale>
+      <baseHungerRate>0.5</baseHungerRate>
+      <leatherDef>Leather_Pig</leatherDef>
+      <meatDef>Meat_Pig</meatDef>
+
+      <foodType>OmnivoreRoughAnimal</foodType>
+      <predator>true</predator>
+      
+      <manhunterOnDamageChance>0.2</manhunterOnDamageChance>
+      <manhunterOnTameFailChance>0</manhunterOnTameFailChance>
+      <!-- <trainability>Advanced</trainability> -->
+      <lifeExpectancy>15</lifeExpectancy>
+      
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.25</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.5</minAge>
+          <soundWounded>Pawn_Wildboar_Wounded</soundWounded>
+          <soundDeath>Pawn_Wildboar_Death</soundDeath>
+          <soundCall>Pawn_Wildboar_Call</soundCall>
+          <soundAngry>Pawn_Wildboar_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+      <soundEating>Herbivore_Eat</soundEating>
+    </race>
+
+    <butcherProducts>
+      <lotr_MarshBoarCrystallizedSpleen>1</lotr_MarshBoarCrystallizedSpleen>
+    </butcherProducts>
+  </ThingDef>
+
+
   <PawnKindDef ParentName="AnimalKindBase">
     <defName>lotr_MarshBoar</defName>
     <label>активированная болотная свинья</label>
