@@ -14,44 +14,86 @@ namespace lotr {
         // Радиус сплочения врагов (если рядом с целью в пределах 12 клеток стоят союзники, кабан их посчитает)
         private const float CrowdCheckRadius = 12f;
 
-        protected override Job TryGiveJob(Pawn boar) {
-            // Если кабан спит, горит, находится в ментальном состоянии или уже занят чем-то важным — не трогаем его
-            if (boar.Downed || boar.Dead || boar.InMentalState || boar.jobs.curJob != null)
-                return null;
+        // Дистанция «срыва»: если человек подошел ближе, кабан реагирует (атака/побег)
+        private const float AggroRadius = 15f;
 
-            if (boar.needs?.food != null && boar.needs.food.CurLevelPercentage > 0.30f) {
+        protected override Job TryGiveJob(Pawn boar) {
+            if (boar.needs?.food != null) {
+                // Кабан всегда голоден
+                boar.needs.food.CurLevelPercentage = 0.10f;
+            }
+
+            if (boar.Downed || boar.Dead || boar.IsBurning()) return null;
+
+            // Проверяем голод
+            bool isHungry = (boar.needs?.food != null && boar.needs.food.CurLevelPercentage <= 0.30f);
+
+            // 3. ПОИСК БЛИЖАЙШЕГО ЧЕЛОВЕКА
+            Pawn target = FindNearestTarget(boar);
+            if (target == null) {
+                // Если людей нет, а кабан все еще бежит или охотится — сбрасываем задачу
+                if (boar.jobs?.curJob != null && (boar.jobs.curJob.def == JobDefOf.PredatorHunt || boar.jobs.curJob.def == JobDefOf.Flee)) {
+                    boar.jobs.EndCurrentJob(JobCondition.InterruptForced);
+                }
                 return null;
             }
 
-            // 1. Рассчитываем силу кабана на основе его текущего здоровья
-            // combatPower кабана = 120 (мы задали это в PawnKindDef). Умножаем на процент здоровья.
-            float boarPower = boar.kindDef.combatPower * (boar.health.summaryHealth.SummaryHealthPercent);
+            float distance = boar.Position.DistanceTo(target.Position);
+            bool shouldEvaluateCombat = isHungry || (distance <= AggroRadius);
 
-            // 2. Ищем ближайшую живую пешку (пока только колонистов)
-            Pawn target = FindNearestTarget(boar);
-            if (target == null) return null;
+            if (shouldEvaluateCombat) {
+                // 4. ЧЕСТНЫЙ ДИНАМИЧЕСКИЙ ПОДСЧЕТ СИЛ
+                float boarPower = boar.kindDef.combatPower * boar.health.summaryHealth.SummaryHealthPercent;
 
-            List<Thing> enemiesAround = GetEnemiesAround(target);
+                List<Thing> enemiesAround = GetEnemiesAround(target);
+                float totalEnemyPower = CalculateTotalEnemyPower(enemiesAround);
 
-            // 3. Рассчитываем общую силу ЦЕЛИ и ВСЕХ её союзников рядом с ней!
-            float totalEnemyPower = CalculateTotalEnemyPower(enemiesAround);
+                // 5. ПРИНЯТИЕ РЕШЕНИЯ НА ОСНОВЕ РЕАЛЬНЫХ СИЛ
+                if (boarPower > totalEnemyPower) {
+                    // КАБАН СИЛЬНЕЕ: Должен атаковать.
+                    // Если он УЖЕ охотится ИМЕННО на эту цель, просто не мешаем ему продолжать бег
+                    if (boar.jobs?.curJob != null && boar.jobs.curJob.def == JobDefOf.PredatorHunt && boar.jobs.curJob.targetA.Pawn == target) {
+                        return null;
+                    }
 
-            // 4. СРАВНЕНИЕ СИЛЫ
-            if (boarPower > totalEnemyPower) {
-                if (boar.mindState.enemyTarget != target) {
-                    boar.mindState.enemyTarget = target;
+                    // Если он до этого убегал, но враг остался один и ослаб — прерываем бегство и атакуем
+                    if (boar.mindState.enemyTarget != target) {
+                        boar.mindState.enemyTarget = target;
+                    }
+
+                    Job attackJob = JobMaker.MakeJob(JobDefOf.PredatorHunt, target);
+                    attackJob.expiryInterval = 60; // Проверка каждую секунду
+                    attackJob.checkOverrideOnExpire = true;
+                    return attackJob;
+                } else {
+                    if (boar.jobs?.curJob != null && boar.jobs.curJob.def == JobDefOf.Flee) {
+                        // Если до конечной точки бегства еще далеко — пусть просто продолжает бежать туда
+                        if (boar.Position.DistanceToSquared(boar.jobs.curJob.targetA.Cell) > 9) {
+                            return null;
+                        }
+                    }
+
+                    // Ищем точку для отступления
+                    IntVec3 fleeLoc = CellFinderLoose.GetFleeDestAnimal(boar, enemiesAround, 30f); // Увеличили дистанцию до 30
+                    if (!fleeLoc.IsValid || fleeLoc == boar.Position) {
+                        // Запасной навигатор
+                        fleeLoc = CellFinder.RandomClosewalkCellNear(boar.Position, boar.Map, 20,
+                            c => c.Walkable(boar.Map) && c.DistanceTo(target.Position) > distance);
+                    }
+
+                    if (fleeLoc.IsValid && fleeLoc != boar.Position) {
+                        Job fleeJob = JobMaker.MakeJob(JobDefOf.Flee, fleeLoc, target);
+
+                        // Настраиваем задачу так, чтобы она не сбрасывалась ванильными триггерами
+                        fleeJob.expiryInterval = 300; // Ставим большой запас времени, мы всё равно перепишем вектор раньше
+                        fleeJob.checkOverrideOnExpire = true;
+                        return fleeJob;
+                    }
                 }
-
-                Job attackJob = JobMaker.MakeJob(JobDefOf.PredatorHunt, target);
-                attackJob.expiryInterval = 200; // Пересчитывать каждые несколько секунд
-                attackJob.checkOverrideOnExpire = true;
-                return attackJob;
             } else {
-                IntVec3 fleeLoc = CellFinderLoose.GetFleeDestAnimal(boar, enemiesAround, 25f);
-
-                if (fleeLoc.IsValid && fleeLoc != boar.Position) {
-                    Job fleeJob = JobMaker.MakeJob(JobDefOf.Flee, fleeLoc, target);
-                    return fleeJob;
+                // Если кабан сыт, а люди вышли за радиус 12 клеток, но он всё еще бежал за ними — останавливаем
+                if (boar.jobs?.curJob != null && (boar.jobs.curJob.def == JobDefOf.PredatorHunt || boar.jobs.curJob.def == JobDefOf.Flee)) {
+                    boar.jobs.EndCurrentJob(JobCondition.InterruptForced);
                 }
             }
 
@@ -59,7 +101,6 @@ namespace lotr {
         }
 
         private Pawn FindNearestTarget(Pawn boar) {
-            // Ищем колонистов в радиусе видимости/нюха, которые не лежат при смерти
             return (Pawn)GenClosest.ClosestThingReachable(
                 boar.Position,
                 boar.Map,
@@ -76,29 +117,20 @@ namespace lotr {
             Map map = primaryTarget.Map;
             if (map == null) return list;
 
-            // ЛОГИКА СОЮЗНИЧЕСТВА ТОЛПЫ:
-            // 1. Если цель — человек, мы ищем других людей той же фракции рядом (считаем толпу колонистов).
-            // 2. Если цель — ванильное животное, мы ищем животных того же вида рядом (считаем стаю оленей/волков).
-            // 3. Если цель — ДРУГОЙ КАБАН НАШЕГО ВИДА, он считается абсолютным одиночкой. Метод вернет false, 
-            //    поэтому другие кабаны не будут плюсовать свою силу к его защите!
-            System.Func<Pawn, bool> belongsToSameGroup = (p) => {
-                if (primaryTarget.def == DefDatabase<ThingDef>.GetNamed("lotr_MarshBoarRace")) {
-                    return false; // Потусторонние кабаны не защищают друг друга и не объединяются в расчетную группу
-                }
-                if (primaryTarget.RaceProps.Animal) {
-                    return p.def == primaryTarget.def; // Ванильная стая животных
-                }
-                return p.Faction == primaryTarget.Faction; // Фракция людей
-            };
+            var allPawnsOnMap = map.mapPawns.AllPawnsSpawned;
 
-            IEnumerable<Pawn> alliesNearby = GenRadial.RadialCellsAround(primaryTarget.Position, CrowdCheckRadius, true)
-                .Where(c => c.InBounds(map))
-                .SelectMany(c => c.GetThingList(map))
-                .OfType<Pawn>()
-                .Where(p => belongsToSameGroup(p) && !p.Downed && !p.Dead);
+            for (int i = 0; i < allPawnsOnMap.Count; i++) {
+                Pawn p = allPawnsOnMap[i];
 
-            foreach (var pawn in alliesNearby) {
-                list.Add(pawn);
+                if (p == null || p.Downed || p.Dead) continue;
+
+                if (p.Position.DistanceToSquared(primaryTarget.Position) <= CrowdCheckRadius * CrowdCheckRadius) {
+                    if (p.RaceProps.Humanlike) {
+                        list.Add(p);
+                    } else if (primaryTarget.RaceProps.Animal && p.def == primaryTarget.def) {
+                        list.Add(p);
+                    }
+                }
             }
 
             if (!list.Contains(primaryTarget)) {
@@ -114,20 +146,24 @@ namespace lotr {
             foreach (Thing thing in enemies) {
                 if (thing is Pawn enemy) {
                     float individualPower = enemy.kindDef.combatPower;
+                    if (enemy.RaceProps.Humanlike && individualPower < 45f) {
+                        individualPower = 45f;
+                    }
 
-                    // Учет оружия для людей
                     if (enemy.equipment?.Primary != null) {
                         individualPower += (enemy.equipment.Primary.MarketValue / 10f);
                     }
 
-                    // Учет брони
                     float armor = enemy.GetStatValue(StatDefOf.ArmorRating_Sharp) + enemy.GetStatValue(StatDefOf.ArmorRating_Blunt);
-                    individualPower *= (1f + armor);
+                    individualPower += (armor * 30f);
 
-                    // Учет ранений
                     individualPower *= enemy.health.summaryHealth.SummaryHealthPercent;
 
-                    totalPower += individualPower;
+                    if (enemies.Count > 1) {
+                        totalPower += (individualPower * 1.2f);
+                    } else {
+                        totalPower += individualPower;
+                    }
                 }
             }
 

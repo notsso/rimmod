@@ -13,7 +13,7 @@
       <ComfyTemperatureMax>50</ComfyTemperatureMax>
       <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
-      <Wildness>0.85</Wildness> 
+      <Wildness>1</Wildness> 
     </statBases>
 
     <tools>
@@ -47,11 +47,11 @@
       <meatDef>Meat_Pig</meatDef>
 
       <foodType>OmnivoreRoughAnimal</foodType>
-      <predator>false</predator>
+      <predator>true</predator>
       
-      <manhunterOnDamageChance>0.50</manhunterOnDamageChance>
-      <manhunterOnTameFailChance>0.20</manhunterOnTameFailChance>
-      <trainability>Advanced</trainability>
+      <manhunterOnDamageChance>0.2</manhunterOnDamageChance>
+      <manhunterOnTameFailChance>0</manhunterOnTameFailChance>
+      <!-- <trainability>Advanced</trainability> -->
       <lifeExpectancy>15</lifeExpectancy>
       
       <lifeStageAges>
