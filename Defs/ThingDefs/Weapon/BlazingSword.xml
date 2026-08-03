@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef>
+    <defName>Melee_BlazingSword</defName>
+    <label>огненный меч</label>
+    <description>Мистический клинок, призываемый из чистого концентрированного пламени. Он материализуется ровно на одну минуту, после чего растворяется в воздухе.</description>
+    <category>Item</category>
+    <thingClass>ThingWithComps</thingClass>
+    <equipmentType>Primary</equipmentType>
+    <selectable>true</selectable>
+    <drawerType>MapMeshOnly</drawerType>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <tickerType>Normal</tickerType> <!-- Включаем тикер Normal для работы таймера исчезновения -->
+    <techLevel>Medieval</techLevel>
+    
+    <!-- Запрещаем переплавку и торговлю -->
+    <smeltable>false</smeltable>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop> <!-- Если пешка уронит его или упадет — меч сразу испарится -->
+
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponMelee/BlazingSword</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>1.5</Mass>
+      <MarketValue>500</MarketValue>
+      <Flammability>0.0</Flammability> <!-- ИСПРАВЛЕНО: Сделали меч негорючим через правильный стат -->
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+
+    <comps>
+      <!-- Компонент экипируемого оружия -->
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+      <!-- Компонент качества (чтобы у меча были уровни вроде Отличный/Шедевр) -->
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Lifespan">
+        <lifespanTicks>7200</lifespanTicks> <!-- Меч исчезнет ровно через 60 секунд (3600 тиков) -->
+      </li>
+    </comps>
+
+    <tools>
+      <li>
+        <label>лезвие</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>1.8</cooldownTime>
+        <extraMeleeDamages>
+          <li>
+            <def>Flame</def>
+            <amount>12</amount>
+            <chance>0.80</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>острие</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>18</power>
+        <cooldownTime>1.8</cooldownTime>
+        <extraMeleeDamages>
+          <li>
+            <def>Flame</def>
+            <amount>15</amount>
+            <chance>0.90</chance>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+
+    <weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+    <weaponTags>
+      <li>HunterSummonedWeapon</li>
+    </weaponTags>
+    <thingCategories>
+      <li>WeaponsMelee</li>
+    </thingCategories>
+  </ThingDef>
+
+</Defs>

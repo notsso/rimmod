@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <AbilityDef>
+        <abilityClass>lotr.Ability_SummonWeapon</abilityClass>
+        <defName>Cast_BlazingSword</defName>
+        <label>призыв пламенного клинка</label>
+        <description>Концентрирует духовную энергию, материализуя в руках заклинателя легендарный огненный меч. Если в руках было другое оружие, оно автоматически убирается в инвентарь.</description>
+        <iconPath>UI/Icons/Abilities/Hunter/Fireball</iconPath> 
+        <cooldownTicksRange>3600</cooldownTicksRange>
+        <targetRequired>False</targetRequired>
+        <hostile>false</hostile>
+
+        <modExtensions>
+            <li Class="lotr.SpiritualityCostExtension">
+                <cost>50.0</cost>
+            </li>
+        </modExtensions>
+
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>2.0</warmupTime>
+            <range>0</range>
+            <targetParams>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+    </AbilityDef>
+
+</Defs>

@@ -595,4 +595,41 @@ namespace lotr {
         }
     }
 
+    // призывает меч в руках пешки
+    public class Ability_SummonWeapon : Ability_SpendSpirituality {
+        public Ability_SummonWeapon() : base() { }
+
+        public Ability_SummonWeapon(Pawn pawn, AbilityDef def) : base(pawn, def) { }
+
+        public override bool Activate(LocalTargetInfo target, LocalTargetInfo dest) {
+            bool result = base.Activate(target, dest);
+
+            Pawn caster = this.pawn;
+            if (caster != null && caster.equipment != null) {
+                ThingDef swordDef = ThingDef.Named("Melee_BlazingSword");
+
+                if (swordDef != null) {
+                    if (caster.equipment.Primary != null) {
+                        ThingWithComps oldWeapon = caster.equipment.Primary;
+
+                        if (caster.inventory != null) {
+                            caster.equipment.Remove(oldWeapon);
+                            caster.inventory.innerContainer.TryAdd(oldWeapon, true);
+                        } else {
+                            caster.equipment.TryDropEquipment(oldWeapon, out var _, caster.Position);
+                        }
+                    }
+
+                    ThingWithComps summonedSword = (ThingWithComps)ThingMaker.MakeThing(swordDef);
+
+                    caster.equipment.AddEquipment(summonedSword);
+
+                    FleckMaker.Static(caster.Position, caster.Map, FleckDefOf.MicroSparks, 2.0f);
+                    FleckMaker.ThrowSmoke(caster.DrawPos, caster.Map, 1.2f);
+                }
+            }
+
+            return true;
+        }
+    }
 }

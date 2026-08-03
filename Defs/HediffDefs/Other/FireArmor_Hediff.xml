@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <HediffDef>
+        <defName>Hediff_FireArmor</defName>
+        <label>огненный покров</label>
+        <description>Тело пешки окутано мистическим пламенем, защищающим от внешних угроз.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>3600</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+
+        <stages>
+            <li>
+                <!-- Сильная защита от пуль и ударов (+80% к броне) -->
+                <statOffsets>
+                    <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.60</ArmorRating_Blunt>
+                    <ArmorRating_Heat>1.50</ArmorRating_Heat> 
+                    <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+                </statOffsets>
+                
+                <statFactors>
+                    <ToxicResistance>0.0</ToxicResistance>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+
+</Defs>

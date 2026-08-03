@@ -64,8 +64,8 @@ namespace lotr {
     }
 
     public class SpiritualityCostExtension : DefModExtension {
-        // Переменная, которую мы будем настраивать в XML для каждой способности отдельно
-        public float cost = 0f;
+        public float cost = 0f; // сколько духовности надо
+        public HediffDef hediffToGive; // Какой хедифф выдать (опционально)
     }
 
     public class Ability_SpendSpirituality : Ability {
@@ -87,6 +87,16 @@ namespace lotr {
             return finalCost;
         }
 
+        public void GiveHediff() {
+            SpiritualityCostExtension extension = this.def.GetModExtension<SpiritualityCostExtension>();
+            Pawn caster = this.pawn;
+
+            if (extension.hediffToGive != null) {
+                caster.health.AddHediff(extension.hediffToGive);
+                FleckMaker.Static(caster.Position, caster.Map, FleckDefOf.MicroSparks, 1.5f);
+            }
+        }
+
         public override bool Activate(LocalTargetInfo target, LocalTargetInfo dest) {
             // Сначала вызываем базовую логику (чтобы сработали все прикомпонованные comps, например, запуск снаряда)
             bool result = base.Activate(target, dest);
@@ -96,6 +106,8 @@ namespace lotr {
                 Pawn caster = this.pawn;
                 if (caster?.health != null) {
                     Need_Spirituality spirituality = this.pawn.needs?.TryGetNeed<Need_Spirituality>();
+
+                    GiveHediff();
 
                     if (spirituality != null) {
                         float cost = AbilityCost();

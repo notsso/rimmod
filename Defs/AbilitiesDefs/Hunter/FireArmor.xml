@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <AbilityDef>
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        <defName>Cast_FireArmor</defName>
+        <label>огненная броня</label>
+        <description>Создает плотный огненный покров вокруг тела, который плавит снаряды, согревает в любой мороз и сжигает ядовитые газы на подлете.</description>
+        <iconPath>UI/Icons/Abilities/Hunter/FireArmor</iconPath>
+        <cooldownTicksRange>7200</cooldownTicksRange>
+        <targetRequired>False</targetRequired>
+        <hostile>false</hostile>
+
+        <modExtensions>
+            <li Class="lotr.SpiritualityCostExtension">
+                <cost>100.0</cost>
+                <hediffToGive>Hediff_FireArmor</hediffToGive>
+            </li>
+        </modExtensions>
+
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>5.0</warmupTime>
+            <range>0</range>
+            <targetParams>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+    </AbilityDef>
+
+</Defs>
