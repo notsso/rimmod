@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
     <RecipeDef>
         <defName>Hunter9_PotionRecipe</defName>
         <label>brew hunter's potion</label>
@@ -83,4 +84,47 @@
         
         <researchPrerequisite>Brewing</researchPrerequisite>
     </RecipeDef>
+
+    <RecipeDef>
+        <defName>Hunter7_PotionRecipe</defName>
+        <label>brew pyromaniac's potion</label>
+        <description>Brew a mysterious potion of the Hunter pathway.</description>
+        <jobString>Brewing pyromaniac's potion.</jobString>
+        
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+    
+        <ingredients>
+        <li>
+            <filter>
+                <thingDefs>
+                    <li>MedicineHerbal</li>
+                </thingDefs>
+            </filter>
+            <count>1</count>
+        </li>
+        <li>
+            <filter>
+                <thingDefs>
+                    <li>lotr_MarshBoarCrystallizedSpleen</li>
+                </thingDefs>
+            </filter>
+            <count>3</count>
+        </li>
+        </ingredients>
+        
+        <products>
+            <Hunter7_Potion>1</Hunter7_Potion>
+        </products>
+        
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        
+        <researchPrerequisite>Brewing</researchPrerequisite>
+    </RecipeDef>
+
 </Defs>
