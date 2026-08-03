@@ -9,6 +9,7 @@ using Verse.AI;
 using RimWorld;
 
 using UnityEngine;
+using System.Runtime.Remoting.Lifetime;
 
 namespace lotr {
     // Специфичная логика Охотника
@@ -337,11 +338,11 @@ namespace lotr {
     }
 
     public class CompFireRavenController : ThingComp {
+        public int lifetime = 3600;
         public Pawn casterOwner = null;
 
-        // Настройки анимации гифок
-        private const int totalFrames = 8;   // Сколько кадров в ваших гифках (измените, если другое число!)
-        private const int ticksPerFrame = 5; // Скорость махания крыльями
+        private const int totalFrames = 8;
+        private const int ticksPerFrame = 5;
 
         // Массивы для предварительного кэширования графики в памяти
         private Graphic[] graphicsNorth { get; } = new Graphic[totalFrames];
@@ -356,7 +357,7 @@ namespace lotr {
 
             // Загружаем и кэшируем все кадры в память заранее
             Vector2 drawSize = new Vector2(1.3f, 1.3f);
-            Color flameColor = new Color(0f, 0f, 0f); // unnecessary
+            Color flameColor = new Color(1f, 1f, 1f); // unnecessary
 
             for (int i = 0; i < totalFrames; i++) {
                 // Собираем пути строго по вашей структуре папок
@@ -373,7 +374,7 @@ namespace lotr {
             graphicsLoaded = true;
         }
 
-        // Перехват урона
+        // Перехват урона (инста смерть)
         public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed) {
             base.PostPreApplyDamage(ref dinfo, out bool absorbedOut);
             absorbed = absorbedOut;
@@ -390,13 +391,13 @@ namespace lotr {
 
             if (!(parent is Pawn raven) || raven.Map == null) return;
 
-            if (casterOwner == null || casterOwner.Dead || casterOwner.Downed || !casterOwner.Spawned || casterOwner.Map != raven.Map) {
+            if (casterOwner == null || casterOwner.Dead || casterOwner.Downed || !casterOwner.Spawned || casterOwner.Map != raven.Map || (lifetime-- <= 0)) {
                 raven.Destroy(DestroyMode.Vanish);
                 return;
             }
         }
 
-        // ИСПРАВЛЕННЫЙ РЕНДЕРИНГ: Берёт готовую графику из кэша памяти без вызова GraphicDatabase.Get в рантайме
+        // Берёт готовую графику из кэша памяти без вызова GraphicDatabase.Get в рантайме
         public override void PostDraw() {
             base.PostDraw();
 
@@ -442,18 +443,16 @@ namespace lotr {
         }
     }
 
+    /*
     public class JobGiver_FireRavenAttack : JobGiver_AIFightEnemy {
         protected override Thing FindAttackTarget(Pawn pawn) {
             if (pawn.Map == null) return null;
 
-            // 1. Достаем контроллер и ищем хозяина
             CompFireRavenController controller = pawn.TryGetComp<CompFireRavenController>();
             if (controller == null || controller.casterOwner == null) return null;
 
             Pawn leader = controller.casterOwner;
             Thing targetToAttack = null;
-
-            // 2. УЛЬТРА-ЗАХВАТ ЦЕЛИ В БЛИЖНЕМ БОЮ И ПРИ СТРЕЛЬБЕ
 
             // Вариант А: Проверяем, кого хозяин УДАРИЛ последним (идеально для ближнего боя, работает с Бумалопами и животными)
             if (leader.mindState != null && leader.mindState.lastAttackedTarget.Thing != null) {
@@ -472,19 +471,14 @@ namespace lotr {
                 targetToAttack = leader.CurJob.targetA.Thing;
             }
 
-            // 3. ПРОВЕРКА ЦЕЛИ И ДИСТАНЦИИ
-            // Если цель найдена, она жива, не уничтожена и находится в пределах 15 клеток от хозяина
             if (targetToAttack != null && !targetToAttack.Destroyed) {
-                // Проверяем, чтобы ворона случайно не пошла атаковать самого хозяина или союзника
                 if (targetToAttack != leader && targetToAttack.Faction != leader.Faction) {
-                    if (targetToAttack.Position.DistanceToSquared(leader.Position) <= 225.0f) // 15 клеток
-                    {
+                    if (targetToAttack.Position.DistanceToSquared(leader.Position) <= 225.0f) {
                         return targetToAttack;
                     }
                 }
             }
 
-            // 4. АВТО-ОБОРОНА: Если хозяин никого не трогает, но агрессивный враг подошел в упор к хозяину (ближе 6 клеток)
             Thing autoThreat = (Thing)AttackTargetFinder.BestAttackTarget(
                 pawn,
                 TargetScanFlags.NeedReachable | TargetScanFlags.NeedThreat,
@@ -501,7 +495,7 @@ namespace lotr {
 
         protected override Job MeleeAttackJob(Pawn pawn, Thing target) {
             Job job = JobMaker.MakeJob(JobDefOf.AttackMelee, target);
-            job.expiryInterval = 30; // Переоценка каждые полсекунды (быстрая реакция на смену целей игроком)
+            job.expiryInterval = 30; 
             return job;
         }
 
@@ -509,47 +503,34 @@ namespace lotr {
             dest = pawn.Position;
             return false;
         }
-    }
+    }*/
 
     public class JobGiver_FireRavenAI : ThinkNode_JobGiver {
         protected override Job TryGiveJob(Pawn pawn) {
             if (pawn.Map == null) return null;
 
-            // Достаем контроллер, чтобы взять прямую ссылку на хозяина
             CompFireRavenController controller = pawn.TryGetComp<CompFireRavenController>();
             if (controller == null || controller.casterOwner == null) {
-                // Если хозяина нет, в следующем кадре контроллер сотрет ворону, а пока просто стоим
                 return null;
             }
 
             Pawn leader = controller.casterOwner;
 
             // 1. ЛОГИКА АТАКИ: Ищем ближайшего врага
-            Thing target = (Thing)AttackTargetFinder.BestAttackTarget(
-                pawn,
-                TargetScanFlags.NeedReachable | TargetScanFlags.NeedThreat,
-                t => t is Pawn enemy && enemy.Faction != null && enemy.Faction.HostileTo(pawn.Faction),
-                0f, 25f, default(IntVec3), float.MaxValue, false
-            );
+            Thing target = FindAttackTarget(pawn);
 
-            // Если враг близко к хозяину (радиус 10 клеток) — плавно летим его атаковать
-            if (target != null && target.Position.DistanceToSquared(leader.Position) <= 100.0f) {
+            // Если враг близко к хозяину (радиус 15 клеток) — плавно летим его атаковать
+            if (target != null && target.Position.DistanceToSquared(leader.Position) <= 225.0f) {
                 Job attackJob = JobMaker.MakeJob(JobDefOf.AttackMelee, target);
-                attackJob.expiryInterval = 60;
+                attackJob.expiryInterval = 30;
                 return attackJob;
             }
 
-            // 2. ЛОГИКА СЛЕДОВАНИЯ: Если врагов нет, проверяем дистанцию до хозяина
             float distSq = pawn.Position.DistanceToSquared(leader.Position);
-
-            // Если ворона УЖЕ в соседней клетке (дистанция <= 2) — ей НЕ НАДО никуда идти.
-            // Мы просто возвращаем null. Но чтобы Core 1.6 не выдал ошибку из-за пустого дерева, 
-            // в самом XML ThinkTree мы добавим ванильный узел ожидания.
             if (distSq <= 2.1f) {
                 return null;
             }
 
-            // Если хозяин отошел, ищем свободную соседнюю клетку вокруг него
             IntVec3 targetCell = IntVec3.Invalid;
             foreach (IntVec3 adjacentCell in GenRadial.RadialCellsAround(leader.Position, 1.5f, false).InRandomOrder()) {
                 if (adjacentCell.Walkable(pawn.Map) && !adjacentCell.Fogged(pawn.Map)) {
@@ -558,12 +539,56 @@ namespace lotr {
                 }
             }
 
-            // Если клетка найдена — выдаем ванильную задачу ПЛАВНОГО движения туда на спринте
             if (targetCell.IsValid) {
                 Job gotoJob = JobMaker.MakeJob(JobDefOf.Goto, targetCell);
                 gotoJob.locomotionUrgency = LocomotionUrgency.Sprint;
-                gotoJob.expiryInterval = 30; // Переоценка каждые полсекунды
+                gotoJob.expiryInterval = 30;
                 return gotoJob;
+            }
+
+            return null;
+        }
+
+        protected Thing FindAttackTarget(Pawn pawn) {
+            CompFireRavenController controller = pawn.TryGetComp<CompFireRavenController>();
+
+            Pawn leader = controller.casterOwner;
+            Thing targetToAttack = null;
+
+            // Вариант А: Проверяем, кого хозяин УДАРИЛ последним (идеально для ближнего боя, работает с Бумалопами и животными)
+            if (leader.mindState != null && leader.mindState.lastAttackedTarget.Thing != null) {
+                targetToAttack = leader.mindState.lastAttackedTarget.Thing;
+            }
+            // Вариант Б: Проверяем, кто прямо сейчас бьет нашего хозяина в упор
+            else if (leader.mindState != null && leader.mindState.meleeThreat != null) {
+                targetToAttack = leader.mindState.meleeThreat;
+            }
+            // Вариант В: Проверяем, в кого хозяин ЦЕЛИТСЯ из дальнего боя (Drafted режим)
+            else if (leader.stances != null && leader.stances.curStance is Stance_Busy stanceBusy && stanceBusy.focusTarg.Thing != null) {
+                targetToAttack = stanceBusy.focusTarg.Thing;
+            }
+            // Вариант Г: Запасной ванильный флаг текущей работы (если пешка только бежит бить цель)
+            else if (leader.CurJob != null && (leader.CurJob.def == JobDefOf.AttackMelee || leader.CurJob.def == JobDefOf.AttackStatic) && leader.CurJob.targetA.Thing != null) {
+                targetToAttack = leader.CurJob.targetA.Thing;
+            }
+
+            if (targetToAttack != null && !targetToAttack.Destroyed) {
+                if (targetToAttack != leader && targetToAttack.Faction != leader.Faction) {
+                    if (targetToAttack.Position.DistanceToSquared(leader.Position) <= 225.0f) {
+                        return targetToAttack;
+                    }
+                }
+            }
+
+            Thing autoThreat = (Thing)AttackTargetFinder.BestAttackTarget(
+                pawn,
+                TargetScanFlags.NeedReachable | TargetScanFlags.NeedThreat,
+                t => t is Pawn enemy && enemy.Faction != null && enemy.Faction.HostileTo(pawn.Faction) && t.Position.DistanceToSquared(leader.Position) <= 36.0f,
+                0f, 25f, default(IntVec3), float.MaxValue, false
+            );
+
+            if (autoThreat != null) {
+                return autoThreat;
             }
 
             return null;

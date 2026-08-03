@@ -11,6 +11,12 @@
         <cooldownTicksRange>1200</cooldownTicksRange> <!-- Перезарядка 20 секунд (1200 тиков) -->
         <aiCanUse>true</aiCanUse>
         <targetRequired>true</targetRequired>
+
+        <modExtensions>
+            <li Class="lotr.SpiritualityCostExtension">
+                <cost>20.0</cost>
+            </li>
+        </modExtensions>
         
         <verbProperties>
             <verbClass>Verb_CastAbility</verbClass>

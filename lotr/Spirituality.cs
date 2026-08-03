@@ -63,10 +63,29 @@ namespace lotr {
         }
     }
 
+    public class SpiritualityCostExtension : DefModExtension {
+        // Переменная, которую мы будем настраивать в XML для каждой способности отдельно
+        public float cost = 0f;
+    }
+
     public class Ability_SpendSpirituality : Ability {
         public Ability_SpendSpirituality() : base() { }
 
         public Ability_SpendSpirituality(Pawn pawn, AbilityDef def) : base(pawn, def) { }
+
+        public float AbilityCost() {
+            float finalCost = 10f;
+
+            SpiritualityCostExtension extension = this.def.GetModExtension<SpiritualityCostExtension>();
+
+            if (extension != null) {
+                finalCost = extension.cost;
+            }
+
+            // различные баффы/дебаффы к цене, но пока я сомневаюсь
+
+            return finalCost;
+        }
 
         public override bool Activate(LocalTargetInfo target, LocalTargetInfo dest) {
             // Сначала вызываем базовую логику (чтобы сработали все прикомпонованные comps, например, запуск снаряда)
@@ -79,13 +98,11 @@ namespace lotr {
                     Need_Spirituality spirituality = this.pawn.needs?.TryGetNeed<Need_Spirituality>();
 
                     if (spirituality != null) {
-                        float finalCost = 0.15f;
+                        float cost = AbilityCost();
 
-                        // различные баффы/дебаффы к цене, но пока я сомневаюсь
+                        spirituality.CurLevel -= cost * 0.01f;
 
-                        spirituality.CurLevel -= finalCost;
-
-                        string textPct = $"-{(finalCost * 100f).ToString("F0")}% Духовности";
+                        string textPct = $"-{(cost).ToString("F0")} Духовности";
                         MoteMaker.ThrowText(caster.DrawPos, caster.Map, textPct, 3f);
                     }
                 }
@@ -106,10 +123,10 @@ namespace lotr {
                 return true;
             }
 
-            float finalCost = 0.15f;
+            float cost = AbilityCost();
 
-            if (spirituality.CurLevel < finalCost) {
-                reason = $"Недостаточно духовности (Нужно {(finalCost * 100f).ToString("F0")}%).";
+            if (spirituality.CurLevel < cost * 0.01f) {
+                reason = $"Недостаточно духовности (Нужно {(cost).ToString("F0")}).";
                 return true;
             }
 

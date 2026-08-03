@@ -47,6 +47,12 @@
         <cooldownTicksRange>1200</cooldownTicksRange>
         <hostile>true</hostile>
 
+        <modExtensions>
+            <li Class="lotr.SpiritualityCostExtension">
+                <cost>100.0</cost>
+            </li>
+        </modExtensions>
+
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_BlazingSpear</projectileDef>
