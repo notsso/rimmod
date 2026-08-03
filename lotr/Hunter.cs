@@ -159,4 +159,122 @@ namespace lotr {
             compClass = typeof(CompAbilityEffect_Provoke);
         }
     }
+
+    public class Hunter7_Hediff : Hunter8_Hediff {
+        public override float SpiritualityFactor => 5f;
+    }
+
+    public class Projectile_PenetratingExplosive : Projectile {
+        // Переменная-счетчик для оптимизации спавна эффектов
+        private int tickCounter = 0;
+
+        protected override void Tick() {
+            base.Tick();
+
+            // Проверяем, что снаряд на карте и летит
+            if (this.Spawned && !this.Destroyed) {
+                tickCounter++;
+
+                // Спавним искру каждые 2 тика (чтобы шлейф был плотным, но не лагал)
+                if (tickCounter % 2 == 0) {
+                    // Бросаем ванильную зажигательную искру прямо в текущей координате снаряда
+                    FleckMaker.ThrowSmoke(this.ExactPosition, this.Map, 0.8f); // Легкий дымок
+
+                    // FleckDefOf.ThermalGlow — это те самые тепловые искры пламени
+                    FleckMaker.Static(this.ExactPosition, this.Map, FleckDefOf.MicroSparks, 1.0f);
+                }
+            }
+        }
+
+        protected override void Impact(Thing hitThing, bool maskedByFlame = false) {
+            if (hitThing != null) {
+                // Проверяем, является ли цель пешкой (живым существом/механоидом)
+                Pawn hitPawn = hitThing as Pawn;
+
+                // Получаем базовые параметры урона и пробития из XML
+                float baseDamage = (float)this.def.projectile.GetDamageAmount(this.launcher);
+                float baseArmorPenetration = this.def.projectile.GetArmorPenetration(this.launcher);
+
+                // Физический порез/царапина (Cut) 
+                DamageInfo cutDinfo = new DamageInfo(
+                    DamageDefOf.Cut,                         // Тип урона: Порез (как от стрелы/меча)
+                    baseDamage,                              // Урон берется из XML снаряда
+                    baseArmorPenetration,                    // Пробитие берется из XML снаряда
+                    this.ExactRotation.eulerAngles.y,
+                    this.launcher,
+                    null,
+                    this.equipmentDef,
+                    DamageInfo.SourceCategory.ThingOrUnknown,
+                    this.intendedTarget.Thing
+                );
+                hitThing.TakeDamage(cutDinfo);
+
+                // Термический ожог (Burn)
+                DamageInfo burnDinfo = new DamageInfo(
+                    DamageDefOf.Burn,                        // Тип урона: Ожог
+                    baseDamage * 0.5f,                       // Можно сделать ожог чуть слабее (например, 50% от базы)
+                    baseArmorPenetration,
+                    this.ExactRotation.eulerAngles.y,
+                    this.launcher,
+                    null,
+                    this.equipmentDef,
+                    DamageInfo.SourceCategory.ThingOrUnknown,
+                    this.intendedTarget.Thing
+                );
+                hitThing.TakeDamage(burnDinfo);
+
+                // Heatstroke)
+                if (hitPawn != null && hitPawn.RaceProps.FleshType == FleshTypeDefOf.Normal) {
+                    // Ищем, есть ли уже у цели тепловой удар
+                    Hediff heatstroke = hitPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.Heatstroke);
+
+                    if (heatstroke != null) {
+                        // Если есть — увеличиваем его тяжесть (например, на +20%)
+                        heatstroke.Severity += 0.25f;
+                    } else {
+                        // Если нет — создаем новый тепловой удар с начальной тяжестью 25%
+                        hitPawn.health.AddHediff(HediffDefOf.Heatstroke);
+                        Hediff newHeatstroke = hitPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.Heatstroke);
+                        if (newHeatstroke != null) {
+                            newHeatstroke.Severity = 0.25f;
+                        }
+                    }
+                }
+            }
+
+            // Взрыв по площади
+            if (this.def.projectile.explosionRadius > 0f) {
+                int explosionDamage = this.def.projectile.GetDamageAmount(this.launcher);
+                float explosionArmorPenetration = this.def.projectile.GetArmorPenetration(this.launcher);
+
+                GenExplosion.DoExplosion(
+                    this.Position,
+                    this.Map,
+                    this.def.projectile.explosionRadius,
+                    this.def.projectile.damageDef, // Взрыв оставим с типом урона из XML (Burn)
+                    this.launcher,
+                    explosionDamage,
+                    explosionArmorPenetration,
+                    this.def.projectile.soundExplode,
+                    this.equipmentDef,
+                    this.def,
+                    this.intendedTarget.Thing,
+                    this.def.projectile.postExplosionSpawnThingDef,
+                    this.def.projectile.postExplosionSpawnChance,
+                    this.def.projectile.postExplosionSpawnThingCount,
+                    null, // postExplosionGasType
+                    null, // postExplosionGasRadiusOverride
+                    255,  // postExplosionGasAmount
+                    this.def.projectile.applyDamageToExplosionCellsNeighbors,
+                    this.def.projectile.preExplosionSpawnThingDef,
+                    this.def.projectile.preExplosionSpawnChance,
+                    this.def.projectile.preExplosionSpawnThingCount,
+                    this.def.projectile.explosionChanceToStartFire,
+                    this.def.projectile.explosionDamageFalloff
+                );
+            }
+
+            base.Impact(hitThing, maskedByFlame);
+        }
+    }
 }

@@ -61,14 +61,6 @@
 
         </verbProperties>
 
-        <comps>
-
-            <li Class="CompProperties_AbilityLaunchProjectile">
-                <projectileDef>Proj_Fireball</projectileDef>
-            </li>
-
-        </comps>
-
     </AbilityDef>
 
 </Defs>
