@@ -164,6 +164,7 @@ namespace lotr {
         public override float SpiritualityFactor => 5f;
     }
 
+    // класс для описания снаряда способности "копье огня"
     public class Projectile_PenetratingExplosive : Projectile {
         // Переменная-счетчик для оптимизации спавна эффектов
         private int tickCounter = 0;
@@ -277,4 +278,296 @@ namespace lotr {
             base.Impact(hitThing, maskedByFlame);
         }
     }
+
+    // огненные вороны
+    public class CompAbilityEffect_LaunchFireRavens : CompAbilityEffect {
+        public new CompProperties_AbilityLaunchFireRavens Props => (CompProperties_AbilityLaunchFireRavens)props;
+
+        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
+            base.Apply(target, dest);
+            Pawn caster = parent.pawn;
+            Map map = caster.Map;
+
+            if (map == null) return;
+
+            int existingRavensCount = 0;
+            foreach (Pawn p in map.mapPawns.AllPawnsSpawned) {
+                if (p.def == DefDatabase<ThingDef>.GetNamed("lotr_FireRavenRace")) {
+                    CompFireRavenController controller = p.TryGetComp<CompFireRavenController>();
+                    if (controller != null && controller.casterOwner == caster) {
+                        existingRavensCount++;
+                    }
+                }
+            }
+
+            int maxTotalRavens = 3;
+
+            int ravensToSpawn = maxTotalRavens - existingRavensCount;
+
+            if (ravensToSpawn <= 0) {
+                return;
+            }
+
+            int spawnedCount = 0;
+
+            foreach (IntVec3 cell in GenRadial.RadialCellsAround(caster.Position, 2f, false).InRandomOrder()) {
+                if (spawnedCount >= ravensToSpawn) break;
+
+                if (cell.Walkable(map) && !cell.Fogged(map)) {
+                    Pawn raven = PawnGenerator.GeneratePawn(Props.ravenPawnKind, caster.Faction);
+                    GenSpawn.Spawn(raven, cell, map);
+
+                    CompFireRavenController controller = raven.TryGetComp<CompFireRavenController>();
+                    if (controller != null) {
+                        controller.casterOwner = caster;
+                    }
+
+                    spawnedCount++;
+                }
+            }
+        }
+    }
+
+    public class CompProperties_AbilityLaunchFireRavens : CompProperties_AbilityEffect {
+        public PawnKindDef ravenPawnKind;
+
+        public CompProperties_AbilityLaunchFireRavens() {
+            compClass = typeof(CompAbilityEffect_LaunchFireRavens);
+        }
+    }
+
+    public class CompFireRavenController : ThingComp {
+        public Pawn casterOwner = null;
+
+        // Настройки анимации гифок
+        private const int totalFrames = 8;   // Сколько кадров в ваших гифках (измените, если другое число!)
+        private const int ticksPerFrame = 5; // Скорость махания крыльями
+
+        // Массивы для предварительного кэширования графики в памяти
+        private Graphic[] graphicsNorth { get; } = new Graphic[totalFrames];
+        private Graphic[] graphicsSouth { get; } = new Graphic[totalFrames];
+        private Graphic[] graphicsEast { get; } = new Graphic[totalFrames];
+
+        private bool graphicsLoaded = false;
+
+        // Метод вызывается ОДИН РАЗ при создании компонента вороны в мире
+        public override void Initialize(CompProperties props) {
+            base.Initialize(props);
+
+            // Загружаем и кэшируем все кадры в память заранее
+            Vector2 drawSize = new Vector2(1.3f, 1.3f);
+            Color flameColor = new Color(1f, 0.27f, 0f);
+
+            for (int i = 0; i < totalFrames; i++) {
+                // Собираем пути строго по вашей структуре папок
+                string pathNorth = $"Things/Animal/FireRaven/FireRaven_{i}_north";
+                string pathSouth = $"Things/Animal/FireRaven/FireRaven_{i}_south";
+                string pathEast = $"Things/Animal/FireRaven/FireRaven_{i}_east";
+
+                // Кэшируем через ShaderDatabase.MoteGlow (чтобы не требовало масок _m)
+                graphicsNorth[i] = GraphicDatabase.Get<Graphic_Single>(pathNorth, ShaderDatabase.Cutout, drawSize, flameColor);
+                graphicsSouth[i] = GraphicDatabase.Get<Graphic_Single>(pathSouth, ShaderDatabase.Cutout, drawSize, flameColor);
+                graphicsEast[i] = GraphicDatabase.Get<Graphic_Single>(pathEast, ShaderDatabase.Cutout, drawSize, flameColor);
+            }
+
+            graphicsLoaded = true;
+        }
+
+        // Перехват урона
+        public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed) {
+            base.PostPreApplyDamage(ref dinfo, out bool absorbedOut);
+            absorbed = absorbedOut;
+
+            if (dinfo.Amount > 0 && parent is Pawn raven && !raven.Dead) {
+                absorbed = true;
+                raven.Destroy(DestroyMode.Vanish);
+            }
+        }
+
+        // Логика перемещения
+        public override void CompTick() {
+            base.CompTick();
+
+            if (!(parent is Pawn raven) || raven.Map == null) return;
+
+            if (casterOwner == null || casterOwner.Dead || casterOwner.Downed || !casterOwner.Spawned || casterOwner.Map != raven.Map) {
+                raven.Destroy(DestroyMode.Vanish);
+                return;
+            }
+        }
+
+        // ИСПРАВЛЕННЫЙ РЕНДЕРИНГ: Берёт готовую графику из кэша памяти без вызова GraphicDatabase.Get в рантайме
+        public override void PostDraw() {
+            base.PostDraw();
+
+            if (!graphicsLoaded) return;
+            if (!(parent is Pawn raven) || !raven.Spawned || raven.Dead) return;
+
+            // 1. Вычисляем текущий кадр
+            int currentFrame = (Find.TickManager.TicksGame / ticksPerFrame) % totalFrames;
+
+            // 2. Выбираем нужный массив в зависимости от направления взгляда пешки
+            Graphic animatedGraphic = null;
+            Rot4 rotation = raven.Rotation;
+
+            if (rotation == Rot4.North) {
+                animatedGraphic = graphicsNorth[currentFrame];
+            } else if (rotation == Rot4.South) {
+                animatedGraphic = graphicsSouth[currentFrame];
+            } else if (rotation == Rot4.East || rotation == Rot4.West) {
+                animatedGraphic = graphicsEast[currentFrame];
+            }
+
+            // 3. Рисуем готовый меш из памяти
+            if (animatedGraphic != null && animatedGraphic.MatSingle != null) {
+                Material mat = animatedGraphic.MatSingle;
+                Vector2 drawSize = new Vector2(1.3f, 1.3f);
+
+                // Если летит на Запад, зеркалим сетку Востока ванильным методом
+                Mesh mesh = (rotation == Rot4.West) ? MeshPool.GridPlaneFlip(drawSize) : MeshPool.GridPlane(drawSize);
+
+                Graphics.DrawMesh(mesh, raven.DrawPos, Quaternion.identity, mat, 0);
+            }
+        }
+
+        public override void PostExposeData() {
+            base.PostExposeData();
+            Scribe_References.Look(ref casterOwner, "casterOwner");
+        }
+    }
+
+    public class CompProperties_FireRavenController : CompProperties {
+        public CompProperties_FireRavenController() {
+            compClass = typeof(CompFireRavenController);
+        }
+    }
+
+    public class JobGiver_FireRavenAttack : JobGiver_AIFightEnemy {
+        protected override Thing FindAttackTarget(Pawn pawn) {
+            if (pawn.Map == null) return null;
+
+            // 1. Достаем контроллер и ищем хозяина
+            CompFireRavenController controller = pawn.TryGetComp<CompFireRavenController>();
+            if (controller == null || controller.casterOwner == null) return null;
+
+            Pawn leader = controller.casterOwner;
+            Thing targetToAttack = null;
+
+            // 2. УЛЬТРА-ЗАХВАТ ЦЕЛИ В БЛИЖНЕМ БОЮ И ПРИ СТРЕЛЬБЕ
+
+            // Вариант А: Проверяем, кого хозяин УДАРИЛ последним (идеально для ближнего боя, работает с Бумалопами и животными)
+            if (leader.mindState != null && leader.mindState.lastAttackedTarget.Thing != null) {
+                targetToAttack = leader.mindState.lastAttackedTarget.Thing;
+            }
+            // Вариант Б: Проверяем, кто прямо сейчас бьет нашего хозяина в упор
+            else if (leader.mindState != null && leader.mindState.meleeThreat != null) {
+                targetToAttack = leader.mindState.meleeThreat;
+            }
+            // Вариант В: Проверяем, в кого хозяин ЦЕЛИТСЯ из дальнего боя (Drafted режим)
+            else if (leader.stances != null && leader.stances.curStance is Stance_Busy stanceBusy && stanceBusy.focusTarg.Thing != null) {
+                targetToAttack = stanceBusy.focusTarg.Thing;
+            }
+            // Вариант Г: Запасной ванильный флаг текущей работы (если пешка только бежит бить цель)
+            else if (leader.CurJob != null && (leader.CurJob.def == JobDefOf.AttackMelee || leader.CurJob.def == JobDefOf.AttackStatic) && leader.CurJob.targetA.Thing != null) {
+                targetToAttack = leader.CurJob.targetA.Thing;
+            }
+
+            // 3. ПРОВЕРКА ЦЕЛИ И ДИСТАНЦИИ
+            // Если цель найдена, она жива, не уничтожена и находится в пределах 15 клеток от хозяина
+            if (targetToAttack != null && !targetToAttack.Destroyed) {
+                // Проверяем, чтобы ворона случайно не пошла атаковать самого хозяина или союзника
+                if (targetToAttack != leader && targetToAttack.Faction != leader.Faction) {
+                    if (targetToAttack.Position.DistanceToSquared(leader.Position) <= 225.0f) // 15 клеток
+                    {
+                        return targetToAttack;
+                    }
+                }
+            }
+
+            // 4. АВТО-ОБОРОНА: Если хозяин никого не трогает, но агрессивный враг подошел в упор к хозяину (ближе 6 клеток)
+            Thing autoThreat = (Thing)AttackTargetFinder.BestAttackTarget(
+                pawn,
+                TargetScanFlags.NeedReachable | TargetScanFlags.NeedThreat,
+                t => t is Pawn enemy && enemy.Faction != null && enemy.Faction.HostileTo(pawn.Faction) && t.Position.DistanceToSquared(leader.Position) <= 36.0f,
+                0f, 25f, default(IntVec3), float.MaxValue, false
+            );
+
+            if (autoThreat != null) {
+                return autoThreat;
+            }
+
+            return null;
+        }
+
+        protected override Job MeleeAttackJob(Pawn pawn, Thing target) {
+            Job job = JobMaker.MakeJob(JobDefOf.AttackMelee, target);
+            job.expiryInterval = 30; // Переоценка каждые полсекунды (быстрая реакция на смену целей игроком)
+            return job;
+        }
+
+        protected override bool TryFindShootingPosition(Pawn pawn, out IntVec3 dest, Verb verbToUse = null) {
+            dest = pawn.Position;
+            return false;
+        }
+    }
+
+    public class JobGiver_FireRavenAI : ThinkNode_JobGiver {
+        protected override Job TryGiveJob(Pawn pawn) {
+            if (pawn.Map == null) return null;
+
+            // Достаем контроллер, чтобы взять прямую ссылку на хозяина
+            CompFireRavenController controller = pawn.TryGetComp<CompFireRavenController>();
+            if (controller == null || controller.casterOwner == null) {
+                // Если хозяина нет, в следующем кадре контроллер сотрет ворону, а пока просто стоим
+                return null;
+            }
+
+            Pawn leader = controller.casterOwner;
+
+            // 1. ЛОГИКА АТАКИ: Ищем ближайшего врага
+            Thing target = (Thing)AttackTargetFinder.BestAttackTarget(
+                pawn,
+                TargetScanFlags.NeedReachable | TargetScanFlags.NeedThreat,
+                t => t is Pawn enemy && enemy.Faction != null && enemy.Faction.HostileTo(pawn.Faction),
+                0f, 25f, default(IntVec3), float.MaxValue, false
+            );
+
+            // Если враг близко к хозяину (радиус 10 клеток) — плавно летим его атаковать
+            if (target != null && target.Position.DistanceToSquared(leader.Position) <= 100.0f) {
+                Job attackJob = JobMaker.MakeJob(JobDefOf.AttackMelee, target);
+                attackJob.expiryInterval = 60;
+                return attackJob;
+            }
+
+            // 2. ЛОГИКА СЛЕДОВАНИЯ: Если врагов нет, проверяем дистанцию до хозяина
+            float distSq = pawn.Position.DistanceToSquared(leader.Position);
+
+            // Если ворона УЖЕ в соседней клетке (дистанция <= 2) — ей НЕ НАДО никуда идти.
+            // Мы просто возвращаем null. Но чтобы Core 1.6 не выдал ошибку из-за пустого дерева, 
+            // в самом XML ThinkTree мы добавим ванильный узел ожидания.
+            if (distSq <= 2.1f) {
+                return null;
+            }
+
+            // Если хозяин отошел, ищем свободную соседнюю клетку вокруг него
+            IntVec3 targetCell = IntVec3.Invalid;
+            foreach (IntVec3 adjacentCell in GenRadial.RadialCellsAround(leader.Position, 1.5f, false).InRandomOrder()) {
+                if (adjacentCell.Walkable(pawn.Map) && !adjacentCell.Fogged(pawn.Map)) {
+                    targetCell = adjacentCell;
+                    break;
+                }
+            }
+
+            // Если клетка найдена — выдаем ванильную задачу ПЛАВНОГО движения туда на спринте
+            if (targetCell.IsValid) {
+                Job gotoJob = JobMaker.MakeJob(JobDefOf.Goto, targetCell);
+                gotoJob.locomotionUrgency = LocomotionUrgency.Sprint;
+                gotoJob.expiryInterval = 30; // Переоценка каждые полсекунды
+                return gotoJob;
+            }
+
+            return null;
+        }
+    }
+
 }
