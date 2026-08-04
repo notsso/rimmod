@@ -15,12 +15,12 @@ namespace lotr {
         public override float SpiritualityFactor => 5f;
 
         public Hunter7_Hediff() {
-            maxProgressPerCategory = 0.3f;
+            maxProgressPerCategory = 0.4f;
         }
     }
 
     // класс для описания снаряда способности "копье огня"
-    public class Projectile_PenetratingExplosive : Projectile {
+    public class Projectile_BlazingSpear : Projectile {
         // Переменная-счетчик для спавна эффектов
         private int tickCounter = 0;
 
@@ -33,7 +33,7 @@ namespace lotr {
 
                 // Спавним эффекты
                 if (tickCounter % 2 == 0) {
-                    FleckMaker.ThrowSmoke(this.ExactPosition, this.Map, 0.8f); // Легкий дымок
+                    FleckMaker.ThrowSmoke(this.ExactPosition, this.Map, 0.8f);
 
                     FleckMaker.Static(this.ExactPosition, this.Map, FleckDefOf.MicroSparks, 1.0f);
                 }
@@ -90,6 +90,16 @@ namespace lotr {
                         if (newHeatstroke != null) {
                             newHeatstroke.Severity = 0.25f;
                         }
+                    }
+                }
+
+                // как только снаряд попал в кого то, мы типа действуем как пироманьяк
+                Pawn pawn = this.launcher as Pawn;
+                if (pawn != null) {
+                    var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("Hunter7_Hediff")) as Hunter7_Hediff;
+
+                    if (hediff != null) {
+                        hediff.AddActingProgress(2, 0.02f, pawn);
                     }
                 }
             }
@@ -389,10 +399,10 @@ namespace lotr {
     }
 
     // класс для способности "огненный меч" - призывает в руках пешки оружие
-    public class Ability_SummonWeapon : Ability_SpendSpirituality {
-        public Ability_SummonWeapon() : base() { }
+    public class Ability_SummonBlazingSword : Ability_SpendSpirituality {
+        public Ability_SummonBlazingSword() : base() { }
 
-        public Ability_SummonWeapon(Pawn pawn, AbilityDef def) : base(pawn, def) { }
+        public Ability_SummonBlazingSword(Pawn pawn, AbilityDef def) : base(pawn, def) { }
 
         public override bool Activate(LocalTargetInfo target, LocalTargetInfo dest) {
             bool result = base.Activate(target, dest);
@@ -423,6 +433,34 @@ namespace lotr {
             }
 
             return true;
+        }
+    }
+
+    public class SummonedWeapon : ThingWithComps {
+        // Метод вызывается каждый игровой тик, пока предмет лежит на земле
+        protected override void Tick() {
+            base.Tick();
+        }
+
+    }
+
+    [HarmonyPatch(typeof(Pawn_EquipmentTracker), "EquipmentTrackerTick")]
+    public static class Patch_SummonedWeapon_LifespanInHands {
+        [HarmonyPostfix]
+        public static void Postfix(Pawn_EquipmentTracker __instance) {
+            if (__instance.Primary != null && __instance.Primary is SummonedWeapon summonedWeapon) {
+                CompLifespan lifespanComp = summonedWeapon.GetComp<CompLifespan>();
+
+                if (lifespanComp != null) {
+                    lifespanComp.age += 1;
+
+                    if (lifespanComp.age >= lifespanComp.Props.lifespanTicks) {
+                        Pawn pawn = __instance.pawn;
+
+                        summonedWeapon.Destroy(DestroyMode.Vanish);
+                    }
+                }
+            }
         }
     }
 

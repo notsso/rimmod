@@ -5,7 +5,7 @@
 
         <defName>Proj_BlazingSpear</defName>
         <label>Копье огня</label>
-        <thingClass>lotr.Projectile_PenetratingExplosive</thingClass>
+        <thingClass>lotr.Projectile_BlazingSpear</thingClass>
 
         <graphicData>
 

@@ -17,7 +17,7 @@
         
         <stages>
         <li>
-            <minSeverity>0.1</minSeverity>
+            <minSeverity>0.0</minSeverity>
             <label>иллюзии</label>
             <!-- Пешка начинает хуже соображать из-за голосов в голове -->
             <statOffsets>

@@ -6,7 +6,9 @@
     <label>огненный меч</label>
     <description>Мистический клинок, призываемый из чистого концентрированного пламени. Он материализуется ровно на одну минуту, после чего растворяется в воздухе.</description>
     <category>Item</category>
-    <thingClass>ThingWithComps</thingClass>
+    
+    <thingClass>lotr.SummonedWeapon</thingClass>
+    
     <equipmentType>Primary</equipmentType>
     <selectable>true</selectable>
     <drawerType>MapMeshOnly</drawerType>
@@ -36,16 +38,15 @@
     </statBases>
 
     <comps>
-      <!-- Компонент экипируемого оружия -->
       <li>
         <compClass>CompEquippable</compClass>
       </li>
-      <!-- Компонент качества (чтобы у меча были уровни вроде Отличный/Шедевр) -->
+
       <li>
         <compClass>CompQuality</compClass>
       </li>
       <li Class="CompProperties_Lifespan">
-        <lifespanTicks>7200</lifespanTicks> <!-- Меч исчезнет ровно через 60 секунд (3600 тиков) -->
+        <lifespanTicks>7200</lifespanTicks>
       </li>
     </comps>
 

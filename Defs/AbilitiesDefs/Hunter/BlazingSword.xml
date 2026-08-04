@@ -2,7 +2,7 @@
 <Defs>
 
     <AbilityDef>
-        <abilityClass>lotr.Ability_SummonWeapon</abilityClass>
+        <abilityClass>lotr.Ability_SummonBlazingSword</abilityClass>
         <defName>Cast_BlazingSword</defName>
         <label>призыв пламенного клинка</label>
         <description>Концентрирует духовную энергию, материализуя в руках заклинателя легендарный огненный меч. Если в руках было другое оружие, оно автоматически убирается в инвентарь.</description>

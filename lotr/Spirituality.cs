@@ -5,6 +5,7 @@ using System.Linq;
 using HarmonyLib;
 
 using Verse;
+using Verse.AI;
 
 using RimWorld;
 
@@ -80,7 +81,7 @@ namespace lotr {
 
         public Ability_SpendSpirituality(Pawn pawn, AbilityDef def) : base(pawn, def) { }
 
-        // высчитывает духовности тратит способность 
+        // высчитывает сколько духовности тратит способность 
         public float AbilityCost() {
             float finalCost = 10f;
 
@@ -261,26 +262,6 @@ namespace lotr {
         }
     }
 
-    // при поглощении зелья у пешки высасывается часть духовности (неправда, OBSOLETE)
-    /*
-    public class IngestionOutcomeDoer_DrainSpirituality : IngestionOutcomeDoer {
-        public float drainPercent; // xml
-
-        protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount) {
-            if (pawn == null || pawn.needs == null) return;
-
-            NeedDef spiritualityNeedDef = DefDatabase<NeedDef>.GetNamed("lotr_SpiritualityNeed", false);
-
-            if (spiritualityNeedDef != null) {
-                Need spiritualityNeed = pawn.needs.TryGetNeed(spiritualityNeedDef);
-
-                if (spiritualityNeed != null) {
-                    spiritualityNeed.CurLevelPercentage -= drainPercent * spiritualityNeed.MaxLevel;
-                }
-            }
-        }
-    } */
-
     // при поглощении зелья дает пешку Hediff с каким то Severity (прописано в xml)
     public class IngestionOutcomeDoer_GiveHediffRange : IngestionOutcomeDoer {
         public HediffDef hediffDef; // xml
@@ -300,6 +281,45 @@ namespace lotr {
                 Hediff hediff = HediffMaker.MakeHediff(hediffDef, pawn);
                 hediff.Severity = randomSeverity;
                 pawn.health.AddHediff(hediff);
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(MentalStateHandler), "TryStartMentalState")]
+    public static class Patch_Beyonder_SanityBreak {
+        [HarmonyPostfix]
+        public static void Postfix(MentalStateHandler __instance, MentalStateDef stateDef, bool __result, Pawn ___pawn) {
+            if (__result && ___pawn != null && ___pawn.IsColonist) {
+                bool isBeyonder = false;
+
+                foreach (Hediff hediff in ___pawn.health.hediffSet.hediffs) {
+                    if (hediff is Beyonder_Hediff) {
+                        isBeyonder = true;
+                        break;
+                    }
+                }
+
+                if (isBeyonder) {
+                    float sanityDamage = 0.05f;
+                    if (stateDef.category == MentalStateCategory.Aggro || stateDef.category == MentalStateCategory.Malicious) {
+                        sanityDamage = 0.25f;
+                    } else if (stateDef == MentalStateDefOf.Berserk) {
+                        sanityDamage = 0.40f;
+                    }
+
+                    HediffDef sanityLossDef = HediffDef.Named("lotr_SanityLoss");
+                    Hediff sanityLoss = ___pawn.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
+
+                    if (sanityLoss != null) {
+                        sanityLoss.Severity += sanityDamage;
+                    } else {
+                        ___pawn.health.AddHediff(sanityLossDef);
+                        Hediff newSanity = ___pawn.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
+                        if (newSanity != null) {
+                            newSanity.Severity = sanityDamage;
+                        }
+                    }
+                }
             }
         }
     }
