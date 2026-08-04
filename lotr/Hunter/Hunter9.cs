@@ -14,9 +14,13 @@ namespace lotr {
     // Специфичная логика Охотника
     public class Hunter9_Hediff : Beyonder_Hediff {
         public override float SpiritualityFactor => 1.2f;
+
+        public Hunter9_Hediff() {
+            maxProgressPerCategory = 0.8f;
+        }
     }
 
-    // Harmony patch - отслеживает 'действие' охотника
+    // Harmony patch - отслеживает 'действие' охотника, progress1 - охота
     [HarmonyPatch(typeof(Pawn_JobTracker), "EndCurrentJob")]
     public static class Patch_Pawn_JobTracker_EndCurrentJob {
         private static float factor { get; } = 0.1f;
@@ -39,14 +43,26 @@ namespace lotr {
             if (__state > 0.01f && ___pawn != null && ___pawn.IsColonist) {
                 Hediff hediff = ___pawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("Hunter9_Hediff"));
 
-                if (hediff != null) {
+                if (hediff is Beyonder_Hediff beyonder_Hediff) {
+                    // Messages.Message("pawn has a beyonder hediff", ___pawn, MessageTypeDefOf.SilentInput, historical: false);
+
                     float victimBodySize = __state;
                     float severityIncrement = factor * victimBodySize;
                     severityIncrement = Mathf.Clamp(severityIncrement, 0.02f, 0.40f);
 
-                    hediff.Severity += severityIncrement;
+                    float oldProgress = beyonder_Hediff.progress1;
+                    beyonder_Hediff.progress1 += severityIncrement;
+                    if (beyonder_Hediff.progress1 > beyonder_Hediff.maxProgressPerCategory) {
+                        beyonder_Hediff.progress1 = beyonder_Hediff.maxProgressPerCategory;
+                    }
+                    float diff = beyonder_Hediff.progress1 - oldProgress;
 
-                    string messageText = $"После действия, {___pawn.LabelShortCap} усвоил свое зелье на {severityIncrement.ToStringPercent()}!";
+                    hediff.Severity += diff;
+
+                    string messageText = $"После действия, {___pawn.LabelShortCap} усвоил аспект зелья на {diff.ToStringPercent()}!"; ;
+                    if (diff < 0.01f) {
+                        messageText = $"{___pawn.LabelShortCap} чуствует, что уже усвоил этот аспект зелья";
+                    }
 
                     Messages.Message(messageText, ___pawn, MessageTypeDefOf.SilentInput, historical: false);
                 }
