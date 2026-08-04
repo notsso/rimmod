@@ -22,10 +22,6 @@
                     <severityRange>0.15~0.75</severityRange> 
                 </li>
 
-                <li Class="lotr.IngestionOutcomeDoer_DrainSpirituality">
-                    <drainPercent>0.5</drainPercent> 
-                </li>
-
                 <li Class="IngestionOutcomeDoer_GiveHediff">
                     <hediffDef>Hunter9_Hediff</hediffDef>
                     <severity>0.01</severity>
@@ -54,10 +50,6 @@
                 <li Class="lotr.IngestionOutcomeDoer_GiveHediffRange">
                     <hediffDef>lotr_SanityLoss</hediffDef>
                     <severityRange>0.15~0.75</severityRange> 
-                </li>
-
-                <li Class="lotr.IngestionOutcomeDoer_DrainSpirituality">
-                    <drainPercent>0.5</drainPercent> 
                 </li>
 
                 <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
@@ -89,10 +81,6 @@
                 <li Class="lotr.IngestionOutcomeDoer_GiveHediffRange">
                     <hediffDef>lotr_SanityLoss</hediffDef>
                     <severityRange>0.15~0.75</severityRange> 
-                </li>
-
-                <li Class="lotr.IngestionOutcomeDoer_DrainSpirituality">
-                    <drainPercent>0.5</drainPercent> 
                 </li>
 
                 <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">

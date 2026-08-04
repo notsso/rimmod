@@ -12,12 +12,16 @@ using UnityEngine;
 
 namespace lotr {
     public abstract class Beyonder_Hediff : HediffWithComps {
+        // счетчик тиков, для пассивного восстановления безумия
         private int sanityTickCounter = 0;
 
+        // как этот Hediff влияет на кол-во духовности
         public virtual float SpiritualityFactor => 1f;
 
+        // флаг полного усвоения зелья
         private bool isFullyAbsorbed = false;
 
+        // прогресс усвоения зелья
         public override float Severity {
             get => base.Severity;
             set {
@@ -30,18 +34,31 @@ namespace lotr {
             }
         }
 
+        // переменные для проверки усвоения зелья в разных аспектах
+        public float progress1 = 0;
+        public float progress2 = 0;
+        public float progress3 = 0;
+
+        // хранит максимальное значение усвоения, которое можно получить за один аспект
+        public float maxProgressPerCategory = 0.30f;
+
+        // Что делать, когда зелье усвоилось
         protected virtual void OnPotionFullyAbsorbed() {
             string messageText = $"{pawn.LabelShort} полностью усвоил зелье \"{def.LabelCap}\". Теперь он может продвинуться.";
 
             Messages.Message(messageText, pawn, MessageTypeDefOf.PositiveEvent);
         }
 
+        // Нужно для сохранения кастомных данных
         public override void ExposeData() {
             base.ExposeData();
             Scribe_Values.Look(ref isFullyAbsorbed, "isFullyAbsorbed", false);
+            Scribe_Values.Look(ref progress1, "progress1", 0f);
+            Scribe_Values.Look(ref progress2, "progress2", 0f);
+            Scribe_Values.Look(ref progress3, "progress3", 0f);
         }
 
-        // Общее для всех отображение процентов
+        // Общее для всех потусторонних отображение процентов усвоения зелья
         public override string SeverityLabel {
             get {
                 string baseLabel = base.SeverityLabel;
@@ -55,39 +72,38 @@ namespace lotr {
             }
         }
 
-        // Общая логика безумия тикает для ВСЕХ потусторонних
+        // Общая логика пассивной регенерации от безумия
         public override void Tick() {
             base.Tick();
 
             sanityTickCounter++;
             if (sanityTickCounter >= 60) {
                 sanityTickCounter = 0;
-                CheckSpiritualityAndSanity();
+                CheckSpirituality();
+                CheckSanity();
             }
         }
 
-        // Общий метод проверки рассудка.
-        protected virtual void CheckSpiritualityAndSanity() {
+        // Общий метод проверки рассудка
+        protected virtual void CheckSanity() {
+            // проверяем потерю контроля
             if (this.pawn == null || this.pawn.health == null) return;
-
-            Need_Spirituality spirituality = this.pawn.needs.TryGetNeed<Need_Spirituality>();
-            if (spirituality == null) return;
-
 
             Hediff sanityLoss = this.pawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("lotr_SanityLoss"));
 
-            if (spirituality.CurLevel <= 0.2f) {
-                if (sanityLoss == null) {
-                    HediffDef sanityDef = DefDatabase<HediffDef>.GetNamed("lotr_SanityLoss");
-                    HealthUtility.AdjustSeverity(this.pawn, sanityDef, 0.01f);
-                } else {
-                    sanityLoss.Severity += 0.01f;
-                }
-            } else if (spirituality.CurLevel > 0.30f && sanityLoss != null) {
-                sanityLoss.Severity -= 0.01f;
-            }
+            /* потерю рассудка мы получаем от неправильного 'действия' (здесь мы ее не задаем)
+            if (sanityLoss == null) {
+                // HediffDef sanityDef = DefDatabase<HediffDef>.GetNamed("lotr_SanityLoss");
+                // HealthUtility.AdjustSeverity(this.pawn, sanityDef, 0.01f);
+            }*/
 
-            if (sanityLoss != null && sanityLoss.Severity >= 0.95f && Rand.Chance(0.1f)) {
+            if (sanityLoss == null) return;
+
+            // пассивный реген безумия
+            sanityLoss.Severity -= 0.001f;
+
+            // Если безумие пешки достигло критической отметки она может умереть
+            if (sanityLoss.Severity >= 0.90f && Rand.Chance(0.1f)) {
                 this.pawn.Kill(null, sanityLoss);
 
                 if (this.pawn.Faction == Faction.OfPlayer) {
@@ -99,6 +115,14 @@ namespace lotr {
                     );
                 }
             }
+        }
+
+        // Общий метод проверки духовности
+        protected virtual void CheckSpirituality() {
+            Need_Spirituality spirituality = this.pawn.needs.TryGetNeed<Need_Spirituality>();
+            if (spirituality == null) return;
+
+            // пока что ничего не делает
         }
 
         // кнопка для когитации
@@ -127,46 +151,11 @@ namespace lotr {
 
                             // Заставляем пешку немедленно бросить текущие дела (Misc) и начать когитацию
                             pawn.jobs.TryTakeOrderedJob(cogitationJob, JobTag.Misc);
-                        } else {
-                            Log.Error("[LOTR Mod] Ошибка: Не найден JobDef с именем lotr_CogitationJob в XML!");
                         }
                     }
                 };
 
                 yield return cogitationButton;
-            }
-        }
-    }
-
-    // класс, для зелий потусторонних, которые продвигают
-    public class IngestionOutcomeDoer_SequenceAdvance : IngestionOutcomeDoer {
-        // Поля будут настраиваться через XML
-        public HediffDef hediffToRemove; // Что ищем
-        public HediffDef hediffToGive; // На что меняем
-        public float severity;
-
-        protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount) {
-            if (pawn == null) return;
-
-            // Ищем старый Hediff
-            Hediff oldHediff = pawn.health?.hediffSet?.GetFirstHediffOfDef(hediffToRemove);
-
-            if (oldHediff != null && oldHediff.Severity >= 1.0f) {
-                // Если нашли: удаляем его
-                pawn.health.RemoveHediff(oldHediff);
-
-                // И добавляем новый (Hunter8)
-                Hediff newHediff = HediffMaker.MakeHediff(hediffToGive, pawn);
-                newHediff.Severity = severity;
-                pawn.health.AddHediff(newHediff);
-
-                // Сообщение игроку (опционально)
-                Messages.Message($"{pawn.LabelShort} успешно продвинулся.", pawn, MessageTypeDefOf.PositiveEvent);
-            } else {
-                pawn.Kill(null);
-
-                // Сообщение о смерти
-                Messages.Message($"{pawn.LabelShort} погиб, выпив зелье без подготовки!", TargetInfo.Invalid, MessageTypeDefOf.NegativeEvent);
             }
         }
     }

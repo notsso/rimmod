@@ -19,18 +19,23 @@ namespace lotr {
         }
     }
 
+    // главный класс, который определяет нашу кастомную 'потребность'
     public class Need_Spirituality : Need {
         // Настройка скорости регенерации духовности (в час)
         private const float RegenerationPerHour = 0.04f;
 
+        // Максимальное базовое значение духовности?
         public const float MaxInternalValue = 1f;
 
+        // через эту переменную мы получаем максимальную духовность пешки
         public override float MaxLevel => GetFinalSpirituality();
 
+        // конструктор - в нем по приколу мы задали черточки, как в любых других потребностях
         public Need_Spirituality(Pawn pawn) : base(pawn) {
-            this.threshPercents = new System.Collections.Generic.List<float> { 0.2f, 0.4f, 0.8f };
+            this.threshPercents = new System.Collections.Generic.List<float> { 0.2f };
         }
 
+        // изначальный уровень духовности
         public override void SetInitialLevel() {
             this.CurLevel = 0.8f;
         }
@@ -48,7 +53,7 @@ namespace lotr {
 
         // Метод для расчета бонусов/штрафов к МАКСИМАЛЬНОМУ объему духовности
         private float GetFinalSpirituality() {
-            float result = 1f;
+            float result = MaxInternalValue;
 
             var hediffs = pawn.health?.hediffSet?.hediffs;
             if (hediffs != null) {
@@ -59,20 +64,23 @@ namespace lotr {
                 }
             }
 
-            return result * 1.0f;
+            return result;
         }
     }
 
+    // через это расширение мы в Def'е можем задать разные доп теги
     public class SpiritualityCostExtension : DefModExtension {
-        public float cost = 0f; // сколько духовности надо
+        public float cost = 10f; // сколько духовности надо
         public HediffDef hediffToGive; // Какой хедифф выдать (опционально)
     }
 
+    // определение для способности, которая тратит духовность
     public class Ability_SpendSpirituality : Ability {
         public Ability_SpendSpirituality() : base() { }
 
         public Ability_SpendSpirituality(Pawn pawn, AbilityDef def) : base(pawn, def) { }
 
+        // высчитывает духовности тратит способность 
         public float AbilityCost() {
             float finalCost = 10f;
 
@@ -82,11 +90,12 @@ namespace lotr {
                 finalCost = extension.cost;
             }
 
-            // различные баффы/дебаффы к цене, но пока я сомневаюсь
+            // различные баффы/дебаффы к цене
 
             return finalCost;
         }
 
+        // отдельная функция, которая дает hediff заклинателю
         public void GiveHediff() {
             SpiritualityCostExtension extension = this.def.GetModExtension<SpiritualityCostExtension>();
             Pawn caster = this.pawn;
@@ -123,6 +132,7 @@ namespace lotr {
             return result;
         }
 
+        // определяет, когда кнопка отвечающая за способность должна быть выключена
         public override bool GizmoDisabled(out string reason) {
             if (base.GizmoDisabled(out reason)) {
                 return true;
@@ -147,6 +157,7 @@ namespace lotr {
         }
     }
 
+    // кастомный класс под потерю контроля - лишь добавляет процентики к описанию
     public class SanityLoss : HediffWithComps {
         public override string SeverityLabel {
             get {
@@ -162,6 +173,7 @@ namespace lotr {
         }
     }
 
+    // Harmony patch - добавляет шкалу духовности каждому колонисту в строку гаджетов
     [HarmonyPatch(typeof(Pawn), "GetGizmos")]
     public static class Patch_Pawn_GetGizmos {
         public static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> __result, Pawn __instance) {
@@ -179,6 +191,7 @@ namespace lotr {
         }
     }
 
+    // определяет гаджет показывающий духовность
     public class SpiritualityNeedGizmo : Gizmo {
         private readonly Need need;
 
@@ -248,7 +261,8 @@ namespace lotr {
         }
     }
 
-    // при поглощении зелья у пешки высасывается часть духовности
+    // при поглощении зелья у пешки высасывается часть духовности (неправда, OBSOLETE)
+    /*
     public class IngestionOutcomeDoer_DrainSpirituality : IngestionOutcomeDoer {
         public float drainPercent; // xml
 
@@ -265,7 +279,7 @@ namespace lotr {
                 }
             }
         }
-    }
+    } */
 
     // при поглощении зелья дает пешку Hediff с каким то Severity (прописано в xml)
     public class IngestionOutcomeDoer_GiveHediffRange : IngestionOutcomeDoer {
