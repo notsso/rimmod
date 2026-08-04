@@ -13,11 +13,15 @@ using UnityEngine;
 namespace lotr {
     public class Hunter7_Hediff : Hunter8_Hediff {
         public override float SpiritualityFactor => 5f;
+
+        public Hunter7_Hediff() {
+            maxProgressPerCategory = 0.3f;
+        }
     }
 
     // класс для описания снаряда способности "копье огня"
     public class Projectile_PenetratingExplosive : Projectile {
-        // Переменная-счетчик для оптимизации спавна эффектов
+        // Переменная-счетчик для спавна эффектов
         private int tickCounter = 0;
 
         protected override void Tick() {
@@ -27,17 +31,16 @@ namespace lotr {
             if (this.Spawned && !this.Destroyed) {
                 tickCounter++;
 
-                // Спавним искру каждые 2 тика (чтобы шлейф был плотным, но не лагал)
+                // Спавним эффекты
                 if (tickCounter % 2 == 0) {
-                    // Бросаем ванильную зажигательную искру прямо в текущей координате снаряда
                     FleckMaker.ThrowSmoke(this.ExactPosition, this.Map, 0.8f); // Легкий дымок
 
-                    // FleckDefOf.ThermalGlow — это те самые тепловые искры пламени
                     FleckMaker.Static(this.ExactPosition, this.Map, FleckDefOf.MicroSparks, 1.0f);
                 }
             }
         }
 
+        // эффекты при попадании
         protected override void Impact(Thing hitThing, bool maskedByFlame = false) {
             if (hitThing != null) {
                 // Проверяем, является ли цель пешкой (живым существом/механоидом)
@@ -75,16 +78,13 @@ namespace lotr {
                 );
                 hitThing.TakeDamage(burnDinfo);
 
-                // Heatstroke)
+                // Heatstroke
                 if (hitPawn != null && hitPawn.RaceProps.FleshType == FleshTypeDefOf.Normal) {
-                    // Ищем, есть ли уже у цели тепловой удар
                     Hediff heatstroke = hitPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.Heatstroke);
 
                     if (heatstroke != null) {
-                        // Если есть — увеличиваем его тяжесть (например, на +20%)
                         heatstroke.Severity += 0.25f;
                     } else {
-                        // Если нет — создаем новый тепловой удар с начальной тяжестью 25%
                         hitPawn.health.AddHediff(HediffDefOf.Heatstroke);
                         Hediff newHeatstroke = hitPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.Heatstroke);
                         if (newHeatstroke != null) {
@@ -130,10 +130,11 @@ namespace lotr {
         }
     }
 
-    // огненные вороны
+    // класс для способности "огненные вороны"
     public class CompAbilityEffect_LaunchFireRavens : CompAbilityEffect {
         public new CompProperties_AbilityLaunchFireRavens Props => (CompProperties_AbilityLaunchFireRavens)props;
 
+        // создает вокруг заклинателя 3х ворон
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
             base.Apply(target, dest);
             Pawn caster = parent.pawn;
@@ -179,6 +180,7 @@ namespace lotr {
         }
     }
 
+    // Класс свойств для связи с XML
     public class CompProperties_AbilityLaunchFireRavens : CompProperties_AbilityEffect {
         public PawnKindDef ravenPawnKind;
 
@@ -187,6 +189,7 @@ namespace lotr {
         }
     }
 
+    // класс для огненных ворон - прорисовка и пара особенностей
     public class CompFireRavenController : ThingComp {
         public int lifetime = 3600;
         public Pawn casterOwner = null;
@@ -281,80 +284,21 @@ namespace lotr {
             }
         }
 
+        // сохраняет владельца вороны при сохранении игры
         public override void PostExposeData() {
             base.PostExposeData();
             Scribe_References.Look(ref casterOwner, "casterOwner");
         }
     }
 
+    // Класс свойств для связи с XML?
     public class CompProperties_FireRavenController : CompProperties {
         public CompProperties_FireRavenController() {
             compClass = typeof(CompFireRavenController);
         }
     }
 
-    /*
-    public class JobGiver_FireRavenAttack : JobGiver_AIFightEnemy {
-        protected override Thing FindAttackTarget(Pawn pawn) {
-            if (pawn.Map == null) return null;
-
-            CompFireRavenController controller = pawn.TryGetComp<CompFireRavenController>();
-            if (controller == null || controller.casterOwner == null) return null;
-
-            Pawn leader = controller.casterOwner;
-            Thing targetToAttack = null;
-
-            // Вариант А: Проверяем, кого хозяин УДАРИЛ последним (идеально для ближнего боя, работает с Бумалопами и животными)
-            if (leader.mindState != null && leader.mindState.lastAttackedTarget.Thing != null) {
-                targetToAttack = leader.mindState.lastAttackedTarget.Thing;
-            }
-            // Вариант Б: Проверяем, кто прямо сейчас бьет нашего хозяина в упор
-            else if (leader.mindState != null && leader.mindState.meleeThreat != null) {
-                targetToAttack = leader.mindState.meleeThreat;
-            }
-            // Вариант В: Проверяем, в кого хозяин ЦЕЛИТСЯ из дальнего боя (Drafted режим)
-            else if (leader.stances != null && leader.stances.curStance is Stance_Busy stanceBusy && stanceBusy.focusTarg.Thing != null) {
-                targetToAttack = stanceBusy.focusTarg.Thing;
-            }
-            // Вариант Г: Запасной ванильный флаг текущей работы (если пешка только бежит бить цель)
-            else if (leader.CurJob != null && (leader.CurJob.def == JobDefOf.AttackMelee || leader.CurJob.def == JobDefOf.AttackStatic) && leader.CurJob.targetA.Thing != null) {
-                targetToAttack = leader.CurJob.targetA.Thing;
-            }
-
-            if (targetToAttack != null && !targetToAttack.Destroyed) {
-                if (targetToAttack != leader && targetToAttack.Faction != leader.Faction) {
-                    if (targetToAttack.Position.DistanceToSquared(leader.Position) <= 225.0f) {
-                        return targetToAttack;
-                    }
-                }
-            }
-
-            Thing autoThreat = (Thing)AttackTargetFinder.BestAttackTarget(
-                pawn,
-                TargetScanFlags.NeedReachable | TargetScanFlags.NeedThreat,
-                t => t is Pawn enemy && enemy.Faction != null && enemy.Faction.HostileTo(pawn.Faction) && t.Position.DistanceToSquared(leader.Position) <= 36.0f,
-                0f, 25f, default(IntVec3), float.MaxValue, false
-            );
-
-            if (autoThreat != null) {
-                return autoThreat;
-            }
-
-            return null;
-        }
-
-        protected override Job MeleeAttackJob(Pawn pawn, Thing target) {
-            Job job = JobMaker.MakeJob(JobDefOf.AttackMelee, target);
-            job.expiryInterval = 30; 
-            return job;
-        }
-
-        protected override bool TryFindShootingPosition(Pawn pawn, out IntVec3 dest, Verb verbToUse = null) {
-            dest = pawn.Position;
-            return false;
-        }
-    }*/
-
+    // класс для ии ворон
     public class JobGiver_FireRavenAI : ThinkNode_JobGiver {
         protected override Job TryGiveJob(Pawn pawn) {
             if (pawn.Map == null) return null;
@@ -366,7 +310,6 @@ namespace lotr {
 
             Pawn leader = controller.casterOwner;
 
-            // 1. ЛОГИКА АТАКИ: Ищем ближайшего врага
             Thing target = FindAttackTarget(pawn);
 
             // Если враг близко к хозяину (радиус 15 клеток) — плавно летим его атаковать
@@ -445,7 +388,7 @@ namespace lotr {
         }
     }
 
-    // призывает меч в руках пешки
+    // класс для способности "огненный меч" - призывает в руках пешки оружие
     public class Ability_SummonWeapon : Ability_SpendSpirituality {
         public Ability_SummonWeapon() : base() { }
 
@@ -480,6 +423,27 @@ namespace lotr {
             }
 
             return true;
+        }
+    }
+
+    [HarmonyPatch(typeof(Bill_Production), "Notify_IterationCompleted")]
+    public static class Patch_Pyromancer_Creation {
+        [HarmonyPostfix]
+        public static void Postfix(Bill_Production __instance, Pawn billDoer) {
+            // Проверяем, что тот, кто выполнил работу — наш колонист
+            if (billDoer != null && billDoer.IsColonist) {
+                // Проверяем, привязан ли этот рецепт к рабочему столу (Building_WorkTable)
+                // И является ли этот стол конкретно Костром (Campfire)
+                if (__instance.billStack?.billGiver is Building_WorkTable table && table.def.defName == "Campfire") {
+                    // Достаем кастомный хедифф Пироманта
+                    var hediff = billDoer.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("Hunter7_Hediff")) as Hunter7_Hediff;
+
+                    if (hediff != null) {
+                        // Приготовление чего угодно на костре (еда, пеммикан) дает +1% к усвоению (до капа в 30%)
+                        hediff.AddActingProgress(1, 0.01f, billDoer);
+                    }
+                }
+            }
         }
     }
 }

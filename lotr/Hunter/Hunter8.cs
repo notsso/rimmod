@@ -12,6 +12,10 @@ using UnityEngine;
 namespace lotr {
     public class Hunter8_Hediff : Hunter9_Hediff {
         public override float SpiritualityFactor => 1.5f;
+
+        public Hunter8_Hediff() {
+            maxProgressPerCategory = 0.8f;
+        }
     }
 
     // абилка провокация
@@ -36,25 +40,17 @@ namespace lotr {
             ProvokePawn(targetPawn, caster);
 
             if (targetPawn.RaceProps.ToolUser || targetPawn.RaceProps.IsMechanoid) {
-                if (caster.health?.hediffSet?.hediffs != null) {
-                    foreach (var hediff in caster.health.hediffSet.hediffs) {
-                        if (hediff is Beyonder_Hediff beyonderHediff) {
-                            float severityIncrement = 0.05f;
-                            float oldSeverity = beyonderHediff.Severity;
-                            beyonderHediff.Severity += severityIncrement;
+                var hediff = caster.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("Hunter8_Hediff")) as Beyonder_Hediff;
 
-                            float diff = beyonderHediff.Severity - oldSeverity;
-                            if (diff > 0.0f) {
-                                string messageText = $"{caster.LabelShortCap} успешно спровоцировал врага! Зелье усвоено на {diff.ToStringPercent()}.";
-                                Messages.Message(messageText, caster, MessageTypeDefOf.SilentInput, historical: false);
-                            }
-                            break;
-                        }
-                    }
+                if (hediff != null) {
+                    float severityIncrement = 0.05f;
+
+                    hediff.AddActingProgress(1, severityIncrement, caster);
                 }
             }
         }
 
+        // провоцирует цель - дает ей задачу на ближний бой с провокатором на 10 секунд
         private void ProvokePawn(Pawn victim, Pawn aggressor) {
             if (victim == null || aggressor == null) return;
 

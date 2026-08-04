@@ -158,5 +158,37 @@ namespace lotr {
                 yield return cogitationButton;
             }
         }
+
+        // Универсальный метод добавления прогресса с проверкой лимита
+        public void AddActingProgress(int category, float amount, Pawn pawn) {
+            float oldProgress = 0f;
+            float diff = 0f;
+
+            if (category == 1) {
+                if (progress1 >= maxProgressPerCategory) return;
+                oldProgress = progress1;
+                progress1 = Mathf.Clamp(progress1 + amount, 0f, maxProgressPerCategory);
+                diff = progress1 - oldProgress;
+            } else if (category == 2) {
+                if (progress2 >= maxProgressPerCategory) return;
+                oldProgress = progress2;
+                progress2 = Mathf.Clamp(progress2 + amount, 0f, maxProgressPerCategory);
+                diff = progress2 - oldProgress;
+            } else if (category == 3) {
+                if (progress3 >= maxProgressPerCategory) return;
+                oldProgress = progress3;
+                progress3 = Mathf.Clamp(progress3 + amount, 0f, maxProgressPerCategory);
+                diff = progress3 - oldProgress;
+            }
+
+            this.Severity += diff;
+
+            string messageText = $"После действия, {pawn.LabelShortCap} усвоил аспект зелья на {diff.ToStringPercent()}!"; ;
+            if (diff < 0.01f) {
+                messageText = $"{pawn.LabelShortCap} чуствует, что уже усвоил этот аспект зелья";
+            }
+            Messages.Message(messageText, pawn, MessageTypeDefOf.SilentInput, historical: false);
+
+        }
     }
 }
