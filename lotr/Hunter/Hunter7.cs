@@ -20,7 +20,7 @@ namespace lotr {
     }
 
     // класс для описания снаряда способности "копье огня"
-    public class Projectile_BlazingSpear : Projectile_ExplosiveCustom {
+    public class Projectile_BlazingSpear : Projectile_Explosive {
         private int tickCounter = 0;
         private IntVec3 lastLightPosition = IntVec3.Invalid;
 
@@ -69,15 +69,6 @@ namespace lotr {
                         }
                     }
                     if (castingAbility != null) break;
-                }
-
-                if (castingAbility != null) {
-                    var config = LotrUtils.GetActiveModConfig(pawn, castingAbility);
-                    if (config != null) {
-                        // Переопределяем урон и радиус взрыва значениями из XML нашего Hediff!
-                        if (config.damageOverride.HasValue) finalDamage = config.damageOverride.Value;
-                        if (config.explosionRadiusOverride.HasValue) finalRadius = config.explosionRadiusOverride.Value;
-                    }
                 }
             }
 
@@ -588,7 +579,7 @@ namespace lotr {
     [HarmonyPatch(typeof(Pawn_EquipmentTracker), "EquipmentTrackerTick")]
     public static class Patch_SummonedFireWeapon_GlowerController {
         // Словарь для отслеживания лампочек у разных пешек (чтобы не было конфликтов, если мечи призовут сразу 3 мага)
-        private static Dictionary<Pawn, Thing> activeWeaponLights = new Dictionary<Pawn, Thing>();
+        private static Dictionary<Pawn, Thing> activeWeaponLights { get; } = new Dictionary<Pawn, Thing>();
 
         [HarmonyPostfix]
         public static void Postfix(Pawn_EquipmentTracker __instance) {

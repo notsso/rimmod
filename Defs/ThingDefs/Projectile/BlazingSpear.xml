@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <ThingDef ParentName="BaseBullet">
+    <ThingDef Name="Proj_BlazingSpear" ParentName="BaseBullet">
 
         <defName>Proj_BlazingSpear</defName>
         <label>Копье огня</label>
@@ -44,45 +44,17 @@
 
     </ThingDef>
 
-    <AbilityDef>
-    
-        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
-        <defName>Cast_BlazingSpear</defName>
+    <!-- Уровень 7 -->
+    <ThingDef ParentName="Proj_BlazingSpear">
+        <defName>Proj_BlazingSpear_7S</defName>
         <label>Копье огня</label>
-        <description>Создание и бросок сверхмощного, сжатого снаряда из пламени, который пробивает броню и взрывается при попадании.</description>
-        <iconPath>UI/Icons/Abilities/Hunter/BlazingSpear</iconPath>
-        <cooldownTicksRange>1200</cooldownTicksRange>
-        <hostile>true</hostile>
-
-        <modExtensions>
-            <li Class="lotr.SpiritualityCostExtension">
-                <cost>100.0</cost>
-            </li>
-        </modExtensions>
-
-        <comps>
-            <li Class="CompProperties_AbilityLaunchProjectile">
-                <projectileDef>Proj_BlazingSpear</projectileDef>
-            </li>
-        </comps>
-
-        <verbProperties>
-
-            <verbClass>lotr.Verb_CastAbility_Custom</verbClass>
-            <range>40</range>
-            <warmupTime>2.5</warmupTime>
-            <hasStandardCommand>true</hasStandardCommand>
-
-            <targetParams>
-
-                <canTargetLocations>true</canTargetLocations>
-                <canTargetPawns>true</canTargetPawns>
-                <canTargetBuildings>true</canTargetBuildings>
-
-            </targetParams>
-
-        </verbProperties>
-
-    </AbilityDef>
+        <thingClass>lotr.Projectile_BlazingSpear</thingClass>
+        <projectile>
+            <speed>120</speed>
+            <damageAmountBase>40</damageAmountBase>
+            <armorPenetrationBase>3.00</armorPenetrationBase>
+            <explosionRadius>1.6</explosionRadius>
+        </projectile>
+    </ThingDef>
 
 </Defs>

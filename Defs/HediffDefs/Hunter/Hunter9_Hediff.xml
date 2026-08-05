@@ -95,24 +95,11 @@
             <li Class="HediffCompProperties_SeverityPerDay">
                 <severityPerDay>0.02</severityPerDay>
             </li>
-
-            <li Class="lotr.HediffCompProperties_AbilityModifier">
-                <modifiers>
-                    <li>
-                        <abilityDef>Cast_Fireball</abilityDef>
-                        <rangeOverride>10</rangeOverride>
-                        <damageOverride>10</damageOverride>
-                        <explosionRadiusOverride>1</explosionRadiusOverride>
-                        <speedOverride>50</speedOverride>
-                        <warmupOverride>1.5</warmupOverride>
-                    </li>
-                </modifiers>
-            </li>
         </comps>
         
 		<abilities>
 
-			<li>Cast_Fireball</li>
+			<li>Cast_Fireball_9S</li>
 
 		</abilities>
 

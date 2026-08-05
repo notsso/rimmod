@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    
+    <AbilityDef Name="Cast_Fireball">
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        <defName>Cast_Fireball</defName>
+        <label>огненный шар</label>
+        <description>кусок огня</description>
+        <iconPath>UI/Icons/Abilities/Hunter/Fireball</iconPath>
+        <cooldownTicksRange>60</cooldownTicksRange>
+        <hostile>true</hostile>
+        <modExtensions>
+            <li Class="lotr.SpiritualityCostExtension">
+                <cost>15.0</cost>
+            </li>
+        </modExtensions>
+        
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>25</range>
+            <warmupTime>1.5</warmupTime>
+            <hasStandardCommand>true</hasStandardCommand>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+            </targetParams>
+        </verbProperties>
+    </AbilityDef>
+
+    <!-- Уровень 9 -->
+    <AbilityDef ParentName="Cast_Fireball">
+        <defName>Cast_Fireball_9S</defName>
+        <label>огненный шар</label>
+        <comps>
+            <li Class="CompProperties_AbilityLaunchProjectile">
+                <projectileDef>Proj_Fireball_9S</projectileDef>
+            </li>
+        </comps>
+        <verbProperties>
+            <range>20</range>
+            <warmupTime>1.5</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
+    <!-- Уровень 8 -->
+    <AbilityDef ParentName="Cast_Fireball">
+        <defName>Cast_Fireball_8S</defName>
+        <label>огненный шар</label>
+        <comps>
+            <li Class="CompProperties_AbilityLaunchProjectile">
+                <projectileDef>Proj_Fireball_8S</projectileDef>
+            </li>
+        </comps>
+        <verbProperties>
+            <range>30</range>
+            <warmupTime>1.0</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
+    <!-- Уровень 7 -->
+    <AbilityDef ParentName="Cast_Fireball">
+        <defName>Cast_Fireball_7S</defName>
+        <label>огненный шар</label>
+        <comps>
+            <li Class="CompProperties_AbilityLaunchProjectile">
+                <projectileDef>Proj_Fireball_7S</projectileDef>
+            </li>
+        </comps>
+        <verbProperties>
+            <range>40</range>
+            <warmupTime>0.5</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+    
+</Defs>

@@ -126,35 +126,13 @@
             <li Class="HediffCompProperties_SeverityPerDay">
                 <severityPerDay>0.04</severityPerDay>
             </li>
-
-            <li Class="lotr.HediffCompProperties_AbilityModifier">
-                <modifiers>
-                    <li>
-                        <abilityDef>Cast_Fireball</abilityDef>
-                        <rangeOverride>30</rangeOverride>
-                        <damageOverride>30</damageOverride>
-                        <explosionRadiusOverride>5</explosionRadiusOverride>
-                        <speedOverride>150</speedOverride>
-                        <warmupOverride>0.5</warmupOverride>
-                    </li>
-
-                    <li>
-                        <abilityDef>Cast_BlazingSpear</abilityDef>
-                        <rangeOverride>55</rangeOverride>
-                        <warmupOverride>1.2</warmupOverride>
-                        <speedOverride>200</speedOverride>
-                        <damageOverride>80</damageOverride>
-                        <explosionRadiusOverride>4.5</explosionRadiusOverride>
-                    </li>
-                </modifiers>
-            </li>
         </comps>
 
         <abilities>
 
-			<li>Cast_Fireball</li>
+			<li>Cast_Fireball_7S</li>
             <li>Provoking</li>
-            <li>Cast_BlazingSpear</li>
+            <li>Cast_BlazingSpear_7S</li>
             <li>Cast_FireRavens</li>
             <li>Cast_FireArmor</li>
             <li>Cast_BlazingSword</li>

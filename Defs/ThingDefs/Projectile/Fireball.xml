@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef Name="Proj_Fireball" ParentName="BaseBullet">
+        <defName>Proj_Fireball</defName>
+        <label>огненный шар</label>
+        <thingClass>lotr.Projectile_Fireball</thingClass>
+        <graphicData>
+            <texPath>Projectiles/Fireball_projectile</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <speed>50</speed>
+            <damageAmountBase>10</damageAmountBase>
+            <explosionRadius>1.0</explosionRadius>
+            <damageDef>Flame</damageDef>
+            <ai_IsIncendiary>true</ai_IsIncendiary>
+        </projectile>
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>4</glowRadius>
+                <glowColor>(255, 130, 30, 0)</glowColor>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <!-- Уровень 9 -->
+    <ThingDef ParentName="Proj_Fireball">
+        <defName>Proj_Fireball_9S</defName>
+        <label>огненный шар</label>
+        <thingClass>lotr.Projectile_Fireball</thingClass>
+        <projectile>
+            <speed>50</speed>
+            <damageAmountBase>10</damageAmountBase>
+            <explosionRadius>1.0</explosionRadius>
+        </projectile>
+    </ThingDef>
+
+    <!-- Уровень 8 -->
+    <ThingDef ParentName="Proj_Fireball">
+        <defName>Proj_Fireball_8S</defName>
+        <label>огненный шар</label>
+        <thingClass>lotr.Projectile_Fireball</thingClass>
+        <projectile>
+            <speed>100</speed>
+            <damageAmountBase>20</damageAmountBase>
+            <explosionRadius>2.0</explosionRadius>
+        </projectile>
+    </ThingDef>
+
+    <!-- Уровень 7 -->
+    <ThingDef ParentName="Proj_Fireball">
+        <defName>Proj_Fireball_7S</defName>
+        <label>огненный шар</label>
+        <thingClass>lotr.Projectile_Fireball</thingClass>
+        <projectile>
+            <speed>150</speed>
+            <damageAmountBase>30</damageAmountBase>
+            <explosionRadius>3.0</explosionRadius>
+        </projectile>
+    </ThingDef>
+
+</Defs>

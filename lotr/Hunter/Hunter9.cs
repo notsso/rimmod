@@ -20,7 +20,7 @@ namespace lotr {
         }
     }
 
-    public class Projectile_Fireball : Projectile_ExplosiveCustom {
+    public class Projectile_Fireball : Projectile_Explosive {
         // Переменная для отслеживания последней клетки, где мы обновили свет
         private IntVec3 lastLightPosition = IntVec3.Invalid;
 
