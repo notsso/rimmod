@@ -86,23 +86,15 @@ namespace lotr {
 
         // Общий метод проверки рассудка
         protected virtual void CheckSanity() {
-            // проверяем потерю контроля
             if (this.pawn == null || this.pawn.health == null) return;
 
-            Hediff sanityLoss = this.pawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("lotr_SanityLoss"));
-
-            /* потерю рассудка мы получаем от неправильного 'действия' (здесь мы ее не задаем)
-            if (sanityLoss == null) {
-                // HediffDef sanityDef = DefDatabase<HediffDef>.GetNamed("lotr_SanityLoss");
-                // HealthUtility.AdjustSeverity(this.pawn, sanityDef, 0.01f);
-            }*/
+            // Hediff sanityLoss = this.pawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("lotr_SanityLoss"));
+            Hediff sanityLoss = this.pawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.lotr_SanityLoss);
 
             if (sanityLoss == null) return;
 
-            // пассивный реген безумия
             sanityLoss.Severity -= 0.001f;
 
-            // Если безумие пешки достигло критической отметки она может умереть
             if (sanityLoss.Severity >= 0.90f && Rand.Chance(0.1f)) {
                 this.pawn.Kill(null, sanityLoss);
 
@@ -145,13 +137,12 @@ namespace lotr {
 
                     action = delegate {
                         // Безопасно создаем задачу когитации
-                        JobDef jobDef = DefDatabase<JobDef>.GetNamed("lotr_CogitationJob", false);
-                        if (jobDef != null) {
-                            Job cogitationJob = JobMaker.MakeJob(jobDef);
+                        // JobDef jobDef = DefDatabase<JobDef>.GetNamed("lotr_CogitationJob", false);
+                        JobDef jobDef = LotrDefOf.lotr_CogitationJob;
+                        Job cogitationJob = JobMaker.MakeJob(jobDef);
 
-                            // Заставляем пешку немедленно бросить текущие дела (Misc) и начать когитацию
-                            pawn.jobs.TryTakeOrderedJob(cogitationJob, JobTag.Misc);
-                        }
+                        // Заставляем пешку немедленно бросить текущие дела (Misc) и начать когитацию
+                        pawn.jobs.TryTakeOrderedJob(cogitationJob, JobTag.Misc);
                     }
                 };
 

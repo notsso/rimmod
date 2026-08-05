@@ -12,14 +12,6 @@ using RimWorld;
 using UnityEngine;
 
 namespace lotr {
-    [StaticConstructorOnStartup]
-    public static class ModInitializer {
-        static ModInitializer() {
-            var harmony = new Harmony("nar.lotr");
-            harmony.PatchAll();
-        }
-    }
-
     // главный класс, который определяет нашу кастомную 'потребность'
     public class Need_Spirituality : Need {
         // Настройка скорости регенерации духовности (в час)
@@ -115,7 +107,7 @@ namespace lotr {
             if (result) {
                 Pawn caster = this.pawn;
                 if (caster?.health != null) {
-                    Need_Spirituality spirituality = this.pawn.needs?.TryGetNeed<Need_Spirituality>();
+                    Need_Spirituality spirituality = this.pawn.needs.TryGetNeed(LotrDefOf.lotr_SpiritualityNeed) as Need_Spirituality; ;
 
                     GiveHediff();
 
@@ -139,7 +131,7 @@ namespace lotr {
                 return true;
             }
 
-            Need_Spirituality spirituality = this.pawn.needs?.TryGetNeed<Need_Spirituality>();
+            Need_Spirituality spirituality = this.pawn.needs.TryGetNeed(LotrDefOf.lotr_SpiritualityNeed) as Need_Spirituality;
 
             if (spirituality == null) {
                 reason = "Нет духовной энергии.";
@@ -307,7 +299,7 @@ namespace lotr {
                         sanityDamage = 0.40f;
                     }
 
-                    HediffDef sanityLossDef = HediffDef.Named("lotr_SanityLoss");
+                    HediffDef sanityLossDef = LotrDefOf.lotr_SanityLoss;
                     Hediff sanityLoss = ___pawn.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
 
                     if (sanityLoss != null) {

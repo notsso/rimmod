@@ -35,6 +35,13 @@
             
         </projectile>
 
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>4</glowRadius>
+                <glowColor>(255, 130, 30, 0)</glowColor>
+            </li>
+        </comps>
+
     </ThingDef>
 
     <AbilityDef>
@@ -61,7 +68,7 @@
 
         <verbProperties>
 
-            <verbClass>Verb_CastAbility</verbClass>
+            <verbClass>lotr.Verb_CastAbility_Custom</verbClass>
             <range>40</range>
             <warmupTime>2.5</warmupTime>
             <hasStandardCommand>true</hasStandardCommand>

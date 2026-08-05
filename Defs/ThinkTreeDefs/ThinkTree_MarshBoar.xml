@@ -3,9 +3,7 @@
 
   <ThinkTreeDef>
     <defName>lotr_MarshBoarTree</defName>
-    <!--
-    <insertTag>Animal_PreMain</insertTag>
-    -->
+    
     <thinkRoot Class="ThinkNode_Priority">
       <subNodes>
         

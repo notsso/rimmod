@@ -20,41 +20,76 @@ namespace lotr {
     }
 
     // класс для описания снаряда способности "копье огня"
-    public class Projectile_BlazingSpear : Projectile {
-        // Переменная-счетчик для спавна эффектов
+    public class Projectile_BlazingSpear : Projectile_ExplosiveCustom {
         private int tickCounter = 0;
+        private IntVec3 lastLightPosition = IntVec3.Invalid;
 
         protected override void Tick() {
+            // Сначала вызываем базовый тик родителя, чтобы копьё летело и обсчитывало кастомную скорость
             base.Tick();
 
-            // Проверяем, что снаряд на карте и летит
             if (this.Spawned && !this.Destroyed) {
                 tickCounter++;
 
-                // Спавним эффекты
+                // 1. ВАШИ ЭФФЕКТЫ: Спавним дым и искры каждые 2 тика
                 if (tickCounter % 2 == 0) {
                     FleckMaker.ThrowSmoke(this.ExactPosition, this.Map, 0.8f);
-
                     FleckMaker.Static(this.ExactPosition, this.Map, FleckDefOf.MicroSparks, 1.0f);
+                }
+
+                // 2. СВЕЧЕНИЕ: Динамическое обновление источника света при смене клетки
+                if (this.Position != lastLightPosition) {
+                    lastLightPosition = this.Position;
+                    CompGlower glower = this.GetComp<CompGlower>();
+                    if (glower != null) {
+                        this.Map.glowGrid.DeRegisterGlower(glower);
+                        this.Map.glowGrid.RegisterGlower(glower);
+                    }
                 }
             }
         }
 
-        // эффекты при попадании
-        protected override void Impact(Thing hitThing, bool maskedByFlame = false) {
+        // Изменено: сигнатура maskedByFlame заменена на blockedByShield, чтобы точно соответствовать вашей сборке игры
+        protected override void Impact(Thing hitThing, bool blockedByShield = false) {
+            // Получаем урон, пробитие и радиус с учетом кастомных модификаторов из Hediff (Hunter8, Hunter7 и т.д.)
+            int finalDamage = this.def.projectile.GetDamageAmount(this, null);
+            float finalArmorPenetration = this.def.projectile.GetArmorPenetration(this, null);
+            float finalRadius = this.def.projectile.explosionRadius;
+
+            if (this.launcher is Pawn pawn) {
+                // Наша проверенная система поиска активного конфига способности
+                AbilityDef castingAbility = null;
+                var allAbilities = DefDatabase<AbilityDef>.AllDefsListForReading;
+                for (int i = 0; i < allAbilities.Count; i++) {
+                    if (allAbilities[i].comps == null) continue;
+                    for (int j = 0; j < allAbilities[i].comps.Count; j++) {
+                        if (allAbilities[i].comps[j] is CompProperties_AbilityLaunchProjectile prop && prop.projectileDef?.defName == this.def?.defName) {
+                            castingAbility = allAbilities[i];
+                            break;
+                        }
+                    }
+                    if (castingAbility != null) break;
+                }
+
+                if (castingAbility != null) {
+                    var config = LotrUtils.GetActiveModConfig(pawn, castingAbility);
+                    if (config != null) {
+                        // Переопределяем урон и радиус взрыва значениями из XML нашего Hediff!
+                        if (config.damageOverride.HasValue) finalDamage = config.damageOverride.Value;
+                        if (config.explosionRadiusOverride.HasValue) finalRadius = config.explosionRadiusOverride.Value;
+                    }
+                }
+            }
+
+            // Логика прямого попадания в существо/объект
             if (hitThing != null) {
-                // Проверяем, является ли цель пешкой (живым существом/механоидом)
                 Pawn hitPawn = hitThing as Pawn;
 
-                // Получаем базовые параметры урона и пробития из XML
-                float baseDamage = (float)this.def.projectile.GetDamageAmount(this.launcher);
-                float baseArmorPenetration = this.def.projectile.GetArmorPenetration(this.launcher);
-
-                // Физический порез/царапина (Cut) 
+                // ВАШЕ ПРЯМОЕ ПОПАДАНИЕ 1: Физический порез (Cut). Использует наш НАСТРОЕННЫЙ урон finalDamage!
                 DamageInfo cutDinfo = new DamageInfo(
-                    DamageDefOf.Cut,                         // Тип урона: Порез (как от стрелы/меча)
-                    baseDamage,                              // Урон берется из XML снаряда
-                    baseArmorPenetration,                    // Пробитие берется из XML снаряда
+                    DamageDefOf.Cut,
+                    (float)finalDamage,
+                    finalArmorPenetration,
                     this.ExactRotation.eulerAngles.y,
                     this.launcher,
                     null,
@@ -64,11 +99,11 @@ namespace lotr {
                 );
                 hitThing.TakeDamage(cutDinfo);
 
-                // Термический ожог (Burn)
+                // Термический ожог (Burn) — 50% от нашего настроенного урона
                 DamageInfo burnDinfo = new DamageInfo(
-                    DamageDefOf.Burn,                        // Тип урона: Ожог
-                    baseDamage * 0.5f,                       // Можно сделать ожог чуть слабее (например, 50% от базы)
-                    baseArmorPenetration,
+                    DamageDefOf.Burn,
+                    (float)finalDamage * 0.5f,
+                    finalArmorPenetration,
                     this.ExactRotation.eulerAngles.y,
                     this.launcher,
                     null,
@@ -93,50 +128,48 @@ namespace lotr {
                     }
                 }
 
-                // как только снаряд попал в кого то, мы типа действуем как пироманьяк
-                Pawn pawn = this.launcher as Pawn;
-                if (pawn != null) {
-                    var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("Hunter7_Hediff")) as Hunter7_Hediff;
-
-                    if (hediff != null) {
-                        hediff.AddActingProgress(2, 0.02f, pawn);
+                // Acting Progress
+                if (this.launcher is Pawn launcherPawn) {
+                    var hunter7Hediff = launcherPawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter7_Hediff) as Hunter7_Hediff;
+                    if (hunter7Hediff != null) {
+                        hunter7Hediff.AddActingProgress(2, 0.02f, launcherPawn);
                     }
                 }
             }
 
-            // Взрыв по площади
-            if (this.def.projectile.explosionRadius > 0f) {
-                int explosionDamage = this.def.projectile.GetDamageAmount(this.launcher);
-                float explosionArmorPenetration = this.def.projectile.GetArmorPenetration(this.launcher);
-
+            // ВАШ ВЗРЫВ ПО ПЛОЩАДИ: Теперь радиус взрыва и урон берутся из кастомного XML Hediff'а!
+            if (finalRadius > 0f) {
                 GenExplosion.DoExplosion(
-                    this.Position,
-                    this.Map,
-                    this.def.projectile.explosionRadius,
-                    this.def.projectile.damageDef, // Взрыв оставим с типом урона из XML (Burn)
-                    this.launcher,
-                    explosionDamage,
-                    explosionArmorPenetration,
-                    this.def.projectile.soundExplode,
-                    this.equipmentDef,
-                    this.def,
-                    this.intendedTarget.Thing,
-                    this.def.projectile.postExplosionSpawnThingDef,
-                    this.def.projectile.postExplosionSpawnChance,
-                    this.def.projectile.postExplosionSpawnThingCount,
-                    null, // postExplosionGasType
-                    null, // postExplosionGasRadiusOverride
-                    255,  // postExplosionGasAmount
-                    this.def.projectile.applyDamageToExplosionCellsNeighbors,
-                    this.def.projectile.preExplosionSpawnThingDef,
-                    this.def.projectile.preExplosionSpawnChance,
-                    this.def.projectile.preExplosionSpawnThingCount,
-                    this.def.projectile.explosionChanceToStartFire,
-                    this.def.projectile.explosionDamageFalloff
+                    center: this.Position,
+                    map: this.Map,
+                    radius: finalRadius,                                           // Измененный радиус
+                    damType: this.def.projectile.damageDef,
+                    instigator: this.launcher,
+                    damAmount: finalDamage,                                         // Измененный урон взрыва
+                    armorPenetration: finalArmorPenetration,
+                    explosionSound: this.def.projectile.soundExplode,
+                    weapon: this.equipmentDef,
+                    projectile: this.def,
+                    intendedTarget: this.intendedTarget.Thing,
+                    postExplosionSpawnThingDef: this.def.projectile.postExplosionSpawnThingDef,
+                    postExplosionSpawnChance: this.def.projectile.postExplosionSpawnChance,
+                    postExplosionSpawnThingCount: this.def.projectile.postExplosionSpawnThingCount,
+                    postExplosionGasType: null,
+                    postExplosionGasRadiusOverride: null,
+                    postExplosionGasAmount: 255,
+                    applyDamageToExplosionCellsNeighbors: this.def.projectile.applyDamageToExplosionCellsNeighbors,
+                    preExplosionSpawnThingDef: this.def.projectile.preExplosionSpawnThingDef,
+                    preExplosionSpawnChance: this.def.projectile.preExplosionSpawnChance,
+                    preExplosionSpawnThingCount: this.def.projectile.preExplosionSpawnThingCount,
+                    chanceToStartFire: this.def.projectile.explosionChanceToStartFire,
+                    damageFalloff: this.def.projectile.explosionDamageFalloff
                 );
             }
 
-            base.Impact(hitThing, maskedByFlame);
+            // Безопасно уничтожаем копьё, предотвращая вызов ванильного дублирующего взрыва
+            if (!this.Destroyed) {
+                this.Destroy(DestroyMode.Vanish);
+            }
         }
     }
 
@@ -154,7 +187,7 @@ namespace lotr {
 
             int existingRavensCount = 0;
             foreach (Pawn p in map.mapPawns.AllPawnsSpawned) {
-                if (p.def == DefDatabase<ThingDef>.GetNamed("lotr_FireRavenRace")) {
+                if (p.def == LotrDefOf.lotr_FireRavenRace) {
                     CompFireRavenController controller = p.TryGetComp<CompFireRavenController>();
                     if (controller != null && controller.casterOwner == caster) {
                         existingRavensCount++;
@@ -423,7 +456,7 @@ namespace lotr {
 
             Pawn caster = this.pawn;
             if (caster != null && caster.equipment != null) {
-                ThingDef swordDef = ThingDef.Named("Melee_BlazingSword");
+                ThingDef swordDef = LotrDefOf.Melee_BlazingSword;
 
                 if (swordDef != null) {
                     if (caster.equipment.Primary != null) {
@@ -482,7 +515,7 @@ namespace lotr {
                 // И является ли этот стол конкретно Костром (Campfire)
                 if (__instance.billStack?.billGiver is Building_WorkTable table && table.def.defName == "Campfire") {
                     // Достаем кастомный хедифф Пироманта
-                    var hediff = billDoer.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("Hunter7_Hediff")) as Hunter7_Hediff;
+                    var hediff = billDoer.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter7_Hediff) as Hunter7_Hediff;
 
                     if (hediff != null) {
                         // Приготовление чего угодно на костре (еда, пеммикан) дает +1% к усвоению (до капа в 30%)
@@ -534,7 +567,7 @@ namespace lotr {
             if (this.pawn == null || !this.pawn.Spawned || this.pawn.Map == null) return;
             if (lightSource != null && lightSource.Spawned) return;
 
-            ThingDef lightDef = ThingDef.Named("lotr_FireLightSpawner");
+            ThingDef lightDef = LotrDefOf.lotr_FireLightSpawner;
             if (lightDef != null) {
                 lightSource = GenSpawn.Spawn(lightDef, this.pawn.Position, this.pawn.Map) as ThingWithComps;
             }
@@ -584,14 +617,14 @@ namespace lotr {
                 // 2. УПРАВЛЕНИЕ СВЕТОМ МЕЧА
                 if (!activeWeaponLights.TryGetValue(pawn, out Thing light) || light == null || !light.Spawned) {
                     // Спавним свет, если его еще нет
-                    ThingDef lightDef = ThingDef.Named("lotr_FireLightSpawner");
+                    ThingDef lightDef = LotrDefOf.lotr_FireLightSpawner;
                     if (lightDef != null) {
                         activeWeaponLights[pawn] = GenSpawn.Spawn(lightDef, pawn.Position, pawn.Map);
                     }
                 } else if (light.Position != pawn.Position) {
                     // Если пешка сделала шаг — пересоздаем свет в новой точке для обновления графики Unity
                     light.Destroy(DestroyMode.Vanish);
-                    ThingDef lightDef = ThingDef.Named("lotr_FireLightSpawner");
+                    ThingDef lightDef = LotrDefOf.lotr_FireLightSpawner;
                     activeWeaponLights[pawn] = GenSpawn.Spawn(lightDef, pawn.Position, pawn.Map);
                 }
             } else {
@@ -611,9 +644,9 @@ namespace lotr {
         public static void Postfix(Thing __instance, DamageInfo dinfo) {
             if (__instance is Pawn pawn && pawn.IsColonist && !pawn.Destroyed) {
                 if (dinfo.Def == DamageDefOf.Flame || dinfo.Def == DamageDefOf.Burn) {
-                    var pyromancerHediff = pawn.health?.hediffSet?.GetFirstHediffOfDef(HediffDef.Named("Hunter7_Hediff"));
+                    var hediff = pawn.health?.hediffSet?.GetFirstHediffOfDef(LotrDefOf.Hunter7_Hediff) as Hunter7_Hediff;
 
-                    if (pyromancerHediff != null) {
+                    if (hediff != null) {
                         float sanityPenalty = 0.05f;
 
                         HediffDef sanityLossDef = HediffDef.Named("lotr_SanityLoss");

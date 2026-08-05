@@ -11,6 +11,60 @@ using RimWorld;
 using UnityEngine;
 
 namespace lotr {
+    [StaticConstructorOnStartup]
+    public static class ModInitializer {
+        static ModInitializer() {
+            var harmony = new Harmony("nar.lotr");
+            harmony.PatchAll();
+        }
+    }
+
+    // все используемые def'ы
+    [DefOf]
+    public static class LotrDefOf {
+        public static ThingDef Proj_BlazingSpear;
+        public static ThingDef Proj_Fireball;
+        public static ThingDef lotr_FireRavenRace;
+        public static ThingDef lotr_MarshBoarRace;
+        public static ThingDef lotr_MarshBoarCrystallizedSpleen;
+        public static ThingDef lotr_FireLightSpawner;
+        public static ThingDef Hunter9_Potion;
+        public static ThingDef Hunter8_Potion;
+        public static ThingDef Hunter7_Potion;
+        public static ThingDef Melee_BlazingSword;
+
+        public static AbilityDef Cast_BlazingSpear;
+        public static AbilityDef Cast_BlazingSword;
+        public static AbilityDef Cast_FireArmor;
+        public static AbilityDef Cast_Fireball;
+        public static AbilityDef Cast_FireRavens;
+        public static AbilityDef Provoking;
+
+        public static HediffDef lotr_SanityLoss;
+        public static HediffDef Hunter9_Hediff;
+        public static HediffDef Hunter8_Hediff;
+        public static HediffDef Hunter7_Hediff;
+        public static HediffDef Hediff_FireArmor;
+
+        public static JobDef lotr_CogitationJob;
+
+        public static NeedDef lotr_SpiritualityNeed;
+
+        public static PawnKindDef lotr_FireRavenKind;
+        public static PawnKindDef lotr_MarshBoar;
+
+        public static RecipeDef Hunter9_PotionRecipe;
+        public static RecipeDef Hunter8_PotionRecipe;
+        public static RecipeDef Hunter7_PotionRecipe;
+
+        public static ThingCategoryDef BeyonderPotions;
+
+        public static ThinkTreeDef lotr_FireRaven_ThinkTree;
+        public static ThinkTreeDef lotr_MarshBoarTree;
+
+        public static ThoughtDef lotr_SanityLossThought;
+    }
+
     // класс, для зелий потусторонних, которые продвигают
     public class IngestionOutcomeDoer_SequenceAdvance : IngestionOutcomeDoer {
         // Поля будут настраиваться через XML

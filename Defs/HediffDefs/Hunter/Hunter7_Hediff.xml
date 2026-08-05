@@ -137,6 +137,15 @@
                         <speedOverride>150</speedOverride>
                         <warmupOverride>0.5</warmupOverride>
                     </li>
+
+                    <li>
+                        <abilityDef>Cast_BlazingSpear</abilityDef>
+                        <rangeOverride>55</rangeOverride>
+                        <warmupOverride>1.2</warmupOverride>
+                        <speedOverride>200</speedOverride>
+                        <damageOverride>80</damageOverride>
+                        <explosionRadiusOverride>4.5</explosionRadiusOverride>
+                    </li>
                 </modifiers>
             </li>
         </comps>

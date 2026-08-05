@@ -73,7 +73,7 @@ namespace lotr {
         [HarmonyPostfix]
         public static void Postfix(Pawn_JobTracker __instance, JobCondition condition, bool startNewJob, bool canReturnToPool, ref float __state, Pawn ___pawn) {
             if (__state > 0.01f && ___pawn != null && ___pawn.IsColonist) {
-                var hediff = ___pawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("Hunter9_Hediff")) as Beyonder_Hediff;
+                var hediff = ___pawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter9_Hediff) as Hunter9_Hediff;
 
                 if (hediff != null) {
                     float victimBodySize = __state;
@@ -97,7 +97,7 @@ namespace lotr {
                                  (__instance.CurJob != null && (__instance.CurJob.def == JobDefOf.Flee || __instance.CurJob.def == JobDefOf.FleeAndCower));
 
                 if (isFleeing) {
-                    var hediff = __instance.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("Hunter9_Hediff")) as Hunter9_Hediff;
+                    var hediff = __instance.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter9_Hediff) as Hunter9_Hediff;
 
                     if (hediff == null) return;
 

@@ -44,7 +44,7 @@ namespace lotr {
                 ProvokePawn(targetPawn, caster);
 
                 if (targetPawn.RaceProps.ToolUser || targetPawn.RaceProps.IsMechanoid) {
-                    var hediff = caster.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("Hunter8_Hediff")) as Hunter8_Hediff;
+                    var hediff = caster.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter8_Hediff) as Hunter8_Hediff;
 
                     if (hediff != null) {
                         float severityIncrement = 0.05f;
@@ -110,7 +110,7 @@ namespace lotr {
 
             if (pawn != null && pawn.IsColonist && newThought != null) {
                 if (newThought.def.defName == "Insulted" || newThought.def.defName == "InsultedMood") {
-                    var hediff = pawn.health?.hediffSet?.GetFirstHediffOfDef(HediffDef.Named("Hunter8_Hediff")) as Hunter8_Hediff;
+                    var hediff = pawn.health?.hediffSet?.GetFirstHediffOfDef(LotrDefOf.Hunter8_Hediff) as Hunter8_Hediff;
 
                     if (hediff != null) {
                         float sanityPenalty = 0.05f;

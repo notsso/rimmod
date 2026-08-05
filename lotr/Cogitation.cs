@@ -37,17 +37,16 @@ namespace lotr {
                 if (p == null || p.Destroyed || !p.Spawned) return;
 
                 // 1. Медленно снижаем Искажение Разума (Sanity Loss)
-                HediffDef sanityDef = DefDatabase<HediffDef>.GetNamed("lotr_SanityLoss", false);
-                if (sanityDef != null) {
-                    Hediff sanityHediff = p.health.hediffSet.GetFirstHediffOfDef(sanityDef);
-                    if (sanityHediff != null) {
-                        // Уменьшаем тяжесть. За 2000 тиков убавит примерно 0.1f (10% шкалы)
-                        sanityHediff.Severity -= 0.00005f;
-                    }
+                // HediffDef sanityDef = DefDatabase<HediffDef>.GetNamed("lotr_SanityLoss", false);
+                HediffDef sanityDef = LotrDefOf.lotr_SanityLoss;
+                Hediff sanityHediff = p.health.hediffSet.GetFirstHediffOfDef(sanityDef);
+                if (sanityHediff != null) {
+                    sanityHediff.Severity -= 0.00005f;
                 }
 
                 // 2. Медленно восстанавливаем Духовность (Spirituality Need)
-                NeedDef spiritualityDef = DefDatabase<NeedDef>.GetNamed("lotr_SpiritualityNeed", false);
+                // NeedDef spiritualityDef = DefDatabase<NeedDef>.GetNamed("lotr_SpiritualityNeed", false);
+                NeedDef spiritualityDef = LotrDefOf.lotr_SpiritualityNeed;
                 if (spiritualityDef != null) {
                     Need spiritualityNeed = p.needs?.TryGetNeed(spiritualityDef);
                     if (spiritualityNeed != null) {
