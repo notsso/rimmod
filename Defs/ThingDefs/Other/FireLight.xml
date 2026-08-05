@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef>
+    <defName>lotr_FireLightSpawner</defName>
+    <label>мистическое свечение</label>
+    <category>Ethereal</category> <!-- Тип Ethereal делает объект абсолютно неосязаемым и невидимым -->
+    <thingClass>ThingWithComps</thingClass>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>false</useHitPoints>
+    <drawOffscreen>true</drawOffscreen>
+    
+    <graphicData>
+      <texPath>Blank</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>4.5</glowRadius> <!-- Радиус света вокруг пешки -->
+        <glowColor>(255, 120, 30, 0)</glowColor> <!-- Теплый огненный свет -->
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

@@ -1,76 +1,81 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <ThingDef ParentName="BasePawn">
-    <defName>lotr_FireRavenRace</defName>
-    <label>огненная ворона</label>
-    <description>Призванное создание из чистого духовного пламени. Ищет плоть, чтобы сжечь её.</description>
+    <ThingDef ParentName="BasePawn">
+        <defName>lotr_FireRavenRace</defName>
+        <label>огненная ворона</label>
+        <description>Призванное создание из чистого духовного пламени. Ищет плоть, чтобы сжечь её.</description>
 
-    <statBases>
-      <MoveSpeed>7.5</MoveSpeed> <!-- Очень быстрая, так как она летит -->
-      <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
-      <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
-      <ArmorRating_Heat>2.00</ArmorRating_Heat> <!-- Абсолютный иммунитет к огню -->
-      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
-      <ComfyTemperatureMax>250</ComfyTemperatureMax>
-      <MarketValue>0</MarketValue>
-    </statBases>
+        <statBases>
+            <MoveSpeed>7.5</MoveSpeed> <!-- Очень быстрая, так как она летит -->
+            <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
+            <ArmorRating_Heat>2.00</ArmorRating_Heat> <!-- Абсолютный иммунитет к огню -->
+            <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+            <ComfyTemperatureMax>250</ComfyTemperatureMax>
+            <MarketValue>0</MarketValue>
+        </statBases>
 
-    <tools>
-      <li>
-        <label>пламенный клюв</label>
-        <capacities>
-          <li>Bite</li>
-        </capacities>
-        <power>8</power>
-        <cooldownTime>1.2</cooldownTime>
-        <linkedBodyPartsGroup>Beak</linkedBodyPartsGroup>
-      </li>
-    </tools>
+        <tools>
+            <li>
+                <label>пламенный клюв</label>
+                <capacities>
+                <li>Bite</li>
+                </capacities>
+                <power>8</power>
+                <cooldownTime>1.2</cooldownTime>
+                <linkedBodyPartsGroup>Beak</linkedBodyPartsGroup>
+            </li>
+        </tools>
 
-    <race>
-      <renderTree>Misc</renderTree>
-      <body>Bird</body>
-      <baseBodySize>0.3</baseBodySize>
-      <baseHealthScale>0.5</baseHealthScale> <!-- Хрупкая, балансируется взрывом -->
-      <fleshType>Normal</fleshType> <!-- Для кастомизации можно сделать свой тип плоти без крови -->
-      <needsRest>false</needsRest>
-      <hasGenders>false</hasGenders>
-      <foodType>None</foodType>
-      <lifeExpectancy>1</lifeExpectancy>
-      <thinkTreeMain>lotr_FireRaven_ThinkTree</thinkTreeMain>
+        <race>
+            <renderTree>Misc</renderTree>
+            <body>Bird</body>
+            <baseBodySize>0.3</baseBodySize>
+            <baseHealthScale>0.5</baseHealthScale> <!-- Хрупкая, балансируется взрывом -->
+            <fleshType>Normal</fleshType> <!-- Для кастомизации можно сделать свой тип плоти без крови -->
+            <needsRest>false</needsRest>
+            <hasGenders>false</hasGenders>
+            <foodType>None</foodType>
+            <lifeExpectancy>1</lifeExpectancy>
+            <thinkTreeMain>lotr_FireRaven_ThinkTree</thinkTreeMain>
 
-      <trainability>None</trainability>
+            <trainability>None</trainability>
 
-      <gestationPeriodDays>1</gestationPeriodDays>
+            <gestationPeriodDays>1</gestationPeriodDays>
 
-      <lifeStageAges>
-        <li>
-          <def>AnimalAdult</def>
-          <minAge>0</minAge>
-        </li>
-      </lifeStageAges>
-    </race>
+            <lifeStageAges>
+                <li>
+                <def>AnimalAdult</def>
+                <minAge>0</minAge>
+                </li>
+            </lifeStageAges>
+        </race>
 
-    <comps>
-      <li Class="lotr.CompProperties_FireRavenController" />
-    </comps>
-  </ThingDef>
+        <comps>
+            <li Class="lotr.CompProperties_FireRavenController" />
 
-  <PawnKindDef>
-    <defName>lotr_FireRavenKind</defName>
-    <label>огненная ворона</label>
-    <race>lotr_FireRavenRace</race>
-    <combatPower>50</combatPower>
-    <defaultFactionType>PlayerColony</defaultFactionType>
-    <lifeStages>
-      <li>
-        <bodyGraphicData>
-          <texPath>Things/Animal/FireRaven/FireRaven</texPath>
-          <graphicClass>Graphic_Single</graphicClass>
-          <drawSize>1.0</drawSize>
-        </bodyGraphicData>
-      </li>
-    </lifeStages>
-  </PawnKindDef>
+            <li Class="CompProperties_Glower">
+                <glowRadius>3</glowRadius> <!-- Радиус физического света 3 клетки -->
+                <glowColor>(255, 100, 20, 0)</glowColor> <!-- Огненный цвет -->
+            </li>
+        </comps>
+    </ThingDef>
+
+    <PawnKindDef>
+        <defName>lotr_FireRavenKind</defName>
+        <label>огненная ворона</label>
+        <race>lotr_FireRavenRace</race>
+        <combatPower>50</combatPower>
+        <defaultFactionType>PlayerColony</defaultFactionType>
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                <texPath>Things/Animal/FireRaven/FireRaven</texPath>
+                <graphicClass>Graphic_Single</graphicClass>
+                <drawSize>1.0</drawSize>
+                </bodyGraphicData>
+            </li>
+        </lifeStages>
+    </PawnKindDef>
 </Defs>

@@ -214,6 +214,8 @@ namespace lotr {
 
         private bool graphicsLoaded = false;
 
+        private IntVec3 lastPosition = IntVec3.Invalid;
+
         // Метод вызывается ОДИН РАЗ при создании компонента вороны в мире
         public override void Initialize(CompProperties props) {
             base.Initialize(props);
@@ -257,6 +259,18 @@ namespace lotr {
             if (casterOwner == null || casterOwner.Dead || casterOwner.Downed || !casterOwner.Spawned || casterOwner.Map != raven.Map || (lifetime-- <= 0)) {
                 raven.Destroy(DestroyMode.Vanish);
                 return;
+            }
+
+            if (this.parent.Spawned && this.parent.Position != lastPosition) {
+                lastPosition = this.parent.Position;
+
+                // Достаем ванильный компонент света из вороны
+                CompGlower glower = this.parent.GetComp<CompGlower>();
+                if (glower != null && this.parent.Map != null) {
+                    // Перерегистрируем свет на новой клетке (как мы делали с файерболом)
+                    this.parent.Map.glowGrid.DeRegisterGlower(glower);
+                    this.parent.Map.glowGrid.RegisterGlower(glower);
+                }
             }
         }
 
@@ -436,13 +450,7 @@ namespace lotr {
         }
     }
 
-    public class SummonedWeapon : ThingWithComps {
-        // Метод вызывается каждый игровой тик, пока предмет лежит на земле
-        protected override void Tick() {
-            base.Tick();
-        }
-
-    }
+    public class SummonedWeapon : ThingWithComps { }
 
     [HarmonyPatch(typeof(Pawn_EquipmentTracker), "EquipmentTrackerTick")]
     public static class Patch_SummonedWeapon_LifespanInHands {
@@ -481,6 +489,117 @@ namespace lotr {
                         hediff.AddActingProgress(1, 0.01f, billDoer);
                     }
                 }
+            }
+        }
+    }
+
+    // класс для hediff firearmor
+    public class Hediff_FireArmor : HediffWithComps {
+        // Храним ссылку на заспавненную невидимую лампочку
+        private ThingWithComps lightSource = null;
+
+        public override void PostAdd(DamageInfo? dinfo) {
+            base.PostAdd(dinfo);
+            SpawnLight();
+        }
+
+        public override void PostRemoved() {
+            base.PostRemoved();
+            DespawnLight();
+        }
+
+        // Каждый тик проверяем позицию пешки
+        public override void Tick() {
+            base.Tick();
+
+            if (this.pawn == null || !this.pawn.Spawned || this.pawn.Map == null) {
+                DespawnLight();
+                return;
+            }
+
+            // Если лампочки нет — спавним
+            if (lightSource == null || !lightSource.Spawned) {
+                SpawnLight();
+            }
+            // ИСПРАВЛЕНО: Если пешка сделала шаг на новую клетку
+            else if (lightSource.Position != this.pawn.Position) {
+                // Вместо багнутой телепортации позиции, мы пересоздаем свет в новой точке.
+                // Это заставляет движок RimWorld мгновенно перерисовать световое пятно на экране!
+                DespawnLight();
+                SpawnLight();
+            }
+        }
+
+        private void SpawnLight() {
+            if (this.pawn == null || !this.pawn.Spawned || this.pawn.Map == null) return;
+            if (lightSource != null && lightSource.Spawned) return;
+
+            ThingDef lightDef = ThingDef.Named("lotr_FireLightSpawner");
+            if (lightDef != null) {
+                lightSource = GenSpawn.Spawn(lightDef, this.pawn.Position, this.pawn.Map) as ThingWithComps;
+            }
+        }
+
+        private void DespawnLight() {
+            if (lightSource != null && lightSource.Spawned) {
+                lightSource.Destroy(DestroyMode.Vanish);
+                lightSource = null;
+            }
+        }
+    }
+
+    public class SummonedFireWeapon : SummonedWeapon {
+        // Просто пустой класс, чтобы игра знала тип предмета в XML
+    }
+
+    [HarmonyPatch(typeof(Pawn_EquipmentTracker), "EquipmentTrackerTick")]
+    public static class Patch_SummonedFireWeapon_GlowerController {
+        // Словарь для отслеживания лампочек у разных пешек (чтобы не было конфликтов, если мечи призовут сразу 3 мага)
+        private static Dictionary<Pawn, Thing> activeWeaponLights = new Dictionary<Pawn, Thing>();
+
+        [HarmonyPostfix]
+        public static void Postfix(Pawn_EquipmentTracker __instance) {
+            Pawn pawn = __instance.pawn;
+            if (pawn == null || !pawn.Spawned || pawn.Map == null) return;
+
+            // 1. ПРОВЕРКА: Держит ли пешка наш Огненный меч прямо сейчас?
+            if (__instance.Primary != null && __instance.Primary is SummonedFireWeapon) {
+                // Принудительно крутим ванильный таймер Lifespan меча, пока он в руках
+                CompLifespan lifespan = __instance.Primary.GetComp<CompLifespan>();
+                if (lifespan != null) {
+                    lifespan.age += 1;
+                    if (lifespan.age >= lifespan.Props.lifespanTicks) {
+                        // Время вышло — уничтожаем меч
+                        __instance.Primary.Destroy(DestroyMode.Vanish);
+
+                        // Удаляем свет
+                        if (activeWeaponLights.TryGetValue(pawn, out Thing oldLight) && oldLight.Spawned) {
+                            oldLight.Destroy(DestroyMode.Vanish);
+                        }
+                        activeWeaponLights.Remove(pawn);
+                        return;
+                    }
+                }
+
+                // 2. УПРАВЛЕНИЕ СВЕТОМ МЕЧА
+                if (!activeWeaponLights.TryGetValue(pawn, out Thing light) || light == null || !light.Spawned) {
+                    // Спавним свет, если его еще нет
+                    ThingDef lightDef = ThingDef.Named("lotr_FireLightSpawner");
+                    if (lightDef != null) {
+                        activeWeaponLights[pawn] = GenSpawn.Spawn(lightDef, pawn.Position, pawn.Map);
+                    }
+                } else if (light.Position != pawn.Position) {
+                    // Если пешка сделала шаг — пересоздаем свет в новой точке для обновления графики Unity
+                    light.Destroy(DestroyMode.Vanish);
+                    ThingDef lightDef = ThingDef.Named("lotr_FireLightSpawner");
+                    activeWeaponLights[pawn] = GenSpawn.Spawn(lightDef, pawn.Position, pawn.Map);
+                }
+            } else {
+                // Если меча в руках больше нет (бросил, убрал или он испарился) — гасим свет
+                if (activeWeaponLights.TryGetValue(pawn, out Thing light) && light != null && light.Spawned) {
+                    light.Destroy(DestroyMode.Vanish);
+                }
+                activeWeaponLights.Remove(pawn);
             }
         }
     }

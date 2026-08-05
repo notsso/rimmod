@@ -5,7 +5,7 @@
 
         <defName>Proj_Fireball</defName>
         <label>огненный шар</label>
-        <thingClass>Projectile_Explosive</thingClass>
+        <thingClass>lotr.Projectile_GlowingExplosive</thingClass>
 
         <graphicData>
 
@@ -25,6 +25,13 @@
             <ai_IsIncendiary>true</ai_IsIncendiary>
 
         </projectile>
+
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>4</glowRadius> <!-- Радиус освещения (4 клетки вокруг шара) -->
+                <glowColor>(255, 130, 30, 0)</glowColor> <!-- Теплый оранжевый свет -->
+            </li>
+        </comps>
 
     </ThingDef>
 
