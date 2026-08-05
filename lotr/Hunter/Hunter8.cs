@@ -20,7 +20,6 @@ namespace lotr {
 
     // абилка провокация
     public class CompAbilityEffect_Provoke : CompAbilityEffect {
-        // Получаем доступ к настройкам из XML (если нужно)
         public new CompProperties_AbilityProvoke Props => (CompProperties_AbilityProvoke)props;
 
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
@@ -37,15 +36,40 @@ namespace lotr {
                 return;
             }
 
-            ProvokePawn(targetPawn, caster);
+            float victimPsychicSensitivity = targetPawn.GetStatValue(StatDefOf.PsychicSensitivity, true);
 
-            if (targetPawn.RaceProps.ToolUser || targetPawn.RaceProps.IsMechanoid) {
-                var hediff = caster.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("Hunter8_Hediff")) as Beyonder_Hediff;
+            float finalSuccessChance = 0.75f * victimPsychicSensitivity;
 
-                if (hediff != null) {
-                    float severityIncrement = 0.05f;
+            if (Rand.Value <= finalSuccessChance) {
+                ProvokePawn(targetPawn, caster);
 
-                    hediff.AddActingProgress(1, severityIncrement, caster);
+                if (targetPawn.RaceProps.ToolUser || targetPawn.RaceProps.IsMechanoid) {
+                    var hediff = caster.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("Hunter8_Hediff")) as Hunter8_Hediff;
+
+                    if (hediff != null) {
+                        float severityIncrement = 0.05f;
+
+                        hediff.AddActingProgress(1, severityIncrement, caster);
+                    }
+                }
+            } else {
+                if (caster.health != null) {
+                    float sanityPenalty = 0.10f;
+
+                    HediffDef sanityLossDef = HediffDef.Named("lotr_SanityLoss");
+                    Hediff sanityLoss = caster.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
+
+                    if (sanityLoss != null) {
+                        sanityLoss.Severity += sanityPenalty;
+                    } else {
+                        caster.health.AddHediff(sanityLossDef);
+                        Hediff newSanity = caster.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
+                        if (newSanity != null) {
+                            newSanity.Severity = sanityPenalty;
+                        }
+                    }
+
+                    MoteMaker.ThrowText(caster.DrawPos, caster.Map, "Провокация провалена!", 4f);
                 }
             }
         }
@@ -74,6 +98,40 @@ namespace lotr {
     public class CompProperties_AbilityProvoke : CompProperties_AbilityEffect {
         public CompProperties_AbilityProvoke() {
             compClass = typeof(CompAbilityEffect_Provoke);
+        }
+    }
+
+    // Harmony patch - отслеживает 'анти-действие' провокатора: быть оскорбленным
+    [HarmonyPatch(typeof(MemoryThoughtHandler), "TryGainMemory", new System.Type[] { typeof(Thought_Memory), typeof(Pawn) })]
+    public static class Patch_Provoker_Insulted_SanityLoss {
+        [HarmonyPostfix]
+        public static void Postfix(MemoryThoughtHandler __instance, Thought_Memory newThought, Pawn otherPawn) {
+            Pawn pawn = __instance.pawn;
+
+            if (pawn != null && pawn.IsColonist && newThought != null) {
+                if (newThought.def.defName == "Insulted" || newThought.def.defName == "InsultedMood") {
+                    var hediff = pawn.health?.hediffSet?.GetFirstHediffOfDef(HediffDef.Named("Hunter8_Hediff")) as Hunter8_Hediff;
+
+                    if (hediff != null) {
+                        float sanityPenalty = 0.05f;
+
+                        HediffDef sanityLossDef = HediffDef.Named("lotr_SanityLoss");
+                        Hediff sanityLoss = pawn.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
+
+                        if (sanityLoss != null) {
+                            sanityLoss.Severity += sanityPenalty;
+                        } else {
+                            pawn.health.AddHediff(sanityLossDef);
+                            Hediff newSanity = pawn.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
+                            if (newSanity != null) {
+                                newSanity.Severity = sanityPenalty;
+                            }
+                        }
+
+                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Провокатор был оскорблен!", 4f);
+                    }
+                }
+            }
         }
     }
 }

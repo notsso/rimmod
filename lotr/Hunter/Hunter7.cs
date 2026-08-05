@@ -603,4 +603,36 @@ namespace lotr {
             }
         }
     }
+
+    // Harmony patch - отслеживает 'анти-действие' пироманта: получение урона от огня
+    [HarmonyPatch(typeof(Thing), "TakeDamage")]
+    public static class Patch_Pyromancer_FireDamage_SanityLoss {
+        [HarmonyPostfix]
+        public static void Postfix(Thing __instance, DamageInfo dinfo) {
+            if (__instance is Pawn pawn && pawn.IsColonist && !pawn.Destroyed) {
+                if (dinfo.Def == DamageDefOf.Flame || dinfo.Def == DamageDefOf.Burn) {
+                    var pyromancerHediff = pawn.health?.hediffSet?.GetFirstHediffOfDef(HediffDef.Named("Hunter7_Hediff"));
+
+                    if (pyromancerHediff != null) {
+                        float sanityPenalty = 0.05f;
+
+                        HediffDef sanityLossDef = HediffDef.Named("lotr_SanityLoss");
+                        Hediff sanityLoss = pawn.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
+
+                        if (sanityLoss != null) {
+                            sanityLoss.Severity += sanityPenalty;
+                        } else {
+                            pawn.health.AddHediff(sanityLossDef);
+                            Hediff newSanity = pawn.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
+                            if (newSanity != null) {
+                                newSanity.Severity = sanityPenalty;
+                            }
+                        }
+
+                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Пламя ранило пироманта!", 4f);
+                    }
+                }
+            }
+        }
+    }
 }

@@ -29,6 +29,10 @@ namespace lotr {
         public static void Prefix(Pawn_JobTracker __instance, JobCondition condition, bool startNewJob, bool canReturnToPool, ref float __state) {
             __state = 0.0f;
 
+            if (__instance == null || __instance.curJob == null || __instance.curJob.def == null) {
+                return;
+            }
+
             if (__instance.curJob != null && __instance.curJob.def == JobDefOf.Hunt && condition == JobCondition.Succeeded) {
                 __state = 1.0f;
 
@@ -49,6 +53,42 @@ namespace lotr {
                     severityIncrement = Mathf.Clamp(severityIncrement, 0.02f, 0.40f);
 
                     hediff.AddActingProgress(1, severityIncrement, ___pawn);
+                }
+            }
+        }
+    }
+
+    // Патчим метод регулярного обновления пешки для отслеживания 'анти-действия' охотника
+    [HarmonyPatch(typeof(Pawn), "Tick")]
+    public static class Patch_Beyonder_PanicFlee_SanityLoss {
+        [HarmonyPostfix]
+        public static void Postfix(Pawn __instance) {
+            if (__instance != null && __instance.IsColonist && __instance.IsHashIntervalTick(250)) {
+
+                bool isFleeing = (__instance.InMentalState && __instance.MentalStateDef == MentalStateDefOf.PanicFlee) ||
+                                 (__instance.CurJob != null && (__instance.CurJob.def == JobDefOf.Flee || __instance.CurJob.def == JobDefOf.FleeAndCower));
+
+                if (isFleeing) {
+                    var hediff = __instance.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("Hunter9_Hediff")) as Hunter9_Hediff;
+
+                    if (hediff == null) return;
+
+                    float sanityPenalty = 0.05f;
+
+                    HediffDef sanityLossDef = HediffDef.Named("lotr_SanityLoss");
+                    Hediff sanityLoss = __instance.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
+
+                    if (sanityLoss != null) {
+                        sanityLoss.Severity += sanityPenalty;
+                    } else {
+                        __instance.health.AddHediff(sanityLossDef);
+                        Hediff newSanity = __instance.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
+                        if (newSanity != null) {
+                            newSanity.Severity = sanityPenalty;
+                        }
+                    }
+
+                    MoteMaker.ThrowText(__instance.DrawPos, __instance.Map, "Охотник стал жертвой!", 3.5f);
                 }
             }
         }
