@@ -5,14 +5,12 @@
 
         <defName>Proj_Fireball</defName>
         <label>огненный шар</label>
-        <thingClass>lotr.Projectile_GlowingExplosive</thingClass>
+        <thingClass>lotr.Projectile_Fireball</thingClass>
 
         <graphicData>
 
-            <texPath>Projectiles/Ability_projectile</texPath>
+            <texPath>Projectiles/Fireball_projectile</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-            <shaderType>TransparentPostLight</shaderType>
-            <color>(255, 120, 0)</color>
 
         </graphicData>
 
@@ -59,7 +57,7 @@
 
         <verbProperties>
 
-            <verbClass>Verb_CastAbility</verbClass>
+            <verbClass>lotr.Verb_CastAbility_Custom</verbClass>
             <range>25</range>
             <warmupTime>1.5</warmupTime>
             <hasStandardCommand>true</hasStandardCommand>
