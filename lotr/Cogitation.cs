@@ -36,32 +36,22 @@ namespace lotr {
                 Pawn p = pawn;
                 if (p == null || p.Destroyed || !p.Spawned) return;
 
-                // 1. Медленно снижаем Искажение Разума (Sanity Loss)
-                // HediffDef sanityDef = DefDatabase<HediffDef>.GetNamed("lotr_SanityLoss", false);
+                // Медленно снижаем Искажение Разума (Sanity Loss)
                 HediffDef sanityDef = LotrDefOf.lotr_SanityLoss;
                 Hediff sanityHediff = p.health.hediffSet.GetFirstHediffOfDef(sanityDef);
                 if (sanityHediff != null) {
                     sanityHediff.Severity -= 0.00005f;
                 }
 
-                // 2. Медленно восстанавливаем Духовность (Spirituality Need)
-                // NeedDef spiritualityDef = DefDatabase<NeedDef>.GetNamed("lotr_SpiritualityNeed", false);
-                NeedDef spiritualityDef = LotrDefOf.lotr_SpiritualityNeed;
-                if (spiritualityDef != null) {
-                    Need spiritualityNeed = p.needs?.TryGetNeed(spiritualityDef);
-                    if (spiritualityNeed != null) {
-                        // Берем текущий уровень из приватного поля curLevelInt
-                        float curLevel = AccessTools.Field(typeof(Need), "curLevelInt").GetValue(spiritualityNeed) is float v ? v : spiritualityNeed.CurLevel;
-
-                        // Рассчитываем прирост (за сеанс восстановит около 15-20% шкалы маны)
-                        float nextLevel = Mathf.Min(spiritualityNeed.MaxLevel, curLevel + 0.0001f);
-
-                        // Записываем обратно напрямую
-                        AccessTools.Field(typeof(Need), "curLevelInt").SetValue(spiritualityNeed, nextLevel);
-                    }
+                // Медленно восстанавливаем Духовность (Spirituality Need)
+                Need_Spirituality spiritualityNeed = p.needs?.TryGetNeed<Need_Spirituality>();
+                if (spiritualityNeed != null) {
+                    // Просто увеличиваем уровень через публичное свойство
+                    float newLevel = Mathf.Min(spiritualityNeed.MaxLevel, spiritualityNeed.CurLevel + 0.0001f);
+                    spiritualityNeed.CurLevel = newLevel;
                 }
 
-                // 3. Заставляем пешку принять позу медитации (сидя на полу)
+                // Заставляем пешку принять позу медитации (сидя на полу)
                 p.Rotation = Rot4.South; // Всегда лицом к игроку во время транса
 
                 // Визуальный эффект: раз в секунду испускаем мягкие психо-волны над головой

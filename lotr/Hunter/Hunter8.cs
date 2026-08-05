@@ -53,24 +53,9 @@ namespace lotr {
                     }
                 }
             } else {
-                if (caster.health != null) {
-                    float sanityPenalty = 0.10f;
+                float sanityPenalty = 0.10f;
 
-                    HediffDef sanityLossDef = HediffDef.Named("lotr_SanityLoss");
-                    Hediff sanityLoss = caster.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
-
-                    if (sanityLoss != null) {
-                        sanityLoss.Severity += sanityPenalty;
-                    } else {
-                        caster.health.AddHediff(sanityLossDef);
-                        Hediff newSanity = caster.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
-                        if (newSanity != null) {
-                            newSanity.Severity = sanityPenalty;
-                        }
-                    }
-
-                    MoteMaker.ThrowText(caster.DrawPos, caster.Map, "Провокация провалена!", 4f);
-                }
+                SanityHelper.AddSanityLoss(caster, sanityPenalty, "Провокация провалена!");
             }
         }
 
@@ -112,24 +97,10 @@ namespace lotr {
                 if (newThought.def.defName == "Insulted" || newThought.def.defName == "InsultedMood") {
                     var hediff = pawn.health?.hediffSet?.GetFirstHediffOfDef(LotrDefOf.Hunter8_Hediff) as Hunter8_Hediff;
 
-                    if (hediff != null) {
-                        float sanityPenalty = 0.05f;
+                    if (hediff == null) return;
+                    float sanityPenalty = 0.05f;
 
-                        HediffDef sanityLossDef = HediffDef.Named("lotr_SanityLoss");
-                        Hediff sanityLoss = pawn.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
-
-                        if (sanityLoss != null) {
-                            sanityLoss.Severity += sanityPenalty;
-                        } else {
-                            pawn.health.AddHediff(sanityLossDef);
-                            Hediff newSanity = pawn.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
-                            if (newSanity != null) {
-                                newSanity.Severity = sanityPenalty;
-                            }
-                        }
-
-                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Провокатор был оскорблен!", 4f);
-                    }
+                    SanityHelper.AddSanityLoss(pawn, sanityPenalty, "Провокатор был оскорблен!");
                 }
             }
         }

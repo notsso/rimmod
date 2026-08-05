@@ -88,7 +88,6 @@ namespace lotr {
         protected virtual void CheckSanity() {
             if (this.pawn == null || this.pawn.health == null) return;
 
-            // Hediff sanityLoss = this.pawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("lotr_SanityLoss"));
             Hediff sanityLoss = this.pawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.lotr_SanityLoss);
 
             if (sanityLoss == null) return;
@@ -111,7 +110,7 @@ namespace lotr {
 
         // Общий метод проверки духовности
         protected virtual void CheckSpirituality() {
-            Need_Spirituality spirituality = this.pawn.needs.TryGetNeed<Need_Spirituality>();
+            Need_Spirituality spirituality = this.pawn.needs.TryGetNeed(LotrDefOf.lotr_SpiritualityNeed) as Need_Spirituality;
             if (spirituality == null) return;
 
             // пока что ничего не делает

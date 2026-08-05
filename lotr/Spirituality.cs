@@ -150,7 +150,7 @@ namespace lotr {
         }
     }
 
-    // кастомный класс под потерю контроля - лишь добавляет процентики к описанию
+    // кастомный класс под потерю контроля - добавляет проценты к описанию
     public class SanityLoss : HediffWithComps {
         public override string SeverityLabel {
             get {
@@ -282,14 +282,7 @@ namespace lotr {
         [HarmonyPostfix]
         public static void Postfix(MentalStateHandler __instance, MentalStateDef stateDef, bool __result, Pawn ___pawn) {
             if (__result && ___pawn != null && ___pawn.IsColonist) {
-                bool isBeyonder = false;
-
-                foreach (Hediff hediff in ___pawn.health.hediffSet.hediffs) {
-                    if (hediff is Beyonder_Hediff) {
-                        isBeyonder = true;
-                        break;
-                    }
-                }
+                bool isBeyonder = SanityHelper.IsBeyonder(___pawn);
 
                 if (isBeyonder) {
                     float sanityDamage = 0.05f;
@@ -299,18 +292,7 @@ namespace lotr {
                         sanityDamage = 0.40f;
                     }
 
-                    HediffDef sanityLossDef = LotrDefOf.lotr_SanityLoss;
-                    Hediff sanityLoss = ___pawn.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
-
-                    if (sanityLoss != null) {
-                        sanityLoss.Severity += sanityDamage;
-                    } else {
-                        ___pawn.health.AddHediff(sanityLossDef);
-                        Hediff newSanity = ___pawn.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
-                        if (newSanity != null) {
-                            newSanity.Severity = sanityDamage;
-                        }
-                    }
+                    SanityHelper.AddSanityLoss(___pawn, sanityDamage);
                 }
             }
         }

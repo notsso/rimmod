@@ -103,20 +103,7 @@ namespace lotr {
 
                     float sanityPenalty = 0.05f;
 
-                    HediffDef sanityLossDef = HediffDef.Named("lotr_SanityLoss");
-                    Hediff sanityLoss = __instance.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
-
-                    if (sanityLoss != null) {
-                        sanityLoss.Severity += sanityPenalty;
-                    } else {
-                        __instance.health.AddHediff(sanityLossDef);
-                        Hediff newSanity = __instance.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
-                        if (newSanity != null) {
-                            newSanity.Severity = sanityPenalty;
-                        }
-                    }
-
-                    MoteMaker.ThrowText(__instance.DrawPos, __instance.Map, "Охотник стал жертвой!", 3.5f);
+                    SanityHelper.AddSanityLoss(__instance, sanityPenalty, "Охотник стал жертвой!");
                 }
             }
         }

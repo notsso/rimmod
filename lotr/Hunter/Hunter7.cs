@@ -646,24 +646,11 @@ namespace lotr {
                 if (dinfo.Def == DamageDefOf.Flame || dinfo.Def == DamageDefOf.Burn) {
                     var hediff = pawn.health?.hediffSet?.GetFirstHediffOfDef(LotrDefOf.Hunter7_Hediff) as Hunter7_Hediff;
 
-                    if (hediff != null) {
-                        float sanityPenalty = 0.05f;
+                    if (hediff == null) return;
 
-                        HediffDef sanityLossDef = HediffDef.Named("lotr_SanityLoss");
-                        Hediff sanityLoss = pawn.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
+                    float sanityPenalty = 0.05f;
 
-                        if (sanityLoss != null) {
-                            sanityLoss.Severity += sanityPenalty;
-                        } else {
-                            pawn.health.AddHediff(sanityLossDef);
-                            Hediff newSanity = pawn.health.hediffSet.GetFirstHediffOfDef(sanityLossDef);
-                            if (newSanity != null) {
-                                newSanity.Severity = sanityPenalty;
-                            }
-                        }
-
-                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Пламя ранило пироманта!", 4f);
-                    }
+                    SanityHelper.AddSanityLoss(pawn, sanityPenalty, "Пламя ранило пироманта!");
                 }
             }
         }
