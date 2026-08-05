@@ -7,7 +7,7 @@
         <defName>Cast_BlazingSpear</defName>
         <label>Копье огня</label>
         <description>Создание и бросок сверхмощного, сжатого снаряда из пламени, который пробивает броню и взрывается при попадании.</description>
-        <iconPath>UI/Icons/Abilities/Hunter/BlazingSpear</iconPath>
+        <iconPath>UI/Icons/Abilities/Hunter/Cast_BlazingSpear</iconPath>
         <cooldownTicksRange>1200</cooldownTicksRange>
         <hostile>true</hostile>
 
@@ -40,6 +40,7 @@
     <AbilityDef ParentName="Cast_BlazingSpear">
         <defName>Cast_BlazingSpear_7S</defName>
         <label>Копье огня</label>
+        <cooldownTicksRange>1200</cooldownTicksRange>
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_BlazingSpear_7S</projectileDef>

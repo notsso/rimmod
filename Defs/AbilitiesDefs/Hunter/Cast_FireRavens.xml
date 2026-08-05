@@ -1,30 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef>
+    <AbilityDef Name="Cast_FireRavens">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_FireRavens</defName>
         <label>огненные вороны</label>
         <description>Создает трех мистических ворон из багрового пламени вокруг заклинателя. Вороны обладают собственным разумом, автоматически набрасываются на ближайших врагов и взрываются при гибели.</description>
-        <iconPath>UI/Icons/Abilities/Hunter/FireRavens</iconPath>
+        <iconPath>UI/Icons/Abilities/Hunter/Cast_FireRavens</iconPath>
         <cooldownTicksRange>1800</cooldownTicksRange>
         <targetRequired>False</targetRequired>
         <aiCanUse>true</aiCanUse>
         <hostile>false</hostile>
-
-        <modExtensions>
-            <li Class="lotr.SpiritualityCostExtension">
-                <cost>150.0</cost>
-            </li>
-        </modExtensions>
-        
-        <comps>
-            <li Class="lotr.CompProperties_AbilityLaunchFireRavens">
-                <compClass>lotr.CompAbilityEffect_LaunchFireRavens</compClass>
-                <ravenPawnKind>lotr_FireRavenKind</ravenPawnKind> 
-            </li>
-        </comps>
 
         <verbProperties>
             <verbClass>Verb_CastAbility</verbClass>
@@ -33,6 +20,35 @@
             <targetParams>
                 <canTargetSelf>true</canTargetSelf>
             </targetParams>
+        </verbProperties>
+
+    </AbilityDef>
+
+    <AbilityDef ParentName="Cast_FireRavens">
+
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        <defName>Cast_FireRavens_7S</defName>
+        <label>огненные вороны</label>
+
+        <cooldownTicksRange>100</cooldownTicksRange>
+
+        <modExtensions>
+            <li Class="lotr.SpiritualityCostExtension">
+                <cost>50.0</cost>
+            </li>
+        </modExtensions>
+        
+        <comps>
+            <li Class="lotr.CompProperties_AbilityLaunchFireRavens">
+                <compClass>lotr.CompAbilityEffect_LaunchFireRavens</compClass>
+                <ravenPawnKind>lotr_FireRavenKind</ravenPawnKind>
+                <lifetime>3600</lifetime>
+                <maxCount>3</maxCount>
+            </li>
+        </comps>
+
+        <verbProperties>
+            <warmupTime>0.5</warmupTime>
         </verbProperties>
 
     </AbilityDef>

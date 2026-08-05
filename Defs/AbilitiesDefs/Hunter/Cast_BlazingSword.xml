@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef>
+    <AbilityDef Name="Cast_BlazingSword">
         <abilityClass>lotr.Ability_SummonBlazingSword</abilityClass>
         <defName>Cast_BlazingSword</defName>
         <label>призыв пламенного клинка</label>
         <description>Концентрирует духовную энергию, материализуя в руках заклинателя легендарный огненный меч. Если в руках было другое оружие, оно автоматически убирается в инвентарь.</description>
-        <iconPath>UI/Icons/Abilities/Hunter/BlazingSword</iconPath> 
+        <iconPath>UI/Icons/Abilities/Hunter/Cast_BlazingSword</iconPath> 
         <cooldownTicksRange>3600</cooldownTicksRange>
         <targetRequired>False</targetRequired>
         <hostile>false</hostile>
@@ -14,6 +14,9 @@
         <modExtensions>
             <li Class="lotr.SpiritualityCostExtension">
                 <cost>50.0</cost>
+            </li>
+            <li Class="lotr.SummonedWeaponExtension">
+                <weaponDef>Melee_BlazingSword</weaponDef>
             </li>
         </modExtensions>
 
@@ -24,6 +27,21 @@
             <targetParams>
                 <canTargetSelf>true</canTargetSelf>
             </targetParams>
+        </verbProperties>
+    </AbilityDef>
+
+    <!-- Уровень 7 -->
+    <AbilityDef ParentName="Cast_BlazingSword">
+        <defName>Cast_BlazingSword_7S</defName>
+        <label>призыв пламенного клинка</label>
+        <cooldownTicksRange>7200</cooldownTicksRange>
+        <modExtensions>
+            <li Class="lotr.SummonedWeaponExtension">
+                <weaponDef>Melee_BlazingSword_7S</weaponDef>
+            </li>
+        </modExtensions>
+        <verbProperties>
+            <warmupTime>2.0</warmupTime>
         </verbProperties>
     </AbilityDef>
 

@@ -6,7 +6,7 @@
         <defName>Cast_Fireball</defName>
         <label>огненный шар</label>
         <description>кусок огня</description>
-        <iconPath>UI/Icons/Abilities/Hunter/Fireball</iconPath>
+        <iconPath>UI/Icons/Abilities/Hunter/Cast_Fireball</iconPath>
         <cooldownTicksRange>60</cooldownTicksRange>
         <hostile>true</hostile>
         <modExtensions>
@@ -32,6 +32,7 @@
     <AbilityDef ParentName="Cast_Fireball">
         <defName>Cast_Fireball_9S</defName>
         <label>огненный шар</label>
+        <cooldownTicksRange>60</cooldownTicksRange>
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_Fireball_9S</projectileDef>
@@ -47,6 +48,7 @@
     <AbilityDef ParentName="Cast_Fireball">
         <defName>Cast_Fireball_8S</defName>
         <label>огненный шар</label>
+        <cooldownTicksRange>60</cooldownTicksRange>
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_Fireball_8S</projectileDef>
@@ -62,6 +64,7 @@
     <AbilityDef ParentName="Cast_Fireball">
         <defName>Cast_Fireball_7S</defName>
         <label>огненный шар</label>
+        <cooldownTicksRange>60</cooldownTicksRange>
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_Fireball_7S</projectileDef>

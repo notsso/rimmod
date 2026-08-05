@@ -18,6 +18,15 @@ namespace lotr {
         }
     }
 
+    // Класс свойств для связи с XML
+    public class CompProperties_AbilityProvoke : CompProperties_AbilityEffect {
+        public float baseSuccessChance = 50.0f;
+
+        public CompProperties_AbilityProvoke() {
+            compClass = typeof(CompAbilityEffect_Provoke);
+        }
+    }
+
     // абилка провокация
     public class CompAbilityEffect_Provoke : CompAbilityEffect {
         public new CompProperties_AbilityProvoke Props => (CompProperties_AbilityProvoke)props;
@@ -38,7 +47,9 @@ namespace lotr {
 
             float victimPsychicSensitivity = targetPawn.GetStatValue(StatDefOf.PsychicSensitivity, true);
 
-            float finalSuccessChance = 0.75f * victimPsychicSensitivity;
+            float baseSuccessChance = Props.baseSuccessChance;
+
+            float finalSuccessChance = baseSuccessChance * victimPsychicSensitivity;
 
             if (Rand.Value <= finalSuccessChance) {
                 ProvokePawn(targetPawn, caster);
@@ -76,13 +87,6 @@ namespace lotr {
             victim.jobs.StartJob(tauntJob, JobCondition.InterruptForced, null, false, true);
 
             MoteMaker.ThrowText(victim.DrawPos, victim.Map, "Provoked!", 3f);
-        }
-    }
-
-    // Класс свойств для связи с XML
-    public class CompProperties_AbilityProvoke : CompProperties_AbilityEffect {
-        public CompProperties_AbilityProvoke() {
-            compClass = typeof(CompAbilityEffect_Provoke);
         }
     }
 

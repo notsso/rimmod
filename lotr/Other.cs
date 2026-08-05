@@ -33,29 +33,36 @@ namespace lotr {
         public static ThingDef Hunter8_Potion;
         public static ThingDef Hunter7_Potion;
         public static ThingDef Melee_BlazingSword;
+        public static ThingDef Melee_BlazingSword_7S;
 
         public static AbilityDef Cast_BlazingSpear;
         public static AbilityDef Cast_BlazingSword;
         public static AbilityDef Cast_FireArmor;
         public static AbilityDef Cast_Fireball;
         public static AbilityDef Cast_FireRavens;
-        public static AbilityDef Provoking;
+        public static AbilityDef Cast_Taunt;
+
+        public static AbilityDef Cast_Fireball_7S;
+        public static AbilityDef Cast_Fireball_8S;
+        public static AbilityDef Cast_Fireball_9S;
+        public static AbilityDef Cast_BlazingSpear_7S;
+        public static AbilityDef Cast_BlazingSword_7S;
+        public static AbilityDef Cast_FireArmor_7S;
+        public static AbilityDef Cast_FireRavens_7S;
+        public static AbilityDef Cast_Taunt_7S;
+        public static AbilityDef Cast_Taunt_8S;
 
         public static ThingDef Proj_Fireball_7S;
         public static ThingDef Proj_Fireball_8S;
         public static ThingDef Proj_Fireball_9S;
         public static ThingDef Proj_BlazingSpear_7S;
 
-        public static AbilityDef Cast_Fireball_7S;
-        public static AbilityDef Cast_Fireball_8S;
-        public static AbilityDef Cast_Fireball_9S;
-        public static AbilityDef Cast_BlazingSpear_7S;
-
         public static HediffDef lotr_SanityLoss;
         public static HediffDef Hunter9_Hediff;
         public static HediffDef Hunter8_Hediff;
         public static HediffDef Hunter7_Hediff;
         public static HediffDef Hediff_FireArmor;
+        public static HediffDef Hediff_FireArmor_7S;
 
         public static JobDef lotr_CogitationJob;
 

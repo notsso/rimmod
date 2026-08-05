@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <AbilityDef Name="Cast_Taunt">
+
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        <defName>Cast_Taunt</defName>
+        <label>провокация</label>
+        <description>Привлекает внимание противника, заставляя его атаковать вас в ближнем бою.</description>
+        <iconPath>UI/Icons/Abilities/Hunter/Cast_Taunt</iconPath>
+        <cooldownTicksRange>1200</cooldownTicksRange>
+        <aiCanUse>true</aiCanUse>
+        <targetRequired>true</targetRequired>
+
+        <modExtensions>
+            <li Class="lotr.SpiritualityCostExtension">
+                <cost>20.0</cost>
+            </li>
+        </modExtensions>
+        
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>15.9</range>
+            <warmupTime>0.2</warmupTime>
+            <targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetMechs>true</canTargetMechs>
+                <canTargetAnimals>true</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+
+    </AbilityDef>
+
+    <AbilityDef ParentName="Cast_Taunt">
+        <defName>Cast_Taunt_8S</defName>
+        <label>провокация</label>
+        <cooldownTicksRange>1200</cooldownTicksRange>
+
+        <comps>
+            <li Class="lotr.CompProperties_AbilityProvoke">
+                <baseSuccessChance>50.0</baseSuccessChance>
+            </li>
+        </comps>
+
+        <verbProperties>
+            <range>10</range>
+            <warmupTime>1</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
+    <AbilityDef ParentName="Cast_Taunt">
+        <defName>Cast_Taunt_7S</defName>
+        <label>провокация</label>
+        <cooldownTicksRange>600</cooldownTicksRange>
+
+        <comps>
+            <li Class="lotr.CompProperties_AbilityProvoke">
+                <baseSuccessChance>50.0</baseSuccessChance>
+            </li>
+        </comps>
+
+        <verbProperties>
+            <range>20</range>
+            <warmupTime>1</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
+</Defs>

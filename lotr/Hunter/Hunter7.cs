@@ -164,6 +164,17 @@ namespace lotr {
         }
     }
 
+    // Класс свойств для связи с XML
+    public class CompProperties_AbilityLaunchFireRavens : CompProperties_AbilityEffect {
+        public PawnKindDef ravenPawnKind;
+        public int lifetime = 3600;
+        public int maxCount = 3;
+
+        public CompProperties_AbilityLaunchFireRavens() {
+            compClass = typeof(CompAbilityEffect_LaunchFireRavens);
+        }
+    }
+
     // класс для способности "огненные вороны"
     public class CompAbilityEffect_LaunchFireRavens : CompAbilityEffect {
         public new CompProperties_AbilityLaunchFireRavens Props => (CompProperties_AbilityLaunchFireRavens)props;
@@ -186,9 +197,9 @@ namespace lotr {
                 }
             }
 
-            int maxTotalRavens = 3;
+            int maxTotalRavens = Props.maxCount;
 
-            int ravensToSpawn = maxTotalRavens - existingRavensCount;
+            int ravensToSpawn = Mathf.Min(1, maxTotalRavens - existingRavensCount);
 
             if (ravensToSpawn <= 0) {
                 return;
@@ -206,20 +217,12 @@ namespace lotr {
                     CompFireRavenController controller = raven.TryGetComp<CompFireRavenController>();
                     if (controller != null) {
                         controller.casterOwner = caster;
+                        controller.lifetime = Props.lifetime;
                     }
 
                     spawnedCount++;
                 }
             }
-        }
-    }
-
-    // Класс свойств для связи с XML
-    public class CompProperties_AbilityLaunchFireRavens : CompProperties_AbilityEffect {
-        public PawnKindDef ravenPawnKind;
-
-        public CompProperties_AbilityLaunchFireRavens() {
-            compClass = typeof(CompAbilityEffect_LaunchFireRavens);
         }
     }
 
@@ -436,6 +439,10 @@ namespace lotr {
         }
     }
 
+    public class SummonedWeaponExtension : DefModExtension {
+        public ThingDef weaponDef; // Поле, где в XML мы укажем Def меча
+    }
+
     // класс для способности "огненный меч" - призывает в руках пешки оружие
     public class Ability_SummonBlazingSword : Ability_SpendSpirituality {
         public Ability_SummonBlazingSword() : base() { }
@@ -447,7 +454,11 @@ namespace lotr {
 
             Pawn caster = this.pawn;
             if (caster != null && caster.equipment != null) {
-                ThingDef swordDef = LotrDefOf.Melee_BlazingSword;
+                ThingDef swordDef = this.def.GetModExtension<SummonedWeaponExtension>()?.weaponDef;
+
+                if (swordDef == null) {
+                    swordDef = DefDatabase<ThingDef>.GetNamed("Melee_BlazingSword", false);
+                }
 
                 if (swordDef != null) {
                     if (caster.equipment.Primary != null) {
