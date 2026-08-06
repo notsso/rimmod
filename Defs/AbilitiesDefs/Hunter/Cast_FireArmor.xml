@@ -29,6 +29,8 @@
         <modExtensions>
             <li Class="lotr.SpiritualityCostExtension">
                 <cost>100.0</cost>
+            </li>
+            <li Class="lotr.HediffToGiveExtension">
                 <hediffToGive>Hediff_FireArmor_7S</hediffToGive>
             </li>
         </modExtensions>

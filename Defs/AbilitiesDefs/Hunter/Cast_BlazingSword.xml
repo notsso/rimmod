@@ -15,9 +15,6 @@
             <li Class="lotr.SpiritualityCostExtension">
                 <cost>50.0</cost>
             </li>
-            <li Class="lotr.SummonedWeaponExtension">
-                <weaponDef>Melee_BlazingSword</weaponDef>
-            </li>
         </modExtensions>
 
         <verbProperties>

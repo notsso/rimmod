@@ -61,12 +61,6 @@ namespace lotr {
         }
     }
 
-    // через это расширение мы в Def'е можем задать разные доп теги
-    public class SpiritualityCostExtension : DefModExtension {
-        public float cost = 10f; // сколько духовности надо
-        public HediffDef hediffToGive; // Какой хедифф выдать (опционально)
-    }
-
     // определение для способности, которая тратит духовность
     public class Ability_SpendSpirituality : Ability {
         public Ability_SpendSpirituality() : base() { }
@@ -90,8 +84,11 @@ namespace lotr {
 
         // отдельная функция, которая дает hediff заклинателю
         public void GiveHediff() {
-            SpiritualityCostExtension extension = this.def.GetModExtension<SpiritualityCostExtension>();
+            HediffToGiveExtension extension = this.def.GetModExtension<HediffToGiveExtension>();
+            if (extension == null) return;
+
             Pawn caster = this.pawn;
+            if (caster == null) return;
 
             if (extension.hediffToGive != null) {
                 caster.health.AddHediff(extension.hediffToGive);

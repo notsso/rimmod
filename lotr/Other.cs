@@ -115,4 +115,40 @@ namespace lotr {
             }
         }
     }
+
+    public class SummonedWeaponExtension : DefModExtension {
+        public ThingDef weaponDef;
+    }
+
+    public class SpiritualityCostExtension : DefModExtension {
+        public float cost = 10f;
+    }
+
+    public class HediffToGiveExtension : DefModExtension {
+        public HediffDef hediffToGive;
+    }
+
+    public class Projectile_FireExtension : DefModExtension {
+        // nothing yet
+    }
+
+    public class Projectile_LightningExtension : DefModExtension {
+        public bool? canStun;
+        public float? stunChance;
+    }
+
+    public class Projectile_PoisonExtension : DefModExtension {
+        public HediffDef poisonHediff;
+        public float? poisonSeverity;
+    }
+
+    public class Projectile_SunlightExtension : DefModExtension {
+        public bool? isEffectiveVsUndead;
+        public float? bonusDamageVsUndead;
+    }
+
+    public class Projectile_MarionetteExtension : DefModExtension {
+        public int? controlDuration;
+        public float? controlChance;
+    }
 }

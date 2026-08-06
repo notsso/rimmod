@@ -294,10 +294,6 @@ namespace lotr {
         }
     }
 
-    public class SummonedWeaponExtension : DefModExtension {
-        public ThingDef weaponDef; // Поле, где в XML мы укажем Def меча
-    }
-
     // класс для способности "огненный меч" - призывает в руках пешки оружие
     public class Ability_SummonBlazingSword : Ability_SpendSpirituality {
         public Ability_SummonBlazingSword() : base() { }

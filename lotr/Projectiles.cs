@@ -75,6 +75,7 @@ namespace lotr {
         }
     }
 
+    // Абстрактный класс для описания огненных снарядов
     public abstract class Projectile_Fire : Projectile_Base {
         // Переменная для отслеживания последней клетки, где мы обновили свет
         private IntVec3 lastLightPosition = IntVec3.Invalid;
@@ -95,7 +96,7 @@ namespace lotr {
         }
     }
 
-    // при попадании во врага, снаряд взрывается
+    // Абстрактный класс для описания снарядов, которые взрываются
     public abstract class Projectile_FireExplosive : Projectile_Fire {
         public float ExplosionRadius => def.projectile.explosionRadius;
 
@@ -137,7 +138,7 @@ namespace lotr {
     }
 
 
-    // класс для описания снаряда способности "шар огня"
+    // Класс для описания снаряда способности "шар огня"
     public class Projectile_Fireball : Projectile_FireExplosive { }
 
     // класс для описания снаряда способности "копье огня"
@@ -199,40 +200,47 @@ namespace lotr {
             }
         }
     }
-
+    // Абстрактный класс для описания снарядов молнии? 
     public abstract class Projectile_Lightning : Projectile_Base {
-        public bool CanStun;
-        public float StunChance;
+        public bool CanStun => def.GetModExtension<Projectile_LightningExtension>().canStun ?? false;
+        public float StunChance => def.GetModExtension<Projectile_LightningExtension>().stunChance ?? 0f;
 
-        public override void OnImpact(Thing thing) {
-
+        public override void OnImpact(Thing hitThing) {
+            base.OnImpact(hitThing);
+            // Применяем эффект оглушения
         }
     }
 
+    // Абстрактный класс для описания ядовитых снарядов 
     public abstract class Projectile_Poison : Projectile_Base {
-        public HediffDef PoisonHediff;
-        public float PoisonSeverity;
+        public HediffDef PoisonHediff => def.GetModExtension<Projectile_PoisonExtension>().poisonHediff;
+        public float PoisonSeverity => def.GetModExtension<Projectile_PoisonExtension>().poisonSeverity ?? 0f;
 
-        public override void OnImpact(Thing thing) {
-
+        public override void OnImpact(Thing hitThing) {
+            base.OnImpact(hitThing);
+            // Применяем эффект заражения
         }
     }
 
+    // Абстрактный класс для описания святых/очищающих снарядов
     public abstract class Projectile_Sunlight : Projectile_Base {
-        public bool isEffectiveVsUndead;
-        public float BonusDamageVsUndead;
+        public bool isEffectiveVsUndead => def.GetModExtension<Projectile_SunlightExtension>().isEffectiveVsUndead ?? false;
+        public float BonusDamageVsUndead => def.GetModExtension<Projectile_SunlightExtension>().bonusDamageVsUndead ?? 0;
 
-        public override void OnImpact(Thing thing) {
-
+        public override void OnImpact(Thing hitThing) {
+            base.OnImpact(hitThing);
+            // Применяем эффект очищения
         }
     }
 
+    // Абстрактный класс для описания снарядов дающими контроль над противником?
     public abstract class Projectile_Marionette : Projectile_Base {
-        public int ControlDuration;
-        public float ControlChance;
+        public int ControlDuration => def.GetModExtension<Projectile_MarionetteExtension>().controlDuration ?? 0;
+        public float ControlChance => def.GetModExtension<Projectile_MarionetteExtension>().controlChance ?? 0f;
 
-        public override void OnImpact(Thing thing) {
-
+        public override void OnImpact(Thing hitThing) {
+            base.OnImpact(hitThing);
+            // Применяем эффект контроля?
         }
     }
 }
