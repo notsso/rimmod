@@ -89,24 +89,4 @@ namespace lotr {
             MoteMaker.ThrowText(victim.DrawPos, victim.Map, "Provoked!", 3f);
         }
     }
-
-    // Harmony patch - отслеживает 'анти-действие' провокатора: быть оскорбленным
-    [HarmonyPatch(typeof(MemoryThoughtHandler), "TryGainMemory", new System.Type[] { typeof(Thought_Memory), typeof(Pawn) })]
-    public static class Patch_Provoker_Insulted_SanityLoss {
-        [HarmonyPostfix]
-        public static void Postfix(MemoryThoughtHandler __instance, Thought_Memory newThought, Pawn otherPawn) {
-            Pawn pawn = __instance.pawn;
-
-            if (pawn != null && pawn.IsColonist && newThought != null) {
-                if (newThought.def.defName == "Insulted" || newThought.def.defName == "InsultedMood") {
-                    var hediff = pawn.health?.hediffSet?.GetFirstHediffOfDef(LotrDefOf.Hunter8_Hediff) as Hunter8_Hediff;
-
-                    if (hediff == null) return;
-                    float sanityPenalty = 0.05f;
-
-                    BeyonderUtility.AddSanityLoss(pawn, sanityPenalty, "Провокатор был оскорблен!");
-                }
-            }
-        }
-    }
 }

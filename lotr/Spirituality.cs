@@ -163,24 +163,6 @@ namespace lotr {
         }
     }
 
-    // Harmony patch - добавляет шкалу духовности каждому колонисту в строку гаджетов
-    [HarmonyPatch(typeof(Pawn), "GetGizmos")]
-    public static class Patch_Pawn_GetGizmos {
-        public static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> __result, Pawn __instance) {
-            // Возвращаем оригинальные гизмо, но если это наш колонист — добавляем шкалу в самый ТОР (начало)
-            if (__instance.IsColonistPlayerControlled) {
-                Need spiritualityNeed = __instance.needs?.AllNeeds.FirstOrDefault(n => n.def.defName == "lotr_SpiritualityNeed");
-                if (spiritualityNeed != null) {
-                    yield return new SpiritualityNeedGizmo(spiritualityNeed);
-                }
-            }
-
-            foreach (var gizmo in __result) {
-                yield return gizmo;
-            }
-        }
-    }
-
     // определяет гаджет показывающий духовность
     public class SpiritualityNeedGizmo : Gizmo {
         private readonly Need need;
@@ -270,27 +252,6 @@ namespace lotr {
                 Hediff hediff = HediffMaker.MakeHediff(hediffDef, pawn);
                 hediff.Severity = randomSeverity;
                 pawn.health.AddHediff(hediff);
-            }
-        }
-    }
-
-    [HarmonyPatch(typeof(MentalStateHandler), "TryStartMentalState")]
-    public static class Patch_Beyonder_SanityBreak {
-        [HarmonyPostfix]
-        public static void Postfix(MentalStateHandler __instance, MentalStateDef stateDef, bool __result, Pawn ___pawn) {
-            if (__result && ___pawn != null && ___pawn.IsColonist) {
-                bool isBeyonder = BeyonderUtility.IsBeyonder(___pawn);
-
-                if (isBeyonder) {
-                    float sanityDamage = 0.05f;
-                    if (stateDef.category == MentalStateCategory.Aggro || stateDef.category == MentalStateCategory.Malicious) {
-                        sanityDamage = 0.25f;
-                    } else if (stateDef == MentalStateDefOf.Berserk) {
-                        sanityDamage = 0.40f;
-                    }
-
-                    BeyonderUtility.AddSanityLoss(___pawn, sanityDamage);
-                }
             }
         }
     }

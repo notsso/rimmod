@@ -12,14 +12,6 @@ using RimWorld;
 using UnityEngine;
 
 namespace lotr {
-    [StaticConstructorOnStartup]
-    public static class ModInitializer {
-        static ModInitializer() {
-            var harmony = new Harmony("nar.lotr");
-            harmony.PatchAll();
-        }
-    }
-
     // все используемые def'ы
     [DefOf]
     public static class LotrDefOf {
