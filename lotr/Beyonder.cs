@@ -173,12 +173,15 @@ namespace lotr {
 
             this.Severity += diff;
 
-            string messageText = $"После действия, {pawn.LabelShortCap} усвоил аспект зелья на {diff.ToStringPercent()}!"; ;
-            if (diff < 0.01f) {
-                messageText = $"{pawn.LabelShortCap} чуствует, что уже усвоил этот аспект зелья";
+            if (this.Severity < 1.0f) {
+                string messageText;
+                if (diff < 0.01f) {
+                    messageText = $"{pawn.LabelShortCap} чуствует, что уже усвоил этот аспект зелья";
+                } else {
+                    messageText = $"После действия, {pawn.LabelShortCap} усвоил аспект зелья на {diff.ToStringPercent()}!";
+                }
+                Messages.Message(messageText, pawn, MessageTypeDefOf.SilentInput, historical: false);
             }
-            Messages.Message(messageText, pawn, MessageTypeDefOf.SilentInput, historical: false);
-
         }
     }
 }

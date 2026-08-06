@@ -20,34 +20,6 @@ namespace lotr {
         }
     }
 
-    public class Projectile_Fireball : Projectile_Explosive {
-        // Переменная для отслеживания последней клетки, где мы обновили свет
-        private IntVec3 lastLightPosition = IntVec3.Invalid;
-
-        protected override void Tick() {
-            base.Tick();
-
-            // Проверяем, что снаряд летит и находится на карте
-            if (this.Spawned && !this.Destroyed) {
-                // Если снаряд перелетел в новую клетку
-                if (this.Position != lastLightPosition) {
-                    lastLightPosition = this.Position;
-
-                    // Получаем компонент свечения, который прикреплен к нашему снаряду
-                    CompGlower glower = this.GetComp<CompGlower>();
-
-                    if (glower != null) {
-                        // Ванильный и безопасный способ заставить карту перерисовать свет:
-                        // Мы принудительно выключаем и включаем свет обратно. 
-                        // Игра сама сотрет старое световое пятно и нарисует его в текущей позиции снаряда.
-                        this.Map.glowGrid.DeRegisterGlower(glower);
-                        this.Map.glowGrid.RegisterGlower(glower);
-                    }
-                }
-            }
-        }
-    }
-
     // Harmony patch - отслеживает 'действие' охотника, progress1 - охота
     [HarmonyPatch(typeof(Pawn_JobTracker), "EndCurrentJob")]
     public static class Patch_Pawn_JobTracker_EndCurrentJob {
@@ -103,7 +75,7 @@ namespace lotr {
 
                     float sanityPenalty = 0.05f;
 
-                    SanityHelper.AddSanityLoss(__instance, sanityPenalty, "Охотник стал жертвой!");
+                    BeyonderUtility.AddSanityLoss(__instance, sanityPenalty, "Охотник стал жертвой!");
                 }
             }
         }

@@ -66,7 +66,7 @@ namespace lotr {
             } else {
                 float sanityPenalty = 0.10f;
 
-                SanityHelper.AddSanityLoss(caster, sanityPenalty, "Провокация провалена!");
+                BeyonderUtility.AddSanityLoss(caster, sanityPenalty, "Провокация провалена!");
             }
         }
 
@@ -104,7 +104,7 @@ namespace lotr {
                     if (hediff == null) return;
                     float sanityPenalty = 0.05f;
 
-                    SanityHelper.AddSanityLoss(pawn, sanityPenalty, "Провокатор был оскорблен!");
+                    BeyonderUtility.AddSanityLoss(pawn, sanityPenalty, "Провокатор был оскорблен!");
                 }
             }
         }

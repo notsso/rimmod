@@ -115,38 +115,4 @@ namespace lotr {
             }
         }
     }
-
-    // Класс-контейнер для настроек конкретной способности внутри Hediff
-    public class AbilityModConfig {
-        public AbilityDef abilityDef;
-
-        // Используем nullable-типы (float?), чтобы понимать, задали мы значение в XML или нет
-        public float? rangeOverride = null;
-        public int? damageOverride = null;
-        public float? explosionRadiusOverride = null;
-        public float? speedOverride = null;
-        public float? warmupOverride = null;
-    }
-
-    public static class SpeedOverrideContext {
-        [ThreadStatic]
-        private static float? _overrideSpeed;
-
-        public static float? OverrideSpeed {
-            get => _overrideSpeed;
-            set => _overrideSpeed = value;
-        }
-
-        // Удобный метод для безопасной установки и сброса
-        public static IDisposable UseSpeed(float speed) {
-            OverrideSpeed = speed;
-            return new SpeedOverrideDisposable();
-        }
-
-        private class SpeedOverrideDisposable : IDisposable {
-            public void Dispose() {
-                OverrideSpeed = null;
-            }
-        }
-    }
 }

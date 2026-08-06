@@ -19,151 +19,6 @@ namespace lotr {
         }
     }
 
-    // класс для описания снаряда способности "копье огня"
-    public class Projectile_BlazingSpear : Projectile_Explosive {
-        private int tickCounter = 0;
-        private IntVec3 lastLightPosition = IntVec3.Invalid;
-
-        protected override void Tick() {
-            // Сначала вызываем базовый тик родителя, чтобы копьё летело и обсчитывало кастомную скорость
-            base.Tick();
-
-            if (this.Spawned && !this.Destroyed) {
-                tickCounter++;
-
-                // 1. ВАШИ ЭФФЕКТЫ: Спавним дым и искры каждые 2 тика
-                if (tickCounter % 2 == 0) {
-                    FleckMaker.ThrowSmoke(this.ExactPosition, this.Map, 0.8f);
-                    FleckMaker.Static(this.ExactPosition, this.Map, FleckDefOf.MicroSparks, 1.0f);
-                }
-
-                // 2. СВЕЧЕНИЕ: Динамическое обновление источника света при смене клетки
-                if (this.Position != lastLightPosition) {
-                    lastLightPosition = this.Position;
-                    CompGlower glower = this.GetComp<CompGlower>();
-                    if (glower != null) {
-                        this.Map.glowGrid.DeRegisterGlower(glower);
-                        this.Map.glowGrid.RegisterGlower(glower);
-                    }
-                }
-            }
-        }
-
-        // Изменено: сигнатура maskedByFlame заменена на blockedByShield, чтобы точно соответствовать вашей сборке игры
-        protected override void Impact(Thing hitThing, bool blockedByShield = false) {
-            // Получаем урон, пробитие и радиус с учетом кастомных модификаторов из Hediff (Hunter8, Hunter7 и т.д.)
-            int finalDamage = this.def.projectile.GetDamageAmount(this, null);
-            float finalArmorPenetration = this.def.projectile.GetArmorPenetration(this, null);
-            float finalRadius = this.def.projectile.explosionRadius;
-
-            if (this.launcher is Pawn pawn) {
-                // Наша проверенная система поиска активного конфига способности
-                AbilityDef castingAbility = null;
-                var allAbilities = DefDatabase<AbilityDef>.AllDefsListForReading;
-                for (int i = 0; i < allAbilities.Count; i++) {
-                    if (allAbilities[i].comps == null) continue;
-                    for (int j = 0; j < allAbilities[i].comps.Count; j++) {
-                        if (allAbilities[i].comps[j] is CompProperties_AbilityLaunchProjectile prop && prop.projectileDef?.defName == this.def?.defName) {
-                            castingAbility = allAbilities[i];
-                            break;
-                        }
-                    }
-                    if (castingAbility != null) break;
-                }
-            }
-
-            // Логика прямого попадания в существо/объект
-            if (hitThing != null) {
-                Pawn hitPawn = hitThing as Pawn;
-
-                // ВАШЕ ПРЯМОЕ ПОПАДАНИЕ 1: Физический порез (Cut). Использует наш НАСТРОЕННЫЙ урон finalDamage!
-                DamageInfo cutDinfo = new DamageInfo(
-                    DamageDefOf.Cut,
-                    (float)finalDamage,
-                    finalArmorPenetration,
-                    this.ExactRotation.eulerAngles.y,
-                    this.launcher,
-                    null,
-                    this.equipmentDef,
-                    DamageInfo.SourceCategory.ThingOrUnknown,
-                    this.intendedTarget.Thing
-                );
-                hitThing.TakeDamage(cutDinfo);
-
-                // Термический ожог (Burn) — 50% от нашего настроенного урона
-                DamageInfo burnDinfo = new DamageInfo(
-                    DamageDefOf.Burn,
-                    (float)finalDamage * 0.5f,
-                    finalArmorPenetration,
-                    this.ExactRotation.eulerAngles.y,
-                    this.launcher,
-                    null,
-                    this.equipmentDef,
-                    DamageInfo.SourceCategory.ThingOrUnknown,
-                    this.intendedTarget.Thing
-                );
-                hitThing.TakeDamage(burnDinfo);
-
-                // Heatstroke
-                if (hitPawn != null && hitPawn.RaceProps.FleshType == FleshTypeDefOf.Normal) {
-                    Hediff heatstroke = hitPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.Heatstroke);
-
-                    if (heatstroke != null) {
-                        heatstroke.Severity += 0.25f;
-                    } else {
-                        hitPawn.health.AddHediff(HediffDefOf.Heatstroke);
-                        Hediff newHeatstroke = hitPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.Heatstroke);
-                        if (newHeatstroke != null) {
-                            newHeatstroke.Severity = 0.25f;
-                        }
-                    }
-                }
-
-                // Acting Progress
-                if (this.launcher is Pawn launcherPawn) {
-                    var hunter7Hediff = launcherPawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter7_Hediff) as Hunter7_Hediff;
-                    if (hunter7Hediff != null) {
-                        hunter7Hediff.AddActingProgress(2, 0.02f, launcherPawn);
-                    }
-                }
-            }
-
-            // ВАШ ВЗРЫВ ПО ПЛОЩАДИ: Теперь радиус взрыва и урон берутся из кастомного XML Hediff'а!
-            if (finalRadius > 0f) {
-                GenExplosion.DoExplosion(
-                    center: this.Position,
-                    map: this.Map,
-                    radius: finalRadius,                                           // Измененный радиус
-                    damType: this.def.projectile.damageDef,
-                    instigator: this.launcher,
-                    damAmount: finalDamage,                                         // Измененный урон взрыва
-                    armorPenetration: finalArmorPenetration,
-                    explosionSound: this.def.projectile.soundExplode,
-                    weapon: this.equipmentDef,
-                    projectile: this.def,
-                    intendedTarget: this.intendedTarget.Thing,
-                    postExplosionSpawnThingDef: this.def.projectile.postExplosionSpawnThingDef,
-                    postExplosionSpawnChance: this.def.projectile.postExplosionSpawnChance,
-                    postExplosionSpawnThingCount: this.def.projectile.postExplosionSpawnThingCount,
-                    postExplosionGasType: null,
-                    postExplosionGasRadiusOverride: null,
-                    postExplosionGasAmount: 255,
-                    applyDamageToExplosionCellsNeighbors: this.def.projectile.applyDamageToExplosionCellsNeighbors,
-                    preExplosionSpawnThingDef: this.def.projectile.preExplosionSpawnThingDef,
-                    preExplosionSpawnChance: this.def.projectile.preExplosionSpawnChance,
-                    preExplosionSpawnThingCount: this.def.projectile.preExplosionSpawnThingCount,
-                    chanceToStartFire: this.def.projectile.explosionChanceToStartFire,
-                    damageFalloff: this.def.projectile.explosionDamageFalloff
-                );
-            }
-
-            // Безопасно уничтожаем копьё, предотвращая вызов ванильного дублирующего взрыва
-            if (!this.Destroyed) {
-                this.Destroy(DestroyMode.Vanish);
-            }
-        }
-    }
-
     // Класс свойств для связи с XML
     public class CompProperties_AbilityLaunchFireRavens : CompProperties_AbilityEffect {
         public PawnKindDef ravenPawnKind;
@@ -511,16 +366,11 @@ namespace lotr {
     public static class Patch_Pyromancer_Creation {
         [HarmonyPostfix]
         public static void Postfix(Bill_Production __instance, Pawn billDoer) {
-            // Проверяем, что тот, кто выполнил работу — наш колонист
             if (billDoer != null && billDoer.IsColonist) {
-                // Проверяем, привязан ли этот рецепт к рабочему столу (Building_WorkTable)
-                // И является ли этот стол конкретно Костром (Campfire)
                 if (__instance.billStack?.billGiver is Building_WorkTable table && table.def.defName == "Campfire") {
-                    // Достаем кастомный хедифф Пироманта
                     var hediff = billDoer.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter7_Hediff) as Hunter7_Hediff;
 
                     if (hediff != null) {
-                        // Приготовление чего угодно на костре (еда, пеммикан) дает +1% к усвоению (до капа в 30%)
                         hediff.AddActingProgress(1, 0.01f, billDoer);
                     }
                 }
@@ -652,7 +502,7 @@ namespace lotr {
 
                     float sanityPenalty = 0.05f;
 
-                    SanityHelper.AddSanityLoss(pawn, sanityPenalty, "Пламя ранило пироманта!");
+                    BeyonderUtility.AddSanityLoss(pawn, sanityPenalty, "Пламя ранило пироманта!");
                 }
             }
         }

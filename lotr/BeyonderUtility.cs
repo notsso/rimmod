@@ -11,7 +11,7 @@ using RimWorld;
 using UnityEngine;
 
 namespace lotr {
-    public static class SanityHelper {
+    public static class BeyonderUtility {
         // Метод для нанесения урона рассудку
         public static void AddSanityLoss(Pawn pawn, float amount, string reasonMote = null) {
             if (pawn == null || pawn.health == null) return;

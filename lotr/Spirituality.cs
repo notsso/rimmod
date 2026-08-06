@@ -282,7 +282,7 @@ namespace lotr {
         [HarmonyPostfix]
         public static void Postfix(MentalStateHandler __instance, MentalStateDef stateDef, bool __result, Pawn ___pawn) {
             if (__result && ___pawn != null && ___pawn.IsColonist) {
-                bool isBeyonder = SanityHelper.IsBeyonder(___pawn);
+                bool isBeyonder = BeyonderUtility.IsBeyonder(___pawn);
 
                 if (isBeyonder) {
                     float sanityDamage = 0.05f;
@@ -292,7 +292,7 @@ namespace lotr {
                         sanityDamage = 0.40f;
                     }
 
-                    SanityHelper.AddSanityLoss(___pawn, sanityDamage);
+                    BeyonderUtility.AddSanityLoss(___pawn, sanityDamage);
                 }
             }
         }
