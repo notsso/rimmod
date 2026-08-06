@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <AbilityDef Name="Cast_FireTeleport">
+
+        <defName>Cast_FireTeleport</defName>
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        <label>Огненный прыжок</label>
+        <description>Превратиться в сгусток пламени и переместиться в указанную точку.</description>
+        <iconPath>Placeholder</iconPath>
+        <cooldownTicksRange>180</cooldownTicksRange>
+
+        <modExtensions>
+            <li Class="lotr.SpiritualityCostExtension">
+                <cost>15.0</cost>
+            </li>
+        </modExtensions>
+
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>10</range>
+            <warmupTime>0.5</warmupTime>
+            <hasStandardCommand>true</hasStandardCommand>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+            </targetParams>
+        </verbProperties>
+
+    </AbilityDef>
+
+    <!-- Уровень 6 -->
+    <AbilityDef ParentName="Cast_FireTeleport">
+        <defName>Cast_FireTeleport_6S</defName>
+        <label>Огненный прыжок</label>
+        <cooldownTicksRange>180</cooldownTicksRange>
+        <comps>
+            <li Class="lotr.CompProperties_FireTeleport">
+                <projectileDef>Proj_FireTeleport_6S</projectileDef>
+            </li>
+        </comps>
+        <verbProperties>
+            <range>20</range>
+            <warmupTime>0.5</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
+</Defs>

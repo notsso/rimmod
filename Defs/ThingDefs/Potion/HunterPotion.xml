@@ -6,7 +6,9 @@
         <thingClass>ThingWithComps</thingClass>
         <defName>Hunter9_Potion</defName>
         <label>hunter's potion</label>
-        <description>Флакон с бурлящей красной жидкостью. Выпив его, пешка пробудит в себе силу Охотника.</description>
+        <description>Жидкость насыщенного красного цвета, бурлящая, словно кровь окрашивает весь флакон.
+        У неё резкий запах крови, который заполнил бы их ноздри.
+        Выпив его, пешка пробудит в себе силу Охотника.</description>
         <descriptionHyperlinks>
             <HediffDef>Hunter9_Hediff</HediffDef>
         </descriptionHyperlinks>
@@ -36,7 +38,9 @@
         <thingClass>ThingWithComps</thingClass>
         <defName>Hunter8_Potion</defName>
         <label>provoker's potion</label>
-        <description>Флакон с искрящейся алой жидкостью. Выпив его, пешка откроет в себе коварную силу Провокатора</description>
+        <description>Вязкий напиток с тошнотворным вкусом и резким запахом.
+        Один вид этого зелья вызывает желание выбросить его и растоптать.
+        Он отвратителен и имеет резкий запах. Выпив его, пешка откроет в себе силу Провокатора</description>
         <descriptionHyperlinks>
             <HediffDef>Hunter8_Hediff</HediffDef>
         </descriptionHyperlinks>
@@ -67,7 +71,9 @@
         <thingClass>ThingWithComps</thingClass>
         <defName>Hunter7_Potion</defName>
         <label>pyromaniac's potion</label>
-        <description>Флакон с бушующим алым пламенем, запертым внутри стекла. Выпив его, пешка подчинит себе ярость огня и станет Пироманьяком</description>
+        <description>Желтоватая жидкость с плавающими на ней красными пузырьками, в центре которой находится «сердце», окруженное кровавым туманом.
+        При употреблении она обжигает, распространяясь от рта, по пищеводу, в желудок и поражая сердце.
+        Выпив его, пешка откроет в себе силу Пироманьяка</description>
         <descriptionHyperlinks>
             <HediffDef>Hunter7_Hediff</HediffDef>
         </descriptionHyperlinks>
@@ -86,6 +92,39 @@
                 <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
                     <hediffToRemove>Hunter8_Hediff</hediffToRemove>
                     <hediffToGive>Hunter7_Hediff</hediffToGive>
+                    <severity>0.01</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+
+    </ThingDef>
+
+    <ThingDef ParentName="PotionBase">
+
+        <thingClass>ThingWithComps</thingClass>
+        <defName>Hunter6_Potion</defName>
+        <label>pyromaniac's potion</label>
+        <description>Черная как железо, с большим количеством плавающих на поверхности красноватых пятен ржавчины.
+        Зелье имеет сильный ржавый вкус, холодное, как змея, скользкая и ледяная.
+        Выпив его, пешка откроет в себе силу Заговорщика</description>
+        <descriptionHyperlinks>
+            <HediffDef>Hunter6_Hediff</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Potions/Hunter9_Potion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <ingestible>
+            <outcomeDoers>
+                <li Class="lotr.IngestionOutcomeDoer_GiveHediffRange">
+                    <hediffDef>lotr_SanityLoss</hediffDef>
+                    <severityRange>0.15~0.75</severityRange> 
+                </li>
+
+                <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
+                    <hediffToRemove>Hunter7_Hediff</hediffToRemove>
+                    <hediffToGive>Hunter6_Hediff</hediffToGive>
                     <severity>0.01</severity>
                 </li>
             </outcomeDoers>

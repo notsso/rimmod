@@ -93,7 +93,7 @@
 	
         <comps>
             <li Class="HediffCompProperties_SeverityPerDay">
-                <severityPerDay>0.02</severityPerDay>
+                <severityPerDay>0.04</severityPerDay>
             </li>
         </comps>
         

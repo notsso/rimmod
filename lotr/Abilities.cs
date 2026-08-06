@@ -47,7 +47,9 @@ namespace lotr {
                         spirituality.CurLevel -= cost * 0.01f;
 
                         string textPct = $"-{(cost).ToString("F0")} Духовности";
-                        MoteMaker.ThrowText(caster.DrawPos, caster.Map, textPct, 3f);
+                        if (caster.Spawned && caster.Map != null) {
+                            MoteMaker.ThrowText(caster.DrawPos, caster.Map, textPct, 3f);
+                        }
                     }
                 }
             }

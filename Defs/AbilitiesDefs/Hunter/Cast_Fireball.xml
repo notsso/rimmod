@@ -9,6 +9,7 @@
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Fireball</iconPath>
         <cooldownTicksRange>60</cooldownTicksRange>
         <hostile>true</hostile>
+        
         <modExtensions>
             <li Class="lotr.SpiritualityCostExtension">
                 <cost>15.0</cost>

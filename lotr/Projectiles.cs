@@ -26,26 +26,11 @@ namespace lotr {
         }
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false) {
+            BeforeImpact(hitThing);
+
             if (blockedByShield) {
-                OnBlocked();
                 Destroy(DestroyMode.Vanish);
                 return;
-            }
-
-            // у всех снарядов есть какой то базовый тип урона
-            if (hitThing != null && DamageAmount > 0) {
-                DamageInfo dinfo = new DamageInfo(
-                    DamageDef,
-                    DamageAmount,
-                    ArmorPenetration,
-                    this.ExactRotation.eulerAngles.y,
-                    this.launcher,
-                    null,
-                    this.equipmentDef,
-                    DamageInfo.SourceCategory.ThingOrUnknown,
-                    this.intendedTarget.Thing
-                );
-                hitThing.TakeDamage(dinfo);
             }
 
             OnImpact(hitThing);
@@ -63,14 +48,21 @@ namespace lotr {
 
         public virtual void OnTick() { }
 
-        public virtual void OnImpact(Thing hitThing) { }
+        public virtual void BeforeImpact(Thing hitThing) { }
 
-        public virtual void OnBlocked() { }
+        public virtual void OnImpact(Thing hitThing) { }
 
         public virtual void OnDestroy() { }
 
         public override void Launch(Thing launcher, Vector3 origin, LocalTargetInfo usedTarget, LocalTargetInfo intendedTarget, ProjectileHitFlags hitFlags, bool preventFriendlyFire = false, Thing equipment = null, ThingDef targetCoverDef = null) {
             base.Launch(launcher, origin, usedTarget, intendedTarget, hitFlags, preventFriendlyFire, equipment, targetCoverDef);
+
+            // Если базовый Launch не заспавнил снаряд — делаем это вручную
+            if (!this.Spawned) {
+                Log.Warning($"Base.Launch failed for {this.def.defName}, spawning manually.");
+                GenSpawn.Spawn(this, origin.ToIntVec3(), launcher.Map);
+            }
+
             OnLaunch();
         }
     }
@@ -139,7 +131,26 @@ namespace lotr {
 
 
     // Класс для описания снаряда способности "шар огня"
-    public class Projectile_Fireball : Projectile_FireExplosive { }
+    public class Projectile_Fireball : Projectile_FireExplosive {
+        public override void OnImpact(Thing hitThing) {
+            base.OnImpact(hitThing);
+
+            if (hitThing != null && DamageAmount > 0) {
+                DamageInfo dinfo = new DamageInfo(
+                    DamageDef,
+                    DamageAmount,
+                    ArmorPenetration,
+                    this.ExactRotation.eulerAngles.y,
+                    this.launcher,
+                    null,
+                    this.equipmentDef,
+                    DamageInfo.SourceCategory.ThingOrUnknown,
+                    this.intendedTarget.Thing
+                );
+                hitThing.TakeDamage(dinfo);
+            }
+        }
+    }
 
     // класс для описания снаряда способности "копье огня"
     public class Projectile_BlazingSpear : Projectile_FireExplosive {
@@ -159,7 +170,18 @@ namespace lotr {
             if (hitThing != null) {
                 Pawn hitPawn = hitThing as Pawn;
 
-                // Помимо ожога цель получит:
+                DamageInfo dinfo = new DamageInfo(
+                    DamageDef,
+                    DamageAmount,
+                    ArmorPenetration,
+                    this.ExactRotation.eulerAngles.y,
+                    this.launcher,
+                    null,
+                    this.equipmentDef,
+                    DamageInfo.SourceCategory.ThingOrUnknown,
+                    this.intendedTarget.Thing
+                );
+                hitThing.TakeDamage(dinfo);
 
                 // Физический порез (Cut)
                 DamageInfo cutDinfo = new DamageInfo(
@@ -200,6 +222,30 @@ namespace lotr {
             }
         }
     }
+
+    public class Projectile_FireTeleport : Projectile_Fire {
+        public Pawn teleportPawn;
+        public bool wasDrafted;
+
+        public override void BeforeImpact(Thing hitThing) {
+            if (teleportPawn != null && this.Spawned) {
+                IntVec3 spawnPos = this.Position;
+                if (!spawnPos.Walkable(this.Map) || spawnPos.Fogged(this.Map)) {
+                    spawnPos = CellFinder.RandomClosewalkCellNear(this.Position, this.Map, 3);
+                }
+
+                GenSpawn.Spawn(teleportPawn, spawnPos, this.Map);
+
+                teleportPawn.drafter.Drafted = wasDrafted;
+
+                FleckMaker.ThrowSmoke(this.ExactPosition, this.Map, 0.8f);
+                FleckMaker.Static(this.ExactPosition, this.Map, FleckDefOf.MicroSparks, 1.0f);
+
+                teleportPawn = null;
+            }
+        }
+    }
+
     // Абстрактный класс для описания снарядов молнии? 
     public abstract class Projectile_Lightning : Projectile_Base {
         public bool CanStun => def.GetModExtension<Projectile_LightningExtension>().canStun ?? false;

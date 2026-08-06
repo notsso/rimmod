@@ -33,6 +33,7 @@ namespace lotr {
         public static AbilityDef Cast_Fireball;
         public static AbilityDef Cast_FireRavens;
         public static AbilityDef Cast_Taunt;
+        public static AbilityDef Cast_FireTeleport;
 
         public static AbilityDef Cast_Fireball_7S;
         public static AbilityDef Cast_Fireball_8S;
