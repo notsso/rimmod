@@ -116,10 +116,6 @@ namespace lotr {
         public float cost = 10f;
     }
 
-    public class HediffToGiveExtension : DefModExtension {
-        public HediffDef hediffToGive;
-    }
-
     public class Projectile_FireExtension : DefModExtension {
         // nothing yet
     }

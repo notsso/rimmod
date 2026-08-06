@@ -14,21 +14,11 @@ using UnityEngine;
 namespace lotr {
     // главный класс, который определяет нашу кастомную 'потребность'
     public class Need_Spirituality : Need {
-        // Настройка скорости регенерации духовности (в час)
         private const float RegenerationPerHour = 0.04f;
-
-        // Максимальное базовое значение духовности?
         public const float MaxInternalValue = 1f;
-
-        // через эту переменную мы получаем максимальную духовность пешки
         public override float MaxLevel => GetFinalSpirituality();
+        public Need_Spirituality(Pawn pawn) : base(pawn) { }
 
-        // конструктор - в нем по приколу мы задали черточки, как в любых других потребностях
-        public Need_Spirituality(Pawn pawn) : base(pawn) {
-            this.threshPercents = new System.Collections.Generic.List<float> { 0.2f };
-        }
-
-        // изначальный уровень духовности
         public override void SetInitialLevel() {
             this.CurLevel = 0.8f;
         }
@@ -44,7 +34,6 @@ namespace lotr {
             }
         }
 
-        // Метод для расчета бонусов/штрафов к МАКСИМАЛЬНОМУ объему духовности
         private float GetFinalSpirituality() {
             float result = MaxInternalValue;
 
@@ -58,92 +47,6 @@ namespace lotr {
             }
 
             return result;
-        }
-    }
-
-    // определение для способности, которая тратит духовность
-    public class Ability_SpendSpirituality : Ability {
-        public Ability_SpendSpirituality() : base() { }
-
-        public Ability_SpendSpirituality(Pawn pawn, AbilityDef def) : base(pawn, def) { }
-
-        // высчитывает сколько духовности тратит способность 
-        public float AbilityCost() {
-            float finalCost = 10f;
-
-            SpiritualityCostExtension extension = this.def.GetModExtension<SpiritualityCostExtension>();
-
-            if (extension != null) {
-                finalCost = extension.cost;
-            }
-
-            // различные баффы/дебаффы к цене
-
-            return finalCost;
-        }
-
-        // отдельная функция, которая дает hediff заклинателю
-        public void GiveHediff() {
-            HediffToGiveExtension extension = this.def.GetModExtension<HediffToGiveExtension>();
-            if (extension == null) return;
-
-            Pawn caster = this.pawn;
-            if (caster == null) return;
-
-            if (extension.hediffToGive != null) {
-                caster.health.AddHediff(extension.hediffToGive);
-                FleckMaker.Static(caster.Position, caster.Map, FleckDefOf.MicroSparks, 1.5f);
-            }
-        }
-
-        public override bool Activate(LocalTargetInfo target, LocalTargetInfo dest) {
-            // Сначала вызываем базовую логику (чтобы сработали все прикомпонованные comps, например, запуск снаряда)
-            bool result = base.Activate(target, dest);
-
-            // Если способность успешно активировалась
-            if (result) {
-                Pawn caster = this.pawn;
-                if (caster?.health != null) {
-                    Need_Spirituality spirituality = this.pawn.needs.TryGetNeed(LotrDefOf.lotr_SpiritualityNeed) as Need_Spirituality; ;
-
-                    GiveHediff();
-
-                    if (spirituality != null) {
-                        float cost = AbilityCost();
-
-                        spirituality.CurLevel -= cost * 0.01f;
-
-                        string textPct = $"-{(cost).ToString("F0")} Духовности";
-                        MoteMaker.ThrowText(caster.DrawPos, caster.Map, textPct, 3f);
-                    }
-                }
-            }
-
-            return result;
-        }
-
-        // определяет, когда кнопка отвечающая за способность должна быть выключена
-        public override bool GizmoDisabled(out string reason) {
-            if (base.GizmoDisabled(out reason)) {
-                return true;
-            }
-
-            Need_Spirituality spirituality = this.pawn.needs.TryGetNeed(LotrDefOf.lotr_SpiritualityNeed) as Need_Spirituality;
-
-            if (spirituality == null) {
-                reason = "Нет духовной энергии.";
-                return true;
-            }
-
-            float cost = AbilityCost();
-
-            if (spirituality.CurLevel < cost * 0.01f) {
-                reason = $"Недостаточно духовности (Нужно {(cost).ToString("F0")}).";
-                return true;
-            }
-
-            reason = null;
-            return false;
         }
     }
 

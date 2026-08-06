@@ -30,10 +30,14 @@
             <li Class="lotr.SpiritualityCostExtension">
                 <cost>100.0</cost>
             </li>
-            <li Class="lotr.HediffToGiveExtension">
-                <hediffToGive>Hediff_FireArmor_7S</hediffToGive>
-            </li>
         </modExtensions>
+
+        <comps>
+            <li Class="lotr.CompProperties_AbilityGiveHediff">
+                <hediffDef>Hediff_FireArmor_7S</hediffDef>
+            </li>
+        </comps>
+        
         <verbProperties>
             <warmupTime>5.0</warmupTime>
             <targetParams>

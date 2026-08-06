@@ -18,7 +18,6 @@ namespace lotr {
         }
     }
 
-    // Класс свойств для связи с XML
     public class CompProperties_AbilityProvoke : CompProperties_AbilityEffect {
         public float baseSuccessChance = 50.0f;
 
@@ -27,7 +26,7 @@ namespace lotr {
         }
     }
 
-    // абилка провокация
+    // Способность hunter8 (провокатор): провокация
     public class CompAbilityEffect_Provoke : CompAbilityEffect {
         public new CompProperties_AbilityProvoke Props => (CompProperties_AbilityProvoke)props;
 
