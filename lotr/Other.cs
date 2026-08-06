@@ -24,6 +24,7 @@ namespace lotr {
         public static ThingDef Hunter9_Potion;
         public static ThingDef Hunter8_Potion;
         public static ThingDef Hunter7_Potion;
+        public static ThingDef Hunter6_Potion;
         public static ThingDef Melee_BlazingSword;
         public static ThingDef Melee_BlazingSword_7S;
 
@@ -34,6 +35,8 @@ namespace lotr {
         public static AbilityDef Cast_FireRavens;
         public static AbilityDef Cast_Taunt;
         public static AbilityDef Cast_FireTeleport;
+        public static AbilityDef Cast_Incite;
+        public static AbilityDef Cast_Confusion;
 
         public static AbilityDef Cast_Fireball_7S;
         public static AbilityDef Cast_Fireball_8S;
@@ -44,6 +47,8 @@ namespace lotr {
         public static AbilityDef Cast_FireRavens_7S;
         public static AbilityDef Cast_Taunt_7S;
         public static AbilityDef Cast_Taunt_8S;
+        public static AbilityDef Cast_Incite_6S;
+        public static AbilityDef Cast_Confusion_6S;
 
         public static ThingDef Proj_Fireball_7S;
         public static ThingDef Proj_Fireball_8S;
@@ -54,8 +59,11 @@ namespace lotr {
         public static HediffDef Hunter9_Hediff;
         public static HediffDef Hunter8_Hediff;
         public static HediffDef Hunter7_Hediff;
+        public static HediffDef Hunter6_Hediff;
         public static HediffDef Hediff_FireArmor;
         public static HediffDef Hediff_FireArmor_7S;
+        public static HediffDef Hediff_Confusion;
+        public static HediffDef Hediff_Confusion_6S;
 
         public static JobDef lotr_CogitationJob;
 
@@ -67,6 +75,7 @@ namespace lotr {
         public static RecipeDef Hunter9_PotionRecipe;
         public static RecipeDef Hunter8_PotionRecipe;
         public static RecipeDef Hunter7_PotionRecipe;
+        public static RecipeDef Hunter6_PotionRecipe;
 
         public static ThingCategoryDef BeyonderPotions;
 

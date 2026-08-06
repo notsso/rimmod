@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <AbilityDef Name="Cast_Confusion">
+
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        <defName>Cast_Confusion</defName>
+        <label>Введение в заблуждение</label>
+        <description>Дезориентирует врага, заставляя его путаться.</description>
+        <iconPath>UI/Icons/Abilities/Hunter/Cast_Confusion</iconPath>
+        <cooldownTicksRange>3600</cooldownTicksRange>
+        <hostile>true</hostile>
+        
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>20</range>
+            <warmupTime>0.8</warmupTime>
+            <hasStandardCommand>true</hasStandardCommand>
+            <targetParams>
+                <canTargetPawns>true</canTargetPawns>
+            </targetParams>
+        </verbProperties>
+
+    </AbilityDef>
+
+    <!-- Уровень 7 -->
+    <AbilityDef ParentName="Cast_Confusion">
+        <defName>Cast_Confusion_6S</defName>
+        <label>Введение в заблуждение</label>
+        <cooldownTicksRange>3600</cooldownTicksRange>
+
+        <modExtensions>
+            <li Class="lotr.SpiritualityCostExtension">
+                <cost>15.0</cost>
+            </li>
+        </modExtensions>
+
+        <comps>
+            <li Class="lotr.CompProperties_AbilityGiveHediff">
+                <hediffDef>Hediff_Confusion_6S</hediffDef>
+            </li>
+        </comps>
+        
+        <verbProperties>
+            <range>20</range>
+            <warmupTime>0.8</warmupTime>
+            <targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetSelf>false</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+    </AbilityDef>
+
+</Defs>

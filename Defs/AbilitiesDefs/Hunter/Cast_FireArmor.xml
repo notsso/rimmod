@@ -2,6 +2,7 @@
 <Defs>
 
     <AbilityDef Name="Cast_FireArmor">
+
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_FireArmor</defName>
         <label>огненная броня</label>
@@ -19,6 +20,7 @@
                 <canTargetSelf>true</canTargetSelf>
             </targetParams>
         </verbProperties>
+        
     </AbilityDef>
 
     <!-- Уровень 7 -->
@@ -40,6 +42,7 @@
         
         <verbProperties>
             <warmupTime>5.0</warmupTime>
+            <range>0</range>
             <targetParams>
                 <canTargetSelf>true</canTargetSelf>
             </targetParams>

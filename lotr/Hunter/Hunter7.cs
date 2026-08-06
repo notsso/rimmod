@@ -96,7 +96,7 @@ namespace lotr {
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
             base.Apply(target, dest);
 
-            Pawn targetPawn = Props.applyToCaster ? parent.pawn : target.Pawn;
+            Pawn targetPawn = target.Pawn;
             if (targetPawn == null) return;
 
             if (targetPawn.health.hediffSet.HasHediff(Props.hediffDef)) return;

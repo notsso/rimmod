@@ -132,11 +132,9 @@ namespace lotr {
                     defaultLabel = "Заняться когитацией",
                     defaultDesc = "Погрузиться в ментальный транс для стабилизации Сиквенций, очищения разума и восстановления духовных сил.",
 
-                    icon = TexCommand.GatherSpotActive,
+                    icon = ContentFinder<Texture2D>.Get("UI/Icons/Cogitation") ?? TexCommand.GatherSpotActive,
 
                     action = delegate {
-                        // Безопасно создаем задачу когитации
-                        // JobDef jobDef = DefDatabase<JobDef>.GetNamed("lotr_CogitationJob", false);
                         JobDef jobDef = LotrDefOf.lotr_CogitationJob;
                         Job cogitationJob = JobMaker.MakeJob(jobDef);
 
