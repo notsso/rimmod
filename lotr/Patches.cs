@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System;
 
 using HarmonyLib;
@@ -223,6 +224,68 @@ namespace lotr {
 
             foreach (var gizmo in __result) {
                 yield return gizmo;
+            }
+        }
+    }
+
+    // Harmony patch - Запоминаем, кто наложил Берсерк
+    [HarmonyPatch(typeof(MentalStateHandler), "TryStartMentalState")]
+    public static class Patch_RecordBerserkCaster {
+        private static readonly FieldInfo PawnField = AccessTools.Field(typeof(MentalStateHandler), "pawn");
+
+        [HarmonyPrefix]
+        public static void Prefix(MentalStateHandler __instance, MentalStateDef stateDef, string reason) {
+            if (stateDef == MentalStateDefOf.Berserk && reason == "Подстрекательство") {
+                if (PawnField == null) return;
+
+                Pawn targetPawn = (Pawn)PawnField.GetValue(__instance);
+
+                if (targetPawn == null) return;
+
+                if (CurrentCaster != null) {
+                    BerserkPuppeteerRegistry.Register(targetPawn, CurrentCaster);
+                    CurrentCaster = null;
+                }
+            }
+        }
+
+        public static Pawn CurrentCaster = null;
+    }
+
+    // Harmony patch - Отслеживаем убийство и проверяем условия заговора
+    [HarmonyPatch(typeof(Pawn), "Kill")]
+    public static class Patch_ConspiratorMurderTracking {
+        [HarmonyPostfix]
+        public static void Postfix(Pawn __instance, DamageInfo? dinfo) {
+            if (__instance == null) return;
+
+            if (dinfo == null || !(dinfo.Value.Instigator is Pawn killer)) return;
+
+            if (killer.InMentalState && killer.MentalStateDef == MentalStateDefOf.Berserk) {
+                Pawn conspiratorCaster = BerserkPuppeteerRegistry.GetCaster(killer);
+                if (conspiratorCaster == null) return;
+
+                // --- ПРОВЕРКА УСЛОВИЙ ИЗ ЗАПРОСА ---
+
+                if (killer.Faction == conspiratorCaster.Faction || killer.Faction == null) return;
+
+                // if (conspiratorCaster.Faction != Faction.OfPlayer) return;
+
+                if (__instance.Faction != killer.Faction) return;
+
+                // Все условия соблюдены: Враг-берсерк убил своего же союзника по приказу нашего Заговорщика!
+
+                Hunter6_Hediff hediff = conspiratorCaster.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter6_Hediff) as Hunter6_Hediff;
+
+                if (hediff != null) {
+                    float severityIncrement = 0.05f;
+
+                    hediff.AddActingProgress(2, severityIncrement, conspiratorCaster);
+
+                    MoteMaker.ThrowText(conspiratorCaster.DrawPos, conspiratorCaster.Map, "Заговор удался!", 4f);
+                }
+
+                BerserkPuppeteerRegistry.CleanUp(killer);
             }
         }
     }

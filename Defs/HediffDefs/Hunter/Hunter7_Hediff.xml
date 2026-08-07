@@ -131,11 +131,14 @@
         <abilities>
 
 			<li>Cast_Fireball_7S</li>
+
             <li>Cast_Taunt_7S</li>
+            
             <li>Cast_BlazingSpear_7S</li>
             <li>Cast_FireRavens_7S</li>
             <li>Cast_FireArmor_7S</li>
             <li>Cast_BlazingSword_7S</li>
+            <li>Cast_ExtinguishFire_7S</li>
 
 		</abilities>
 

@@ -34,26 +34,37 @@ namespace lotr {
         public static AbilityDef Cast_Fireball;
         public static AbilityDef Cast_FireRavens;
         public static AbilityDef Cast_Taunt;
+        public static AbilityDef Cast_ExtinguishFire;
         public static AbilityDef Cast_FireTeleport;
         public static AbilityDef Cast_Incite;
         public static AbilityDef Cast_Confusion;
 
-        public static AbilityDef Cast_Fireball_7S;
-        public static AbilityDef Cast_Fireball_8S;
         public static AbilityDef Cast_Fireball_9S;
+        public static AbilityDef Cast_Fireball_8S;
+        public static AbilityDef Cast_Fireball_7S;
+        public static AbilityDef Cast_Fireball_6S;
         public static AbilityDef Cast_BlazingSpear_7S;
+        public static AbilityDef Cast_BlazingSpear_6S;
         public static AbilityDef Cast_BlazingSword_7S;
+        public static AbilityDef Cast_BlazingSword_6S;
         public static AbilityDef Cast_FireArmor_7S;
+        public static AbilityDef Cast_FireArmor_6S;
         public static AbilityDef Cast_FireRavens_7S;
-        public static AbilityDef Cast_Taunt_7S;
+        public static AbilityDef Cast_FireRavens_6S;
         public static AbilityDef Cast_Taunt_8S;
+        public static AbilityDef Cast_Taunt_7S;
+        public static AbilityDef Cast_Taunt_6S;
+        public static AbilityDef Cast_ExtinguishFire_7S;
+        public static AbilityDef Cast_ExtinguishFire_6S;
         public static AbilityDef Cast_Incite_6S;
         public static AbilityDef Cast_Confusion_6S;
 
-        public static ThingDef Proj_Fireball_7S;
-        public static ThingDef Proj_Fireball_8S;
         public static ThingDef Proj_Fireball_9S;
+        public static ThingDef Proj_Fireball_8S;
+        public static ThingDef Proj_Fireball_7S;
+        public static ThingDef Proj_Fireball_6S;
         public static ThingDef Proj_BlazingSpear_7S;
+        public static ThingDef Proj_BlazingSpear_6S;
 
         public static HediffDef lotr_SanityLoss;
         public static HediffDef Hunter9_Hediff;
@@ -62,6 +73,7 @@ namespace lotr {
         public static HediffDef Hunter6_Hediff;
         public static HediffDef Hediff_FireArmor;
         public static HediffDef Hediff_FireArmor_7S;
+        public static HediffDef Hediff_FireArmor_6S;
         public static HediffDef Hediff_Confusion;
         public static HediffDef Hediff_Confusion_6S;
 
@@ -149,5 +161,32 @@ namespace lotr {
     public class Projectile_MarionetteExtension : DefModExtension {
         public int? controlDuration;
         public float? controlChance;
+    }
+
+    // Хранилище связей: Жертва Безумия -> Кто её заколдовал
+    // Используем WeakReference или регулярную очистку, чтобы избежать утечек памяти
+    public static class BerserkPuppeteerRegistry {
+        public static Dictionary<Pawn, Pawn> puppeteers = new Dictionary<Pawn, Pawn>();
+
+        public static void Register(Pawn victimOfMentalState, Pawn caster) {
+            if (victimOfMentalState == null || caster == null) return;
+            puppeteers[victimOfMentalState] = caster;
+        }
+
+        public static Pawn GetCaster(Pawn victimOfMentalState) {
+            if (victimOfMentalState != null && puppeteers.TryGetValue(victimOfMentalState, out Pawn caster)) {
+                // Если кастер умер или исчез, связь невалидна
+                if (caster.Dead || !caster.Spawned) {
+                    puppeteers.Remove(victimOfMentalState);
+                    return null;
+                }
+                return caster;
+            }
+            return null;
+        }
+
+        public static void CleanUp(Pawn pawn) {
+            puppeteers.Remove(pawn);
+        }
     }
 }

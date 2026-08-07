@@ -28,11 +28,12 @@
             <explosionRadius>1.6</explosionRadius>
             <ai_IsIncendiary>true</ai_IsIncendiary>
 
+            <!--
             <postExplosionSpawnThingDef>Filth_Fuel</postExplosionSpawnThingDef>
             <postExplosionSpawnChance>1.0</postExplosionSpawnChance>
             <postExplosionSpawnThingCount>1</postExplosionSpawnThingCount>
             <explosionChanceToStartFire>1.0</explosionChanceToStartFire>
-            
+            -->
         </projectile>
 
         <comps>

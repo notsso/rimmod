@@ -2,6 +2,7 @@
 <Defs>
     
     <AbilityDef Name="Cast_Fireball">
+
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_Fireball</defName>
         <label>огненный шар</label>
@@ -17,16 +18,22 @@
         </modExtensions>
         
         <verbProperties>
+
             <verbClass>Verb_CastAbility</verbClass>
             <range>25</range>
             <warmupTime>1.5</warmupTime>
             <hasStandardCommand>true</hasStandardCommand>
+
             <targetParams>
+
                 <canTargetLocations>true</canTargetLocations>
                 <canTargetPawns>true</canTargetPawns>
                 <canTargetBuildings>true</canTargetBuildings>
+                
             </targetParams>
+
         </verbProperties>
+
     </AbilityDef>
 
     <!-- Уровень 9 -->

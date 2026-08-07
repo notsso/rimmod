@@ -15,7 +15,7 @@ namespace lotr {
         public override float SpiritualityFactor => 10f;
 
         public Hunter6_Hediff() {
-            maxProgressPerCategory = 1f;
+            maxProgressPerCategory = 0.6f;
         }
     }
 
@@ -78,6 +78,8 @@ namespace lotr {
 
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
             Pawn targetPawn = target.Pawn;
+            Pawn caster = parent.pawn;
+
             if (targetPawn == null || targetPawn.Dead) return;
 
             if (!Props.affectAllies && targetPawn.Faction == parent.pawn.Faction)
@@ -87,15 +89,28 @@ namespace lotr {
             float finalChance = Props.baseSuccessChance * psychicSensitivity;
 
             if (Rand.Chance(finalChance)) {
+                lotr.Patch_RecordBerserkCaster.CurrentCaster = caster;
+
                 targetPawn.mindState.mentalStateHandler.TryStartMentalState(
                     MentalStateDefOf.Berserk,
                     "Подстрекательство",
                     true
                 );
                 MoteMaker.ThrowText(targetPawn.DrawPos, targetPawn.Map, "Бунт!", 3f);
-                FleckMaker.Static(targetPawn.Position, targetPawn.Map, FleckDefOf.PsycastAreaEffect, 1.5f);
+
+                if (targetPawn.RaceProps.ToolUser || targetPawn.RaceProps.IsMechanoid) {
+                    var hediff = caster.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter6_Hediff) as Hunter6_Hediff;
+
+                    if (hediff != null) {
+                        float severityIncrement = 0.01f;
+
+                        hediff.AddActingProgress(1, severityIncrement, caster);
+                    }
+                }
             } else {
-                MoteMaker.ThrowText(targetPawn.DrawPos, targetPawn.Map, "Сопротивление!", 2f);
+                float sanityPenalty = 0.10f;
+
+                BeyonderUtility.AddSanityLoss(caster, sanityPenalty, "Подстрекательство провалено!");
             }
         }
     }

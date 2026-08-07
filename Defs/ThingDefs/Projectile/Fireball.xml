@@ -2,26 +2,35 @@
 <Defs>
 
     <ThingDef Name="Proj_Fireball" ParentName="BaseBullet">
+
         <defName>Proj_Fireball</defName>
         <label>огненный шар</label>
         <thingClass>lotr.Projectile_Fireball</thingClass>
+
         <graphicData>
+
             <texPath>Projectiles/Fireball_projectile</texPath>
             <graphicClass>Graphic_Single</graphicClass>
+
         </graphicData>
+
         <projectile>
+
             <speed>50</speed>
             <damageAmountBase>10</damageAmountBase>
             <explosionRadius>1.0</explosionRadius>
             <damageDef>Flame</damageDef>
             <ai_IsIncendiary>true</ai_IsIncendiary>
+
         </projectile>
+
         <comps>
             <li Class="CompProperties_Glower">
                 <glowRadius>4</glowRadius>
                 <glowColor>(255, 130, 30, 0)</glowColor>
             </li>
         </comps>
+
     </ThingDef>
 
     <!-- Уровень 9 -->

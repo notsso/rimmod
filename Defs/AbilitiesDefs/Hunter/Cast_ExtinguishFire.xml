@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    
+    <AbilityDef Name="Cast_ExtinguishFire">
+        <defName>Cast_ExtinguishFire</defName>
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        <label>Тушение огня</label>
+        <description>Погасить все пожары в радиусе 5 клеток.</description>
+        <iconPath>UI/Icons/Abilities/Hunter/Cast_ExtinguishFire</iconPath>
+        <cooldownTicksRange>1200</cooldownTicksRange>
+        <hostile>false</hostile>
+
+        <modExtensions>
+            <li Class="lotr.SpiritualityCostExtension">
+                <cost>10.0</cost>
+            </li>
+        </modExtensions>
+
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>2</range>
+            <warmupTime>0.5</warmupTime>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+    </AbilityDef>
+
+    <!-- Уровень 7 -->
+    <AbilityDef ParentName="Cast_ExtinguishFire">
+        <defName>Cast_ExtinguishFire_7S</defName>
+        <label>Тушение огня</label>
+        <cooldownTicksRange>600</cooldownTicksRange>
+        <comps>
+            <li Class="lotr.CompProperties_AbilityExtinguishFire">
+                <radius>2</radius>
+                <extinguishCaster>true</extinguishCaster>
+                <extinguishAllies>true</extinguishAllies>
+            </li>
+        </comps>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>2</range>
+            <warmupTime>0.5</warmupTime>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+    </AbilityDef>
+
+    <!-- Уровень 6 -->
+    <AbilityDef ParentName="Cast_ExtinguishFire">
+        <defName>Cast_ExtinguishFire_6S</defName>
+        <label>Тушение огня</label>
+        <cooldownTicksRange>300</cooldownTicksRange>
+        <comps>
+            <li Class="lotr.CompProperties_AbilityExtinguishFire">
+                <radius>4</radius>
+                <extinguishCaster>true</extinguishCaster>
+                <extinguishAllies>true</extinguishAllies>
+            </li>
+        </comps>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>4</range>
+            <warmupTime>0.2</warmupTime>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+    </AbilityDef>
+</Defs>

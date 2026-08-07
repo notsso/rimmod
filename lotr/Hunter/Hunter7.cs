@@ -79,6 +79,7 @@ namespace lotr {
         }
     }
 
+    // Способность hunter7 (pyromaniac): Огненная броня
     public class CompProperties_AbilityGiveHediff : CompProperties_AbilityEffect {
         public HediffDef hediffDef;
         public float severity = 0f;
@@ -123,7 +124,7 @@ namespace lotr {
 
     public class SummonedFireWeapon : SummonedWeapon { }
 
-    // класс для hediff firearmor
+    // Способность hunter7 (pyromaniac): огненная броня
     public class Hediff_FireArmor : HediffWithComps {
         // Храним ссылку на заспавненную невидимую лампочку
         private ThingWithComps lightSource = null;
@@ -174,6 +175,83 @@ namespace lotr {
             if (lightSource != null && lightSource.Spawned) {
                 lightSource.Destroy(DestroyMode.Vanish);
                 lightSource = null;
+            }
+        }
+    }
+
+    // Способность hunter7 (pyromaniac): тушение огня
+    public class CompProperties_AbilityExtinguishFire : CompProperties_AbilityEffect {
+        public float radius = 1f;
+        public bool extinguishCaster = true;
+        public bool extinguishAllies = true;
+        public float spiritCostMultiplier = 1f;
+
+        public CompProperties_AbilityExtinguishFire() {
+            compClass = typeof(CompAbilityEffect_ExtinguishFire);
+        }
+    }
+
+    public class CompAbilityEffect_ExtinguishFire : CompAbilityEffect {
+        public new CompProperties_AbilityExtinguishFire Props => (CompProperties_AbilityExtinguishFire)props;
+
+        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
+            Pawn caster = parent.pawn;
+            if (caster == null || caster.Map == null) return;
+
+            Map map = caster.Map;
+            float radius = Props.radius;
+            IntVec3 center = target.Cell;
+
+            // 1. Тушение пожаров на клетках
+            List<Thing> fireThings = map.listerThings.ThingsOfDef(ThingDefOf.Fire);
+            foreach (Thing fire in fireThings.ToList()) {
+                if (fire.Position.DistanceToSquared(center) <= radius * radius) {
+                    fire.Destroy(DestroyMode.Vanish);
+                }
+            }
+
+            // 2. Тушение горящих существ
+            IReadOnlyList<Pawn> pawns = map.mapPawns.AllPawnsSpawned;
+            foreach (Pawn pawn in pawns) {
+                if (pawn == null || pawn.Dead) continue;
+                if (pawn.Position.DistanceToSquared(center) > radius * radius) continue;
+
+                if (pawn == caster && !Props.extinguishCaster) continue;
+                if (pawn.Faction == caster.Faction && !Props.extinguishAllies) continue;
+
+                if (pawn.IsBurning()) {
+                    foreach (Thing thing in map.thingGrid.ThingsListAt(pawn.Position).ToList()) {
+                        if (thing.def == ThingDefOf.Fire) {
+                            thing.Destroy(DestroyMode.Vanish);
+                        }
+                    }
+                    FleckMaker.ThrowSmoke(pawn.DrawPos, pawn.Map, 1.5f);
+                }
+            }
+
+            // 3. Тушение горящих зданий
+            List<Thing> buildings = map.listerThings.ThingsInGroup(ThingRequestGroup.BuildingArtificial);
+            foreach (Thing building in buildings) {
+                if (building == null || building.Destroyed) continue;
+                if (building.Position.DistanceToSquared(center) > radius * radius) continue;
+
+                bool hasFire = false;
+                foreach (Thing thing in map.thingGrid.ThingsListAt(building.Position).ToList()) {
+                    if (thing.def == ThingDefOf.Fire) {
+                        thing.Destroy(DestroyMode.Vanish);
+                        hasFire = true;
+                    }
+                }
+                if (hasFire) {
+                    FleckMaker.ThrowSmoke(building.DrawPos, building.Map, 1.5f);
+                }
+            }
+
+            // Визуальный эффект в центре
+            for (int i = 0; i < 5; i++) {
+                IntVec3 offset = new IntVec3(Rand.Range(-2, 2), 0, Rand.Range(-2, 2));
+                Vector3 pos = (center + offset).ToVector3Shifted();
+                FleckMaker.ThrowSmoke(pos, map, 0.8f);
             }
         }
     }

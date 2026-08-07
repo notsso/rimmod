@@ -218,6 +218,13 @@ namespace lotr {
                     if (hunter7Hediff != null) {
                         hunter7Hediff.AddActingProgress(2, 0.02f, launcherPawn);
                     }
+
+                    // но если заговорщик, то он получает дебафф
+                    var hunter6Hediff = launcherPawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter6_Hediff) as Hunter6_Hediff;
+                    if (hunter6Hediff != null) {
+                        var sanityPenalty = 0.05f;
+                        BeyonderUtility.AddSanityLoss(launcherPawn, sanityPenalty, "Заговорщик использует грубую силу!");
+                    }
                 }
             }
         }
