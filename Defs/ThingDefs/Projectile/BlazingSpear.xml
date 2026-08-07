@@ -22,11 +22,11 @@
         <projectile>
 
             <speed>120</speed>
-            <damageDef>Burn</damageDef>
             <damageAmountBase>40</damageAmountBase>
-            <armorPenetrationBase>3.00</armorPenetrationBase>
             <explosionRadius>1.6</explosionRadius>
+            <damageDef>Flame</damageDef>
             <ai_IsIncendiary>true</ai_IsIncendiary>
+            <armorPenetrationBase>3.00</armorPenetrationBase>
 
             <!--
             <postExplosionSpawnThingDef>Filth_Fuel</postExplosionSpawnThingDef>
