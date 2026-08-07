@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <HediffDef>
+
+        <hediffClass>lotr.Hunter5_Hediff</hediffClass>
+        <defName>Hunter5_Hediff</defName>
+        <label>Reaper</label>
+        <description>This person became 5 sequence beyonder - reaper. This person sees vulnerabilities and can reap souls.</description>
+        <defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
+        <initialSeverity>0.01</initialSeverity>
+        <maxSeverity>1</maxSeverity>
+        <minSeverity>0</minSeverity>
+        <tendable>false</tendable>
+        <isBad>false</isBad>
+
+        <stages>
+            <li>
+                <minSeverity>0.0</minSeverity>
+                <label>лох</label>
+
+                <statFactors>
+                    <IncomingDamageFactor>0.35</IncomingDamageFactor>
+                </statFactors>
+
+                <statOffsets>
+                    <ArmorRating_Sharp>0.6</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.6</ArmorRating_Blunt>
+                    <ArmorRating_Heat>1.5</ArmorRating_Heat>
+
+                    <MeleeHitChance>20</MeleeHitChance>
+                    <MeleeDodgeChance>18</MeleeDodgeChance>
+                    <ShootingAccuracyPawn>18</ShootingAccuracyPawn>
+                    
+                    <GeneralLaborSpeed>1.0</GeneralLaborSpeed>
+                    <InjuryHealingFactor>2.5</InjuryHealingFactor>
+
+                    <SocialImpact>0.70</SocialImpact>
+                    <TradePriceImprovement>0.50</TradePriceImprovement>
+                    <PsychicSensitivity>0.50</PsychicSensitivity>
+                    <MentalBreakThreshold>-0.30</MentalBreakThreshold>
+                    <TrapSpringChance>-0.70</TrapSpringChance>
+
+                    <ResearchSpeed>1.20</ResearchSpeed>
+                    <GlobalLearningFactor>0.80</GlobalLearningFactor>
+
+                    <MeleeDamageFactor>0.30</MeleeDamageFactor>
+                </statOffsets>
+
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>1.0</offset>
+                    </li>
+                    <li>
+                        <capacity>Sight</capacity>
+                        <offset>1.0</offset>
+                    </li>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <offset>1.0</offset>
+                    </li>
+                    <li>
+                        <capacity>Talking</capacity>
+                        <offset>0.60</offset>
+                    </li>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>0.70</offset>
+                    </li>
+                </capMods>
+            </li>
+
+            <li>
+                <minSeverity>0.4</minSeverity>
+                <label>нормик</label>
+
+                <statFactors>
+                    <IncomingDamageFactor>0.30</IncomingDamageFactor>
+                </statFactors>
+                
+                <statOffsets>
+                    <ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
+                    <ArmorRating_Heat>2.0</ArmorRating_Heat>
+
+                    <MeleeHitChance>25</MeleeHitChance>
+                    <MeleeDodgeChance>22</MeleeDodgeChance>
+                    <ShootingAccuracyPawn>22</ShootingAccuracyPawn>
+                    
+                    <GeneralLaborSpeed>1.30</GeneralLaborSpeed>
+                    <InjuryHealingFactor>3.0</InjuryHealingFactor>
+                    
+                    <SocialImpact>0.75</SocialImpact>
+                    <TradePriceImprovement>0.55</TradePriceImprovement>
+                    <PsychicSensitivity>0.70</PsychicSensitivity>
+                    <MentalBreakThreshold>-0.40</MentalBreakThreshold>
+                    <TrapSpringChance>-0.90</TrapSpringChance>
+                    
+                    <ResearchSpeed>1.40</ResearchSpeed>
+                    <GlobalLearningFactor>1.10</GlobalLearningFactor>
+
+                    <MeleeDamageFactor>0.50</MeleeDamageFactor>
+                </statOffsets>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>1.10</offset>
+                    </li>
+                    <li>
+                        <capacity>Sight</capacity>
+                        <offset>1.10</offset>
+                    </li>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <offset>1.10</offset>
+                    </li>
+                    <li>
+                        <capacity>Talking</capacity>
+                        <offset>0.70</offset>
+                    </li>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>0.90</offset>
+                    </li>
+                </capMods>
+            </li>
+
+            <li>
+                <minSeverity>0.8</minSeverity>
+                <label>смешарик</label>
+
+                <statFactors>
+                    <IncomingDamageFactor>0.25</IncomingDamageFactor>
+                </statFactors>
+                
+                <statOffsets>
+                    <ArmorRating_Sharp>1.0</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>1.0</ArmorRating_Blunt>
+                    <ArmorRating_Heat>2.5</ArmorRating_Heat>
+
+                    <MeleeHitChance>25</MeleeHitChance>
+                    <MeleeDodgeChance>25</MeleeDodgeChance>
+                    <ShootingAccuracyPawn>25</ShootingAccuracyPawn>
+                    
+                    <GeneralLaborSpeed>1.50</GeneralLaborSpeed>
+                    <InjuryHealingFactor>4.0</InjuryHealingFactor>
+                    
+                    <SocialImpact>0.80</SocialImpact>
+                    <TradePriceImprovement>0.60</TradePriceImprovement>
+                    <PsychicSensitivity>0.75</PsychicSensitivity>
+                    <MentalBreakThreshold>-0.50</MentalBreakThreshold>
+                    <TrapSpringChance>-1.0</TrapSpringChance>
+                    
+                    <ResearchSpeed>1.50</ResearchSpeed>
+                    <GlobalLearningFactor>1.20</GlobalLearningFactor>
+
+                    <MeleeDamageFactor>0.60</MeleeDamageFactor>
+                </statOffsets>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>1.20</offset>
+                    </li>
+                    <li>
+                        <capacity>Sight</capacity>
+                        <offset>1.20</offset>
+                    </li>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <offset>1.20</offset>
+                    </li>
+                    <li>
+                        <capacity>Talking</capacity>
+                        <offset>0.80</offset>
+                    </li>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>1.0</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>0.005</severityPerDay>
+            </li>
+        </comps>
+
+        <abilities>
+        
+            <li>Cast_Fireball_6S</li>
+
+            <li>Cast_Taunt_6S</li>
+
+            <li>Cast_BlazingSpear_6S</li>
+            <li>Cast_FireRavens_6S</li>
+            <li>Cast_FireArmor_6S</li>
+            <li>Cast_BlazingSword_6S</li>
+            <li>Cast_ExtinguishFire_6S</li>
+
+            <li>Cast_FireTeleport_6S</li>
+            <li>Cast_Incite_6S</li>
+            <li>Cast_Confusion_6S</li>
+
+            <li>Cast_ReaperState_5S</li>
+            <li>Cast_Vulnerability_5S</li> 
+
+        </abilities>
+
+    </HediffDef>
+
+</Defs>

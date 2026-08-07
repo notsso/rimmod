@@ -289,4 +289,129 @@ namespace lotr {
             }
         }
     }
+
+    [HarmonyPatch(typeof(Pawn_HealthTracker), "PreApplyDamage")]
+    public static class Patch_AttackAmplifier {
+        private static readonly FieldInfo PawnField = AccessTools.Field(typeof(Pawn_HealthTracker), "pawn");
+
+        [HarmonyPrefix]
+        public static void Prefix(Pawn_HealthTracker __instance, ref DamageInfo dinfo, out bool absorbed) {
+            absorbed = false;
+
+            if (PawnField == null) return;
+
+            Pawn victim = (Pawn)PawnField.GetValue(__instance);
+            if (victim == null || victim.health == null || victim.health.hediffSet == null) return;
+
+            Pawn attacker = dinfo.Instigator as Pawn;
+            if (attacker == null && dinfo.Instigator is Projectile proj && proj.Launcher is Pawn projLauncher) {
+                attacker = projLauncher;
+            }
+
+            if (attacker != null && attacker.health != null && attacker.health.hediffSet != null) {
+                // проверка на уязвимость
+                Hediff_Vulnerable vulnHediff = null;
+                foreach (var h in victim.health.hediffSet.hediffs) {
+                    if (h is Hediff_Vulnerable vulnerableHediff) {
+                        vulnHediff = vulnerableHediff;
+                        break;
+                    }
+                }
+
+                if (vulnHediff != null) {
+                    float newAmount = dinfo.Amount * 1.5f;
+                    dinfo.SetAmount(newAmount);
+                }
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(Thing), "TakeDamage")]
+    public static class Patch_ReaperAbsoluteDestruction {
+        private static bool isProcessingReaperDamage = false;
+
+        [HarmonyPrefix]
+        public static void Prefix(Thing __instance, ref DamageInfo dinfo) {
+            if (isProcessingReaperDamage) return;
+
+            Pawn attacker = dinfo.Instigator as Pawn;
+            bool isRangedAttack = false;
+
+            if (attacker == null && dinfo.Instigator is Projectile proj) {
+                if (proj is Projectile_Base) {
+                    return;
+                }
+
+                attacker = proj.Launcher as Pawn;
+                isRangedAttack = true;
+            }
+
+            if (!isRangedAttack && dinfo.Weapon == null) return;
+
+            if (attacker != null && attacker.health != null && attacker.health.hediffSet != null) {
+                if (attacker.stances != null && attacker.stances.curStance is Stance_Warmup) {
+                    return;
+                }
+
+                // Ищем хедифф Жнеца
+                Hediff_ReaperState reaperHediff = null;
+                foreach (var h in attacker.health.hediffSet.hediffs) {
+                    if (h is Hediff_ReaperState hr) {
+                        reaperHediff = hr;
+                        break;
+                    }
+                }
+
+                if (reaperHediff != null && !reaperHediff.isExpended) {
+                    if (isRangedAttack && reaperHediff.isReserved) {
+                        return;
+                    }
+
+                    // --- ЭТАП 1: МОДИФИКАЦИЯ ОСНОВНОГО УДАРУ ---
+                    dinfo.SetIgnoreArmor(true);
+                    float baseAmount = dinfo.Amount;
+                    dinfo.SetAmount(baseAmount * 3f);
+
+                    // Сбиваем энергощиты
+                    if (__instance is Pawn victim && victim.apparel != null) {
+                        foreach (var apparel in victim.apparel.WornApparel) {
+                            CompShield shieldComp = apparel?.GetComp<CompShield>();
+                            if (shieldComp?.parent != null) {
+                                shieldComp.parent.TakeDamage(new DamageInfo(DamageDefOf.Bomb, 9999f));
+                            }
+                        }
+                    }
+
+                    float bonusDamageAmount = dinfo.Amount * 0.5f;
+                    Log.Message($"{bonusDamageAmount}");
+                    DamageDef bonusDamageDef = isRangedAttack ? DamageDefOf.Crush : DamageDefOf.ExecutionCut;
+
+                    DamageInfo bonusDinfo = new DamageInfo(
+                        bonusDamageDef,
+                        bonusDamageAmount,
+                        dinfo.ArmorPenetrationInt,
+                        dinfo.Angle,
+                        attacker,
+                        dinfo.HitPart,
+                        dinfo.Weapon
+                    );
+                    bonusDinfo.SetIgnoreArmor(true);
+
+                    isProcessingReaperDamage = true;
+                    try {
+                        __instance.TakeDamage(bonusDinfo);
+                    } finally {
+                        isProcessingReaperDamage = false;
+                    }
+
+                    if (__instance.Spawned && __instance.Map != null) {
+                        string textEffect = isRangedAttack ? "ПОЖИНАНИЕ: РАЗРУШЕНИЕ (Crush)" : "ПОЖИНАНИЕ: КАЗНЬ (Cut)";
+                        MoteMaker.ThrowText(__instance.Position.ToVector3Shifted(), __instance.Map, textEffect, 4f);
+                    }
+
+                    reaperHediff.ExpendCharge();
+                }
+            }
+        }
+    }
 }

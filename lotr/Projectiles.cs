@@ -9,8 +9,15 @@ using RimWorld;
 namespace lotr {
     // Абстрактный базовый класс для всех снарядов мода
     public abstract class Projectile_Base : Projectile {
-        public override int DamageAmount => def.projectile.GetDamageAmount(this, null);
-        public override float ArmorPenetration => def.projectile.GetArmorPenetration(this, null);
+        // Храним прямую ссылку на хедифф Жнеца, который породил этот снаряд
+        public Hediff_ReaperState linkedReaperState = null;
+
+        // Динамический множитель урона для конкретного снаряда
+        public float currentDamageMultiplier = 1f;
+        public float customArmorPenetration = -1f;
+
+        public override int DamageAmount => (int)((float)def.projectile.GetDamageAmount(this, null) * currentDamageMultiplier);
+        public override float ArmorPenetration => Mathf.Max(def.projectile.GetArmorPenetration(this, null), customArmorPenetration);
         public new DamageDef DamageDef => def.projectile.damageDef;
         public virtual float Speed => def.projectile.speed;
 
@@ -48,7 +55,44 @@ namespace lotr {
 
         public virtual void OnTick() { }
 
-        public virtual void BeforeImpact(Thing hitThing) { }
+        public virtual void BeforeImpact(Thing hitThing) {
+            // Проверяем, привязан ли к снаряду живой и не потраченный заряд Жнеца
+            if (linkedReaperState != null && !linkedReaperState.isExpended) {
+                if (hitThing == null) return;
+
+                currentDamageMultiplier = 3f;
+                customArmorPenetration = 3.0f;
+
+                if (hitThing is Pawn victim && victim.apparel != null) {
+                    foreach (var apparel in victim.apparel.WornApparel) {
+                        CompShield shieldComp = apparel?.GetComp<CompShield>();
+                        if (shieldComp?.parent != null) {
+                            shieldComp.parent.TakeDamage(new DamageInfo(DamageDefOf.Bomb, 9999f));
+                        }
+                    }
+                }
+
+                float bonusDamageAmount = DamageAmount * 0.5f;
+                DamageInfo bonusDinfo = new DamageInfo(
+                    DamageDefOf.Crush,
+                    bonusDamageAmount,
+                    ArmorPenetration,
+                    this.ExactRotation.eulerAngles.y,
+                    launcher,
+                    null,
+                    equipmentDef
+                );
+                bonusDinfo.SetIgnoreArmor(true);
+
+                hitThing.TakeDamage(bonusDinfo);
+
+                if (hitThing.Spawned && hitThing.Map != null) {
+                    MoteMaker.ThrowText(hitThing.Position.ToVector3Shifted(), hitThing.Map, "ПОЖИНАНИЕ: РАЗРУШЕНИЕ", 4f);
+                }
+            }
+
+            linkedReaperState.ExpendCharge();
+        }
 
         public virtual void OnImpact(Thing hitThing) { }
 
@@ -61,6 +105,21 @@ namespace lotr {
             if (!this.Spawned) {
                 Log.Warning($"Base.Launch failed for {this.def.defName}, spawning manually.");
                 GenSpawn.Spawn(this, origin.ToIntVec3(), launcher.Map);
+            }
+
+            if (launcher is Pawn pawn && pawn.health?.hediffSet != null) {
+                Hediff_ReaperState reaperHediff = null;
+                foreach (var h in pawn.health.hediffSet.hediffs) {
+                    if (h is Hediff_ReaperState hr) {
+                        reaperHediff = hr;
+                        break;
+                    }
+                }
+
+                if (reaperHediff != null && !reaperHediff.isExpended && !reaperHediff.isReserved) {
+                    this.linkedReaperState = reaperHediff;
+                    reaperHediff.isReserved = true;
+                }
             }
 
             OnLaunch();

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <HediffDef Name="Hediff_Vulnerable">
+        <defName>Hediff_Vulnerable</defName>
+        <label>Уязвимость</label>
+        <description>Пешка находится под уязвимостью - любой получаемый урон x1.5.</description>
+        <hediffClass>lotr.Hediff_Vulnerable</hediffClass>
+        <isBad>true</isBad>
+    </HediffDef>
+
+    <!-- Уровень 5 -->
+    <HediffDef ParentName="Hediff_Vulnerable">
+        <defName>Hediff_Vulnerable_5S</defName>
+        <label>Уязвимость</label>
+
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>3600</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+
+        <stages>
+            <li />
+        </stages>
+    </HediffDef>
+    
+</Defs>

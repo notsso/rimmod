@@ -38,6 +38,9 @@ namespace lotr {
         public static AbilityDef Cast_FireTeleport;
         public static AbilityDef Cast_Incite;
         public static AbilityDef Cast_Confusion;
+        public static AbilityDef Cast_ReaperState;
+        public static AbilityDef Cast_Vulnerability;
+
 
         public static AbilityDef Cast_Fireball_9S;
         public static AbilityDef Cast_Fireball_8S;
@@ -58,6 +61,8 @@ namespace lotr {
         public static AbilityDef Cast_ExtinguishFire_6S;
         public static AbilityDef Cast_Incite_6S;
         public static AbilityDef Cast_Confusion_6S;
+        public static AbilityDef Cast_ReaperState_5S;
+        public static AbilityDef Cast_Vulnerability_5S;
 
         public static ThingDef Proj_Fireball_9S;
         public static ThingDef Proj_Fireball_8S;
@@ -76,6 +81,10 @@ namespace lotr {
         public static HediffDef Hediff_FireArmor_6S;
         public static HediffDef Hediff_Confusion;
         public static HediffDef Hediff_Confusion_6S;
+        public static HediffDef Hediff_ReaperState;
+        public static HediffDef Hediff_ReaperState_5S;
+        public static HediffDef Hediff_Vulnerable;
+        public static HediffDef Hediff_Vulnerable_5S;
 
         public static JobDef lotr_CogitationJob;
 

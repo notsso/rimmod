@@ -103,7 +103,7 @@
 
         <thingClass>ThingWithComps</thingClass>
         <defName>Hunter6_Potion</defName>
-        <label>pyromaniac's potion</label>
+        <label>conspirator's potion</label>
         <description>Черная как железо, с большим количеством плавающих на поверхности красноватых пятен ржавчины.
         Зелье имеет сильный ржавый вкус, холодное, как змея, скользкая и ледяная.
         Выпив его, пешка откроет в себе силу Заговорщика</description>
@@ -125,6 +125,39 @@
                 <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
                     <hediffToRemove>Hunter7_Hediff</hediffToRemove>
                     <hediffToGive>Hunter6_Hediff</hediffToGive>
+                    <severity>0.01</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+
+    </ThingDef>
+
+    <ThingDef ParentName="PotionBase">
+
+        <thingClass>ThingWithComps</thingClass>
+        <defName>Hunter5_Potion</defName>
+        <label>reaper's potion</label>
+        <description>Свежая красная кровь с плавающими в ней вкраплениями чёрного вещества, похожего на железные опилки, словно внутри разлетелось железное оружие.
+        У зелья резкий запах крови, непривычный привкус ржавчины и при употреблении возникает жгучее ощущение, которое мгновенно заполняет рот и пронзает мозг.
+        Выпив его, пешка откроет в себе силу Пожинателя</description>
+        <descriptionHyperlinks>
+            <HediffDef>Hunter5_Hediff</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Potions/Hunter9_Potion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <ingestible>
+            <outcomeDoers>
+                <li Class="lotr.IngestionOutcomeDoer_GiveHediffRange">
+                    <hediffDef>lotr_SanityLoss</hediffDef>
+                    <severityRange>0.15~0.75</severityRange> 
+                </li>
+
+                <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
+                    <hediffToRemove>Hunter6_Hediff</hediffToRemove>
+                    <hediffToGive>Hunter5_Hediff</hediffToGive>
                     <severity>0.01</severity>
                 </li>
             </outcomeDoers>

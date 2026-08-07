@@ -169,4 +169,46 @@
         <researchPrerequisite>Brewing</researchPrerequisite>
     </RecipeDef>
 
+    <RecipeDef>
+        <defName>Hunter5_PotionRecipe</defName>
+        <label>brew reaper's potion</label>
+        <description>Brew a mysterious potion of the Hunter pathway.</description>
+        <jobString>Brewing reaper's potion.</jobString>
+        
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+    
+        <ingredients>
+        <li>
+            <filter>
+                <thingDefs>
+                    <li>MedicineHerbal</li>
+                </thingDefs>
+            </filter>
+            <count>1</count>
+        </li>
+        <li>
+            <filter>
+                <thingDefs>
+                    <li>lotr_MarshBoarCrystallizedSpleen</li>
+                </thingDefs>
+            </filter>
+            <count>5</count>
+        </li>
+        </ingredients>
+        
+        <products>
+            <Hunter5_Potion>1</Hunter5_Potion>
+        </products>
+        
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        
+        <researchPrerequisite>Brewing</researchPrerequisite>
+    </RecipeDef>
+
 </Defs>
