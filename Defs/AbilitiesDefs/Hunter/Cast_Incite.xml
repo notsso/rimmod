@@ -33,16 +33,16 @@
     <AbilityDef ParentName="Cast_Incite">
         <defName>Cast_Incite_6S</defName>
         <label>Подстрекательство</label>
-        <cooldownTicksRange>180</cooldownTicksRange>
+        <cooldownTicksRange>1800</cooldownTicksRange>
         <comps>
             <li Class="lotr.CompProperties_AbilityIncite">
-                <baseSuccessChance>0.8</baseSuccessChance>
+                <baseSuccessChance>0.6</baseSuccessChance>
                 <affectAllies>false</affectAllies>
             </li>
         </comps>
         <verbProperties>
-            <range>20</range>
-            <warmupTime>0.5</warmupTime>
+            <range>10</range>
+            <warmupTime>2.0</warmupTime>
         </verbProperties>
     </AbilityDef>
 

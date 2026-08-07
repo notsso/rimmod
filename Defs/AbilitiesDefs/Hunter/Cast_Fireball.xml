@@ -33,15 +33,15 @@
     <AbilityDef ParentName="Cast_Fireball">
         <defName>Cast_Fireball_9S</defName>
         <label>огненный шар</label>
-        <cooldownTicksRange>60</cooldownTicksRange>
+        <cooldownTicksRange>600</cooldownTicksRange>
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_Fireball_9S</projectileDef>
             </li>
         </comps>
         <verbProperties>
-            <range>20</range>
-            <warmupTime>1.5</warmupTime>
+            <range>10</range>
+            <warmupTime>2.0</warmupTime>
         </verbProperties>
     </AbilityDef>
 
@@ -49,14 +49,14 @@
     <AbilityDef ParentName="Cast_Fireball">
         <defName>Cast_Fireball_8S</defName>
         <label>огненный шар</label>
-        <cooldownTicksRange>60</cooldownTicksRange>
+        <cooldownTicksRange>300</cooldownTicksRange>
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_Fireball_8S</projectileDef>
             </li>
         </comps>
         <verbProperties>
-            <range>30</range>
+            <range>15</range>
             <warmupTime>1.0</warmupTime>
         </verbProperties>
     </AbilityDef>
@@ -65,15 +65,31 @@
     <AbilityDef ParentName="Cast_Fireball">
         <defName>Cast_Fireball_7S</defName>
         <label>огненный шар</label>
-        <cooldownTicksRange>60</cooldownTicksRange>
+        <cooldownTicksRange>120</cooldownTicksRange>
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_Fireball_7S</projectileDef>
             </li>
         </comps>
         <verbProperties>
-            <range>40</range>
+            <range>25</range>
             <warmupTime>0.5</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
+    <!-- Уровень 6 -->
+    <AbilityDef ParentName="Cast_Fireball">
+        <defName>Cast_Fireball_6S</defName>
+        <label>огненный шар</label>
+        <cooldownTicksRange>60</cooldownTicksRange>
+        <comps>
+            <li Class="CompProperties_AbilityLaunchProjectile">
+                <projectileDef>Proj_Fireball_6S</projectileDef>
+            </li>
+        </comps>
+        <verbProperties>
+            <range>30</range>
+            <warmupTime>0.3</warmupTime>
         </verbProperties>
     </AbilityDef>
     

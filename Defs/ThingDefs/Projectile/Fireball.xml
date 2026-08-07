@@ -42,8 +42,8 @@
         <label>огненный шар</label>
         <thingClass>lotr.Projectile_Fireball</thingClass>
         <projectile>
-            <speed>100</speed>
-            <damageAmountBase>20</damageAmountBase>
+            <speed>70</speed>
+            <damageAmountBase>15</damageAmountBase>
             <explosionRadius>2.0</explosionRadius>
         </projectile>
     </ThingDef>
@@ -54,9 +54,21 @@
         <label>огненный шар</label>
         <thingClass>lotr.Projectile_Fireball</thingClass>
         <projectile>
-            <speed>150</speed>
+            <speed>100</speed>
             <damageAmountBase>30</damageAmountBase>
             <explosionRadius>3.0</explosionRadius>
+        </projectile>
+    </ThingDef>
+
+    <!-- Уровень 6 -->
+    <ThingDef ParentName="Proj_Fireball">
+        <defName>Proj_Fireball_6S</defName>
+        <label>огненный шар</label>
+        <thingClass>lotr.Projectile_Fireball</thingClass>
+        <projectile>
+            <speed>150</speed>
+            <damageAmountBase>40</damageAmountBase>
+            <explosionRadius>4.0</explosionRadius>
         </projectile>
     </ThingDef>
 

@@ -57,4 +57,17 @@
         </projectile>
     </ThingDef>
 
+    <!-- Уровень 6 -->
+    <ThingDef ParentName="Proj_BlazingSpear">
+        <defName>Proj_BlazingSpear_6S</defName>
+        <label>Копье огня</label>
+        <thingClass>lotr.Projectile_BlazingSpear</thingClass>
+        <projectile>
+            <speed>150</speed>
+            <damageAmountBase>50</damageAmountBase>
+            <armorPenetrationBase>5.00</armorPenetrationBase>
+            <explosionRadius>2.0</explosionRadius>
+        </projectile>
+    </ThingDef>
+
 </Defs>

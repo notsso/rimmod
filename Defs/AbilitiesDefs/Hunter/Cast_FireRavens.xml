@@ -13,6 +13,12 @@
         <aiCanUse>true</aiCanUse>
         <hostile>false</hostile>
 
+        <modExtensions>
+            <li Class="lotr.SpiritualityCostExtension">
+                <cost>50.0</cost>
+            </li>
+        </modExtensions>
+
         <verbProperties>
             <verbClass>Verb_CastAbility</verbClass>
             <warmupTime>0.5</warmupTime>
@@ -24,20 +30,12 @@
 
     </AbilityDef>
 
+    <!-- Уровень 7 -->
     <AbilityDef ParentName="Cast_FireRavens">
-
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_FireRavens_7S</defName>
         <label>огненные вороны</label>
-
-        <cooldownTicksRange>100</cooldownTicksRange>
-
-        <modExtensions>
-            <li Class="lotr.SpiritualityCostExtension">
-                <cost>50.0</cost>
-            </li>
-        </modExtensions>
-        
+        <cooldownTicksRange>120</cooldownTicksRange>
         <comps>
             <li Class="lotr.CompProperties_AbilityLaunchFireRavens">
                 <compClass>lotr.CompAbilityEffect_LaunchFireRavens</compClass>
@@ -46,11 +44,28 @@
                 <maxCount>3</maxCount>
             </li>
         </comps>
-
         <verbProperties>
             <warmupTime>0.5</warmupTime>
         </verbProperties>
+    </AbilityDef>
 
+    <!-- Уровень 6 -->
+    <AbilityDef ParentName="Cast_FireRavens">
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        <defName>Cast_FireRavens_6S</defName>
+        <label>огненные вороны</label>
+        <cooldownTicksRange>60</cooldownTicksRange>
+        <comps>
+            <li Class="lotr.CompProperties_AbilityLaunchFireRavens">
+                <compClass>lotr.CompAbilityEffect_LaunchFireRavens</compClass>
+                <ravenPawnKind>lotr_FireRavenKind</ravenPawnKind>
+                <lifetime>6000</lifetime>
+                <maxCount>5</maxCount>
+            </li>
+        </comps>
+        <verbProperties>
+            <warmupTime>0.2</warmupTime>
+        </verbProperties>
     </AbilityDef>
 
 </Defs>

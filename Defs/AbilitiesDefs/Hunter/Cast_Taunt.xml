@@ -32,6 +32,7 @@
 
     </AbilityDef>
 
+    <!-- Уровень 8 -->
     <AbilityDef ParentName="Cast_Taunt">
         <defName>Cast_Taunt_8S</defName>
         <label>провокация</label>
@@ -49,6 +50,7 @@
         </verbProperties>
     </AbilityDef>
 
+    <!-- Уровень 7 -->
     <AbilityDef ParentName="Cast_Taunt">
         <defName>Cast_Taunt_7S</defName>
         <label>провокация</label>
@@ -56,13 +58,31 @@
 
         <comps>
             <li Class="lotr.CompProperties_AbilityProvoke">
-                <baseSuccessChance>50.0</baseSuccessChance>
+                <baseSuccessChance>70.0</baseSuccessChance>
             </li>
         </comps>
 
         <verbProperties>
             <range>20</range>
-            <warmupTime>1</warmupTime>
+            <warmupTime>0.8</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
+    <!-- Уровень 6 -->
+    <AbilityDef ParentName="Cast_Taunt">
+        <defName>Cast_Taunt_6S</defName>
+        <label>провокация</label>
+        <cooldownTicksRange>300</cooldownTicksRange>
+
+        <comps>
+            <li Class="lotr.CompProperties_AbilityProvoke">
+                <baseSuccessChance>90.0</baseSuccessChance>
+            </li>
+        </comps>
+
+        <verbProperties>
+            <range>30</range>
+            <warmupTime>0.4</warmupTime>
         </verbProperties>
     </AbilityDef>
 

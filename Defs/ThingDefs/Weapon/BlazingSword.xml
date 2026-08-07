@@ -4,7 +4,7 @@
     <ThingDef Name="Melee_BlazingSword">
         <defName>Melee_BlazingSword</defName>
         <label>огненный меч</label>
-        <description>Мистический клинок, призываемый из чистого концентрированного пламени. Он материализуется ровно на одну минуту, после чего растворяется в воздухе.</description>
+        <description>Мистический клинок, призываемый из чистого концентрированного пламени.</description>
         <category>Item</category>
         
         <thingClass>lotr.SummonedFireWeapon</thingClass>
@@ -15,13 +15,12 @@
         <drawGUIOverlay>true</drawGUIOverlay>
         <altitudeLayer>Item</altitudeLayer>
         <alwaysHaulable>true</alwaysHaulable>
-        <tickerType>Normal</tickerType> <!-- Включаем тикер Normal для работы таймера исчезновения -->
+        <tickerType>Normal</tickerType>
         <techLevel>Medieval</techLevel>
         
-        <!-- Запрещаем переплавку и торговлю -->
         <smeltable>false</smeltable>
         <tradeability>None</tradeability>
-        <destroyOnDrop>true</destroyOnDrop> <!-- Если пешка уронит его или упадет — меч сразу испарится -->
+        <destroyOnDrop>true</destroyOnDrop>
 
         <graphicData>
             <texPath>Things/Item/Equipment/WeaponMelee/BlazingSword</texPath>
@@ -102,12 +101,24 @@
         </thingCategories>
     </ThingDef>
 
+    <!-- Уровень 7 -->
     <ThingDef ParentName="Melee_BlazingSword">
         <defName>Melee_BlazingSword_7S</defName>
         <label>огненный меч</label>
         <comps>
             <li Class="CompProperties_Lifespan">
                 <lifespanTicks>3600</lifespanTicks>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <!-- Уровень 6 -->
+    <ThingDef ParentName="Melee_BlazingSword">
+        <defName>Melee_BlazingSword_6S</defName>
+        <label>огненный меч</label>
+        <comps>
+            <li Class="CompProperties_Lifespan">
+                <lifespanTicks>7200</lifespanTicks>
             </li>
         </comps>
     </ThingDef>

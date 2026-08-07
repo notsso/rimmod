@@ -42,4 +42,19 @@
         </verbProperties>
     </AbilityDef>
 
+    <!-- Уровень 6 -->
+    <AbilityDef ParentName="Cast_BlazingSword">
+        <defName>Cast_BlazingSword_6S</defName>
+        <label>призыв пламенного клинка</label>
+        <cooldownTicksRange>3600</cooldownTicksRange>
+        <modExtensions>
+            <li Class="lotr.SummonedWeaponExtension">
+                <weaponDef>Melee_BlazingSword_6S</weaponDef>
+            </li>
+        </modExtensions>
+        <verbProperties>
+            <warmupTime>1.0</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
 </Defs>
