@@ -112,7 +112,14 @@ namespace lotr {
     }
 
 
-    public class SummonedWeapon : ThingWithComps { }
+    public class SummonedWeapon : ThingWithComps {
+        public int ticksLeft = -1;
+
+        public override void ExposeData() {
+            base.ExposeData();
+            Scribe_Values.Look(ref ticksLeft, "ticksLeft", -1);
+        }
+    }
 
     public class SummonedFireWeapon : SummonedWeapon { }
 

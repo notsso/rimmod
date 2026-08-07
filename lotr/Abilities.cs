@@ -114,8 +114,10 @@ namespace lotr {
             }
 
             // Создаём и экипируем новое оружие
-            ThingWithComps summonedSword = (ThingWithComps)ThingMaker.MakeThing(weaponDef);
-            caster.equipment.AddEquipment(summonedSword);
+            SummonedFireWeapon summonedWeapon = (SummonedFireWeapon)ThingMaker.MakeThing(weaponDef);
+            summonedWeapon.ticksLeft = ext.lifespan;
+
+            caster.equipment.AddEquipment(summonedWeapon);
 
             // Визуальные эффекты при призыве
             OnSummon(caster);

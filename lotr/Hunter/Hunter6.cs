@@ -63,6 +63,7 @@ namespace lotr {
         }
     }
 
+    // Способность hunter6 (conspirator): подстрекание
     public class CompProperties_AbilityIncite : CompProperties_AbilityEffect {
         public float baseSuccessChance = 0.75f;
         public bool affectAllies = false;
@@ -99,52 +100,34 @@ namespace lotr {
         }
     }
 
-    // Состояние здоровья - замешательство
+    // Способность hunter6 (conspirator): замешательство
     public class Hediff_Confusion : HediffWithComps {
-        private int tickCounter = 0;
+        public override void PostAdd(DamageInfo? dinfo) {
+            base.PostAdd(dinfo);
 
-        public override void Tick() {
-            base.Tick();
-            if (pawn == null || pawn.Destroyed) return;
+            if (pawn != null && pawn.Spawned && !pawn.Dead) {
+                pawn.jobs.StopAll();
 
-            tickCounter++;
-            // Каждые 3-6 секунд (150–300 тиков) заставляем цель сделать случайное действие
-            if (tickCounter >= Rand.RangeInclusive(150, 300)) {
-                tickCounter = 0;
-                if (pawn.Spawned && !pawn.Dead) {
-                    float random = Rand.Range(0, 1);
-                    // 40% шанс остановиться
-                    if (random < 0.4f) {
-                        pawn.jobs.StopAll();
-                        MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "?", 2f);
-                    }
-                    // 20% шанс сменить цель
-                    else if (random < 0.6f) {
-                        Thing newTarget = FindRandomTarget(pawn);
-                        if (newTarget != null) {
-                            pawn.mindState.enemyTarget = newTarget;
-                            pawn.jobs.StopAll();
-                            Job newJob = JobMaker.MakeJob(JobDefOf.AttackMelee, newTarget);
-                            pawn.jobs.StartJob(newJob);
-                            MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Цель!", 2f);
-                        }
-                    }
-                    // 40% – ничего не делать
-                }
+                pawn.mindState.mentalStateHandler.TryStartMentalState(
+                    MentalStateDefOf.Wander_Psychotic,
+                    reason: "Эффект Замешательства",
+                    forceWake: true,
+                    transitionSilently: false
+                );
+
+                MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "???", 3f);
             }
         }
 
-        private Thing FindRandomTarget(Pawn pawn) {
-            // Ищем любого врага на карте в пределах 20 клеток
-            return GenClosest.ClosestThingReachable(
-                pawn.Position,
-                pawn.Map,
-                ThingRequest.ForGroup(ThingRequestGroup.Pawn),
-                PathEndMode.OnCell,
-                TraverseParms.For(pawn),
-                20f,
-                x => x is Pawn p && p != pawn && p.Faction != pawn.Faction && !p.Dead
-            );
+        public override void PostRemoved() {
+            base.PostRemoved();
+
+            if (pawn != null && pawn.Spawned && pawn.InMentalState) {
+                if (pawn.MentalStateDef == MentalStateDefOf.Wander_Psychotic) {
+                    pawn.MentalState.RecoverFromState();
+                    MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Рассудок вернулся", 2.5f);
+                }
+            }
         }
     }
 }

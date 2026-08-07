@@ -5,7 +5,7 @@
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_Confusion</defName>
-        <label>Введение в заблуждение</label>
+        <label>Замешательство</label>
         <description>Дезориентирует врага, заставляя его путаться.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Confusion</iconPath>
         <cooldownTicksRange>3600</cooldownTicksRange>
@@ -31,7 +31,7 @@
     <!-- Уровень 6 -->
     <AbilityDef ParentName="Cast_Confusion">
         <defName>Cast_Confusion_6S</defName>
-        <label>Введение в заблуждение</label>
+        <label>Замешательство</label>
         <cooldownTicksRange>3600</cooldownTicksRange>
         <comps>
             <li Class="lotr.CompProperties_AbilityGiveHediff">

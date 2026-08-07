@@ -44,10 +44,6 @@
             <li>
                 <compClass>CompQuality</compClass>
             </li>
-            
-            <li Class="CompProperties_Lifespan">
-                <lifespanTicks>3600</lifespanTicks>
-            </li>
 
             <li Class="CompProperties_Glower">
                 <glowRadius>4</glowRadius>
@@ -105,22 +101,29 @@
     <ThingDef ParentName="Melee_BlazingSword">
         <defName>Melee_BlazingSword_7S</defName>
         <label>огненный меч</label>
-        <comps>
-            <li Class="CompProperties_Lifespan">
-                <lifespanTicks>3600</lifespanTicks>
-            </li>
-        </comps>
     </ThingDef>
 
     <!-- Уровень 6 -->
     <ThingDef ParentName="Melee_BlazingSword">
         <defName>Melee_BlazingSword_6S</defName>
         <label>огненный меч</label>
-        <comps>
-            <li Class="CompProperties_Lifespan">
-                <lifespanTicks>7200</lifespanTicks>
+        <tools>
+            <li>
+                <label>мощное лезвие</label>
+                <capacities>
+                    <li>Cut</li>
+                </capacities>
+                <power>28</power>
+                <cooldownTime>1.6</cooldownTime>
+                <extraMeleeDamages>
+                    <li>
+                        <def>Flame</def>
+                        <amount>18</amount>
+                        <chance>0.95</chance>
+                    </li>
+                </extraMeleeDamages>
             </li>
-        </comps>
+        </tools>
     </ThingDef>
 
 </Defs>

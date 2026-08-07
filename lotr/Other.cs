@@ -120,6 +120,7 @@ namespace lotr {
 
     public class SummonedWeaponExtension : DefModExtension {
         public ThingDef weaponDef;
+        public int lifespan;
     }
 
     public class SpiritualityCostExtension : DefModExtension {

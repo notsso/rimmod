@@ -35,6 +35,7 @@
         <modExtensions>
             <li Class="lotr.SummonedWeaponExtension">
                 <weaponDef>Melee_BlazingSword_7S</weaponDef>
+                <lifespan>3600</lifespan>
             </li>
         </modExtensions>
         <verbProperties>
@@ -50,6 +51,7 @@
         <modExtensions>
             <li Class="lotr.SummonedWeaponExtension">
                 <weaponDef>Melee_BlazingSword_6S</weaponDef>
+                <lifespan>7200</lifespan>
             </li>
         </modExtensions>
         <verbProperties>
