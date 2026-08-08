@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Verse;
+using Verse.Sound;
 
 using UnityEngine;
 
@@ -17,12 +18,18 @@ namespace lotr {
 
         // Применить после щита (если щит не заблокировал или снаряд проходит сквозь).
         public virtual void ApplyAfterShield(Projectile_Base projectile, Thing hitThing) { }
+
+        // метод преимущественно для визуальных эффектов
+        public virtual void OnTick(Projectile_Base projectile) { }
+        protected ThingDef GetEquipmentDef(Projectile_Base projectile) => equipmentDef ?? projectile.EquipmentDef;
     }
 
     public abstract class Projectile_Base : Projectile {
+        public new ThingDef EquipmentDef => equipmentDef;
         protected List<ProjectileEffect> effects = new List<ProjectileEffect>();
 
-        public Hediff_ReaperState linkedReaperState = null;
+        // public Hediff_ReaperState linkedReaperState = null;
+        // public bool ReaperChargeUsed { get; set; } = false;
         public float currentDamageMultiplier = 1f;
         public float customArmorPenetration = -1f;
 
@@ -36,13 +43,19 @@ namespace lotr {
 
         public bool InstantKill { get; protected set; } = false;
         public bool InstantKillBonus { get; protected set; } = false;
+        public bool VictimKilled { get; protected set; } = false;
         protected float minBodySizeForInstantKillBonus = 2.0f;
 
         protected override void Tick() {
             base.Tick();
+
             if (this.Spawned && !this.Destroyed) {
                 tickCounter++;
             }
+
+            foreach (var effect in effects)
+                effect.OnTick(this);
+
             OnTick();
         }
 
@@ -61,6 +74,7 @@ namespace lotr {
 
         protected virtual void GatherEffects() {
             // для всех снарядов добавляем проверку на ReaperStrike
+            /*
             if (launcher is Pawn pawn && pawn.health?.hediffSet != null) {
                 Hediff_ReaperState reaperHediff = null;
                 foreach (var h in pawn.health.hediffSet.hediffs) {
@@ -74,8 +88,9 @@ namespace lotr {
                     this.linkedReaperState = reaperHediff;
                     reaperHediff.isReserved = true;
                     effects.Add(new Effect_ReaperStrike());
+                    effects.Add(new Effect_ReaperVisuals());
                 }
-            }
+            } */
         }
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false) {
@@ -89,6 +104,7 @@ namespace lotr {
                     wasUnharmed = IsPawnNearlyUnharmed(victimPawn);
                     bigEnough = victimPawn.BodySize >= minBodySizeForInstantKillBonus;
                 }
+                Log.Message($"target was nearly unharmed? {wasUnharmed}");
 
                 // Эффекты до щита
                 foreach (var effect in effects)
@@ -105,6 +121,7 @@ namespace lotr {
                     effect.ApplyAfterShield(this, hitThing);
 
                 if (wasAlive && victimPawn != null && victimPawn.Dead) {
+                    VictimKilled = victimPawn.Dead;
                     InstantKill = wasUnharmed;
                     InstantKillBonus = InstantKill && bigEnough;
 
@@ -114,10 +131,8 @@ namespace lotr {
                     OnKilledByProjectile(victimPawn);
                 }
 
-                if (this is Projectile_BlazingSpear) {
-                    var launcherReaction = new Effect_LauncherReaction();
-                    launcherReaction.ApplyAfterShield(this, hitThing);
-                }
+                var launcherReaction = new Effect_LauncherReaction();
+                launcherReaction.ApplyAfterShield(this, hitThing);
             } catch (Exception ex) {
                 Log.Error($"Exception in Projectile_Base.Impact for {this.def?.defName ?? "null"} at {this.Position}: {ex}");
             } finally {
@@ -127,11 +142,11 @@ namespace lotr {
         }
 
         private bool IsPawnNearlyUnharmed(Pawn pawn) {
-            return pawn.health?.summaryHealth?.SummaryHealthPercent > 0.95f;
+            return pawn.health?.summaryHealth?.SummaryHealthPercent > 0.90f;
         }
 
         protected virtual void OnKilledByProjectile(Pawn victim) {
-            Log.Message($"{this.def.defName} killed {victim.Name} with this impact.");
+            Log.Message($"{this.def.defName} killed {victim.def.defName} with this impact.");
         }
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish) {
@@ -145,7 +160,7 @@ namespace lotr {
     }
 
     public static class ExplosionHelper {
-        public static void DoExplosion(Projectile_Base proj, ThingDef equipmentDef, float? radiusOverride = null, float? chanceToStartFire = null) {
+        public static void DoExplosion(Projectile_Base proj, ThingDef equipmentDef, float? radiusOverride = null, float? chanceToStartFire = null, int? damage = null) {
             float radius = radiusOverride ?? proj.ExplosionRadius;
             float fireChance = chanceToStartFire ?? proj.def.projectile.explosionChanceToStartFire;
 
@@ -155,9 +170,9 @@ namespace lotr {
                 radius: radius,
                 damType: proj.DamageDef,
                 instigator: proj.Launcher,
-                damAmount: proj.DamageAmount,
+                damAmount: damage ?? proj.DamageAmount,
                 armorPenetration: proj.ArmorPenetration,
-                explosionSound: proj.def.projectile.soundExplode,
+                explosionSound: proj.def.projectile.soundExplode ?? SoundDef.Named("Explosion_Bomb"),
                 weapon: equipmentDef,
                 projectile: proj.def,
                 intendedTarget: proj.intendedTarget.Thing,
@@ -208,46 +223,75 @@ namespace lotr {
     public class Effect_Explosion : ProjectileEffect {
         public float? radius;
         public float? fireChance;
+        public int? damage;
 
         public override void ApplyAfterShield(Projectile_Base projectile, Thing hitThing) {
+            /*if (projectile.ReaperChargeUsed && hitThing is Pawn)
+                return;*/
+
             float actualRadius = radius ?? projectile.ExplosionRadius;
-            ExplosionHelper.DoExplosion(projectile, equipmentDef, radius, fireChance);
+            ExplosionHelper.DoExplosion(projectile, equipmentDef, radius, fireChance, damage);
         }
     }
 
-    // эффект пожинания
+    // эффект казни
     public class Effect_ReaperStrike : ProjectileEffect {
         public override bool ApplyBeforeShield(Projectile_Base projectile, Thing hitThing) {
-            var state = projectile.linkedReaperState;
-            if (state == null || state.isExpended) {
-                return true;
-            }
-
-            state.ExpendCharge();
-            // DoReaperExplosion(projectile);
-
             if (hitThing == null) {
+                ExplosionHelper.DoExplosion(projectile, GetEquipmentDef(projectile));
+                MoteMaker.ThrowText(projectile.ExactPosition, projectile.Map, "ПОЖИНАНИЕ: РАЗРУШЕНИЕ", 4f);
                 return true;
             }
 
-            // Модификаторы снаряда
-            projectile.currentDamageMultiplier = 3f;
-            projectile.customArmorPenetration = 3.0f;
-
-            if (hitThing is Pawn victimPawn && victimPawn.Dead) return true;
-
-            // Ломаем щиты
+            // Снос щитов (если это пешка)
             if (hitThing is Pawn victim && victim.apparel != null) {
-                foreach (var apparel in victim.apparel.WornApparel) {
-                    var shield = apparel?.GetComp<CompShield>();
-                    if (shield?.parent != null) {
+                foreach (Apparel apparel in victim.apparel.WornApparel) {
+                    CompShield shield = apparel?.GetComp<CompShield>();
+                    if (shield?.parent != null)
                         shield.parent.TakeDamage(new DamageInfo(DamageDefOf.Bomb, 9999f));
-                    }
                 }
             }
 
-            // если мы попали в не пешку (строение)
-            if (!(hitThing is Pawn)) {
+            // Сохраняем данные для визуальных эффектов
+            Map map = projectile.Map;
+            Vector3 loc = projectile.ExactPosition; // позиция снаряда (он в точке удара)
+
+            if (hitThing is Pawn hitPawn) {
+                // Собираем жизненно важные части
+                List<BodyPartRecord> vitalParts = new List<BodyPartRecord>();
+                BodyPartRecord torso = hitPawn.RaceProps.body.GetPartsWithDef(BodyPartDefOf.Torso)
+                    .FirstOrDefault(p => !hitPawn.health.hediffSet.PartIsMissing(p));
+                BodyPartRecord neck = hitPawn.RaceProps.body.GetPartsWithDef(BodyPartDefOf.Neck)
+                    .FirstOrDefault(p => !hitPawn.health.hediffSet.PartIsMissing(p));
+                BodyPartRecord head = hitPawn.RaceProps.body.GetPartsWithDef(BodyPartDefOf.Head)
+                    .FirstOrDefault(p => !hitPawn.health.hediffSet.PartIsMissing(p));
+
+                if (torso != null) vitalParts.Add(torso);
+                if (neck != null) vitalParts.Add(neck);
+                if (head != null) vitalParts.Add(head);
+
+                if (vitalParts.Count == 0) vitalParts.Add(null);
+
+                BodyPartRecord targetPart = vitalParts.RandomElement();
+                var dinfo = new DamageInfo(
+                    projectile.DamageDef,
+                    projectile.DamageAmount,
+                    projectile.ArmorPenetration,
+                    projectile.ExactRotation.eulerAngles.y,
+                    projectile.Launcher,
+                    targetPart,
+                    GetEquipmentDef(projectile)
+                );
+                dinfo.SetIgnoreArmor(true);
+                hitPawn.TakeDamage(dinfo);
+
+                // Эффекты после удара (используем сохранённый Map)
+                if (map != null) {
+                    MoteMaker.ThrowText(loc, map, "ПОЖИНАНИЕ: КАЗНЬ", 4f);
+                    ExplosionHelper.DoExplosion(projectile, GetEquipmentDef(projectile), null, null, 0);
+                }
+            } else {
+                // Не пешка – строение/стена
                 float bonus = projectile.DamageAmount * 0.5f;
                 var dinfo = new DamageInfo(
                     DamageDefOf.Crush,
@@ -256,20 +300,17 @@ namespace lotr {
                     projectile.ExactRotation.eulerAngles.y,
                     projectile.Launcher,
                     null,
-                    equipmentDef
+                    GetEquipmentDef(projectile)
                 );
                 dinfo.SetIgnoreArmor(true);
                 hitThing.TakeDamage(dinfo);
-            }
 
-            if (hitThing.Spawned && hitThing.Map != null) {
-                MoteMaker.ThrowText(hitThing.Position.ToVector3Shifted(), hitThing.Map, "ПОЖИНАНИЕ: РАЗРУШЕНИЕ", 4f);
+                ExplosionHelper.DoExplosion(projectile, GetEquipmentDef(projectile));
+
+                if (map != null)
+                    MoteMaker.ThrowText(loc, map, "ПОЖИНАНИЕ: РАЗРУШЕНИЕ", 4f);
             }
             return true;
-        }
-
-        private void DoReaperExplosion(Projectile_Base proj) {
-            ExplosionHelper.DoExplosion(proj, equipmentDef, radiusOverride: 2f, chanceToStartFire: 0f);
         }
     }
 
@@ -335,22 +376,26 @@ namespace lotr {
     public class Effect_LauncherReaction : ProjectileEffect {
         public override void ApplyAfterShield(Projectile_Base projectile, Thing hitThing) {
             if (projectile.Launcher is Pawn launcherPawn) {
-                var hunter7 = launcherPawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter7_Hediff) as Hunter7_Hediff;
-                if (hunter7 != null) {
-                    hunter7.AddActingProgress(2, 0.02f, launcherPawn);
+                if (projectile is Projectile_BlazingSpear) {
+                    var hunter7 = launcherPawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter7_Hediff) as Hunter7_Hediff;
+                    if (hunter7 != null) {
+                        hunter7.AddActingProgress(2, 0.02f, launcherPawn);
+                    }
+
+                    var hunter6 = launcherPawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter6_Hediff) as Hunter6_Hediff;
+                    if (hunter6 != null) {
+                        BeyonderUtility.AddSanityLoss(launcherPawn, 0.05f, "Заговорщик использует грубую силу!");
+                    }
                 }
 
-                var hunter6 = launcherPawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter6_Hediff) as Hunter6_Hediff;
-                if (hunter6 != null) {
-                    BeyonderUtility.AddSanityLoss(launcherPawn, 0.05f, "Заговорщик использует грубую силу!");
-                }
-
-                var hunter5 = launcherPawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter5_Hediff) as Hunter5_Hediff;
-                if (hunter5 != null) {
-                    if (projectile.InstantKillBonus) {
-                        hunter5.AddActingProgress(1, 0.01f, launcherPawn);
-                    } else if (!projectile.InstantKill) {
-                        BeyonderUtility.AddSanityLoss(launcherPawn, 0.01f, "Пожинатель не казнил цель!");
+                if (projectile is Projectile_Execution) {
+                    var hunter5 = launcherPawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter5_Hediff) as Hunter5_Hediff;
+                    if (hunter5 != null) {
+                        if (projectile.InstantKillBonus) {
+                            hunter5.AddActingProgress(1, 0.01f, launcherPawn);
+                        } else if (!projectile.VictimKilled && hitThing != null) {
+                            BeyonderUtility.AddSanityLoss(launcherPawn, 0.10f, "Пожинатель не казнил цель!");
+                        }
                     }
                 }
             }
@@ -389,21 +434,15 @@ namespace lotr {
         }
     }
 
+    // Класс для описания снаряда способности "копье огня"
     public class Projectile_BlazingSpear : Projectile_Fire {
-        protected override void Tick() {
-            base.Tick();
-
-            // копье оставляет след в виде дыма и искр
-            if (this.Spawned && !this.Destroyed && tickCounter % 2 == 0) {
-                FleckMaker.ThrowSmoke(this.ExactPosition, this.Map, 0.8f);
-                FleckMaker.Static(this.ExactPosition, this.Map, FleckDefOf.MicroSparks, 1.0f);
-            }
-        }
-
         protected override void GatherEffects() {
             base.GatherEffects();
+
+            effects.Add(new Effect_FireVisuals());
+
             effects.Add(new Effect_Explosion());
-            effects.Add(new Effect_DirectDamage { damageDef = DamageDefOf.Bomb });
+            effects.Add(new Effect_DirectDamage { damageDef = DamageDefOf.Burn });
             // Дополнительный порез
             effects.Add(new Effect_DirectDamage { damageDef = DamageDefOf.Cut });
             // Тепловой удар
@@ -412,11 +451,21 @@ namespace lotr {
                 severity = 0.25f,
                 condition = (proj, hit) => hit is Pawn p && p.RaceProps.FleshType == FleshTypeDefOf.Normal
             });
-
-            // effects.Add(new Effect_LauncherReaction());
         }
     }
 
+    // Класс для описания снаряда способности "казнь"
+    public class Projectile_Execution : Projectile_Fire {
+        protected override void GatherEffects() {
+            base.GatherEffects();
+
+            effects.Add(new Effect_ReaperVisuals());
+            effects.Add(new Effect_ReaperStrike());
+            effects.Add(new Effect_DirectDamage { damageDef = DamageDefOf.Burn });
+        }
+    }
+
+    // Класс для описания снаряда способности "огненное слияние/телепорт"
     public class Projectile_FireTeleport : Projectile_Fire {
         public Pawn teleportPawn;
         public bool wasDrafted;
@@ -427,6 +476,37 @@ namespace lotr {
                 pawn = teleportPawn,
                 wasDrafted = wasDrafted
             });
+        }
+    }
+
+    // визуальные эффекты смерти
+    public class Effect_ReaperVisuals : ProjectileEffect {
+        public override void OnTick(Projectile_Base projectile) {
+            if (projectile.Spawned && !projectile.Destroyed) {
+                FleckCreationData data = FleckMaker.GetDataStatic(
+                    projectile.ExactPosition,
+                    projectile.Map,
+                    FleckDefOf.AirPuff,   // или свой FleckDef
+                    0.8f                   // scale
+                );
+
+                data.instanceColor = Color.black;      // Color? – просто присваиваем Color
+                data.solidTimeOverride = 0f;           // float? – без задержки, сразу затухает
+                data.airTimeLeft = 0.3f;               // float? – живёт 0.3 секунды
+                data.ageTicksOverride = -1;             // -1 = бесконечно (можно задать число тиков)
+                projectile.Map.flecks.CreateFleck(data);
+            }
+        }
+    }
+
+    // визуальные эффекты огня
+    public class Effect_FireVisuals : ProjectileEffect {
+        public override void OnTick(Projectile_Base projectile) {
+            // копье оставляет след в виде дыма и искр
+            if (projectile.Spawned && !projectile.Destroyed && projectile.tickCounter % 2 == 0) {
+                FleckMaker.ThrowSmoke(projectile.ExactPosition, projectile.Map, 0.8f);
+                FleckMaker.Static(projectile.ExactPosition, projectile.Map, FleckDefOf.MicroSparks, 1.0f);
+            }
         }
     }
 }

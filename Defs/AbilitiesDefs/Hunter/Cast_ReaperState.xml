@@ -7,7 +7,7 @@
         <defName>Cast_ReaperState</defName>
         <label>Жатва</label>
         <description>Переводит потустороннего в состояние пожинателя душ.</description>
-        <iconPath>Placeholder</iconPath>
+        <iconPath>UI/Icons/Abilities/Hunter/Cast_ReaperState</iconPath>
         <cooldownTicksRange>7200</cooldownTicksRange>
         <hostile>false</hostile>
 

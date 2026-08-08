@@ -15,7 +15,7 @@ namespace lotr {
         public override float SpiritualityFactor => 15f;
 
         public Hunter5_Hediff() {
-            maxProgressPerCategory = 0.6f;
+            maxProgressPerCategory = 0.8f;
         }
     }
 

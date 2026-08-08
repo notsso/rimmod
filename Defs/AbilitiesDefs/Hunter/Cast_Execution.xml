@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <AbilityDef Name="Cast_Execution">
+    
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        <defName>Cast_Execution</defName>
+        <label>Казнь</label>
+        <description>Создание и бросок сверхмощного, сверхсжатого снаряда из белого пламени. Снаряд пропитан эссенцией смерти, пробивает броню и способен ранить полубогов.</description>
+        <iconPath>UI/Icons/Abilities/Hunter/Cast_Execution</iconPath>
+        <cooldownTicksRange>6000</cooldownTicksRange>
+        <hostile>true</hostile>
+
+        <modExtensions>
+            <li Class="lotr.SpiritualityCostExtension">
+                <cost>300.0</cost>
+            </li>
+        </modExtensions>
+
+        <verbProperties>
+
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>50</range>
+            <warmupTime>4.0</warmupTime>
+            <hasStandardCommand>true</hasStandardCommand>
+
+            <targetParams>
+
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+
+            </targetParams>
+
+        </verbProperties>
+
+    </AbilityDef>
+
+    <!-- Уровень 5 -->
+    <AbilityDef ParentName="Cast_Execution">
+        <defName>Cast_Execution_5S</defName>
+        <label>Казнь</label>
+        <cooldownTicksRange>6000</cooldownTicksRange>
+        <comps>
+            <li Class="CompProperties_AbilityLaunchProjectile">
+                <projectileDef>Proj_Execution_5S</projectileDef>
+            </li>
+        </comps>
+        <verbProperties>
+            <range>50</range>
+            <warmupTime>4.0</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
+</Defs>

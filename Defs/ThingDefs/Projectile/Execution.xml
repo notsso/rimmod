@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef Name="Proj_Execution" ParentName="BaseBullet">
+
+        <defName>Proj_Execution</defName>
+        <label>Копье белого огня</label>
+        <thingClass>lotr.Projectile_Execution</thingClass>
+
+        <graphicData>
+
+            <texPath>Projectiles/Execution_projectile</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+
+            <color>(255, 150, 50)</color>
+
+            <drawSize>(1.0, 2.0)</drawSize> 
+
+        </graphicData>
+
+        <projectile>
+
+            <speed>150</speed>
+            <damageAmountBase>40</damageAmountBase>
+            <explosionRadius>1.6</explosionRadius>
+            <damageDef>ExecutionCut</damageDef>
+            <ai_IsIncendiary>true</ai_IsIncendiary>
+            <armorPenetrationBase>3.00</armorPenetrationBase>
+
+        </projectile>
+
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>4</glowRadius>
+                <glowColor>(255, 130, 30, 0)</glowColor>
+            </li>
+        </comps>
+
+    </ThingDef>
+
+    <!-- Уровень 5 -->
+    <ThingDef ParentName="Proj_Execution">
+        <defName>Proj_Execution_5S</defName>
+        <label>Копье белого огня</label>
+        <thingClass>lotr.Projectile_Execution</thingClass>
+        <projectile>
+            <speed>200</speed>
+            <damageAmountBase>200</damageAmountBase>
+            <armorPenetrationBase>9999.00</armorPenetrationBase>
+            <explosionRadius>2.0</explosionRadius>
+        </projectile>
+    </ThingDef>
+
+</Defs>

@@ -43,7 +43,7 @@ namespace lotr {
         public static AbilityDef Cast_Confusion;
         public static AbilityDef Cast_ReaperState;
         public static AbilityDef Cast_Vulnerability;
-
+        public static AbilityDef Cast_Execution;
 
         public static AbilityDef Cast_Fireball_9S;
         public static AbilityDef Cast_Fireball_8S;
@@ -74,6 +74,7 @@ namespace lotr {
         public static AbilityDef Cast_Confusion_5S;
         public static AbilityDef Cast_ReaperState_5S;
         public static AbilityDef Cast_Vulnerability_5S;
+        public static AbilityDef Cast_Execution_5S;
 
         public static ThingDef Proj_Fireball_9S;
         public static ThingDef Proj_Fireball_8S;

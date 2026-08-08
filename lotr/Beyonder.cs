@@ -153,16 +153,19 @@ namespace lotr {
             float diff = 0f;
 
             if (category == 1) {
+                Log.Message($"progress 1: {progress1} + {amount}. Max - {maxProgressPerCategory}");
                 if (progress1 >= maxProgressPerCategory) return;
                 oldProgress = progress1;
                 progress1 = Mathf.Clamp(progress1 + amount, 0f, maxProgressPerCategory);
                 diff = progress1 - oldProgress;
             } else if (category == 2) {
+                Log.Message($"progress 2: {progress2} + {amount}. Max - {maxProgressPerCategory}");
                 if (progress2 >= maxProgressPerCategory) return;
                 oldProgress = progress2;
                 progress2 = Mathf.Clamp(progress2 + amount, 0f, maxProgressPerCategory);
                 diff = progress2 - oldProgress;
             } else if (category == 3) {
+                Log.Message($"progress 3: {progress3} + {amount}. Max - {maxProgressPerCategory}");
                 if (progress3 >= maxProgressPerCategory) return;
                 oldProgress = progress3;
                 progress3 = Mathf.Clamp(progress3 + amount, 0f, maxProgressPerCategory);
@@ -173,7 +176,7 @@ namespace lotr {
 
             if (this.Severity < 1.0f) {
                 string messageText;
-                if (diff < 0.01f) {
+                if (diff < 0.001f) {
                     messageText = $"{pawn.LabelShortCap} чуствует, что уже усвоил этот аспект зелья";
                 } else {
                     messageText = $"После действия, {pawn.LabelShortCap} усвоил аспект зелья на {diff.ToStringPercent()}!";
