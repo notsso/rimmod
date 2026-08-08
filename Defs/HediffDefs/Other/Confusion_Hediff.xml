@@ -23,8 +23,28 @@
         <stages>
             <li>
                 <statOffsets>
-                    <ShootingAccuracyPawn>-0.5</ShootingAccuracyPawn>
                     <MoveSpeed>-0.2</MoveSpeed>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- Уровень 5 -->
+    <HediffDef ParentName="Hediff_Confusion">
+        <defName>Hediff_Confusion_5S</defName>
+        <label>замешательство</label>
+
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>6000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+
+        <stages>
+            <li>
+                <statOffsets>
+                    <MoveSpeed>-0.5</MoveSpeed>
                 </statOffsets>
             </li>
         </stages>

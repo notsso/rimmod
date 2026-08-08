@@ -68,4 +68,23 @@
         </verbProperties>
     </AbilityDef>
 
+    <!-- Уровень 5 -->
+    <AbilityDef ParentName="Cast_FireRavens">
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        <defName>Cast_FireRavens_5S</defName>
+        <label>огненные вороны</label>
+        <cooldownTicksRange>30</cooldownTicksRange>
+        <comps>
+            <li Class="lotr.CompProperties_AbilityLaunchFireRavens">
+                <compClass>lotr.CompAbilityEffect_LaunchFireRavens</compClass>
+                <ravenPawnKind>lotr_FireRavenKind</ravenPawnKind>
+                <lifetime>9000</lifetime>
+                <maxCount>8</maxCount>
+            </li>
+        </comps>
+        <verbProperties>
+            <warmupTime>0.1</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
 </Defs>

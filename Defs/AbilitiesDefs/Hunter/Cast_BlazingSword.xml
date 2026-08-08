@@ -59,4 +59,20 @@
         </verbProperties>
     </AbilityDef>
 
+    <!-- Уровень 5 -->
+    <AbilityDef ParentName="Cast_BlazingSword">
+        <defName>Cast_BlazingSword_5S</defName>
+        <label>призыв пламенного клинка</label>
+        <cooldownTicksRange>1800</cooldownTicksRange>
+        <modExtensions>
+            <li Class="lotr.SummonedWeaponExtension">
+                <weaponDef>Melee_BlazingSword_5S</weaponDef>
+                <lifespan>9000</lifespan>
+            </li>
+        </modExtensions>
+        <verbProperties>
+            <warmupTime>0.5</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
 </Defs>

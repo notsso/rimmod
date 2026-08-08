@@ -36,4 +36,16 @@
         </projectile>
     </ThingDef>
 
+    <!-- Уровень 5 -->
+    <ThingDef ParentName="Proj_FireTeleport">
+        <defName>Proj_FireTeleport_5S</defName>
+        <label>огненный шар</label>
+        <thingClass>lotr.Projectile_FireTeleport</thingClass>
+        <projectile>
+            <speed>150</speed>
+            <damageAmountBase>0</damageAmountBase>
+            <explosionRadius>0</explosionRadius>
+        </projectile>
+    </ThingDef>
+
 </Defs>

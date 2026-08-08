@@ -81,4 +81,16 @@
         </projectile>
     </ThingDef>
 
+    <!-- Уровень 5 -->
+    <ThingDef ParentName="Proj_Fireball">
+        <defName>Proj_Fireball_5S</defName>
+        <label>огненный шар</label>
+        <thingClass>lotr.Projectile_Fireball</thingClass>
+        <projectile>
+            <speed>200</speed>
+            <damageAmountBase>50</damageAmountBase>
+            <explosionRadius>5.0</explosionRadius>
+        </projectile>
+    </ThingDef>
+
 </Defs>

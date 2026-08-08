@@ -42,7 +42,5 @@ namespace lotr {
     }
 
     // Способность hunter5 (reaper): уязвимость 
-    public class Hediff_Vulnerable : HediffWithComps {
-
-    }
+    public class Hediff_Vulnerable : HediffWithComps { }
 }

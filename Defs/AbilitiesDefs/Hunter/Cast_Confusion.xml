@@ -48,4 +48,24 @@
         </verbProperties>
     </AbilityDef>
 
+    <!-- Уровень 5 -->
+    <AbilityDef ParentName="Cast_Confusion">
+        <defName>Cast_Confusion_5S</defName>
+        <label>Замешательство</label>
+        <cooldownTicksRange>1800</cooldownTicksRange>
+        <comps>
+            <li Class="lotr.CompProperties_AbilityGiveHediff">
+                <hediffDef>Hediff_Confusion_5S</hediffDef>
+            </li>
+        </comps>
+        <verbProperties>
+            <range>15</range>
+            <warmupTime>0.5</warmupTime>
+            <targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetSelf>false</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+    </AbilityDef>
+
 </Defs>

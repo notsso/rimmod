@@ -384,7 +384,7 @@ namespace lotr {
 
                     float bonusDamageAmount = dinfo.Amount * 0.5f;
                     Log.Message($"{bonusDamageAmount}");
-                    DamageDef bonusDamageDef = isRangedAttack ? DamageDefOf.Crush : DamageDefOf.ExecutionCut;
+                    DamageDef bonusDamageDef = isRangedAttack ? DamageDefOf.Blunt : DamageDefOf.ExecutionCut;
 
                     DamageInfo bonusDinfo = new DamageInfo(
                         bonusDamageDef,
@@ -405,7 +405,7 @@ namespace lotr {
                     }
 
                     if (__instance.Spawned && __instance.Map != null) {
-                        string textEffect = isRangedAttack ? "ПОЖИНАНИЕ: РАЗРУШЕНИЕ (Crush)" : "ПОЖИНАНИЕ: КАЗНЬ (Cut)";
+                        string textEffect = isRangedAttack ? "ПОЖИНАНИЕ: РАЗРУШЕНИЕ (Blunt)" : "ПОЖИНАНИЕ: КАЗНЬ (Cut)";
                         MoteMaker.ThrowText(__instance.Position.ToVector3Shifted(), __instance.Map, textEffect, 4f);
                     }
 

@@ -190,19 +190,19 @@
 
         <abilities>
         
-            <li>Cast_Fireball_6S</li>
+            <li>Cast_Fireball_5S</li>
 
-            <li>Cast_Taunt_6S</li>
+            <li>Cast_Taunt_5S</li>
 
-            <li>Cast_BlazingSpear_6S</li>
-            <li>Cast_FireRavens_6S</li>
-            <li>Cast_FireArmor_6S</li>
-            <li>Cast_BlazingSword_6S</li>
-            <li>Cast_ExtinguishFire_6S</li>
+            <li>Cast_BlazingSpear_5S</li>
+            <li>Cast_FireRavens_5S</li>
+            <li>Cast_FireArmor_5S</li>
+            <li>Cast_BlazingSword_5S</li>
+            <li>Cast_ExtinguishFire_5S</li>
 
-            <li>Cast_FireTeleport_6S</li>
-            <li>Cast_Incite_6S</li>
-            <li>Cast_Confusion_6S</li>
+            <li>Cast_FireTeleport_5S</li>
+            <li>Cast_Incite_5S</li>
+            <li>Cast_Confusion_5S</li>
 
             <li>Cast_ReaperState_5S</li>
             <li>Cast_Vulnerability_5S</li> 

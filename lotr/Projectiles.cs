@@ -89,9 +89,9 @@ namespace lotr {
                 if (hitThing.Spawned && hitThing.Map != null) {
                     MoteMaker.ThrowText(hitThing.Position.ToVector3Shifted(), hitThing.Map, "ПОЖИНАНИЕ: РАЗРУШЕНИЕ", 4f);
                 }
-            }
 
-            linkedReaperState.ExpendCharge();
+                linkedReaperState.ExpendCharge();
+            }
         }
 
         public virtual void OnImpact(Thing hitThing) { }

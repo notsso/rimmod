@@ -86,4 +86,22 @@
         </verbProperties>
     </AbilityDef>
 
+    <!-- Уровень 5 -->
+    <AbilityDef ParentName="Cast_Taunt">
+        <defName>Cast_Taunt_5S</defName>
+        <label>провокация</label>
+        <cooldownTicksRange>180</cooldownTicksRange>
+
+        <comps>
+            <li Class="lotr.CompProperties_AbilityProvoke">
+                <baseSuccessChance>95.0</baseSuccessChance>
+            </li>
+        </comps>
+
+        <verbProperties>
+            <range>40</range>
+            <warmupTime>0.2</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
 </Defs>

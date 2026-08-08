@@ -46,4 +46,20 @@
         </verbProperties>
     </AbilityDef>
 
+    <!-- Уровень 5 -->
+    <AbilityDef ParentName="Cast_FireTeleport">
+        <defName>Cast_FireTeleport_5S</defName>
+        <label>Огненный прыжок</label>
+        <cooldownTicksRange>300</cooldownTicksRange>
+        <comps>
+            <li Class="lotr.CompProperties_FireTeleport">
+                <projectileDef>Proj_FireTeleport_6S</projectileDef>
+            </li>
+        </comps>
+        <verbProperties>
+            <range>40</range>
+            <warmupTime>0.2</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
 </Defs>

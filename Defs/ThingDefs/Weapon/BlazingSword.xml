@@ -58,12 +58,12 @@
                     <li>Cut</li>
                 </capacities>
                 <power>20</power>
-                <cooldownTime>1.8</cooldownTime>
+                <cooldownTime>2.0</cooldownTime>
                 <extraMeleeDamages>
                     <li>
                         <def>Flame</def>
-                        <amount>12</amount>
-                        <chance>0.80</chance>
+                        <amount>10</amount>
+                        <chance>0.50</chance>
                     </li>
                 </extraMeleeDamages>
             </li>
@@ -72,13 +72,13 @@
                 <capacities>
                     <li>Stab</li>
                 </capacities>
-                <power>18</power>
-                <cooldownTime>1.8</cooldownTime>
+                <power>20</power>
+                <cooldownTime>1.5</cooldownTime>
                 <extraMeleeDamages>
                     <li>
                         <def>Flame</def>
                         <amount>15</amount>
-                        <chance>0.90</chance>
+                        <chance>0.60</chance>
                     </li>
                 </extraMeleeDamages>
             </li>
@@ -113,13 +113,51 @@
                 <capacities>
                     <li>Cut</li>
                 </capacities>
-                <power>28</power>
-                <cooldownTime>1.6</cooldownTime>
+                <power>30</power>
+                <cooldownTime>1.5</cooldownTime>
                 <extraMeleeDamages>
                     <li>
                         <def>Flame</def>
-                        <amount>18</amount>
-                        <chance>0.95</chance>
+                        <amount>20</amount>
+                        <chance>0.60</chance>
+                    </li>
+                </extraMeleeDamages>
+            </li>
+        </tools>
+    </ThingDef>
+
+    <!-- Уровень 5 -->
+    <ThingDef ParentName="Melee_BlazingSword">
+        <defName>Melee_BlazingSword_5S</defName>
+        <label>огненный меч</label>
+        <tools>
+            <li>
+                <label>мощное лезвие</label>
+                <capacities>
+                    <li>Cut</li>
+                </capacities>
+                <power>40</power>
+                <cooldownTime>1.0</cooldownTime>
+                <extraMeleeDamages>
+                    <li>
+                        <def>Flame</def>
+                        <amount>30</amount>
+                        <chance>0.80</chance>
+                    </li>
+                </extraMeleeDamages>
+            </li>
+            <li>
+                <label>острие</label>
+                <capacities>
+                    <li>Stab</li>
+                </capacities>
+                <power>30</power>
+                <cooldownTime>1.5</cooldownTime>
+                <extraMeleeDamages>
+                    <li>
+                        <def>Flame</def>
+                        <amount>40</amount>
+                        <chance>0.90</chance>
                     </li>
                 </extraMeleeDamages>
             </li>

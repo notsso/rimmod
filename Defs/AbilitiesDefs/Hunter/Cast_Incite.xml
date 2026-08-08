@@ -46,4 +46,21 @@
         </verbProperties>
     </AbilityDef>
 
+    <!-- Уровень 5 -->
+    <AbilityDef ParentName="Cast_Incite">
+        <defName>Cast_Incite_5S</defName>
+        <label>Подстрекательство</label>
+        <cooldownTicksRange>1200</cooldownTicksRange>
+        <comps>
+            <li Class="lotr.CompProperties_AbilityIncite">
+                <baseSuccessChance>0.7</baseSuccessChance>
+                <affectAllies>false</affectAllies>
+            </li>
+        </comps>
+        <verbProperties>
+            <range>15</range>
+            <warmupTime>1.0</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
 </Defs>

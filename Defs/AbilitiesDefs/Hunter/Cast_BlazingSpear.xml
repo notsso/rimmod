@@ -68,4 +68,20 @@
         </verbProperties>
     </AbilityDef>
 
+    <!-- Уровень 5 -->
+    <AbilityDef ParentName="Cast_BlazingSpear">
+        <defName>Cast_BlazingSpear_5S</defName>
+        <label>Копье огня</label>
+        <cooldownTicksRange>360</cooldownTicksRange>
+        <comps>
+            <li Class="CompProperties_AbilityLaunchProjectile">
+                <projectileDef>Proj_BlazingSpear_5S</projectileDef>
+            </li>
+        </comps>
+        <verbProperties>
+            <range>60</range>
+            <warmupTime>1.0</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
 </Defs>
