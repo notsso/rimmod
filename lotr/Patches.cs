@@ -295,30 +295,29 @@ namespace lotr {
         private static readonly FieldInfo PawnField = AccessTools.Field(typeof(Pawn_HealthTracker), "pawn");
 
         [HarmonyPrefix]
-        public static void Prefix(Pawn_HealthTracker __instance, ref DamageInfo dinfo, out bool absorbed) {
-            absorbed = false;
-
+        public static void Prefix(Pawn_HealthTracker __instance, ref DamageInfo dinfo) {
             if (PawnField == null) return;
 
             Pawn victim = (Pawn)PawnField.GetValue(__instance);
-            if (victim == null || victim.health == null || victim.health.hediffSet == null) return;
+            if (victim?.health?.hediffSet == null) return;
 
+            // Определяем атакующего
             Pawn attacker = dinfo.Instigator as Pawn;
             if (attacker == null && dinfo.Instigator is Projectile proj && proj.Launcher is Pawn projLauncher) {
                 attacker = projLauncher;
             }
 
-            if (attacker != null && attacker.health != null && attacker.health.hediffSet != null) {
-                // проверка на уязвимость
-                Hediff_Vulnerable vulnHediff = null;
+            // Уязвимость работает только если есть атакующий
+            if (attacker != null && attacker.health?.hediffSet != null) {
+                bool hasVulnerable = false;
                 foreach (var h in victim.health.hediffSet.hediffs) {
-                    if (h is Hediff_Vulnerable vulnerableHediff) {
-                        vulnHediff = vulnerableHediff;
+                    if (h is Hediff_Vulnerable) {
+                        hasVulnerable = true;
                         break;
                     }
                 }
 
-                if (vulnHediff != null) {
+                if (hasVulnerable) {
                     float newAmount = dinfo.Amount * 1.5f;
                     dinfo.SetAmount(newAmount);
                 }
@@ -326,92 +325,147 @@ namespace lotr {
         }
     }
 
+    /*
     [HarmonyPatch(typeof(Thing), "TakeDamage")]
     public static class Patch_ReaperAbsoluteDestruction {
+        public static bool IsCustomProjectileDamage = false;
         private static bool isProcessingReaperDamage = false;
+        private const float MinBodySizeForInstantKill = 2.0f; // порог размера цели
+
+        // Структура для передачи данных между Prefix и Postfix
+        public class StateData {
+            public Pawn attacker;
+            public bool wasAlive;
+            public bool wasUnharmed;
+            public bool bigEnough;
+        }
 
         [HarmonyPrefix]
-        public static void Prefix(Thing __instance, ref DamageInfo dinfo) {
-            if (isProcessingReaperDamage) return;
+        public static void Prefix(Thing __instance, ref DamageInfo dinfo, out StateData __state) {
+            __state = null;
+
+            if (isProcessingReaperDamage)
+                return;
 
             Pawn attacker = dinfo.Instigator as Pawn;
             bool isRangedAttack = false;
 
+            // Определяем атакующего (игнорируем кастомные снаряды)
             if (attacker == null && dinfo.Instigator is Projectile proj) {
-                if (proj is Projectile_Base) {
-                    return;
-                }
+                if (proj is Projectile_Base)
+                    return; // не мешаем своим снарядам
 
                 attacker = proj.Launcher as Pawn;
                 isRangedAttack = true;
             }
 
-            if (!isRangedAttack && dinfo.Weapon == null) return;
+            // В ближнем бою без оружия не активируем (можно убрать, если нужно обратное)
+            if (!isRangedAttack && dinfo.Weapon == null)
+                return;
 
-            if (attacker != null && attacker.health != null && attacker.health.hediffSet != null) {
-                if (attacker.stances != null && attacker.stances.curStance is Stance_Warmup) {
-                    return;
-                }
+            if (attacker?.health?.hediffSet == null)
+                return;
 
-                // Ищем хедифф Жнеца
-                Hediff_ReaperState reaperHediff = null;
-                foreach (var h in attacker.health.hediffSet.hediffs) {
-                    if (h is Hediff_ReaperState hr) {
-                        reaperHediff = hr;
-                        break;
-                    }
-                }
+            // Фаза прогрева — пропускаем
+            if (attacker.stances?.curStance is Stance_Warmup)
+                return;
 
-                if (reaperHediff != null && !reaperHediff.isExpended) {
-                    if (isRangedAttack && reaperHediff.isReserved) {
-                        return;
-                    }
-
-                    // --- ЭТАП 1: МОДИФИКАЦИЯ ОСНОВНОГО УДАРУ ---
-                    dinfo.SetIgnoreArmor(true);
-                    float baseAmount = dinfo.Amount;
-                    dinfo.SetAmount(baseAmount * 3f);
-
-                    // Сбиваем энергощиты
-                    if (__instance is Pawn victim && victim.apparel != null) {
-                        foreach (var apparel in victim.apparel.WornApparel) {
-                            CompShield shieldComp = apparel?.GetComp<CompShield>();
-                            if (shieldComp?.parent != null) {
-                                shieldComp.parent.TakeDamage(new DamageInfo(DamageDefOf.Bomb, 9999f));
-                            }
-                        }
-                    }
-
-                    float bonusDamageAmount = dinfo.Amount * 0.5f;
-                    Log.Message($"{bonusDamageAmount}");
-                    DamageDef bonusDamageDef = isRangedAttack ? DamageDefOf.Blunt : DamageDefOf.ExecutionCut;
-
-                    DamageInfo bonusDinfo = new DamageInfo(
-                        bonusDamageDef,
-                        bonusDamageAmount,
-                        dinfo.ArmorPenetrationInt,
-                        dinfo.Angle,
-                        attacker,
-                        dinfo.HitPart,
-                        dinfo.Weapon
-                    );
-                    bonusDinfo.SetIgnoreArmor(true);
-
-                    isProcessingReaperDamage = true;
-                    try {
-                        __instance.TakeDamage(bonusDinfo);
-                    } finally {
-                        isProcessingReaperDamage = false;
-                    }
-
-                    if (__instance.Spawned && __instance.Map != null) {
-                        string textEffect = isRangedAttack ? "ПОЖИНАНИЕ: РАЗРУШЕНИЕ (Blunt)" : "ПОЖИНАНИЕ: КАЗНЬ (Cut)";
-                        MoteMaker.ThrowText(__instance.Position.ToVector3Shifted(), __instance.Map, textEffect, 4f);
-                    }
-
-                    reaperHediff.ExpendCharge();
+            // Ищем хедифф Жнеца
+            Hediff_ReaperState reaperHediff = null;
+            foreach (var h in attacker.health.hediffSet.hediffs) {
+                if (h is Hediff_ReaperState hr) {
+                    reaperHediff = hr;
+                    break;
                 }
             }
+
+            if (reaperHediff == null || reaperHediff.isExpended)
+                return;
+
+            if (isRangedAttack && reaperHediff.isReserved)
+                return; // заряд уже зарезервирован кастомным снарядом
+
+            // --- Запоминаем состояние цели ДО модификаций ---
+            Pawn victimPawn = __instance as Pawn;
+            if (victimPawn != null) {
+                __state = new StateData {
+                    attacker = attacker,
+                    wasAlive = !victimPawn.Dead,
+                    wasUnharmed = victimPawn.health?.summaryHealth?.SummaryHealthPercent > 0.95f,
+                    bigEnough = victimPawn.BodySize >= MinBodySizeForInstantKill
+                };
+            }
+
+            // --- ЭТАП 1: УСИЛЕНИЕ ОСНОВНОГО УДАРА ---
+            float baseAmount = dinfo.Amount;
+            dinfo.SetIgnoreArmor(true);
+            dinfo.SetAmount(baseAmount * 3f);
+
+            // Блокируем рекурсию на время своих действий
+            isProcessingReaperDamage = true;
+            try {
+                // Сбиваем энергощиты цели
+                if (__instance is Pawn victim && victim.apparel != null) {
+                    foreach (var apparel in victim.apparel.WornApparel) {
+                        var shield = apparel?.GetComp<CompShield>();
+                        if (shield?.parent != null) {
+                            // Урон щиту, рекурсии не будет — флаг стоит
+                            shield.parent.TakeDamage(new DamageInfo(DamageDefOf.Bomb, 9999f));
+                        }
+                    }
+                }
+
+                // Бонусный урон (половина от усиленного)
+                float bonusAmount = dinfo.Amount * 0.5f;
+                DamageDef bonusDef = isRangedAttack ? DamageDefOf.Blunt : DamageDefOf.ExecutionCut;
+                DamageInfo bonusDinfo = new DamageInfo(
+                    bonusDef,
+                    bonusAmount,
+                    dinfo.ArmorPenetrationInt,
+                    dinfo.Angle,
+                    attacker,
+                    dinfo.HitPart,
+                    dinfo.Weapon
+                );
+                bonusDinfo.SetIgnoreArmor(true);
+                __instance.TakeDamage(bonusDinfo);
+            } finally {
+                isProcessingReaperDamage = false;
+            }
+
+            // Визуальный эффект
+            Log.Message("reaper damage");
+            if (__instance.Spawned && __instance.Map != null) {
+                string text = isRangedAttack ? "ПОЖИНАНИЕ: РАЗРУШЕНИЕ (Blunt)" : "ПОЖИНАНИЕ: КАЗНЬ (Cut)";
+                MoteMaker.ThrowText(__instance.Position.ToVector3Shifted(), __instance.Map, text, 4f);
+            }
+
+            reaperHediff.ExpendCharge();
         }
-    }
+
+        [HarmonyPostfix]
+        public static void Postfix(Thing __instance, StateData __state) {
+            if (__state == null)
+                return;
+
+            Pawn victim = __instance as Pawn;
+            // Цель должна была быть жива до удара и умереть после него
+            if (victim == null || !__state.wasAlive)
+                return;
+
+            Pawn attacker = __state.attacker;
+            if (attacker?.health?.hediffSet == null)
+                return;
+
+            var hunter5 = attacker.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter5_Hediff) as Hunter5_Hediff;
+            if (hunter5 == null)
+                return; // нет хедиффа — не начисляем ни прогресс, ни штраф
+
+            if (__state.wasUnharmed && __state.bigEnough && victim.Dead) {
+                hunter5.AddActingProgress(2, 0.01f, attacker);
+            } else if (!victim.Dead) {
+                BeyonderUtility.AddSanityLoss(attacker, 0.01f, "Пожинатель не казнил цель!");
+            }
+        }
+    }*/
 }

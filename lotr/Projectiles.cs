@@ -79,45 +79,51 @@ namespace lotr {
         }
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false) {
-            Pawn victimPawn = hitThing as Pawn;
-            bool wasAlive = victimPawn != null && !victimPawn.Dead;
-            bool wasUnharmed = false;
-            bool bigEnough = false;
+            try {
+                Pawn victimPawn = hitThing as Pawn;
+                bool wasAlive = victimPawn != null && !victimPawn.Dead;
+                bool wasUnharmed = false;
+                bool bigEnough = false;
 
-            if (wasAlive) {
-                wasUnharmed = IsPawnNearlyUnharmed(victimPawn);
-                bigEnough = victimPawn.BodySize >= minBodySizeForInstantKillBonus;
+                if (wasAlive) {
+                    wasUnharmed = IsPawnNearlyUnharmed(victimPawn);
+                    bigEnough = victimPawn.BodySize >= minBodySizeForInstantKillBonus;
+                }
+
+                // Эффекты до щита
+                foreach (var effect in effects)
+                    if (!effect.ApplyBeforeShield(this, hitThing))
+                        break;
+
+                if (blockedByShield) {
+                    Destroy(DestroyMode.Vanish);
+                    return;
+                }
+
+                // Эффекты после щита
+                foreach (var effect in effects)
+                    effect.ApplyAfterShield(this, hitThing);
+
+                if (wasAlive && victimPawn != null && victimPawn.Dead) {
+                    InstantKill = wasUnharmed;
+                    InstantKillBonus = InstantKill && bigEnough;
+
+                    if (InstantKillBonus)
+                        Log.Message($"{this.def.defName} совершил мгновенное убийство {victimPawn} (здоров {wasUnharmed}, размер ≥ {minBodySizeForInstantKillBonus})");
+
+                    OnKilledByProjectile(victimPawn);
+                }
+
+                if (this is Projectile_BlazingSpear) {
+                    var launcherReaction = new Effect_LauncherReaction();
+                    launcherReaction.ApplyAfterShield(this, hitThing);
+                }
+            } catch (Exception ex) {
+                Log.Error($"Exception in Projectile_Base.Impact for {this.def?.defName ?? "null"} at {this.Position}: {ex}");
+            } finally {
+                if (!this.Destroyed)
+                    this.Destroy(DestroyMode.Vanish);
             }
-
-            foreach (var effect in effects)
-                if (!effect.ApplyBeforeShield(this, hitThing))
-                    break;
-
-            if (blockedByShield) {
-                Destroy(DestroyMode.Vanish);
-                return;
-            }
-
-            foreach (var effect in effects)
-                effect.ApplyAfterShield(this, hitThing);
-
-            if (wasAlive && victimPawn != null && victimPawn.Dead) {
-                InstantKill = wasUnharmed;
-                InstantKillBonus = InstantKill && bigEnough;
-
-                if (InstantKillBonus)
-                    Log.Message($"{this.def.defName} совершил мгновенное убийство {victimPawn} (здоров {wasUnharmed}, размер ≥ {minBodySizeForInstantKillBonus})");
-
-                OnKilledByProjectile(victimPawn);
-            }
-
-            if (this is Projectile_BlazingSpear) {
-                var launcherReaction = new Effect_LauncherReaction();
-                launcherReaction.ApplyAfterShield(this, hitThing);
-            }
-
-            if (!this.Destroyed)
-                this.Destroy(DestroyMode.Vanish);
         }
 
         private bool IsPawnNearlyUnharmed(Pawn pawn) {
@@ -309,17 +315,17 @@ namespace lotr {
         public override bool ApplyBeforeShield(Projectile_Base projectile, Thing hitThing) {
             if (pawn != null && projectile.Spawned) {
                 IntVec3 spawnPos = projectile.Position;
-                if (!spawnPos.Walkable(projectile.Map) || spawnPos.Fogged(projectile.Map)) {
+                if (!spawnPos.Walkable(projectile.Map) || spawnPos.Fogged(projectile.Map))
                     spawnPos = CellFinder.RandomClosewalkCellNear(projectile.Position, projectile.Map, 3);
-                }
 
                 GenSpawn.Spawn(pawn, spawnPos, projectile.Map);
 
-                pawn.drafter.Drafted = wasDrafted;
+                // drafter может отсутствовать у животных или врагов
+                if (pawn.drafter != null)
+                    pawn.drafter.Drafted = wasDrafted;
 
                 FleckMaker.ThrowSmoke(projectile.ExactPosition, projectile.Map, 0.8f);
                 FleckMaker.Static(projectile.ExactPosition, projectile.Map, FleckDefOf.MicroSparks, 1.0f);
-
                 pawn = null;
             }
             return true;
@@ -339,16 +345,12 @@ namespace lotr {
                     BeyonderUtility.AddSanityLoss(launcherPawn, 0.05f, "Заговорщик использует грубую силу!");
                 }
 
-                Log.Message($"[InstantKillBonus] projectile.InstantKillBonus={projectile.InstantKillBonus}");
-                if (projectile.InstantKillBonus) {
-                    var hunter5 = launcherPawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter5_Hediff) as Hunter5_Hediff;
-                    if (hunter5 == null) {
-                        Log.Message($"[InstantKillBonus] Hunter5 hediff not found on {launcherPawn.Name}. Available hediffs: {string.Join(", ", launcherPawn.health.hediffSet.hediffs.Select(h => h.def.defName))}");
-                    }
-
-                    if (hunter5 != null) {
-                        Log.Message($"[InstantKillBonus] Начислен бонус Hunter5 за убийство {hitThing}");
+                var hunter5 = launcherPawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter5_Hediff) as Hunter5_Hediff;
+                if (hunter5 != null) {
+                    if (projectile.InstantKillBonus) {
                         hunter5.AddActingProgress(1, 0.01f, launcherPawn);
+                    } else if (!projectile.InstantKill) {
+                        BeyonderUtility.AddSanityLoss(launcherPawn, 0.01f, "Пожинатель не казнил цель!");
                     }
                 }
             }

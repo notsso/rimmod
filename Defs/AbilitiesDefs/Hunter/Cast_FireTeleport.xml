@@ -53,7 +53,7 @@
         <cooldownTicksRange>300</cooldownTicksRange>
         <comps>
             <li Class="lotr.CompProperties_FireTeleport">
-                <projectileDef>Proj_FireTeleport_6S</projectileDef>
+                <projectileDef>Proj_FireTeleport_5S</projectileDef>
             </li>
         </comps>
         <verbProperties>
