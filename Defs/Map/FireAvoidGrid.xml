@@ -1,0 +1,6 @@
+<Defs>
+    <MapComponentDef>
+        <defName>FireAvoidGrid</defName>
+        <compClass>lotr.MapComponent_FireAvoidGrid</compClass>
+    </MapComponentDef>
+</Defs>

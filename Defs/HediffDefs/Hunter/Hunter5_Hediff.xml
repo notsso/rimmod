@@ -21,6 +21,7 @@
 
                 <statFactors>
                     <IncomingDamageFactor>0.35</IncomingDamageFactor>
+                    <Flammability>0</Flammability>
                 </statFactors>
 
                 <statOffsets>
@@ -77,6 +78,7 @@
 
                 <statFactors>
                     <IncomingDamageFactor>0.30</IncomingDamageFactor>
+                    <Flammability>0</Flammability>
                 </statFactors>
                 
                 <statOffsets>
@@ -132,6 +134,7 @@
 
                 <statFactors>
                     <IncomingDamageFactor>0.25</IncomingDamageFactor>
+                    <Flammability>0</Flammability>
                 </statFactors>
                 
                 <statOffsets>

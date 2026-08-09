@@ -236,7 +236,13 @@ namespace lotr {
 
             if (!(parent is Pawn raven) || raven.Map == null) return;
 
-            if (casterOwner == null || casterOwner.Dead || casterOwner.Downed || !casterOwner.Spawned || casterOwner.Map != raven.Map || (lifetime-- <= 0)) {
+            if (casterOwner == null || casterOwner.Dead || casterOwner.Downed || (lifetime-- <= 0)) {
+                raven.Destroy(DestroyMode.Vanish);
+                return;
+            }
+
+            // Если хозяин заспавнен, то его карта должна совпадать с картой вороны
+            if (casterOwner.Spawned && casterOwner.Map != raven.Map) {
                 raven.Destroy(DestroyMode.Vanish);
                 return;
             }
