@@ -211,4 +211,46 @@
         <researchPrerequisite>Brewing</researchPrerequisite>
     </RecipeDef>
 
+    <RecipeDef>
+        <defName>Hunter4_PotionRecipe</defName>
+        <label>brew knight's potion</label>
+        <description>Brew a mysterious potion of the Hunter pathway.</description>
+        <jobString>Brewing knight's potion.</jobString>
+        
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+    
+        <ingredients>
+        <li>
+            <filter>
+                <thingDefs>
+                    <li>MedicineHerbal</li>
+                </thingDefs>
+            </filter>
+            <count>1</count>
+        </li>
+        <li>
+            <filter>
+                <thingDefs>
+                    <li>lotr_MarshBoarCrystallizedSpleen</li>
+                </thingDefs>
+            </filter>
+            <count>6</count>
+        </li>
+        </ingredients>
+        
+        <products>
+            <Hunter4_Potion>1</Hunter4_Potion>
+        </products>
+        
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        
+        <researchPrerequisite>Brewing</researchPrerequisite>
+    </RecipeDef>
+
 </Defs>

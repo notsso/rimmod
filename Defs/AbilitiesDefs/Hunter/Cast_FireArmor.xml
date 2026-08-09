@@ -74,7 +74,7 @@
         <cooldownTicksRange>1800</cooldownTicksRange>
         <comps>
             <li Class="lotr.CompProperties_AbilityGiveHediff">
-                <hediffDef>Hediff_FireArmor_6S</hediffDef>
+                <hediffDef>Hediff_FireArmor_5S</hediffDef>
             </li>
         </comps>
         <verbProperties>

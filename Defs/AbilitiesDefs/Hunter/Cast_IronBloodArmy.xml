@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <AbilityDef Name="Cast_IronBloodArmy">
+
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        <defName>Cast_IronBloodArmy</defName>
+        <label>Огненная кровь</label>
+        <description>Увеличиват силу всех союзных пешек вокруг рыцаря.</description>
+        <iconPath>Placeholder</iconPath>
+        <cooldownTicksRange>9000</cooldownTicksRange>
+        <hostile>false</hostile>
+
+        <modExtensions>
+            <li Class="lotr.SpiritualityCostExtension">
+                <cost>300.0</cost>
+            </li>
+        </modExtensions>
+
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>5.0</warmupTime>
+            <range>10</range>
+            <targetParams>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        
+    </AbilityDef>
+
+    <!-- Уровень 4 -->
+    <AbilityDef ParentName="Cast_IronBloodArmy">
+        <defName>Cast_IronBloodArmy_4S</defName>
+        <label>Огненная кровь</label>
+        <cooldownTicksRange>1800</cooldownTicksRange>
+        <comps>
+            <li Class="lotr.CompProperties_AbilityGiveHediff">
+                <!--<hediffDef>Hediff_IronBlood_4S</hediffDef>-->
+                <hediffDef>Hediff_FireArmor_5S</hediffDef>
+            </li>
+        </comps>
+        <verbProperties>
+            <warmupTime>5.0</warmupTime>
+            <range>10</range>
+            <targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetSelf>false</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+    </AbilityDef>
+
+</Defs>

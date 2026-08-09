@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef>
+        <defName>FirestormThing</defName>
+        <thingClass>lotr.Firestorm</thingClass>
+        <label>mythical firestorm</label>
+        <description>A devastating vortex of highly compressed mythical flames summoned by an Iron-blooded Knight.</description>
+        <graphicData>
+            <texPath>Things/Ethereal/Tornado</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>MoteGlow</shaderType>
+            <color>(255, 60, 0)</color>
+            <drawSize>(4.5, 4.5)</drawSize>
+        </graphicData>
+        <tickerType>Normal</tickerType>
+        <drawerType>RealtimeOnly</drawerType>
+        <soundImpactDefault>BulletImpact_Ground</soundImpactDefault>
+    </ThingDef>
+
+</Defs>

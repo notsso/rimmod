@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    
+    <AbilityDef Name="Cast_Firestorm">
+
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        <defName>Cast_Firestorm</defName>
+        <label>огненный шторм</label>
+        <description>смертоносный огненный шторм</description>
+        <iconPath>Placeholder</iconPath>
+        <cooldownTicksRange>12000</cooldownTicksRange>
+        <hostile>true</hostile>
+        
+        <modExtensions>
+            <li Class="lotr.SpiritualityCostExtension">
+                <cost>500.0</cost>
+            </li>
+        </modExtensions>
+        
+        <verbProperties>
+
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>25</range>
+            <warmupTime>3.0</warmupTime>
+            <hasStandardCommand>true</hasStandardCommand>
+
+            <targetParams>
+
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                
+            </targetParams>
+
+        </verbProperties>
+
+    </AbilityDef>
+
+    <!-- Уровень 4 -->
+    <AbilityDef ParentName="Cast_Firestorm">
+        <defName>Cast_Firestorm_4S</defName>
+        <label>огненный шторм</label>
+        <cooldownTicksRange>12000</cooldownTicksRange>
+        <comps>
+            <li Class="lotr.CompProperties_Firestorm">
+                <lifeTicks>300</lifeTicks>
+                <minExplosionRadius>3.0</minExplosionRadius>
+                <maxExplosionRadius>5.0</maxExplosionRadius>
+                <flameInterval>3</flameInterval>
+                <areaRadius>8</areaRadius>
+            </li>
+        </comps>
+        <verbProperties>
+            <range>40</range>
+            <warmupTime>3.0</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+    
+</Defs>
