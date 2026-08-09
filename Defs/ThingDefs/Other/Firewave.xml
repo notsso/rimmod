@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef>
+        <defName>FirewaveEffect</defName>
+        <thingClass>lotr.FirewaveEffect</thingClass>
+        <label>firewave effect</label>
+        <graphicData>
+            <texPath>Things/Ethereal/Tornado</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(0.01, 0.01)</drawSize>
+        </graphicData>
+        <tickerType>Normal</tickerType>
+        <drawerType>RealtimeOnly</drawerType>
+    </ThingDef>
+
+</Defs>

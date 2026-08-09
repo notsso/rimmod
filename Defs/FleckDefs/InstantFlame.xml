@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <FleckDef ParentName="FleckBase">
+    <defName>InstantFlame</defName> <!-- Убедитесь, что defName совпадает с тем, что вы ищете в C# -->
+    <graphicData>
+      <texPath>Things/Mote/MicroSparks</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <color>(255, 90, 30)</color>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <solidTime>0.01</solidTime>
+    <fadeOutTime>0.02</fadeOutTime> <!-- Теперь все теги закрыты корректно -->
+  </FleckDef>
+</Defs>

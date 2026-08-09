@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <AbilityDef Name="Cast_Firewave">
+
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        <defName>Cast_Firewave</defName>
+        <label>Волна огня</label>
+        <description>Поджигает все вокруг.</description>
+        <iconPath>Placeholder</iconPath>
+        <cooldownTicksRange>6000</cooldownTicksRange>
+        <hostile>true</hostile>
+
+        <modExtensions>
+            <li Class="lotr.SpiritualityCostExtension">
+                <cost>200.0</cost>
+            </li>
+        </modExtensions>
+        
+        <verbProperties>
+
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>20</range>
+            <warmupTime>1.0</warmupTime>
+
+            <targetParams>
+
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetSelf>false</canTargetSelf>
+
+            </targetParams>
+
+        </verbProperties>
+
+    </AbilityDef>
+
+    <!-- Уровень 4 -->
+    <AbilityDef ParentName="Cast_Firewave">
+        <defName>Cast_Firewave_4S</defName>
+        <label>Волна огня</label>
+        <cooldownTicksRange>6000</cooldownTicksRange>
+        <comps>
+            <li Class="lotr.CompProperties_Firewave">
+                <angleDegrees>60</angleDegrees>
+                <range>50</range>
+                <damageAmount>100</damageAmount>
+                <armorPenetration>1.0</armorPenetration>
+                <fireChance>0.9</fireChance>
+                <speed>30</speed>
+            </li>
+        </comps>
+        <verbProperties>
+            <range>50</range>
+            <warmupTime>1.0</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
+</Defs>

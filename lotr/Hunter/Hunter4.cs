@@ -176,4 +176,193 @@ namespace lotr {
             }
         }
     }
+    public class CompProperties_Firewave : CompProperties_AbilityEffect {
+        public float angleDegrees = 60f;    // полный угол конуса
+        public float range = 50f;
+        public int damageAmount = 15;
+        public float armorPenetration = 1.0f;
+        public float fireChance = 0.8f;
+        public float speed = 20f;           // клеток в секунду
+        public int explosionInterval = 5;   // тиков между взрывами
+        public float explosionRadius = 1.5f;
+
+        public CompProperties_Firewave() {
+            compClass = typeof(CompAbilityEffect_Firewave);
+        }
+    }
+
+    public class CompAbilityEffect_Firewave : CompAbilityEffect {
+        public new CompProperties_Firewave Props => (CompProperties_Firewave)props;
+
+        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
+            base.Apply(target, dest);
+
+            Pawn caster = this.parent.pawn;
+            if (caster == null || !caster.Spawned) return;
+
+            Map map = caster.Map;
+            IntVec3 origin = caster.Position;
+            IntVec3 targetCell = target.Cell;
+
+            // Создаём временный объект волны
+            ThingDef waveDef = ThingDef.Named("FirewaveEffect");
+            if (waveDef == null) {
+                Log.Error("FirewaveEffect Def not found!");
+                return;
+            }
+
+            FirewaveEffect wave = (FirewaveEffect)GenSpawn.Spawn(waveDef, origin, map, WipeMode.Vanish);
+            wave.instigator = caster;
+            wave.targetCell = targetCell;
+            wave.range = Props.range;
+            wave.angleDegrees = Props.angleDegrees;
+            wave.fireChance = Props.fireChance;
+            wave.speed = Props.speed;
+            wave.damageAmount = Props.damageAmount;
+            wave.armorPenetration = Props.armorPenetration;
+
+            wave.InitDirection();
+        }
+    }
+
+    public class FirewaveEffect : ThingWithComps {
+        public Pawn instigator;
+        public IntVec3 targetCell;
+        public float range;
+        public float angleDegrees;
+        public float fireChance = 0.8f;
+        public float speed = 20f;
+
+        public int damageAmount = 100;
+        public float armorPenetration = 1f;
+
+        private Vector3 direction;
+        private float traveledDistance = 0f;
+        private float halfAngleRad;
+        private HashSet<IntVec3> ignitedCells => new HashSet<IntVec3>();
+        private HashSet<Pawn> damagedPawns => new HashSet<Pawn>();   // <-- для однократного урона
+        private bool finished = false;
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad) {
+            base.SpawnSetup(map, respawningAfterLoad);
+            // больше ничего не делаем – halfAngleRad ещё не готов
+        }
+
+        public void InitDirection() {
+            Vector3 casterPos = this.Position.ToVector3();
+            if (targetCell.IsValid) {
+                Vector3 toTarget = targetCell.ToVector3() - casterPos;
+                if (toTarget.sqrMagnitude > 0.001f)
+                    direction = toTarget.normalized;
+                else
+                    direction = Vector3.forward;
+            } else {
+                direction = Vector3.forward;
+            }
+            direction.y = 0f;
+            direction.Normalize();
+
+            // ВОТ ЗДЕСЬ вычисляем halfAngleRad, когда angleDegrees уже известен
+            halfAngleRad = angleDegrees * 0.5f * Mathf.Deg2Rad;
+        }
+
+        protected override void Tick() {
+            if (!this.Spawned || finished) return;
+
+            float step = speed / 60f;
+            float newDistance = Mathf.Min(traveledDistance + step, range);
+
+            List<IntVec3> allConeCells = GetAllCellsInCone(
+                origin: this.Position,
+                direction: direction,
+                maxDist: newDistance,
+                halfAngleRad: halfAngleRad,
+                map: this.Map
+            );
+
+            foreach (IntVec3 cell in allConeCells) {
+                if (ignitedCells.Add(cell)) {
+                    // Поджог
+                    if (Rand.Value < fireChance)
+                        FireUtility.TryStartFireIn(cell, this.Map, Rand.Range(0.2f, 0.5f), instigator);
+
+                    // Визуал
+                    // if (Rand.Value < 0.1f) {
+                    //     FleckMaker.ThrowHeatGlow(cell, this.Map, 0.1f);
+                    // }
+                    // FleckMaker.ThrowMicroSparks(cell.ToVector3(), this.Map);
+                    // ThrowQuickSparks(cell, this.Map);\
+                    // FleckDef customFleck = LotrDefOf.InstantFlame;
+                    // FleckMaker.Static(cell, this.Map, customFleck, 1.0f);
+
+
+                    // Звук
+                    // SoundDefOf.Fire_Started.PlayOneShot(new TargetInfo(cell, this.Map));
+
+                    // ОГРОМНЫЙ УРОН по живым существам в этой клетке
+                    List<Thing> things = new List<Thing>(cell.GetThingList(this.Map));
+                    foreach (Thing t in things) {
+                        if (t is Pawn pawn && pawn != instigator && !pawn.Dead && damagedPawns.Add(pawn)) {
+                            DamageInfo dinfo = new DamageInfo(
+                                DamageDefOf.Flame,
+                                damageAmount,
+                                armorPenetration,
+                                instigator: instigator
+                            );
+                            pawn.TakeDamage(dinfo);
+                        }
+                    }
+                }
+            }
+
+            traveledDistance = newDistance;
+
+            if (traveledDistance >= range) {
+                finished = true;
+                this.Destroy();
+            }
+        }
+
+        private List<IntVec3> GetAllCellsInCone(IntVec3 origin, Vector3 direction, float maxDist, float halfAngleRad, Map map) {
+            List<IntVec3> result = new List<IntVec3>();
+            int maxRadius = Mathf.CeilToInt(maxDist);
+            Vector3 originV = origin.ToVector3();
+            float halfAngleDeg = halfAngleRad * Mathf.Rad2Deg;
+
+            for (int dx = -maxRadius; dx <= maxRadius; dx++) {
+                for (int dz = -maxRadius; dz <= maxRadius; dz++) {
+                    IntVec3 cell = new IntVec3(origin.x + dx, origin.y, origin.z + dz);
+                    if (!cell.InBounds(map)) continue;
+
+                    Vector3 toCell = cell.ToVector3() - originV;
+                    float dist = toCell.magnitude;
+                    if (dist > maxDist) continue;
+
+                    float angle = Vector3.Angle(direction, toCell.normalized);
+                    if (angle <= halfAngleDeg)
+                        result.Add(cell);
+                }
+            }
+            return result;
+        }
+
+        private void ThrowQuickSparks(IntVec3 cell, Map map) {
+            ThingDef sparkDef = ThingDef.Named("Mote_Spark");
+            if (sparkDef == null) {
+                sparkDef = ThingDef.Named("Mote_SparkFlash");
+                return;
+            }
+
+            MoteThrown mote = (MoteThrown)ThingMaker.MakeThing(sparkDef, null);
+            mote.Scale = 0.4f;
+            mote.rotationRate = Rand.Range(-300f, 300f);
+            mote.exactPosition = cell.ToVector3Shifted() + new Vector3(Rand.Value - 0.5f, 0, Rand.Value - 0.5f);
+
+            float angle = Rand.Range(0f, 360f);
+            float speed = Rand.Range(0.5f, 1.2f);
+            mote.SetVelocity(angle, speed);
+            mote.airTimeLeft = Rand.Range(0.05f, 0.15f);   // почти мгновенно
+            GenSpawn.Spawn(mote, cell, map);
+        }
+    }
 }

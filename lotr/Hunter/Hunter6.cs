@@ -89,7 +89,7 @@ namespace lotr {
             float finalChance = Props.baseSuccessChance * psychicSensitivity;
 
             if (Rand.Chance(finalChance)) {
-                lotr.Patch_RecordBerserkCaster.CurrentCaster = caster;
+                Patch_RecordBerserkCaster.CurrentCaster = caster;
 
                 targetPawn.mindState.mentalStateHandler.TryStartMentalState(
                     MentalStateDefOf.Berserk,

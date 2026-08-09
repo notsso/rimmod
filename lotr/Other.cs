@@ -122,6 +122,8 @@ namespace lotr {
         public static ThinkTreeDef lotr_MarshBoarTree;
 
         public static ThoughtDef lotr_SanityLossThought;
+
+        public static FleckDef InstantFlame; // OBSOLETE
     }
 
     // класс, для зелий потусторонних, которые продвигают
