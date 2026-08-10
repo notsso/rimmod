@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <HediffDef Name="Hediff_IronBlood">
+        <defName>Hediff_IronBlood</defName>
+        <label>Огненная кровь</label>
+        <description>Тело пешки усилено полубогом пути Охотника.</description>
+        <hediffClass>lotr.Hediff_FireLight</hediffClass>
+        <isBad>false</isBad>
+    </HediffDef>
+
+    <!-- Уровень 4 -->
+    <HediffDef ParentName="Hediff_FireArmor">
+        <defName>Hediff_IronBlood_4S</defName>
+        <label>Огненная кровь</label>
+
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>9000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+
+        <stages>
+            <li>
+                <statFactors>
+                    <ToxicResistance>0.0</ToxicResistance>
+                    <IncomingDamageFactor>0.25</IncomingDamageFactor>
+                    <Flammability>0.1</Flammability>
+                </statFactors>
+
+                <statOffsets>
+                    <InjuryHealingFactor>2.0</InjuryHealingFactor>
+                    <MeleeHitChance>10</MeleeHitChance>
+                    <MeleeDodgeChance>10</MeleeDodgeChance>
+                    <ShootingAccuracyPawn>10</ShootingAccuracyPawn>
+                </statOffsets>
+
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>0.5</offset>
+                    </li>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <offset>0.5</offset>
+                    </li>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>0.50</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+</Defs>

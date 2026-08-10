@@ -5,7 +5,7 @@
         <defName>Cast_ExtinguishFire</defName>
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <label>Тушение огня</label>
-        <description>Погасить все пожары в радиусе 5 клеток.</description>
+        <description>Погасить все пожары в радиусе.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_ExtinguishFire</iconPath>
         <cooldownTicksRange>1200</cooldownTicksRange>
         <hostile>false</hostile>

@@ -125,7 +125,7 @@ namespace lotr {
     public class SummonedFireWeapon : SummonedWeapon { }
 
     // Способность hunter7 (pyromaniac): огненная броня
-    public class Hediff_FireArmor : HediffWithComps {
+    public class Hediff_FireLight : HediffWithComps {
         // Храним ссылку на заспавненную невидимую лампочку
         private ThingWithComps lightSource = null;
 

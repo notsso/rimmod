@@ -5,7 +5,7 @@
         <defName>Hediff_FireArmor</defName>
         <label>огненный покров</label>
         <description>Тело пешки окутано мистическим пламенем, защищающим от внешних угроз.</description>
-        <hediffClass>lotr.Hediff_FireArmor</hediffClass>
+        <hediffClass>lotr.Hediff_FireLight</hediffClass>
         <isBad>false</isBad>
     </HediffDef>
 

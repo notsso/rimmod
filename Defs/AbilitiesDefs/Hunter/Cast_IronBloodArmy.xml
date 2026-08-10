@@ -20,7 +20,7 @@
         <verbProperties>
             <verbClass>Verb_CastAbility</verbClass>
             <warmupTime>5.0</warmupTime>
-            <range>10</range>
+            <range>0</range>
             <targetParams>
                 <canTargetSelf>true</canTargetSelf>
             </targetParams>
@@ -34,18 +34,14 @@
         <label>Огненная кровь</label>
         <cooldownTicksRange>1800</cooldownTicksRange>
         <comps>
-            <li Class="lotr.CompProperties_AbilityGiveHediff">
-                <!--<hediffDef>Hediff_IronBlood_4S</hediffDef>-->
-                <hediffDef>Hediff_FireArmor_5S</hediffDef>
+            <li Class="lotr.CompProperties_AbilityGiveHediffArea">
+                <hediffDef>Hediff_IronBlood_4S</hediffDef>
+                <radius>5</radius>
             </li>
         </comps>
         <verbProperties>
             <warmupTime>5.0</warmupTime>
-            <range>10</range>
-            <targetParams>
-                <canTargetPawns>true</canTargetPawns>
-                <canTargetSelf>false</canTargetSelf>
-            </targetParams>
+            <range>0</range>
         </verbProperties>
     </AbilityDef>
 
