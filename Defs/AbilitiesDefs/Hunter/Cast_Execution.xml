@@ -52,4 +52,20 @@
         </verbProperties>
     </AbilityDef>
 
+    <!-- Уровень 5 -->
+    <AbilityDef ParentName="Cast_Execution">
+        <defName>Cast_Execution_4S</defName>
+        <label>Казнь</label>
+        <cooldownTicksRange>1800</cooldownTicksRange>
+        <comps>
+            <li Class="CompProperties_AbilityLaunchProjectile">
+                <projectileDef>Proj_Execution_4S</projectileDef>
+            </li>
+        </comps>
+        <verbProperties>
+            <range>60</range>
+            <warmupTime>2.0</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
 </Defs>

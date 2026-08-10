@@ -87,4 +87,24 @@
         </verbProperties>
     </AbilityDef>
 
+    <!-- Уровень 4 -->
+    <AbilityDef ParentName="Cast_FireArmor">
+        <defName>Cast_FireArmor_4S</defName>
+        <label>огненная броня</label>
+        <cooldownTicksRange>600</cooldownTicksRange>
+        <comps>
+            <li Class="lotr.CompProperties_AbilityGiveHediff">
+                <hediffDef>Hediff_FireArmor_4S</hediffDef>
+            </li>
+        </comps>
+        <verbProperties>
+            <warmupTime>0.5</warmupTime>
+            <range>20</range>
+            <targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+    </AbilityDef>
+
 </Defs>

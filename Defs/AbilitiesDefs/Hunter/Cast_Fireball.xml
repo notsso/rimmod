@@ -115,5 +115,21 @@
             <warmupTime>0.2</warmupTime>
         </verbProperties>
     </AbilityDef>
+
+    <!-- Уровень 4 -->
+    <AbilityDef ParentName="Cast_Fireball">
+        <defName>Cast_Fireball_4S</defName>
+        <label>огненный шар</label>
+        <cooldownTicksRange>10</cooldownTicksRange>
+        <comps>
+            <li Class="CompProperties_AbilityLaunchProjectile">
+                <projectileDef>Proj_Fireball_4S</projectileDef>
+            </li>
+        </comps>
+        <verbProperties>
+            <range>50</range>
+            <warmupTime>0.1</warmupTime>
+        </verbProperties>
+    </AbilityDef>
     
 </Defs>

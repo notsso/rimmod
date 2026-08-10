@@ -49,5 +49,26 @@
             </li>
         </stages>
     </HediffDef>
+
+    <!-- Уровень 4 -->
+    <HediffDef ParentName="Hediff_Confusion">
+        <defName>Hediff_Confusion_4S</defName>
+        <label>замешательство</label>
+
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>9000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+
+        <stages>
+            <li>
+                <statOffsets>
+                    <MoveSpeed>-0.8</MoveSpeed>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
     
 </Defs>

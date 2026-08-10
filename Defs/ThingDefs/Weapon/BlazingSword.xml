@@ -164,4 +164,42 @@
         </tools>
     </ThingDef>
 
+    <!-- Уровень 4 -->
+    <ThingDef ParentName="Melee_BlazingSword">
+        <defName>Melee_BlazingSword_4S</defName>
+        <label>огненный меч</label>
+        <tools>
+            <li>
+                <label>мощное лезвие</label>
+                <capacities>
+                    <li>Cut</li>
+                </capacities>
+                <power>50</power>
+                <cooldownTime>0.8</cooldownTime>
+                <extraMeleeDamages>
+                    <li>
+                        <def>Flame</def>
+                        <amount>40</amount>
+                        <chance>0.90</chance>
+                    </li>
+                </extraMeleeDamages>
+            </li>
+            <li>
+                <label>острие</label>
+                <capacities>
+                    <li>Stab</li>
+                </capacities>
+                <power>40</power>
+                <cooldownTime>1.0</cooldownTime>
+                <extraMeleeDamages>
+                    <li>
+                        <def>Flame</def>
+                        <amount>50</amount>
+                        <chance>0.99</chance>
+                    </li>
+                </extraMeleeDamages>
+            </li>
+        </tools>
+    </ThingDef>
+
 </Defs>

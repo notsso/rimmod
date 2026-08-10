@@ -8,7 +8,7 @@
         <label>Подстрекательство</label>
         <description>Заставляет врага впасть в бешенство.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Incite</iconPath>
-        <cooldownTicksRange>300</cooldownTicksRange>
+        <cooldownTicksRange>100</cooldownTicksRange>
         <hostile>true</hostile>
 
         <modExtensions>
@@ -60,6 +60,23 @@
         <verbProperties>
             <range>15</range>
             <warmupTime>1.0</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
+    <!-- Уровень 4 -->
+    <AbilityDef ParentName="Cast_Incite">
+        <defName>Cast_Incite_4S</defName>
+        <label>Подстрекательство</label>
+        <cooldownTicksRange>300</cooldownTicksRange>
+        <comps>
+            <li Class="lotr.CompProperties_AbilityIncite">
+                <baseSuccessChance>0.9</baseSuccessChance>
+                <affectAllies>false</affectAllies>
+            </li>
+        </comps>
+        <verbProperties>
+            <range>25</range>
+            <warmupTime>0.5</warmupTime>
         </verbProperties>
     </AbilityDef>
 

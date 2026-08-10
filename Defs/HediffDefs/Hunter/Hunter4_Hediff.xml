@@ -193,22 +193,22 @@
 
         <abilities>
         
-            <li>Cast_Fireball_5S</li>
+            <li>Cast_Fireball_4S</li>
 
-            <li>Cast_Taunt_5S</li>
+            <li>Cast_Taunt_4S</li>
 
-            <li>Cast_BlazingSpear_5S</li>
-            <li>Cast_FireRavens_5S</li>
-            <li>Cast_FireArmor_5S</li>
-            <li>Cast_BlazingSword_5S</li>
-            <li>Cast_ExtinguishFire_5S</li>
+            <li>Cast_BlazingSpear_4S</li>
+            <li>Cast_FireRavens_4S</li>
+            <li>Cast_FireArmor_4S</li>
+            <li>Cast_BlazingSword_4S</li>
+            <li>Cast_ExtinguishFire_4S</li>
 
-            <li>Cast_FireTeleport_5S</li>
-            <li>Cast_Incite_5S</li>
-            <li>Cast_Confusion_5S</li>
+            <li>Cast_FireTeleport_4S</li>
+            <li>Cast_Incite_4S</li>
+            <li>Cast_Confusion_4S</li>
 
-            <li>Cast_Execution_5S</li>
-            <li>Cast_Vulnerability_5S</li> 
+            <li>Cast_Execution_4S</li>
+            <li>Cast_Vulnerability_4S</li> 
 
             <li>Cast_IronBloodArmy_4S</li>
             <li>Cast_Firestorm_4S</li>

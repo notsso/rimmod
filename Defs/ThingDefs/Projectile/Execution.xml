@@ -48,7 +48,20 @@
             <speed>200</speed>
             <damageAmountBase>200</damageAmountBase>
             <armorPenetrationBase>9999.00</armorPenetrationBase>
-            <explosionRadius>2.0</explosionRadius>
+            <explosionRadius>0</explosionRadius>
+        </projectile>
+    </ThingDef>
+
+    <!-- Уровень 4 -->
+    <ThingDef ParentName="Proj_Execution">
+        <defName>Proj_Execution_4S</defName>
+        <label>Копье белого огня</label>
+        <thingClass>lotr.Projectile_Execution</thingClass>
+        <projectile>
+            <speed>300</speed>
+            <damageAmountBase>300</damageAmountBase>
+            <armorPenetrationBase>9999.00</armorPenetrationBase>
+            <explosionRadius>3.0</explosionRadius>
         </projectile>
     </ThingDef>
 

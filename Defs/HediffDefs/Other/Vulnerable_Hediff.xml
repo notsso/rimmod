@@ -24,5 +24,22 @@
             <li />
         </stages>
     </HediffDef>
+
+    <!-- Уровень 4 -->
+    <HediffDef ParentName="Hediff_Vulnerable">
+        <defName>Hediff_Vulnerable_4S</defName>
+        <label>Уязвимость</label>
+
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>6000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+
+        <stages>
+            <li />
+        </stages>
+    </HediffDef>
     
 </Defs>

@@ -104,4 +104,29 @@
         </verbProperties>
     </AbilityDef>
 
+    <!-- Уровень 4 -->
+    <AbilityDef ParentName="Cast_ExtinguishFire">
+        <defName>Cast_ExtinguishFire_4S</defName>
+        <label>Тушение огня</label>
+        <cooldownTicksRange>60</cooldownTicksRange>
+        <comps>
+            <li Class="lotr.CompProperties_AbilityExtinguishFire">
+                <radius>10</radius>
+                <extinguishCaster>true</extinguishCaster>
+                <extinguishAllies>true</extinguishAllies>
+            </li>
+        </comps>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>10</range>
+            <warmupTime>0.0</warmupTime>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+    </AbilityDef>
+
 </Defs>

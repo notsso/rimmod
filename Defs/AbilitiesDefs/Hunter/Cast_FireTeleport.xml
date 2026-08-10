@@ -62,4 +62,20 @@
         </verbProperties>
     </AbilityDef>
 
+    <!-- Уровень 4 -->
+    <AbilityDef ParentName="Cast_FireTeleport">
+        <defName>Cast_FireTeleport_4S</defName>
+        <label>Огненный прыжок</label>
+        <cooldownTicksRange>60</cooldownTicksRange>
+        <comps>
+            <li Class="lotr.CompProperties_FireTeleport">
+                <projectileDef>Proj_FireTeleport_4S</projectileDef>
+            </li>
+        </comps>
+        <verbProperties>
+            <range>50</range>
+            <warmupTime>0.1</warmupTime>
+        </verbProperties>
+    </AbilityDef>
+
 </Defs>
