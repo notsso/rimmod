@@ -24,7 +24,7 @@
             <speed>150</speed>
             <damageAmountBase>40</damageAmountBase>
             <explosionRadius>1.6</explosionRadius>
-            <damageDef>ExecutionCut</damageDef>
+            <damageDef>Crush</damageDef> <!-- ExecutionCut -->
             <ai_IsIncendiary>true</ai_IsIncendiary>
             <armorPenetrationBase>3.00</armorPenetrationBase>
 

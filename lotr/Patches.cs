@@ -326,4 +326,38 @@ namespace lotr {
             }
         }
     }
+
+    // Патчим метод, который собирает текущие цвета неба (для погоды, времени суток и т.д.)
+    [HarmonyPatch(typeof(SkyManager), "CurrentSkyTarget")]
+    public static class Patch_RedNightSky {
+        [HarmonyPostfix]
+        public static void Postfix(Map ___map, ref SkyTarget __result) {
+            if (___map == null) return;
+
+            // Получаем текущую ванильную освещенность неба (от 0.0 — глухая ночь, до 1.0 — ясный день)
+            float curGlow = ___map.skyManager.CurSkyGlow;
+
+            // Если освещенность падает ниже 35% (это сумерки и ночь)
+            if (curGlow < 0.35f) {
+                // Высчитываем силу ночи: чем темнее на улице, тем ближе значение к 1.0f
+                float nightFactor = 1f - (curGlow / 0.35f);
+
+                // Создаем каноничный мистический багровый свет (RGB: красный, зеленый, синий)
+                // Можете изменить цифры (от 0f до 1f), чтобы сделать ночь светлее или темнее
+                // Color bloodNightColor = new Color(0.7f, 0.25f, 0.1f, 1f);
+                // Color bloodNightColor = new Color(0.4f, 0.15f, 0.12f, 1f);
+                Color bloodNightColor = new Color(0.62f, 0.11f, 0.06f, 1f);
+
+                Color lightShadowColor = new Color(0.38f, 0.08f, 0.08f, 1f);
+
+                // Плавно смешиваем ванильный цвет ночи с нашим красным
+                Color newSkyColor = Color.Lerp(__result.colors.sky, bloodNightColor, nightFactor);
+                Color newShadowColor = Color.Lerp(__result.colors.shadow, lightShadowColor, nightFactor);
+
+                // Перезаписываем цвета в финальном результате, который уходит на отрисовку видеокарте
+                __result.colors.sky = newSkyColor;
+                __result.colors.shadow = newShadowColor; // Тени от зданий и деревьев тоже станут красноватыми
+            }
+        }
+    }
 }

@@ -17,7 +17,7 @@
         </modExtensions>
 
         <verbProperties>
-            <verbClass>Verb_CastAbility</verbClass>
+            <verbClass>lotr.Verb_ExtinguishFire</verbClass>
             <range>2</range>
             <warmupTime>0.5</warmupTime>
             <targetParams>
@@ -42,15 +42,8 @@
             </li>
         </comps>
         <verbProperties>
-            <verbClass>Verb_CastAbility</verbClass>
             <range>2</range>
             <warmupTime>0.5</warmupTime>
-            <targetParams>
-                <canTargetLocations>true</canTargetLocations>
-                <canTargetPawns>true</canTargetPawns>
-                <canTargetBuildings>true</canTargetBuildings>
-                <canTargetSelf>true</canTargetSelf>
-            </targetParams>
         </verbProperties>
     </AbilityDef>
 
@@ -67,15 +60,8 @@
             </li>
         </comps>
         <verbProperties>
-            <verbClass>Verb_CastAbility</verbClass>
             <range>4</range>
             <warmupTime>0.2</warmupTime>
-            <targetParams>
-                <canTargetLocations>true</canTargetLocations>
-                <canTargetPawns>true</canTargetPawns>
-                <canTargetBuildings>true</canTargetBuildings>
-                <canTargetSelf>true</canTargetSelf>
-            </targetParams>
         </verbProperties>
     </AbilityDef>
 
@@ -86,21 +72,14 @@
         <cooldownTicksRange>180</cooldownTicksRange>
         <comps>
             <li Class="lotr.CompProperties_AbilityExtinguishFire">
-                <radius>5</radius>
+                <radius>6</radius>
                 <extinguishCaster>true</extinguishCaster>
                 <extinguishAllies>true</extinguishAllies>
             </li>
         </comps>
         <verbProperties>
-            <verbClass>Verb_CastAbility</verbClass>
             <range>5</range>
             <warmupTime>0.1</warmupTime>
-            <targetParams>
-                <canTargetLocations>true</canTargetLocations>
-                <canTargetPawns>true</canTargetPawns>
-                <canTargetBuildings>true</canTargetBuildings>
-                <canTargetSelf>true</canTargetSelf>
-            </targetParams>
         </verbProperties>
     </AbilityDef>
 
@@ -117,15 +96,8 @@
             </li>
         </comps>
         <verbProperties>
-            <verbClass>Verb_CastAbility</verbClass>
             <range>10</range>
             <warmupTime>0.0</warmupTime>
-            <targetParams>
-                <canTargetLocations>true</canTargetLocations>
-                <canTargetPawns>true</canTargetPawns>
-                <canTargetBuildings>true</canTargetBuildings>
-                <canTargetSelf>true</canTargetSelf>
-            </targetParams>
         </verbProperties>
     </AbilityDef>
 

@@ -19,7 +19,7 @@
         
         <verbProperties>
 
-            <verbClass>Verb_CastAbility</verbClass>
+            <verbClass>lotr.Verb_Firestorm</verbClass>
             <range>25</range>
             <warmupTime>3.0</warmupTime>
             <hasStandardCommand>true</hasStandardCommand>

@@ -19,7 +19,7 @@
         
         <verbProperties>
 
-            <verbClass>Verb_CastAbility</verbClass>
+            <verbClass>lotr.Verb_CastFirewave</verbClass>
             <range>20</range>
             <warmupTime>1.0</warmupTime>
 

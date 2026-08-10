@@ -19,7 +19,7 @@
         
         <verbProperties>
 
-            <verbClass>Verb_CastAbility</verbClass>
+            <verbClass>lotr.Verb_ExplosionZone</verbClass>
             <range>25</range>
             <warmupTime>1.5</warmupTime>
             <hasStandardCommand>true</hasStandardCommand>

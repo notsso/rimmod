@@ -255,4 +255,35 @@ namespace lotr {
             }
         }
     }
+
+    public class Verb_ExtinguishFire : Verb_CastAbility {
+        protected override bool TryCastShot() {
+            if (this.ability != null) {
+                this.ability.Activate(this.currentTarget, this.currentDestination);
+                return true;
+            }
+            return false;
+        }
+
+        public override void DrawHighlight(LocalTargetInfo target) {
+            base.DrawHighlight(target);
+
+            if (!target.IsValid || CasterPawn == null)
+                return;
+
+            // Достаём радиус из CompProperties_AbilityExtinguishFire
+            float radius = 1f; // по умолчанию
+            if (this.ability != null) {
+                var comp = this.ability.comps
+                    .OfType<CompAbilityEffect_ExtinguishFire>()
+                    .FirstOrDefault();
+                if (comp != null)
+                    radius = comp.Props.radius;
+            }
+
+            // Рисуем круг вокруг точки прицеливания
+            Vector3 center = target.Cell.ToVector3Shifted();
+            GenDraw.DrawRadiusRing(center.ToIntVec3(), radius, new Color(0.4f, 0.6f, 1f)); // голубоватый — цвет воды/тушения
+        }
+    }
 }
