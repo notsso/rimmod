@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="MoteBase">
+        <defName>Mote_Firewave</defName>
+        <thingClass>lotr.Mote_Firewave</thingClass>
+        <graphicData>
+            <texPath>Things/Mote/ExplosionFlash</texPath> 
+            <shaderType>MoteGlow</shaderType>
+            <color>(255, 230, 150, 200)</color>
+        </graphicData>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+    </ThingDef>
+</Defs>

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 using HarmonyLib;
 
@@ -239,8 +240,8 @@ namespace lotr {
         private Vector3 direction;
         private float traveledDistance = 0f;
         private float halfAngleRad;
-        private HashSet<IntVec3> ignitedCells => new HashSet<IntVec3>();
-        private HashSet<Pawn> damagedPawns => new HashSet<Pawn>();   // <-- для однократного урона
+        public HashSet<IntVec3> ignitedCells = new HashSet<IntVec3>();
+        public HashSet<Pawn> damagedPawns = new HashSet<Pawn>();   // <-- для однократного урона
         private bool finished = false;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad) {
@@ -280,24 +281,17 @@ namespace lotr {
                 map: this.Map
             );
 
+            int cellCount = 0;
+
             foreach (IntVec3 cell in allConeCells) {
                 if (ignitedCells.Add(cell)) {
+                    cellCount += 1;
                     // Поджог
                     if (Rand.Value < fireChance)
                         FireUtility.TryStartFireIn(cell, this.Map, Rand.Range(0.2f, 0.5f), instigator);
 
                     // Визуал
-                    // if (Rand.Value < 0.1f) {
-                    //     FleckMaker.ThrowHeatGlow(cell, this.Map, 0.1f);
-                    // }
-                    // FleckMaker.ThrowMicroSparks(cell.ToVector3(), this.Map);
-                    // ThrowQuickSparks(cell, this.Map);\
-                    // FleckDef customFleck = LotrDefOf.InstantFlame;
-                    // FleckMaker.Static(cell, this.Map, customFleck, 1.0f);
-
-
-                    // Звук
-                    // SoundDefOf.Fire_Started.PlayOneShot(new TargetInfo(cell, this.Map));
+                    FleckMaker.Static(cell, this.Map, FleckDefOf.ExplosionFlash, 4.0f);
 
                     // ОГРОМНЫЙ УРОН по живым существам в этой клетке
                     List<Thing> things = new List<Thing>(cell.GetThingList(this.Map));
@@ -314,6 +308,8 @@ namespace lotr {
                     }
                 }
             }
+
+            Log.Message($"{cellCount}");
 
             traveledDistance = newDistance;
 
@@ -347,11 +343,7 @@ namespace lotr {
         }
 
         private void ThrowQuickSparks(IntVec3 cell, Map map) {
-            ThingDef sparkDef = ThingDef.Named("Mote_Spark");
-            if (sparkDef == null) {
-                sparkDef = ThingDef.Named("Mote_SparkFlash");
-                return;
-            }
+            ThingDef sparkDef = ThingDef.Named("Mote_Firewave");
 
             MoteThrown mote = (MoteThrown)ThingMaker.MakeThing(sparkDef, null);
             mote.Scale = 0.4f;
@@ -361,8 +353,54 @@ namespace lotr {
             float angle = Rand.Range(0f, 360f);
             float speed = Rand.Range(0.5f, 1.2f);
             mote.SetVelocity(angle, speed);
-            mote.airTimeLeft = Rand.Range(0.05f, 0.15f);   // почти мгновенно
-            GenSpawn.Spawn(mote, cell, map);
+            mote.airTimeLeft = Rand.Range(0.05f, 0.15f);
+            GenSpawn.Spawn(mote, cell, map, WipeMode.Vanish);
+        }
+
+        public static void SpawnCellEffect(IntVec3 cell, Map map, ThingDef moteDef, float size = 1f) {
+            if (map == null || !cell.InBounds(map)) return;
+
+            Mote mote = (Mote)ThingMaker.MakeThing(moteDef, null);
+
+            mote.Scale = size;
+            mote.exactPosition = cell.ToVector3ShiftedWithAltitude(AltitudeLayer.MoteOverhead);
+
+            // 3. Хак времени жизни: 1 тик = 0.01666 секунды. 
+            // Заставляем мот думать, что его лимит существования — это время двух тиков.
+            mote.exactRotation = Rand.Range(0f, 360f); // Случайный поворот для разнообразия
+
+            // В зависимости от версии RimWorld, можно напрямую переписать внутреннее время:
+            // Мы рассчитываем длительность: 2 * 0.0166f = ~0.033 секунды
+            // Задаем очень высокую скорость деградации через его параметры, если это поддерживается,
+            // ЛИБО используем кастомный класс (см. Способ 2).
+
+            // Спавним мот в мир
+            GenSpawn.Spawn(mote, cell, map, WipeMode.Vanish);
+        }
+
+        public class IntVec3Comparer : IEqualityComparer<IntVec3> {
+            public bool Equals(IntVec3 a, IntVec3 b) {
+                if (ReferenceEquals(a, b)) return true;
+                return a.x == b.x && a.y == b.y && a.z == b.z;
+            }
+
+            public int GetHashCode(IntVec3 v) => (v.x, v.y, v.z).GetHashCode();
+        }
+    }
+
+    public class Mote_Firewave : Mote {
+        private int lifeTicks = 0;
+        private const int MaxLifeTicks = 2; // Ровно 2 тика!
+
+        protected override void Tick() {
+            // Не вызываем base.Tick(), чтобы ванильная секундная логика не ломала тайминг
+            if (!this.Spawned) return;
+
+            lifeTicks++;
+            if (lifeTicks >= MaxLifeTicks) {
+                // На второй тик объект полностью удаляется из игры
+                this.Destroy(DestroyMode.Vanish);
+            }
         }
     }
 }
