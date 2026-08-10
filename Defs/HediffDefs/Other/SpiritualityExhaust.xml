@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <HediffDef>
+
+        <hediffClass>Hediff</hediffClass>
+        <defName>SpiritualityExhaust</defName>
+        <label>spiritual exhaustion</label>
+        <description>This beyonder's inner energy or pathway need has dropped. Their physical and mythical capabilities are slightly suppressed.</description>
+        <defaultLabelColor>(0.9, 0.2, 0.2)</defaultLabelColor>
+        <initialSeverity>0.01</initialSeverity>
+        <maxSeverity>1</maxSeverity>
+        <minSeverity>0</minSeverity>
+        <tendable>false</tendable>
+        <isBad>true</isBad>
+
+        <stages>
+            <li>
+                <minSeverity>0.0</minSeverity>
+                <label>exhaust</label>
+
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>0.90</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <postFactor>0.90</postFactor>
+                    </li>
+                </capMods>
+
+                <statFactors>
+                
+                </statFactors>
+
+            </li>
+
+            <li>
+                <minSeverity>0.75</minSeverity>
+                <label>serious exhaust</label>
+
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>0.80</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <postFactor>0.80</postFactor>
+                    </li>
+                </capMods>
+
+                <statFactors>
+                
+                </statFactors>
+
+                <statOffsets>
+                    <MentalBreakThreshold>0.10</MentalBreakThreshold>
+                    <PsychicSensitivity>-0.10</PsychicSensitivity>
+                </statOffsets>
+
+            </li>
+        </stages>
+
+    </HediffDef>
+
+</Defs>

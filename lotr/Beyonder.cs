@@ -76,6 +76,8 @@ namespace lotr {
         public override void Tick() {
             base.Tick();
 
+            if (pawn == null || !pawn.Spawned || pawn.Dead) return;
+
             sanityTickCounter++;
             if (sanityTickCounter >= 60) {
                 sanityTickCounter = 0;
@@ -113,7 +115,36 @@ namespace lotr {
             Need_Spirituality spirituality = this.pawn.needs.TryGetNeed(LotrDefOf.lotr_SpiritualityNeed) as Need_Spirituality;
             if (spirituality == null) return;
 
-            // пока что ничего не делает
+            float currentPercentage = spirituality.CurLevelPercentage;
+
+            HediffDef weaknessDef = DefDatabase<HediffDef>.GetNamed("SpiritualityExhaust", true);
+            if (weaknessDef == null) return;
+
+            Hediff weaknessHediff = pawn.health.hediffSet.GetFirstHediffOfDef(weaknessDef);
+
+            if (currentPercentage > 0.4) {
+                if (weaknessHediff != null) {
+                    pawn.health.RemoveHediff(weaknessHediff);
+
+                    if (PawnUtility.ShouldSendNotificationAbout(pawn)) {
+                        Messages.Message(pawn.LabelShort + " has recovered from their weakness.", pawn, MessageTypeDefOf.PositiveEvent, false);
+                    }
+                }
+            } else {
+                if (weaknessHediff == null) {
+                    pawn.health.AddHediff(weaknessDef);
+
+                    if (PawnUtility.ShouldSendNotificationAbout(pawn)) {
+                        Messages.Message(pawn.LabelShort + " is weakened due to low spirituality!", pawn, MessageTypeDefOf.NegativeEvent, true);
+                    }
+                } else {
+                    float severity = (0.4f - currentPercentage) / 0.4f;
+
+                    if (severity < 0.01f) severity = 0f;
+                    if (severity > 1.0f) severity = 1f;
+                    pawn.health.hediffSet.GetFirstHediffOfDef(weaknessDef).Severity = severity;
+                }
+            }
         }
 
         // кнопка для когитации

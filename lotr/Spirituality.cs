@@ -17,7 +17,9 @@ namespace lotr {
         private const float RegenerationPerHour = 0.04f;
         public const float MaxInternalValue = 1f;
         public override float MaxLevel => GetFinalSpirituality();
-        public Need_Spirituality(Pawn pawn) : base(pawn) { }
+        public Need_Spirituality(Pawn pawn) : base(pawn) {
+            this.threshPercents = new System.Collections.Generic.List<float> { 0.01f, 0.1f, 0.4f };
+        }
 
         public override void SetInitialLevel() {
             this.CurLevel = 0.8f;
