@@ -7,7 +7,7 @@
         <defName>Cast_IronBloodArmy</defName>
         <label>Огненная кровь</label>
         <description>Увеличиват силу всех союзных пешек вокруг рыцаря.</description>
-        <iconPath>Placeholder</iconPath>
+        <iconPath>UI/Icons/Abilities/Hunter/Cast_IronBloodArmy</iconPath>
         <cooldownTicksRange>9000</cooldownTicksRange>
         <hostile>false</hostile>
 

@@ -7,7 +7,7 @@
         <defName>Cast_Firestorm</defName>
         <label>огненный шторм</label>
         <description>смертоносный огненный шторм</description>
-        <iconPath>Placeholder</iconPath>
+        <iconPath>UI/Icons/Abilities/Hunter/Cast_Firestorm</iconPath>
         <cooldownTicksRange>12000</cooldownTicksRange>
         <hostile>true</hostile>
         
