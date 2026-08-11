@@ -94,7 +94,19 @@ namespace lotr {
 
             if (sanityLoss == null) return;
 
-            sanityLoss.Severity -= 0.001f;
+            // Проверяем, активна ли Кровавая Луна на карте
+            bool bloodMoonActive = false;
+            if (pawn.Map != null) {
+                bloodMoonActive = pawn.Map.gameConditionManager.ConditionIsActive(LotrDefOf.BloodMoon);
+            }
+
+            if (bloodMoonActive) {
+                // Под луной безумие растёт
+                sanityLoss.Severity += 0.001f;
+            } else {
+                // Обычное восстановление рассудка
+                sanityLoss.Severity -= 0.001f;
+            }
 
             if (sanityLoss.Severity >= 0.90f && Rand.Chance(0.1f)) {
                 this.pawn.Kill(null, sanityLoss);
@@ -184,19 +196,16 @@ namespace lotr {
             float diff = 0f;
 
             if (category == 1) {
-                Log.Message($"progress 1: {progress1} + {amount}. Max - {maxProgressPerCategory}");
                 if (progress1 >= maxProgressPerCategory) return;
                 oldProgress = progress1;
                 progress1 = Mathf.Clamp(progress1 + amount, 0f, maxProgressPerCategory);
                 diff = progress1 - oldProgress;
             } else if (category == 2) {
-                Log.Message($"progress 2: {progress2} + {amount}. Max - {maxProgressPerCategory}");
                 if (progress2 >= maxProgressPerCategory) return;
                 oldProgress = progress2;
                 progress2 = Mathf.Clamp(progress2 + amount, 0f, maxProgressPerCategory);
                 diff = progress2 - oldProgress;
             } else if (category == 3) {
-                Log.Message($"progress 3: {progress3} + {amount}. Max - {maxProgressPerCategory}");
                 if (progress3 >= maxProgressPerCategory) return;
                 oldProgress = progress3;
                 progress3 = Mathf.Clamp(progress3 + amount, 0f, maxProgressPerCategory);

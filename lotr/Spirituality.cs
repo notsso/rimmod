@@ -53,7 +53,9 @@ namespace lotr {
     }
 
     // кастомный класс под потерю контроля - добавляет проценты к описанию
-    public class SanityLoss : HediffWithComps {
+    public class Hediff_SanityLoss : HediffWithComps {
+        private const float SeverityChangePerTick = 0.00006f;
+
         public override string SeverityLabel {
             get {
                 string baseLabel = base.SeverityLabel;
@@ -65,6 +67,29 @@ namespace lotr {
 
                 return percent;
             }
+        }
+
+        public override void Tick() {
+            base.Tick();
+
+            if (pawn == null || !pawn.Spawned) return;
+
+            // Проверяем, активно ли событие Кровавой Луны на карте
+            bool bloodMoonActive = false;
+            if (pawn.Map != null) {
+                bloodMoonActive = pawn.Map.gameConditionManager
+                    .ConditionIsActive(LotrDefOf.BloodMoon); // наш кастомный деф
+            }
+
+            if (bloodMoonActive) {
+                // Во время луны безумие растёт
+                Severity += SeverityChangePerTick;
+            } else {
+                // В обычное время медленно спадает (восстановление рассудка)
+                Severity -= SeverityChangePerTick;
+            }
+
+            // Ограничиваем 0..maxSeverity (автоматически clamped)
         }
     }
 

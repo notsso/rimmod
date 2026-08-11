@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WorldObjectDef ParentName="Site">
+
+        <defName>MysticalMarsh_World</defName>
+        <label>Mystical marsh</label>
+        <description>A strange, dense swamp has manifested on the world map...</description>
+        <mapGenerator>MysticalMarshSiteGenerator</mapGenerator>
+        
+    </WorldObjectDef>
+
+    <SitePartDef>
+
+        <defName>MysticalMarsh_Site</defName>
+        <label>Mystical marsh</label>
+        <description>Болото наполнено мистической энергией.</description>
+        <workerClass>lotr.SitePartWorker_MysticalMarsh</workerClass>
+        <siteTexture>World/WorldObjects/MysticalMarsh</siteTexture>
+        <expandingIconTexture>World/WorldObjects/MysticalMarsh</expandingIconTexture>
+
+    </SitePartDef>
+
+    <QuestScriptDef>
+
+        <defName>Quest_MysticalMarsh</defName>
+
+    </QuestScriptDef>
+
+    <IncidentDef>
+
+        <defName>MysticalMarsh_Incident</defName>
+        <label>Mystical marsh found</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_MysticalMarsh</workerClass>
+        <category>ThreatBig</category>
+        <earliestDay>5</earliestDay>
+        <letterLabel>Mystical Swamp</letterLabel>
+        <letterText>A strange mystical swamp has been spotted nearby. Rumors speak of a powerful creature guarding an ancient pathway secret.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+
+    </IncidentDef>
+
+    <GenStepDef>
+        <defName>CentralSwampTerrain</defName>
+        <order>230</order>
+        <genStep Class="lotr.GenStep_CentralSwampTerrain"/>
+    </GenStepDef>
+
+    <GenStepDef>
+        <defName>CentralSwampPlants</defName>
+        <order>900</order>
+        <genStep Class="lotr.GenStep_CentralSwampPlants"/>
+    </GenStepDef>
+
+    <GenStepDef>
+        <defName>CentralSwampAnimals</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_CentralSwampAnimals"/>
+    </GenStepDef>
+
+    <MapGeneratorDef>
+        <defName>MysticalMarshSiteGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>Terrain</li>
+            <li>CentralSwampTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>CentralSwampPlants</li>
+            <li>CentralSwampAnimals</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

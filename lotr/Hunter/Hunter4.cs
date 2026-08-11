@@ -327,10 +327,6 @@ namespace lotr {
 
             // Создаём временный объект волны
             ThingDef waveDef = ThingDef.Named("FirewaveEffect");
-            if (waveDef == null) {
-                Log.Error("FirewaveEffect Def not found!");
-                return;
-            }
 
             FirewaveEffect wave = (FirewaveEffect)GenSpawn.Spawn(waveDef, origin, map, WipeMode.Vanish);
             wave.instigator = caster;
@@ -440,8 +436,6 @@ namespace lotr {
                     }
                 }
             }
-
-            Log.Message($"{cellCount}");
 
             traveledDistance = newDistance;
 

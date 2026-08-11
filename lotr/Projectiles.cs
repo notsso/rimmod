@@ -104,7 +104,6 @@ namespace lotr {
                     wasUnharmed = IsPawnNearlyUnharmed(victimPawn);
                     bigEnough = victimPawn.BodySize >= minBodySizeForInstantKillBonus;
                 }
-                Log.Message($"target was nearly unharmed? {wasUnharmed}");
 
                 // Эффекты до щита
                 foreach (var effect in effects)
@@ -125,9 +124,6 @@ namespace lotr {
                     InstantKill = wasUnharmed;
                     InstantKillBonus = InstantKill && bigEnough;
 
-                    if (InstantKillBonus)
-                        Log.Message($"{this.def.defName} совершил мгновенное убийство {victimPawn} (здоров {wasUnharmed}, размер ≥ {minBodySizeForInstantKillBonus})");
-
                     OnKilledByProjectile(victimPawn);
                 }
 
@@ -146,7 +142,7 @@ namespace lotr {
         }
 
         protected virtual void OnKilledByProjectile(Pawn victim) {
-            Log.Message($"{this.def.defName} killed {victim.def.defName} with this impact.");
+            // Log.Message($"{this.def.defName} killed {victim.def.defName} with this impact.");
         }
 
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish) {

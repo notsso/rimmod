@@ -124,6 +124,7 @@ namespace lotr {
         public static ThoughtDef lotr_SanityLossThought;
 
         public static FleckDef InstantFlame; // OBSOLETE
+        public static GameConditionDef BloodMoon;
     }
 
     // класс, для зелий потусторонних, которые продвигают

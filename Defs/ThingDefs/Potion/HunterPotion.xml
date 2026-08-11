@@ -45,7 +45,7 @@
             <HediffDef>Hunter8_Hediff</HediffDef>
         </descriptionHyperlinks>
         <graphicData>
-            <texPath>Potions/Hunter9_Potion</texPath>
+            <texPath>Potions/Hunter8_Potion</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
 
@@ -78,7 +78,7 @@
             <HediffDef>Hunter7_Hediff</HediffDef>
         </descriptionHyperlinks>
         <graphicData>
-            <texPath>Potions/Hunter9_Potion</texPath>
+            <texPath>Potions/Hunter7_Potion</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
 
@@ -111,7 +111,7 @@
             <HediffDef>Hunter6_Hediff</HediffDef>
         </descriptionHyperlinks>
         <graphicData>
-            <texPath>Potions/Hunter9_Potion</texPath>
+            <texPath>Potions/Hunter6_Potion</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
 
@@ -144,7 +144,7 @@
             <HediffDef>Hunter5_Hediff</HediffDef>
         </descriptionHyperlinks>
         <graphicData>
-            <texPath>Potions/Hunter9_Potion</texPath>
+            <texPath>Potions/Hunter5_Potion</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
 
@@ -176,7 +176,7 @@
             <HediffDef>Hunter4_Hediff</HediffDef>
         </descriptionHyperlinks>
         <graphicData>
-            <texPath>Potions/Hunter9_Potion</texPath>
+            <texPath>Potions/Hunter4_Potion</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
 

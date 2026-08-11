@@ -169,6 +169,37 @@
         <researchPrerequisite>Brewing</researchPrerequisite>
     </RecipeDef>
 
+    <!--
+    Main Ingredients
+        A Black Hunting Spider Composite Eyes.
+        A Sphinx Brain.
+            Or
+        A Conspirer Beyonder Characteristic.
+
+    Supplementary Ingredients
+        1 Black Hunting Spider's Poison Gland.
+        80 milliliters of Sphinx Blood.
+        10 grams of Amber Powder.
+        2 White Oak Fruits.
+
+    Основные ингредиенты:
+        Железа огненной саламандры.
+        Ядро магмового эльфа.
+            Или
+        Характеристика пироманьяка-потустороннего.
+
+    Дополнительные ингредиенты:
+        50 миллилитров крови огненной саламандры.
+        10 граммов порошка магмового пироксена.
+        10 граммов порошка бальзама Красной Короны.
+        10 капель экстракта Солнечной Звезды.
+
+    Реализация:
+        1 Железа огненной саламандры
+        1 Ядро магмового эльфа
+        1 Травяные медикаменты
+    -->
+
     <RecipeDef>
         <defName>Hunter5_PotionRecipe</defName>
         <label>brew reaper's potion</label>

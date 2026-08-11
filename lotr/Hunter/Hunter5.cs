@@ -27,9 +27,6 @@ namespace lotr {
         public void ExpendCharge() {
             if (isExpended) return;
             isExpended = true;
-
-            // Логируем, что заряд потрачен, но удалим его на следующем тике
-            Log.Message($"[ReaperMod] Заряд Жнеца помечен как использованный на пешке {pawn.LabelShort}");
         }
 
         // Автоматически удаляем хедифф в конце кадра/тика, когда все фазы урона прошли

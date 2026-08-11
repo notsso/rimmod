@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <GameConditionDef>
+
+        <defName>BloodMoon</defName>
+        <label>Кровавая Луна</label>
+        <description>Небеса наливаются багрянцем, потусторонние сущности теряют контроль над разумом.</description>
+        <conditionClass>lotr.GameCondition_BloodMoon</conditionClass>
+
+    </GameConditionDef>
+
+    <IncidentDef>
+
+        <defName>BloodMoon</defName>
+        <label>Кровавая Луна</label>
+        <baseChance>1.2</baseChance>
+        <workerClass>lotr.IncidentWorker_BloodMoon</workerClass>
+        <category>ThreatBig</category>
+        <letterLabel>Кровавая Луна</letterLabel>
+        <letterText>Небеса наливаются багрянцем, и потусторонние сущности теряют контроль над разумом.</letterText>
+        <letterDef>NegativeEvent</letterDef>
+
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+
+    </IncidentDef>
+
+</Defs>

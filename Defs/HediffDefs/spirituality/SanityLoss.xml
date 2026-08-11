@@ -3,7 +3,7 @@
 
     <HediffDef>
 
-        <hediffClass>lotr.SanityLoss</hediffClass>
+        <hediffClass>lotr.Hediff_SanityLoss</hediffClass>
         <defName>lotr_SanityLoss</defName>
         <label>искажение разума</label>
         <description>Потусторонняя энергия Сиквенций выходит из-под контроля, разрушая человеческий разум и перестраивая плоть. Если тяжесть дойдет до максимума, пешка окончательно потеряет человечность.</description>
