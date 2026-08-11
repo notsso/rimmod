@@ -185,4 +185,31 @@ namespace lotr {
             }
         }
     }
+
+    public class SpiritualityUtility {
+        public static float ConsumeSpirituality(Pawn pawn, float amount, bool message = true) {
+            float result = -1;
+            try {
+                if (pawn?.health != null) {
+                    Need_Spirituality spirituality = pawn.needs.TryGetNeed(LotrDefOf.lotr_SpiritualityNeed) as Need_Spirituality;
+
+                    if (spirituality != null) {
+                        float oldLevel = spirituality.CurLevel;
+                        spirituality.CurLevel -= amount * 0.01f;
+                        result = (oldLevel - spirituality.CurLevel) * 100;
+
+                        if (message) {
+                            string textPct = $"-{(amount).ToString("F0")} Духовности";
+                            if (pawn.Spawned && pawn.Map != null) {
+                                MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, textPct, 3f);
+                            }
+                        }
+                    }
+                }
+            } catch (Exception) {
+                Log.Message("[SpiritualityUtility] unknown error");
+            }
+            return result;
+        }
+    }
 }

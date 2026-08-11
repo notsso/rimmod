@@ -61,8 +61,8 @@
     </ThingDef>
 
     <ThingDef ParentName="ResourceBase">
-        <defName>lotr_LilyRootstock</defName>
-        <label>Корневище пучка лилий зловещего трупа</label>
+        <defName>lotr_CorpseLilyRootstock</defName>
+        <label>Корневище трупных лилий</label>
         <description>Корни мистического, плотоядного растения. Ключевой ингредиент для зелья Провокатора.</description>
         <graphicData>
             <texPath>Placeholder</texPath>

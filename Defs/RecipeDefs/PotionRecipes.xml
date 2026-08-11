@@ -75,7 +75,7 @@
             <li>
                 <filter>
                     <thingDefs>
-                        <li>lotr_LilyRootstock</li>
+                        <li>lotr_CorpseLilyRootstock</li>
                     </thingDefs>
                 </filter>
                 <count>1</count>

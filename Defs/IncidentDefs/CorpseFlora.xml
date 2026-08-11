@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    
+    <IncidentDef>
+    
+        <defName>CorpseFlora_Incident</defName>
+        <label>Corpse lily growth</label>
+        <baseChance>14.0</baseChance> 
+        <workerClass>lotr.IncidentWorker_CorpseFloraGrown</workerClass>
+        <category>Special</category> 
+        
+        <letterLabel>Трупная флора</letterLabel>
+        <letterText>Горы трупов пропитали местность духовной энергией, которая привлекла опасную флору.</letterText>
+        <letterDef>NegativeEvent</letterDef>
+
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+    
+    </IncidentDef>
+
+</Defs>

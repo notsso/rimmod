@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    
+    <HediffDef>
+        <defName>CorpseLilyDebuff</defName>
+        <label>растительный яд</label>
+        <description>Растение впрыскивает парализующий токсин.</description>
+
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>true</isBad>
+        <tendable>false</tendable>
+        <defaultLabelColor>(0.8, 0.2, 0.2)</defaultLabelColor>
+
+        <stages>
+            <li>
+                <label>лёгкое онемение</label>
+                <minSeverity>0</minSeverity>
+
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.10</offset>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-0.15</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <label>сильное угнетение</label>
+                <minSeverity>0.5</minSeverity>
+
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.25</offset>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-0.40</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <label>паралич</label>
+                <minSeverity>0.9</minSeverity>
+
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.50</offset>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-0.80</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-1</severityPerDay>
+            </li>
+        </comps>
+
+    </HediffDef>
+
+</Defs>

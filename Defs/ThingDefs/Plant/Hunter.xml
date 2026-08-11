@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    
+    <ThingDef ParentName="PlantBase">
+
+        <thingClass>lotr.Plant_CorpseLily</thingClass>
+        <defName>lotr_CorpseLily</defName>
+        <label>Трупные лилии</label>
+        <description>A sinister, crimson flower that feeds on the residual life energy of fresh corpses. Its petals glow slightly with a warm, fleshy heat.</description>
+        
+        <statBases>
+            <MaxHitPoints>85</MaxHitPoints>
+            <Nutrition>0.05</Nutrition>
+        </statBases>
+
+        <graphicData>
+            <texPath>Things/Plant/Healroot</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+        </graphicData>
+
+        <selectable>true</selectable>
+        <pathCost>14</pathCost>
+        
+        <plant>
+            <harvestedThingDef>lotr_CorpseLilyRootstock</harvestedThingDef>
+            <harvestYield>1</harvestYield>
+            <dieIfLeafless>false</dieIfLeafless>
+            <harvestTag>Standard</harvestTag>
+            <harvestWork>400</harvestWork>
+            <wildOrder>2</wildOrder>
+            <purpose>Beauty</purpose>
+            <growDays>1000</growDays>
+            <growMinGlow>0</growMinGlow>
+            <minGrowthTemperature>-500</minGrowthTemperature>
+            <maxGrowthTemperature>50</maxGrowthTemperature>
+            <visualSizeRange>0.3~1.0</visualSizeRange>
+            <topWindExposure>0.1</topWindExposure>
+            <growMinGlow>0.3</growMinGlow>
+            <allowAutoCut>false</allowAutoCut>
+        </plant>
+    
+    </ThingDef>
+    
+</Defs>

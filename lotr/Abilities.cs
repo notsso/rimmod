@@ -38,20 +38,7 @@ namespace lotr {
 
             if (result) {
                 Pawn caster = this.pawn;
-                if (caster?.health != null) {
-                    Need_Spirituality spirituality = this.pawn.needs.TryGetNeed(LotrDefOf.lotr_SpiritualityNeed) as Need_Spirituality; ;
-
-                    if (spirituality != null) {
-                        float cost = AbilityCost();
-
-                        spirituality.CurLevel -= cost * 0.01f;
-
-                        string textPct = $"-{(cost).ToString("F0")} Духовности";
-                        if (caster.Spawned && caster.Map != null) {
-                            MoteMaker.ThrowText(caster.DrawPos, caster.Map, textPct, 3f);
-                        }
-                    }
-                }
+                SpiritualityUtility.ConsumeSpirituality(caster, AbilityCost());
             }
 
             return result;

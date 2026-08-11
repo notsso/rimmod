@@ -17,6 +17,7 @@
         <baseChance>1.2</baseChance>
         <workerClass>lotr.IncidentWorker_BloodMoon</workerClass>
         <category>ThreatBig</category>
+        
         <letterLabel>Кровавая Луна</letterLabel>
         <letterText>Небеса наливаются багрянцем, и потусторонние сущности теряют контроль над разумом.</letterText>
         <letterDef>NegativeEvent</letterDef>
