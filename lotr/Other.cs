@@ -19,7 +19,7 @@ namespace lotr {
         public static ThingDef Proj_Fireball;
         public static ThingDef lotr_FireRavenRace;
         public static ThingDef lotr_MarshBoarRace;
-        public static ThingDef lotr_MarshBoarCrystallizedSpleen;
+        public static ThingDef lotr_MarshCrystal;
         public static ThingDef lotr_FireLightSpawner;
         public static ThingDef Hunter9_Potion;
         public static ThingDef Hunter8_Potion;

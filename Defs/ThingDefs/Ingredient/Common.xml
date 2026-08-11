@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_MagicalHerbs</defName>
+        <label>Магические травы</label>
+        <description>Смесь из различных магических трав.</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>50</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_MysticalComponents</defName>
+        <label>Мистический компонент</label>
+        <description>Богатый мистической энергией компонент</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>250</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+    </ThingDef>
+
+</Defs>

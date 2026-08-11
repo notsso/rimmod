@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Ингредиенты для зелья Охотника (9) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_MarshCrystal</defName>
+        <label>Кристалл ожившего болота</label>
+        <description>Минерализованный сгусток энергии, формированный в глубине мистических болот. Ключевой ингредиент для зелий Охотника.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/MarshCrystal</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>300</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_BloodRedChestnut</defName>
+        <label>Кроваво-красный каштан</label>
+        <description>Особый вид мистического плода, который впитал в себя остаточную духовную энергию. Ключевой ингредиент для зелий Охотника.</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>300</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Провокатора (8) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_CuspidsParrotTongue</defName>
+        <label>Язык острозубого попугая</label>
+        <description>Потусторонний орган острозубого попугая. Ключевой ингредиент для зелья Провокатора.</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>600</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_LilyRootstock</defName>
+        <label>Корневище пучка лилий зловещего трупа</label>
+        <description>Корни мистического, плотоядного растения. Ключевой ингредиент для зелья Провокатора.</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>600</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Пироманта (7) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_FireSalamanderGland</defName>
+        <label>Железа огненной саламандры</label>
+        <description>Внутренний орган Огненной саламандры. Ключевой ингредиент для зелья Пироманта.</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>1000</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_MagmaElfCore</defName>
+        <label>Ядро магматического эльфа</label>
+        <description>Кристаллизованное сердце элементального существа из чистой магмы. Ключевой ингредиент для зелья Пироманта.</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>1000</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Заговорщика (6) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_BlackHuntingSpiderEyes</defName>
+        <label>Композитные глаза черного охотничьего паука</label>
+        <description>Композитные глаза черного охотничьего паука. Ключевой ингредиент для зелья Заговорщика.</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>1500</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_SphinxBrain</defName>
+        <label>Мозг сфинкса</label>
+        <description>Орган легендарного мистического существа, известного своим интеллектом, загадками и способностью запутывать разум людей. Ключевой ингредиент для зелья Заговорщика.</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>1500</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Жнеца (5) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_DemonicWolfClaws</defName>
+        <label>Передние когти серого демонического волка</label>
+        <description>Когти опасного существа из Духовного или реального мира. Ключевой ингредиент для зелья Жнеца.</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>2000</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_ForestHunterTongue</defName>
+        <label>Язык лесного охотника</label>
+        <description>Орган уникального гуманоидного или мистического существа - Лесного Охотника Ключевой ингредиент для зелья Жнеца.</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>2000</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Железнокровного рыцаря (4) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_MagmaGiantCore</defName>
+        <label>Ядро магматического гиганта</label>
+        <description>Сердце огромного, древнего элементаля - Магматического Гиганта. Ключевой ингредиент для зелья Жнеца.</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>3000</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_StoneofCatastrophe</defName>
+        <label>Камень катастрофы</label>
+        <description>Особый мистический минерал, который формируется исключительно в эпицентре масштабных природных или техногенных катастроф. Ключевой ингредиент для зелья Жнеца.</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>3000</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>Manufactured</li>
+        </thingCategories>
+    </ThingDef>
+
+</Defs>

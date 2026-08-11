@@ -9,7 +9,7 @@
         
         <statBases>
             <MoveSpeed>5.5</MoveSpeed>
-            <MarketValue>450</MarketValue>
+            <MarketValue>300</MarketValue>
             <ComfyTemperatureMin>-25</ComfyTemperatureMin>
             <ComfyTemperatureMax>50</ComfyTemperatureMax>
             <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
@@ -17,41 +17,21 @@
             <Wildness>1</Wildness> 
         </statBases>
 
-        <tools>
-            <li>
-                <label>бивни</label>
-                <capacities>
-                    <li>Stab</li>
-                </capacities>
-                <power>14</power>
-                <cooldownTime>1.8</cooldownTime>
-                <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
-            </li>
-            <li>
-                <label>зубы</label>
-                <capacities>
-                    <li>Bite</li>
-                </capacities>
-                <power>10</power>
-                <cooldownTime>1.6</cooldownTime>
-                <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
-            </li>
-        </tools>
-
         <race>
-            <thinkTreeMain>lotr_MarshBoarTree</thinkTreeMain>
+            <thinkTreeMain>Animal</thinkTreeMain> <!-- lotr_MarshBoarTree -->
             <body>QuadrupedAnimalWithHooves</body>
             <baseBodySize>1.1</baseBodySize>
             <baseHealthScale>1.8</baseHealthScale>
-            <baseHungerRate>0.5</baseHungerRate>
+            <baseHungerRate>0.1</baseHungerRate>
             <leatherDef>Leather_Pig</leatherDef>
             <meatDef>Meat_Pig</meatDef>
 
             <foodType>OmnivoreRoughAnimal</foodType>
             <predator>true</predator>
             
-            <manhunterOnDamageChance>0.2</manhunterOnDamageChance>
-            <manhunterOnTameFailChance>0</manhunterOnTameFailChance>
+            <manhunterOnDamageChance>1</manhunterOnDamageChance>
+            <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
+
             <lifeExpectancy>15</lifeExpectancy>
             
             <lifeStageAges>
@@ -79,8 +59,29 @@
             <soundEating>Herbivore_Eat</soundEating>
         </race>
 
+        <tools>
+            <li>
+                <label>бивни</label>
+                <capacities>
+                    <li>Stab</li>
+                </capacities>
+                <power>14</power>
+                <cooldownTime>1.8</cooldownTime>
+                <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+            </li>
+            <li>
+                <label>зубы</label>
+                <capacities>
+                    <li>Bite</li>
+                </capacities>
+                <power>10</power>
+                <cooldownTime>1.6</cooldownTime>
+                <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+            </li>
+        </tools>
+
         <butcherProducts>
-            <lotr_MarshBoarCrystallizedSpleen>1</lotr_MarshBoarCrystallizedSpleen>
+            <lotr_MarshCrystal>1</lotr_MarshCrystal>
         </butcherProducts>
 
     </ThingDef>
@@ -89,7 +90,7 @@
     <PawnKindDef ParentName="AnimalKindBase">
     
         <defName>lotr_MarshBoar</defName>
-        <label>активированная болотная свинья</label>
+        <label>Болотная свинья</label>
         <race>lotr_MarshBoarRace</race>
         <combatPower>120</combatPower>
         <ecoSystemWeight>0.6</ecoSystemWeight>
