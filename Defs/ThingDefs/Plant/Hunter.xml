@@ -11,33 +11,46 @@
         <statBases>
             <MaxHitPoints>85</MaxHitPoints>
             <Nutrition>0.05</Nutrition>
+            <BeautyOutdoors>20</BeautyOutdoors>
+            <DeteriorationRate>-10</DeteriorationRate>
         </statBases>
 
         <graphicData>
-            <texPath>Things/Plant/Healroot</texPath>
+            <texPath>Things/Plant/DayLily</texPath>
             <graphicClass>Graphic_Random</graphicClass>
         </graphicData>
 
         <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
         <pathCost>14</pathCost>
+
+        <ingestible />
         
         <plant>
             <harvestedThingDef>lotr_CorpseLilyRootstock</harvestedThingDef>
             <harvestYield>1</harvestYield>
-            <dieIfLeafless>false</dieIfLeafless>
+            <harvestAfterGrowth>0.30</harvestAfterGrowth>
             <harvestTag>Standard</harvestTag>
             <harvestWork>400</harvestWork>
+            <dieIfLeafless>false</dieIfLeafless>
             <wildOrder>2</wildOrder>
-            <purpose>Beauty</purpose>
-            <growDays>1000</growDays>
+            <purpose>Misc</purpose>
+            <growDays>1</growDays>
             <growMinGlow>0</growMinGlow>
-            <minGrowthTemperature>-500</minGrowthTemperature>
+            <minGrowthTemperature>-50</minGrowthTemperature>
             <maxGrowthTemperature>50</maxGrowthTemperature>
             <visualSizeRange>0.3~1.0</visualSizeRange>
             <topWindExposure>0.1</topWindExposure>
             <growMinGlow>0.3</growMinGlow>
             <allowAutoCut>false</allowAutoCut>
         </plant>
+
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>3</glowRadius>
+                <glowColor>(200,30,30,0)</glowColor>
+            </li>
+        </comps>
     
     </ThingDef>
     
