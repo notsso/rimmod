@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <NeedDef>
+        <defName>lotr_SanityNeed</defName>
+        <needClass>lotr.Need_Sanity</needClass>
+        <label>sanity</label>
+        <description>Gap between madness and sanity.</description>
+        <listPriority>300</listPriority> <!-- Позиция шкалы в списке (выше или ниже еды) -->
+        <major>true</major>
+    </NeedDef>
+
+</Defs>

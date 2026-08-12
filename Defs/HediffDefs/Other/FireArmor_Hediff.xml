@@ -28,6 +28,7 @@
                     <ArmorRating_Blunt>0.60</ArmorRating_Blunt>
                     <ArmorRating_Heat>1.50</ArmorRating_Heat> 
                     <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+                    <!--TODO: блять нахуй сука всем последовательностям токсик резистанс нормальный-->
                 </statOffsets>
                 
                 <statFactors>
