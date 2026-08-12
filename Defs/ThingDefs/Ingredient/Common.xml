@@ -6,7 +6,7 @@
         <label>Магические травы</label>
         <description>Смесь из различных магических трав.</description>
         <graphicData>
-            <texPath>Placeholder</texPath>
+            <texPath>Things/Ingredient/MagicalHerbs</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         
@@ -25,7 +25,7 @@
         <label>Мистический компонент</label>
         <description>Богатый мистической энергией компонент</description>
         <graphicData>
-            <texPath>Placeholder</texPath>
+            <texPath>Things/Ingredient/MysticalComponents</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         

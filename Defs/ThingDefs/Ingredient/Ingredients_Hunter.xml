@@ -7,7 +7,7 @@
         <label>Кристалл ожившего болота</label>
         <description>Минерализованный сгусток энергии, формированный в глубине мистических болот. Ключевой ингредиент для зелий Охотника.</description>
         <graphicData>
-            <texPath>Things/Ingredient/MarshCrystal</texPath>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         
@@ -26,7 +26,7 @@
         <label>Кроваво-красный каштан</label>
         <description>Особый вид мистического плода, который впитал в себя остаточную духовную энергию. Ключевой ингредиент для зелий Охотника.</description>
         <graphicData>
-            <texPath>Things/Ingredient/BloodRedChestnut</texPath>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         
@@ -46,7 +46,7 @@
         <label>Язык острозубого попугая</label>
         <description>Потусторонний орган острозубого попугая. Ключевой ингредиент для зелья Провокатора.</description>
         <graphicData>
-            <texPath>Things/Ingredient/CuspidsParrotTongue</texPath>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         
@@ -65,7 +65,7 @@
         <label>Корневище трупных лилий</label>
         <description>Корни мистического, плотоядного растения. Ключевой ингредиент для зелья Провокатора.</description>
         <graphicData>
-            <texPath>Things/Ingredient/CorpseLilyRootstock</texPath>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         
@@ -85,7 +85,7 @@
         <label>Железа огненной саламандры</label>
         <description>Внутренний орган Огненной саламандры. Ключевой ингредиент для зелья Пироманта.</description>
         <graphicData>
-            <texPath>Things/Ingredient/Placeholder</texPath>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         
@@ -104,7 +104,7 @@
         <label>Ядро магматического эльфа</label>
         <description>Кристаллизованное сердце элементального существа из чистой магмы. Ключевой ингредиент для зелья Пироманта.</description>
         <graphicData>
-            <texPath>Things/Ingredient/Placeholder</texPath>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         
@@ -124,7 +124,7 @@
         <label>Композитные глаза черного охотничьего паука</label>
         <description>Композитные глаза черного охотничьего паука. Ключевой ингредиент для зелья Заговорщика.</description>
         <graphicData>
-            <texPath>Things/Ingredient/Placeholder</texPath>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         
@@ -143,7 +143,7 @@
         <label>Мозг сфинкса</label>
         <description>Орган легендарного мистического существа, известного своим интеллектом, загадками и способностью запутывать разум людей. Ключевой ингредиент для зелья Заговорщика.</description>
         <graphicData>
-            <texPath>Things/Ingredient/Placeholder</texPath>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         
@@ -163,7 +163,7 @@
         <label>Передние когти серого демонического волка</label>
         <description>Когти опасного существа из Духовного или реального мира. Ключевой ингредиент для зелья Жнеца.</description>
         <graphicData>
-            <texPath>Things/Ingredient/Placeholder</texPath>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         
@@ -182,7 +182,7 @@
         <label>Язык лесного охотника</label>
         <description>Орган уникального гуманоидного или мистического существа - Лесного Охотника Ключевой ингредиент для зелья Жнеца.</description>
         <graphicData>
-            <texPath>Things/Ingredient/Placeholder</texPath>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         
@@ -202,7 +202,7 @@
         <label>Ядро магматического гиганта</label>
         <description>Сердце огромного, древнего элементаля - Магматического Гиганта. Ключевой ингредиент для зелья Жнеца.</description>
         <graphicData>
-            <texPath>Things/Ingredient/Placeholder</texPath>
+            <texPath>Things/Ingredient/Ingredient_3</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         
@@ -221,7 +221,7 @@
         <label>Камень катастрофы</label>
         <description>Особый мистический минерал, который формируется исключительно в эпицентре масштабных природных или техногенных катастроф. Ключевой ингредиент для зелья Жнеца.</description>
         <graphicData>
-            <texPath>Things/Ingredient/Placeholder</texPath>
+            <texPath>Things/Ingredient/Ingredient_3</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         

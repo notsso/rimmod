@@ -17,6 +17,7 @@
             <ArmorRating_Heat>0.80</ArmorRating_Heat>
             <Wildness>1</Wildness>
 
+            <Flammability>0</Flammability>
             <ToxicEnvironmentResistance>0.95</ToxicEnvironmentResistance>
         </statBases>
 

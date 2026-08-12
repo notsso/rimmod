@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="AnimalThingBase">
+        
+        <defName>lotr_BlackHuntingSpiderRace</defName>
+        <label>Black Hunting Spider</label>
+        <description>Black Hunting Spider</description>
+        
+        <statBases>
+            <MoveSpeed>8.0</MoveSpeed>
+            <MarketValue>1500</MarketValue>
+            <ComfyTemperatureMin>-80</ComfyTemperatureMin>
+            <ComfyTemperatureMax>80</ComfyTemperatureMax>
+            <ArmorRating_Blunt>0.80</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.90</ArmorRating_Heat>
+            <Wildness>1</Wildness>
+
+            <Flammability>0.1</Flammability>
+            <ToxicResistance>1</ToxicResistance>
+            <ToxicEnvironmentResistance>0.8</ToxicEnvironmentResistance>
+        </statBases>
+
+        <race>
+            <thinkTreeMain>Insect</thinkTreeMain> <!-- lotr_FireSalamanderTree -->
+            <body>BeetleLike</body>
+            <baseHungerRate>0</baseHungerRate>
+            <baseBodySize>2.0</baseBodySize>
+            <baseHealthScale>6.0</baseHealthScale>
+
+            <thinkTreeConstant>InsectConstant</thinkTreeConstant>
+            <fleshType>Insectoid</fleshType>
+            <bloodDef>Filth_BloodInsect</bloodDef>
+            <meatColor>(160,168,139)</meatColor>
+            <meatMarketValue>0.5</meatMarketValue>
+            
+            <foodType>OmnivoreRoughAnimal</foodType>
+            <predator>true</predator>
+            <trainability>None</trainability>
+            <lifeExpectancy>100</lifeExpectancy>
+            <manhunterOnDamageChance>1</manhunterOnDamageChance>
+            <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
+
+            <needsRest>false</needsRest>
+            <hasGenders>false</hasGenders>
+
+            <isImmuneToInfections>true</isImmuneToInfections>
+            <bleedRateFactor>0.2</bleedRateFactor>
+
+            <deathAction />
+
+            <lifeStageAges>
+                <li>
+                    <def>EusocialInsectLarva</def>
+                    <minAge>0</minAge>
+                </li>
+                <li>
+                    <def>EusocialInsectJuvenile</def>
+                    <minAge>0.05</minAge>
+                </li>
+                <li>
+                    <def>EusocialInsectAdult</def>
+                    <minAge>0.2</minAge>
+                    <soundWounded>Pawn_Megascarab_Wounded</soundWounded>
+                    <soundDeath>Pawn_Megascarab_Death</soundDeath>
+                    <soundCall>Pawn_Megascarab_Call</soundCall>
+                    <soundAngry>Pawn_Megascarab_Angry</soundAngry>
+                </li>
+            </lifeStageAges>
+
+            <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+            <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+            <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+        </race>
+        
+        <tools>
+            <li>
+                <label>mandibles</label>
+                <capacities>
+                    <li>Bite</li>
+                </capacities>
+                <power>20</power>
+                <cooldownTime>1</cooldownTime>
+                <linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
+            </li>
+            <li>
+                <label>head</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>20</power>
+                <cooldownTime>1</cooldownTime>
+                <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+                <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+                <chanceFactor>0.4</chanceFactor>
+            </li>
+        </tools>
+
+        <butcherProducts>
+            <lotr_BlackHuntingSpiderEyes>1</lotr_BlackHuntingSpiderEyes>
+        </butcherProducts>
+
+    </ThingDef>
+    
+    <PawnKindDef ParentName="AnimalKindBase">
+
+        <defName>lotr_BlackHuntingSpider</defName>
+        <label>Black Hunting Spider</label>
+        <race>lotr_BlackHuntingSpiderRace</race>
+        <combatPower>500</combatPower>
+        <ecoSystemWeight>1.00</ecoSystemWeight>
+
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/BlackHuntingSpider/BlackHuntingSpider</texPath>
+                    <drawSize>1</drawSize>
+                </bodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/BlackHuntingSpider/BlackHuntingSpider</texPath>
+                    <drawSize>2</drawSize>
+                </bodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/BlackHuntingSpider/BlackHuntingSpider</texPath>
+                    <drawSize>3</drawSize>
+                </bodyGraphicData>
+            </li>
+        </lifeStages>
+
+    </PawnKindDef>
+</Defs>
