@@ -53,5 +53,41 @@
         </comps>
     
     </ThingDef>
+
+    <ThingDef ParentName="DeciduousTreeBase">
+        <defName>Plant_BloodRedChestnut</defName>
+        <label>Blood Red Chestnut</label>
+        <description>A rare hardwood tree with deep crimson bark. When cut, it releases a fragment of beyonder essence.</description>
+
+        <thingClass>lotr.Plant_BloodRedChestnut</thingClass>
+
+        <graphicData>
+            <texPath>Things/Plant/TreeOak</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shadowData>
+                <volume>(0.2, 0.35, 0.13)</volume>
+                <offset>(-0.03,0,-0.44)</offset>
+            </shadowData>
+        </graphicData>
+
+        <statBases>
+            <Beauty>2</Beauty>
+            <BeautyOutdoors>2</BeautyOutdoors>
+        </statBases>
+
+        <plant>
+            <growDays>30</growDays>
+            <harvestWork>1400</harvestWork>
+            <harvestYield>46</harvestYield>
+            <harvestTag>Wood</harvestTag>
+            <harvestedThingDef>WoodLog</harvestedThingDef>
+
+            <leaflessGraphicPath>Things/Plant/TreeOak_Leafless</leaflessGraphicPath>
+            <immatureGraphicPath>Things/Plant/TreeOak_Immature</immatureGraphicPath>
+            <leaflessImmatureGraphicPath>Things/Plant/TreeOak_LeaflessImmature</leaflessImmatureGraphicPath>
+            <leaflessSnowOverlayGraphicPath>Things/Plant/TreeOak_LeaflessSnowy</leaflessSnowOverlayGraphicPath>
+            <immatureSnowOverlayGraphicPath>Things/Plant/TreeOak_LeaflessSnowyImmature</immatureSnowOverlayGraphicPath>
+        </plant>
+    </ThingDef>
     
 </Defs>

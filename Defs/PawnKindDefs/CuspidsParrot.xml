@@ -10,32 +10,33 @@
         <statBases>
             <MoveSpeed>5</MoveSpeed>
             <MarketValue>500</MarketValue>
-            <LeatherAmount>0</LeatherAmount>
             <ComfyTemperatureMin>-30</ComfyTemperatureMin>
             <ComfyTemperatureMax>60</ComfyTemperatureMax>
-            <MaxFlightTime>5</MaxFlightTime>
-            <FlightCooldown>5</FlightCooldown>
             <ArmorRating_Blunt>0.30</ArmorRating_Blunt>
             <ArmorRating_Sharp>0.30</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.30</ArmorRating_Heat>
             <Wildness>1</Wildness>
+
+            <MaxFlightTime>5</MaxFlightTime>
+            <FlightCooldown>5</FlightCooldown>
         </statBases>
 
         <race>
+            <thinkTreeMain>Animal</thinkTreeMain> <!-- lotr_CuspidParrotTree -->
             <body>Bird</body>
             <baseHungerRate>0.01</baseHungerRate>
             <baseBodySize>0.3</baseBodySize>
             <baseHealthScale>3.0</baseHealthScale>
 
-            <foodType>VegetarianRoughAnimal</foodType>
-            
+            <foodType>OmnivoreRoughAnimal</foodType>
+            <predator>true</predator>
             <trainability>None</trainability>
-            
-            <lifeExpectancy>20</lifeExpectancy>
-            <flightStartChanceOnJobStart>0.1</flightStartChanceOnJobStart>
-
+            <lifeExpectancy>10</lifeExpectancy>
             <manhunterOnDamageChance>1</manhunterOnDamageChance>
             <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
-            
+
+            <flightStartChanceOnJobStart>0.1</flightStartChanceOnJobStart>
+
             <lifeStageAges>
                 <li>
                     <def>AnimalBaby</def>

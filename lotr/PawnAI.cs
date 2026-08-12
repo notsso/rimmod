@@ -206,9 +206,9 @@ namespace lotr {
 
             for (int i = 0; i < totalFrames; i++) {
                 // Собираем пути строго по вашей структуре папок
-                string pathNorth = $"Things/Animal/FireRaven/FireRaven_{i}_north";
-                string pathSouth = $"Things/Animal/FireRaven/FireRaven_{i}_south";
-                string pathEast = $"Things/Animal/FireRaven/FireRaven_{i}_east";
+                string pathNorth = $"Things/Pawn/Animal/FireRaven/FireRaven_{i}_north";
+                string pathSouth = $"Things/Pawn/Animal/FireRaven/FireRaven_{i}_south";
+                string pathEast = $"Things/Pawn/Animal/FireRaven/FireRaven_{i}_east";
 
                 // Кэшируем через ShaderDatabase.MoteGlow (чтобы не требовало масок _m)
                 graphicsNorth[i] = GraphicDatabase.Get<Graphic_Single>(pathNorth, ShaderDatabase.Cutout, drawSize, flameColor);

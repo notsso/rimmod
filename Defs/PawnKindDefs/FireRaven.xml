@@ -2,15 +2,16 @@
 <Defs>
 
     <ThingDef ParentName="BasePawn">
+    
         <defName>lotr_FireRavenRace</defName>
         <label>огненная ворона</label>
         <description>Призванное создание из чистого духовного пламени. Ищет плоть, чтобы сжечь её.</description>
 
         <statBases>
-            <MoveSpeed>7.5</MoveSpeed> <!-- Очень быстрая, так как она летит -->
+            <MoveSpeed>7.5</MoveSpeed>
             <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
             <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
-            <ArmorRating_Heat>2.00</ArmorRating_Heat> <!-- Абсолютный иммунитет к огню -->
+            <ArmorRating_Heat>2.00</ArmorRating_Heat>
             <ComfyTemperatureMin>-100</ComfyTemperatureMin>
             <ComfyTemperatureMax>250</ComfyTemperatureMax>
             <MarketValue>0</MarketValue>
@@ -71,7 +72,7 @@
         <lifeStages>
             <li>
                 <bodyGraphicData>
-                <texPath>Things/Animal/FireRaven/FireRaven</texPath>
+                <texPath>Things/Pawn/Animal/FireRaven/FireRaven</texPath>
                 <graphicClass>Graphic_Single</graphicClass>
                 <drawSize>1.0</drawSize>
                 </bodyGraphicData>

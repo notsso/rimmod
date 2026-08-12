@@ -14,26 +14,27 @@
             <ComfyTemperatureMax>50</ComfyTemperatureMax>
             <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
             <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.20</ArmorRating_Heat>
             <Wildness>1</Wildness> 
         </statBases>
 
         <race>
             <thinkTreeMain>Animal</thinkTreeMain> <!-- lotr_MarshBoarTree -->
             <body>QuadrupedAnimalWithHooves</body>
-            <baseBodySize>1.1</baseBodySize>
+            <baseHungerRate>0.01</baseHungerRate>
+            <baseBodySize>1.5</baseBodySize>
             <baseHealthScale>1.8</baseHealthScale>
-            <baseHungerRate>0.1</baseHungerRate>
-            <leatherDef>Leather_Pig</leatherDef>
-            <meatDef>Meat_Pig</meatDef>
 
             <foodType>OmnivoreRoughAnimal</foodType>
             <predator>true</predator>
-            
+            <trainability>None</trainability>
+            <lifeExpectancy>15</lifeExpectancy>
             <manhunterOnDamageChance>1</manhunterOnDamageChance>
             <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
-
-            <lifeExpectancy>15</lifeExpectancy>
             
+            <leatherDef>Leather_Pig</leatherDef>
+            <meatDef>Meat_Pig</meatDef>
+
             <lifeStageAges>
                 <li>
                     <def>AnimalBaby</def>
@@ -86,11 +87,10 @@
 
     </ThingDef>
 
-
     <PawnKindDef ParentName="AnimalKindBase">
     
         <defName>lotr_MarshBoar</defName>
-        <label>Болотная свинья</label>
+        <label>Marsh Boar</label>
         <race>lotr_MarshBoarRace</race>
         <combatPower>120</combatPower>
         <ecoSystemWeight>0.6</ecoSystemWeight>
@@ -98,21 +98,21 @@
         <lifeStages>
             <li>
                 <bodyGraphicData>
-                    <texPath>Things/Animal/MarshBoar/MarshBoar</texPath>
+                    <texPath>Things/Pawn/Animal/MarshBoar/MarshBoar</texPath>
                     <graphicClass>Graphic_Multi</graphicClass>
                     <drawSize>2</drawSize>
                 </bodyGraphicData>
             </li>
             <li>
                 <bodyGraphicData>
-                    <texPath>Things/Animal/MarshBoar/MarshBoar</texPath>
+                    <texPath>Things/Pawn/Animal/MarshBoar/MarshBoar</texPath>
                     <graphicClass>Graphic_Multi</graphicClass>
                     <drawSize>3</drawSize>
                 </bodyGraphicData>
             </li>
             <li>
                 <bodyGraphicData>
-                    <texPath>Things/Animal/MarshBoar/MarshBoar</texPath>
+                    <texPath>Things/Pawn/Animal/MarshBoar/MarshBoar</texPath>
                     <graphicClass>Graphic_Multi</graphicClass>
                     <drawSize>4</drawSize>
                     <color>(200, 200, 200)</color>

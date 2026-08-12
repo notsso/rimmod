@@ -123,7 +123,7 @@ namespace lotr {
         private const float HediffSeverityPerHit = 0.15f;     // прирост тяжести дебаффа за удар
 
         private const float ReproductionGrowthThreshold = 1f;
-        private const int ReproductionCooldownTicks = 30000; // 1 день (60000 тиков)
+        private const int ReproductionCooldownTicks = 30000; // 1 день (30000 тиков)
         private int reproductionCooldownTicksLeft = 0;
 
         private Corpse targetCorpse;
