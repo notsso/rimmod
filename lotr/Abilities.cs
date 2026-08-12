@@ -15,7 +15,7 @@ namespace lotr {
     // определение для способности, которая тратит духовность
     public class Ability_SpendSpirituality : Ability {
         public Ability_SpendSpirituality() : base() { }
-
+        public Ability_SpendSpirituality(Pawn pawn) : base(pawn) { }
         public Ability_SpendSpirituality(Pawn pawn, AbilityDef def) : base(pawn, def) { }
 
         // высчитывает сколько духовности тратит способность 

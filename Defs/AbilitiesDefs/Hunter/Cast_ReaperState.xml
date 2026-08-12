@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Name="Cast_ReaperState">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_ReaperState">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_ReaperState</defName>
@@ -29,7 +29,7 @@
     </AbilityDef>
 
     <!-- Уровень 5 -->
-    <AbilityDef ParentName="Cast_ReaperState">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_ReaperState">
         <defName>Cast_ReaperState_5S</defName>
         <label>Жатва</label>
         <cooldownTicksRange>7200</cooldownTicksRange>

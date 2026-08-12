@@ -24,8 +24,8 @@
                     <severityRange>0.15~0.75</severityRange> 
                 </li>
 
-                <li Class="IngestionOutcomeDoer_GiveHediff">
-                    <hediffDef>Hunter9_Hediff</hediffDef>
+                <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
+                    <hediffToGive>Hunter9_Hediff</hediffToGive>
                     <severity>0.01</severity>
                 </li>
             </outcomeDoers>
@@ -57,7 +57,6 @@
                 </li>
 
                 <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
-                    <hediffToRemove>Hunter9_Hediff</hediffToRemove>
                     <hediffToGive>Hunter8_Hediff</hediffToGive>
                     <severity>0.01</severity>
                 </li>
@@ -90,7 +89,6 @@
                 </li>
 
                 <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
-                    <hediffToRemove>Hunter8_Hediff</hediffToRemove>
                     <hediffToGive>Hunter7_Hediff</hediffToGive>
                     <severity>0.01</severity>
                 </li>
@@ -123,7 +121,6 @@
                 </li>
 
                 <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
-                    <hediffToRemove>Hunter7_Hediff</hediffToRemove>
                     <hediffToGive>Hunter6_Hediff</hediffToGive>
                     <severity>0.01</severity>
                 </li>
@@ -156,7 +153,6 @@
                 </li>
 
                 <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
-                    <hediffToRemove>Hunter6_Hediff</hediffToRemove>
                     <hediffToGive>Hunter5_Hediff</hediffToGive>
                     <severity>0.01</severity>
                 </li>
@@ -188,7 +184,6 @@
                 </li>
 
                 <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
-                    <hediffToRemove>Hunter5_Hediff</hediffToRemove>
                     <hediffToGive>Hunter4_Hediff</hediffToGive>
                     <severity>0.01</severity>
                 </li>

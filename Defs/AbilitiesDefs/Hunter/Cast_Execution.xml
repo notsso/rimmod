@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Name="Cast_Execution">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Execution">
     
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_Execution</defName>
@@ -37,7 +37,7 @@
     </AbilityDef>
 
     <!-- Уровень 5 -->
-    <AbilityDef ParentName="Cast_Execution">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Execution">
         <defName>Cast_Execution_5S</defName>
         <label>Казнь</label>
         <cooldownTicksRange>6000</cooldownTicksRange>
@@ -53,7 +53,7 @@
     </AbilityDef>
 
     <!-- Уровень 5 -->
-    <AbilityDef ParentName="Cast_Execution">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Execution">
         <defName>Cast_Execution_4S</defName>
         <label>Казнь</label>
         <cooldownTicksRange>1800</cooldownTicksRange>

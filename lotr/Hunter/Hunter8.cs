@@ -10,8 +10,8 @@ using RimWorld;
 using UnityEngine;
 
 namespace lotr {
-    public class Hunter8_Hediff : Hunter9_Hediff {
-        public override float SpiritualityFactor => 1.5f;
+    public class Hunter8_Hediff : Beyonder_Hediff {
+        public override float SpiritualityOffset => 1.5f;
 
         public Hunter8_Hediff() {
             maxProgressPerCategory = 0.8f;
@@ -65,7 +65,7 @@ namespace lotr {
             } else {
                 float sanityPenalty = 0.10f;
 
-                BeyonderUtility.AddSanityLoss(caster, sanityPenalty, "Провокация провалена!");
+                BeyonderUtility.AdjustSanityLoss(caster, sanityPenalty, "Провокация провалена!");
             }
         }
 

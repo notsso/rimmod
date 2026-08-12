@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Name="Cast_Taunt">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Taunt">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_Taunt</defName>
@@ -33,7 +33,7 @@
     </AbilityDef>
 
     <!-- Уровень 8 -->
-    <AbilityDef ParentName="Cast_Taunt">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Taunt">
         <defName>Cast_Taunt_8S</defName>
         <label>провокация</label>
         <cooldownTicksRange>1200</cooldownTicksRange>
@@ -51,7 +51,7 @@
     </AbilityDef>
 
     <!-- Уровень 7 -->
-    <AbilityDef ParentName="Cast_Taunt">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Taunt">
         <defName>Cast_Taunt_7S</defName>
         <label>провокация</label>
         <cooldownTicksRange>600</cooldownTicksRange>
@@ -69,7 +69,7 @@
     </AbilityDef>
 
     <!-- Уровень 6 -->
-    <AbilityDef ParentName="Cast_Taunt">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Taunt">
         <defName>Cast_Taunt_6S</defName>
         <label>провокация</label>
         <cooldownTicksRange>300</cooldownTicksRange>
@@ -87,7 +87,7 @@
     </AbilityDef>
 
     <!-- Уровень 5 -->
-    <AbilityDef ParentName="Cast_Taunt">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Taunt">
         <defName>Cast_Taunt_5S</defName>
         <label>провокация</label>
         <cooldownTicksRange>180</cooldownTicksRange>
@@ -105,7 +105,7 @@
     </AbilityDef>
 
     <!-- Уровень 4 -->
-    <AbilityDef ParentName="Cast_Taunt">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Taunt">
         <defName>Cast_Taunt_4S</defName>
         <label>провокация</label>
         <cooldownTicksRange>60</cooldownTicksRange>

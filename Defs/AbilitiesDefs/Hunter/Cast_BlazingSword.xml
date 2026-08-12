@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Name="Cast_BlazingSword">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_BlazingSword">
         <abilityClass>lotr.Ability_SummonWeapon</abilityClass>
         <defName>Cast_BlazingSword</defName>
         <label>призыв пламенного клинка</label>
@@ -28,7 +28,7 @@
     </AbilityDef>
 
     <!-- Уровень 7 -->
-    <AbilityDef ParentName="Cast_BlazingSword">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_BlazingSword">
         <defName>Cast_BlazingSword_7S</defName>
         <label>призыв пламенного клинка</label>
         <cooldownTicksRange>7200</cooldownTicksRange>
@@ -44,7 +44,7 @@
     </AbilityDef>
 
     <!-- Уровень 6 -->
-    <AbilityDef ParentName="Cast_BlazingSword">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_BlazingSword">
         <defName>Cast_BlazingSword_6S</defName>
         <label>призыв пламенного клинка</label>
         <cooldownTicksRange>3600</cooldownTicksRange>
@@ -60,7 +60,7 @@
     </AbilityDef>
 
     <!-- Уровень 5 -->
-    <AbilityDef ParentName="Cast_BlazingSword">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_BlazingSword">
         <defName>Cast_BlazingSword_5S</defName>
         <label>призыв пламенного клинка</label>
         <cooldownTicksRange>1800</cooldownTicksRange>
@@ -76,7 +76,7 @@
     </AbilityDef>
 
     <!-- Уровень 4 -->
-    <AbilityDef ParentName="Cast_BlazingSword">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_BlazingSword">
         <defName>Cast_BlazingSword_4S</defName>
         <label>призыв пламенного клинка</label>
         <cooldownTicksRange>600</cooldownTicksRange>

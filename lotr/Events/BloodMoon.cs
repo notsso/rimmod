@@ -19,33 +19,6 @@ namespace lotr {
             // Можно сразу добавить всем потусторонним пешкам sanity loss, если его нет
         }
 
-        public override void GameConditionTick() {
-            base.GameConditionTick();
-            // Периодически проверяем, что у всех Beyonder есть sanityLoss
-            if (Find.TickManager.TicksGame % 2500 == 0) {
-                EnsureSanityLossOnBeyonders();
-            }
-        }
-
-        private void EnsureSanityLossOnBeyonders() {
-            foreach (Pawn pawn in AffectedPawns()) {
-                if (pawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.lotr_SanityLoss) == null) {
-                    Hediff hediff = HediffMaker.MakeHediff(LotrDefOf.lotr_SanityLoss, pawn);
-                    pawn.health.AddHediff(hediff);
-                }
-            }
-        }
-
-        private IEnumerable<Pawn> AffectedPawns() {
-            Map map = this.SingleMap;
-            if (map == null) yield break;
-
-            foreach (Pawn pawn in map.mapPawns.AllPawnsSpawned) {
-                if (pawn.health.hediffSet.hediffs.Any(h => h is Beyonder_Hediff))
-                    yield return pawn;
-            }
-        }
-
         public override SkyTarget? SkyTarget(Map map) {
             Color skyColor = new Color(0.75f, 0.05f, 0.05f);
             Color shadowColor = new Color(0.3f, 0.02f, 0.02f);

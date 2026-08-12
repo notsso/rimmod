@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Name="Cast_IronBloodArmy">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_IronBloodArmy">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_IronBloodArmy</defName>
@@ -29,7 +29,7 @@
     </AbilityDef>
 
     <!-- Уровень 4 -->
-    <AbilityDef ParentName="Cast_IronBloodArmy">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_IronBloodArmy">
         <defName>Cast_IronBloodArmy_4S</defName>
         <label>Огненная кровь</label>
         <cooldownTicksRange>1800</cooldownTicksRange>

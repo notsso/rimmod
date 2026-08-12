@@ -380,7 +380,7 @@ namespace lotr {
 
                     var hunter6 = launcherPawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter6_Hediff) as Hunter6_Hediff;
                     if (hunter6 != null) {
-                        BeyonderUtility.AddSanityLoss(launcherPawn, 0.05f, "Заговорщик использует грубую силу!");
+                        BeyonderUtility.AdjustSanityLoss(launcherPawn, 0.05f, "Заговорщик использует грубую силу!");
                     }
                 }
 
@@ -390,7 +390,7 @@ namespace lotr {
                         if (projectile.InstantKillBonus) {
                             hunter5.AddActingProgress(1, 0.01f, launcherPawn);
                         } else if (!projectile.VictimKilled && hitThing != null) {
-                            BeyonderUtility.AddSanityLoss(launcherPawn, 0.10f, "Пожинатель не казнил цель!");
+                            BeyonderUtility.AdjustSanityLoss(launcherPawn, 0.10f, "Пожинатель не казнил цель!");
                         }
                     }
                 }

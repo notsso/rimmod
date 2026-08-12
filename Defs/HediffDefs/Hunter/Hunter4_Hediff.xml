@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <HediffDef>
+    <lotr.BeyonderHediffDef Class="lotr.BeyonderHediffDef">
 
         <hediffClass>lotr.Hunter4_Hediff</hediffClass>
         <defName>Hunter4_Hediff</defName>
         <label>Iron-blooded Knight</label>
+        <sequence>4</sequence>
+        <pathway>Hunter</pathway>
         <description>This person became 4 sequence beyonder - iron-blooded knight. This person commands legions, manipulates devastating fire, and possesses a body refined by mystical steel.</description>
         <defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
         <initialSeverity>0.01</initialSeverity>
@@ -191,31 +193,14 @@
             </li>
         </comps>
 
-        <abilities>
-        
-            <li>Cast_Fireball_4S</li>
+        <newAbilities>
 
-            <li>Cast_Taunt_4S</li>
+            <li>Cast_IronBloodArmy</li>
+            <li>Cast_Firestorm</li>
+            <li>Cast_Firewave</li>
 
-            <li>Cast_BlazingSpear_4S</li>
-            <li>Cast_FireRavens_4S</li>
-            <li>Cast_FireArmor_4S</li>
-            <li>Cast_BlazingSword_4S</li>
-            <li>Cast_ExtinguishFire_4S</li>
+        </newAbilities>
 
-            <li>Cast_FireTeleport_4S</li>
-            <li>Cast_Incite_4S</li>
-            <li>Cast_Confusion_4S</li>
-
-            <li>Cast_Execution_4S</li>
-            <li>Cast_Vulnerability_4S</li> 
-
-            <li>Cast_IronBloodArmy_4S</li>
-            <li>Cast_Firestorm_4S</li>
-            <li>Cast_Firewave_4S</li>
-
-        </abilities>
-
-    </HediffDef>
+    </lotr.BeyonderHediffDef>
 
 </Defs>

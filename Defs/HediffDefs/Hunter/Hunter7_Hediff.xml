@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<HediffDef>
+	<lotr.BeyonderHediffDef Class="lotr.BeyonderHediffDef">
 	
 		<hediffClass>lotr.Hunter7_Hediff</hediffClass>
 		<defName>Hunter7_Hediff</defName>
 		<label>Pyromaniac</label>
+		<sequence>7</sequence>
+		<pathway>Hunter</pathway>
 		<description>This person became 7 sequence beyonder - pyromaniac</description>
 		<defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -128,20 +130,16 @@
             </li>
         </comps>
 
-        <abilities>
-
-			<li>Cast_Fireball_7S</li>
-
-            <li>Cast_Taunt_7S</li>
+        <newAbilities>
             
-            <li>Cast_BlazingSpear_7S</li>
-            <li>Cast_FireRavens_7S</li>
-            <li>Cast_FireArmor_7S</li>
-            <li>Cast_BlazingSword_7S</li>
-            <li>Cast_ExtinguishFire_7S</li>
+            <li>Cast_BlazingSpear</li>
+            <li>Cast_FireRavens</li>
+            <li>Cast_FireArmor</li>
+            <li>Cast_BlazingSword</li>
+            <li>Cast_ExtinguishFire</li>
 
-		</abilities>
+		</newAbilities>
 
-	</HediffDef>
+	</lotr.BeyonderHediffDef>
 
 </Defs>

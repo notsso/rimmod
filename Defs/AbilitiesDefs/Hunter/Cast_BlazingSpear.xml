@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Name="Cast_BlazingSpear">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_BlazingSpear">
     
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_BlazingSpear</defName>
@@ -37,7 +37,7 @@
     </AbilityDef>
 
     <!-- Уровень 7 -->
-    <AbilityDef ParentName="Cast_BlazingSpear">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_BlazingSpear">
         <defName>Cast_BlazingSpear_7S</defName>
         <label>Копье огня</label>
         <cooldownTicksRange>1200</cooldownTicksRange>
@@ -53,7 +53,7 @@
     </AbilityDef>
 
     <!-- Уровень 6 -->
-    <AbilityDef ParentName="Cast_BlazingSpear">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_BlazingSpear">
         <defName>Cast_BlazingSpear_6S</defName>
         <label>Копье огня</label>
         <cooldownTicksRange>600</cooldownTicksRange>
@@ -69,7 +69,7 @@
     </AbilityDef>
 
     <!-- Уровень 5 -->
-    <AbilityDef ParentName="Cast_BlazingSpear">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_BlazingSpear">
         <defName>Cast_BlazingSpear_5S</defName>
         <label>Копье огня</label>
         <cooldownTicksRange>360</cooldownTicksRange>
@@ -85,7 +85,7 @@
     </AbilityDef>
 
     <!-- Уровень 4 -->
-    <AbilityDef ParentName="Cast_BlazingSpear">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_BlazingSpear">
         <defName>Cast_BlazingSpear_4S</defName>
         <label>Копье огня</label>
         <cooldownTicksRange>120</cooldownTicksRange>

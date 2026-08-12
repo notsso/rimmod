@@ -94,7 +94,7 @@ namespace lotr {
                         sanityDamage = 0.40f;
                     }
 
-                    BeyonderUtility.AddSanityLoss(___pawn, sanityDamage);
+                    BeyonderUtility.AdjustSanityLoss(___pawn, sanityDamage);
                 }
             }
         }
@@ -117,7 +117,7 @@ namespace lotr {
 
                     float sanityPenalty = 0.05f;
 
-                    BeyonderUtility.AddSanityLoss(__instance, sanityPenalty, "Охотник стал жертвой!");
+                    BeyonderUtility.AdjustSanityLoss(__instance, sanityPenalty, "Охотник стал жертвой!");
                 }
             }
         }
@@ -137,7 +137,7 @@ namespace lotr {
                     if (hediff == null) return;
                     float sanityPenalty = 0.05f;
 
-                    BeyonderUtility.AddSanityLoss(pawn, sanityPenalty, "Провокатор был оскорблен!");
+                    BeyonderUtility.AdjustSanityLoss(pawn, sanityPenalty, "Провокатор был оскорблен!");
                 }
             }
         }
@@ -156,7 +156,7 @@ namespace lotr {
 
                     float sanityPenalty = 0.05f;
 
-                    BeyonderUtility.AddSanityLoss(pawn, sanityPenalty, "Пламя ранило пироманта!");
+                    BeyonderUtility.AdjustSanityLoss(pawn, sanityPenalty, "Пламя ранило пироманта!");
                 }
             }
         }

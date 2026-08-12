@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
     
-    <AbilityDef Name="Cast_ExtinguishFire">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_ExtinguishFire">
         <defName>Cast_ExtinguishFire</defName>
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <label>Тушение огня</label>
@@ -30,7 +30,7 @@
     </AbilityDef>
 
     <!-- Уровень 7 -->
-    <AbilityDef ParentName="Cast_ExtinguishFire">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_ExtinguishFire">
         <defName>Cast_ExtinguishFire_7S</defName>
         <label>Тушение огня</label>
         <cooldownTicksRange>600</cooldownTicksRange>
@@ -48,7 +48,7 @@
     </AbilityDef>
 
     <!-- Уровень 6 -->
-    <AbilityDef ParentName="Cast_ExtinguishFire">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_ExtinguishFire">
         <defName>Cast_ExtinguishFire_6S</defName>
         <label>Тушение огня</label>
         <cooldownTicksRange>300</cooldownTicksRange>
@@ -66,7 +66,7 @@
     </AbilityDef>
 
     <!-- Уровень 5 -->
-    <AbilityDef ParentName="Cast_ExtinguishFire">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_ExtinguishFire">
         <defName>Cast_ExtinguishFire_5S</defName>
         <label>Тушение огня</label>
         <cooldownTicksRange>180</cooldownTicksRange>
@@ -84,7 +84,7 @@
     </AbilityDef>
 
     <!-- Уровень 4 -->
-    <AbilityDef ParentName="Cast_ExtinguishFire">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_ExtinguishFire">
         <defName>Cast_ExtinguishFire_4S</defName>
         <label>Тушение огня</label>
         <cooldownTicksRange>60</cooldownTicksRange>

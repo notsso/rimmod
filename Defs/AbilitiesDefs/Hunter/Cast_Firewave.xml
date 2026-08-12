@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Name="Cast_Firewave">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Firewave">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_Firewave</defName>
@@ -37,7 +37,7 @@
     </AbilityDef>
 
     <!-- Уровень 4 -->
-    <AbilityDef ParentName="Cast_Firewave">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Firewave">
         <defName>Cast_Firewave_4S</defName>
         <label>Волна огня</label>
         <cooldownTicksRange>6000</cooldownTicksRange>

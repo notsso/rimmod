@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Name="Cast_Incite">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Incite">
 
         <defName>Cast_Incite</defName>
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
@@ -30,7 +30,7 @@
     </AbilityDef>
 
     <!-- Уровень 6 -->
-    <AbilityDef ParentName="Cast_Incite">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Incite">
         <defName>Cast_Incite_6S</defName>
         <label>Подстрекательство</label>
         <cooldownTicksRange>1800</cooldownTicksRange>
@@ -47,7 +47,7 @@
     </AbilityDef>
 
     <!-- Уровень 5 -->
-    <AbilityDef ParentName="Cast_Incite">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Incite">
         <defName>Cast_Incite_5S</defName>
         <label>Подстрекательство</label>
         <cooldownTicksRange>1200</cooldownTicksRange>
@@ -64,7 +64,7 @@
     </AbilityDef>
 
     <!-- Уровень 4 -->
-    <AbilityDef ParentName="Cast_Incite">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Incite">
         <defName>Cast_Incite_4S</defName>
         <label>Подстрекательство</label>
         <cooldownTicksRange>300</cooldownTicksRange>

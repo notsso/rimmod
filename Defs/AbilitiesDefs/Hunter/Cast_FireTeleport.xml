@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Name="Cast_FireTeleport">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_FireTeleport">
 
         <defName>Cast_FireTeleport</defName>
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
@@ -31,7 +31,7 @@
     </AbilityDef>
 
     <!-- Уровень 6 -->
-    <AbilityDef ParentName="Cast_FireTeleport">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireTeleport">
         <defName>Cast_FireTeleport_6S</defName>
         <label>Огненный прыжок</label>
         <cooldownTicksRange>600</cooldownTicksRange>
@@ -47,7 +47,7 @@
     </AbilityDef>
 
     <!-- Уровень 5 -->
-    <AbilityDef ParentName="Cast_FireTeleport">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireTeleport">
         <defName>Cast_FireTeleport_5S</defName>
         <label>Огненный прыжок</label>
         <cooldownTicksRange>300</cooldownTicksRange>
@@ -63,7 +63,7 @@
     </AbilityDef>
 
     <!-- Уровень 4 -->
-    <AbilityDef ParentName="Cast_FireTeleport">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireTeleport">
         <defName>Cast_FireTeleport_4S</defName>
         <label>Огненный прыжок</label>
         <cooldownTicksRange>60</cooldownTicksRange>

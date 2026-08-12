@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<HediffDef>
+	<lotr.BeyonderHediffDef Class="lotr.BeyonderHediffDef">
 	
 		<hediffClass>lotr.Hunter8_Hediff</hediffClass>
 		<defName>Hunter8_Hediff</defName>
 		<label>Provoker</label>
+		<sequence>8</sequence>
+		<pathway>Hunter</pathway>
 		<description>This person became 8 sequence beyonder - provoker</description>
 		<defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -116,13 +118,12 @@
             </li>
         </comps>
 
-        <abilities>
+        <newAbilities>
 
-			<li>Cast_Fireball_8S</li>
-            <li>Cast_Taunt_8S</li>
+            <li>Cast_Taunt</li>
 
-		</abilities>
+		</newAbilities>
 
-	</HediffDef>
+	</lotr.BeyonderHediffDef>
 
 </Defs>

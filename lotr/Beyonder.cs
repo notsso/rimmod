@@ -9,14 +9,16 @@ using Verse.AI;
 using RimWorld;
 
 using UnityEngine;
+using RimWorld.Planet;
 
 namespace lotr {
+
     public abstract class Beyonder_Hediff : HediffWithComps {
         // счетчик тиков, для пассивного восстановления безумия
         private int sanityTickCounter = 0;
 
         // как этот Hediff влияет на кол-во духовности
-        public virtual float SpiritualityFactor => 1f;
+        public virtual float SpiritualityOffset => 1f;
 
         // флаг полного усвоения зелья
         private bool isFullyAbsorbed = false;
@@ -101,11 +103,10 @@ namespace lotr {
             }
 
             if (bloodMoonActive) {
-                // Под луной безумие растёт
-                sanityLoss.Severity += 0.001f;
+                BeyonderUtility.AdjustSanityLoss(this.pawn, 0.001f, null);
             } else {
                 // Обычное восстановление рассудка
-                sanityLoss.Severity -= 0.001f;
+                BeyonderUtility.AdjustSanityLoss(this.pawn, -0.001f, null);
             }
 
             if (sanityLoss.Severity >= 0.90f && Rand.Chance(0.1f)) {

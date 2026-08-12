@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<HediffDef>
+	<lotr.BeyonderHediffDef Class="lotr.BeyonderHediffDef">
 	
 		<hediffClass>lotr.Hunter6_Hediff</hediffClass>
 		<defName>Hunter6_Hediff</defName>
 		<label>Conspirator</label>
+		<sequence>6</sequence>
+		<pathway>Hunter</pathway>
 		<description>This person became 6 sequence beyonder - conspirator</description>
 		<defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -187,24 +189,14 @@
             </li>
         </comps>
 
-        <abilities>
+        <newAbilities>
 
-			<li>Cast_Fireball_6S</li>
+            <li>Cast_FireTeleport</li>
+            <li>Cast_Incite</li>
+            <li>Cast_Confusion</li>
 
-            <li>Cast_Taunt_6S</li>
+		</newAbilities>
 
-            <li>Cast_BlazingSpear_6S</li>
-            <li>Cast_FireRavens_6S</li>
-            <li>Cast_FireArmor_6S</li>
-            <li>Cast_BlazingSword_6S</li>
-            <li>Cast_ExtinguishFire_6S</li>
-
-            <li>Cast_FireTeleport_6S</li>
-            <li>Cast_Incite_6S</li>
-            <li>Cast_Confusion_6S</li>
-
-		</abilities>
-
-	</HediffDef>
+	</lotr.BeyonderHediffDef>
 
 </Defs>

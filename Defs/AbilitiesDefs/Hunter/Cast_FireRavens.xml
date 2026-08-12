@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Name="Cast_FireRavens">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_FireRavens">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_FireRavens</defName>
@@ -31,7 +31,7 @@
     </AbilityDef>
 
     <!-- Уровень 7 -->
-    <AbilityDef ParentName="Cast_FireRavens">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireRavens">
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_FireRavens_7S</defName>
         <label>огненные вороны</label>
@@ -50,7 +50,7 @@
     </AbilityDef>
 
     <!-- Уровень 6 -->
-    <AbilityDef ParentName="Cast_FireRavens">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireRavens">
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_FireRavens_6S</defName>
         <label>огненные вороны</label>
@@ -69,7 +69,7 @@
     </AbilityDef>
 
     <!-- Уровень 5 -->
-    <AbilityDef ParentName="Cast_FireRavens">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireRavens">
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_FireRavens_5S</defName>
         <label>огненные вороны</label>
@@ -88,7 +88,7 @@
     </AbilityDef>
 
     <!-- Уровень 4 -->
-    <AbilityDef ParentName="Cast_FireRavens">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireRavens">
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_FireRavens_4S</defName>
         <label>огненные вороны</label>

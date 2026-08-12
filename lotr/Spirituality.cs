@@ -43,7 +43,7 @@ namespace lotr {
             if (hediffs != null) {
                 for (int i = 0; i < hediffs.Count; i++) {
                     if (hediffs[i] is Beyonder_Hediff beyonderHediff) {
-                        result *= beyonderHediff.SpiritualityFactor;
+                        result += beyonderHediff.SpiritualityOffset;
                     }
                 }
             }
@@ -160,29 +160,6 @@ namespace lotr {
             }
 
             return new GizmoResult(GizmoState.Clear);
-        }
-    }
-
-    // при поглощении зелья дает пешку Hediff с каким то Severity (прописано в xml)
-    public class IngestionOutcomeDoer_GiveHediffRange : IngestionOutcomeDoer {
-        public HediffDef hediffDef; // xml
-
-        public FloatRange severityRange; // xml
-
-        protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount) {
-            if (pawn == null || hediffDef == null) return;
-
-            float randomSeverity = severityRange.RandomInRange;
-
-            Hediff existingHediff = pawn.health.hediffSet.GetFirstHediffOfDef(hediffDef);
-
-            if (existingHediff != null) {
-                existingHediff.Severity += randomSeverity;
-            } else {
-                Hediff hediff = HediffMaker.MakeHediff(hediffDef, pawn);
-                hediff.Severity = randomSeverity;
-                pawn.health.AddHediff(hediff);
-            }
         }
     }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Name="Cast_Confusion">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Confusion">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_Confusion</defName>
@@ -29,7 +29,7 @@
     </AbilityDef>
 
     <!-- Уровень 6 -->
-    <AbilityDef ParentName="Cast_Confusion">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Confusion">
         <defName>Cast_Confusion_6S</defName>
         <label>Замешательство</label>
         <cooldownTicksRange>3600</cooldownTicksRange>
@@ -49,7 +49,7 @@
     </AbilityDef>
 
     <!-- Уровень 5 -->
-    <AbilityDef ParentName="Cast_Confusion">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Confusion">
         <defName>Cast_Confusion_5S</defName>
         <label>Замешательство</label>
         <cooldownTicksRange>1800</cooldownTicksRange>
@@ -69,7 +69,7 @@
     </AbilityDef>
 
     <!-- Уровень 4 -->
-    <AbilityDef ParentName="Cast_Confusion">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Confusion">
         <defName>Cast_Confusion_4S</defName>
         <label>Замешательство</label>
         <cooldownTicksRange>600</cooldownTicksRange>

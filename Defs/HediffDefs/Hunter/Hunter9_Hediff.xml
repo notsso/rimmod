@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<HediffDef>
+	<lotr.BeyonderHediffDef Class="lotr.BeyonderHediffDef">
 	
 		<hediffClass>lotr.Hunter9_Hediff</hediffClass>
 		<defName>Hunter9_Hediff</defName>
 		<label>Hunter</label>
+		<sequence>9</sequence>
+		<pathway>Hunter</pathway>
 		<description>This person became 9 sequence beyonder - hunter</description>
 		<defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -97,12 +99,12 @@
             </li>
         </comps>
         
-		<abilities>
+		<newAbilities>
 
-			<li>Cast_Fireball_9S</li>
+			<li>Cast_Fireball</li>
 
-		</abilities>
+		</newAbilities>
 
-	</HediffDef>
+	</lotr.BeyonderHediffDef>
 
 </Defs>

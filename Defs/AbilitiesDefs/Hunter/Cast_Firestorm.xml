@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
     
-    <AbilityDef Name="Cast_Firestorm">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Firestorm">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_Firestorm</defName>
@@ -37,7 +37,7 @@
     </AbilityDef>
 
     <!-- Уровень 4 -->
-    <AbilityDef ParentName="Cast_Firestorm">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Firestorm">
         <defName>Cast_Firestorm_4S</defName>
         <label>огненный шторм</label>
         <cooldownTicksRange>12000</cooldownTicksRange>

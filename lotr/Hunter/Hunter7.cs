@@ -11,8 +11,8 @@ using RimWorld;
 using UnityEngine;
 
 namespace lotr {
-    public class Hunter7_Hediff : Hunter8_Hediff {
-        public override float SpiritualityFactor => 5f;
+    public class Hunter7_Hediff : Beyonder_Hediff {
+        public override float SpiritualityOffset => 5f;
 
         public Hunter7_Hediff() {
             maxProgressPerCategory = 0.4f;
