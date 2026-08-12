@@ -107,7 +107,7 @@ namespace lotr {
 
         public static NeedDef lotr_SpiritualityNeed;
 
-        public static PawnKindDef lotr_FireRavenKind;
+        public static PawnKindDef lotr_FireRaven;
         public static PawnKindDef lotr_MarshBoar;
 
         public static RecipeDef Hunter9_PotionRecipe;
@@ -118,7 +118,6 @@ namespace lotr {
 
         public static ThingCategoryDef BeyonderPotions;
 
-        public static ThinkTreeDef lotr_FireRaven_ThinkTree;
         public static ThinkTreeDef lotr_MarshBoarTree;
 
         public static ThoughtDef lotr_SanityLossThought;

@@ -2,26 +2,30 @@
 <Defs>
 
     <ThingDef ParentName="BasePawn">
-    
+
         <defName>lotr_FireRavenRace</defName>
         <label>огненная ворона</label>
         <description>Призванное создание из чистого духовного пламени. Ищет плоть, чтобы сжечь её.</description>
 
         <statBases>
-            <MoveSpeed>7.5</MoveSpeed>
+            <MoveSpeed>10</MoveSpeed>
+            <MarketValue>0</MarketValue>
+            <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+            <ComfyTemperatureMax>250</ComfyTemperatureMax>
             <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
             <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
             <ArmorRating_Heat>2.00</ArmorRating_Heat>
-            <ComfyTemperatureMin>-100</ComfyTemperatureMin>
-            <ComfyTemperatureMax>250</ComfyTemperatureMax>
-            <MarketValue>0</MarketValue>
+            <Wildness>0</Wildness>
+
+            <MaxFlightTime>1000</MaxFlightTime>
+            <FlightCooldown>0</FlightCooldown>
         </statBases>
 
         <tools>
             <li>
                 <label>пламенный клюв</label>
                 <capacities>
-                <li>Bite</li>
+                    <li>Bite</li>
                 </capacities>
                 <power>8</power>
                 <cooldownTime>1.2</cooldownTime>
@@ -30,25 +34,23 @@
         </tools>
 
         <race>
-            <renderTree>Misc</renderTree>
+            <thinkTreeMain>Animal</thinkTreeMain> <!-- lotr_FireRaven_ThinkTree -->
             <body>Bird</body>
             <baseBodySize>0.3</baseBodySize>
-            <baseHealthScale>0.5</baseHealthScale> <!-- Хрупкая, балансируется взрывом -->
-            <fleshType>Normal</fleshType> <!-- Для кастомизации можно сделать свой тип плоти без крови -->
+            <baseHealthScale>0.5</baseHealthScale>
+            <!--<fleshType>Normal</fleshType>-->
             <needsRest>false</needsRest>
             <hasGenders>false</hasGenders>
             <foodType>None</foodType>
             <lifeExpectancy>1</lifeExpectancy>
-            <thinkTreeMain>lotr_FireRaven_ThinkTree</thinkTreeMain>
+            <trainability>Advanced</trainability>
 
-            <trainability>None</trainability>
-
-            <gestationPeriodDays>1</gestationPeriodDays>
-
+            <flightStartChanceOnJobStart>0.1</flightStartChanceOnJobStart>
+            
             <lifeStageAges>
                 <li>
-                <def>AnimalAdult</def>
-                <minAge>0</minAge>
+                    <def>AnimalAdult</def>
+                    <minAge>0</minAge>
                 </li>
             </lifeStageAges>
         </race>
@@ -57,26 +59,34 @@
             <li Class="lotr.CompProperties_FireRavenController" />
 
             <li Class="CompProperties_Glower">
-                <glowRadius>3</glowRadius> <!-- Радиус физического света 3 клетки -->
-                <glowColor>(255, 100, 20, 0)</glowColor> <!-- Огненный цвет -->
+                <glowRadius>3</glowRadius>
+                <glowColor>(255, 100, 20, 0)</glowColor>
             </li>
         </comps>
     </ThingDef>
 
     <PawnKindDef>
-        <defName>lotr_FireRavenKind</defName>
+        <defName>lotr_FireRaven</defName>
         <label>огненная ворона</label>
         <race>lotr_FireRavenRace</race>
         <combatPower>50</combatPower>
         <defaultFactionType>PlayerColony</defaultFactionType>
+
+        <flyingAnimationFramePathPrefix>Things/Pawn/Animal/FireRaven/FireRaven_Flying_</flyingAnimationFramePathPrefix>
+        <flyingAnimationFrameCount>8</flyingAnimationFrameCount>
+        <flyingAnimationTicksPerFrame>2</flyingAnimationTicksPerFrame>
+        <flyingAnimationDrawSize>1.3</flyingAnimationDrawSize>
+        <flyingAnimationDrawSizeIsMultiplier>true</flyingAnimationDrawSizeIsMultiplier>
+        <flyingAnimationInheritColors>true</flyingAnimationInheritColors>
+
         <lifeStages>
             <li>
                 <bodyGraphicData>
-                <texPath>Things/Pawn/Animal/FireRaven/FireRaven</texPath>
-                <graphicClass>Graphic_Single</graphicClass>
-                <drawSize>1.0</drawSize>
+                    <texPath>Things/Pawn/Animal/FireRaven/FireRaven</texPath>
+                    <drawSize>1.0</drawSize>
                 </bodyGraphicData>
             </li>
         </lifeStages>
     </PawnKindDef>
+
 </Defs>

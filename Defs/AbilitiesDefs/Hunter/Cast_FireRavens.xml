@@ -39,7 +39,7 @@
         <comps>
             <li Class="lotr.CompProperties_AbilityLaunchFireRavens">
                 <compClass>lotr.CompAbilityEffect_LaunchFireRavens</compClass>
-                <ravenPawnKind>lotr_FireRavenKind</ravenPawnKind>
+                <ravenPawnKind>lotr_FireRaven</ravenPawnKind>
                 <lifetime>3600</lifetime>
                 <maxCount>3</maxCount>
             </li>
@@ -58,7 +58,7 @@
         <comps>
             <li Class="lotr.CompProperties_AbilityLaunchFireRavens">
                 <compClass>lotr.CompAbilityEffect_LaunchFireRavens</compClass>
-                <ravenPawnKind>lotr_FireRavenKind</ravenPawnKind>
+                <ravenPawnKind>lotr_FireRaven</ravenPawnKind>
                 <lifetime>6000</lifetime>
                 <maxCount>5</maxCount>
             </li>
@@ -77,7 +77,7 @@
         <comps>
             <li Class="lotr.CompProperties_AbilityLaunchFireRavens">
                 <compClass>lotr.CompAbilityEffect_LaunchFireRavens</compClass>
-                <ravenPawnKind>lotr_FireRavenKind</ravenPawnKind>
+                <ravenPawnKind>lotr_FireRaven</ravenPawnKind>
                 <lifetime>9000</lifetime>
                 <maxCount>8</maxCount>
             </li>
@@ -96,7 +96,7 @@
         <comps>
             <li Class="lotr.CompProperties_AbilityLaunchFireRavens">
                 <compClass>lotr.CompAbilityEffect_LaunchFireRavens</compClass>
-                <ravenPawnKind>lotr_FireRavenKind</ravenPawnKind>
+                <ravenPawnKind>lotr_FireRaven</ravenPawnKind>
                 <lifetime>18000</lifetime>
                 <maxCount>16</maxCount>
             </li>

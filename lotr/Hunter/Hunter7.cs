@@ -73,6 +73,14 @@ namespace lotr {
                         controller.lifetime = Props.lifetime;
                     }
 
+                    raven.training.Train(TrainableDefOf.Obedience, caster, complete: true);
+                    raven.training.Train(TrainableDefOf.Release, caster, complete: true);
+
+                    raven.playerSettings.Master = caster;
+
+                    raven.playerSettings.followDrafted = true;
+                    raven.playerSettings.followFieldwork = true;
+
                     spawnedCount++;
                 }
             }
