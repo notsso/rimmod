@@ -225,4 +225,26 @@ namespace lotr {
             Scribe_Values.Look(ref lifetime, "lifetime", 3600); // на всякий случай сохраним и таймер
         }
     }
+
+    public class CompProperties_MovingGlower : CompProperties_Glower {
+        public CompProperties_MovingGlower() {
+            compClass = typeof(CompMovingGlower);
+        }
+    }
+
+    public class CompMovingGlower : CompGlower {
+        private IntVec3 lastPosition = IntVec3.Invalid;
+
+        public override void CompTick() {
+            base.CompTick();
+
+            if (parent.Spawned && parent.Position != lastPosition) {
+                lastPosition = parent.Position;
+                if (parent.Map != null) {
+                    parent.Map.glowGrid.DeRegisterGlower(this);
+                    parent.Map.glowGrid.RegisterGlower(this);
+                }
+            }
+        }
+    }
 }

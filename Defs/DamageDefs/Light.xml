@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <DamageDef>
+
+        <defName>lotr_Light</defName>
+        <label>light</label>
+        <workerClass>DamageWorker_AddInjury</workerClass>
+        <externalViolence>true</externalViolence>
+        <deathMessage>{0} has been vaporized by holy light.</deathMessage>
+        <hediff>Burn</hediff>
+        <armorCategory>Heat</armorCategory>
+        <overkillPctToDestroyPart>0.4</overkillPctToDestroyPart>
+        <buildingDamageFactor>0.5</buildingDamageFactor>
+
+    </DamageDef>
+
+</Defs>

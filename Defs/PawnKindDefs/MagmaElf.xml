@@ -93,7 +93,7 @@
         </butcherProducts>
 
         <comps>
-            <li Class="CompProperties_Glower">
+            <li Class="lotr.CompProperties_MovingGlower">
                 <glowRadius>3</glowRadius>
                 <glowColor>(255, 100, 20, 0)</glowColor>
             </li>

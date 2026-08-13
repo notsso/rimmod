@@ -110,6 +110,13 @@
             <lotr_MagmaGiantCore>1</lotr_MagmaGiantCore>
         </butcherProducts>
 
+        <comps>
+            <li Class="lotr.CompProperties_MovingGlower">
+                <glowRadius>15</glowRadius>
+                <glowColor>(255, 100, 20, 0)</glowColor>
+            </li>
+        </comps>
+
     </ThingDef>
 
     <PawnKindDef>
