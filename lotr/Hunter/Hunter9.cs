@@ -13,8 +13,7 @@ using UnityEngine;
 namespace lotr {
     // Последовательность 9 - Охотник
     public class Hunter9_Hediff : Beyonder_Hediff {
-        public override float SpiritualityOffset => 1.2f;
-
+        
         public Hunter9_Hediff() {
             // способы действия: охота
             maxProgressPerCategory = 0.8f;

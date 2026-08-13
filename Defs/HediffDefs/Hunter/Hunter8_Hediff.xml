@@ -5,9 +5,13 @@
 	
 		<hediffClass>lotr.Hunter8_Hediff</hediffClass>
 		<defName>Hunter8_Hediff</defName>
+
 		<label>Provoker</label>
 		<sequence>8</sequence>
 		<pathway>Hunter</pathway>
+
+		<spiritualityOffset>0.5</spiritualityOffset>
+
 		<description>This person became 8 sequence beyonder - provoker</description>
 		<defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>

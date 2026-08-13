@@ -5,9 +5,13 @@
 
         <hediffClass>lotr.Hunter5_Hediff</hediffClass>
         <defName>Hunter5_Hediff</defName>
+
         <label>Reaper</label>
         <sequence>5</sequence>
         <pathway>Hunter</pathway>
+
+        <spiritualityOffset>10</spiritualityOffset>
+
         <description>This person became 5 sequence beyonder - reaper. This person sees vulnerabilities and can reap souls.</description>
         <defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
         <initialSeverity>0.01</initialSeverity>

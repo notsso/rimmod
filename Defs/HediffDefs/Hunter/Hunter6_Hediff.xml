@@ -5,9 +5,13 @@
 	
 		<hediffClass>lotr.Hunter6_Hediff</hediffClass>
 		<defName>Hunter6_Hediff</defName>
+
 		<label>Conspirator</label>
 		<sequence>6</sequence>
 		<pathway>Hunter</pathway>
+
+		<spiritualityOffset>6</spiritualityOffset>
+
 		<description>This person became 6 sequence beyonder - conspirator</description>
 		<defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>

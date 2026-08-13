@@ -12,7 +12,6 @@ using UnityEngine;
 namespace lotr {
     // Последовательность 8 - Провокатор
     public class Hunter8_Hediff : Beyonder_Hediff {
-        public override float SpiritualityOffset => 1.5f;
 
         public Hunter8_Hediff() {
             // способы действия: успешная провокация

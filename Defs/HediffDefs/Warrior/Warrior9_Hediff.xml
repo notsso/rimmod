@@ -3,15 +3,13 @@
 
 	<lotr.BeyonderHediffDef Class="lotr.BeyonderHediffDef">
 	
-		<hediffClass>lotr.Hunter9_Hediff</hediffClass>
+		<hediffClass>lotr.Warrior9_Hediff</hediffClass>
 		<defName>Hunter9_Hediff</defName>
-		<label>Hunter</label>
+		<label>Warrior</label>
 		<sequence>9</sequence>
-		<pathway>Hunter</pathway>
-		
-		<spiritualityOffset>0.2</spiritualityOffset>
-
-		<description>This person became 9 sequence beyonder - hunter</description>
+        <spiritualityOffset>0<spiritualityOffset>
+		<pathway>Warrior</pathway>
+		<description>This person became 9 sequence beyonder - Warrior</description>
 		<defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
 		<maxSeverity>1</maxSeverity>

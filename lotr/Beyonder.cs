@@ -16,10 +16,7 @@ namespace lotr {
     public abstract class Beyonder_Hediff : HediffWithComps {
         // счетчик тиков, для пассивного восстановления безумия
         private int sanityTickCounter = 0;
-
-        // как этот Hediff влияет на кол-во духовности
-        public virtual float SpiritualityOffset => 1f;
-
+        
         // флаг полного усвоения зелья
         private bool isFullyAbsorbed = false;
 

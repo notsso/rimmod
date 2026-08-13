@@ -13,7 +13,6 @@ using UnityEngine;
 namespace lotr {
     // Последовательность 7 - Пиромант
     public class Hunter7_Hediff : Beyonder_Hediff {
-        public override float SpiritualityOffset => 5f;
 
         public Hunter7_Hediff() {
             // способы действия: контроль огня (готовка на костре), метание огня (blazing spear on enemy impact)

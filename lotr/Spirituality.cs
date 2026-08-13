@@ -42,8 +42,8 @@ namespace lotr {
             var hediffs = pawn.health?.hediffSet?.hediffs;
             if (hediffs != null) {
                 for (int i = 0; i < hediffs.Count; i++) {
-                    if (hediffs[i] is Beyonder_Hediff beyonderHediff) {
-                        result += beyonderHediff.SpiritualityOffset;
+                    if (hediffs[i]?.def is lotr.BeyonderHediffDef beyonderHediffDef) {
+                        result += beyonderHediffDef.spiritualityOffset;
                     }
                 }
             }

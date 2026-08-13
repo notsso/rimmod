@@ -14,8 +14,6 @@ using UnityEngine;
 namespace lotr {
     // Последовательность 4 - Железнокровный рыцарь
     public class Hunter4_Hediff : Beyonder_Hediff {
-        public override float SpiritualityOffset => 40f;
-
         public Hunter4_Hediff() {
             // способы действия: -
             maxProgressPerCategory = 1f;

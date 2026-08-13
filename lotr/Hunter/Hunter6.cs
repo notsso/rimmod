@@ -13,7 +13,6 @@ using UnityEngine;
 namespace lotr {
     // Последовательность 6 - Заговорщик
     public class Hunter6_Hediff : Beyonder_Hediff {
-        public override float SpiritualityOffset => 10f;
 
         public Hunter6_Hediff() {
             // способы действия: Заговоры (враги дерутся сами с собой)
