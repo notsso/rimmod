@@ -11,11 +11,15 @@ using RimWorld;
 using UnityEngine;
 
 namespace lotr {
+    // Последовательность 7 - Пиромант
     public class Hunter7_Hediff : Beyonder_Hediff {
         public override float SpiritualityOffset => 5f;
 
         public Hunter7_Hediff() {
+            // способы действия: контроль огня (готовка на костре), метание огня (blazing spear on enemy impact)
             maxProgressPerCategory = 0.4f;
+
+            // анти-действия: получение урона от огня
         }
     }
 
@@ -120,7 +124,7 @@ namespace lotr {
         }
     }
 
-
+    // Класс для всех призываемых оружий - есть время жизни
     public class SummonedWeapon : ThingWithComps {
         public int ticksLeft = -1;
 
@@ -130,9 +134,10 @@ namespace lotr {
         }
     }
 
+    // Класс для всех огненных призываемых оружий
     public class SummonedFireWeapon : SummonedWeapon { }
 
-    // Способность hunter7 (pyromaniac): огненная броня
+    // Класс для hediff, которые дают создают свет вокруг пешки
     public class Hediff_FireLight : HediffWithComps {
         // Храним ссылку на заспавненную невидимую лампочку
         private ThingWithComps lightSource = null;
@@ -147,7 +152,7 @@ namespace lotr {
             DespawnLight();
         }
 
-        // Каждый тик проверяем позицию пешки
+        // Каждый тик проверяем позицию пешки и перемещаем свет
         public override void Tick() {
             base.Tick();
 
@@ -156,14 +161,9 @@ namespace lotr {
                 return;
             }
 
-            // Если лампочки нет — спавним
             if (lightSource == null || !lightSource.Spawned) {
                 SpawnLight();
-            }
-            // ИСПРАВЛЕНО: Если пешка сделала шаг на новую клетку
-            else if (lightSource.Position != this.pawn.Position) {
-                // Вместо багнутой телепортации позиции, мы пересоздаем свет в новой точке.
-                // Это заставляет движок RimWorld мгновенно перерисовать световое пятно на экране!
+            } else if (lightSource.Position != this.pawn.Position) {
                 DespawnLight();
                 SpawnLight();
             }
@@ -255,15 +255,18 @@ namespace lotr {
                 }
             }
 
+            /*
             // Визуальный эффект в центре
             for (int i = 0; i < 5; i++) {
                 IntVec3 offset = new IntVec3(Rand.Range(-2, 2), 0, Rand.Range(-2, 2));
                 Vector3 pos = (center + offset).ToVector3Shifted();
                 FleckMaker.ThrowSmoke(pos, map, 0.8f);
             }
+            */
         }
     }
 
+    // Как подсветка для взрыва, но радиус достается из самой абилки, а не из снаряда
     public class Verb_ExtinguishFire : Verb_CastAbility {
         protected override bool TryCastShot() {
             if (this.ability != null) {

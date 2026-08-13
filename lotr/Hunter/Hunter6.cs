@@ -11,11 +11,15 @@ using RimWorld;
 using UnityEngine;
 
 namespace lotr {
+    // Последовательность 6 - Заговорщик
     public class Hunter6_Hediff : Beyonder_Hediff {
         public override float SpiritualityOffset => 10f;
 
         public Hunter6_Hediff() {
-            maxProgressPerCategory = 0.6f;
+            // способы действия: Заговоры (враги дерутся сами с собой)
+            maxProgressPerCategory = 0.8f;
+
+            // анти-действия: Использование грубой силы (blazing spear)
         }
     }
 

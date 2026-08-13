@@ -90,7 +90,7 @@ namespace lotr {
             if (pawn?.health?.hediffSet?.hediffs == null) return 10;
             int sequence = 10;
             foreach (var hediff in pawn.health.hediffSet.hediffs) {
-                Log.Message($"{pawn.Name} aboab: {hediff.def.defName}");
+                // Log.Message($"{pawn.Name} aboab: {hediff.def.defName}");
                 if (hediff.def is BeyonderHediffDef beyonderDef) {
                     sequence = Mathf.Min(beyonderDef.sequence, sequence);
                 }
@@ -151,7 +151,7 @@ namespace lotr {
             }
 
             int sequence = BeyonderUtility.GetBeyonderSequence(pawn);
-            List <AbilityDef> new_abilities = new List <AbilityDef> {};
+            List<AbilityDef> new_abilities = new List<AbilityDef> { };
             foreach (var hediff in pawn.health.hediffSet.hediffs) {
                 if (hediff.def is BeyonderHediffDef beyonder_hediff) {
                     foreach (string ability_name in beyonder_hediff.newAbilities) {

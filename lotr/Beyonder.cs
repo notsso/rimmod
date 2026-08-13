@@ -197,17 +197,14 @@ namespace lotr {
             float diff = 0f;
 
             if (category == 1) {
-                if (progress1 >= maxProgressPerCategory) return;
                 oldProgress = progress1;
                 progress1 = Mathf.Clamp(progress1 + amount, 0f, maxProgressPerCategory);
                 diff = progress1 - oldProgress;
             } else if (category == 2) {
-                if (progress2 >= maxProgressPerCategory) return;
                 oldProgress = progress2;
                 progress2 = Mathf.Clamp(progress2 + amount, 0f, maxProgressPerCategory);
                 diff = progress2 - oldProgress;
             } else if (category == 3) {
-                if (progress3 >= maxProgressPerCategory) return;
                 oldProgress = progress3;
                 progress3 = Mathf.Clamp(progress3 + amount, 0f, maxProgressPerCategory);
                 diff = progress3 - oldProgress;

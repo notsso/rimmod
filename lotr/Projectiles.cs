@@ -372,21 +372,28 @@ namespace lotr {
     public class Effect_LauncherReaction : ProjectileEffect {
         public override void ApplyAfterShield(Projectile_Base projectile, Thing hitThing) {
             if (projectile.Launcher is Pawn launcherPawn) {
+                int sequence = BeyonderUtility.GetBeyonderSequence(launcherPawn);
+
                 if (projectile is Projectile_BlazingSpear) {
                     var hunter7 = launcherPawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter7_Hediff) as Hunter7_Hediff;
-                    if (hunter7 != null) {
+                    bool isHunter7 = (hunter7 != null && sequence == 7);
+                    if (isHunter7) {
                         hunter7.AddActingProgress(2, 0.02f, launcherPawn);
+                        return;
                     }
 
                     var hunter6 = launcherPawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter6_Hediff) as Hunter6_Hediff;
-                    if (hunter6 != null) {
+                    bool isHunter6 = (hunter6 != null && sequence == 6);
+                    if (isHunter6) {
                         BeyonderUtility.AdjustSanityLoss(launcherPawn, 0.05f, "Заговорщик использует грубую силу!");
+                        return;
                     }
                 }
 
                 if (projectile is Projectile_Execution) {
                     var hunter5 = launcherPawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter5_Hediff) as Hunter5_Hediff;
-                    if (hunter5 != null) {
+                    bool isHunter5 = (hunter5 != null && sequence == 6);
+                    if (isHunter5) {
                         if (projectile.InstantKillBonus) {
                             hunter5.AddActingProgress(1, 0.01f, launcherPawn);
                         } else if (!projectile.VictimKilled && hitThing != null) {

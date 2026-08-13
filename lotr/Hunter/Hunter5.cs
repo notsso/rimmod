@@ -11,11 +11,15 @@ using RimWorld;
 using UnityEngine;
 
 namespace lotr {
+    // Последовательность 5 - Жнец
     public class Hunter5_Hediff : Beyonder_Hediff {
         public override float SpiritualityOffset => 15f;
 
         public Hunter5_Hediff() {
+            // способы действия: Быстрые убийства (казнь)
             maxProgressPerCategory = 0.8f;
+
+            // анти-действия: Затяжные битвы (казнь провалилась)
         }
     }
 

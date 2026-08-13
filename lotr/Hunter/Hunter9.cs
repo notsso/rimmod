@@ -11,15 +11,19 @@ using RimWorld;
 using UnityEngine;
 
 namespace lotr {
-    // Специфичная логика Охотника
+    // Последовательность 9 - Охотник
     public class Hunter9_Hediff : Beyonder_Hediff {
         public override float SpiritualityOffset => 1.2f;
 
         public Hunter9_Hediff() {
+            // способы действия: охота
             maxProgressPerCategory = 0.8f;
+
+            // анти-действия: быть жертвой (harmony patch)
         }
     }
 
+    // Подсветка зоны поражения для всех способностей с радиусом
     public class Verb_ExplosionZone : Verb_CastAbility {
         protected override bool TryCastShot() {
             if (this.ability != null) {

@@ -49,8 +49,10 @@ namespace lotr {
         public static void Postfix(Pawn_JobTracker __instance, JobCondition condition, bool startNewJob, bool canReturnToPool, ref float __state, Pawn ___pawn) {
             if (__state > 0.01f && ___pawn != null && ___pawn.IsColonist) {
                 var hediff = ___pawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter9_Hediff) as Hunter9_Hediff;
+                int sequence = BeyonderUtility.GetBeyonderSequence(___pawn);
+                bool isHunter9 = (hediff != null && sequence == 9);
 
-                if (hediff != null) {
+                if (isHunter9) {
                     float victimBodySize = __state;
                     float severityIncrement = factor * victimBodySize;
                     severityIncrement = Mathf.Clamp(severityIncrement, 0.02f, 0.40f);
@@ -69,8 +71,10 @@ namespace lotr {
             if (billDoer != null && billDoer.IsColonist) {
                 if (__instance.billStack?.billGiver is Building_WorkTable table && table.def.defName == "Campfire") {
                     var hediff = billDoer.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter7_Hediff) as Hunter7_Hediff;
+                    int sequence = BeyonderUtility.GetBeyonderSequence(billDoer);
+                    bool isHunter7 = (hediff != null && sequence == 7);
 
-                    if (hediff != null) {
+                    if (isHunter7) {
                         hediff.AddActingProgress(1, 0.01f, billDoer);
                     }
                 }
@@ -112,12 +116,13 @@ namespace lotr {
 
                 if (isFleeing) {
                     var hediff = __instance.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter9_Hediff) as Hunter9_Hediff;
+                    int sequence = BeyonderUtility.GetBeyonderSequence(__instance);
+                    bool isHunter9 = (hediff != null && sequence == 9);
 
-                    if (hediff == null) return;
-
-                    float sanityPenalty = 0.05f;
-
-                    BeyonderUtility.AdjustSanityLoss(__instance, sanityPenalty, "Охотник стал жертвой!");
+                    if (isHunter9) {
+                        float sanityPenalty = 0.05f;
+                        BeyonderUtility.AdjustSanityLoss(__instance, sanityPenalty, "Охотник стал жертвой!");
+                    }
                 }
             }
         }
@@ -133,11 +138,13 @@ namespace lotr {
             if (pawn != null && pawn.IsColonist && newThought != null) {
                 if (newThought.def.defName == "Insulted" || newThought.def.defName == "InsultedMood") {
                     var hediff = pawn.health?.hediffSet?.GetFirstHediffOfDef(LotrDefOf.Hunter8_Hediff) as Hunter8_Hediff;
+                    int sequence = BeyonderUtility.GetBeyonderSequence(pawn);
+                    bool isHunter8 = (hediff != null && sequence == 8);
 
-                    if (hediff == null) return;
-                    float sanityPenalty = 0.05f;
-
-                    BeyonderUtility.AdjustSanityLoss(pawn, sanityPenalty, "Провокатор был оскорблен!");
+                    if (isHunter8) {
+                        float sanityPenalty = 0.05f;
+                        BeyonderUtility.AdjustSanityLoss(pawn, sanityPenalty, "Провокатор был оскорблен!");
+                    }
                 }
             }
         }
@@ -151,12 +158,13 @@ namespace lotr {
             if (__instance is Pawn pawn && pawn.IsColonist && !pawn.Destroyed) {
                 if (dinfo.Def == DamageDefOf.Flame || dinfo.Def == DamageDefOf.Burn) {
                     var hediff = pawn.health?.hediffSet?.GetFirstHediffOfDef(LotrDefOf.Hunter7_Hediff) as Hunter7_Hediff;
+                    int sequence = BeyonderUtility.GetBeyonderSequence(pawn);
+                    bool isHunter7 = (hediff != null && sequence == 7);
 
-                    if (hediff == null) return;
-
-                    float sanityPenalty = 0.05f;
-
-                    BeyonderUtility.AdjustSanityLoss(pawn, sanityPenalty, "Пламя ранило пироманта!");
+                    if (isHunter7) {
+                        float sanityPenalty = 0.05f;
+                        BeyonderUtility.AdjustSanityLoss(pawn, sanityPenalty, "Пламя ранило пироманта!");
+                    }
                 }
             }
         }
@@ -254,7 +262,7 @@ namespace lotr {
         public static Pawn CurrentCaster = null;
     }
 
-    // Harmony patch - Отслеживаем убийство и проверяем условия заговора
+    // Harmony patch - Отслеживаем действие 'Заговрщика' - враги убивают сами себя
     [HarmonyPatch(typeof(Pawn), "Kill")]
     public static class Patch_ConspiratorMurderTracking {
         [HarmonyPostfix]
@@ -278,12 +286,12 @@ namespace lotr {
                 // Все условия соблюдены: Враг-берсерк убил своего же союзника по приказу нашего Заговорщика!
 
                 Hunter6_Hediff hediff = conspiratorCaster.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter6_Hediff) as Hunter6_Hediff;
+                int sequence = BeyonderUtility.GetBeyonderSequence(conspiratorCaster);
+                bool isHunter6 = (hediff != null && sequence == 6);
 
-                if (hediff != null) {
+                if (isHunter6) {
                     float severityIncrement = 0.05f;
-
                     hediff.AddActingProgress(2, severityIncrement, conspiratorCaster);
-
                     MoteMaker.ThrowText(conspiratorCaster.DrawPos, conspiratorCaster.Map, "Заговор удался!", 4f);
                 }
 
@@ -292,6 +300,7 @@ namespace lotr {
         }
     }
 
+    // Проверка пешки на уязвимость
     [HarmonyPatch(typeof(Pawn_HealthTracker), "PreApplyDamage")]
     public static class Patch_AttackAmplifier {
         private static readonly FieldInfo PawnField = AccessTools.Field(typeof(Pawn_HealthTracker), "pawn");

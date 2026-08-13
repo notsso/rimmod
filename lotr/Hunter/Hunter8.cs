@@ -10,14 +10,19 @@ using RimWorld;
 using UnityEngine;
 
 namespace lotr {
+    // Последовательность 8 - Провокатор
     public class Hunter8_Hediff : Beyonder_Hediff {
         public override float SpiritualityOffset => 1.5f;
 
         public Hunter8_Hediff() {
+            // способы действия: успешная провокация
             maxProgressPerCategory = 0.8f;
+
+            // анти-действия: безуспешная провокация, быть оскорбленным
         }
     }
 
+    // Способность hunter8 (провокатор): провокация
     public class CompProperties_AbilityProvoke : CompProperties_AbilityEffect {
         public float baseSuccessChance = 50.0f;
 
@@ -26,7 +31,6 @@ namespace lotr {
         }
     }
 
-    // Способность hunter8 (провокатор): провокация
     public class CompAbilityEffect_Provoke : CompAbilityEffect {
         public new CompProperties_AbilityProvoke Props => (CompProperties_AbilityProvoke)props;
 
@@ -38,38 +42,35 @@ namespace lotr {
 
             if (targetPawn == null || targetPawn.Dead || targetPawn.Downed) {
                 return;
-            }
-
-            if (targetPawn.Faction == caster.Faction) {
+            } else if (targetPawn.Faction == caster.Faction) {
                 return;
             }
 
             float victimPsychicSensitivity = targetPawn.GetStatValue(StatDefOf.PsychicSensitivity, true);
-
             float baseSuccessChance = Props.baseSuccessChance;
-
             float finalSuccessChance = baseSuccessChance * victimPsychicSensitivity;
+
+            var hediff = caster.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter8_Hediff) as Hunter8_Hediff;
+            int sequence = BeyonderUtility.GetBeyonderSequence(caster);
+            bool isHunter8 = (hediff != null && sequence == 8);
 
             if (Rand.Value <= finalSuccessChance) {
                 ProvokePawn(targetPawn, caster);
-
                 if (targetPawn.RaceProps.ToolUser || targetPawn.RaceProps.IsMechanoid) {
-                    var hediff = caster.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter8_Hediff) as Hunter8_Hediff;
-
-                    if (hediff != null) {
+                    if (isHunter8) {
                         float severityIncrement = 0.05f;
-
                         hediff.AddActingProgress(1, severityIncrement, caster);
                     }
                 }
             } else {
-                float sanityPenalty = 0.10f;
-
-                BeyonderUtility.AdjustSanityLoss(caster, sanityPenalty, "Провокация провалена!");
+                if (isHunter8) {
+                    float sanityPenalty = 0.10f;
+                    BeyonderUtility.AdjustSanityLoss(caster, sanityPenalty, "Провокация провалена!");
+                }
             }
         }
 
-        // провоцирует цель - дает ей задачу на ближний бой с провокатором на 10 секунд
+        // Провоцирует цель - дает ей задачу на ближний бой с провокатором на 10 секунд
         private void ProvokePawn(Pawn victim, Pawn aggressor) {
             if (victim == null || aggressor == null) return;
 
