@@ -180,7 +180,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_ForestHunterTongue</defName>
         <label>Язык лесного охотника</label>
-        <description>Орган уникального гуманоидного или мистического существа - Лесного Охотника Ключевой ингредиент для зелья Жнеца.</description>
+        <description>Орган уникального гуманоидного мистического существа - Лесного Охотника. Ключевой ингредиент для зелья Жнеца.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -200,7 +200,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_MagmaGiantCore</defName>
         <label>Ядро магматического гиганта</label>
-        <description>Сердце огромного, древнего элементаля - Магматического Гиганта. Ключевой ингредиент для зелья Жнеца.</description>
+        <description>Сердце огромного, древнего элементаля - Магматического Гиганта. Ключевой ингредиент для зелья Железнокровного рыцаря.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_3</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -219,7 +219,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_StoneofCatastrophe</defName>
         <label>Камень катастрофы</label>
-        <description>Особый мистический минерал, который формируется исключительно в эпицентре масштабных природных или техногенных катастроф. Ключевой ингредиент для зелья Жнеца.</description>
+        <description>Особый мистический минерал, который формируется исключительно в эпицентре масштабных природных или техногенных катастроф. Ключевой ингредиент для зелья Железнокровного рыцаря.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_3</texPath>
             <graphicClass>Graphic_Single</graphicClass>

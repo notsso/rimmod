@@ -20,10 +20,14 @@
             <Flammability>0</Flammability>
             <ToxicResistance>1</ToxicResistance>
             <ToxicEnvironmentResistance>0.95</ToxicEnvironmentResistance>
+            <IncomingDamageFactor>0.80</IncomingDamageFactor> 
+            <InjuryHealingFactor>2.0</InjuryHealingFactor>
+            <MeleeHitChance>10</MeleeHitChance>
+            <MeleeDodgeChance>10</MeleeDodgeChance>
         </statBases>
 
         <race>
-            <thinkTreeMain>Animal</thinkTreeMain> <!-- lotr_FireSalamanderTree -->
+            <thinkTreeMain>Animal</thinkTreeMain> <!-- lotr_MagmaElfTree -->
             <body>QuadrupedAnimalWithPaws</body>
             <baseHungerRate>0</baseHungerRate>
             <baseBodySize>1.0</baseBodySize>

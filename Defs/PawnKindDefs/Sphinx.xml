@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="AnimalThingBase">
+
+        <defName>lotr_SphinxRace</defName>
+        <label>Сфинкс</label>
+        <description>Крайне коварные, высокоинтеллектуальные и скрытные хищники, обитающие в глубинах Духовного мира или в аномальных зонах.</description>
+        
+        <statBases>
+            <MoveSpeed>8.0</MoveSpeed>
+            <MarketValue>1500</MarketValue>
+            <ComfyTemperatureMin>-80</ComfyTemperatureMin>
+            <ComfyTemperatureMax>80</ComfyTemperatureMax>
+            <ArmorRating_Blunt>0.80</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.80</ArmorRating_Heat>
+            <Wildness>1</Wildness> 
+
+            <Flammability>0.1</Flammability>
+            <ToxicResistance>1</ToxicResistance>
+            <ToxicEnvironmentResistance>0.8</ToxicEnvironmentResistance>
+        </statBases>
+
+        <race>
+            <thinkTreeMain>Animal</thinkTreeMain> <!-- lotr_SphinxTree -->
+            <body>QuadrupedAnimalWithPawsAndTail</body>
+            <baseHungerRate>0.01</baseHungerRate>
+            <baseBodySize>2.5</baseBodySize>
+            <baseHealthScale>6.0</baseHealthScale>
+
+            <foodType>CarnivoreAnimal, OvivoreAnimal</foodType>
+            <predator>true</predator>
+            <trainability>None</trainability>
+            <lifeExpectancy>150</lifeExpectancy>
+            <manhunterOnDamageChance>1</manhunterOnDamageChance>
+            <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
+            
+            <leatherDef>Leather_Panthera</leatherDef>
+            <meatDef>Meat_Pig</meatDef>
+            <herdAnimal>false</herdAnimal>
+
+            <lifeStageAges>
+                <li>
+                    <def>AnimalBaby</def>
+                    <minAge>0</minAge>
+                </li>
+                <li>
+                    <def>AnimalJuvenile</def>
+                    <minAge>0.20</minAge>
+                </li>
+                <li>
+                    <def>AnimalAdult</def>
+                    <minAge>0.4</minAge>
+                    <soundWounded>Pawn_Cougar_Injured</soundWounded>
+                    <soundDeath>Pawn_Cougar_Death</soundDeath>
+                    <soundAngry>Pawn_Cougar_Angry</soundAngry>
+                </li>
+            </lifeStageAges>
+
+            <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+            <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+            <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+            <soundEating>PredatorLarge_Eat</soundEating>
+
+            <headPosPerRotation>
+                <li>(0.0, 0, 0.27)</li>
+                <li>(0.36, 0, 0.1)</li>
+                <li>(0.0, 0, 0.03)</li>
+                <li>(-0.36, 0, 0.1)</li>
+            </headPosPerRotation>
+        </race>
+
+        <tools>
+            <li>
+                <label>left claw</label>
+                <labelNoLocation>claw</labelNoLocation>
+                <capacities>
+                    <li>Scratch</li>
+                </capacities>
+                <power>20</power>
+                <cooldownTime>1.0</cooldownTime>
+                <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+                <surpriseAttack>
+                    <extraMeleeDamages>
+                        <li>
+                            <def>Stun</def>
+                            <amount>20</amount>
+                        </li>
+                    </extraMeleeDamages>
+                </surpriseAttack>
+            </li>
+            <li>
+                <label>right claw</label>
+                <labelNoLocation>claw</labelNoLocation>
+                <capacities>
+                    <li>Scratch</li>
+                </capacities>
+                <power>20</power>
+                <cooldownTime>1.0</cooldownTime>
+                <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+                <surpriseAttack>
+                    <extraMeleeDamages>
+                        <li>
+                            <def>Stun</def>
+                            <amount>20</amount>
+                        </li>
+                    </extraMeleeDamages>
+                </surpriseAttack>
+            </li>
+            <li>
+                <capacities>
+                    <li>Bite</li>
+                </capacities>
+                <power>30</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+                <chanceFactor>0.5</chanceFactor>
+                <surpriseAttack>
+                    <extraMeleeDamages>
+                        <li>
+                            <def>Stun</def>
+                            <amount>20</amount>
+                        </li>
+                    </extraMeleeDamages>
+                </surpriseAttack>
+            </li>
+            <li>
+                <label>head</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>20</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+                <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+                <chanceFactor>0.2</chanceFactor>
+            </li>
+        </tools>
+
+        <butcherProducts>
+            <lotr_SphinxBrain>1</lotr_SphinxBrain>
+        </butcherProducts>
+
+    </ThingDef>
+
+    <PawnKindDef ParentName="AnimalKindBase">
+    
+        <defName>lotr_Sphinx</defName>
+        <label>Sphinx</label>
+        <race>lotr_SphinxRace</race>
+        <combatPower>500</combatPower>
+        <ecoSystemWeight>1.0</ecoSystemWeight>
+        
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Cougar/Cougar</texPath>
+                    <drawSize>2.0</drawSize>
+                    <color>(177,136,112)</color>
+                </bodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Cougar/Cougar</texPath>
+                    <drawSize>2.5</drawSize>
+                    <color>(177,136,112)</color>
+                    <shadowData>
+                        <volume>(0.3, 0.3, 0.3)</volume>
+                        <offset>(0,0,-0.3)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Cougar/Cougar</texPath>
+                    <drawSize>3.0</drawSize>
+                    <color>(177,136,112)</color>
+                    <shadowData>
+                        <volume>(0.4, 0.4, 0.4)</volume>
+                        <offset>(0,0,-0.1)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+            </li>
+        </lifeStages>
+
+    </PawnKindDef>
+
+</Defs>

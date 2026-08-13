@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="BasePawn">
+
+        <defName>lotr_MagmaGiantRace</defName>
+        <label>Магматический гигант</label>
+        <description>Это колоссальное гуманоидное существо. Его тело состоит из сплава разумной полужидкой магмы и застывшей черной вулканической породы (базальта), которая служит ему прочной броней.</description>
+
+        <statBases>
+            <MoveSpeed>5.0</MoveSpeed>
+            <MarketValue>5000</MarketValue>
+            <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+            <ComfyTemperatureMax>1000</ComfyTemperatureMax>
+            <ArmorRating_Blunt>0.95</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.95</ArmorRating_Sharp>
+            <ArmorRating_Heat>2.0</ArmorRating_Heat>
+            <Wildness>1</Wildness> 
+
+            <Flammability>0</Flammability>
+            <ToxicResistance>1</ToxicResistance>
+            <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+            <IncomingDamageFactor>0.10</IncomingDamageFactor> 
+            <InjuryHealingFactor>10.0</InjuryHealingFactor>
+            <MeleeHitChance>50</MeleeHitChance>
+
+            <MeatAmount>0</MeatAmount>
+            <LeatherAmount>0</LeatherAmount>
+        </statBases>
+
+        <race>
+            <thinkTreeMain>Animal</thinkTreeMain>
+            <intelligence>Animal</intelligence>
+            <makesFootprints>true</makesFootprints>
+            <body>Human</body>
+            <baseHungerRate>0</baseHungerRate>
+            <baseBodySize>10.0</baseBodySize>
+            <baseHealthScale>20.0</baseHealthScale>
+
+            <foodType>None</foodType>
+            <predator>false</predator>
+            <trainability>None</trainability>
+            <lifeExpectancy>2000</lifeExpectancy>
+            <manhunterOnDamageChance>1</manhunterOnDamageChance>
+            <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
+
+            <renderTree>Misc</renderTree>
+            <fleshType>Mechanoid</fleshType>
+
+            <lifeStageAges>
+                <li>
+                    <def>AnimalBaby</def>
+                    <minAge>0</minAge>
+                </li>
+                <li>
+                    <def>AnimalJuvenile</def>
+                    <minAge>0.15</minAge>
+                </li>
+                <li>
+                    <def>AnimalAdult</def>
+                    <minAge>0.3</minAge>
+                </li>
+            </lifeStageAges>
+
+            <soundMeleeDodge>Pawn_MeleeDodge</soundMeleeDodge>
+
+            <headPosPerRotation>
+                <li>(0.0, 0, 0.3)</li>
+                <li>(0.32, 0, 0.08)</li>
+                <li>(0.0, 0, -0.21)</li>
+                <li>(-0.32, 0, 0.08)</li>
+            </headPosPerRotation>
+        </race>
+
+        <tools>
+            <li>
+                <label>left fist</label>
+                <labelNoLocation>fist</labelNoLocation>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>100</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+            </li>
+            <li>
+                <label>right fist</label>
+                <labelNoLocation>fist</labelNoLocation>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>100</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+            </li>
+            <li>
+                <label>head</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>80</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+                <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+                <chanceFactor>0.2</chanceFactor>
+            </li>
+        </tools>
+
+        <butcherProducts>
+            <lotr_MagmaGiantCore>1</lotr_MagmaGiantCore>
+        </butcherProducts>
+
+    </ThingDef>
+
+    <PawnKindDef>
+    
+        <defName>lotr_MagmaGiant</defName>
+        <label>Magma Giant</label>
+        <race>lotr_MagmaGiantRace</race>
+        <combatPower>3000</combatPower>
+        <ecoSystemWeight>1.0</ecoSystemWeight>
+
+        <initialWillRange>1000~1200</initialWillRange>
+        <initialResistanceRange>1200~1900</initialResistanceRange>
+        
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/MagmaGiant/MagmaGiant</texPath>
+                    <drawSize>10.0</drawSize>
+                    <drawOffset>(0,10,0)</drawOffset>
+                </bodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/MagmaGiant/MagmaGiant</texPath>
+                    <drawSize>15.0</drawSize>
+                    <drawOffset>(0,10,0)</drawOffset>
+                    <shadowData>
+                        <volume>(0.5, 0.6, 0.5)</volume>
+                        <offset>(0,0,-0.3)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/MagmaGiant/MagmaGiant</texPath>
+                    <drawSize>20.0</drawSize>
+                    <drawOffset>(0,10,0)</drawOffset>
+                </bodyGraphicData>
+            </li>
+        </lifeStages>
+
+    </PawnKindDef>
+
+</Defs>

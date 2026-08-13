@@ -20,6 +20,10 @@
             <Flammability>0.1</Flammability>
             <ToxicResistance>1</ToxicResistance>
             <ToxicEnvironmentResistance>0.8</ToxicEnvironmentResistance>
+            <IncomingDamageFactor>0.80</IncomingDamageFactor> 
+            <InjuryHealingFactor>2.0</InjuryHealingFactor>
+            <MeleeHitChance>10</MeleeHitChance>
+            <MeleeDodgeChance>10</MeleeDodgeChance>
         </statBases>
 
         <race>
