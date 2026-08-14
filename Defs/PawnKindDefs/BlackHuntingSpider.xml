@@ -17,6 +17,9 @@
             <ArmorRating_Heat>0.90</ArmorRating_Heat>
             <Wildness>1</Wildness>
 
+            <MeatAmount>0</MeatAmount>
+            <LeatherAmount>0</LeatherAmount>
+
             <Flammability>0.1</Flammability>
             <ToxicResistance>1</ToxicResistance>
             <ToxicEnvironmentResistance>0.8</ToxicEnvironmentResistance>
@@ -36,8 +39,6 @@
             <thinkTreeConstant>InsectConstant</thinkTreeConstant>
             <fleshType>Insectoid</fleshType>
             <bloodDef>Filth_BloodInsect</bloodDef>
-            <meatColor>(160,168,139)</meatColor>
-            <meatMarketValue>0.5</meatMarketValue>
             
             <foodType>OmnivoreRoughAnimal</foodType>
             <predator>true</predator>
@@ -103,6 +104,7 @@
 
         <butcherProducts>
             <lotr_BlackHuntingSpiderEyes>1</lotr_BlackHuntingSpiderEyes>
+            <lotr_MysticalComponents>1</lotr_MysticalComponents>
         </butcherProducts>
 
     </ThingDef>

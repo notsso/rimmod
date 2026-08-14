@@ -17,6 +17,9 @@
             <ArmorRating_Heat>0.30</ArmorRating_Heat>
             <Wildness>1</Wildness>
 
+            <MeatAmount>0</MeatAmount>
+            <LeatherAmount>0</LeatherAmount>
+
             <MaxFlightTime>5</MaxFlightTime>
             <FlightCooldown>5</FlightCooldown>
         </statBases>
@@ -107,6 +110,7 @@
 
         <butcherProducts>
             <lotr_CuspidsParrotTongue>1</lotr_CuspidsParrotTongue>
+            <lotr_MysticalComponents>1</lotr_MysticalComponents>
         </butcherProducts>
 
     </ThingDef>

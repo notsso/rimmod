@@ -17,6 +17,9 @@
             <ArmorRating_Heat>0.80</ArmorRating_Heat>
             <Wildness>1</Wildness>
 
+            <MeatAmount>0</MeatAmount>
+            <LeatherAmount>0</LeatherAmount>
+
             <Flammability>0</Flammability>
             <ToxicResistance>1</ToxicResistance>
             <ToxicEnvironmentResistance>0.95</ToxicEnvironmentResistance>
@@ -45,8 +48,6 @@
 
             <isImmuneToInfections>true</isImmuneToInfections>
             <bleedRateFactor>0</bleedRateFactor>
-
-            <deathAction />
 
             <lifeStageAges>
                 <li>
@@ -90,6 +91,7 @@
 
         <butcherProducts>
             <lotr_FireSalamanderGland>1</lotr_FireSalamanderGland>
+            <lotr_MysticalComponents>1</lotr_MysticalComponents>
         </butcherProducts>
 
         <comps>

@@ -17,6 +17,9 @@
             <ArmorRating_Heat>0.80</ArmorRating_Heat>
             <Wildness>1</Wildness> 
 
+            <MeatAmount>0</MeatAmount>
+            <LeatherAmount>0</LeatherAmount>
+
             <Flammability>0.1</Flammability>
             <ToxicResistance>1</ToxicResistance>
             <ToxicEnvironmentResistance>0.8</ToxicEnvironmentResistance>
@@ -35,9 +38,7 @@
             <lifeExpectancy>150</lifeExpectancy>
             <manhunterOnDamageChance>1</manhunterOnDamageChance>
             <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
-            
-            <leatherDef>Leather_Panthera</leatherDef>
-            <meatDef>Meat_Pig</meatDef>
+
             <herdAnimal>false</herdAnimal>
 
             <lifeStageAges>
@@ -140,6 +141,7 @@
 
         <butcherProducts>
             <lotr_SphinxBrain>1</lotr_SphinxBrain>
+            <lotr_MysticalComponents>1</lotr_MysticalComponents>
         </butcherProducts>
 
     </ThingDef>

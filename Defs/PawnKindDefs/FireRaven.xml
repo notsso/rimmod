@@ -17,6 +17,9 @@
             <ArmorRating_Heat>2.00</ArmorRating_Heat>
             <Wildness>0</Wildness>
 
+            <MeatAmount>0</MeatAmount>
+            <LeatherAmount>0</LeatherAmount>
+
             <MaxFlightTime>1000</MaxFlightTime>
             <FlightCooldown>0</FlightCooldown>
         </statBases>

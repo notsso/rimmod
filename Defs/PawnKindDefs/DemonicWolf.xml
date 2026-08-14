@@ -17,6 +17,9 @@
             <ArmorRating_Heat>0.90</ArmorRating_Heat>
             <Wildness>1</Wildness> 
 
+            <MeatAmount>0</MeatAmount>
+            <LeatherAmount>0</LeatherAmount>
+
             <Flammability>0</Flammability>
             <ToxicResistance>1</ToxicResistance>
             <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
@@ -40,8 +43,6 @@
             <manhunterOnDamageChance>1</manhunterOnDamageChance>
             <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
             
-            <leatherDef>Leather_Wolf</leatherDef>
-            <meatDef>Meat_Pig</meatDef>
             <herdAnimal>false</herdAnimal>
 
             <litterSizeCurve>
@@ -155,6 +156,7 @@
 
         <butcherProducts>
             <lotr_DemonicWolfClaws>1</lotr_DemonicWolfClaws>
+            <lotr_MysticalComponents>2</lotr_MysticalComponents>
         </butcherProducts>
 
     </ThingDef>

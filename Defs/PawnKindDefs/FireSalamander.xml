@@ -17,6 +17,9 @@
             <ArmorRating_Heat>0.80</ArmorRating_Heat>
             <Wildness>1</Wildness>
 
+            <MeatAmount>0</MeatAmount>
+            <LeatherAmount>0</LeatherAmount>
+
             <Flammability>0</Flammability>
             <ToxicEnvironmentResistance>0.95</ToxicEnvironmentResistance>
         </statBases>
@@ -35,7 +38,6 @@
             <manhunterOnDamageChance>1</manhunterOnDamageChance>
             <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
 
-            <leatherDef>Leather_Lizard</leatherDef>
             <soundEating>Reptile_Eat</soundEating>
 
             <lifeStageAges>
@@ -114,6 +116,7 @@
 
         <butcherProducts>
             <lotr_FireSalamanderGland>1</lotr_FireSalamanderGland>
+            <lotr_MysticalComponents>1</lotr_MysticalComponents>
         </butcherProducts>
 
     </ThingDef>

@@ -10,4 +10,28 @@
         <iconPath>UI/Icons/ThingCategories/BeyonderPotions</iconPath>
     </ThingCategoryDef>
 
+    <ThingCategoryDef>
+        <defName>BeyonderCreatureParts</defName>
+        <label>parts of beyonder creatures</label>
+        <parent>Manufactured</parent>
+        <resourceReadoutRoot>false</resourceReadoutRoot>
+        <iconPath>Placeholder</iconPath>
+    </ThingCategoryDef>
+
+    <ThingCategoryDef>
+        <defName>BeyonderPlantParts</defName>
+        <label>parts of beyonder plant</label>
+        <parent>Manufactured</parent>
+        <resourceReadoutRoot>false</resourceReadoutRoot>
+        <iconPath>Placeholder</iconPath>
+    </ThingCategoryDef>
+
+    <ThingCategoryDef>
+        <defName>SpecialBeyonderItem</defName>
+        <label>special beyonder item</label>
+        <parent>Manufactured</parent>
+        <resourceReadoutRoot>false</resourceReadoutRoot>
+        <iconPath>Placeholder</iconPath>
+    </ThingCategoryDef>
+
 </Defs>

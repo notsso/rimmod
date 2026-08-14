@@ -17,6 +17,9 @@
             <ArmorRating_Heat>0.80</ArmorRating_Heat>
             <Wildness>1</Wildness> 
 
+            <MeatAmount>0</MeatAmount>
+            <LeatherAmount>0</LeatherAmount>
+
             <Flammability>0</Flammability>
             <ToxicResistance>1</ToxicResistance>
             <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
@@ -104,6 +107,7 @@
         </tools>
 
         <comps>
+            <li Class="lotr.CompProperties_DeathVanish" />
             <li Class="lotr.CompProperties_MovingGlower">
                 <glowRadius>3</glowRadius>
                 <glowColor>(200, 200, 200, 0)</glowColor>
