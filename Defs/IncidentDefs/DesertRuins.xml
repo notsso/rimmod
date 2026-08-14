@@ -49,6 +49,13 @@
         <genStep Class="lotr.GenStep_DesertRuins"/>
     </GenStepDef>
 
+    <!-- Генерация сфинкса -->
+    <GenStepDef>
+        <defName>Sphinx</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_Sphinx"/>
+    </GenStepDef>
+
     <!-- Основной генератор карты -->
     <MapGeneratorDef>
         <defName>DesertRuinsGenerator</defName>
@@ -59,6 +66,7 @@
             <li>FindPlayerStartSpot</li>
             <li>ScenParts</li>
             <li>DesertRuins</li>
+            <li>Sphinx</li>
             <li>Fog</li>
         </genSteps>
     </MapGeneratorDef>

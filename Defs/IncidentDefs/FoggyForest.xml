@@ -51,9 +51,9 @@
 
     <!-- Генерация волка -->
     <GenStepDef>
-        <defName>TemperateForestAnimals</defName>
+        <defName>DemonicWolf</defName>
         <order>1200</order>
-        <genStep Class="lotr.GenStep_TemperateForestAnimals"/>
+        <genStep Class="lotr.GenStep_DemonicWolf"/>
     </GenStepDef>
 
     <!-- Основной генератор карты -->
@@ -62,12 +62,12 @@
         <genSteps>
             <li>ElevationFertility</li>
             <li>MutatorPostElevationFertility</li>
-            <li>RocksFromGrid</li>              <!-- горы -->
+            <li>RocksFromGrid</li>
             <li>TemperateForestTerrain</li>
             <li>FindPlayerStartSpot</li>
             <li>ScenParts</li>
             <li>TemperateForestPlants</li>
-            <li>TemperateForestAnimals</li>
+            <li>DemonicWolf</li>
             <li>Fog</li>
         </genSteps>
     </MapGeneratorDef>

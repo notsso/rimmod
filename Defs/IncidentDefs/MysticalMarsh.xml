@@ -58,9 +58,9 @@
     </GenStepDef>
 
     <GenStepDef>
-        <defName>CentralSwampAnimals</defName>
+        <defName>MarshBoar</defName>
         <order>1200</order>
-        <genStep Class="lotr.GenStep_CentralSwampAnimals"/>
+        <genStep Class="lotr.GenStep_MarshBoar"/>
     </GenStepDef>
 
     <MapGeneratorDef>
@@ -74,7 +74,7 @@
             <li>FindPlayerStartSpot</li>
             <li>ScenParts</li>
             <li>CentralSwampPlants</li>
-            <li>CentralSwampAnimals</li>
+            <li>MarshBoar</li>
             <li>Fog</li>
         </genSteps>
     </MapGeneratorDef>

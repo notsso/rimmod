@@ -13,149 +13,52 @@ using RimWorld.Planet;
 using UnityEngine;
 
 namespace lotr {
-    // ===== Генерация террейна джунглей =====
     public class GenStep_JungleTerrain : GenStep {
         public override int SeedPart => 12351;
-
         public override void Generate(Map map, GenStepParams parms) {
-            TerrainDef soil = TerrainDef.Named("Soil");
-            TerrainDef mud = TerrainDef.Named("Mud");
-            TerrainDef marsh = TerrainDef.Named("Marsh");
-            TerrainDef water = TerrainDef.Named("WaterShallow");
+            var soil = TerrainDef.Named("Soil");
+            foreach (var cell in map.AllCells)
+                if (cell.InBounds(map)) map.terrainGrid.SetTerrain(cell, soil);
 
-            // 1. Заполняем всю карту обычной почвой
-            foreach (IntVec3 cell in map.AllCells) {
-                if (cell.InBounds(map))
-                    map.terrainGrid.SetTerrain(cell, soil);
-            }
+            float scale = Mathf.Clamp((map.Size.x * map.Size.z) / 62500f, 0.5f, 3f);
 
-            // 2. Масштабируем количество пятен от площади карты
-            float standardArea = 250f * 250f;
-            float currentArea = map.Size.x * map.Size.z;
-            float scaleFactor = Mathf.Clamp(currentArea / standardArea, 0.5f, 3f);
-
-            // Болотистые участки (Marsh)
-            int marshPatches = Mathf.RoundToInt(Rand.Range(15, 25) * scaleFactor);
-            for (int i = 0; i < marshPatches; i++) {
-                IntVec3 center = RandomCell(map);
-                int radius = Rand.Range(4, 9);
-                foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, radius, true)) {
-                    if (cell.InBounds(map) && Rand.Value < 0.7f)
-                        map.terrainGrid.SetTerrain(cell, marsh);
-                }
-            }
-
-            // Грязевые пятна (Mud)
-            int mudPatches = Mathf.RoundToInt(Rand.Range(10, 18) * scaleFactor);
-            for (int i = 0; i < mudPatches; i++) {
-                IntVec3 center = RandomCell(map);
-                int radius = Rand.Range(3, 7);
-                foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, radius, true)) {
-                    if (cell.InBounds(map) && Rand.Value < 0.65f)
-                        map.terrainGrid.SetTerrain(cell, mud);
-                }
-            }
-
-            // Небольшие лужи (WaterShallow)
-            int waterPatches = Mathf.RoundToInt(Rand.Range(8, 15) * scaleFactor);
-            for (int i = 0; i < waterPatches; i++) {
-                IntVec3 center = RandomCell(map);
-                int radius = Rand.Range(2, 5);
-                foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, radius, true)) {
-                    if (cell.InBounds(map) && Rand.Value < 0.8f)
-                        map.terrainGrid.SetTerrain(cell, water);
-                }
-            }
-        }
-
-        private IntVec3 RandomCell(Map map) {
-            return new IntVec3(Rand.Range(0, map.Size.x), 0, Rand.Range(0, map.Size.z));
+            GenStepUtility.GenerateTerrainPatches(map, TerrainDef.Named("Marsh"), Mathf.RoundToInt(Rand.Range(15, 25) * scale), new IntRange(4, 9), 0.7f);
+            GenStepUtility.GenerateTerrainPatches(map, TerrainDef.Named("Mud"), Mathf.RoundToInt(Rand.Range(10, 18) * scale), new IntRange(3, 7), 0.65f);
+            GenStepUtility.GenerateTerrainPatches(map, TerrainDef.Named("WaterShallow"), Mathf.RoundToInt(Rand.Range(8, 15) * scale), new IntRange(2, 5), 0.8f);
         }
     }
 
-    // ===== Генерация растительности =====
     public class GenStep_JunglePlants : GenStep {
         public override int SeedPart => 12352;
 
-        private struct PlantConfig {
-            public ThingDef def;
-            public float chance;
-            public FloatRange growthRange;
-            public int weight;
-        }
-
         public override void Generate(Map map, GenStepParams parms) {
-            // Деревья с относительными весами (не шансами, а весами для выбора)
-            var trees = new List<PlantConfig>{
-                new PlantConfig { def = ThingDef.Named("Plant_TreePalm"), weight = 30, growthRange = new FloatRange(0.7f, 1.0f) },
-                new PlantConfig { def = ThingDef.Named("Plant_TreeBamboo"), weight = 25, growthRange = new FloatRange(0.7f, 1.0f) },
-                new PlantConfig { def = ThingDef.Named("Plant_TreeCecropia"), weight = 20, growthRange = new FloatRange(0.6f, 0.9f) },
-                new PlantConfig { def = ThingDef.Named("Plant_TreeTeak"), weight = 15, growthRange = new FloatRange(0.6f, 0.9f) },
-                new PlantConfig { def = ThingDef.Named("Plant_TreeWillow"), weight = 10, growthRange = new FloatRange(0.5f, 0.8f) },
+            var trees = new List<GenStepUtility.PlantWeightConfig>{
+                new GenStepUtility.PlantWeightConfig { def = ThingDef.Named("Plant_TreePalm"), weight = 30, growthRange = new FloatRange(0.7f, 1.0f) },
+                new GenStepUtility.PlantWeightConfig { def = ThingDef.Named("Plant_TreeBamboo"), weight = 25, growthRange = new FloatRange(0.7f, 1.0f) },
+                new GenStepUtility.PlantWeightConfig { def = ThingDef.Named("Plant_TreeCecropia"), weight = 20, growthRange = new FloatRange(0.6f, 0.9f) },
+                new GenStepUtility.PlantWeightConfig { def = ThingDef.Named("Plant_TreeTeak"), weight = 15, growthRange = new FloatRange(0.6f, 0.9f) },
+                new GenStepUtility.PlantWeightConfig { def = ThingDef.Named("Plant_TreeWillow"), weight = 10, growthRange = new FloatRange(0.5f, 0.8f) },
             };
 
-            // Кусты и наземные растения (можно оставить прежними, но также с весами)
-            var bushes = new List<PlantConfig>{
-                new PlantConfig { def = ThingDef.Named("Plant_Alocasia"), weight = 30, growthRange = new FloatRange(0.6f, 1.0f) },
-                new PlantConfig { def = ThingDef.Named("Plant_Clivia"), weight = 15, growthRange = new FloatRange(0.6f, 1.0f) },
-                new PlantConfig { def = ThingDef.Named("Plant_Rafflesia"), weight = 5, growthRange = new FloatRange(0.5f, 0.8f) },
-                new PlantConfig { def = ThingDef.Named("Plant_Bush"), weight = 30, growthRange = new FloatRange(0.5f, 0.9f) },
-                new PlantConfig { def = ThingDef.Named("Plant_Chokevine"), weight = 10, growthRange = new FloatRange(0.5f, 0.8f) },
+            var bushes = new List<GenStepUtility.PlantWeightConfig>{
+                new GenStepUtility.PlantWeightConfig { def = ThingDef.Named("Plant_Alocasia"), weight = 30, growthRange = new FloatRange(0.6f, 1.0f) },
+                new GenStepUtility.PlantWeightConfig { def = ThingDef.Named("Plant_Clivia"), weight = 15, growthRange = new FloatRange(0.6f, 1.0f) },
+                new GenStepUtility.PlantWeightConfig { def = ThingDef.Named("Plant_Rafflesia"), weight = 5, growthRange = new FloatRange(0.5f, 0.8f) },
+                new GenStepUtility.PlantWeightConfig { def = ThingDef.Named("Plant_Bush"), weight = 30, growthRange = new FloatRange(0.5f, 0.9f) },
+                new GenStepUtility.PlantWeightConfig { def = ThingDef.Named("Plant_Chokevine"), weight = 10, growthRange = new FloatRange(0.5f, 0.8f) },
             };
 
-            var ground = new List<PlantConfig>{
-                new PlantConfig { def = ThingDef.Named("Plant_Grass"), weight = 60, growthRange = new FloatRange(0.7f, 1.0f) },
-                new PlantConfig { def = ThingDef.Named("Plant_TallGrass"), weight = 40, growthRange = new FloatRange(0.7f, 1.0f) },
+            var ground = new List<GenStepUtility.PlantWeightConfig>{
+                new GenStepUtility.PlantWeightConfig { def = ThingDef.Named("Plant_Grass"), weight = 60, growthRange = new FloatRange(0.7f, 1.0f) },
+                new GenStepUtility.PlantWeightConfig { def = ThingDef.Named("Plant_TallGrass"), weight = 40, growthRange = new FloatRange(0.7f, 1.0f) },
             };
 
-            // Общая вероятность появления дерева на клетке (можно настроить, например 0.25 = 25% клеток с деревьями)
-            float treeDensity = 0.25f;
-            // Общая вероятность появления куста на клетке (если дерева нет)
-            float bushDensity = 0.30f;
-            // Общая вероятность появления наземного растения (если дерева и куста нет)
-            float groundDensity = 0.45f;
-
-            foreach (IntVec3 cell in map.AllCells) {
-                TerrainDef terrain = map.terrainGrid.TerrainAt(cell);
-                if (terrain == TerrainDef.Named("WaterShallow")) continue;
-                if (terrain == TerrainDef.Named("Mud")) continue; // на грязи не растёт
-
-                PlantConfig? selected = null;
-
-                // 1. Пытаемся посадить дерево
-                if (Rand.Value < treeDensity) {
-                    selected = PickWeighted(trees);
-                }
-                // 2. Если дерева нет, пробуем куст
-                else if (Rand.Value < bushDensity) {
-                    selected = PickWeighted(bushes);
-                }
-                // 3. Иначе наземное растение
-                else if (Rand.Value < groundDensity) {
-                    selected = PickWeighted(ground);
-                }
-
-                if (selected.HasValue && PlantUtility.CanEverPlantAt(selected.Value.def, cell, map)) {
-                    Plant plant = (Plant)GenSpawn.Spawn(selected.Value.def, cell, map);
-                    plant.Growth = selected.Value.growthRange.RandomInRange;
-                }
-            }
-        }
-
-        // Вспомогательный метод для выбора с весами
-        private PlantConfig PickWeighted(List<PlantConfig> list) {
-            float totalWeight = list.Sum(c => c.weight);
-            float rand = Rand.Value * totalWeight;
-            foreach (var config in list) {
-                if (rand < config.weight)
-                    return config;
-                rand -= config.weight;
-            }
-            return list.Last();
+            GenStepUtility.SpawnWeightedPlants(map, trees, 0.25f);
+            GenStepUtility.SpawnWeightedPlants(map, bushes, 0.30f);
+            GenStepUtility.SpawnWeightedPlants(map, ground, 0.45f);
         }
     }
 
-    // ===== Генерация домика и охотника =====
     public class GenStep_JungleCabin : GenStep {
         public override int SeedPart => 12353;
 
@@ -225,23 +128,6 @@ namespace lotr {
                 Thing torch = ThingMaker.MakeThing(torchDef);
                 GenSpawn.Spawn(torch, torchPos, map);
             }
-
-            // Спавним охотника в центре
-            PawnKindDef hunterKind = PawnKindDef.Named("lotr_ForestHunter");
-            if (hunterKind != null) {
-                IntVec3 hunterPos = center;
-                if (!hunterPos.InBounds(map)) hunterPos = cabinRect.CenterCell;
-                Pawn hunter = PawnGenerator.GeneratePawn(hunterKind, null);
-                StartPermanentManhunter(hunter);
-                GenSpawn.Spawn(hunter, hunterPos, map);
-            }
-        }
-
-        private void StartPermanentManhunter(Pawn pawn) {
-            if (pawn?.mindState?.mentalStateHandler == null) return;
-            MentalStateDef manhunter = DefDatabase<MentalStateDef>.GetNamed("Manhunter");
-            if (manhunter == null) return;
-            pawn.mindState.mentalStateHandler.TryStartMentalState(manhunter, null, true);
         }
     }
 }

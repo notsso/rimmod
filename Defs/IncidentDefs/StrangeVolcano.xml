@@ -57,9 +57,9 @@
     </GenStepDef>
 
     <GenStepDef>
-        <defName>CentralVolcanicAnimals</defName>
+        <defName>MagmaElf</defName>
         <order>1200</order>
-        <genStep Class="lotr.GenStep_CentralVolcanicAnimals"/>
+        <genStep Class="lotr.GenStep_MagmaElf"/>
     </GenStepDef>
 
     <!-- Основной генератор карты -->
@@ -68,13 +68,13 @@
         <genSteps>
             <li>ElevationFertility</li>
             <li>MutatorPostElevationFertility</li>
-            <li>RocksFromGrid</li>            <!-- создаёт горы и каменные породы -->
-            <li>VolcanicTerrain</li>          <!-- заливает открытые участки камнем, добавляет лавовые озёра -->
-            <li>VolcanicLair</li>             <!-- формирует логово в центре -->
-            <li>VolcanicRockChunks</li>       <!-- много каменных обломков -->
+            <li>RocksFromGrid</li>
+            <li>VolcanicTerrain</li>
+            <li>VolcanicLair</li>
+            <li>VolcanicRockChunks</li>
             <li>FindPlayerStartSpot</li>
             <li>ScenParts</li>
-            <li>CentralVolcanicAnimals</li>
+            <li>MagmaElf</li>
             <li>Fog</li>
         </genSteps>
     </MapGeneratorDef>

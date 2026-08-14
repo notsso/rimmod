@@ -11,72 +11,13 @@ using UnityEngine;
 namespace lotr {
     public class GenStep_VolcanicTerrain : GenStep {
         public override int SeedPart => 12349;
-
         public override void Generate(Map map, GenStepParams parms) {
-            TerrainDef granite = TerrainDef.Named("FlagstoneGranite");
-            TerrainDef water = TerrainDef.Named("WaterShallow"); // лава пока вода
-            TerrainDef gravel = TerrainDef.Named("Gravel");
+            var granite = TerrainDef.Named("FlagstoneGranite");
+            foreach (var cell in map.AllCells)
+                if (cell.InBounds(map)) map.terrainGrid.SetTerrain(cell, granite);
 
-            // 1. Заменяем все открытые клетки на камень, оставляя горные породы и существующую воду
-            foreach (IntVec3 cell in map.AllCells) {
-                if (!cell.InBounds(map)) continue;
-                map.terrainGrid.SetTerrain(cell, granite);
-            }
-
-            // 2. Лавовые озёра (пока вода)
-            int waterPatches = Rand.Range(10, 20);
-            for (int i = 0; i < waterPatches; i++) {
-                IntVec3 center = RandomCell(map);
-                int radius = Rand.Range(4, 10);
-                foreach (IntVec3 c in GenRadial.RadialCellsAround(center, radius, true)) {
-                    if (c.InBounds(map) && Rand.Value < 0.8f)
-                        map.terrainGrid.SetTerrain(c, water);
-                }
-            }
-
-            // 3. Пятна гравия для разнообразия
-            int gravelPatches = Rand.Range(15, 25);
-            for (int i = 0; i < gravelPatches; i++) {
-                IntVec3 center = RandomCell(map);
-                int radius = Rand.Range(3, 8);
-                foreach (IntVec3 c in GenRadial.RadialCellsAround(center, radius, true)) {
-                    if (c.InBounds(map) && Rand.Value < 0.7f)
-                        map.terrainGrid.SetTerrain(c, gravel);
-                }
-            }
-        }
-
-        private IntVec3 RandomCell(Map map) {
-            return new IntVec3(Rand.Range(0, map.Size.x), 0, Rand.Range(0, map.Size.z));
-        }
-    }
-
-    public class GenStep_CentralVolcanicAnimals : GenStep {
-        public override int SeedPart => 12347;
-
-        public override void Generate(Map map, GenStepParams parms) {
-            PawnKindDef pawnKind = PawnKindDef.Named("lotr_MagmaElf");
-            if (pawnKind == null) return;
-
-            int count = Rand.Range(2, 5);
-            for (int i = 0; i < count; i++) {
-                IntVec3 cell = map.Center + new IntVec3(Rand.Range(-25, 25), 0, Rand.Range(-25, 25));
-                if (!cell.InBounds(map)) continue;
-                Pawn pawn = PawnGenerator.GeneratePawn(pawnKind, null);
-
-                StartPermanentManhunter(pawn);
-
-                GenSpawn.Spawn(pawn, cell, map);
-            }
-        }
-
-        public static void StartPermanentManhunter(Pawn pawn) {
-            if (pawn?.mindState?.mentalStateHandler == null) return;
-
-            MentalStateDef manhunter = DefDatabase<MentalStateDef>.GetNamed("Manhunter");
-            if (manhunter == null) return;
-
-            pawn.mindState.mentalStateHandler.TryStartMentalState(manhunter, null, true);
+            GenStepUtility.GenerateTerrainPatches(map, TerrainDef.Named("WaterShallow"), Rand.Range(10, 20), new IntRange(4, 10), 0.8f);
+            GenStepUtility.GenerateTerrainPatches(map, TerrainDef.Named("Gravel"), Rand.Range(15, 25), new IntRange(3, 8), 0.7f);
         }
     }
 

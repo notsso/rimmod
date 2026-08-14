@@ -13,6 +13,10 @@ using RimWorld.Planet;
 using UnityEngine;
 
 namespace lotr {
+    public class IncidentWorker_MysticalMarsh : IncidentWorker_WorldSiteBase {
+        protected override SitePartDef GetSitePartDef() => DefDatabase<SitePartDef>.GetNamed("MysticalMarsh_Site");
+        protected override WorldObjectDef GetWorldObjectDef() => DefDatabase<WorldObjectDef>.GetNamed("MysticalMarsh_World");
+    }
 
     public class SitePartWorker_MysticalMarsh : SitePartWorker {
         public override void PostMapGenerate(Map map) {
@@ -29,51 +33,6 @@ namespace lotr {
 
             map.components.Add(spawner);
             map.weatherManager.TransitionTo(WeatherDefOf.FoggyRain);
-        }
-    }
-
-    public class IncidentWorker_MysticalMarsh : IncidentWorker {
-        protected override bool CanFireNowSub(IncidentParms parms) {
-            if (!(parms.target is World)) return false;
-            return base.CanFireNowSub(parms);
-        }
-
-        protected override bool TryExecuteWorker(IncidentParms parms) {
-            World world = parms.target as World;
-            if (world == null) return false;
-
-            SitePartDef sitePart = DefDatabase<SitePartDef>.GetNamed("MysticalMarsh_Site");
-            if (sitePart == null) return false;
-
-            int tile = Find.WorldSelector.SelectedTile;
-            if (tile < 0 || !Find.WorldGrid.InBounds(tile)) {
-                Log.Error("Select a tile on the world map before running this incident.");
-                return false;
-            }
-
-            float threatPoints = parms.points > 0f ? parms.points : 100f;
-
-            WorldObjectDef siteObjectDef = DefDatabase<WorldObjectDef>.GetNamed("MysticalMarsh_World");
-            Site site = (Site)WorldObjectMaker.MakeWorldObject(siteObjectDef);
-            site.Tile = tile;
-
-            site.SetFaction(null);
-
-            SitePartParams partParams = new SitePartParams { threatPoints = threatPoints };
-            SitePart part = new SitePart(site, sitePart, partParams);
-            site.AddPart(part);
-
-            Find.WorldObjects.Add(site);
-
-            Log.Message($"Site created with {site.parts.Count} parts. Main part def: {site.MainSitePartDef?.defName}");
-
-            var timedRaids = site.GetComponent<TimedDetectionRaids>();
-            if (timedRaids != null)
-                timedRaids.ResetCountdown();
-
-            CameraJumper.TryJump(site);
-            SendStandardLetter(parms, site);
-            return true;
         }
     }
 

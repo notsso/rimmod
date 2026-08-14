@@ -49,6 +49,13 @@
         <genStep Class="lotr.GenStep_JunglePlants"/>
     </GenStepDef>
 
+    <!-- Генерация растительности -->
+    <GenStepDef>
+        <defName>ForestHunter</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_ForestHunter"/>
+    </GenStepDef>
+
     <!-- Генерация домика -->
     <GenStepDef>
         <defName>JungleCabin</defName>
@@ -67,6 +74,7 @@
             <li>ScenParts</li>
             <li>JunglePlants</li>
             <li>JungleCabin</li>
+            <li>ForestHunter</li>
             <li>Fog</li>
         </genSteps>
     </MapGeneratorDef>

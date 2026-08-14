@@ -13,49 +13,11 @@ using RimWorld.Planet;
 using UnityEngine;
 
 namespace lotr {
-    // ===== Инцидент =====
-    public class IncidentWorker_TemperateForest : IncidentWorker {
-        protected override bool CanFireNowSub(IncidentParms parms) {
-            if (!(parms.target is World)) return false;
-            return base.CanFireNowSub(parms);
-        }
-
-        protected override bool TryExecuteWorker(IncidentParms parms) {
-            World world = parms.target as World;
-            if (world == null) return false;
-
-            SitePartDef sitePart = DefDatabase<SitePartDef>.GetNamed("TemperateForest_Site");
-            if (sitePart == null) return false;
-
-            int tile = Find.WorldSelector.SelectedTile;
-            if (tile < 0 || !Find.WorldGrid.InBounds(tile)) {
-                Log.Error("Select a tile on the world map before running this incident.");
-                return false;
-            }
-
-            float threatPoints = parms.points > 0f ? parms.points : 100f;
-
-            WorldObjectDef siteObjectDef = DefDatabase<WorldObjectDef>.GetNamed("TemperateForest_World");
-            Site site = (Site)WorldObjectMaker.MakeWorldObject(siteObjectDef);
-            site.Tile = tile;
-            site.SetFaction(null);
-
-            SitePartParams partParams = new SitePartParams { threatPoints = threatPoints };
-            SitePart part = new SitePart(site, sitePart, partParams);
-            site.AddPart(part);
-
-            Find.WorldObjects.Add(site);
-
-            var timedRaids = site.GetComponent<TimedDetectionRaids>();
-            if (timedRaids != null) timedRaids.ResetCountdown();
-
-            CameraJumper.TryJump(site);
-            SendStandardLetter(parms, site);
-            return true;
-        }
+    public class IncidentWorker_TemperateForest : IncidentWorker_WorldSiteBase {
+        protected override SitePartDef GetSitePartDef() => DefDatabase<SitePartDef>.GetNamed("TemperateForest_Site");
+        protected override WorldObjectDef GetWorldObjectDef() => DefDatabase<WorldObjectDef>.GetNamed("TemperateForest_World");
     }
 
-    // ===== SitePartWorker: установка тумана =====
     public class SitePartWorker_TemperateForest : SitePartWorker {
         public override void PostMapGenerate(Map map) {
             if (map.IsPlayerHome) return;
