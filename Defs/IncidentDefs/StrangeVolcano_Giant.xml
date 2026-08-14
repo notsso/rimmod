@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект -->
+    <WorldObjectDef ParentName="Site">
+        <defName>MagmaGiantVolcano_World</defName>
+        <label>volcanic lair of the magma giant</label>
+        <description>A dormant volcano inhabited by a mighty magma giant.</description>
+        <mapGenerator>MagmaGiantVolcanoGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>MagmaGiantVolcano_Site</defName>
+        <label>magma giant volcano</label>
+        <description>A volcanic area guarded by a magma giant.</description>
+        <workerClass>lotr.SitePartWorker_MagmaGiantVolcano</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>MagmaGiantVolcano_Incident</defName>
+        <label>magma giant volcano</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_MagmaGiantVolcano</workerClass>
+        <category>Misc</category>
+        <earliestDay>10</earliestDay>
+        <letterLabel>Magma giant volcano</letterLabel>
+        <letterText>A volcano has become active. At its heart, a magma giant stirs.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация гиганта -->
+    <GenStepDef>
+        <defName>MagmaGiant</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_MagmaGiant"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты (переиспользуем вулканический ландшафт) -->
+    <MapGeneratorDef>
+        <defName>MagmaGiantVolcanoGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>RocksFromGrid</li>
+            <li>VolcanicTerrain</li>
+            <li>VolcanicLair</li>
+            <li>VolcanicRockChunks</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>MagmaGiant</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>
