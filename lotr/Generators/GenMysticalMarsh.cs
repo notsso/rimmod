@@ -23,40 +23,49 @@ namespace lotr {
             TerrainDef mud = TerrainDef.Named("Mud");
             TerrainDef water = TerrainDef.Named("WaterShallow");
 
-            // База – обычная почва (Soil)
+            // 1. Заливаем всю карту обычной почвой
             foreach (IntVec3 cell in map.AllCells) {
                 if (cell.InBounds(map))
                     map.terrainGrid.SetTerrain(cell, soil);
             }
 
-            // Круги Marshy soil (Marsh) – больше и чаще
-            int marshPatches = Rand.Range(25, 40);          // было 12-18
+            // 2. Вычисляем коэффициент масштабирования площади
+            // Стандартный размер карты: 250x250 = 62500 клеток
+            float standardArea = 50f * 50f;
+            float currentArea = map.Size.x * map.Size.z;
+            float scaleFactor = currentArea / standardArea;
+
+            // Ограничиваем коэффициент разумными пределами (0.5x - 3x)
+            scaleFactor = Mathf.Clamp(scaleFactor, 0.5f, 3f);
+
+            // 3. Генерация болотных пятен (Marsh)
+            int marshPatches = Mathf.RoundToInt(Rand.Range(25, 40) * scaleFactor);
             for (int i = 0; i < marshPatches; i++) {
                 IntVec3 center = RandomCell(map);
-                int radius = Rand.Range(6, 14);            // было 4-8
+                int radius = Rand.Range(6, 14);
                 foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, radius, true)) {
-                    if (cell.InBounds(map) && Rand.Value < 0.75f) // чуть выше шанс
+                    if (cell.InBounds(map) && Rand.Value < 0.75f)
                         map.terrainGrid.SetTerrain(cell, marsh);
                 }
             }
 
-            // Круги Rich soil – тоже больше
-            int richPatches = Rand.Range(15, 25);           // было 8-14
+            // 4. Генерация плодородной почвы (Rich soil)
+            int richPatches = Mathf.RoundToInt(Rand.Range(15, 25) * scaleFactor);
             for (int i = 0; i < richPatches; i++) {
                 IntVec3 center = RandomCell(map);
-                int radius = Rand.Range(5, 10);            // было 3-6
+                int radius = Rand.Range(5, 10);
                 foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, radius, true)) {
                     if (cell.InBounds(map) && Rand.Value < 0.75f)
                         map.terrainGrid.SetTerrain(cell, richSoil);
                 }
             }
 
-            // Круги Mud с водой – тоже массивнее
-            int mudPatches = Rand.Range(20, 30);            // было 10-15
+            // 5. Генерация грязевых луж с водой (Mud + Water)
+            int mudPatches = Mathf.RoundToInt(Rand.Range(20, 30) * scaleFactor);
             for (int i = 0; i < mudPatches; i++) {
                 IntVec3 center = RandomCell(map);
-                int outerRadius = Rand.Range(8, 15);       // было 5-9
-                int waterRadius = Rand.Range(2, 4);        // было фиксировано 2
+                int outerRadius = Rand.Range(8, 15);
+                int waterRadius = Rand.Range(2, 4);
 
                 foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, outerRadius, true)) {
                     if (!cell.InBounds(map)) continue;
@@ -119,6 +128,9 @@ namespace lotr {
                 TerrainDef terrain = map.terrainGrid.TerrainAt(cell);
                 if (terrain == TerrainDef.Named("WaterShallow")) continue;
 
+                // Проверяем, нет ли уже растения
+                if (cell.GetFirstThing(map, ThingDef.Named("Plant_Grass")) != null) continue; // или более общая проверка
+
                 foreach (var config in undergrowth) {
                     if (Rand.Value < config.chance) {
                         if (PlantUtility.CanEverPlantAt(config.def, cell, map)) {
@@ -144,15 +156,71 @@ namespace lotr {
         public override int SeedPart => 12347;
 
         public override void Generate(Map map, GenStepParams parms) {
-            PawnKindDef boarKind = PawnKindDef.Named("lotr_MarshBoar");
-            if (boarKind == null) return;
+            PawnKindDef pawnKind = PawnKindDef.Named("lotr_MarshBoar");
+            if (pawnKind == null) return;
 
             int count = Rand.Range(2, 5); // 2,3,4
             for (int i = 0; i < count; i++) {
                 IntVec3 cell = map.Center + new IntVec3(Rand.Range(-25, 25), 0, Rand.Range(-25, 25));
                 if (!cell.InBounds(map)) continue;
-                Pawn boar = PawnGenerator.GeneratePawn(boarKind, Faction.OfAncients);
-                GenSpawn.Spawn(boar, cell, map);
+                Pawn pawn = PawnGenerator.GeneratePawn(pawnKind, null);
+
+                StartPermanentManhunter(pawn);
+
+                GenSpawn.Spawn(pawn, cell, map);
+            }
+        }
+
+        public static void StartPermanentManhunter(Pawn pawn) {
+            if (pawn?.mindState?.mentalStateHandler == null) return;
+
+            MentalStateDef manhunter = DefDatabase<MentalStateDef>.GetNamed("Manhunter");
+            if (manhunter == null) return;
+
+            pawn.mindState.mentalStateHandler.TryStartMentalState(manhunter, null, true);
+        }
+    }
+
+    public class GenStep_CentralSwampLair : GenStep {
+        public override int SeedPart => 12348;
+
+        // Параметры логова (можно вынести в XML, если захотите)
+        private const float LairSizeFraction = 0.15f; // доля от меньшей стороны карты
+        private const int MinLairRadius = 12;
+        private const int MaxLairRadius = 30;
+        private const float MarshRingFraction = 0.8f; // внешнее кольцо болота
+        private const float WaterPoolFraction = 0.3f; // центральная вода
+        private const float WaterChance = 0.7f;
+
+        public override void Generate(Map map, GenStepParams parms) {
+            IntVec3 center = map.Center;
+            int lairRadius = Mathf.Clamp(
+                Mathf.RoundToInt(Mathf.Min(map.Size.x, map.Size.z) * LairSizeFraction),
+                MinLairRadius,
+                MaxLairRadius
+            );
+
+            // Внешнее кольцо – болото (Marsh)
+            int marshRadius = lairRadius;
+            foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, marshRadius, true)) {
+                if (!cell.InBounds(map)) continue;
+                float dist = cell.DistanceTo(center);
+                if (dist > lairRadius * MarshRingFraction)
+                    map.terrainGrid.SetTerrain(cell, TerrainDef.Named("Marsh"));
+            }
+
+            // Основная часть – грязь (Mud)
+            int mudRadius = Mathf.RoundToInt(lairRadius * MarshRingFraction);
+            foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, mudRadius, true)) {
+                if (cell.InBounds(map))
+                    map.terrainGrid.SetTerrain(cell, TerrainDef.Named("MarshyTerrain"));
+            }
+
+            // Центральные лужи воды (WaterShallow)
+            int waterRadius = Mathf.Clamp(Mathf.RoundToInt(lairRadius * WaterPoolFraction), 2, 8);
+            foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, waterRadius, true)) {
+                if (cell.InBounds(map) && Rand.Value < WaterChance)
+                    map.terrainGrid.SetTerrain(cell, TerrainDef.Named("WaterShallow"));
             }
         }
     }

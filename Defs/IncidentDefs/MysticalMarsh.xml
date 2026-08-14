@@ -21,19 +21,13 @@
 
     </SitePartDef>
 
-    <QuestScriptDef>
-
-        <defName>Quest_MysticalMarsh</defName>
-
-    </QuestScriptDef>
-
     <IncidentDef>
 
         <defName>MysticalMarsh_Incident</defName>
         <label>Mystical marsh found</label>
         <baseChance>1.5</baseChance>
         <workerClass>lotr.IncidentWorker_MysticalMarsh</workerClass>
-        <category>ThreatBig</category>
+        <category>Misc</category>
         <earliestDay>5</earliestDay>
         <letterLabel>Mystical Swamp</letterLabel>
         <letterText>A strange mystical swamp has been spotted nearby. Rumors speak of a powerful creature guarding an ancient pathway secret.</letterText>
@@ -49,6 +43,12 @@
         <defName>CentralSwampTerrain</defName>
         <order>230</order>
         <genStep Class="lotr.GenStep_CentralSwampTerrain"/>
+    </GenStepDef>
+
+    <GenStepDef>
+        <defName>CentralSwampLair</defName>
+        <order>240</order> <!-- после обычного террейна -->
+        <genStep Class="lotr.GenStep_CentralSwampLair"/>
     </GenStepDef>
 
     <GenStepDef>
@@ -70,6 +70,7 @@
             <li>MutatorPostElevationFertility</li>
             <li>Terrain</li>
             <li>CentralSwampTerrain</li>
+            <li>CentralSwampLair</li>
             <li>FindPlayerStartSpot</li>
             <li>ScenParts</li>
             <li>CentralSwampPlants</li>

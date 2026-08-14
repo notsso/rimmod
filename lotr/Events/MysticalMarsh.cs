@@ -16,31 +16,25 @@ namespace lotr {
 
     public class SitePartWorker_MysticalMarsh : SitePartWorker {
         public override void PostMapGenerate(Map map) {
-            Log.Message($"PostMapGenerate: mystical swamp on {map.uniqueID}");
+            if (!(map.Parent is Site site)) return;
 
-            SitePart sitePart = map.ParentHolder as SitePart;
-            float threatPoints = sitePart?.parms.threatPoints ?? 0f;
+            var def = DefDatabase<SitePartDef>.GetNamed("MysticalMarsh_Site");
+            SitePart sitePart = site.parts.FirstOrDefault(p => p.def == def);
+            if (sitePart == null) return;
 
-            var spawner = new MapComponent_MarshSpawner(map);
-            var weather = new MapComponent_ForcedWeather(map);
+            float threatPoints = sitePart.parms.threatPoints;
 
+            var spawner = new MapComponent_PawnSpawner(map);
             spawner.Initialize(threatPoints);
 
             map.components.Add(spawner);
-            map.components.Add(weather);
+            map.weatherManager.TransitionTo(WeatherDefOf.FoggyRain);
         }
     }
 
     public class IncidentWorker_MysticalMarsh : IncidentWorker {
         protected override bool CanFireNowSub(IncidentParms parms) {
-            // Должна быть указана цель – мир (World)
-            if (!(parms.target is World))
-                return false;
-
-            // Дополнительные условия (например, минимальный день)
-            if (GenDate.DaysPassedSinceSettle < 5)
-                return false;
-
+            if (!(parms.target is World)) return false;
             return base.CanFireNowSub(parms);
         }
 
@@ -51,21 +45,19 @@ namespace lotr {
             SitePartDef sitePart = DefDatabase<SitePartDef>.GetNamed("MysticalMarsh_Site");
             if (sitePart == null) return false;
 
-            // Используем выбранную игроком клетку (удобно для тестов)
             int tile = Find.WorldSelector.SelectedTile;
             if (tile < 0 || !Find.WorldGrid.InBounds(tile)) {
                 Log.Error("Select a tile on the world map before running this incident.");
                 return false;
             }
 
-            float threatPoints = StorytellerUtility.DefaultThreatPointsNow(Find.World);
+            float threatPoints = parms.points > 0f ? parms.points : 100f;
 
             WorldObjectDef siteObjectDef = DefDatabase<WorldObjectDef>.GetNamed("MysticalMarsh_World");
             Site site = (Site)WorldObjectMaker.MakeWorldObject(siteObjectDef);
             site.Tile = tile;
 
-            Faction faction = Faction.OfAncients ?? Find.FactionManager.RandomEnemyFaction();
-            site.SetFaction(faction);
+            site.SetFaction(null);
 
             SitePartParams partParams = new SitePartParams { threatPoints = threatPoints };
             SitePart part = new SitePart(site, sitePart, partParams);
@@ -85,10 +77,12 @@ namespace lotr {
         }
     }
 
-    public class MapComponent_MarshSpawner : MapComponent {
+    public class MapComponent_PawnSpawner : MapComponent {
         private float threatPoints;
         private int ticksUntilNextSpawn;
         private bool initialized;
+        private PawnKindDef pawnKindDef;
+        public void SetPawnKind(PawnKindDef kind) => pawnKindDef = kind;
 
         private int SpawnInterval =>
             Mathf.RoundToInt(Mathf.Lerp(2500, 600, Mathf.Clamp01(threatPoints / 500f)));
@@ -96,38 +90,31 @@ namespace lotr {
         private int SpawnCount =>
             Mathf.RoundToInt(Mathf.Lerp(1, 4, Mathf.Clamp01(threatPoints / 500f)));
 
-        public MapComponent_MarshSpawner(Map map) : base(map) {
+        public MapComponent_PawnSpawner(Map map) : base(map) {
             ticksUntilNextSpawn = 2500;
+            pawnKindDef = LotrDefOf.lotr_Spirit;
         }
 
         public void Initialize(float points) {
             threatPoints = points;
             ticksUntilNextSpawn = SpawnInterval;
             initialized = true;
-            Log.Message($"MarshSpawner initialized: threatPoints={points}, interval={SpawnInterval}");
         }
 
         public override void MapComponentTick() {
-            if (!initialized) {
-                // Initialize(200);
-                return;
-            }
+            if (!initialized) return;
 
             ticksUntilNextSpawn--;
             if (ticksUntilNextSpawn <= 0) {
-                Log.Message($"MarshSpawner: Spawning boars. ThreatPoints={threatPoints}, Interval={SpawnInterval}, Count={SpawnCount}");
                 ticksUntilNextSpawn = SpawnInterval;
-                SpawnBoars();
+                SpawnPawns();
             }
         }
 
-        private void SpawnBoars() {
-
-            PawnKindDef boarKind = PawnKindDef.Named("lotr_MarshBoar");
-            if (boarKind == null) return;
+        private void SpawnPawns() {
+            if (pawnKindDef == null) return;
 
             IntVec3 center = map.Center;
-            Log.Message($"SpawnBoars on map: {map.uniqueID} ({map.Parent})");
             for (int i = 0; i < SpawnCount; i++) {
                 IntVec3 spawnPos;
                 int attempts = 10;
@@ -139,8 +126,17 @@ namespace lotr {
 
                 if (!spawnPos.InBounds(map)) continue;
 
-                Pawn boar = PawnGenerator.GeneratePawn(boarKind, Faction.OfAncients);
-                GenSpawn.Spawn(boar, spawnPos, map);
+                Pawn pawn = PawnGenerator.GeneratePawn(pawnKindDef, null);
+
+                // Делаем духа агрессивным (манхантер)
+                if (pawn.mindState?.mentalStateHandler != null) {
+                    MentalStateDef manhunter = DefDatabase<MentalStateDef>.GetNamed("Manhunter");
+                    if (manhunter != null) {
+                        pawn.mindState.mentalStateHandler.TryStartMentalState(manhunter);
+                    }
+                }
+
+                GenSpawn.Spawn(pawn, spawnPos, map);
             }
         }
 
@@ -149,22 +145,7 @@ namespace lotr {
             Scribe_Values.Look(ref threatPoints, "threatPoints", 0f);
             Scribe_Values.Look(ref ticksUntilNextSpawn, "ticksUntilNextSpawn", 2500);
             Scribe_Values.Look(ref initialized, "initialized", false);
-        }
-    }
-
-    public class MapComponent_ForcedWeather : MapComponent {
-        public WeatherDef forcedWeather = WeatherDefOf.FoggyRain;
-
-        public MapComponent_ForcedWeather(Map map) : base(map) { }
-
-        public override void MapComponentTick() {
-            if (Find.TickManager.TicksGame % 60 == 0) {
-                // Дождь только на картах, созданных из нашего сайта
-                if (map.Parent is Site site && site.MainSitePartDef == DefDatabase<SitePartDef>.GetNamed("MysticalMarsh_Site")) {
-                    if (map.weatherManager.curWeather != forcedWeather)
-                        map.weatherManager.TransitionTo(forcedWeather);
-                }
-            }
+            Scribe_Defs.Look(ref pawnKindDef, "pawnKindDef");
         }
     }
 }
