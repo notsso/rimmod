@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект -->
+    <WorldObjectDef ParentName="Site">
+        <defName>TemperateForest_World</defName>
+        <label>foggy temperate forest</label>
+        <description>A dense temperate forest shrouded in thick fog. Something dangerous lurks within.</description>
+        <mapGenerator>TemperateForestGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>TemperateForest_Site</defName>
+        <label>temperate forest</label>
+        <description>A fog-covered forest with an ominous presence at its heart.</description>
+        <workerClass>lotr.SitePartWorker_TemperateForest</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>FoggyForest_Incident</defName>
+        <label>foggy forest</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_TemperateForest</workerClass>
+        <category>Misc</category>
+        <earliestDay>5</earliestDay>
+        <letterLabel>Foggy forest</letterLabel>
+        <letterText>A thick fog has settled over a nearby forest. Travelers speak of a monstrous wolf that hunts within the mist.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация террейна -->
+    <GenStepDef>
+        <defName>TemperateForestTerrain</defName>
+        <order>230</order>
+        <genStep Class="lotr.GenStep_TemperateForestTerrain"/>
+    </GenStepDef>
+
+    <!-- Генерация растительности -->
+    <GenStepDef>
+        <defName>TemperateForestPlants</defName>
+        <order>900</order>
+        <genStep Class="lotr.GenStep_TemperateForestPlants"/>
+    </GenStepDef>
+
+    <!-- Генерация волка -->
+    <GenStepDef>
+        <defName>TemperateForestAnimals</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_TemperateForestAnimals"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты -->
+    <MapGeneratorDef>
+        <defName>TemperateForestGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>RocksFromGrid</li>              <!-- горы -->
+            <li>TemperateForestTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>TemperateForestPlants</li>
+            <li>TemperateForestAnimals</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>
