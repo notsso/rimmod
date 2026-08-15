@@ -19,6 +19,10 @@
         <thingCategories>
             <li>BeyonderCreatureParts</li>
         </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
     </ThingDef>
 
     <ThingDef ParentName="ResourceBase">
@@ -38,6 +42,10 @@
         <thingCategories>
             <li>BeyonderPlantParts</li>
         </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
     </ThingDef>
 
     <!-- Ингредиенты для зелья Провокатора (8) -->
@@ -58,6 +66,10 @@
         <thingCategories>
             <li>BeyonderCreatureParts</li>
         </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
     </ThingDef>
 
     <ThingDef ParentName="ResourceBase">
@@ -77,6 +89,10 @@
         <thingCategories>
             <li>BeyonderPlantParts</li>
         </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
     </ThingDef>
 
     <!-- Ингредиенты для зелья Пироманта (7) -->
@@ -97,6 +113,10 @@
         <thingCategories>
             <li>BeyonderCreatureParts</li>
         </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
     </ThingDef>
 
     <ThingDef ParentName="ResourceBase">
@@ -116,6 +136,10 @@
         <thingCategories>
             <li>BeyonderCreatureParts</li>
         </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
     </ThingDef>
 
     <!-- Ингредиенты для зелья Заговорщика (6) -->
@@ -136,6 +160,10 @@
         <thingCategories>
             <li>BeyonderCreatureParts</li>
         </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
     </ThingDef>
 
     <ThingDef ParentName="ResourceBase">
@@ -155,6 +183,10 @@
         <thingCategories>
             <li>BeyonderCreatureParts</li>
         </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
     </ThingDef>
 
     <!-- Ингредиенты для зелья Жнеца (5) -->
@@ -175,6 +207,10 @@
         <thingCategories>
             <li>BeyonderCreatureParts</li>
         </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
     </ThingDef>
 
     <ThingDef ParentName="ResourceBase">
@@ -194,6 +230,10 @@
         <thingCategories>
             <li>BeyonderCreatureParts</li>
         </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
     </ThingDef>
 
     <!-- Ингредиенты для зелья Железнокровного рыцаря (4) -->
@@ -214,6 +254,10 @@
         <thingCategories>
             <li>BeyonderCreatureParts</li>
         </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
     </ThingDef>
 
     <ThingDef ParentName="ResourceBase">
@@ -231,8 +275,12 @@
         </statBases>
         
         <thingCategories>
-            <li>SpecialBeyonderItem</li>
+            <li>SpecialBeyonderItems</li>
         </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
     </ThingDef>
 
 </Defs>

@@ -7,7 +7,7 @@
         <label>Corpse lily growth</label>
         <baseChance>14.0</baseChance> 
         <workerClass>lotr.IncidentWorker_CorpseFloraGrown</workerClass>
-        <category>Special</category> 
+        <category>Misc</category> 
         
         <letterLabel>Трупная флора</letterLabel>
         <letterText>Горы трупов пропитали местность духовной энергией, которая привлекла опасную флору.</letterText>

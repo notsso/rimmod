@@ -128,6 +128,18 @@ namespace lotr {
         public static GameConditionDef BloodMoon;
     }
 
+    [StaticConstructorOnStartup]
+    public static class ModStartup {
+        static ModStartup() {
+            LongEventHandler.QueueLongEvent(() => {
+                if (Current.Game != null &&
+                    !Current.Game.components.OfType<GameComponent_MysteryEvent>().Any()) {
+                    Current.Game.components.Add(new GameComponent_MysteryEvent(Current.Game));
+                }
+            }, "lotr_AddMysteryEvent", false, null);
+        }
+    }
+
     // для получения hediff какого то
     public class IngestionOutcomeDoer_GiveHediffRange : IngestionOutcomeDoer {
         public HediffDef hediffDef; // xml

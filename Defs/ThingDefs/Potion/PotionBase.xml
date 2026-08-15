@@ -35,6 +35,10 @@
         <thingCategories>
             <li>BeyonderPotions</li>
         </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
         
         <comps>
             <li Class="CompProperties_Forbiddable" />

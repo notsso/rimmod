@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <FactionDef ParentName="OutlanderFactionBase">
+
+        <defName>lotr_IronAndBloodCrossOrder</defName>
+        <label>Iron and Blood Cross Order</label>
+        <description>The Iron and Blood Cross Order is a newly founded secret organization that has only existed for the last 200 years. They seek to create a world under them where the mysterious and supernatural is out in the open for everyone to see, and not veiled in secrets.</description>
+
+        <hidden>true</hidden>
+        <displayInFactionSelection>false</displayInFactionSelection>
+        <fixedName>Iron and Blood Cross Order</fixedName>
+
+        <requiredCountAtGameStart>1</requiredCountAtGameStart>
+        <settlementGenerationWeight>0</settlementGenerationWeight>
+
+        <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+        <configurationListOrderPriority>-1</configurationListOrderPriority>
+
+        <colorSpectrum>
+            <li>(0.45, 0.15, 0.55)</li>
+            <li>(0.75, 0.45, 0.85)</li>
+        </colorSpectrum>
+        
+        <visitorTraderKinds />
+
+    </FactionDef>
+
+</Defs>
