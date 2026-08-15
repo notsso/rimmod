@@ -7,7 +7,7 @@
         <label>beyonder items</label>
         <parent>Manufactured</parent>
         <resourceReadoutRoot>true</resourceReadoutRoot>
-        <iconPath>Placeholder</iconPath>
+        <iconPath>UI/Icons/ThingCategories/BeyonderItems</iconPath>
     </ThingCategoryDef>
 
     <ThingCategoryDef>
@@ -23,7 +23,7 @@
         <label>parts of beyonder creatures</label>
         <parent>BeyonderItems</parent>
         <resourceReadoutRoot>false</resourceReadoutRoot>
-        <iconPath>Placeholder</iconPath>
+        <iconPath>UI/Icons/ThingCategories/BeyonderCreatureParts</iconPath>
     </ThingCategoryDef>
 
     <ThingCategoryDef>
@@ -31,7 +31,7 @@
         <label>parts of beyonder plant</label>
         <parent>BeyonderItems</parent>
         <resourceReadoutRoot>false</resourceReadoutRoot>
-        <iconPath>Placeholder</iconPath>
+        <iconPath>UI/Icons/ThingCategories/BeyonderPlantParts</iconPath>
     </ThingCategoryDef>
 
     <ThingCategoryDef>
@@ -39,7 +39,7 @@
         <label>special beyonder item</label>
         <parent>BeyonderItems</parent>
         <resourceReadoutRoot>false</resourceReadoutRoot>
-        <iconPath>Placeholder</iconPath>
+        <iconPath>UI/Icons/ThingCategories/SpecialBeyonderItems</iconPath>
     </ThingCategoryDef>
 
 </Defs>
