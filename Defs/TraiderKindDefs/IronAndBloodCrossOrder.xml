@@ -6,6 +6,7 @@
         <defName>lotr_MysteryTrader</defName>
         <label>mystery trader</label>
         <stockGenerators>
+        
             <!-- Серебро для покупок у игрока -->
             <li Class="StockGenerator_SingleDef">
                 <thingDef>Silver</thingDef>
@@ -31,9 +32,6 @@
                 <tag>BeyonderTrading</tag>
             </li>
 
-            <li Class="StockGenerator_BuySingleDef">
-                <thingDef>lotr_MarshCrystal</thingDef>
-            </li>
         </stockGenerators>
 
     </TraderKindDef>

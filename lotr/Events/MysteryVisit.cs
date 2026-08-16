@@ -63,22 +63,30 @@ namespace lotr {
     public class IncidentWorker_MysteryVisit : IncidentWorker_VisitorGroup {
         private const string FactionDefName = "lotr_IronAndBloodCrossOrder";
         private const string TraderKindDefName = "lotr_MysteryTrader";
-        private const float RareIngredientChance = 0.3f;
+
+        private const Pathway OrganizationPathway = Pathway.Hunter;
+
+        private static readonly Dictionary<int, string[]> IngredientDefsByPotionLevel =
+            new Dictionary<int, string[]>
+            {
+                { 9, new[] { "lotr_MarshCrystal", "lotr_BloodRedChestnut"}},
+                { 8, new[] { "lotr_CuspidsParrotTongue", "lotr_CorpseLilyRootstock" } },
+                { 7, new[] { "lotr_FireSalamanderGland", "lotr_MagmaElfCore" } },
+                { 6, new[] { "lotr_BlackHuntingSpiderEyes", "lotr_SphinxBrain" } },
+                { 5, new[] { "lotr_DemonicWolfClaws", "lotr_ForestHunterTongue" } },
+                { 4, new[] { "lotr_MagmaGiantCore", "lotr_StoneofCatastrophe" } }
+            };
 
         protected override bool TryResolveParmsGeneral(IncidentParms parms) {
             Map map = (Map)parms.target;
             if (!parms.spawnCenter.IsValid &&
-                !RCellFinder.TryFindRandomPawnEntryCell(out parms.spawnCenter, map, CellFinder.EdgeRoadChance_Neutral, false, null)) {
-                return false;
-            }
-
-            Faction mysteryFaction = Find.FactionManager.AllFactions
-                .FirstOrDefault(f => f.def.defName == FactionDefName);
-
-            if (mysteryFaction == null)
+                !RCellFinder.TryFindRandomPawnEntryCell(out parms.spawnCenter, map, CellFinder.EdgeRoadChance_Neutral, false, null))
                 return false;
 
-            parms.faction = mysteryFaction;
+            Faction faction = Find.FactionManager.AllFactions.FirstOrDefault(f => f.def.defName == FactionDefName);
+            if (faction == null) return false;
+
+            parms.faction = faction;
             parms.points = 150f + Rand.Range(0, 100);
             return true;
         }
@@ -98,28 +106,20 @@ namespace lotr {
                 return false;
 
             foreach (Pawn p in list) {
-                if (p.Faction != parms.faction)
-                    p.SetFaction(parms.faction, null);
+                if (p.Faction != faction)
+                    p.SetFaction(faction, null);
                 GiveFood(p);
             }
 
-            LordMaker.MakeNewLord(parms.faction, CreateLordJob(parms, list), map, list);
+            LordMaker.MakeNewLord(faction, CreateLordJob(parms, list), map, list);
 
             Pawn trader = list.Where(p => p.DevelopmentalStage.Adult()).RandomElementWithFallback();
             if (trader != null) {
-                MakePawnTrader(trader, parms.faction);
-                GenerateTraderStock(trader, parms.faction, map);
+                MakePawnTrader(trader, faction);
+                GenerateTraderStock(trader, faction, map);
             }
 
-            SendStandardLetter(
-                this.def.letterLabel,
-                this.def.letterText,
-                LetterDefOf.NeutralEvent,
-                parms,
-                list[0],
-                new NamedArgument[0]
-            );
-
+            SendStandardLetter(this.def.letterLabel, this.def.letterText, LetterDefOf.NeutralEvent, parms, list[0], new NamedArgument[0]);
             return true;
         }
 
@@ -139,26 +139,62 @@ namespace lotr {
         }
 
         private void GenerateTraderStock(Pawn trader, Faction faction, Map map) {
-            ThingSetMakerParams parms = default(ThingSetMakerParams);
+            ThingSetMakerParams parms = default;
             parms.traderDef = trader.trader.traderKind;
             parms.tile = new PlanetTile?(map.Tile);
             parms.makingFaction = faction;
+
             foreach (Thing thing in ThingSetMakerDefOf.TraderStock.root.Generate(parms)) {
-                if (!trader.inventory.innerContainer.TryAdd(thing, true)) {
+                if (!trader.inventory.innerContainer.TryAdd(thing, true))
                     thing.Destroy(DestroyMode.Vanish);
-                }
             }
 
-            if (Rand.Chance(RareIngredientChance)) {
-                ThingDef rareIngredient = Rand.Value < 0.5f
-                    ? ThingDef.Named("lotr_MarshCrystal")
-                    : ThingDef.Named("lotr_BloodRedChestnut");
-                Thing item = ThingMaker.MakeThing(rareIngredient);
-                item.stackCount = 1;
-                if (!trader.inventory.innerContainer.TryAdd(item, true)) {
-                    item.Destroy(DestroyMode.Vanish);
+            int maxSequence = GetMaxSequenceForPathway(map, OrganizationPathway);
+
+            // Log.Message($"colony level {maxSequence}");
+
+            for (int potionLevel = 9; potionLevel >= maxSequence - 1; potionLevel--) {
+                // Log.Message($"processing ingredients for {potionLevel}");
+
+                if (!IngredientDefsByPotionLevel.TryGetValue(potionLevel, out string[] ingredientDefs))
+                    continue;
+
+                foreach (string defName in ingredientDefs) {
+                    if (Rand.Chance(0.7f)) continue;
+                    ThingDef ingredientDef = ThingDef.Named(defName);
+                    if (ingredientDef == null) continue;
+
+                    Thing item = ThingMaker.MakeThing(ingredientDef);
+                    item.stackCount = 1;
+
+                    // Log.Message($"adding {item.stackCount} of {defName} to trader");
+
+                    if (!trader.inventory.innerContainer.TryAdd(item, true))
+                        item.Destroy(DestroyMode.Vanish);
                 }
             }
+        }
+
+        private int GetMaxSequenceForPathway(Map map, Pathway pathway) {
+            int maxSequence = 10;
+
+            foreach (Pawn pawn in map.mapPawns.FreeColonists) {
+                if (pawn.Dead || pawn.Faction != Faction.OfPlayer)
+                    continue;
+
+                if (!BeyonderUtility.IsBeyonder(pawn))
+                    continue;
+
+                Pathway pawnPathway = BeyonderUtility.GetBeyonderPathway(pawn);
+                if (pawnPathway != pathway)
+                    continue;
+
+                int sequence = BeyonderUtility.GetBeyonderSequence(pawn);
+                if (sequence < maxSequence)
+                    maxSequence = sequence;
+            }
+
+            return maxSequence;
         }
     }
 }
