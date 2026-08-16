@@ -15,38 +15,45 @@ using UnityEngine;
 
 namespace lotr {
     public class GameComponent_MysteryEvent : GameComponent {
-        private int ticksUntilCheck = 0;
-        private const int CheckIntervalTicks = 60000;
-        private const float ChancePerCheck = 0.2f;
+        private int nextCheckTick;
+        private const int CheckIntervalTicks = 7 * 60000;
+        private const int MinAllianceDelayTicks = 3 * 60000;
+        private const string FactionDefName = "lotr_IronAndBloodCrossOrder";
 
-        public GameComponent_MysteryEvent(Game game) {
-            ResetTimer();
-        }
+        public GameComponent_MysteryEvent(Game game) { }
 
-        private void ResetTimer() {
-            ticksUntilCheck = CheckIntervalTicks;
+        public override void ExposeData() {
+            base.ExposeData();
+            Scribe_Values.Look(ref nextCheckTick, "nextCheckTick", 0);
         }
 
         public override void GameComponentTick() {
             base.GameComponentTick();
-            if (Find.TickManager.TicksGame < ticksUntilCheck)
+
+            if (nextCheckTick == 0)
+                nextCheckTick = Find.TickManager.TicksGame + CheckIntervalTicks;
+
+            if (Find.TickManager.TicksGame < nextCheckTick)
                 return;
 
-            ResetTimer();
-            TryTriggerEvent();
-        }
+            nextCheckTick += CheckIntervalTicks;
 
-        private void TryTriggerEvent() {
             if (Find.AnyPlayerHomeMap == null) return;
-            if (!Rand.Chance(ChancePerCheck)) return;
 
-            // Проверяем, есть ли наша фракция в мире
-            Faction mysteryFaction = Find.FactionManager.AllFactions.FirstOrDefault(f => f.def.defName == "lotr_IronAndBloodCrossOrder");
-            if (mysteryFaction == null) return;
+            GameComponent_FirstMeeting firstMeetingComp = Current.Game.GetComponent<GameComponent_FirstMeeting>();
+            if (firstMeetingComp == null) return;
+
+            Faction faction = Find.FactionManager.AllFactions.FirstOrDefault(f => f.def.defName == FactionDefName);
+            if (faction == null) return;
+
+            if (!firstMeetingComp.IsFactionAllied(faction)) return;
+
+            int alliedTick = firstMeetingComp.GetAlliedTick(faction);
+            if (alliedTick < 0 || Find.TickManager.TicksGame - alliedTick < MinAllianceDelayTicks) return;
 
             IncidentParms parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.Misc, Find.AnyPlayerHomeMap);
-            parms.faction = mysteryFaction;
-            parms.forced = true; // чтобы сработал даже с низким шансом
+            parms.faction = faction;
+            parms.forced = true;
             Find.Storyteller.TryFire(new FiringIncident(IncidentDef.Named("lotr_MysteryVisit"), null, parms));
         }
     }
@@ -70,13 +77,17 @@ namespace lotr {
                 return false;
 
             parms.faction = mysteryFaction;
-            // Гарантируем размер группы 3-5 человек
-            parms.points = 150f + Rand.Range(0, 100); // 150-250 points
+            parms.points = 150f + Rand.Range(0, 100);
             return true;
         }
 
         protected override bool TryExecuteWorker(IncidentParms parms) {
             Map map = (Map)parms.target;
+            Faction faction = Find.FactionManager.AllFactions.FirstOrDefault(f => f.def.defName == FactionDefName);
+            if (faction == null) return false;
+
+            parms.faction = faction;
+
             if (!base.TryResolveParms(parms))
                 return false;
 
@@ -84,22 +95,28 @@ namespace lotr {
             if (list.Count == 0)
                 return false;
 
-            // Добавляем еду каждому визитёру
             foreach (Pawn p in list) {
+                if (p.Faction != parms.faction)
+                    p.SetFaction(parms.faction, null);
                 GiveFood(p);
             }
 
             LordMaker.MakeNewLord(parms.faction, CreateLordJob(parms, list), map, list);
 
-            // Выбираем торговца
             Pawn trader = list.Where(p => p.DevelopmentalStage.Adult()).RandomElementWithFallback();
             if (trader != null) {
                 MakePawnTrader(trader, parms.faction);
                 GenerateTraderStock(trader, parms.faction, map);
             }
 
-            Pawn leader = list.FirstOrDefault(p => p.Faction.leader == p);
-            SendLetter(parms, list, leader, true);
+            SendStandardLetter(
+                this.def.letterLabel,
+                this.def.letterText,
+                LetterDefOf.NeutralEvent,
+                parms,
+                list[0],
+                new NamedArgument[0]
+            );
 
             return true;
         }
@@ -120,7 +137,6 @@ namespace lotr {
         }
 
         private void GenerateTraderStock(Pawn trader, Faction faction, Map map) {
-            // Генерируем запасы на основе TraderKindDef
             ThingSetMakerParams parms = default(ThingSetMakerParams);
             parms.traderDef = trader.trader.traderKind;
             parms.tile = new PlanetTile?(map.Tile);
@@ -131,7 +147,6 @@ namespace lotr {
                 }
             }
 
-            // Добавляем редкий ингредиент с шансом
             if (Rand.Chance(RareIngredientChance)) {
                 ThingDef rareIngredient = Rand.Value < 0.5f
                     ? ThingDef.Named("lotr_MarshCrystal")

@@ -131,6 +131,15 @@ namespace lotr {
     [StaticConstructorOnStartup]
     public static class ModStartup {
         static ModStartup() {
+            // событие - первая встреча с какой то тайной организацией
+            LongEventHandler.QueueLongEvent(() => {
+                if (Current.Game != null &&
+                    !Current.Game.components.OfType<GameComponent_FirstMeeting>().Any()) {
+                    Current.Game.components.Add(new GameComponent_FirstMeeting(Current.Game));
+                }
+            }, "lotr_AddFirstMeeting", false, null);
+
+            // событие - торговцы из дружественной тайной организации
             LongEventHandler.QueueLongEvent(() => {
                 if (Current.Game != null &&
                     !Current.Game.components.OfType<GameComponent_MysteryEvent>().Any()) {

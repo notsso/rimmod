@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <PawnKindDef>
+        <defName>lotr_Envoy</defName>
+        <label>envoy</label>
+        <race>Human</race>
+        <defaultFactionType>lotr_IronAndBloodCrossOrder</defaultFactionType>
+        <combatPower>50</combatPower>
+        <minGenerationAge>18</minGenerationAge>
+        <maxGenerationAge>80</maxGenerationAge>
+        <initialResistanceRange>0~0</initialResistanceRange>
+        <initialWillRange>0~0</initialWillRange>
+
+        <!-- Одежда -->
+        <apparelTags>
+            <li>IndustrialBasic</li>
+        </apparelTags>
+        <apparelMoney>200~400</apparelMoney>
+        <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+        <nakedChance>0</nakedChance>
+
+        <!-- Еда -->
+        <invNutrition>1.8</invNutrition>
+        <invFoodDef>MealSurvivalPack</invFoodDef>
+        
+        <modExtensions>
+            <li Class="lotr.DefModExtension_FirstMeeting" />
+        </modExtensions>
+    </PawnKindDef>
+  
+</Defs>
