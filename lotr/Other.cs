@@ -146,6 +146,12 @@ namespace lotr {
                     Current.Game.components.Add(new GameComponent_MysteryEvent(Current.Game));
                 }
             }, "lotr_AddMysteryEvent", false, null);
+
+            // событие - возможность заново подружиться при вражде с тайной организацией
+            LongEventHandler.QueueLongEvent(() => {
+                if (Current.Game != null && !Current.Game.components.OfType<GameComponent_PeaceOffer>().Any())
+                    Current.Game.components.Add(new GameComponent_PeaceOffer(Current.Game));
+            }, "lotr_AddPeaceOffer", false, null);
         }
     }
 

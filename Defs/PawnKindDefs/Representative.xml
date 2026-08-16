@@ -28,5 +28,31 @@
             <li Class="lotr.DefModExtension_FirstMeeting" />
         </modExtensions>
     </PawnKindDef>
+
+    <PawnKindDef>
+        <defName>lotr_PeaceEnvoy</defName>
+        <label>envoy</label>
+        <race>Human</race>
+        <defaultFactionType>lotr_IronAndBloodCrossOrder</defaultFactionType>
+        <combatPower>50</combatPower>
+        <minGenerationAge>18</minGenerationAge>
+        <maxGenerationAge>80</maxGenerationAge>
+        <initialResistanceRange>0~0</initialResistanceRange>
+        <initialWillRange>0~0</initialWillRange>
+
+        <apparelTags>
+            <li>IndustrialBasic</li>
+        </apparelTags>
+        <apparelMoney>200~400</apparelMoney>
+        <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+        <nakedChance>0</nakedChance>
+
+        <invNutrition>1.8</invNutrition>
+        <invFoodDef>MealSurvivalPack</invFoodDef>
+
+        <modExtensions>
+            <li Class="lotr.DefModExtension_PeaceOffer" />
+        </modExtensions>
+    </PawnKindDef>
   
 </Defs>

@@ -41,10 +41,34 @@
         </backstoryFilters>
 
         <pawnGroupMakers>
+            <!-- группа торговцев -->
             <li>
                 <kindDef>Peaceful</kindDef>
                 <options>
                     <Villager>10</Villager>
+                </options>
+            </li>
+
+            <!-- Боевые отряды (для рейдов) -->
+            <li>
+                <kindDef>Combat</kindDef>
+                <commonality>100</commonality>
+                <options>
+                    <Villager>5</Villager>
+                    <Town_Guard>10</Town_Guard>
+                    <Mercenary_Slasher>7</Mercenary_Slasher>
+                    <Mercenary_Gunner>10</Mercenary_Gunner>
+                    <Mercenary_Elite>10</Mercenary_Elite>
+                </options>
+            </li>
+
+            <!-- Гарнизон для защиты поселений (у нас их нет, но оставим на будущее) -->
+            <li>
+                <kindDef>Settlement</kindDef>
+                <options>
+                    <Town_Guard>10</Town_Guard>
+                    <Mercenary_Gunner>10</Mercenary_Gunner>
+                    <Mercenary_Elite>10</Mercenary_Elite>
                 </options>
             </li>
         </pawnGroupMakers>

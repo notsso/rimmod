@@ -46,6 +46,8 @@ namespace lotr {
             Faction faction = Find.FactionManager.AllFactions.FirstOrDefault(f => f.def.defName == FactionDefName);
             if (faction == null) return;
 
+            if (faction.HostileTo(Faction.OfPlayer)) return;
+
             if (!firstMeetingComp.IsFactionAllied(faction)) return;
 
             int alliedTick = firstMeetingComp.GetAlliedTick(faction);
