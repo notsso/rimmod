@@ -20,17 +20,13 @@ namespace lotr {
 
         // высчитывает сколько духовности тратит способность 
         public float AbilityCost() {
+
             float finalCost = 10f;
 
-            SpiritualityCostExtension extension = this.def.GetModExtension<SpiritualityCostExtension>();
-
-            if (extension != null) {
-                finalCost = extension.cost;
-            }
-
-            // различные баффы/дебаффы к цене
+            finalCost = ((BeyonderAbilityDef)this.def).spiritualityCost;
 
             return finalCost;
+            
         }
 
         public override bool Activate(LocalTargetInfo target, LocalTargetInfo dest) {

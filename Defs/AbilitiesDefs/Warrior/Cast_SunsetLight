@@ -6,8 +6,8 @@
         <defName>Cast_SunsetLight</defName>
         <label>Sunset light</label>
         <description>Paladin emits concentrated light in a radius around him, that dispel illusions, banish shadows and weaken enemy wraiths or beyond creatures.</description>
-        <iconPath>Placeholder</iconPath> <!-- Замените на путь к вашей иконке -->
-        <cooldownTicksRange>1800</cooldownTicksRange> <!-- Перезарядка 30 секунд -->
+        <iconPath>Placeholder</iconPath>
+        <cooldownTicksRange>1800</cooldownTicksRange>
         <targetRequired>false</targetRequired>
         <canUseAboardShip>true</canUseAboardShip>
         <verbProperties>

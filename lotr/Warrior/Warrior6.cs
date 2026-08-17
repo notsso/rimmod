@@ -43,7 +43,7 @@ namespace lotr {
                 Pawn pawnAt = c.GetFirstPawn(map); // Получаем пешку на этой клетке, если она есть
                 if (pawnAt != null && pawnAt != caster && pawnAt.HostileTo(caster)) { // TODO: обработка всяких нечистей
                     // Накладываем ослабление на враждебного злого духа / потустороннее существо
-                    HealthUtility.AdjustSeverity(pawnAt, HediffDefOf.PsychicShock, 0.15f);
+                    HealthUtility.AdjustSeverity(pawnAt, HediffDefOf.SunsetLightDebuff, 0.15f);
                 }
             }
 
