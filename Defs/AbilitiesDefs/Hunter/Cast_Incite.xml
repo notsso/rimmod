@@ -9,22 +9,26 @@
         <description>Заставляет врага впасть в бешенство.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Incite</iconPath>
         <cooldownTicksRange>100</cooldownTicksRange>
-        <hostile>true</hostile>
 
-        <modExtensions>
-            <li Class="lotr.SpiritualityCostExtension">
-                <cost>100.0</cost>
-            </li>
-        </modExtensions>
+        <aiCanUse>true</aiCanUse>
+        <targetRequired>true</targetRequired>
+
+        <hostile>true</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+
+        <spiritualityCost>100.0</spiritualityCost>
 
         <verbProperties>
+
             <verbClass>Verb_CastAbility</verbClass>
             <range>25</range>
             <warmupTime>1.0</warmupTime>
-            <hasStandardCommand>true</hasStandardCommand>
+            <requireLineOfSight>True</requireLineOfSight>
+
             <targetParams>
                 <canTargetPawns>true</canTargetPawns>
             </targetParams>
+
         </verbProperties>
 
     </AbilityDef>

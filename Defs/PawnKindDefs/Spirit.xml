@@ -122,6 +122,26 @@
         <label>Spirit</label>
         <race>lotr_SpiritRace</race>
         <combatPower>100</combatPower>
+
+        <abilities>
+
+            <!--
+            <li>Cast_BlazingSpear_7S</li> // OK
+            <li>Cast_BlazingSword_7S</li> // bad
+            <li>Cast_Confusion_6S</li> // OK
+            <li>Cast_Execution_5S</li> // OK
+            <li>Cast_ExtinguishFire_7S</li> // bad
+
+            <li>Cast_FireArmor_7S</li> // bad
+            <li>Cast_Fireball_9S</li> // OK
+            <li>Cast_FireRavens_7S</li> // bad
+            <li>Cast_Firestorm_4S</li> // OK
+            <li>Cast_FireTeleport_6S</li> // bad
+            -->
+
+            <li>Cast_FireJump_6S</li>
+        
+        </abilities>
         
         <lifeStages>
             <li>

@@ -4,32 +4,38 @@
     <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_BlazingSpear">
     
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+
         <defName>Cast_BlazingSpear</defName>
         <label>Копье огня</label>
         <description>Создание и бросок сверхмощного, сжатого снаряда из пламени, который пробивает броню и взрывается при попадании.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_BlazingSpear</iconPath>
-        <cooldownTicksRange>1200</cooldownTicksRange>
-        <hostile>true</hostile>
 
-        <modExtensions>
-            <li Class="lotr.SpiritualityCostExtension">
-                <cost>100.0</cost>
-            </li>
-        </modExtensions>
+        <aiCanUse>true</aiCanUse>
+        <ai_IsOffensive>true</ai_IsOffensive>
+        <ai_IsIncendiary>true</ai_IsIncendiary>
+        <targetRequired>true</targetRequired>
+        <hostile>true</hostile>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+        <!--<confirmationDialogText>Are you sure?</confirmationDialogText>-->
+
+        <cooldownTicksRange>1200</cooldownTicksRange>
+        <charges>1</charges>
+        <cooldownPerCharge>false</cooldownPerCharge>
+
+        <spiritualityCost>100.0</spiritualityCost>
 
         <verbProperties>
 
             <verbClass>lotr.Verb_ExplosionZone</verbClass>
             <range>40</range>
             <warmupTime>2.5</warmupTime>
-            <hasStandardCommand>true</hasStandardCommand>
+            <requireLineOfSight>True</requireLineOfSight>
+            <ai_ProjectileLaunchingIgnoresMeleeThreats>false</ai_ProjectileLaunchingIgnoresMeleeThreats>
 
             <targetParams>
-
                 <canTargetLocations>true</canTargetLocations>
                 <canTargetPawns>true</canTargetPawns>
                 <canTargetBuildings>true</canTargetBuildings>
-
             </targetParams>
 
         </verbProperties>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- Летун-огненный шар -->
+    <ThingDef ParentName="PawnFlyerBase">
+        <defName>FireTeleportFlyer</defName>
+        <label>огненный шар</label>
+        <thingClass>lotr.PawnFlyer_FireTeleport</thingClass>
+
+        <graphicData>
+            <texPath>Projectiles/Fireball_projectile</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <!-- Свечение
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>4</glowRadius>
+                <glowColor>(255, 130, 30, 0)</glowColor>
+            </li>
+        </comps>
+        -->
+
+        <pawnFlyer>
+            <flightSpeed>50</flightSpeed>
+            <flightDurationMin>0.1</flightDurationMin>
+            <heightFactor>0</heightFactor>
+        </pawnFlyer>
+    </ThingDef>
+</Defs>

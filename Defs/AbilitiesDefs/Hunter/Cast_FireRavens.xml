@@ -10,22 +10,31 @@
         <iconPath>UI/Icons/Abilities/Hunter/Cast_FireRavens</iconPath>
         <cooldownTicksRange>1800</cooldownTicksRange>
         <targetRequired>False</targetRequired>
+        
         <aiCanUse>true</aiCanUse>
+        <targetRequired>false</targetRequired>
+        
         <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 
         <modExtensions>
             <li Class="lotr.SpiritualityCostExtension">
                 <cost>50.0</cost>
             </li>
         </modExtensions>
+        <spiritualityCost>50.0</spiritualityCost>
 
         <verbProperties>
+
             <verbClass>Verb_CastAbility</verbClass>
             <warmupTime>0.5</warmupTime>
             <range>0</range>
+            <requireLineOfSight>False</requireLineOfSight>
+
             <targetParams>
                 <canTargetSelf>true</canTargetSelf>
             </targetParams>
+
         </verbProperties>
 
     </AbilityDef>

@@ -67,6 +67,10 @@ namespace lotr {
             reason = null;
             return false;
         }
+
+        public override AcceptanceReport CanCast {
+            get { return true; }
+        }
     }
 
     // Способность hunter7 (pyromaniac): огненный меч

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+    <!-- OBSOLETE -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_ReaperState">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
@@ -9,21 +10,26 @@
         <description>Переводит потустороннего в состояние пожинателя душ.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_ReaperState</iconPath>
         <cooldownTicksRange>7200</cooldownTicksRange>
-        <hostile>false</hostile>
 
-        <modExtensions>
-            <li Class="lotr.SpiritualityCostExtension">
-                <cost>250.0</cost>
-            </li>
-        </modExtensions>
+        <aiCanUse>true</aiCanUse>
+        <targetRequired>true</targetRequired>
+
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+
+        <spiritualityCost>250.0</spiritualityCost>
         
         <verbProperties>
+
             <verbClass>Verb_CastAbility</verbClass>
             <range>0</range>
             <warmupTime>2.0</warmupTime>
+            <requireLineOfSight>False</requireLineOfSight>
+
             <targetParams>
                 <canTargetSelf>true</canTargetSelf>
             </targetParams>
+
         </verbProperties>
 
     </AbilityDef>
