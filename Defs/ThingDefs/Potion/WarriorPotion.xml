@@ -4,16 +4,15 @@
     <ThingDef ParentName="PotionBase">
 
         <thingClass>ThingWithComps</thingClass>
-        <defName>Hunter9_Potion</defName>
-        <label>hunter's potion</label>
-        <description>Жидкость насыщенного красного цвета, бурлящая, словно кровь окрашивает весь флакон.
-        У неё резкий запах крови, который заполнил бы их ноздри.
-        Выпив его, пешка пробудит в себе силу Охотника.</description>
+        <defName>Warrior9_Potion</defName>
+        <label>Warrior's potion</label>
+        <description>Кроваво-красная жидкость с сильным рыбным запахом.
+        Выпив его, пешка пробудит в себе силу Воина.</description>
         <descriptionHyperlinks>
-            <HediffDef>Hunter9_Hediff</HediffDef>
+            <HediffDef>Warrior9_Hediff</HediffDef>
         </descriptionHyperlinks>
         <graphicData>
-            <texPath>Potions/Hunter/Hunter9_Potion</texPath>
+            <texPath>Potions/Warrior/Warrior9_Potion</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
 
@@ -25,7 +24,7 @@
                 </li>
 
                 <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
-                    <hediffToGive>Hunter9_Hediff</hediffToGive>
+                    <hediffToGive>Warrior9_Hediff</hediffToGive>
                     <severity>0.01</severity>
                 </li>
             </outcomeDoers>
@@ -36,16 +35,15 @@
     <ThingDef ParentName="PotionBase">
 
         <thingClass>ThingWithComps</thingClass>
-        <defName>Hunter8_Potion</defName>
-        <label>provoker's potion</label>
-        <description>Вязкий напиток с тошнотворным вкусом и резким запахом.
-        Один вид этого зелья вызывает желание выбросить его и растоптать.
-        Он отвратителен и имеет резкий запах. Выпив его, пешка откроет в себе силу Провокатора</description>
+        <defName>Warrior8_Potion</defName>
+        <label>Gladiator's potion</label>
+        <description>Чисто белый гной с прожилками крови.
+        Выпив его, пешка откроет в себе силу Гладиатора</description>
         <descriptionHyperlinks>
-            <HediffDef>Hunter8_Hediff</HediffDef>
+            <HediffDef>Warrior8_Hediff</HediffDef>
         </descriptionHyperlinks>
         <graphicData>
-            <texPath>Potions/Hunter/Hunter8_Potion</texPath>
+            <texPath>Potions/Warrior/Warrior8_Potion</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
 
@@ -57,7 +55,7 @@
                 </li>
 
                 <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
-                    <hediffToGive>Hunter8_Hediff</hediffToGive>
+                    <hediffToGive>Warrior8_Hediff</hediffToGive>
                     <severity>0.01</severity>
                 </li>
             </outcomeDoers>
@@ -68,16 +66,16 @@
     <ThingDef ParentName="PotionBase">
 
         <thingClass>ThingWithComps</thingClass>
-        <defName>Hunter7_Potion</defName>
-        <label>pyromaniac's potion</label>
-        <description>Желтоватая жидкость с плавающими на ней красными пузырьками, в центре которой находится «сердце», окруженное кровавым туманом.
-        При употреблении она обжигает, распространяясь от рта, по пищеводу, в желудок и поражая сердце.
-        Выпив его, пешка откроет в себе силу Пироманьяка</description>
+        <defName>Warrior7_Potion</defName>
+        <label>Weapon Master's potion</label>
+        <description>Черная жидкость с плавающей на ней ржавчиной.
+        На вкус как будто проглотил горсть тонких иголок.
+        Выпив его, пешка откроет в себе силу Оружейного Мастера</description>
         <descriptionHyperlinks>
-            <HediffDef>Hunter7_Hediff</HediffDef>
+            <HediffDef>Warrior7_Hediff</HediffDef>
         </descriptionHyperlinks>
         <graphicData>
-            <texPath>Potions/Hunter/Hunter7_Potion</texPath>
+            <texPath>Potions/Warrior/Warrior7_Potion</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
 
@@ -89,7 +87,7 @@
                 </li>
 
                 <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
-                    <hediffToGive>Hunter7_Hediff</hediffToGive>
+                    <hediffToGive>Warrior7_Hediff</hediffToGive>
                     <severity>0.01</severity>
                 </li>
             </outcomeDoers>
@@ -100,16 +98,15 @@
     <ThingDef ParentName="PotionBase">
 
         <thingClass>ThingWithComps</thingClass>
-        <defName>Hunter6_Potion</defName>
-        <label>conspirator's potion</label>
-        <description>Черная как железо, с большим количеством плавающих на поверхности красноватых пятен ржавчины.
-        Зелье имеет сильный ржавый вкус, холодное, как змея, скользкая и ледяная.
-        Выпив его, пешка откроет в себе силу Заговорщика</description>
+        <defName>Warrior6_Potion</defName>
+        <label>Dawn Paladin's potion</label>
+        <description>Прозрачная жидкость, словно освещенная утренним солнцем.
+        Выпив его, пешка откроет в себе силу Паладина Рассвета</description>
         <descriptionHyperlinks>
-            <HediffDef>Hunter6_Hediff</HediffDef>
+            <HediffDef>Warrior6_Hediff</HediffDef>
         </descriptionHyperlinks>
         <graphicData>
-            <texPath>Potions/Hunter/Hunter6_Potion</texPath>
+            <texPath>Potions/Warrior/Warrior6_Potion</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
 
@@ -121,7 +118,7 @@
                 </li>
 
                 <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
-                    <hediffToGive>Hunter6_Hediff</hediffToGive>
+                    <hediffToGive>Warrior6_Hediff</hediffToGive>
                     <severity>0.01</severity>
                 </li>
             </outcomeDoers>
@@ -132,16 +129,15 @@
     <ThingDef ParentName="PotionBase">
 
         <thingClass>ThingWithComps</thingClass>
-        <defName>Hunter5_Potion</defName>
-        <label>reaper's potion</label>
-        <description>Свежая красная кровь с плавающими в ней вкраплениями чёрного вещества, похожего на железные опилки, словно внутри разлетелось железное оружие.
-        У зелья резкий запах крови, непривычный привкус ржавчины и при употреблении возникает жгучее ощущение, которое мгновенно заполняет рот и пронзает мозг.
-        Выпив его, пешка откроет в себе силу Пожинателя</description>
+        <defName>Warrior5_Potion</defName>
+        <label>Guardian's potion</label>
+        <description>Бледно-кровавая, окутанная мощным лучом рассвета.
+        Выпив его, пешка откроет в себе силу Стража</description>
         <descriptionHyperlinks>
-            <HediffDef>Hunter5_Hediff</HediffDef>
+            <HediffDef>Warrior5_Hediff</HediffDef>
         </descriptionHyperlinks>
         <graphicData>
-            <texPath>Potions/Hunter/Hunter5_Potion</texPath>
+            <texPath>Potions/Warrior/Warrior5_Potion</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
 
@@ -153,7 +149,7 @@
                 </li>
 
                 <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
-                    <hediffToGive>Hunter5_Hediff</hediffToGive>
+                    <hediffToGive>Warrior5_Hediff</hediffToGive>
                     <severity>0.01</severity>
                 </li>
             </outcomeDoers>
@@ -164,15 +160,15 @@
     <ThingDef ParentName="PotionBase">
 
         <thingClass>ThingWithComps</thingClass>
-        <defName>Hunter4_Potion</defName>
-        <label>knight's potion</label>
-        <description>Как расплавленное железо, пылающее красным, высокотемпературное и яркое.
-        Выпив его, пешка откроет в себе силу Железнокровного Рыцаря</description>
+        <defName>Warrior4_Potion</defName>
+        <label>Demon Hunter's potion</label>
+        <description>Темно-зеленая жидкость.
+        Выпив его, пешка откроет в себе силу Охотника на демонов</description>
         <descriptionHyperlinks>
-            <HediffDef>Hunter4_Hediff</HediffDef>
+            <HediffDef>Warrior4_Hediff</HediffDef>
         </descriptionHyperlinks>
         <graphicData>
-            <texPath>Potions/Hunter/Hunter4_Potion</texPath>
+            <texPath>Potions/Warrior/Warrior4_Potion</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
 
@@ -184,7 +180,7 @@
                 </li>
 
                 <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
-                    <hediffToGive>Hunter4_Hediff</hediffToGive>
+                    <hediffToGive>Warrior4_Hediff</hediffToGive>
                     <severity>0.01</severity>
                 </li>
             </outcomeDoers>

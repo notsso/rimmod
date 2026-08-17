@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <RecipeDef>
+        <defName>Warrior9_PotionRecipe</defName>
+        <label>brew Warrior's potion</label>
+        <description>Brew a mysterious potion of the Warrior pathway.</description>
+        <jobString>Brewing Warrior's potion.</jobString>
+        
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+    
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MarshCrystal</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_BloodRedChestnut</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>MedicineHerbal</li>
+                    </thingDefs>
+                </filter>
+                <count>5</count>
+            </li>
+        </ingredients>
+        
+        <products>
+            <Warrior9_Potion>1</Warrior9_Potion>
+        </products>
+        
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        
+        <researchPrerequisite>Brewing</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>Warrior8_PotionRecipe</defName>
+        <label>brew Gladiator's potion</label>
+        <description>Brew a mysterious potion of the Warrior pathway.</description>
+        <jobString>Brewing Gladiator's potion.</jobString>
+        
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+    
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_CuspidsParrotTongue</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_CorpseLilyRootstock</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>MedicineHerbal</li>
+                    </thingDefs>
+                </filter>
+                <count>5</count>
+            </li>
+        </ingredients>
+        
+        <products>
+            <Warrior8_Potion>1</Warrior8_Potion>
+        </products>
+        
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        
+        <researchPrerequisite>Brewing</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>Warrior7_PotionRecipe</defName>
+        <label>brew Weapon Master's potion</label>
+        <description>Brew a mysterious potion of the Warrior pathway.</description>
+        <jobString>Brewing Weapon Master's potion.</jobString>
+        
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+    
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_FireSalamanderGland</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MagmaElfCore</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MagicalHerbs</li>
+                    </thingDefs>
+                </filter>
+                <count>5</count>
+            </li>
+        </ingredients>
+        
+        <products>
+            <Warrior7_Potion>1</Warrior7_Potion>
+        </products>
+        
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        
+        <researchPrerequisite>Brewing</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>Warrior6_PotionRecipe</defName>
+        <label>brew Dawn Paladin's potion</label>
+        <description>Brew a mysterious potion of the Warrior pathway.</description>
+        <jobString>Brewing Dawn Paladin's potion.</jobString>
+        
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+    
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_BlackHuntingSpiderEyes</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_SphinxBrain</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MagicalHerbs</li>
+                    </thingDefs>
+                </filter>
+                <count>5</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MysticalComponents</li>
+                    </thingDefs>
+                </filter>
+                <count>2</count>
+            </li>
+        </ingredients>
+        
+        <products>
+            <Warrior6_Potion>1</Warrior6_Potion>
+        </products>
+        
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        
+        <researchPrerequisite>Brewing</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>Warrior5_PotionRecipe</defName>
+        <label>brew Guardian's potion</label>
+        <description>Brew a mysterious potion of the Warrior pathway.</description>
+        <jobString>Brewing Guardian's potion.</jobString>
+        
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+    
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_DemonicWolfClaws</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_ForestHunterTongue</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MysticalComponents</li>
+                    </thingDefs>
+                </filter>
+                <count>5</count>
+            </li>
+        </ingredients>
+        
+        <products>
+            <Warrior5_Potion>1</Warrior5_Potion>
+        </products>
+        
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        
+        <researchPrerequisite>Brewing</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>Warrior4_PotionRecipe</defName>
+        <label>brew Demon Hunter's potion</label>
+        <description>Brew a mysterious potion of the Warrior pathway.</description>
+        <jobString>Brewing Demon Hunter's potion.</jobString>
+        
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+    
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MagmaGiantCore</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_StoneofCatastrophe</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MysticalComponents</li>
+                    </thingDefs>
+                </filter>
+                <count>10</count>
+            </li>
+        </ingredients>
+        
+        <products>
+            <Warrior4_Potion>1</Warrior4_Potion>
+        </products>
+        
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        
+        <researchPrerequisite>Brewing</researchPrerequisite>
+    </RecipeDef>
+
+</Defs>
