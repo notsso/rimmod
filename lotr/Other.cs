@@ -89,7 +89,7 @@ namespace lotr {
     // класс, для зелий потусторонних, которые продвигают
     public class IngestionOutcomeDoer_SequenceAdvance : IngestionOutcomeDoer {
         // Поля будут настраиваться через XML
-        public HediffDef hediffToGive; // На что меняем
+        public HediffDef hediffToGive; // hediff новой последовательности
         public float severity;
 
         protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount) {

@@ -803,27 +803,6 @@ namespace lotr {
         }
     }
 
-    public class CompAbilityEffect_GiveHediff : CompAbilityEffect {
-        public new CompProperties_AbilityGiveHediff Props => (CompProperties_AbilityGiveHediff)props;
-
-        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
-            base.Apply(target, dest);
-
-            Pawn targetPawn = target.Pawn;
-            if (targetPawn == null) return;
-
-            if (targetPawn.health.hediffSet.HasHediff(Props.hediffDef)) return;
-
-            Hediff hediff = HediffMaker.MakeHediff(Props.hediffDef, targetPawn);
-            if (Props.severity > 0f)
-                hediff.Severity = Props.severity;
-            targetPawn.health.AddHediff(hediff);
-
-            if (Props.showFleck)
-                FleckMaker.Static(targetPawn.Position, targetPawn.Map, FleckDefOf.MicroSparks, 1.5f);
-        }
-    }
-
     // Класс для всех призываемых оружий - есть время жизни
     public class SummonedWeapon : ThingWithComps {
         public int ticksLeft = -1;
