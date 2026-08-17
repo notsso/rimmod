@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <lotr.BeyonderHediffDef Class="lotr.BeyonderHediffDef">
+
+        <hediffClass>lotr.Warrior5_Hediff</hediffClass>
+        <defName>Warrior5_Hediff</defName>
+
+        <label>Guardian</label>
+        <sequence>5</sequence>
+        <pathway>Warrior</pathway>
+
+        <spiritualityOffset>0</spiritualityOffset>
+
+        <description>This person became 5 sequence beyonder - guardian.</description>
+        <defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
+        <initialSeverity>0.01</initialSeverity>
+        <maxSeverity>1</maxSeverity>
+        <minSeverity>0</minSeverity>
+        <tendable>false</tendable>
+        <isBad>false</isBad>
+
+        <aptitudes>
+            <Melee>3</Melee>
+            <Shooting>3</Shooting>
+        </aptitudes>
+
+        <stages>
+            <li>
+                <minSeverity>0.0</minSeverity>
+                <label>лох</label>
+                <statOffsets>
+                    <MeleeHitChance>4</MeleeHitChance>
+                    <MeleeDodgeChance>4</MeleeDodgeChance>
+                    <ShootingAccuracyPawn>4</ShootingAccuracyPawn>
+                    <InjuryHealingFactor>0.6</InjuryHealingFactor>
+
+					<ComfyTemperatureMin>-10.0</ComfyTemperatureMin>
+         			<ComfyTemperatureMax>10.0</ComfyTemperatureMax>
+
+                    <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.18</ArmorRating_Blunt>
+                    <ArmorRating_Heat>0.40</ArmorRating_Heat>
+
+                    <IncomingDamageFactor>-0.05</IncomingDamageFactor>
+                    <PsychicSensitivity>-0.15</PsychicSensitivity>
+                    <MentalBreakThreshold>-0.08</MentalBreakThreshold>
+                </statOffsets>
+                <statFactors>
+                    <MeleeDamageFactor>1.15</MeleeDamageFactor>
+                    <Flammability>0.05</Flammability>
+                    <RestFallRateFactor>0.67</RestFallRateFactor>
+                </statFactors>
+                <capMods>
+                    <li><capacity>Consciousness</capacity><offset>0.05</offset></li>
+                    <li><capacity>Moving</capacity><offset>0.10</offset></li>
+                    <li><capacity>Sight</capacity><offset>0.10</offset></li>
+                    <li><capacity>BloodPumping</capacity><offset>0.08</offset></li>
+                    <li><capacity>BloodFiltration</capacity><offset>0.15</offset></li>
+                    <li><capacity>Breathing</capacity><offset>0.10</offset></li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.4</minSeverity>
+                <label>нормик</label>
+                <statOffsets>
+                    <MeleeHitChance>4.5</MeleeHitChance>
+                    <MeleeDodgeChance>4.5</MeleeDodgeChance>
+                    <ShootingAccuracyPawn>4.5</ShootingAccuracyPawn>
+                    <InjuryHealingFactor>1.2</InjuryHealingFactor>
+
+					<ComfyTemperatureMin>-25.0</ComfyTemperatureMin>
+         			<ComfyTemperatureMax>25.0</ComfyTemperatureMax>
+
+                    <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+                    <ArmorRating_Heat>0.75</ArmorRating_Heat>
+
+                    <IncomingDamageFactor>-0.10</IncomingDamageFactor>
+                    <PsychicSensitivity>-0.30</PsychicSensitivity>
+                    <MentalBreakThreshold>-0.15</MentalBreakThreshold>
+                </statOffsets>
+                <statFactors>
+                    <MeleeDamageFactor>1.25</MeleeDamageFactor>
+                    <Flammability>0.0</Flammability>
+                    <RestFallRateFactor>0.67</RestFallRateFactor>
+                </statFactors>
+                <capMods>
+                    <li><capacity>Consciousness</capacity><offset>0.12</offset></li>
+                    <li><capacity>Moving</capacity><offset>0.20</offset></li>
+                    <li><capacity>Sight</capacity><offset>0.18</offset></li>
+                    <li><capacity>BloodPumping</capacity><offset>0.15</offset></li>
+                    <li><capacity>BloodFiltration</capacity><offset>0.30</offset></li>
+                    <li><capacity>Breathing</capacity><offset>0.18</offset></li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.8</minSeverity>
+                <label>смешарик</label>
+                <statOffsets>
+                    <MeleeHitChance>5</MeleeHitChance>
+                    <MeleeDodgeChance>5</MeleeDodgeChance>
+                    <ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+                    <InjuryHealingFactor>1.8</InjuryHealingFactor>
+
+					<ComfyTemperatureMin>-40.0</ComfyTemperatureMin>
+         			<ComfyTemperatureMax>40.0</ComfyTemperatureMax>
+
+                    <ArmorRating_Sharp>0.60</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+                    <ArmorRating_Heat>1.10</ArmorRating_Heat>
+
+                    <IncomingDamageFactor>-0.16</IncomingDamageFactor>
+                    <PsychicSensitivity>-0.50</PsychicSensitivity>
+                    <MentalBreakThreshold>-0.25</MentalBreakThreshold>
+                </statOffsets>
+                <statFactors>
+                    <MeleeDamageFactor>1.35</MeleeDamageFactor>
+                    <Flammability>0.0</Flammability>
+                    <RestFallRateFactor>0.67</RestFallRateFactor>
+                </statFactors>
+                <capMods>
+                    <li><capacity>Consciousness</capacity><offset>0.20</offset></li>
+                    <li><capacity>Moving</capacity><offset>0.35</offset></li>
+                    <li><capacity>Sight</capacity><offset>0.30</offset></li>
+                    <li><capacity>BloodPumping</capacity><offset>0.25</offset></li>
+                    <li><capacity>BloodFiltration</capacity><offset>0.45</offset></li>
+                    <li><capacity>Breathing</capacity><offset>0.30</offset></li>
+                    <li><capacity>Talking</capacity><offset>0.10</offset></li>
+                </capMods>
+            </li>
+        </stages>
+
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>0.005</severityPerDay>
+            </li>
+        </comps>
+
+        <newAbilities>
+        </newAbilities>
+
+    </lotr.BeyonderHediffDef>
+
+</Defs>
