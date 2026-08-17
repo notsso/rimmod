@@ -21,110 +21,19 @@ namespace lotr {
         public static ThingDef lotr_MarshBoarRace;
         public static ThingDef lotr_MarshCrystal;
         public static ThingDef lotr_FireLightSpawner;
-        public static ThingDef Hunter9_Potion;
-        public static ThingDef Hunter8_Potion;
-        public static ThingDef Hunter7_Potion;
-        public static ThingDef Hunter6_Potion;
-        public static ThingDef Hunter5_Potion;
-        public static ThingDef Melee_BlazingSword;
-        public static ThingDef Melee_BlazingSword_7S;
-        public static ThingDef Melee_BlazingSword_6S;
-        public static ThingDef Melee_BlazingSword_5S;
-
-        public static AbilityDef Cast_BlazingSpear;
-        public static AbilityDef Cast_BlazingSword;
-        public static AbilityDef Cast_FireArmor;
-        public static AbilityDef Cast_Fireball;
-        public static AbilityDef Cast_FireRavens;
-        public static AbilityDef Cast_Taunt;
-        public static AbilityDef Cast_ExtinguishFire;
-        public static AbilityDef Cast_FireTeleport;
-        public static AbilityDef Cast_Incite;
-        public static AbilityDef Cast_Confusion;
-        public static AbilityDef Cast_ReaperState;
-        public static AbilityDef Cast_Vulnerability;
-        public static AbilityDef Cast_Execution;
-
-        public static AbilityDef Cast_Fireball_9S;
-        public static AbilityDef Cast_Fireball_8S;
-        public static AbilityDef Cast_Fireball_7S;
-        public static AbilityDef Cast_Fireball_6S;
-        public static AbilityDef Cast_Fireball_5S;
-        public static AbilityDef Cast_BlazingSpear_7S;
-        public static AbilityDef Cast_BlazingSpear_6S;
-        public static AbilityDef Cast_BlazingSword_7S;
-        public static AbilityDef Cast_BlazingSword_6S;
-        public static AbilityDef Cast_BlazingSword_5S;
-        public static AbilityDef Cast_FireArmor_7S;
-        public static AbilityDef Cast_FireArmor_6S;
-        public static AbilityDef Cast_FireArmor_5S;
-        public static AbilityDef Cast_FireRavens_7S;
-        public static AbilityDef Cast_FireRavens_6S;
-        public static AbilityDef Cast_FireRavens_5S;
-        public static AbilityDef Cast_Taunt_8S;
-        public static AbilityDef Cast_Taunt_7S;
-        public static AbilityDef Cast_Taunt_6S;
-        public static AbilityDef Cast_Taunt_5S;
-        public static AbilityDef Cast_ExtinguishFire_7S;
-        public static AbilityDef Cast_ExtinguishFire_6S;
-        public static AbilityDef Cast_ExtinguishFire_5S;
-        public static AbilityDef Cast_Incite_6S;
-        public static AbilityDef Cast_Incite_5S;
-        public static AbilityDef Cast_Confusion_6S;
-        public static AbilityDef Cast_Confusion_5S;
-        public static AbilityDef Cast_ReaperState_5S;
-        public static AbilityDef Cast_Vulnerability_5S;
-        public static AbilityDef Cast_Execution_5S;
-
-        public static ThingDef Proj_Fireball_9S;
-        public static ThingDef Proj_Fireball_8S;
-        public static ThingDef Proj_Fireball_7S;
-        public static ThingDef Proj_Fireball_6S;
-        public static ThingDef Proj_Fireball_5S;
-        public static ThingDef Proj_BlazingSpear_7S;
-        public static ThingDef Proj_BlazingSpear_6S;
-        public static ThingDef Proj_BlazingSpear_5S;
-
         public static HediffDef lotr_SanityLoss;
+
         public static lotr.BeyonderHediffDef Hunter9_Hediff;
         public static lotr.BeyonderHediffDef Hunter8_Hediff;
         public static lotr.BeyonderHediffDef Hunter7_Hediff;
         public static lotr.BeyonderHediffDef Hunter6_Hediff;
         public static lotr.BeyonderHediffDef Hunter5_Hediff;
         public static lotr.BeyonderHediffDef Hunter4_Hediff;
-        public static HediffDef Hediff_FireArmor;
-        public static HediffDef Hediff_FireArmor_7S;
-        public static HediffDef Hediff_FireArmor_6S;
-        public static HediffDef Hediff_FireArmor_5S;
-        public static HediffDef Hediff_Confusion;
-        public static HediffDef Hediff_Confusion_6S;
-        public static HediffDef Hediff_Confusion_5S;
-        public static HediffDef Hediff_ReaperState;
-        public static HediffDef Hediff_ReaperState_5S;
-        public static HediffDef Hediff_Vulnerable;
-        public static HediffDef Hediff_Vulnerable_5S;
 
-        public static JobDef lotr_CogitationJob;
+        public static JobDef lotr_CogitationJob; // TODO: когитацию надо скрывать, если пешка не умеет её делать
 
         public static NeedDef lotr_SpiritualityNeed;
-
-        public static PawnKindDef lotr_FireRaven;
-        public static PawnKindDef lotr_MarshBoar;
         public static PawnKindDef lotr_Spirit;
-
-        public static RecipeDef Hunter9_PotionRecipe;
-        public static RecipeDef Hunter8_PotionRecipe;
-        public static RecipeDef Hunter7_PotionRecipe;
-        public static RecipeDef Hunter6_PotionRecipe;
-        public static RecipeDef Hunter5_PotionRecipe;
-
-        public static ThingCategoryDef BeyonderPotions;
-
-        public static ThinkTreeDef lotr_MarshBoarTree;
-
-        public static ThoughtDef lotr_SanityLossThought;
-
-        public static FleckDef InstantFlame; // OBSOLETE
         public static GameConditionDef BloodMoon;
     }
 
