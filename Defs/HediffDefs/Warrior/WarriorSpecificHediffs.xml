@@ -94,7 +94,7 @@
 
     <HediffDef Parent="Hediff_SunsetLightArmor" Name="Hediff_SunsetLightArmor_6S">
 
-        <defName>Hediff_SunsetLightArmor_6S<defName>
+        <defName>Hediff_SunsetLightArmor_6S</defName>
         
         <stages>
             <li>
@@ -114,7 +114,7 @@
 
     <HediffDef Parent="Hediff_SunsetLightArmor" Name="Hediff_SunsetLightArmor_5S">
 
-        <defName>Hediff_SunsetLightArmor_5S<defName>
+        <defName>Hediff_SunsetLightArmor_5S</defName>
         
         <stages>
             <li>
@@ -134,7 +134,7 @@
 
     <HediffDef Parent="Hediff_SunsetLightArmor" Name="Hediff_SunsetLightArmor_4S">
 
-        <defName>Hediff_SunsetLightArmor_4S<defName>
+        <defName>Hediff_SunsetLightArmor_4S</defName>
         
         <stages>
             <li>
