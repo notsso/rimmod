@@ -9,7 +9,12 @@
         <description>Создание и бросок сверхмощного, сверхсжатого снаряда из белого пламени. Снаряд пропитан эссенцией смерти, пробивает броню и способен ранить полубогов.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Execution</iconPath>
         <cooldownTicksRange>6000</cooldownTicksRange>
+
+        <aiCanUse>true</aiCanUse>
+        <targetRequired>true</targetRequired>
+        
         <hostile>true</hostile>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
 
         <spiritualityCost>300.0</spiritualityCost>
 
@@ -18,14 +23,12 @@
             <verbClass>lotr.Verb_ExplosionZone</verbClass>
             <range>50</range>
             <warmupTime>4.0</warmupTime>
-            <hasStandardCommand>true</hasStandardCommand>
+            <requireLineOfSight>True</requireLineOfSight>
 
             <targetParams>
-
                 <canTargetLocations>true</canTargetLocations>
                 <canTargetPawns>true</canTargetPawns>
                 <canTargetBuildings>true</canTargetBuildings>
-
             </targetParams>
 
         </verbProperties>

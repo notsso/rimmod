@@ -9,17 +9,26 @@
         <description>Создает плотный огненный покров вокруг тела, который плавит снаряды, согревает в любой мороз и сжигает ядовитые газы на подлете.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_FireArmor</iconPath>
         <cooldownTicksRange>7200</cooldownTicksRange>
+
+        <aiCanUse>true</aiCanUse>
+        <targetRequired>true</targetRequired>
+
         <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 
         <spiritualityCost>100.0</spiritualityCost>
 
         <verbProperties>
+        
             <verbClass>Verb_CastAbility</verbClass>
             <warmupTime>6.0</warmupTime>
             <range>0</range>
+            <requireLineOfSight>True</requireLineOfSight>
+
             <targetParams>
                 <canTargetSelf>true</canTargetSelf>
             </targetParams>
+
         </verbProperties>
         
     </AbilityDef>

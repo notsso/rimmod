@@ -9,7 +9,12 @@
         <description>смертоносный огненный шторм</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Firestorm</iconPath>
         <cooldownTicksRange>12000</cooldownTicksRange>
+
+        <aiCanUse>true</aiCanUse>
+        <targetRequired>true</targetRequired>
+
         <hostile>true</hostile>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
         
         <spiritualityCost>500.0</spiritualityCost>
         
@@ -18,14 +23,12 @@
             <verbClass>lotr.Verb_Firestorm</verbClass>
             <range>25</range>
             <warmupTime>3.0</warmupTime>
-            <hasStandardCommand>true</hasStandardCommand>
+            <requireLineOfSight>False</requireLineOfSight>
 
             <targetParams>
-
                 <canTargetLocations>true</canTargetLocations>
                 <canTargetPawns>true</canTargetPawns>
                 <canTargetBuildings>true</canTargetBuildings>
-                
             </targetParams>
 
         </verbProperties>

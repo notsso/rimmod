@@ -9,21 +9,29 @@
         <description>Привлекает внимание противника, заставляя его атаковать вас в ближнем бою.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Taunt</iconPath>
         <cooldownTicksRange>1200</cooldownTicksRange>
+
         <aiCanUse>true</aiCanUse>
         <targetRequired>true</targetRequired>
+
+        <hostile>true</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 
         <spiritualityCost>20.0</spiritualityCost>
         
         <verbProperties>
+
             <verbClass>Verb_CastAbility</verbClass>
             <range>15.9</range>
             <warmupTime>0.2</warmupTime>
+            <requireLineOfSight>True</requireLineOfSight>
+
             <targetParams>
                 <canTargetPawns>true</canTargetPawns>
                 <canTargetBuildings>false</canTargetBuildings>
                 <canTargetMechs>true</canTargetMechs>
                 <canTargetAnimals>true</canTargetAnimals>
             </targetParams>
+
         </verbProperties>
 
     </AbilityDef>

@@ -9,7 +9,12 @@
         <description>Поджигает все вокруг.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Firewave</iconPath>
         <cooldownTicksRange>6000</cooldownTicksRange>
+
+        <aiCanUse>true</aiCanUse>
+        <targetRequired>true</targetRequired>
+
         <hostile>true</hostile>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
 
         <spiritualityCost>200.0</spiritualityCost>
         
@@ -18,14 +23,13 @@
             <verbClass>lotr.Verb_CastFirewave</verbClass>
             <range>20</range>
             <warmupTime>1.0</warmupTime>
+            <requireLineOfSight>False</requireLineOfSight>
 
             <targetParams>
-
                 <canTargetLocations>true</canTargetLocations>
                 <canTargetPawns>true</canTargetPawns>
                 <canTargetBuildings>true</canTargetBuildings>
                 <canTargetSelf>false</canTargetSelf>
-
             </targetParams>
 
         </verbProperties>

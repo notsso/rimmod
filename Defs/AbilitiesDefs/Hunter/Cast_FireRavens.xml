@@ -10,18 +10,26 @@
         <iconPath>UI/Icons/Abilities/Hunter/Cast_FireRavens</iconPath>
         <cooldownTicksRange>1800</cooldownTicksRange>
         <targetRequired>False</targetRequired>
+        
         <aiCanUse>true</aiCanUse>
+        <targetRequired>false</targetRequired>
+        
         <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 
         <spiritualityCost>50.0</spiritualityCost>
 
         <verbProperties>
+
             <verbClass>Verb_CastAbility</verbClass>
             <warmupTime>0.5</warmupTime>
             <range>0</range>
+            <requireLineOfSight>False</requireLineOfSight>
+
             <targetParams>
                 <canTargetSelf>true</canTargetSelf>
             </targetParams>
+
         </verbProperties>
 
     </AbilityDef>

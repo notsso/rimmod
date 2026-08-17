@@ -8,21 +8,31 @@
         <description>Погасить все пожары в радиусе.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_ExtinguishFire</iconPath>
         <cooldownTicksRange>1200</cooldownTicksRange>
+
+        <aiCanUse>true</aiCanUse>
+        <targetRequired>true</targetRequired>
+
         <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 
         <spiritualityCost>10.0</spiritualityCost>
 
         <verbProperties>
+
             <verbClass>lotr.Verb_ExtinguishFire</verbClass>
             <range>2</range>
             <warmupTime>0.5</warmupTime>
+            <requireLineOfSight>True</requireLineOfSight>
+
             <targetParams>
                 <canTargetLocations>true</canTargetLocations>
                 <canTargetPawns>true</canTargetPawns>
                 <canTargetBuildings>true</canTargetBuildings>
                 <canTargetSelf>true</canTargetSelf>
             </targetParams>
+
         </verbProperties>
+
     </AbilityDef>
 
     <!-- Уровень 7 -->

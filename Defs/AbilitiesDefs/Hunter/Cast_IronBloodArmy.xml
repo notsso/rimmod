@@ -9,17 +9,26 @@
         <description>Увеличиват силу всех союзных пешек вокруг рыцаря.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_IronBloodArmy</iconPath>
         <cooldownTicksRange>9000</cooldownTicksRange>
+
+        <aiCanUse>true</aiCanUse>
+        <targetRequired>true</targetRequired>
+
         <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 
         <spiritualityCost>300.0</spiritualityCost>
 
         <verbProperties>
+
             <verbClass>lotr.Verb_IronBloodArmy</verbClass>
             <warmupTime>5.0</warmupTime>
             <range>0</range>
+            <requireLineOfSight>False</requireLineOfSight>
+
             <targetParams>
                 <canTargetSelf>true</canTargetSelf>
             </targetParams>
+
         </verbProperties>
         
     </AbilityDef>

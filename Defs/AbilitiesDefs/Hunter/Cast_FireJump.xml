@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_FireTeleport">
-
-        <defName>Cast_FireTeleport</defName>
+    <!-- Базовый шаблон способности -->
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_FireJump">
+        <defName>Cast_FireJump</defName>
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <label>Огненный прыжок</label>
         <description>Превратиться в сгусток пламени и переместиться в указанную точку.</description>
@@ -12,37 +11,33 @@
 
         <aiCanUse>true</aiCanUse>
         <targetRequired>true</targetRequired>
-
         <hostile>false</hostile>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 
         <spiritualityCost>15.0</spiritualityCost>
 
         <verbProperties>
-
             <verbClass>Verb_CastAbility</verbClass>
             <range>10</range>
             <warmupTime>0.5</warmupTime>
             <requireLineOfSight>True</requireLineOfSight>
-
             <targetParams>
                 <canTargetLocations>true</canTargetLocations>
                 <canTargetPawns>false</canTargetPawns>
                 <canTargetBuildings>false</canTargetBuildings>
             </targetParams>
-
         </verbProperties>
-
     </AbilityDef>
 
     <!-- Уровень 6 -->
-    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireTeleport">
-        <defName>Cast_FireTeleport_6S</defName>
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireJump">
+        <defName>Cast_FireJump_6S</defName>
         <label>Огненный прыжок</label>
         <cooldownTicksRange>600</cooldownTicksRange>
         <comps>
-            <li Class="lotr.CompProperties_FireTeleport">
-                <projectileDef>Proj_FireTeleport_6S</projectileDef>
+            <li Class="lotr.CompProperties_FireJump">
+                <flyerDef>FireTeleportFlyer</flyerDef>
+                <teleportSpeed>50</teleportSpeed>
             </li>
         </comps>
         <verbProperties>
@@ -52,13 +47,14 @@
     </AbilityDef>
 
     <!-- Уровень 5 -->
-    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireTeleport">
-        <defName>Cast_FireTeleport_5S</defName>
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireJump">
+        <defName>Cast_FireJump_5S</defName>
         <label>Огненный прыжок</label>
         <cooldownTicksRange>300</cooldownTicksRange>
         <comps>
-            <li Class="lotr.CompProperties_FireTeleport">
-                <projectileDef>Proj_FireTeleport_5S</projectileDef>
+            <li Class="lotr.CompProperties_FireJump">
+                <flyerDef>FireTeleportFlyer</flyerDef>
+                <teleportSpeed>80</teleportSpeed>
             </li>
         </comps>
         <verbProperties>
@@ -68,13 +64,14 @@
     </AbilityDef>
 
     <!-- Уровень 4 -->
-    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireTeleport">
-        <defName>Cast_FireTeleport_4S</defName>
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireJump">
+        <defName>Cast_FireJump_4S</defName>
         <label>Огненный прыжок</label>
         <cooldownTicksRange>60</cooldownTicksRange>
         <comps>
-            <li Class="lotr.CompProperties_FireTeleport">
-                <projectileDef>Proj_FireTeleport_4S</projectileDef>
+            <li Class="lotr.CompProperties_FireJump">
+                <flyerDef>FireTeleportFlyer</flyerDef>
+                <teleportSpeed>120</teleportSpeed>
             </li>
         </comps>
         <verbProperties>
@@ -82,5 +79,4 @@
             <warmupTime>0.1</warmupTime>
         </verbProperties>
     </AbilityDef>
-
 </Defs>

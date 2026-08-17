@@ -130,7 +130,7 @@ namespace lotr {
             }
 
             yield return new Command_Action {
-                defaultLabel = "Trade".Translate(),
+                defaultLabel = "Trade",
                 defaultDesc = "Trade with the beyonder gathering.",
                 icon = ContentFinder<Texture2D>.Get("UI/Commands/Trade", true),
                 action = delegate {

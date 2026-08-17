@@ -9,7 +9,12 @@
         <description>кусок огня</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Fireball</iconPath>
         <cooldownTicksRange>60</cooldownTicksRange>
+
+        <aiCanUse>true</aiCanUse>
+        <targetRequired>true</targetRequired>
+
         <hostile>true</hostile>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
         
         <spiritualityCost>15.0</spiritualityCost>
         
@@ -18,14 +23,12 @@
             <verbClass>lotr.Verb_ExplosionZone</verbClass>
             <range>25</range>
             <warmupTime>1.5</warmupTime>
-            <hasStandardCommand>true</hasStandardCommand>
+            <requireLineOfSight>True</requireLineOfSight>
 
             <targetParams>
-
                 <canTargetLocations>true</canTargetLocations>
                 <canTargetPawns>true</canTargetPawns>
                 <canTargetBuildings>true</canTargetBuildings>
-                
             </targetParams>
 
         </verbProperties>

@@ -9,17 +9,26 @@
         <description>Дезориентирует врага, заставляя его путаться.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Confusion</iconPath>
         <cooldownTicksRange>3600</cooldownTicksRange>
+
+        <aiCanUse>true</aiCanUse>
+        <targetRequired>true</targetRequired>
+
         <hostile>true</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 
         <spiritualityCost>100.0</spiritualityCost>
         
         <verbProperties>
+
             <verbClass>Verb_CastAbility</verbClass>
             <range>20</range>
             <warmupTime>0.8</warmupTime>
+            <requireLineOfSight>True</requireLineOfSight>
+
             <targetParams>
                 <canTargetPawns>true</canTargetPawns>
             </targetParams>
+
         </verbProperties>
 
     </AbilityDef>

@@ -9,17 +9,26 @@
         <iconPath>UI/Icons/Abilities/Hunter/Cast_BlazingSword</iconPath> 
         <cooldownTicksRange>3600</cooldownTicksRange>
         <targetRequired>False</targetRequired>
+
+        <aiCanUse>true</aiCanUse>
+        <targetRequired>false</targetRequired>
+
         <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
 
         <spiritualityCost>50.0</spiritualityCost>
 
         <verbProperties>
+
             <verbClass>Verb_CastAbility</verbClass>
             <warmupTime>2.0</warmupTime>
             <range>0</range>
+            <requireLineOfSight>False</requireLineOfSight>
+
             <targetParams>
                 <canTargetSelf>true</canTargetSelf>
             </targetParams>
+
         </verbProperties>
     </AbilityDef>
 
