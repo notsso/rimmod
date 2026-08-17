@@ -12,11 +12,7 @@
         <aiCanUse>true</aiCanUse>
         <targetRequired>true</targetRequired>
 
-        <modExtensions>
-            <li Class="lotr.SpiritualityCostExtension">
-                <cost>20.0</cost>
-            </li>
-        </modExtensions>
+        <spiritualityCost>20.0</spiritualityCost>
         
         <verbProperties>
             <verbClass>Verb_CastAbility</verbClass>

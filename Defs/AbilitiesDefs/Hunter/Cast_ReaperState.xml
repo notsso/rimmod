@@ -11,11 +11,7 @@
         <cooldownTicksRange>7200</cooldownTicksRange>
         <hostile>false</hostile>
 
-        <modExtensions>
-            <li Class="lotr.SpiritualityCostExtension">
-                <cost>250.0</cost>
-            </li>
-        </modExtensions>
+        <spiritualityCost>250.0</spiritualityCost>
         
         <verbProperties>
             <verbClass>Verb_CastAbility</verbClass>

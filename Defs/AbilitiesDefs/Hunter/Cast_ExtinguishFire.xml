@@ -10,11 +10,7 @@
         <cooldownTicksRange>1200</cooldownTicksRange>
         <hostile>false</hostile>
 
-        <modExtensions>
-            <li Class="lotr.SpiritualityCostExtension">
-                <cost>10.0</cost>
-            </li>
-        </modExtensions>
+        <spiritualityCost>10.0</spiritualityCost>
 
         <verbProperties>
             <verbClass>lotr.Verb_ExtinguishFire</verbClass>

@@ -6,6 +6,8 @@ namespace lotr {
 
     public class BeyonderAbilityDef : AbilityDef {
 
+        public float spiritualityCost;
+
     }
 
 }
