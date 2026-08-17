@@ -26,7 +26,7 @@ namespace lotr {
             finalCost = ((BeyonderAbilityDef)this.def).spiritualityCost;
 
             return finalCost;
-            
+
         }
 
         public override bool Activate(LocalTargetInfo target, LocalTargetInfo dest) {
