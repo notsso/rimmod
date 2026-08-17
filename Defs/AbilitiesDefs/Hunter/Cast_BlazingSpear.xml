@@ -16,12 +16,8 @@
         <targetRequired>true</targetRequired>
         <hostile>true</hostile>
         <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
-        <!--<confirmationDialogText>Are you sure?</confirmationDialogText>-->
-
+        
         <cooldownTicksRange>1200</cooldownTicksRange>
-        <charges>1</charges>
-        <cooldownPerCharge>false</cooldownPerCharge>
-
         <spiritualityCost>100.0</spiritualityCost>
 
         <verbProperties>
@@ -29,7 +25,7 @@
             <verbClass>lotr.Verb_ExplosionZone</verbClass>
             <range>40</range>
             <warmupTime>2.5</warmupTime>
-            <requireLineOfSight>True</requireLineOfSight>
+            <requireLineOfSight>true</requireLineOfSight>
             <ai_ProjectileLaunchingIgnoresMeleeThreats>false</ai_ProjectileLaunchingIgnoresMeleeThreats>
 
             <targetParams>

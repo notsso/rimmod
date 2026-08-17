@@ -3,19 +3,21 @@
 
     <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Incite">
 
-        <defName>Cast_Incite</defName>
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+
+        <defName>Cast_Incite</defName>
         <label>Подстрекательство</label>
         <description>Заставляет врага впасть в бешенство.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Incite</iconPath>
-        <cooldownTicksRange>100</cooldownTicksRange>
 
         <aiCanUse>true</aiCanUse>
+        <ai_IsOffensive>true</ai_IsOffensive>
+        <ai_IsIncendiary>false</ai_IsIncendiary>
         <targetRequired>true</targetRequired>
-
         <hostile>true</hostile>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 
+        <cooldownTicksRange>100</cooldownTicksRange>
         <spiritualityCost>100.0</spiritualityCost>
 
         <verbProperties>
@@ -23,7 +25,8 @@
             <verbClass>Verb_CastAbility</verbClass>
             <range>25</range>
             <warmupTime>1.0</warmupTime>
-            <requireLineOfSight>True</requireLineOfSight>
+            <requireLineOfSight>true</requireLineOfSight>
+            <ai_ProjectileLaunchingIgnoresMeleeThreats>false</ai_ProjectileLaunchingIgnoresMeleeThreats>
 
             <targetParams>
                 <canTargetPawns>true</canTargetPawns>

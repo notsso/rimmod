@@ -4,18 +4,20 @@
     <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Confusion">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        
         <defName>Cast_Confusion</defName>
         <label>Замешательство</label>
         <description>Дезориентирует врага, заставляя его путаться.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Confusion</iconPath>
-        <cooldownTicksRange>3600</cooldownTicksRange>
 
         <aiCanUse>true</aiCanUse>
+        <ai_IsOffensive>true</ai_IsOffensive>
+        <ai_IsIncendiary>false</ai_IsIncendiary>
         <targetRequired>true</targetRequired>
-
         <hostile>true</hostile>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 
+        <cooldownTicksRange>3600</cooldownTicksRange>
         <spiritualityCost>100.0</spiritualityCost>
         
         <verbProperties>
@@ -23,7 +25,8 @@
             <verbClass>Verb_CastAbility</verbClass>
             <range>20</range>
             <warmupTime>0.8</warmupTime>
-            <requireLineOfSight>True</requireLineOfSight>
+            <requireLineOfSight>true</requireLineOfSight>
+            <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
 
             <targetParams>
                 <canTargetPawns>true</canTargetPawns>

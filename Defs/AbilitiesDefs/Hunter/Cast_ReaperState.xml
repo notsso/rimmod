@@ -5,18 +5,20 @@
     <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_ReaperState">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        
         <defName>Cast_ReaperState</defName>
         <label>Жатва</label>
         <description>Переводит потустороннего в состояние пожинателя душ.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_ReaperState</iconPath>
-        <cooldownTicksRange>7200</cooldownTicksRange>
 
         <aiCanUse>true</aiCanUse>
+        <ai_IsOffensive>false</ai_IsOffensive>
+        <ai_IsIncendiary>false</ai_IsIncendiary>
         <targetRequired>true</targetRequired>
-
         <hostile>false</hostile>
         <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
 
+        <cooldownTicksRange>7200</cooldownTicksRange>
         <spiritualityCost>250.0</spiritualityCost>
         
         <verbProperties>
@@ -24,7 +26,8 @@
             <verbClass>Verb_CastAbility</verbClass>
             <range>0</range>
             <warmupTime>2.0</warmupTime>
-            <requireLineOfSight>False</requireLineOfSight>
+            <requireLineOfSight>false</requireLineOfSight>
+            <ai_ProjectileLaunchingIgnoresMeleeThreats>false</ai_ProjectileLaunchingIgnoresMeleeThreats>
 
             <targetParams>
                 <canTargetSelf>true</canTargetSelf>

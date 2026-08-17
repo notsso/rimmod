@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+    <!-- OBSOLETE -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_FireTeleport">
 
-        <defName>Cast_FireTeleport</defName>
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        
+        <defName>Cast_FireTeleport</defName>
         <label>Огненный прыжок</label>
         <description>Превратиться в сгусток пламени и переместиться в указанную точку.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_FireTeleport</iconPath>
-        <cooldownTicksRange>180</cooldownTicksRange>
 
         <aiCanUse>true</aiCanUse>
+        <ai_IsOffensive>false</ai_IsOffensive>
+        <ai_IsIncendiary>false</ai_IsIncendiary>
         <targetRequired>true</targetRequired>
-
         <hostile>false</hostile>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 
+        <cooldownTicksRange>180</cooldownTicksRange>
         <spiritualityCost>15.0</spiritualityCost>
 
         <verbProperties>
@@ -23,7 +26,8 @@
             <verbClass>Verb_CastAbility</verbClass>
             <range>10</range>
             <warmupTime>0.5</warmupTime>
-            <requireLineOfSight>True</requireLineOfSight>
+            <requireLineOfSight>true</requireLineOfSight>
+            <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
 
             <targetParams>
                 <canTargetLocations>true</canTargetLocations>
