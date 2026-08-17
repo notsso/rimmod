@@ -141,11 +141,8 @@
         </comps>
 
         <newAbilities>
-            <li>Cast_FireTeleport</li>
-            <li>Cast_Incite</li>
-            <li>Cast_Confusion</li>
-            <li>Cast_DawnLightAura</li> <!-- Радиус 40 метров со светом заката -->
-            <li>Cast_SilverArmorToggle</li> <!-- Слот под будущую способность брони -->
+            <li>Cast_SunsetLightArmor</li>
+            <li>Cast_SunsetLightDebuff</li>
 		</newAbilities>
 
 	</lotr.BeyonderHediffDef>

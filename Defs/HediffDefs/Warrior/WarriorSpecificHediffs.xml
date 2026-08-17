@@ -1,39 +1,155 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-    <HediffDef>
+    <HediffDef Name="SunsetLightDebuff">
+
         <defName>SunsetLightDebuff</defName>
         <label>sunset light radiance</label>
         <description>This pawn is suffering from sunset light.</description>
         <hediffClass>HediffWithComps</hediffClass>
-        <defaultLabelColor>(255, 120, 0)</defaultLabelColor>
-        <isBad>true</isBad>
+        <defaultLabelColor>(120, 120, 120)</defaultLabelColor>
+
+		<tendable>false</tendable>
+		<isBad>true</isBad>
+
         <stages>
-        <li>
-            <label>weakness</label>
-            <minSeverity>0</minSeverity>
-            <painOffset>0.2</painOffset>
-            <capMods>
-                <li>
-                    <capacity>Moving</capacity>
-                    <offset>-0.25</offset>
-                </li>
-                <li>
-                    <capacity>Consciousness</capacity>
-                    <offset>-0.15</offset>
-                </li>
-            </capMods>
-            <statOffsets>
-                <MeleeHitChance>-15</MeleeHitChance>
-                <MeleeDodgeChance>-15</MeleeDodgeChance>
-                <ShootingAccuracyPawn>-0.25</ShootingAccuracyPawn>
-            </statOffsets>
-        </li>
+            <li>
+                <label>weakness</label>
+                <minSeverity>0</minSeverity>
+                <painOffset>0.2</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-0.1</offset>
+                    </li>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.15</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <label>suffering</label>
+                <minSeverity>3</minSeverity>
+                <painOffset>0.4</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-0.3</offset>
+                    </li>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.5</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <label>exhaustion</label>
+                <minSeverity>20</minSeverity>
+                <painOffset>0.6</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-1</offset>
+                    </li>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-1.5</offset>
+                    </li>
+                </capMods>
+            </li>
         </stages>
+
+        <initialSeverity>1</initialSeverity>
+		<maxSeverity>100</maxSeverity>
+		<minSeverity>0</minSeverity>
         <comps>
-        <li Class="HediffCompProperties_Disappears">
-            <disappearsAfterTicks>2500</disappearsAfterTicks>
-            <showRemainingTime>true</showRemainingTime>
-        </li>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>24</severityPerDay>
+            </li>
         </comps>
+
     </HediffDef>
+
+    <HediffDef Name="Hediff_SunsetLightArmor">
+
+        <defName>Hediff_SunsetLightArmor</defName>
+        <label>sunset armor</label>
+        <description>This pawn is protected by dawn's paladin sunset armor.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(120, 120, 120)</defaultLabelColor>
+
+		<tendable>false</tendable>
+		<isBad>false</isBad>
+
+        <initialSeverity>1</initialSeverity>
+		<maxSeverity>100</maxSeverity>
+		<minSeverity>0</minSeverity>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>24</severityPerDay>
+            </li>
+        </comps>
+
+    </HediffDef>
+
+    <HediffDef Parent="Hediff_SunsetLightArmor" Name="Hediff_SunsetLightArmor_6S">
+
+        <defName>Hediff_SunsetLightArmor_6S<defName>
+        
+        <stages>
+            <li>
+                <label>armor</label>
+                <minSeverity>0</minSeverity>
+                
+                <statOffsets>
+                    <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+                    <ArmorRating_Heat>0.7</ArmorRating_Heat>
+                    <IncomingDamageFactor>-0.1</IncomingDamageFactor>
+                </statOffsets>
+            </li>
+        </stages>
+
+    </HediffDef>
+
+    <HediffDef Parent="Hediff_SunsetLightArmor" Name="Hediff_SunsetLightArmor_5S">
+
+        <defName>Hediff_SunsetLightArmor_5S<defName>
+        
+        <stages>
+            <li>
+                <label>armor</label>
+                <minSeverity>0</minSeverity>
+                
+                <statOffsets>
+                    <ArmorRating_Sharp>1.1</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>1</ArmorRating_Blunt>
+                    <ArmorRating_Heat>1.3</ArmorRating_Heat>
+                    <IncomingDamageFactor>-0.2</IncomingDamageFactor>
+                </statOffsets>
+            </li>
+        </stages>
+
+    </HediffDef>
+
+    <HediffDef Parent="Hediff_SunsetLightArmor" Name="Hediff_SunsetLightArmor_4S">
+
+        <defName>Hediff_SunsetLightArmor_4S<defName>
+        
+        <stages>
+            <li>
+                <label>armor</label>
+                <minSeverity>0</minSeverity>
+                
+                <statOffsets>
+                    <ArmorRating_Sharp>1.7</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>1.6</ArmorRating_Blunt>
+                    <ArmorRating_Heat>2</ArmorRating_Heat>
+                    <IncomingDamageFactor>-0.3</IncomingDamageFactor>
+                </statOffsets>
+            </li>
+        </stages>
+
+    </HediffDef>
+
 </Defs>

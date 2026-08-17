@@ -39,9 +39,10 @@
         <label>Огненная кровь</label>
         <cooldownTicksRange>1800</cooldownTicksRange>
         <comps>
-            <li Class="lotr.CompProperties_AbilityGiveHediffArea">
+            <li Class="lotr.CompProperties_GiveHediffArea">
                 <hediffDef>Hediff_IronBlood_4S</hediffDef>
                 <radius>5</radius>
+                <targetFriendly>true</targetFriendly>
             </li>
         </comps>
         <verbProperties>

@@ -443,42 +443,6 @@ namespace lotr {
         }
     }
 
-    public class CompProperties_AbilityGiveHediffArea : CompProperties_AbilityEffect {
-        public float radius = 5f;
-        public HediffDef hediffDef;
-
-        public CompProperties_AbilityGiveHediffArea() {
-            compClass = typeof(CompAbilityEffect_GiveHediffArea);
-        }
-    }
-
-    public class CompAbilityEffect_GiveHediffArea : CompAbilityEffect {
-        public new CompProperties_AbilityGiveHediffArea Props => (CompProperties_AbilityGiveHediffArea)props;
-
-        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
-            Pawn caster = parent.pawn;
-            if (caster == null || caster.Map == null) return;
-
-            Map map = caster.Map;
-            float radius = Props.radius;
-            IntVec3 center = target.Cell;
-
-            IReadOnlyList<Pawn> pawns = map.mapPawns.AllPawnsSpawned;
-            foreach (Pawn pawn in pawns) {
-                if (pawn == null || pawn.Dead) continue;
-                if (pawn.Position.DistanceToSquared(center) > radius * radius) continue;
-
-                if (pawn == caster) continue;
-                if (pawn.Faction != caster.Faction) continue;
-
-                Hediff hediff = HediffMaker.MakeHediff(Props.hediffDef, pawn);
-                pawn.health.AddHediff(hediff);
-
-                FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.MicroSparks, 1.5f);
-            }
-        }
-    }
-
     public class Verb_IronBloodArmy : Verb_CastAbility {
         protected override bool TryCastShot() {
             if (this.ability != null) {
@@ -788,18 +752,6 @@ namespace lotr {
                     spawnedCount++;
                 }
             }
-        }
-    }
-
-    // Способность hunter7 (pyromaniac): Огненная броня
-    public class CompProperties_AbilityGiveHediff : CompProperties_AbilityEffect {
-        public HediffDef hediffDef;
-        public float severity = 0f;
-        public bool applyToCaster = true;
-        public bool showFleck = true;
-
-        public CompProperties_AbilityGiveHediff() {
-            compClass = typeof(CompAbilityEffect_GiveHediff);
         }
     }
 

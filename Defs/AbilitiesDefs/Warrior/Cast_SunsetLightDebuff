@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_SunsetLight">
+
+        <abilityClass>lotr.Ablilty_SpendSpirituality</abilityClass>
+
+        <defName>Cast_SunsetLight</defName>
+        <label>Sunset light</label>
+        <description>Paladin emits concentrated light in a radius around him, that dispel illusions, banish shadows and weaken enemy wraiths or beyond creatures.</description>
+        <iconPath>Placeholder</iconPath>
+        <cooldownTicksRange>1800</cooldownTicksRange>
+        <targetRequired>false</targetRequired>
+
+        <aiCanUse>true</aiCanUse>
+        <ai_IsOffensive>true</ai_IsOffensive>
+        <targetRequired>true</targetRequired>
+        <hostile>true</hostile>
+
+        <spiritualityCost>50</spiritualityCost>
+
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>0.5</warmupTime>
+            <range>0.9</range>
+            <targetParams>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+
+    </AbilityDef>
+
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_SunsetLight">
+
+        <defName>Cast_SunsetLight_6S</defName>
+
+        <verbProperties>
+            <range>40</range>
+        </verbProperties>
+
+        <comps>
+            <li Class="lotr.HediffCompProperties.GiveHediffArea">
+                <hediffDef>SunsetLightDebuff</hediffDef>
+                <radius>40</radius>
+                <severity>1<severity>
+                <targetEnemies>true</targetEnemies>
+            </li>
+        </comps>
+
+    </AbilityDef>
+
+        <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_SunsetLight">
+
+        <defName>Cast_SunsetLight_5S</defName>
+
+        <verbProperties>
+            <range>80</range>
+        </verbProperties>
+
+        <comps>
+            <li Class="lotr.HediffCompProperties.GiveHediffArea">
+                <hediffDef>SunsetLightDebuff</hediffDef>
+                <radius>80</radius>
+                <severity>4<severity>
+                <targetEnemies>true</targetEnemies>
+            </li>
+        </comps>
+
+    </AbilityDef>
+
+        <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_SunsetLight">
+        <defName>Cast_SunsetLight_4S</defName>
+
+        <verbProperties>
+            <range>200</range>
+        </verbProperties>
+
+        <comps>
+            <li Class="lotr.HediffCompProperties.GiveHediffArea">
+                <hediffDef>SunsetLightDebuff</hediffDef>
+                <radius>200</radius>
+                <severity>25<severity>
+                <targetEnemies>true</targetEnemies>
+            </li>
+        </comps>
+
+    </AbilityDef>
+
+</Defs>

@@ -108,7 +108,7 @@ namespace lotr {
                 }
             }
 
-            if (flag1 && new_hediff.sequence >= pawn_sequence - 1) {
+            if (flag1 && new_hediff.sequence >= pawn_sequence - 1) { // TODO: проверить уровень усвоения
 
                 // И добавляем новый
                 Hediff newHediff = HediffMaker.MakeHediff(hediffToGive, pawn);
