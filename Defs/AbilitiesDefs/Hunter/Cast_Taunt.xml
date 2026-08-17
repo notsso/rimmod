@@ -4,18 +4,20 @@
     <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Taunt">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        
         <defName>Cast_Taunt</defName>
         <label>провокация</label>
         <description>Привлекает внимание противника, заставляя его атаковать вас в ближнем бою.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Taunt</iconPath>
-        <cooldownTicksRange>1200</cooldownTicksRange>
 
         <aiCanUse>true</aiCanUse>
+        <ai_IsOffensive>true</ai_IsOffensive>
+        <ai_IsIncendiary>false</ai_IsIncendiary>
         <targetRequired>true</targetRequired>
-
         <hostile>true</hostile>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-
+        
+        <cooldownTicksRange>1200</cooldownTicksRange>
         <spiritualityCost>20.0</spiritualityCost>
         
         <verbProperties>
@@ -23,7 +25,8 @@
             <verbClass>Verb_CastAbility</verbClass>
             <range>15.9</range>
             <warmupTime>0.2</warmupTime>
-            <requireLineOfSight>True</requireLineOfSight>
+            <requireLineOfSight>true</requireLineOfSight>
+            <ai_ProjectileLaunchingIgnoresMeleeThreats>false</ai_ProjectileLaunchingIgnoresMeleeThreats>
 
             <targetParams>
                 <canTargetPawns>true</canTargetPawns>

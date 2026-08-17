@@ -136,10 +136,8 @@
             <li>Cast_Fireball_9S</li> // OK
             <li>Cast_FireRavens_7S</li> // bad
             <li>Cast_Firestorm_4S</li> // OK
-            <li>Cast_FireTeleport_6S</li> // bad
+            <li>Cast_FireJump_6S</li> // bad
             -->
-
-            <li>Cast_FireJump_6S</li>
         
         </abilities>
         

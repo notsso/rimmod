@@ -4,18 +4,20 @@
     <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Firestorm">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        
         <defName>Cast_Firestorm</defName>
         <label>огненный шторм</label>
         <description>смертоносный огненный шторм</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Firestorm</iconPath>
-        <cooldownTicksRange>12000</cooldownTicksRange>
 
         <aiCanUse>true</aiCanUse>
+        <ai_IsOffensive>true</ai_IsOffensive>
+        <ai_IsIncendiary>true</ai_IsIncendiary>
         <targetRequired>true</targetRequired>
-
         <hostile>true</hostile>
         <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
         
+        <cooldownTicksRange>12000</cooldownTicksRange>
         <spiritualityCost>500.0</spiritualityCost>
         
         <verbProperties>
@@ -23,7 +25,8 @@
             <verbClass>lotr.Verb_Firestorm</verbClass>
             <range>25</range>
             <warmupTime>3.0</warmupTime>
-            <requireLineOfSight>False</requireLineOfSight>
+            <requireLineOfSight>false</requireLineOfSight>
+            <ai_ProjectileLaunchingIgnoresMeleeThreats>false</ai_ProjectileLaunchingIgnoresMeleeThreats>
 
             <targetParams>
                 <canTargetLocations>true</canTargetLocations>

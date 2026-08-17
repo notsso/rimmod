@@ -4,18 +4,20 @@
     <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Fireball">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        
         <defName>Cast_Fireball</defName>
         <label>огненный шар</label>
         <description>кусок огня</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Fireball</iconPath>
-        <cooldownTicksRange>60</cooldownTicksRange>
-
+        
         <aiCanUse>true</aiCanUse>
+        <ai_IsOffensive>true</ai_IsOffensive>
+        <ai_IsIncendiary>true</ai_IsIncendiary>
         <targetRequired>true</targetRequired>
-
         <hostile>true</hostile>
         <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
         
+        <cooldownTicksRange>60</cooldownTicksRange>
         <spiritualityCost>15.0</spiritualityCost>
         
         <verbProperties>
@@ -23,7 +25,8 @@
             <verbClass>lotr.Verb_ExplosionZone</verbClass>
             <range>25</range>
             <warmupTime>1.5</warmupTime>
-            <requireLineOfSight>True</requireLineOfSight>
+            <requireLineOfSight>true</requireLineOfSight>
+            <ai_ProjectileLaunchingIgnoresMeleeThreats>false</ai_ProjectileLaunchingIgnoresMeleeThreats>
 
             <targetParams>
                 <canTargetLocations>true</canTargetLocations>

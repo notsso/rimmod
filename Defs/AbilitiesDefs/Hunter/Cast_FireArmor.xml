@@ -4,18 +4,20 @@
     <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_FireArmor">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        
         <defName>Cast_FireArmor</defName>
         <label>огненная броня</label>
         <description>Создает плотный огненный покров вокруг тела, который плавит снаряды, согревает в любой мороз и сжигает ядовитые газы на подлете.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_FireArmor</iconPath>
-        <cooldownTicksRange>7200</cooldownTicksRange>
-
+        
         <aiCanUse>true</aiCanUse>
+        <ai_IsOffensive>false</ai_IsOffensive>
+        <ai_IsIncendiary>false</ai_IsIncendiary>
         <targetRequired>true</targetRequired>
-
         <hostile>false</hostile>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 
+        <cooldownTicksRange>7200</cooldownTicksRange>
         <spiritualityCost>100.0</spiritualityCost>
 
         <verbProperties>
@@ -23,7 +25,8 @@
             <verbClass>Verb_CastAbility</verbClass>
             <warmupTime>6.0</warmupTime>
             <range>0</range>
-            <requireLineOfSight>True</requireLineOfSight>
+            <requireLineOfSight>true</requireLineOfSight>
+            <ai_ProjectileLaunchingIgnoresMeleeThreats>false</ai_ProjectileLaunchingIgnoresMeleeThreats>
 
             <targetParams>
                 <canTargetSelf>true</canTargetSelf>
