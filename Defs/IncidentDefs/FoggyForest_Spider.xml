@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект -->
+    <WorldObjectDef ParentName="Site">
+        <defName>SpiderForest_World</defName>
+        <label>foggy spider forest</label>
+        <description>A dense temperate forest shrouded in thick fog. A monstrous spider hunts within.</description>
+        <mapGenerator>SpiderForestGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>SpiderForest_Site</defName>
+        <label>spider forest</label>
+        <description>A fog-covered forest infested by a giant spider.</description>
+        <workerClass>lotr.SitePartWorker_SpiderForest</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>SpiderForest_Incident</defName>
+        <label>foggy spider forest</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_SpiderForest</workerClass>
+        <category>Misc</category>
+        <earliestDay>5</earliestDay>
+        <letterLabel>Foggy spider forest</letterLabel>
+        <letterText>A thick fog has settled over a nearby forest. A giant spider has made its lair in the mist.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация паука -->
+    <GenStepDef>
+        <defName>BlackHuntingSpider</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_BlackHuntingSpider"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты (использует те же террайн и растения, что и лес с волком) -->
+    <MapGeneratorDef>
+        <defName>SpiderForestGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>RocksFromGrid</li>
+            <li>TemperateForestTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>TemperateForestPlants</li>
+            <li>BlackHuntingSpider</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

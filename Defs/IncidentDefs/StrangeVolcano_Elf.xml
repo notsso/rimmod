@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект (сайт) -->
+    <WorldObjectDef ParentName="Site">
+        <defName>StrangeVolcano_World</defName>
+        <label>unusual dormant volcano</label>
+        <description>A strange volcanic region has formed. The ground is covered in rough stone, with lava lakes and ancient ruins.</description>
+        <mapGenerator>StrangeVolcanoGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>StrangeVolcano_Site</defName>
+        <label>volcanic region</label>
+        <description>A volcanic area, with a mysterious lair at its center.</description>
+        <workerClass>lotr.SitePartWorker_StrangeVolcano</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>StrangeVolcano_Incident</defName>
+        <label>unusual dormant volcano</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_StrangeVolcano</workerClass>
+        <category>Misc</category>
+        <earliestDay>10</earliestDay>
+        <letterLabel>Unusual volcano spotted</letterLabel>
+        <letterText>A dormant volcano has been discovered nearby. Strange energy emanates from its center.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация вулканического террейна -->
+    <GenStepDef>
+        <defName>VolcanicTerrain</defName>
+        <order>230</order>
+        <genStep Class="lotr.GenStep_VolcanicTerrain"/>
+    </GenStepDef>
+
+    <!-- Генерация логова -->
+    <GenStepDef>
+        <defName>VolcanicLair</defName>
+        <order>240</order>
+        <genStep Class="lotr.GenStep_CentralVolcanicLair"/>
+    </GenStepDef>
+
+    <!-- Увеличенное количество каменных обломков -->
+    <GenStepDef>
+        <defName>VolcanicRockChunks</defName>
+        <order>760</order>
+        <genStep Class="GenStep_RockChunks"/>
+    </GenStepDef>
+
+    <GenStepDef>
+        <defName>MagmaElf</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_MagmaElf"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты -->
+    <MapGeneratorDef>
+        <defName>StrangeVolcanoGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>RocksFromGrid</li>
+            <li>VolcanicTerrain</li>
+            <li>VolcanicLair</li>
+            <li>VolcanicRockChunks</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>MagmaElf</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

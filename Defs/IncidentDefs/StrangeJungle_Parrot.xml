@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект -->
+    <WorldObjectDef ParentName="Site">
+        <defName>JungleParrot_World</defName>
+        <label>jungle parrot territory</label>
+        <description>A dense tropical forest. A monstrous parrot rules this domain.</description>
+        <mapGenerator>JungleParrotGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>JungleParrot_Site</defName>
+        <label>jungle parrot</label>
+        <description>A tropical jungle inhabited by a dangerous parrot.</description>
+        <workerClass>lotr.SitePartWorker_JungleParrot</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>JungleParrot_Incident</defName>
+        <label>jungle parrot</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_JungleParrot</workerClass>
+        <category>Misc</category>
+        <earliestDay>5</earliestDay>
+        <letterLabel>Jungle parrot</letterLabel>
+        <letterText>A giant parrot has been spotted in the jungle. It appears to be extremely aggressive.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация попугая -->
+    <GenStepDef>
+        <defName>CuspidsParrot</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_CuspidsParrot"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты (переиспользуем террайн и растения джунглей) -->
+    <MapGeneratorDef>
+        <defName>JungleParrotGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>JungleTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>JunglePlants</li>
+            <li>CuspidsParrot</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

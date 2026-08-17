@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <IncidentDef>
+
+        <defName>lotr_FirstMeeting</defName>
+        <label>mysterious envoy</label>
+        <workerClass>lotr.IncidentWorker_FirstMeeting</workerClass>
+        <category>Misc</category>
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+        <letterText>A lone figure approaches your settlement, claiming to represent the Iron and Blood Cross Order. They request an audience.</letterText>
+        <letterLabel>Mysterious envoy</letterLabel>
+        <baseChance>0</baseChance>
+        
+    </IncidentDef>
+
+</Defs>

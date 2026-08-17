@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект -->
+    <WorldObjectDef ParentName="Site">
+        <defName>FireSalamanderRuins_World</defName>
+        <label>desert ruins of the fire salamander</label>
+        <description>Ancient desert ruins, now home to a fire salamander.</description>
+        <mapGenerator>FireSalamanderRuinsGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>FireSalamanderRuins_Site</defName>
+        <label>fire salamander ruins</label>
+        <description>Desert ruins guarded by a fiery salamander.</description>
+        <workerClass>lotr.SitePartWorker_FireSalamanderRuins</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>FireSalamanderRuins_Incident</defName>
+        <label>fire salamander ruins</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_FireSalamanderRuins</workerClass>
+        <category>Misc</category>
+        <earliestDay>8</earliestDay>
+        <letterLabel>Fire salamander ruins</letterLabel>
+        <letterText>Among the desert ruins, a fire salamander has made its lair.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация саламандры -->
+    <GenStepDef>
+        <defName>FireSalamander</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_FireSalamander"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты (переиспользуем пустынный террайн) -->
+    <MapGeneratorDef>
+        <defName>FireSalamanderRuinsGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>DesertTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>FireSalamander</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

@@ -110,6 +110,7 @@ namespace lotr {
 
         public static PawnKindDef lotr_FireRaven;
         public static PawnKindDef lotr_MarshBoar;
+        public static PawnKindDef lotr_Spirit;
 
         public static RecipeDef Hunter9_PotionRecipe;
         public static RecipeDef Hunter8_PotionRecipe;
@@ -127,7 +128,34 @@ namespace lotr {
         public static GameConditionDef BloodMoon;
     }
 
-// для получения hediff какого то
+    [StaticConstructorOnStartup]
+    public static class ModStartup {
+        static ModStartup() {
+            // событие - первая встреча с какой то тайной организацией
+            LongEventHandler.QueueLongEvent(() => {
+                if (Current.Game != null &&
+                    !Current.Game.components.OfType<GameComponent_FirstMeeting>().Any()) {
+                    Current.Game.components.Add(new GameComponent_FirstMeeting(Current.Game));
+                }
+            }, "lotr_AddFirstMeeting", false, null);
+
+            // событие - торговцы из дружественной тайной организации
+            LongEventHandler.QueueLongEvent(() => {
+                if (Current.Game != null &&
+                    !Current.Game.components.OfType<GameComponent_MysteryEvent>().Any()) {
+                    Current.Game.components.Add(new GameComponent_MysteryEvent(Current.Game));
+                }
+            }, "lotr_AddMysteryEvent", false, null);
+
+            // событие - возможность заново подружиться при вражде с тайной организацией
+            LongEventHandler.QueueLongEvent(() => {
+                if (Current.Game != null && !Current.Game.components.OfType<GameComponent_PeaceOffer>().Any())
+                    Current.Game.components.Add(new GameComponent_PeaceOffer(Current.Game));
+            }, "lotr_AddPeaceOffer", false, null);
+        }
+    }
+
+    // для получения hediff какого то
     public class IngestionOutcomeDoer_GiveHediffRange : IngestionOutcomeDoer {
         public HediffDef hediffDef; // xml
         public FloatRange severityRange; // xml
@@ -172,7 +200,7 @@ namespace lotr {
             }
 
             if (flag1 && new_hediff.sequence >= pawn_sequence - 1) {
-                
+
                 // И добавляем новый
                 Hediff newHediff = HediffMaker.MakeHediff(hediffToGive, pawn);
                 newHediff.Severity = severity;

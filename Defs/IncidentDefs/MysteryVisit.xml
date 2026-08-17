@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <IncidentDef>
+
+        <defName>lotr_MysteryVisit</defName>
+        <label>mysterious visitors</label>
+        <workerClass>lotr.IncidentWorker_MysteryVisit</workerClass>
+        <category>Misc</category>
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+        <letterText>Members of a mysterious order have stopped near your settlement. They keep to themselves.</letterText>
+        <letterLabel>Mystery visitors</letterLabel>
+        <baseChance>0</baseChance>
+
+    </IncidentDef>
+
+</Defs>

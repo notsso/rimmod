@@ -16,8 +16,12 @@
         </statBases>
         
         <thingCategories>
-            <li>Manufactured</li>
+            <li>BeyonderItems</li>
         </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
     </ThingDef>
 
     <ThingDef ParentName="ResourceBase">
@@ -35,8 +39,12 @@
         </statBases>
         
         <thingCategories>
-            <li>Manufactured</li>
+            <li>BeyonderItems</li>
         </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
     </ThingDef>
 
 </Defs>

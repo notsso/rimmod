@@ -3,11 +3,43 @@
 <Defs>
 
     <ThingCategoryDef>
+        <defName>BeyonderItems</defName>
+        <label>beyonder items</label>
+        <parent>Manufactured</parent>
+        <resourceReadoutRoot>true</resourceReadoutRoot>
+        <iconPath>UI/Icons/ThingCategories/BeyonderItems</iconPath>
+    </ThingCategoryDef>
+
+    <ThingCategoryDef>
         <defName>BeyonderPotions</defName>
         <label>beyonder potions</label>
-        <parent>Manufactured</parent>
+        <parent>BeyonderItems</parent>
         <resourceReadoutRoot>false</resourceReadoutRoot>
         <iconPath>UI/Icons/ThingCategories/BeyonderPotions</iconPath>
+    </ThingCategoryDef>
+
+    <ThingCategoryDef>
+        <defName>BeyonderCreatureParts</defName>
+        <label>parts of beyonder creatures</label>
+        <parent>BeyonderItems</parent>
+        <resourceReadoutRoot>false</resourceReadoutRoot>
+        <iconPath>UI/Icons/ThingCategories/BeyonderCreatureParts</iconPath>
+    </ThingCategoryDef>
+
+    <ThingCategoryDef>
+        <defName>BeyonderPlantParts</defName>
+        <label>parts of beyonder plant</label>
+        <parent>BeyonderItems</parent>
+        <resourceReadoutRoot>false</resourceReadoutRoot>
+        <iconPath>UI/Icons/ThingCategories/BeyonderPlantParts</iconPath>
+    </ThingCategoryDef>
+
+    <ThingCategoryDef>
+        <defName>SpecialBeyonderItems</defName>
+        <label>special beyonder item</label>
+        <parent>BeyonderItems</parent>
+        <resourceReadoutRoot>false</resourceReadoutRoot>
+        <iconPath>UI/Icons/ThingCategories/SpecialBeyonderItems</iconPath>
     </ThingCategoryDef>
 
 </Defs>

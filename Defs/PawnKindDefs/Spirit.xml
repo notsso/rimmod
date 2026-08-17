@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="AnimalThingBase">
+
+        <defName>lotr_SpiritRace</defName>
+        <label>Spirit</label>
+        <description>Remaining spirit of the dead creature.</description>
+        
+        <statBases>
+            <MoveSpeed>10.0</MoveSpeed>
+            <MarketValue>0</MarketValue>
+            <ComfyTemperatureMin>-500</ComfyTemperatureMin>
+            <ComfyTemperatureMax>500</ComfyTemperatureMax>
+            <ArmorRating_Blunt>0.80</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.80</ArmorRating_Heat>
+            <Wildness>1</Wildness> 
+
+            <MeatAmount>0</MeatAmount>
+            <LeatherAmount>0</LeatherAmount>
+
+            <Flammability>0</Flammability>
+            <ToxicResistance>1</ToxicResistance>
+            <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+            <InjuryHealingFactor>5.0</InjuryHealingFactor>
+            <MeleeDodgeChance>50</MeleeDodgeChance>
+        </statBases>
+
+        <damageMultipliers>
+            <li>
+                <damageDef>lotr_Light</damageDef>
+                <multiplier>3.0</multiplier>
+            </li>
+        </damageMultipliers>
+
+        <race>
+            <thinkTreeMain>Animal</thinkTreeMain> 
+            <body>Monkey</body>
+            <baseHungerRate>0.01</baseHungerRate>
+            <baseBodySize>1.0</baseBodySize>
+            <baseHealthScale>1.0</baseHealthScale>
+
+            <needsRest>false</needsRest>
+            <hasGenders>false</hasGenders>
+            <foodType>None</foodType>
+            <lifeExpectancy>10</lifeExpectancy>
+
+            <trainability>None</trainability>
+            <manhunterOnDamageChance>1</manhunterOnDamageChance>
+            <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
+
+            <lifeStageAges>
+                <li>
+                    <def>AnimalAdult</def>
+                    <minAge>0</minAge>
+                </li>
+            </lifeStageAges>
+
+            <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+            <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+            <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+            <soundEating>Herbivore_Eat</soundEating>
+        </race>
+
+        <tools>
+            <li>
+                <label>left fist</label>
+                <labelNoLocation>fist</labelNoLocation>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>2</power>
+                <cooldownTime>1.0</cooldownTime>
+                <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+            </li>
+            <li>
+                <label>right fist</label>
+                <labelNoLocation>fist</labelNoLocation>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>2</power>
+                <cooldownTime>1.0</cooldownTime>
+                <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+            </li>
+            <li>
+                <capacities>
+                    <li>Bite</li>
+                </capacities>
+                <power>3</power>
+                <cooldownTime>1.0</cooldownTime>
+                <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+                <chanceFactor>0.7</chanceFactor>
+            </li>
+            <li>
+                <label>head</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>2</power>
+                <cooldownTime>1.0</cooldownTime>
+                <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+                <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+                <chanceFactor>0.2</chanceFactor>
+            </li>
+        </tools>
+
+        <comps>
+            <li Class="lotr.CompProperties_DeathVanish" />
+            <li Class="lotr.CompProperties_MovingGlower">
+                <glowRadius>3</glowRadius>
+                <glowColor>(200, 200, 200, 0)</glowColor>
+            </li>
+        </comps>
+
+    </ThingDef>
+
+    <PawnKindDef ParentName="AnimalKindBase">
+    
+        <defName>lotr_Spirit</defName>
+        <label>Spirit</label>
+        <race>lotr_SpiritRace</race>
+        <combatPower>100</combatPower>
+        
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Spirit/Spirit</texPath>
+                    <drawSize>1.50</drawSize>
+                </bodyGraphicData>
+            </li>
+        </lifeStages>
+
+    </PawnKindDef>
+
+</Defs>

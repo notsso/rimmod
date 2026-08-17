@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект -->
+    <WorldObjectDef ParentName="Site">
+        <defName>DesertRuins_World</defName>
+        <label>ancient desert ruins</label>
+        <description>Ruins of an old empire lie half-buried in the desert sands. Something guards them.</description>
+        <mapGenerator>DesertRuinsGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>DesertRuins_Site</defName>
+        <label>desert ruins</label>
+        <description>Scorching desert with ancient stone ruins at its heart.</description>
+        <workerClass>lotr.SitePartWorker_DesertRuins</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>DesertRuins_Incident</defName>
+        <label>ancient desert ruins</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_DesertRuins</workerClass>
+        <category>Misc</category>
+        <earliestDay>8</earliestDay>
+        <letterLabel>Ancient ruins</letterLabel>
+        <letterText>An ancient structure has been discovered in the desert. It looks abandoned, but legends speak of a guardian.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация пустынного террейна -->
+    <GenStepDef>
+        <defName>DesertTerrain</defName>
+        <order>230</order>
+        <genStep Class="lotr.GenStep_DesertTerrain"/>
+    </GenStepDef>
+
+    <!-- Генерация руин -->
+    <GenStepDef>
+        <defName>DesertRuins</defName>
+        <order>1600</order>
+        <genStep Class="lotr.GenStep_DesertRuins"/>
+    </GenStepDef>
+
+    <!-- Генерация сфинкса -->
+    <GenStepDef>
+        <defName>Sphinx</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_Sphinx"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты -->
+    <MapGeneratorDef>
+        <defName>DesertRuinsGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>DesertTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>DesertRuins</li>
+            <li>Sphinx</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

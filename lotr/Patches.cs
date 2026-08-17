@@ -369,4 +369,46 @@ namespace lotr {
             }
         }
     }
+
+    [HarmonyPatch(typeof(Pawn), nameof(Pawn.GetFloatMenuOptions))]
+    public static class Patch_Pawn_GetFloatMenuOptions {
+        public static IEnumerable<FloatMenuOption> Postfix(IEnumerable<FloatMenuOption> values, Pawn __instance, Pawn selPawn) {
+            foreach (FloatMenuOption option in values)
+                yield return option;
+
+            if (__instance.kindDef.HasModExtension<DefModExtension_FirstMeeting>()) {
+                GameComponent_FirstMeeting comp = Current.Game.GetComponent<GameComponent_FirstMeeting>();
+                if (comp == null || comp.IsPawnTalked(__instance))
+                    yield break;
+
+                Faction faction = __instance.Faction;
+                if (faction != null && faction != Faction.OfPlayer &&
+                    faction.def.defName == "lotr_IronAndBloodCrossOrder") {
+                    yield return new FloatMenuOption(
+                        "Поговорить с представителем",
+                        delegate { Find.WindowStack.Add(new Dialog_FirstMeeting(__instance)); },
+                        MenuOptionPriority.Default,
+                        null,
+                        null,
+                        0f,
+                        null,
+                        null,
+                        true,
+                        0
+                    );
+                }
+            }
+
+            // Мирный дипломат
+            if (__instance.kindDef.HasModExtension<DefModExtension_PeaceOffer>()) {
+                Faction faction = __instance.Faction;
+                if (faction != null && faction != Faction.OfPlayer && faction.def.defName == "lotr_IronAndBloodCrossOrder") {
+                    yield return new FloatMenuOption(
+                        "Поговорить с дипломатом",
+                        delegate { Find.WindowStack.Add(new Dialog_PeaceOffer(__instance)); },
+                        MenuOptionPriority.Default, null, null, 0f, null, null, true, 0);
+                }
+            }
+        }
+    }
 }

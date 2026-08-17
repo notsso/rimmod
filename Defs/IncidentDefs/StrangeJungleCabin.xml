@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект -->
+    <WorldObjectDef ParentName="Site">
+        <defName>JungleCabin_World</defName>
+        <label>abandoned jungle cabin</label>
+        <description>A half-ruined wooden cabin deep in the jungle. Strange sounds come from inside.</description>
+        <mapGenerator>JungleCabinGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>JungleCabin_Site</defName>
+        <label>jungle cabin</label>
+        <description>A dense tropical forest with a ruined cabin.</description>
+        <workerClass>lotr.SitePartWorker_JungleCabin</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>JungleCabin_Incident</defName>
+        <label>abandoned jungle cabin</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_JungleCabin</workerClass>
+        <category>Misc</category>
+        <earliestDay>5</earliestDay>
+        <letterLabel>Jungle cabin</letterLabel>
+        <letterText>A ruined wooden cabin has been spotted deep in the jungle. The area seems abandoned, but something dangerous may lurk inside.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация террейна джунглей -->
+    <GenStepDef>
+        <defName>JungleTerrain</defName>
+        <order>230</order>
+        <genStep Class="lotr.GenStep_JungleTerrain"/>
+    </GenStepDef>
+
+    <!-- Генерация растительности -->
+    <GenStepDef>
+        <defName>JunglePlants</defName>
+        <order>900</order>
+        <genStep Class="lotr.GenStep_JunglePlants"/>
+    </GenStepDef>
+
+    <!-- Генерация растительности -->
+    <GenStepDef>
+        <defName>ForestHunter</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_ForestHunter"/>
+    </GenStepDef>
+
+    <!-- Генерация домика -->
+    <GenStepDef>
+        <defName>JungleCabin</defName>
+        <order>1600</order>
+        <genStep Class="lotr.GenStep_JungleCabin"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты -->
+    <MapGeneratorDef>
+        <defName>JungleCabinGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>JungleTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>JunglePlants</li>
+            <li>JungleCabin</li>
+            <li>ForestHunter</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

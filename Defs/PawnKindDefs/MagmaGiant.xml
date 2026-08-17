@@ -17,15 +17,15 @@
             <ArmorRating_Heat>2.0</ArmorRating_Heat>
             <Wildness>1</Wildness> 
 
+            <MeatAmount>0</MeatAmount>
+            <LeatherAmount>0</LeatherAmount>
+
             <Flammability>0</Flammability>
             <ToxicResistance>1</ToxicResistance>
             <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
             <IncomingDamageFactor>0.10</IncomingDamageFactor> 
             <InjuryHealingFactor>10.0</InjuryHealingFactor>
             <MeleeHitChance>50</MeleeHitChance>
-
-            <MeatAmount>0</MeatAmount>
-            <LeatherAmount>0</LeatherAmount>
         </statBases>
 
         <race>
@@ -108,7 +108,15 @@
 
         <butcherProducts>
             <lotr_MagmaGiantCore>1</lotr_MagmaGiantCore>
+            <lotr_MysticalComponents>2</lotr_MysticalComponents>
         </butcherProducts>
+
+        <comps>
+            <li Class="lotr.CompProperties_MovingGlower">
+                <glowRadius>15</glowRadius>
+                <glowColor>(255, 100, 20, 0)</glowColor>
+            </li>
+        </comps>
 
     </ThingDef>
 

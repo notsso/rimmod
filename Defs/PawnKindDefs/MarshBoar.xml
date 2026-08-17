@@ -16,6 +16,9 @@
             <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
             <ArmorRating_Heat>0.20</ArmorRating_Heat>
             <Wildness>1</Wildness> 
+
+            <MeatAmount>0</MeatAmount>
+            <LeatherAmount>0</LeatherAmount>
         </statBases>
 
         <race>
@@ -31,9 +34,6 @@
             <lifeExpectancy>15</lifeExpectancy>
             <manhunterOnDamageChance>1</manhunterOnDamageChance>
             <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
-            
-            <leatherDef>Leather_Pig</leatherDef>
-            <meatDef>Meat_Pig</meatDef>
 
             <lifeStageAges>
                 <li>

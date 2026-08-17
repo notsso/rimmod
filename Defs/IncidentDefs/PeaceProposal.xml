@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <IncidentDef>
+        <defName>lotr_PeaceOffer</defName>
+        <label>peace offer</label>
+        <workerClass>lotr.IncidentWorker_PeaceOffer</workerClass>
+        <category>Misc</category>
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+        <letterText>A diplomat from the Iron and Blood Cross Order approaches, offering to forget past grievances and restore neutrality.</letterText>
+        <letterLabel>Peace offer</letterLabel>
+        <baseChance>0</baseChance>
+    </IncidentDef>
+
+</Defs>

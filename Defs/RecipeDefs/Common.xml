@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <RecipeDef>
+        <defName>ConvertBeyonderCreatureParts</defName>
+        <label>extract mystical components</label>
+        <description>Break down beyonder creature parts into mystical components.</description>
+        <jobString>Extracting mystical components.</jobString>
+
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+
+        <ingredients>
+            <li>
+                <filter>
+                    <categories>
+                        <li>BeyonderCreatureParts</li>
+                    </categories>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+
+        <fixedIngredientFilter>
+            <categories>
+                <li>BeyonderCreatureParts</li>
+            </categories>
+        </fixedIngredientFilter>
+
+        <products>
+            <lotr_MysticalComponents>1</lotr_MysticalComponents>
+        </products>
+
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+
+        <researchPrerequisite>Brewing</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>ConvertBeyonderPlantParts</defName>
+        <label>extract magical herbs</label>
+        <description>Convert beyonder plant part into magical herbs for more common uses.</description>
+        <jobString>Extracting magical herbs.</jobString>
+        
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+    
+        <ingredients>
+            <li>
+                <filter>
+                    <categories>
+                        <li>BeyonderPlantParts</li>
+                    </categories>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+
+        <fixedIngredientFilter>
+            <categories>
+                <li>BeyonderPlantParts</li>
+            </categories>
+        </fixedIngredientFilter>
+        
+        <products>
+            <lotr_MagicalHerbs>2</lotr_MagicalHerbs>
+        </products>
+        
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        
+        <researchPrerequisite>Brewing</researchPrerequisite>
+    </RecipeDef>
+
+</Defs>
