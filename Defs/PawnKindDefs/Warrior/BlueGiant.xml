@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="GiantBase">
+        <defName>lotr_BlueGiantRace</defName>
+        <label>blue giant</label>
+        <description>A hulking blue-skinned giant with bony protrusions along its spine. Its muscles are like iron cables, and its hide turns aside common arrows and bullets. It fights with an unnerving, bestial skill, reading weaknesses in its enemies' stances.</description>
+        <statBases>
+            <MoveSpeed>4.2</MoveSpeed>
+            <ArmorRating_Sharp>0.6</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.7</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.3</ArmorRating_Heat>
+            <MeleeDodgeChance>0.25</MeleeDodgeChance>
+            <PsychicSensitivity>0.1</PsychicSensitivity>
+        </statBases>
+        <race>
+            <baseBodySize>3.5</baseBodySize>
+            <baseHealthScale>4.0</baseHealthScale>
+        </race>
+        
+        <tools>
+            <li>
+                <label>left fist</label>
+                <labelNoLocation>fist</labelNoLocation>
+                <capacities><li>Blunt</li></capacities>
+                <power>25</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+                <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+                <armorPenetration>0.3</armorPenetration>
+            </li>
+            <li>
+                <label>right fist</label>
+                <labelNoLocation>fist</labelNoLocation>
+                <capacities><li>Blunt</li></capacities>
+                <power>25</power>
+                <cooldownTime>1</cooldownTime>
+                <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+                <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+                <armorPenetration>0.3</armorPenetration>
+            </li>
+            <li>
+                <label>teeth</label>
+                <capacities><li>Bite</li></capacities>
+                <power>18</power>
+                <cooldownTime>1</cooldownTime>
+                <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+                <chanceFactor>0.07</chanceFactor>
+                <armorPenetration>0.2</armorPenetration>
+            </li>
+            <li>
+                <label>head</label>
+                <capacities><li>Blunt</li></capacities>
+                <power>15</power>
+                <cooldownTime>1</cooldownTime>
+                <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+                <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+                <chanceFactor>0.2</chanceFactor>
+                <armorPenetration>0.25</armorPenetration>
+            </li>
+        </tools>
+
+        <butcherProducts>
+            <lotr_BlueGiantSpine>1</lotr_BlueGiantSpine>
+        </butcherProducts>
+    </ThingDef>
+
+    <PawnKindDef>
+        <defName>lotr_BlueGiant</defName>
+        <label>blue giant</label>
+        <race>lotr_BlueGiantRace</race>
+        <combatPower>800</combatPower>
+        <canMeleeAttack>true</canMeleeAttack>
+        <hostileToAll>true</hostileToAll>
+        <initialWillRange>0~0</initialWillRange>
+        <initialResistanceRange>0~0</initialResistanceRange>
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Giant/BlueGiant/Giant</texPath>
+                    <graphicClass>Graphic_Multi</graphicClass>
+                    <drawSize>3.8</drawSize>
+                </bodyGraphicData>
+            </li>
+        </lifeStages>
+        <apparelMoney>0~0</apparelMoney>
+        <weaponMoney>0~0</weaponMoney>
+        <nakedChance>0</nakedChance>
+        <ecoSystemWeight>0</ecoSystemWeight>
+        <wildGroupSize>1</wildGroupSize>
+
+        <weaponTags>
+            <li>GiantLongSword</li>
+        </weaponTags>
+        <weaponMoney>1000~1000</weaponMoney>
+    </PawnKindDef>
+</Defs>

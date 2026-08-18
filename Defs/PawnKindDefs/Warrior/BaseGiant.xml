@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef Name="GiantBase" ParentName="BasePawn" Abstract="True">
+        <thingClass>Pawn</thingClass>
+        <category>Pawn</category>
+        <selectable>true</selectable>
+        <statBases>
+            <Mass>300</Mass>
+            <Flammability>0.7</Flammability>
+            <LeatherAmount>0</LeatherAmount>
+            <MeatAmount>0</MeatAmount>
+            <MoveSpeed>3.2</MoveSpeed>
+            <ComfyTemperatureMin>-20</ComfyTemperatureMin>
+            <ComfyTemperatureMax>35</ComfyTemperatureMax>
+            <ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+            <ToxicResistance>0.5</ToxicResistance>
+        </statBases>
+        <race>
+            <intelligence>ToolUser</intelligence>
+            <body>Human</body>
+            <renderTree>Misc</renderTree>
+            <baseBodySize>2.5</baseBodySize>
+            <baseHealthScale>2.5</baseHealthScale>
+            <needsRest>false</needsRest>
+            <foodType>None</foodType>
+            <hasGenders>false</hasGenders>
+            <bloodDef>Filth_Blood</bloodDef>
+            <bloodSmearDef>Filth_BloodSmear</bloodSmearDef>
+            <leatherDef>Leather_Human</leatherDef>
+            <lifeExpectancy>800</lifeExpectancy>
+            <trainability>None</trainability>
+            <hediffGiverSets>
+                <li>OrganicStandard</li>
+            </hediffGiverSets>
+            <manhunterOnDamageChance>0.5</manhunterOnDamageChance>
+            <lifeStageAges>
+                <li>
+                    <def>GiantAdult</def>
+                </li>
+            </lifeStageAges>
+            <thinkTreeMain>GiantThinkTree</thinkTreeMain>
+            <thinkTreeConstant>GiantConstantThinkTree</thinkTreeConstant>
+        </race>
+        <tools>
+            <li>
+                <label>left fist</label>
+                <labelNoLocation>fist</labelNoLocation>
+                <capacities><li>Blunt</li></capacities>
+                <power>16</power>
+                <cooldownTime>1</cooldownTime>
+                <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+                <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+            </li>
+            <li>
+                <label>right fist</label>
+                <labelNoLocation>fist</labelNoLocation>
+                <capacities><li>Blunt</li></capacities>
+                <power>16</power>
+                <cooldownTime>1</cooldownTime>
+                <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+                <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+            </li>
+            <li>
+                <label>teeth</label>
+                <capacities><li>Bite</li></capacities>
+                <power>12</power>
+                <cooldownTime>1</cooldownTime>
+                <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+                <chanceFactor>0.07</chanceFactor>
+            </li>
+            <li>
+                <label>head</label>
+                <capacities><li>Blunt</li></capacities>
+                <power>10</power>
+                <cooldownTime>1</cooldownTime>
+                <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+                <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+                <chanceFactor>0.2</chanceFactor>
+            </li>
+        </tools>
+    </ThingDef>
+
+    <LifeStageDef>
+        <defName>GiantAdult</defName>
+        <label>adult</label>
+        <developmentalStage>Adult</developmentalStage>
+        <bodySizeFactor>1</bodySizeFactor>
+        <healthScaleFactor>1</healthScaleFactor>
+        <hungerRateFactor>1</hungerRateFactor>
+    </LifeStageDef>
+
+    <ThingDef ParentName="GiantBase">
+        <defName>Giant</defName>
+        <label>giant</label>
+        <description>A massive humanoid creature of immense strength, but lacking the higher faculties of true humans.</description>
+    </ThingDef>
+
+    <PawnKindDef>
+        <defName>Giant</defName>
+        <label>giant</label>
+        <race>Giant</race>
+        <combatPower>250</combatPower>
+        <canMeleeAttack>true</canMeleeAttack>
+        <hostileToAll>true</hostileToAll>
+        <initialWillRange>0~0</initialWillRange>
+        <initialResistanceRange>0~0</initialResistanceRange>
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                <texPath>Things/Pawn/Giant/Giant</texPath>
+                <graphicClass>Graphic_Multi</graphicClass>
+                <drawSize>2.5</drawSize>
+                </bodyGraphicData>
+            </li>
+        </lifeStages>
+        <apparelMoney>0~0</apparelMoney>
+        <weaponMoney>0~0</weaponMoney>
+        <nakedChance>0</nakedChance>
+        <ecoSystemWeight>0</ecoSystemWeight>
+        <wildGroupSize>1~2</wildGroupSize>
+    </PawnKindDef>
+</Defs>
