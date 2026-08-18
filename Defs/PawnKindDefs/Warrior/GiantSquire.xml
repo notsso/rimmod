@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="GiantBase">
+        <defName>lotr_GiantSquireRace</defName>
+        <label>giant squire</label>
+        <description>A towering, dense-limbed giant with ash-grey skin and unnaturally broad hands. Its bones and muscles are far denser than a lesser giant's, and it shrugs off lesser magic and mental assaults.</description>
+        <statBases>
+            <MoveSpeed>3.5</MoveSpeed>
+            <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+            <MeleeDodgeChance>0.10</MeleeDodgeChance>
+            <PsychicSensitivity>0.05</PsychicSensitivity>
+        </statBases>
+        <race>
+            <baseBodySize>2.8</baseBodySize>
+            <baseHealthScale>3.0</baseHealthScale>
+        </race>
+
+        <butcherProducts>
+            <lotr_GiantSquireBone>1</lotr_GiantSquireBone>
+        </butcherProducts>
+    </ThingDef>
+
+    <PawnKindDef>
+        <defName>lotr_GiantSquire</defName>
+        <label>giant squire</label>
+        <race>lotr_GiantSquireRace</race>
+        <combatPower>400</combatPower>
+        <canMeleeAttack>true</canMeleeAttack>
+        <hostileToAll>true</hostileToAll>
+        <initialWillRange>0~0</initialWillRange>
+        <initialResistanceRange>0~0</initialResistanceRange>
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Giant/GiantSquire/Giant</texPath>
+                    <graphicClass>Graphic_Multi</graphicClass>
+                    <drawSize>2.8</drawSize>
+                </bodyGraphicData>
+            </li>
+        </lifeStages>
+        <apparelMoney>0~0</apparelMoney>
+        <weaponMoney>0~0</weaponMoney>
+        <nakedChance>0</nakedChance>
+        <ecoSystemWeight>0</ecoSystemWeight>
+        <wildGroupSize>1</wildGroupSize>
+
+        <weaponTags>
+            <li>GiantIkwa</li>
+        </weaponTags>
+        <weaponMoney>500~500</weaponMoney>
+    </PawnKindDef>
+</Defs>

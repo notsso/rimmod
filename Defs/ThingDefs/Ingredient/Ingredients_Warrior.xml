@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Ингредиенты для зелья Воина (9) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_GiantWarriorCore</defName>
+        <label>Giant Warrior's muscle core</label>
+        <description>Ключевой ингредиент для зелий Воина.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>300</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Гладиатора (8) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_GiantSquireBone</defName>
+        <label>Giant Squire's metacarpal bone</label>
+        <description>Ключевой ингредиент для зелья Гладиатора.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>600</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Оружейного Мастера (7) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_BlueGiantSpine</defName>
+        <label>Blue Giant's spine</label>
+        <description>Ключевой ингредиент для зелья Оружейного Мастера.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>1000</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Паладина Рассвета (6) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_DawnGiantCrystal</defName>
+        <label>Dawn Giant blood crystal</label>
+        <description>Ключевой ингредиент для зелья Паладина Рассвета.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>1500</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Стража (5) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_GrayGiantHeart</defName>
+        <label>Gray Giant heart</label>
+        <description>Ключевой ингредиент для зелья Стража.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>3000</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Охотника на демонов (4) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_DivineGiantEye</defName>
+        <label>Divine Giant eye</label>
+        <description>Ключевой ингредиент для зелья Охотника на демонов.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_3</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>5000</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+</Defs>

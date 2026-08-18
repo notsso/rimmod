@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="GiantBase">
+        <defName>lotr_GiantWarriorRace</defName>
+        <label>giant warrior</label>
+        <description>A massive, feral humanoid with thick, knotted muscles. Its strength exceeds human norms threefold, but its hide is not impenetrable.</description>
+        <statBases>
+            <MoveSpeed>3.8</MoveSpeed>
+            <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+            <MeleeDodgeChance>0.15</MeleeDodgeChance>
+        </statBases>
+        <race>
+            <baseBodySize>2.0</baseBodySize>
+            <baseHealthScale>2.2</baseHealthScale>
+        </race>
+
+        <butcherProducts>
+            <lotr_GiantWarriorCore>1</lotr_GiantWarriorCore>
+        </butcherProducts>
+    </ThingDef>
+
+    <PawnKindDef>
+        <defName>lotr_GiantWarrior</defName>
+        <label>giant warrior</label>
+        <race>lotr_GiantWarriorRace</race>
+        <combatPower>200</combatPower>
+        <canMeleeAttack>true</canMeleeAttack>
+        <hostileToAll>true</hostileToAll>
+        <initialWillRange>0~0</initialWillRange>
+        <initialResistanceRange>0~0</initialResistanceRange>
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Giant/GiantWarrior/Giant</texPath>
+                    <graphicClass>Graphic_Multi</graphicClass>
+                    <drawSize>2.5</drawSize>
+                </bodyGraphicData>
+            </li>
+        </lifeStages>
+        <apparelMoney>0~0</apparelMoney>
+        <weaponMoney>0~0</weaponMoney>
+        <nakedChance>0</nakedChance>
+        <ecoSystemWeight>0</ecoSystemWeight>
+        <wildGroupSize>1</wildGroupSize>
+
+        <weaponTags>
+            <li>GiantClub</li>
+        </weaponTags>
+        <weaponMoney>300~300</weaponMoney>
+    </PawnKindDef>
+</Defs>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThinkTreeDef>
+        <defName>GiantThinkTree</defName>
+        <thinkRoot Class="ThinkNode_Priority">
+            <subNodes>
+                <li Class="ThinkNode_QueuedJob" />
+                <li Class="ThinkNode_Priority">
+                    <subNodes>
+                        <li Class="ThinkNode_ConditionalDowned">
+                            <invert>true</invert>
+                            <subNodes>
+                                <li Class="ThinkNode_Priority">
+                                    <subNodes>
+                                        <li Class="JobGiver_ConfigurableHostilityResponse" />
+                                        <li Class="JobGiver_AIFightEnemies" />
+                                        <li Class="JobGiver_WanderAnywhere" />
+                                    </subNodes>
+                                </li>
+                            </subNodes>
+                        </li>
+                    </subNodes>
+                </li>
+            </subNodes>
+        </thinkRoot>
+    </ThinkTreeDef>
+
+    <ThinkTreeDef>
+        <defName>GiantConstantThinkTree</defName>
+        <thinkRoot Class="ThinkNode_Priority">
+            <subNodes>
+                <li Class="ThinkNode_QueuedJob" />
+                <li Class="ThinkNode_Priority">
+                    <subNodes>
+                        <li Class="ThinkNode_ConditionalDowned">
+                            <invert>true</invert>
+                            <subNodes>
+                                <li Class="JobGiver_AIFightEnemies" />
+                            </subNodes>
+                        </li>
+                    </subNodes>
+                </li>
+            </subNodes>
+        </thinkRoot>
+    </ThinkTreeDef>
+</Defs>

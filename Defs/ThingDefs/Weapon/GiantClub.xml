@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Гигантская дубина -->
+    <ThingDef ParentName="BaseMeleeWeapon_Blunt">
+        <defName>MeleeWeapon_GiantClub</defName>
+        <label>giant club</label>
+        <description>A massive club sized for a giant's hands. Its weight alone is enough to crush armor and bone.</description>
+        <graphicData>
+            <texPath>Things/Item/Equipment/WeaponMelee/Club</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>1.5</drawSize>
+        </graphicData>
+        <uiIconScale>2.0</uiIconScale>
+        <techLevel>Neolithic</techLevel>
+        <weaponTags>
+            <li>GiantWeapon</li>
+            <li>GiantClub</li>
+        </weaponTags>
+        <weaponClasses>
+            <li>Neolithic</li>
+        </weaponClasses>
+        <costStuffCount>40</costStuffCount>
+        <statBases>
+            <WorkToMake>1200</WorkToMake>
+            <Mass>10</Mass>
+        </statBases>
+        <equippedAngleOffset>-65</equippedAngleOffset>
+        <stuffCategories>
+            <li>Metallic</li>
+            <li>Woody</li>
+            <li>Stony</li>
+        </stuffCategories>
+        <recipeMaker>
+            <displayPriority>0</displayPriority>
+        </recipeMaker>
+        <tools>
+            <li>
+                <label>handle</label>
+                <capacities><li>Poke</li></capacities>
+                <power>18</power>
+                <cooldownTime>1</cooldownTime>
+                <chanceFactor>0.2</chanceFactor>
+            </li>
+            <li>
+                <label>head</label>
+                <labelUsedInLogging>false</labelUsedInLogging>
+                <capacities><li>Blunt</li></capacities>
+                <power>30</power>
+                <cooldownTime>1</cooldownTime>
+            </li>
+        </tools>
+    </ThingDef>
+</Defs>

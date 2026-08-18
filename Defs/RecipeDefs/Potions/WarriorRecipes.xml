@@ -17,15 +17,7 @@
             <li>
                 <filter>
                     <thingDefs>
-                        <li>lotr_MarshCrystal</li>
-                    </thingDefs>
-                </filter>
-                <count>1</count>
-            </li>
-            <li>
-                <filter>
-                    <thingDefs>
-                        <li>lotr_BloodRedChestnut</li>
+                        <li>lotr_GiantWarriorCore</li>
                     </thingDefs>
                 </filter>
                 <count>1</count>
@@ -67,15 +59,7 @@
             <li>
                 <filter>
                     <thingDefs>
-                        <li>lotr_CuspidsParrotTongue</li>
-                    </thingDefs>
-                </filter>
-                <count>1</count>
-            </li>
-            <li>
-                <filter>
-                    <thingDefs>
-                        <li>lotr_CorpseLilyRootstock</li>
+                        <li>lotr_GiantSquireBone</li>
                     </thingDefs>
                 </filter>
                 <count>1</count>
@@ -117,15 +101,7 @@
             <li>
                 <filter>
                     <thingDefs>
-                        <li>lotr_FireSalamanderGland</li>
-                    </thingDefs>
-                </filter>
-                <count>1</count>
-            </li>
-            <li>
-                <filter>
-                    <thingDefs>
-                        <li>lotr_MagmaElfCore</li>
+                        <li>lotr_BlueGiantSpine</li>
                     </thingDefs>
                 </filter>
                 <count>1</count>
@@ -167,15 +143,7 @@
             <li>
                 <filter>
                     <thingDefs>
-                        <li>lotr_BlackHuntingSpiderEyes</li>
-                    </thingDefs>
-                </filter>
-                <count>1</count>
-            </li>
-            <li>
-                <filter>
-                    <thingDefs>
-                        <li>lotr_SphinxBrain</li>
+                        <li>lotr_DawnGiantCrystal</li>
                     </thingDefs>
                 </filter>
                 <count>1</count>
@@ -225,15 +193,7 @@
             <li>
                 <filter>
                     <thingDefs>
-                        <li>lotr_DemonicWolfClaws</li>
-                    </thingDefs>
-                </filter>
-                <count>1</count>
-            </li>
-            <li>
-                <filter>
-                    <thingDefs>
-                        <li>lotr_ForestHunterTongue</li>
+                        <li>lotr_GrayGiantHeart</li>
                     </thingDefs>
                 </filter>
                 <count>1</count>
@@ -275,15 +235,7 @@
             <li>
                 <filter>
                     <thingDefs>
-                        <li>lotr_MagmaGiantCore</li>
-                    </thingDefs>
-                </filter>
-                <count>1</count>
-            </li>
-            <li>
-                <filter>
-                    <thingDefs>
-                        <li>lotr_StoneofCatastrophe</li>
+                        <li>lotr_DivineGiantEye</li>
                     </thingDefs>
                 </filter>
                 <count>1</count>
