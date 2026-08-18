@@ -10,7 +10,7 @@
         <sequence>5</sequence>
         <pathway>Warrior</pathway>
 
-        <spiritualityOffset>0</spiritualityOffset>
+        <spiritualityOffset>5.0</spiritualityOffset>
 
         <description>This person became 5 sequence beyonder - guardian.</description>
         <defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>

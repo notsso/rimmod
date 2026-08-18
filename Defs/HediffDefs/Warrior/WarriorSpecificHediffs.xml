@@ -6,7 +6,7 @@
         <label>sunset light radiance</label>
         <description>This pawn is suffering from sunset light.</description>
         <hediffClass>HediffWithComps</hediffClass>
-        <defaultLabelColor>(120, 120, 120)</defaultLabelColor>
+        <defaultLabelColor>(258, 128, 0)</defaultLabelColor>
 
 		<tendable>false</tendable>
 		<isBad>true</isBad>
@@ -76,23 +76,23 @@
         <label>sunset armor</label>
         <description>This pawn is protected by dawn's paladin sunset armor.</description>
         <hediffClass>HediffWithComps</hediffClass>
-        <defaultLabelColor>(120, 120, 120)</defaultLabelColor>
+        <defaultLabelColor>(255, 128, 0)</defaultLabelColor>
 
 		<tendable>false</tendable>
 		<isBad>false</isBad>
 
         <initialSeverity>1</initialSeverity>
-		<maxSeverity>100</maxSeverity>
+		<maxSeverity>10</maxSeverity>
 		<minSeverity>0</minSeverity>
         <comps>
             <li Class="HediffCompProperties_SeverityPerDay">
-                <severityPerDay>24</severityPerDay>
+                <severityPerDay>-24</severityPerDay>
             </li>
         </comps>
 
     </HediffDef>
 
-    <HediffDef Parent="Hediff_SunsetLightArmor" Name="Hediff_SunsetLightArmor_6S">
+    <HediffDef ParentName="Hediff_SunsetLightArmor" Name="Hediff_SunsetLightArmor_6S">
 
         <defName>Hediff_SunsetLightArmor_6S</defName>
         
@@ -112,7 +112,7 @@
 
     </HediffDef>
 
-    <HediffDef Parent="Hediff_SunsetLightArmor" Name="Hediff_SunsetLightArmor_5S">
+    <HediffDef ParentName="Hediff_SunsetLightArmor" Name="Hediff_SunsetLightArmor_5S">
 
         <defName>Hediff_SunsetLightArmor_5S</defName>
         
@@ -132,7 +132,7 @@
 
     </HediffDef>
 
-    <HediffDef Parent="Hediff_SunsetLightArmor" Name="Hediff_SunsetLightArmor_4S">
+    <HediffDef ParentName="Hediff_SunsetLightArmor" Name="Hediff_SunsetLightArmor_4S">
 
         <defName>Hediff_SunsetLightArmor_4S</defName>
         

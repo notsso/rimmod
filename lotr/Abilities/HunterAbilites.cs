@@ -528,7 +528,7 @@ namespace lotr {
         }
     }
 
-    public class Ability_SummonWeapon : Ability_SpendSpirituality {
+    public class Ability_SummonWeapon : Ability_SpendSpirituality { // TODO: сделай нормально я напишу в abiblities.cs нормально
         public Ability_SummonWeapon() : base() { }
 
         public Ability_SummonWeapon(Pawn pawn, AbilityDef def) : base(pawn, def) { }
@@ -752,16 +752,6 @@ namespace lotr {
                     spawnedCount++;
                 }
             }
-        }
-    }
-
-    // Класс для всех призываемых оружий - есть время жизни
-    public class SummonedWeapon : ThingWithComps {
-        public int ticksLeft = -1;
-
-        public override void ExposeData() {
-            base.ExposeData();
-            Scribe_Values.Look(ref ticksLeft, "ticksLeft", -1);
         }
     }
 

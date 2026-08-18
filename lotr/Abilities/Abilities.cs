@@ -65,7 +65,6 @@ namespace lotr {
         }
     }
 
-    // Способность hunter7 (pyromaniac): Огненная броня
     public class CompProperties_AbilityGiveHediff : CompProperties_AbilityEffect {
         public HediffDef hediffDef;
         public float severity = 0f;
@@ -115,6 +114,9 @@ namespace lotr {
         public new CompProperties_GiveHediffArea Props => (CompProperties_GiveHediffArea)props;
 
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
+
+            base.Apply(target, dest);
+
             Pawn caster = parent.pawn;
             if (caster == null || caster.Map == null) return;
 
@@ -133,6 +135,8 @@ namespace lotr {
 
                 if (flag1 && flag2 && flag3) continue;
 
+                FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.MicroSparks, 1.5f);
+
                 if (pawn.health.hediffSet.HasHediff(Props.hediffDef) && Props.severity != 0f) {
                     pawn.health.hediffSet.TryGetHediff(Props.hediffDef, out Hediff hediff);
                     hediff.Severity += Props.severity;
@@ -141,10 +145,72 @@ namespace lotr {
                     if (Props.severity != 0f) hediff.Severity = Props.severity;
                     pawn.health.AddHediff(hediff);
                 }
-
-                FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.MicroSparks, 1.5f);
             }
         }
+    }
+
+    public class SummonedWeapon : ThingWithComps {
+        public int ticksLeft = -1;
+
+        public override void ExposeData() {
+            base.ExposeData();
+            Scribe_Values.Look(ref ticksLeft, "ticksLeft", -1);
+        }
+    }
+
+    public class CompProperties_SummonWeapon : CompProperties_AbilityEffect {
+        
+        public ThingDef weaponDef;
+        public int lifespan;
+
+        public CompProperties_SummonWeapon() {
+            this.compClass = typeof(CompAbilityEffect_SummonWeapon);
+        }
+
+    }
+
+    public class CompAbilityEffect_SummonWeapon : CompAbilityEffect {
+        
+        public new CompProperties_SummonWeapon Props => (CompProperties_SummonWeapon)props;
+
+        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
+
+            base.Apply(target, dest);
+
+            Pawn caster = target.Pawn;
+            if (caster == null || caster.equipment == null) return;
+
+            ThingDef weaponDef = Props.weaponDef;
+
+            if (caster.equipment.Primary != null) {
+                ThingWithComps oldWeapon = caster.equipment.Primary;
+                caster.equipment.Remove(oldWeapon);
+                if (caster.inventory != null)
+                    caster.inventory.innerContainer.TryAdd(oldWeapon, true);
+                else
+                    caster.equipment.TryDropEquipment(oldWeapon, out var _, caster.Position);
+            }
+
+            // Создаём и экипируем новое оружие
+            SummonedWeapon summonedWeapon = (SummonedWeapon)ThingMaker.MakeThing(weaponDef);
+            summonedWeapon.ticksLeft = Props.lifespan;
+
+            caster.equipment.AddEquipment(summonedWeapon);
+
+        }
+
+    }
+
+    public class CompProperties_DrawRadiusOnHover : AbilityCompProperties {
+        public float radius = -1f;
+
+        public CompProperties_DrawRadiusOnHover() {
+            this.compClass = typeof(CompDrawRadiusOnHover);
+        }
+    }
+
+    public class CompDrawRadiusOnHover : AbilityComp {
+        public CompProperties_DrawRadiusOnHover Props => (CompProperties_DrawRadiusOnHover)this.props;
     }
 
 }

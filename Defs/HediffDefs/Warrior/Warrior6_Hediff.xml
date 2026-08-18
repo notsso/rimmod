@@ -10,7 +10,7 @@
 		<sequence>6</sequence>
 		<pathway>Warrior</pathway>
 
-		<spiritualityOffset>0</spiritualityOffset>
+		<spiritualityOffset>4.0</spiritualityOffset>
 
 		<description>This person became 6 sequence beyonder - dawn paladin</description>
 		<defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
@@ -141,8 +141,9 @@
         </comps>
 
         <newAbilities>
-            <li>Cast_SunsetLightArmor</li>
-            <li>Cast_SunsetLightDebuff</li>
+            <li>Cast_SunsetArmor</li>
+            <li>Cast_SunsetLight</li>
+			<li>Cast_SunsetSword</li>
 		</newAbilities>
 
 	</lotr.BeyonderHediffDef>

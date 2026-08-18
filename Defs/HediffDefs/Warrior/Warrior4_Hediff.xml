@@ -10,7 +10,7 @@
         <sequence>4</sequence>
         <pathway>Warrior</pathway>
 
-        <spiritualityOffset>0</spiritualityOffset>
+        <spiritualityOffset>20.0</spiritualityOffset>
 
         <description>This person became 4 sequence beyonder - demon hunter.</description>
         <defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>

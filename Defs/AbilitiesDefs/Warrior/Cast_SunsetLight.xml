@@ -3,7 +3,7 @@
 
     <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_SunsetLight">
 
-        <abilityClass>lotr.Ablilty_SpendSpirituality</abilityClass>
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
 
         <defName>Cast_SunsetLight</defName>
         <label>Sunset light</label>
@@ -14,18 +14,23 @@
 
         <aiCanUse>true</aiCanUse>
         <ai_IsOffensive>true</ai_IsOffensive>
-        <targetRequired>true</targetRequired>
         <hostile>true</hostile>
 
         <spiritualityCost>50</spiritualityCost>
 
+        <jobDef>CastAbilityOnThingUninterruptible</jobDef>
+
+        <targetRequired>false</targetRequired>
         <verbProperties>
+
             <verbClass>Verb_CastAbility</verbClass>
             <warmupTime>0.5</warmupTime>
-            <range>0.9</range>
+            <range>40</range>
+
             <targetParams>
-                <canTargetSelf>true</canTargetSelf>
+                <canTargetSelf>True</canTargetSelf>
             </targetParams>
+
         </verbProperties>
 
     </AbilityDef>
@@ -39,17 +44,20 @@
         </verbProperties>
 
         <comps>
-            <li Class="lotr.HediffCompProperties.GiveHediffArea">
+            <li Class="lotr.CompProperties_GiveHediffArea">
                 <hediffDef>SunsetLightDebuff</hediffDef>
                 <radius>40</radius>
-                <severity>1<severity>
+                <severity>1</severity>
                 <targetEnemies>true</targetEnemies>
+            </li>
+            <li Class="lotr.CompProperties_DrawRadiusOnHover">
+                <radius>40</radius>
             </li>
         </comps>
 
     </AbilityDef>
 
-        <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_SunsetLight">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_SunsetLight">
 
         <defName>Cast_SunsetLight_5S</defName>
 
@@ -58,17 +66,21 @@
         </verbProperties>
 
         <comps>
-            <li Class="lotr.HediffCompProperties.GiveHediffArea">
+            <li Class="lotr.CompProperties_GiveHediffArea">
                 <hediffDef>SunsetLightDebuff</hediffDef>
                 <radius>80</radius>
-                <severity>4<severity>
+                <severity>4</severity>
                 <targetEnemies>true</targetEnemies>
+            </li>
+            <li Class="lotr.CompProperties_DrawRadiusOnHover">
+                <radius>80</radius>
             </li>
         </comps>
 
     </AbilityDef>
 
-        <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_SunsetLight">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_SunsetLight">
+    
         <defName>Cast_SunsetLight_4S</defName>
 
         <verbProperties>
@@ -76,11 +88,14 @@
         </verbProperties>
 
         <comps>
-            <li Class="lotr.HediffCompProperties.GiveHediffArea">
+            <li Class="lotr.CompProperties_GiveHediffArea">
                 <hediffDef>SunsetLightDebuff</hediffDef>
                 <radius>200</radius>
-                <severity>25<severity>
+                <severity>25</severity>
                 <targetEnemies>true</targetEnemies>
+            </li>
+            <li Class="lotr.CompProperties_DrawRadiusOnHover">
+                <radius>200</radius>
             </li>
         </comps>
 
