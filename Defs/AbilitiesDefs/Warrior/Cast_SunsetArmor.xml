@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_SunsetArmor">
+
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        <defName>Cast_SunsetArmor</defName>
+        <label>sunset light armor</label>
+        <description>Caster creates silver armor from dawn light.</description>
+        <iconPath>UI/Icons/Abilities/Hunter/Cast_FireArmor</iconPath>
+        <cooldownTicksRange>7200</cooldownTicksRange>
+
+        <aiCanUse>true</aiCanUse>
+        <hostile>true</hostile>
+
+        <spiritualityCost>50.0</spiritualityCost>
+
+        <jobDef>CastAbilityOnThingUninterruptible</jobDef>
+
+        <targetRequired>false</targetRequired>
+        <verbProperties>
+        
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>6.0</warmupTime>
+            <range>40</range>
+
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+            </targetParams>
+
+        </verbProperties>
+        
+    </AbilityDef>
+
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_SunsetArmor">
+
+        <defName>Cast_SunsetArmor_6S</defName>
+        <label>sunset light armor</label>
+        <cooldownTicksRange>3600</cooldownTicksRange>
+
+        <verbProperties>
+            <warmupTime>3.0</warmupTime>
+        </verbProperties>
+
+        <comps>
+            <li Class="lotr.CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>Hediff_SunsetLightArmor_6S</hediffDef>
+            </li>
+        </comps>
+
+    </AbilityDef>
+
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireArmor">
+        <defName>Cast_SunsetArmor_5S</defName>
+        <label>sunset light armor</label>
+        <cooldownTicksRange>1800</cooldownTicksRange>
+
+        <verbProperties>
+            <warmupTime>2.0</warmupTime>
+        </verbProperties>
+
+        <comps>
+            <li Class="lotr.CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>Hediff_SunsetLightArmor_5S</hediffDef>
+            </li>
+        </comps>
+
+    </AbilityDef>
+
+    <!-- Уровень 4 -->
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireArmor">
+        <defName>Cast_SunsetArmor_4S</defName>
+        <label>sunset light armor</label>
+        <cooldownTicksRange>600</cooldownTicksRange>
+
+        <verbProperties>
+            <warmupTime>0.5</warmupTime>
+        </verbProperties>
+
+        <comps>
+            <li Class="lotr.CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>Hediff_SunsetLightArmor_5S</hediffDef>
+            </li>
+        </comps>
+
+    </AbilityDef>
+
+</Defs>

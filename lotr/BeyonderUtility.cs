@@ -75,7 +75,6 @@ namespace lotr {
 
         }
 
-
         // Проверяет, является ли пешка "Потусторонним" (любого уровня)
         public static bool IsBeyonder(Pawn pawn) {
             if (pawn?.health?.hediffSet?.hediffs == null) return false;

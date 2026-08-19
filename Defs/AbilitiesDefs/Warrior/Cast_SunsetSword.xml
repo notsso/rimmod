@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_SunsetSword" Abstract="True">
+        
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        
+        <defName>Cast_SunsetSword</defName>
+        <label>summon sunset weapon</label>
+        <description>Beyonder concentrates spirituality to form weapon from sunset.</description>
+        <iconPath>Placeholder</iconPath> 
+        
+        <aiCanUse>true</aiCanUse>
+        <ai_IsOffensive>true</ai_IsOffensive>
+        <hostile>true</hostile>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+
+        <cooldownTicksRange>86400</cooldownTicksRange>
+        <spiritualityCost>50.0</spiritualityCost>
+
+        <jobDef>CastAbilityOnThingUninterruptible</jobDef>
+
+        <targetRequired>false</targetRequired>
+        <verbProperties>
+
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>2.0</warmupTime>
+            <range>1</range>
+            <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+
+            <targetParams>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+
+        </verbProperties>
+
+    </AbilityDef>
+
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_SunsetSword">
+
+        <defName>Cast_SunsetSword_6S</defName>
+        <cooldownTicksRange>3600</cooldownTicksRange>
+
+        <verbProperties>
+            <warmupTime>1.0</warmupTime>
+        </verbProperties>
+
+        <comps>
+            <li Class="lotr.CompProperties_SummonWeapon">
+                <weaponDef>Melee_SunsetSword_6S</weaponDef>
+                <lifespan>7200</lifespan>
+            </li>
+        </comps>
+
+    </AbilityDef>
+
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_SunsetSword">
+
+        <defName>Cast_SunsetSword_5S</defName>
+        <cooldownTicksRange>44200</cooldownTicksRange>
+
+        <verbProperties>
+            <warmupTime>0.5</warmupTime>
+        </verbProperties>
+
+        <comps>
+            <li Class="lotr.CompProperties_SummonWeapon">
+                <weaponDef>Melee_SunsetSword_5S</weaponDef>
+                <lifespan>7200</lifespan>
+            </li>
+        </comps>
+
+    </AbilityDef>
+
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_SunsetSword">
+
+        <defName>Cast_SunsetSword_4S</defName>
+        <cooldownTicksRange>18000</cooldownTicksRange>
+
+        <verbProperties>
+            <warmupTime>0.2</warmupTime>
+        </verbProperties>
+
+        <comps>
+            <li Class="lotr.CompProperties_SummonWeapon">
+                <weaponDef>Melee_SunsetSword_4S</weaponDef>
+                <lifespan>7200</lifespan>
+            </li>
+        </comps>
+
+    </AbilityDef>
+
+</Defs>

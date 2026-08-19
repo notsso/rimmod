@@ -172,7 +172,7 @@ namespace lotr {
 
     // Harmony patch - отслеживает призываемое в руках оружие
     [HarmonyPatch(typeof(Pawn_EquipmentTracker), "EquipmentTrackerTick")]
-    public static class Patch_SummonedFireWeapon_Controller {
+    public static class Patch_SummonedWeapon_Controller {
         private static Dictionary<Pawn, Thing> activeWeaponLights { get; } = new Dictionary<Pawn, Thing>();
 
         [HarmonyPostfix]
@@ -186,7 +186,7 @@ namespace lotr {
                 }
 
                 if (summonedWeapon.ticksLeft == 0) {
-                    MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Пламя угасло", 2f);
+                    MoteMaker.ThrowText(pawn.DrawPos, pawn.Map, "Summoned weapon disappeared", 2f);
                     __instance.Primary.Destroy(DestroyMode.Vanish);
 
                     ClearLight(pawn);
@@ -300,42 +300,6 @@ namespace lotr {
         }
     }
 
-    // Проверка пешки на уязвимость
-    [HarmonyPatch(typeof(Pawn_HealthTracker), "PreApplyDamage")]
-    public static class Patch_AttackAmplifier {
-        private static readonly FieldInfo PawnField = AccessTools.Field(typeof(Pawn_HealthTracker), "pawn");
-
-        [HarmonyPrefix]
-        public static void Prefix(Pawn_HealthTracker __instance, ref DamageInfo dinfo) {
-            if (PawnField == null) return;
-
-            Pawn victim = (Pawn)PawnField.GetValue(__instance);
-            if (victim?.health?.hediffSet == null) return;
-
-            // Определяем атакующего
-            Pawn attacker = dinfo.Instigator as Pawn;
-            if (attacker == null && dinfo.Instigator is Projectile proj && proj.Launcher is Pawn projLauncher) {
-                attacker = projLauncher;
-            }
-
-            // Уязвимость работает только если есть атакующий
-            if (attacker != null && attacker.health?.hediffSet != null) {
-                bool hasVulnerable = false;
-                foreach (var h in victim.health.hediffSet.hediffs) {
-                    if (h is Hediff_Vulnerable) {
-                        hasVulnerable = true;
-                        break;
-                    }
-                }
-
-                if (hasVulnerable) {
-                    float newAmount = dinfo.Amount * 1.5f;
-                    dinfo.SetAmount(newAmount);
-                }
-            }
-        }
-    }
-
     // Патчим метод, который собирает текущие цвета неба (для погоды, времени суток и т.д.)
     [HarmonyPatch(typeof(SkyManager), "CurrentSkyTarget")]
     public static class Patch_RedNightSky {
@@ -408,6 +372,39 @@ namespace lotr {
                         delegate { Find.WindowStack.Add(new Dialog_PeaceOffer(__instance)); },
                         MenuOptionPriority.Default, null, null, 0f, null, null, true, 0);
                 }
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(Command_Ability), "GizmoOnGUI")]
+    public static class Patch_Command_Ability_GizmoOnGUI {
+        // Достаем приватное поле ability
+        private static readonly AccessTools.FieldRef<Command_Ability, Ability> AbilityField = 
+            AccessTools.FieldRefAccess<Command_Ability, Ability>("ability");
+
+        public static void Postfix(Command_Ability __instance, Vector2 topLeft, float maxWidth) {
+            // Проверяем наведение мыши
+            Rect rect = new Rect(topLeft.x, topLeft.y, __instance.GetWidth(maxWidth), 75f);
+            if (!Mouse.IsOver(rect)) return;
+
+            Ability abilityInstance = AbilityField(__instance);
+            if (abilityInstance == null || abilityInstance.comps == null) return;
+
+            CompDrawRadiusOnHover comp = abilityInstance.comps.OfType<CompDrawRadiusOnHover>().FirstOrDefault();
+            
+            if (comp == null) return;
+
+            // Считаем радиус
+            float radius = comp.Props.radius;
+            if (radius <= 0) {
+                radius = abilityInstance.def.EffectRadius;
+            }
+
+            if (radius <= 0) radius = 5f;
+
+            IntVec3 center = abilityInstance.pawn.Position;
+            if (center.InBounds(Find.CurrentMap)) {
+                GenDraw.DrawRadiusRing(center, radius);
             }
         }
     }

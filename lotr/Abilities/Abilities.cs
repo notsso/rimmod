@@ -65,4 +65,152 @@ namespace lotr {
         }
     }
 
+    public class CompProperties_AbilityGiveHediff : CompProperties_AbilityEffect {
+        public HediffDef hediffDef;
+        public float severity = 0f;
+        public bool applyToCaster = true;
+        public bool showFleck = true;
+
+        public CompProperties_AbilityGiveHediff() {
+            compClass = typeof(CompAbilityEffect_GiveHediff);
+        }
+    }
+
+    public class CompAbilityEffect_GiveHediff : CompAbilityEffect {
+        
+        public new CompProperties_AbilityGiveHediff Props => (CompProperties_AbilityGiveHediff)props;
+
+        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
+            base.Apply(target, dest);
+
+            Pawn targetPawn = target.Pawn;
+            if (targetPawn == null) return;
+
+            if (targetPawn.health.hediffSet.HasHediff(Props.hediffDef)) return;
+
+            Hediff hediff = HediffMaker.MakeHediff(Props.hediffDef, targetPawn);
+            if (Props.severity > 0f) hediff.Severity = Props.severity;
+
+            targetPawn.health.AddHediff(hediff);
+
+            if (Props.showFleck) FleckMaker.Static(targetPawn.Position, targetPawn.Map, FleckDefOf.MicroSparks, 1.5f);
+        }
+    }
+    
+    public class CompProperties_GiveHediffArea : CompProperties_AbilityEffect {
+        public float radius = 5f;
+        public float severity = 0f;
+        public HediffDef hediffDef;
+        public bool targetFriendly = false;
+        public bool targetEnemies = false;
+        public bool targetSelf = false;
+
+        public CompProperties_GiveHediffArea() {
+            compClass = typeof(CompAbilityEffect_GiveHediffArea);
+        }
+    }
+    
+    public class CompAbilityEffect_GiveHediffArea : CompAbilityEffect {
+        public new CompProperties_GiveHediffArea Props => (CompProperties_GiveHediffArea)props;
+
+        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
+
+            base.Apply(target, dest);
+
+            Pawn caster = parent.pawn;
+            if (caster == null || caster.Map == null) return;
+
+            Map map = caster.Map;
+            float radius = Props.radius;
+            IntVec3 center = target.Cell;
+
+            IReadOnlyList<Pawn> pawns = map.mapPawns.AllPawnsSpawned;
+            foreach (Pawn pawn in pawns) {
+                if (pawn == null || pawn.Dead) continue;
+                if (pawn.Position.DistanceToSquared(center) > radius * radius) continue;
+
+                bool flag1 = !(Props.targetSelf == true && caster == pawn);
+                bool flag2 = !(Props.targetEnemies == true && pawn.HostileTo(caster));
+                bool flag3 = !(Props.targetFriendly == true && !(pawn.HostileTo(caster)));
+
+                if (flag1 && flag2 && flag3) continue;
+
+                FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.MicroSparks, 1.5f);
+
+                if (pawn.health.hediffSet.HasHediff(Props.hediffDef) && Props.severity != 0f) {
+                    pawn.health.hediffSet.TryGetHediff(Props.hediffDef, out Hediff hediff);
+                    hediff.Severity += Props.severity;
+                } else {
+                    Hediff hediff = HediffMaker.MakeHediff(Props.hediffDef, pawn);
+                    if (Props.severity != 0f) hediff.Severity = Props.severity;
+                    pawn.health.AddHediff(hediff);
+                }
+            }
+        }
+    }
+
+    public class SummonedWeapon : ThingWithComps {
+        public int ticksLeft = -1;
+
+        public override void ExposeData() {
+            base.ExposeData();
+            Scribe_Values.Look(ref ticksLeft, "ticksLeft", -1);
+        }
+    }
+
+    public class CompProperties_SummonWeapon : CompProperties_AbilityEffect {
+        
+        public ThingDef weaponDef;
+        public int lifespan;
+
+        public CompProperties_SummonWeapon() {
+            this.compClass = typeof(CompAbilityEffect_SummonWeapon);
+        }
+
+    }
+
+    public class CompAbilityEffect_SummonWeapon : CompAbilityEffect {
+        
+        public new CompProperties_SummonWeapon Props => (CompProperties_SummonWeapon)props;
+
+        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
+
+            base.Apply(target, dest);
+
+            Pawn caster = target.Pawn;
+            if (caster == null || caster.equipment == null) return;
+
+            ThingDef weaponDef = Props.weaponDef;
+
+            if (caster.equipment.Primary != null) {
+                ThingWithComps oldWeapon = caster.equipment.Primary;
+                caster.equipment.Remove(oldWeapon);
+                if (caster.inventory != null)
+                    caster.inventory.innerContainer.TryAdd(oldWeapon, true);
+                else
+                    caster.equipment.TryDropEquipment(oldWeapon, out var _, caster.Position);
+            }
+
+            // Создаём и экипируем новое оружие
+            SummonedWeapon summonedWeapon = (SummonedWeapon)ThingMaker.MakeThing(weaponDef);
+            summonedWeapon.ticksLeft = Props.lifespan;
+
+            caster.equipment.AddEquipment(summonedWeapon);
+
+        }
+
+    }
+
+    public class CompProperties_DrawRadiusOnHover : AbilityCompProperties {
+        public float radius = -1f;
+
+        public CompProperties_DrawRadiusOnHover() {
+            this.compClass = typeof(CompDrawRadiusOnHover);
+        }
+    }
+
+    public class CompDrawRadiusOnHover : AbilityComp {
+        public CompProperties_DrawRadiusOnHover Props => (CompProperties_DrawRadiusOnHover)this.props;
+    }
+
 }

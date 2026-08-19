@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef Name="Melee_SunsetSword" Abstract="True">
+
+        <defName>Melee_SunsetSword</defName>
+        <label>sunset sword</label>
+        <description>Mystical weapon, formed from sunset.</description>
+        <category>Item</category>
+        
+        <thingClass>lotr.SummonedWeapon</thingClass>
+        
+        <equipmentType>Primary</equipmentType>
+        <selectable>true</selectable>
+        <drawerType>MapMeshOnly</drawerType>
+        <drawGUIOverlay>true</drawGUIOverlay>
+        <altitudeLayer>Item</altitudeLayer>
+        <alwaysHaulable>true</alwaysHaulable>
+        <tickerType>Normal</tickerType>
+        <techLevel>Medieval</techLevel>
+        
+        <smeltable>false</smeltable>
+        <tradeability>None</tradeability>
+        <destroyOnDrop>true</destroyOnDrop>
+
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+
+        <statBases>
+            <MaxHitPoints>100</MaxHitPoints>
+            <Mass>1.5</Mass>
+            <MarketValue>0</MarketValue>
+            <Flammability>0.0</Flammability>
+            <DeteriorationRate>0</DeteriorationRate>
+        </statBases>
+
+        <comps>
+            <li>
+                <compClass>CompEquippable</compClass>
+            </li>
+            <li>
+                <compClass>CompQuality</compClass>
+            </li>
+        </comps>
+
+        <tools>
+            <li>
+                <label>blade</label>
+                <capacities>
+                    <li>Cut</li>
+                </capacities>
+                <power>30</power>
+                <cooldownTime>2.0</cooldownTime>
+                <extraMeleeDamages>
+                    <li>
+                        <def>lotr_Light</def>
+                        <amount>10</amount>
+                        <chance>1</chance>
+                    </li>
+                </extraMeleeDamages>
+            </li>
+            <li>
+                <label>point</label>
+                <capacities>
+                    <li>Stab</li>
+                </capacities>
+                <power>40</power>
+                <cooldownTime>2.5</cooldownTime>
+                <extraMeleeDamages>
+                    <li>
+                        <def>lotr_Light</def>
+                        <amount>15</amount>
+                        <chance>1</chance>
+                    </li>
+                </extraMeleeDamages>
+            </li>
+        </tools>
+
+        <weaponClasses>
+            <li>Melee</li>
+        </weaponClasses>
+
+    </ThingDef>
+
+    <ThingDef ParentName="Melee_SunsetSword">
+        <defName>Melee_SunsetSword_6S</defName>
+    </ThingDef>
+
+    <ThingDef ParentName="Melee_SunsetSword">
+        <defName>Melee_SunsetSword_5S</defName>
+        <tools Inherit="False">
+            <li>
+                <label>blade</label>
+                <capacities>
+                    <li>Cut</li>
+                </capacities>
+                <power>50</power>
+                <cooldownTime>1.5</cooldownTime>
+                <extraMeleeDamages>
+                    <li>
+                        <def>lotr_Light</def>
+                        <amount>15</amount>
+                        <chance>1</chance>
+                    </li>
+                </extraMeleeDamages>
+            </li>
+            <li>
+                <label>point</label>
+                <capacities>
+                    <li>Stab</li>
+                </capacities>
+                <power>60</power>
+                <cooldownTime>1.7</cooldownTime>
+                <extraMeleeDamages>
+                    <li>
+                        <def>lotr_Light</def>
+                        <amount>20</amount>
+                        <chance>1</chance>
+                    </li>
+                </extraMeleeDamages>
+            </li>
+        </tools>
+    </ThingDef>
+
+    <!-- Уровень 4 -->
+    <ThingDef ParentName="Melee_BlazingSword">
+        <defName>Melee_SunsetSword_4S</defName>
+        <tools Inherit="False">
+            <li>
+                <label>blade</label>
+                <capacities>
+                    <li>Cut</li>
+                </capacities>
+                <power>60</power>
+                <cooldownTime>1.0</cooldownTime>
+                <extraMeleeDamages>
+                    <li>
+                        <def>lotr_Light</def>
+                        <amount>20</amount>
+                        <chance>1</chance>
+                    </li>
+                </extraMeleeDamages>
+            </li>
+            <li>
+                <label>point</label>
+                <capacities>
+                    <li>Stab</li>
+                </capacities>
+                <power>80</power>
+                <cooldownTime>1.2</cooldownTime>
+                <extraMeleeDamages>
+                    <li>
+                        <def>lotr_Light</def>
+                        <amount>30</amount>
+                        <chance>1</chance>
+                    </li>
+                </extraMeleeDamages>
+            </li>
+        </tools>
+    </ThingDef>
+
+</Defs>

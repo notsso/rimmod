@@ -10,7 +10,7 @@
 		<sequence>6</sequence>
 		<pathway>Warrior</pathway>
 
-		<spiritualityOffset>0</spiritualityOffset>
+		<spiritualityOffset>4.0</spiritualityOffset>
 
 		<description>This person became 6 sequence beyonder - dawn paladin</description>
 		<defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
@@ -141,11 +141,9 @@
         </comps>
 
         <newAbilities>
-            <li>Cast_FireTeleport</li>
-            <li>Cast_Incite</li>
-            <li>Cast_Confusion</li>
-            <li>Cast_DawnLightAura</li> <!-- Радиус 40 метров со светом заката -->
-            <li>Cast_SilverArmorToggle</li> <!-- Слот под будущую способность брони -->
+            <li>Cast_SunsetArmor</li>
+            <li>Cast_SunsetLight</li>
+			<li>Cast_SunsetSword</li>
 		</newAbilities>
 
 	</lotr.BeyonderHediffDef>

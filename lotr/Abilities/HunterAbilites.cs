@@ -443,42 +443,6 @@ namespace lotr {
         }
     }
 
-    public class CompProperties_AbilityGiveHediffArea : CompProperties_AbilityEffect {
-        public float radius = 5f;
-        public HediffDef hediffDef;
-
-        public CompProperties_AbilityGiveHediffArea() {
-            compClass = typeof(CompAbilityEffect_GiveHediffArea);
-        }
-    }
-
-    public class CompAbilityEffect_GiveHediffArea : CompAbilityEffect {
-        public new CompProperties_AbilityGiveHediffArea Props => (CompProperties_AbilityGiveHediffArea)props;
-
-        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
-            Pawn caster = parent.pawn;
-            if (caster == null || caster.Map == null) return;
-
-            Map map = caster.Map;
-            float radius = Props.radius;
-            IntVec3 center = target.Cell;
-
-            IReadOnlyList<Pawn> pawns = map.mapPawns.AllPawnsSpawned;
-            foreach (Pawn pawn in pawns) {
-                if (pawn == null || pawn.Dead) continue;
-                if (pawn.Position.DistanceToSquared(center) > radius * radius) continue;
-
-                if (pawn == caster) continue;
-                if (pawn.Faction != caster.Faction) continue;
-
-                Hediff hediff = HediffMaker.MakeHediff(Props.hediffDef, pawn);
-                pawn.health.AddHediff(hediff);
-
-                FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.MicroSparks, 1.5f);
-            }
-        }
-    }
-
     public class Verb_IronBloodArmy : Verb_CastAbility {
         protected override bool TryCastShot() {
             if (this.ability != null) {
@@ -564,7 +528,7 @@ namespace lotr {
         }
     }
 
-    public class Ability_SummonWeapon : Ability_SpendSpirituality {
+    public class Ability_SummonWeapon : Ability_SpendSpirituality { // TODO: сделай нормально я напишу в abiblities.cs нормально
         public Ability_SummonWeapon() : base() { }
 
         public Ability_SummonWeapon(Pawn pawn, AbilityDef def) : base(pawn, def) { }
@@ -788,49 +752,6 @@ namespace lotr {
                     spawnedCount++;
                 }
             }
-        }
-    }
-
-    // Способность hunter7 (pyromaniac): Огненная броня
-    public class CompProperties_AbilityGiveHediff : CompProperties_AbilityEffect {
-        public HediffDef hediffDef;
-        public float severity = 0f;
-        public bool applyToCaster = true;
-        public bool showFleck = true;
-
-        public CompProperties_AbilityGiveHediff() {
-            compClass = typeof(CompAbilityEffect_GiveHediff);
-        }
-    }
-
-    public class CompAbilityEffect_GiveHediff : CompAbilityEffect {
-        public new CompProperties_AbilityGiveHediff Props => (CompProperties_AbilityGiveHediff)props;
-
-        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
-            base.Apply(target, dest);
-
-            Pawn targetPawn = target.Pawn;
-            if (targetPawn == null) return;
-
-            if (targetPawn.health.hediffSet.HasHediff(Props.hediffDef)) return;
-
-            Hediff hediff = HediffMaker.MakeHediff(Props.hediffDef, targetPawn);
-            if (Props.severity > 0f)
-                hediff.Severity = Props.severity;
-            targetPawn.health.AddHediff(hediff);
-
-            if (Props.showFleck)
-                FleckMaker.Static(targetPawn.Position, targetPawn.Map, FleckDefOf.MicroSparks, 1.5f);
-        }
-    }
-
-    // Класс для всех призываемых оружий - есть время жизни
-    public class SummonedWeapon : ThingWithComps {
-        public int ticksLeft = -1;
-
-        public override void ExposeData() {
-            base.ExposeData();
-            Scribe_Values.Look(ref ticksLeft, "ticksLeft", -1);
         }
     }
 
