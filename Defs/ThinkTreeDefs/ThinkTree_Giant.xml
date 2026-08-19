@@ -4,6 +4,7 @@
         <defName>GiantThinkTree</defName>
         <thinkRoot Class="ThinkNode_Priority">
             <subNodes>
+                <li Class="JobGiver_ExtinguishSelf" />
                 <li Class="ThinkNode_QueuedJob" />
                 <li Class="ThinkNode_Priority">
                     <subNodes>
@@ -29,6 +30,7 @@
         <defName>GiantConstantThinkTree</defName>
         <thinkRoot Class="ThinkNode_Priority">
             <subNodes>
+                <li Class="JobGiver_ExtinguishSelf" />
                 <li Class="ThinkNode_QueuedJob" />
                 <li Class="ThinkNode_Priority">
                     <subNodes>

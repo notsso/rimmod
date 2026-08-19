@@ -1,74 +1,73 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
     <ThingDef ParentName="GiantBase">
-        <defName>lotr_BlueGiantRace</defName>
-        <label>blue giant</label>
-        <description>A hulking blue-skinned giant with bony protrusions along its spine. Its muscles are like iron cables, and its hide turns aside common arrows and bullets. It fights with an unnerving, bestial skill, reading weaknesses in its enemies' stances.</description>
+        <defName>lotr_DawnGiantRace</defName>
+        <label>dawn giant</label>
+        <description>A colossal giant that can manifest armor of living dawnlight. Its body is covered in corded muscle, and its attacks carry a trace of purifying morning light.</description>
         <statBases>
-            <MoveSpeed>6.0</MoveSpeed>
-            <ArmorRating_Sharp>0.6</ArmorRating_Sharp>
-            <ArmorRating_Blunt>0.7</ArmorRating_Blunt>
-            <ArmorRating_Heat>0.3</ArmorRating_Heat>
-            <MeleeDodgeChance>0.25</MeleeDodgeChance>
-            <PsychicSensitivity>0.1</PsychicSensitivity>
+            <MoveSpeed>7.0</MoveSpeed>
+            <ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.85</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.5</ArmorRating_Heat>
+            <MeleeDodgeChance>0.30</MeleeDodgeChance>
+            <PsychicSensitivity>0.15</PsychicSensitivity>
         </statBases>
         <race>
-            <baseBodySize>3.5</baseBodySize>
-            <baseHealthScale>4.0</baseHealthScale>
+            <baseBodySize>4.5</baseBodySize>
+            <baseHealthScale>5.0</baseHealthScale>
         </race>
-        
         <tools>
             <li>
                 <label>left fist</label>
                 <labelNoLocation>fist</labelNoLocation>
                 <capacities><li>Blunt</li></capacities>
-                <power>25</power>
+                <power>40</power>
                 <cooldownTime>1</cooldownTime>
                 <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
                 <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
-                <armorPenetration>0.3</armorPenetration>
+                <armorPenetration>0.4</armorPenetration>
             </li>
             <li>
                 <label>right fist</label>
                 <labelNoLocation>fist</labelNoLocation>
                 <capacities><li>Blunt</li></capacities>
-                <power>25</power>
+                <power>40</power>
                 <cooldownTime>1</cooldownTime>
                 <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
                 <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
-                <armorPenetration>0.3</armorPenetration>
+                <armorPenetration>0.4</armorPenetration>
             </li>
             <li>
                 <label>teeth</label>
                 <capacities><li>Bite</li></capacities>
-                <power>18</power>
-                <cooldownTime>1</cooldownTime>
+                <power>30</power>
+                <cooldownTime>0.8</cooldownTime>
                 <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
                 <chanceFactor>0.07</chanceFactor>
-                <armorPenetration>0.2</armorPenetration>
+                <armorPenetration>0.3</armorPenetration>
             </li>
             <li>
                 <label>head</label>
                 <capacities><li>Blunt</li></capacities>
-                <power>15</power>
-                <cooldownTime>1</cooldownTime>
+                <power>30</power>
+                <cooldownTime>0.8</cooldownTime>
                 <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
                 <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
                 <chanceFactor>0.2</chanceFactor>
-                <armorPenetration>0.25</armorPenetration>
+                <armorPenetration>0.35</armorPenetration>
             </li>
         </tools>
 
         <butcherProducts>
-            <lotr_BlueGiantSpine>1</lotr_BlueGiantSpine>
+            <lotr_DawnGiantCrystal>1</lotr_DawnGiantCrystal>
         </butcherProducts>
     </ThingDef>
 
     <PawnKindDef>
-        <defName>lotr_BlueGiant</defName>
-        <label>blue giant</label>
-        <race>lotr_BlueGiantRace</race>
-        <combatPower>800</combatPower>
+        <defName>lotr_DawnGiant</defName>
+        <label>dawn giant</label>
+        <race>lotr_DawnGiantRace</race>
+        <combatPower>1200</combatPower>
         <canMeleeAttack>true</canMeleeAttack>
         <hostileToAll>true</hostileToAll>
         <initialWillRange>0~0</initialWillRange>
@@ -76,9 +75,9 @@
         <lifeStages>
             <li>
                 <bodyGraphicData>
-                    <texPath>Things/Pawn/Giant/BlueGiant/Giant</texPath>
+                    <texPath>Things/Pawn/Giant/DawnGiant/Giant</texPath>
                     <graphicClass>Graphic_Multi</graphicClass>
-                    <drawSize>4.5</drawSize>
+                    <drawSize>6.0</drawSize>
                 </bodyGraphicData>
             </li>
         </lifeStages>
@@ -89,8 +88,8 @@
         <wildGroupSize>1</wildGroupSize>
 
         <weaponTags>
-            <li>GiantLongSword</li>
+            <li>GiantSunsetSword</li>
         </weaponTags>
-        <weaponMoney>1000~1000</weaponMoney>
+        <weaponMoney>1200~1200</weaponMoney>
     </PawnKindDef>
 </Defs>

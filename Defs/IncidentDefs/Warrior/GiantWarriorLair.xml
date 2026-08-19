@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Мировой объект (натуральная генерация) -->
+  <WorldObjectDef ParentName="Site">
+    <defName>GiantWarriorLair_World</defName>
+    <label>giant warrior lair</label>
+    <description>A crude wooden hut in the wilderness, inhabited by a hostile giant warrior.</description>
+    <mapGenerator>GiantVillageMapGenerator</mapGenerator>
+  </WorldObjectDef>
+
+  <!-- Часть сайта -->
+  <SitePartDef>
+    <defName>GiantWarriorLair_Site</defName>
+    <label>giant warrior lair</label>
+    <description>A ferocious giant warrior has made this hut its lair.</description>
+    <workerClass>lotr.SitePartWorker_GiantWarriorLair</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+  </SitePartDef>
+
+  <!-- Инцидент -->
+  <IncidentDef>
+    <defName>GiantWarriorLair_Incident</defName>
+    <label>giant warrior lair</label>
+    <baseChance>1.5</baseChance>
+    <workerClass>lotr.IncidentWorker_GiantWarriorLair</workerClass>
+    <category>Misc</category>
+    <earliestDay>7</earliestDay>
+    <letterLabel>Giant warrior lair</letterLabel>
+    <letterText>A crude wooden hut has appeared in the wilderness. A ferocious giant warrior has made it its lair.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <targetTags>
+      <li>World</li>
+    </targetTags>
+  </IncidentDef>
+
+  <MapGeneratorDef>
+    <defName>GiantVillageMapGenerator</defName>
+    <genSteps>
+      <li>ElevationFertility</li>
+      <li>MutatorPostElevationFertility</li>
+      <li>RocksFromGrid_NoMinerals</li>
+      <li>Terrain</li>
+      <li>MutatorPostTerrain</li>
+      <li>RockChunks</li>
+      <li>FindPlayerStartSpot</li>
+      <li>ScenParts</li>
+      <li>Plants</li>
+      <li>Snow</li>
+      <li>Fog</li>
+    </genSteps>
+  </MapGeneratorDef>
+
+</Defs>

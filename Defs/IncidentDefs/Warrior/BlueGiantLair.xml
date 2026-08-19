@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <WorldObjectDef ParentName="Site">
+    <defName>BlueGiantLair_World</defName>
+    <label>blue giant ancient ruins</label>
+    <description>Ancient, partially restored ruins now serve as the lair of a blue giant.</description>
+    <mapGenerator>GiantVillageMapGenerator</mapGenerator>
+  </WorldObjectDef>
+
+  <SitePartDef>
+    <defName>BlueGiantLair_Site</defName>
+    <label>blue giant ruins</label>
+    <description>An ancient blue giant has taken residence in these restored ruins.</description>
+    <workerClass>lotr.SitePartWorker_BlueGiantLair</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+  </SitePartDef>
+
+  <IncidentDef>
+    <defName>BlueGiantLair_Incident</defName>
+    <label>blue giant ruins</label>
+    <baseChance>1.5</baseChance>
+    <workerClass>lotr.IncidentWorker_BlueGiantLair</workerClass>
+    <category>Misc</category>
+    <earliestDay>20</earliestDay>
+    <letterLabel>Blue giant ruins</letterLabel>
+    <letterText>Ancient ruins have been discovered, restored by unknown hands. A blue giant now guards them.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <targetTags>
+      <li>World</li>
+    </targetTags>
+  </IncidentDef>
+
+</Defs>

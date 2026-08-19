@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <WorldObjectDef ParentName="Site">
+    <defName>DivineGiantLair_World</defName>
+    <label>divine giant palace</label>
+    <description>A massive palace of the Divine Giant, with roads leading in all directions.</description>
+    <mapGenerator>GiantVillageMapGenerator</mapGenerator>
+  </WorldObjectDef>
+
+  <SitePartDef>
+    <defName>DivineGiantLair_Site</defName>
+    <label>divine giant palace</label>
+    <description>A Divine Giant has made this colossal palace its lair.</description>
+    <workerClass>lotr.SitePartWorker_DivineGiantLair</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+  </SitePartDef>
+
+  <IncidentDef>
+    <defName>DivineGiantLair_Incident</defName>
+    <label>divine giant palace</label>
+    <baseChance>1.5</baseChance>
+    <workerClass>lotr.IncidentWorker_DivineGiantLair</workerClass>
+    <category>Misc</category>
+    <earliestDay>60</earliestDay>
+    <letterLabel>Divine giant palace</letterLabel>
+    <letterText>A massive palace of the Divine Giant has been erected, with roads leading in all directions.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <targetTags>
+      <li>World</li>
+    </targetTags>
+  </IncidentDef>
+</Defs>

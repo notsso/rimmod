@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <WorldObjectDef ParentName="Site">
+    <defName>GreyGiantLair_World</defName>
+    <label>grey giant palace</label>
+    <description>A small palace of the Grey Giant, surrounded by lesser dwellings.</description>
+    <mapGenerator>GiantVillageMapGenerator</mapGenerator>
+  </WorldObjectDef>
+
+  <SitePartDef>
+    <defName>GreyGiantLair_Site</defName>
+    <label>grey giant palace</label>
+    <description>A Grey Giant dwells within this palace, guarded by its lesser kin.</description>
+    <workerClass>lotr.SitePartWorker_GreyGiantLair</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+  </SitePartDef>
+
+  <IncidentDef>
+    <defName>GreyGiantLair_Incident</defName>
+    <label>grey giant palace</label>
+    <baseChance>1.5</baseChance>
+    <workerClass>lotr.IncidentWorker_GreyGiantLair</workerClass>
+    <category>Misc</category>
+    <earliestDay>40</earliestDay>
+    <letterLabel>Grey giant palace</letterLabel>
+    <letterText>A small palace of the Grey Giant has been spotted, surrounded by lesser dwellings.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <targetTags>
+      <li>World</li>
+    </targetTags>
+  </IncidentDef>
+</Defs>

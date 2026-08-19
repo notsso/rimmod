@@ -11,7 +11,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>2.0</drawSize>
         </graphicData>
-        <uiIconScale>2.0</uiIconScale>
         <techLevel>Neolithic</techLevel>
         <weaponTags>
             <li>GiantWeapon</li>

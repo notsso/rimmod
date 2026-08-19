@@ -108,7 +108,7 @@
         <lifeStages>
             <li>
                 <bodyGraphicData>
-                <texPath>Things/Pawn/Giant/Giant</texPath>
+                <texPath>Things/Pawn/Giant/GiantWarrior/Giant</texPath>
                 <graphicClass>Graphic_Multi</graphicClass>
                 <drawSize>2.5</drawSize>
                 </bodyGraphicData>

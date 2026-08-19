@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <WorldObjectDef ParentName="Site">
+    <defName>GiantSquireLair_World</defName>
+    <label>giant squire lair</label>
+    <description>A sturdy stone house in the wilderness. A giant squire has claimed it as its lair.</description>
+    <mapGenerator>GiantVillageMapGenerator</mapGenerator>
+  </WorldObjectDef>
+
+  <SitePartDef>
+    <defName>GiantSquireLair_Site</defName>
+    <label>giant squire lair</label>
+    <description>A dangerous giant squire guards this stone house.</description>
+    <workerClass>lotr.SitePartWorker_GiantSquireLair</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+  </SitePartDef>
+
+  <IncidentDef>
+    <defName>GiantSquireLair_Incident</defName>
+    <label>giant squire lair</label>
+    <baseChance>1.5</baseChance>
+    <workerClass>lotr.IncidentWorker_GiantSquireLair</workerClass>
+    <category>Misc</category>
+    <earliestDay>12</earliestDay>
+    <letterLabel>Giant squire lair</letterLabel>
+    <letterText>A stone house has appeared in the wilderness. A menacing giant squire now dwells within.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <targetTags>
+      <li>World</li>
+    </targetTags>
+  </IncidentDef>
+
+</Defs>
