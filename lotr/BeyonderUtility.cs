@@ -48,6 +48,11 @@ namespace lotr {
             Pathway.Criminal, Pathway.Prisoner
         };
 
+        public static readonly string[] FactionDefNames = new string[] {
+            "lotr_IronAndBloodCrossOrder",
+            "lotr_ChurchOfTheGodOfCombat"
+        };
+
         // Метод для нанесения урона рассудку
         public static void AdjustSanityLoss(Pawn pawn, float amount, string reasonMote = null) {
             if (pawn == null || pawn.health == null) return;
@@ -162,8 +167,6 @@ namespace lotr {
             foreach (AbilityDef ability_def in new_abilities) {
                 pawn.abilities.GainAbility(ability_def);
             }
-
         }
-
     }
 }

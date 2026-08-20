@@ -16,7 +16,10 @@ namespace lotr {
         private const int CheckIntervalTicks = 60000;      // раз в день
         private const float ChancePerCheck = 0.1f;         // 10% в день
         private const int MinIntervalTicks = 60 * 60000;   // год (60 дней)
-        private const string FactionDefName = "lotr_IronAndBloodCrossOrder";
+        private static readonly string[] FactionDefNames = new string[] {
+            "lotr_IronAndBloodCrossOrder",
+            "lotr_ChurchOfTheGodOfCombat"
+        };
 
         public GameComponent_PeaceOffer(Game game) { }
 
@@ -39,43 +42,37 @@ namespace lotr {
 
             ticksUntilCheck = Find.TickManager.TicksGame + CheckIntervalTicks;
 
-            Faction faction = Find.FactionManager.AllFactions
-                .FirstOrDefault(f => f.def.defName == FactionDefName);
-            if (faction == null) return;
-
-            // Только если враждебны
-            if (!faction.HostileTo(Faction.OfPlayer)) return;
-
-            // Только если ранее был союз
             GameComponent_FirstMeeting firstMeetingComp = Current.Game.GetComponent<GameComponent_FirstMeeting>();
-            if (firstMeetingComp == null || !firstMeetingComp.IsFactionAllied(faction)) return;
+            if (firstMeetingComp == null) return;
 
-            // Если первый раз заметили вражду — начинаем отсчёт года
-            if (lastPeaceOfferTick == 0) {
+            foreach (string defName in FactionDefNames) {
+                Faction faction = Find.FactionManager.AllFactions.FirstOrDefault(f => f.def.defName == defName);
+                if (faction == null || !faction.HostileTo(Faction.OfPlayer)) continue;
+                if (!firstMeetingComp.IsFactionAllied(faction)) continue;
+
+                if (lastPeaceOfferTick == 0) {
+                    lastPeaceOfferTick = Find.TickManager.TicksGame;
+                    continue;
+                }
+
+                if (Find.TickManager.TicksGame - lastPeaceOfferTick < MinIntervalTicks)
+                    continue;
+
+                if (!Rand.Chance(ChancePerCheck))
+                    continue;
+
+                IncidentParms parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.Misc, Find.AnyPlayerHomeMap);
+                parms.faction = faction;
+                parms.forced = true;
+                Find.Storyteller.TryFire(new FiringIncident(IncidentDef.Named("lotr_PeaceOffer"), null, parms));
+
                 lastPeaceOfferTick = Find.TickManager.TicksGame;
-                return;
+                break; // запускаем только одно предложение за раз
             }
-
-            // Не чаще раза в год
-            if (Find.TickManager.TicksGame - lastPeaceOfferTick < MinIntervalTicks)
-                return;
-
-            // Шанс 10% в день
-            if (!Rand.Chance(ChancePerCheck))
-                return;
-
-            // Запускаем событие
-            IncidentParms parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.Misc, Find.AnyPlayerHomeMap);
-            parms.faction = faction;
-            parms.forced = true;
-            Find.Storyteller.TryFire(new FiringIncident(IncidentDef.Named("lotr_PeaceOffer"), null, parms));
-
-            lastPeaceOfferTick = Find.TickManager.TicksGame;
         }
     }
 
     public class IncidentWorker_PeaceOffer : IncidentWorker_VisitorGroup {
-        private const string FactionDefName = "lotr_IronAndBloodCrossOrder";
         private const string PawnKindDefName = "lotr_PeaceEnvoy";
 
         protected override bool TryResolveParmsGeneral(IncidentParms parms) {
@@ -84,10 +81,8 @@ namespace lotr {
                 !RCellFinder.TryFindRandomPawnEntryCell(out parms.spawnCenter, map, CellFinder.EdgeRoadChance_Neutral, false, null))
                 return false;
 
-            Faction faction = Find.FactionManager.AllFactions.FirstOrDefault(f => f.def.defName == FactionDefName);
-            if (faction == null) return false;
+            if (parms.faction == null) return false;
 
-            parms.faction = faction;
             parms.points = 100f;
             return true;
         }
@@ -96,11 +91,7 @@ namespace lotr {
             Map map = (Map)parms.target;
             if (!base.TryResolveParms(parms)) return false;
 
-            Faction faction = Find.FactionManager.AllFactions.FirstOrDefault(f => f.def.defName == FactionDefName);
-            if (faction == null) return false;
-
-            parms.faction = faction;
-
+            Faction faction = parms.faction;
             PawnKindDef kindDef = DefDatabase<PawnKindDef>.GetNamed(PawnKindDefName);
             Pawn envoy = PawnGenerator.GeneratePawn(kindDef, faction, map.Tile);
             if (envoy == null) return false;

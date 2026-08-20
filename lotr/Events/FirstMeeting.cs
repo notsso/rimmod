@@ -68,33 +68,32 @@ namespace lotr {
         }
 
         private bool TryTriggerEvent() {
-            Log.Message($"[LotrFirstMeeting] Attempting to trigger event. Tick={Find.TickManager.TicksGame}");
             if (Find.AnyPlayerHomeMap == null) return false;
 
-            Faction mysteryFaction = Find.FactionManager.AllFactions
-                .FirstOrDefault(f => f.def.defName == "lotr_IronAndBloodCrossOrder");
-            if (mysteryFaction == null) return false;
+            // Собираем фракции, с которыми ещё нет союза
+            List<Faction> availableFactions = new List<Faction>();
+            foreach (string defName in BeyonderUtility.FactionDefNames) {
+                Faction faction = Find.FactionManager.AllFactions
+                    .FirstOrDefault(f => f.def.defName == defName);
+                if (faction != null && !IsFactionAllied(faction))
+                    availableFactions.Add(faction);
+            }
 
-            // Не запускаем, если с этой фракцией уже заключён союз
-            if (IsFactionAllied(mysteryFaction)) return false;
+            if (availableFactions.Count == 0) return false;
 
+            Faction chosenFaction = availableFactions.RandomElement();
             IncidentDef incident = IncidentDef.Named("lotr_FirstMeeting");
-            if (incident == null)
-                return false;
+            if (incident == null) return false;
 
             IncidentParms parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.Misc, Find.AnyPlayerHomeMap);
-            parms.faction = mysteryFaction;
+            parms.faction = chosenFaction;
             parms.forced = true;
-            bool fired = Find.Storyteller.TryFire(new FiringIncident(incident, null, parms));
-
-            Log.Message($"[LotrFirstMeeting] TryFire result: {fired}");
-
+            Find.Storyteller.TryFire(new FiringIncident(incident, null, parms));
             return true;
         }
     }
 
     public class IncidentWorker_FirstMeeting : IncidentWorker_VisitorGroup {
-        private const string FactionDefName = "lotr_IronAndBloodCrossOrder";
         private const string PawnKindDefName = "lotr_Envoy";
 
         protected override bool TryResolveParmsGeneral(IncidentParms parms) {
@@ -104,11 +103,9 @@ namespace lotr {
                 return false;
             }
 
-            Faction mysteryFaction = Find.FactionManager.AllFactions.FirstOrDefault(f => f.def.defName == FactionDefName);
-            if (mysteryFaction == null)
+            if (parms.faction == null)
                 return false;
 
-            parms.faction = mysteryFaction;
             parms.points = 100f;
             return true;
         }
@@ -118,12 +115,7 @@ namespace lotr {
             if (!base.TryResolveParms(parms))
                 return false;
 
-            Faction faction = Find.FactionManager.AllFactions.FirstOrDefault(f => f.def.defName == FactionDefName);
-            if (faction == null)
-                return false;
-
-            parms.faction = faction;
-
+            Faction faction = parms.faction;
             PawnKindDef kindDef = DefDatabase<PawnKindDef>.GetNamed(PawnKindDefName);
             Pawn representative = PawnGenerator.GeneratePawn(kindDef, faction, map.Tile);
             if (representative == null)

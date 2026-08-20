@@ -3,7 +3,7 @@
 
     <TraderKindDef>
 
-        <defName>lotr_MysteryTrader</defName>
+        <defName>lotr_BeyonderTrader</defName>
         <label>mystery trader</label>
         <stockGenerators>
         

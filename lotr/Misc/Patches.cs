@@ -340,38 +340,24 @@ namespace lotr {
             foreach (FloatMenuOption option in values)
                 yield return option;
 
+            // Первая встреча
             if (__instance.kindDef.HasModExtension<DefModExtension_FirstMeeting>()) {
                 GameComponent_FirstMeeting comp = Current.Game.GetComponent<GameComponent_FirstMeeting>();
                 if (comp == null || comp.IsPawnTalked(__instance))
                     yield break;
 
-                Faction faction = __instance.Faction;
-                if (faction != null && faction != Faction.OfPlayer &&
-                    faction.def.defName == "lotr_IronAndBloodCrossOrder") {
-                    yield return new FloatMenuOption(
-                        "Поговорить с представителем",
-                        delegate { Find.WindowStack.Add(new Dialog_FirstMeeting(__instance)); },
-                        MenuOptionPriority.Default,
-                        null,
-                        null,
-                        0f,
-                        null,
-                        null,
-                        true,
-                        0
-                    );
-                }
+                yield return new FloatMenuOption(
+                    "Поговорить с представителем",
+                    delegate { Find.WindowStack.Add(new Dialog_FirstMeeting(__instance)); },
+                    MenuOptionPriority.Default, null, null, 0f, null, null, true, 0);
             }
 
             // Мирный дипломат
             if (__instance.kindDef.HasModExtension<DefModExtension_PeaceOffer>()) {
-                Faction faction = __instance.Faction;
-                if (faction != null && faction != Faction.OfPlayer && faction.def.defName == "lotr_IronAndBloodCrossOrder") {
-                    yield return new FloatMenuOption(
-                        "Поговорить с дипломатом",
-                        delegate { Find.WindowStack.Add(new Dialog_PeaceOffer(__instance)); },
-                        MenuOptionPriority.Default, null, null, 0f, null, null, true, 0);
-                }
+                yield return new FloatMenuOption(
+                    "Поговорить с дипломатом",
+                    delegate { Find.WindowStack.Add(new Dialog_PeaceOffer(__instance)); },
+                    MenuOptionPriority.Default, null, null, 0f, null, null, true, 0);
             }
         }
     }
@@ -379,7 +365,7 @@ namespace lotr {
     [HarmonyPatch(typeof(Command_Ability), "GizmoOnGUI")]
     public static class Patch_Command_Ability_GizmoOnGUI {
         // Достаем приватное поле ability
-        private static readonly AccessTools.FieldRef<Command_Ability, Ability> AbilityField = 
+        private static readonly AccessTools.FieldRef<Command_Ability, Ability> AbilityField =
             AccessTools.FieldRefAccess<Command_Ability, Ability>("ability");
 
         public static void Postfix(Command_Ability __instance, Vector2 topLeft, float maxWidth) {
@@ -391,7 +377,7 @@ namespace lotr {
             if (abilityInstance == null || abilityInstance.comps == null) return;
 
             CompDrawRadiusOnHover comp = abilityInstance.comps.OfType<CompDrawRadiusOnHover>().FirstOrDefault();
-            
+
             if (comp == null) return;
 
             // Считаем радиус
