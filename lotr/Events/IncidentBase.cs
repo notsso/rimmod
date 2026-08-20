@@ -39,10 +39,15 @@ namespace lotr {
                 return false;
             }
 
-            var tile = Find.WorldSelector.SelectedTile;
+            // Находим тайл для сайта
+            int tile = Find.WorldSelector.SelectedTile;
             if (tile < 0 || !Find.WorldGrid.InBounds(tile)) {
-                Log.Error("Select a tile on the world map before running this incident.");
-                return false;
+                // Если тайл не выбран, ищем рядом с базой игрока
+                tile = TryFindNearPlayerTile();
+                if (tile < 0) {
+                    Log.Error($"Could not find a valid tile for incident {GetType().Name}.");
+                    return false;
+                }
             }
 
             var siteObjectDef = GetWorldObjectDef();
@@ -63,11 +68,40 @@ namespace lotr {
 
             site.GetComponent<TimedDetectionRaids>()?.ResetCountdown();
 
-            CameraJumper.TryJump(site);
+            // CameraJumper.TryJump(site);
             SendStandardLetter(parms, site);
 
             PostSiteCreated(site, parms);
             return true;
+        }
+
+        // Поиск подходящего тайла рядом с базой игрока
+        private int TryFindNearPlayerTile() {
+            int playerTile = GetPlayerHomeTile();
+            if (playerTile < 0) return -1;
+
+            PlanetTile foundTile;
+            if (TileFinder.TryFindPassableTileWithTraversalDistance(
+                playerTile, minDist: 3, maxDist: 6, out foundTile)) {
+                return foundTile;
+            }
+
+            return -1;
+        }
+
+        private int GetPlayerHomeTile() {
+            Settlement playerSettlement = Find.WorldObjects.AllWorldObjects
+                .OfType<Settlement>()
+                .FirstOrDefault(s => s.Faction == Faction.OfPlayer);
+
+            if (playerSettlement != null)
+                return playerSettlement.Tile;
+
+            Map map = Find.AnyPlayerHomeMap;
+            if (map != null && map.Parent is Settlement mapSettlement)
+                return mapSettlement.Tile;
+
+            return -1;
         }
     }
 }

@@ -68,6 +68,7 @@ namespace lotr {
         }
 
         private bool TryTriggerEvent() {
+            Log.Message($"[LotrFirstMeeting] Attempting to trigger event. Tick={Find.TickManager.TicksGame}");
             if (Find.AnyPlayerHomeMap == null) return false;
 
             Faction mysteryFaction = Find.FactionManager.AllFactions
@@ -77,10 +78,17 @@ namespace lotr {
             // Не запускаем, если с этой фракцией уже заключён союз
             if (IsFactionAllied(mysteryFaction)) return false;
 
+            IncidentDef incident = IncidentDef.Named("lotr_FirstMeeting");
+            if (incident == null)
+                return false;
+
             IncidentParms parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.Misc, Find.AnyPlayerHomeMap);
             parms.faction = mysteryFaction;
             parms.forced = true;
-            Find.Storyteller.TryFire(new FiringIncident(IncidentDef.Named("lotr_FirstMeeting"), null, parms));
+            bool fired = Find.Storyteller.TryFire(new FiringIncident(incident, null, parms));
+
+            Log.Message($"[LotrFirstMeeting] TryFire result: {fired}");
+
             return true;
         }
     }
