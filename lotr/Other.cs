@@ -35,6 +35,8 @@ namespace lotr {
         public static NeedDef lotr_SpiritualityNeed;
         public static PawnKindDef lotr_Spirit;
         public static GameConditionDef BloodMoon;
+
+        public static StatDef SpiritualityOffset;
     }
 
     [StaticConstructorOnStartup]

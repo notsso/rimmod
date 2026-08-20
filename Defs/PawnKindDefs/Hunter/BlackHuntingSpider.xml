@@ -27,10 +27,12 @@
             <InjuryHealingFactor>2.0</InjuryHealingFactor>
             <MeleeHitChance>10</MeleeHitChance>
             <MeleeDodgeChance>10</MeleeDodgeChance>
+
+            <SpiritualityOffset>6</SpiritualityOffset>
         </statBases>
 
         <race>
-            <thinkTreeMain>Insect</thinkTreeMain> <!-- lotr_FireSalamanderTree -->
+            <thinkTreeMain>Insect</thinkTreeMain>
             <body>BeetleLike</body>
             <baseHungerRate>0</baseHungerRate>
             <baseBodySize>2.0</baseBodySize>
@@ -116,6 +118,10 @@
         <race>lotr_BlackHuntingSpiderRace</race>
         <combatPower>500</combatPower>
         <ecoSystemWeight>1.00</ecoSystemWeight>
+
+        <abilities>
+            <li>Cast_Incite_6S</li>
+        </abilities>
 
         <lifeStages>
             <li>

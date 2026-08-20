@@ -126,17 +126,25 @@
         <abilities>
 
             <!--
-            <li>Cast_BlazingSpear_7S</li> // OK
-            <li>Cast_BlazingSword_7S</li> // bad
-            <li>Cast_Confusion_6S</li> // OK
-            <li>Cast_Execution_5S</li> // OK
-            <li>Cast_ExtinguishFire_7S</li> // bad
+                Hunter abilities testing
+            -->
+            <li>Cast_BlazingSpear_7S</li>
+            <li>Cast_Confusion_6S</li>
+            <li>Cast_Execution_5S</li>
+            <li>Cast_Fireball_9S</li>
+            <li>Cast_Incite_6S</li>
+            <li>Cast_Taunt_8S</li>
+            <li>Cast_Vulnerability_5S</li>
 
-            <li>Cast_FireArmor_7S</li> // bad
-            <li>Cast_Fireball_9S</li> // OK
-            <li>Cast_FireRavens_7S</li> // bad
-            <li>Cast_Firestorm_4S</li> // OK
-            <li>Cast_FireJump_6S</li> // bad
+            <!--
+            <li>Cast_BlazingSword_7S</li>
+            <li>Cast_ExtinguishFire_7S</li>
+            <li>Cast_FireArmor_7S</li>
+            <li>Cast_FireJump_6S</li>
+            <li>Cast_FireRavens_7S</li>
+            <li>Cast_Firestorm_4S</li>
+            <li>Cast_Firewave_4S</li>
+            <li>Cast_IronBloodArmy_4S</li>
             -->
         
         </abilities>
