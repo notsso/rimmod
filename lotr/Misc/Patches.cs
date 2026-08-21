@@ -394,4 +394,19 @@ namespace lotr {
             }
         }
     }
+
+    // Harmony patch - выдаём способности потусторонним после генерации
+    [HarmonyPatch(typeof(PawnGenerator), nameof(PawnGenerator.GeneratePawn), new[] { typeof(PawnGenerationRequest) })]
+    public static class Patch_PawnGenerator_GeneratePawn {
+        [HarmonyPostfix]
+        public static void Postfix(ref Pawn __result) {
+            if (__result != null && BeyonderUtility.IsBeyonder(__result)) {
+                BeyonderUtility.UpdateAbilities(__result);
+                Need spiritualityNeed = __result.needs?.AllNeeds.FirstOrDefault(n => n.def.defName == "lotr_SpiritualityNeed");
+                if (spiritualityNeed != null) {
+                    spiritualityNeed.CurLevel = spiritualityNeed.MaxLevel;
+                }
+            }
+        }
+    }
 }

@@ -10,7 +10,7 @@
         <description>Увеличиват силу всех союзных пешек вокруг рыцаря.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_IronBloodArmy</iconPath>
 
-        <aiCanUse>true</aiCanUse>
+        <aiCanUse>false</aiCanUse> <!-- TODO? -->
         <ai_IsOffensive>false</ai_IsOffensive>
         <ai_IsIncendiary>false</ai_IsIncendiary>
         <targetRequired>true</targetRequired>

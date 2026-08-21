@@ -10,7 +10,7 @@
         <description>смертоносный огненный шторм</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Firestorm</iconPath>
 
-        <aiCanUse>true</aiCanUse>
+        <aiCanUse>false</aiCanUse> <!-- TODO? -->
         <ai_IsOffensive>true</ai_IsOffensive>
         <ai_IsIncendiary>true</ai_IsIncendiary>
         <targetRequired>true</targetRequired>

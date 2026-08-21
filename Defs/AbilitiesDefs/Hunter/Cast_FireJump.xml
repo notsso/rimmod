@@ -10,7 +10,7 @@
         <description>Превратиться в сгусток пламени и переместиться в указанную точку.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_FireTeleport</iconPath>
 
-        <aiCanUse>true</aiCanUse>
+        <aiCanUse>false</aiCanUse> <!-- TODO? -->
         <ai_IsOffensive>false</ai_IsOffensive>
         <ai_IsIncendiary>false</ai_IsIncendiary>
         <targetRequired>true</targetRequired>

@@ -10,7 +10,7 @@
         <description>Концентрирует духовную энергию, материализуя в руках заклинателя легендарный огненный меч. Если в руках было другое оружие, оно автоматически убирается в инвентарь.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_BlazingSword</iconPath> 
         
-        <aiCanUse>true</aiCanUse>
+        <aiCanUse>false</aiCanUse> <!-- TODO? -->
         <ai_IsOffensive>true</ai_IsOffensive>
         <ai_IsIncendiary>true</ai_IsIncendiary>
         <targetRequired>false</targetRequired>

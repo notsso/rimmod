@@ -51,11 +51,16 @@
                 <kindDef>Combat</kindDef>
                 <commonality>100</commonality>
                 <options>
-                    <Villager>5</Villager>
-                    <Town_Guard>10</Town_Guard>
-                    <Mercenary_Slasher>7</Mercenary_Slasher>
-                    <Mercenary_Gunner>10</Mercenary_Gunner>
-                    <Mercenary_Elite>10</Mercenary_Elite>
+                    <Mercenary_Slasher>5</Mercenary_Slasher>
+                    <Mercenary_Gunner>5</Mercenary_Gunner>
+                    <Mercenary_Elite>5</Mercenary_Elite>
+
+                    <Beyonder_Warrior9>10</Beyonder_Warrior9>
+                    <Beyonder_Warrior8>8</Beyonder_Warrior8>
+                    <Beyonder_Warrior7>6</Beyonder_Warrior7>
+                    <Beyonder_Warrior6>4</Beyonder_Warrior6>
+                    <Beyonder_Warrior5>2</Beyonder_Warrior5>
+                    <Beyonder_Warrior4>1</Beyonder_Warrior4>
                 </options>
             </li>
             <li>

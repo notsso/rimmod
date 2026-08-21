@@ -10,7 +10,7 @@
         <description>Создает трех мистических ворон из багрового пламени вокруг заклинателя. Вороны обладают собственным разумом, автоматически набрасываются на ближайших врагов и взрываются при гибели.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_FireRavens</iconPath>
         
-        <aiCanUse>true</aiCanUse>
+        <aiCanUse>false</aiCanUse> <!-- TODO? -->
         <ai_IsOffensive>true</ai_IsOffensive>
         <ai_IsIncendiary>false</ai_IsIncendiary>
         <targetRequired>false</targetRequired>

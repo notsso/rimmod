@@ -16,7 +16,7 @@ namespace lotr {
     public abstract class Beyonder_Hediff : HediffWithComps {
         // счетчик тиков, для пассивного восстановления безумия
         private int sanityTickCounter = 0;
-        
+
         // флаг полного усвоения зелья
         private bool isFullyAbsorbed = false;
 
@@ -43,6 +43,7 @@ namespace lotr {
 
         // Что делать, когда зелье усвоилось
         protected virtual void OnPotionFullyAbsorbed() {
+            if (!PawnUtility.ShouldSendNotificationAbout(pawn)) return;
             string messageText = $"{pawn.LabelShort} полностью усвоил зелье \"{def.LabelCap}\". Теперь он может продвинуться.";
 
             Messages.Message(messageText, pawn, MessageTypeDefOf.PositiveEvent);
@@ -208,6 +209,8 @@ namespace lotr {
             }
 
             this.Severity += diff;
+
+            if (!PawnUtility.ShouldSendNotificationAbout(pawn)) return;
 
             if (this.Severity < 1.0f) {
                 string messageText;
