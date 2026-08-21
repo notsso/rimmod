@@ -44,6 +44,7 @@
         <defName>Cast_FireTeleport_6S</defName>
         <label>Огненный прыжок</label>
         <cooldownTicksRange>600</cooldownTicksRange>
+        <spiritualityCost>15.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_FireTeleport">
                 <projectileDef>Proj_FireTeleport_6S</projectileDef>
@@ -60,6 +61,7 @@
         <defName>Cast_FireTeleport_5S</defName>
         <label>Огненный прыжок</label>
         <cooldownTicksRange>300</cooldownTicksRange>
+        <spiritualityCost>15.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_FireTeleport">
                 <projectileDef>Proj_FireTeleport_5S</projectileDef>
@@ -76,6 +78,7 @@
         <defName>Cast_FireTeleport_4S</defName>
         <label>Огненный прыжок</label>
         <cooldownTicksRange>60</cooldownTicksRange>
+        <spiritualityCost>15.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_FireTeleport">
                 <projectileDef>Proj_FireTeleport_4S</projectileDef>

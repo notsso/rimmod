@@ -41,6 +41,7 @@
         <defName>Cast_Confusion_6S</defName>
         <label>Замешательство</label>
         <cooldownTicksRange>3600</cooldownTicksRange>
+        <spiritualityCost>100.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityGiveHediff">
                 <hediffDef>Hediff_Confusion_6S</hediffDef>
@@ -61,6 +62,7 @@
         <defName>Cast_Confusion_5S</defName>
         <label>Замешательство</label>
         <cooldownTicksRange>1800</cooldownTicksRange>
+        <spiritualityCost>200.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityGiveHediff">
                 <hediffDef>Hediff_Confusion_5S</hediffDef>
@@ -81,6 +83,7 @@
         <defName>Cast_Confusion_4S</defName>
         <label>Замешательство</label>
         <cooldownTicksRange>600</cooldownTicksRange>
+        <spiritualityCost>300.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityGiveHediff">
                 <hediffDef>Hediff_Confusion_4S</hediffDef>
@@ -88,7 +91,7 @@
         </comps>
         <verbProperties>
             <range>25</range>
-            <warmupTime>0.2</warmupTime>
+            <warmupTime>0.1</warmupTime>
             <targetParams>
                 <canTargetPawns>true</canTargetPawns>
                 <canTargetSelf>false</canTargetSelf>

@@ -13,6 +13,7 @@
         <aiCanUse>false</aiCanUse> <!-- TODO? -->
         <ai_IsOffensive>true</ai_IsOffensive>
         <ai_IsIncendiary>true</ai_IsIncendiary>
+        <ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
         <targetRequired>true</targetRequired>
         <hostile>true</hostile>
         <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
@@ -44,6 +45,7 @@
         <defName>Cast_Firewave_4S</defName>
         <label>Волна огня</label>
         <cooldownTicksRange>6000</cooldownTicksRange>
+        <spiritualityCost>500.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_Firewave">
                 <angleDegrees>60</angleDegrees>

@@ -13,6 +13,7 @@
         <aiCanUse>true</aiCanUse>
         <ai_IsOffensive>true</ai_IsOffensive>
         <ai_IsIncendiary>false</ai_IsIncendiary>
+        <ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
         <targetRequired>true</targetRequired>
         <hostile>true</hostile>
         <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
@@ -43,6 +44,7 @@
         <defName>Cast_Execution_5S</defName>
         <label>Казнь</label>
         <cooldownTicksRange>6000</cooldownTicksRange>
+        <spiritualityCost>300.0</spiritualityCost>
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_Execution_5S</projectileDef>
@@ -50,7 +52,7 @@
         </comps>
         <verbProperties>
             <range>50</range>
-            <warmupTime>4.0</warmupTime>
+            <warmupTime>3.0</warmupTime>
         </verbProperties>
     </AbilityDef>
 
@@ -59,6 +61,7 @@
         <defName>Cast_Execution_4S</defName>
         <label>Казнь</label>
         <cooldownTicksRange>1800</cooldownTicksRange>
+        <spiritualityCost>500.0</spiritualityCost>
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_Execution_4S</projectileDef>
@@ -66,7 +69,7 @@
         </comps>
         <verbProperties>
             <range>60</range>
-            <warmupTime>2.0</warmupTime>
+            <warmupTime>1.0</warmupTime>
         </verbProperties>
     </AbilityDef>
 

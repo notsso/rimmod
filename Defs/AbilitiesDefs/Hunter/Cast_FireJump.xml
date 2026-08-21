@@ -18,7 +18,7 @@
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 
         <cooldownTicksRange>180</cooldownTicksRange>
-        <spiritualityCost>15.0</spiritualityCost>
+        <spiritualityCost>30.0</spiritualityCost>
 
         <verbProperties>
 
@@ -43,6 +43,7 @@
         <defName>Cast_FireJump_6S</defName>
         <label>Огненный прыжок</label>
         <cooldownTicksRange>600</cooldownTicksRange>
+        <spiritualityCost>30.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_FireJump">
                 <flyerDef>FireTeleportFlyer</flyerDef>
@@ -60,6 +61,7 @@
         <defName>Cast_FireJump_5S</defName>
         <label>Огненный прыжок</label>
         <cooldownTicksRange>300</cooldownTicksRange>
+        <spiritualityCost>40.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_FireJump">
                 <flyerDef>FireTeleportFlyer</flyerDef>
@@ -77,6 +79,7 @@
         <defName>Cast_FireJump_4S</defName>
         <label>Огненный прыжок</label>
         <cooldownTicksRange>60</cooldownTicksRange>
+        <spiritualityCost>50.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_FireJump">
                 <flyerDef>FireTeleportFlyer</flyerDef>
@@ -85,7 +88,7 @@
         </comps>
         <verbProperties>
             <range>50</range>
-            <warmupTime>0.1</warmupTime>
+            <warmupTime>0.0</warmupTime>
         </verbProperties>
     </AbilityDef>
 </Defs>

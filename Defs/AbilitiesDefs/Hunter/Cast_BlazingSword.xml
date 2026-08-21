@@ -40,6 +40,7 @@
         <defName>Cast_BlazingSword_7S</defName>
         <label>призыв пламенного клинка</label>
         <cooldownTicksRange>7200</cooldownTicksRange>
+        <spiritualityCost>50.0</spiritualityCost>
         <modExtensions>
             <li Class="lotr.SummonedWeaponExtension">
                 <weaponDef>Melee_BlazingSword_7S</weaponDef>
@@ -56,6 +57,7 @@
         <defName>Cast_BlazingSword_6S</defName>
         <label>призыв пламенного клинка</label>
         <cooldownTicksRange>3600</cooldownTicksRange>
+        <spiritualityCost>100.0</spiritualityCost>
         <modExtensions>
             <li Class="lotr.SummonedWeaponExtension">
                 <weaponDef>Melee_BlazingSword_6S</weaponDef>
@@ -72,6 +74,7 @@
         <defName>Cast_BlazingSword_5S</defName>
         <label>призыв пламенного клинка</label>
         <cooldownTicksRange>1800</cooldownTicksRange>
+        <spiritualityCost>150.0</spiritualityCost>
         <modExtensions>
             <li Class="lotr.SummonedWeaponExtension">
                 <weaponDef>Melee_BlazingSword_5S</weaponDef>
@@ -88,6 +91,7 @@
         <defName>Cast_BlazingSword_4S</defName>
         <label>призыв пламенного клинка</label>
         <cooldownTicksRange>600</cooldownTicksRange>
+        <spiritualityCost>300.0</spiritualityCost>
         <modExtensions>
             <li Class="lotr.SummonedWeaponExtension">
                 <weaponDef>Melee_BlazingSword_4S</weaponDef>
@@ -95,7 +99,7 @@
             </li>
         </modExtensions>
         <verbProperties>
-            <warmupTime>0.2</warmupTime>
+            <warmupTime>0.1</warmupTime>
         </verbProperties>
     </AbilityDef>
 

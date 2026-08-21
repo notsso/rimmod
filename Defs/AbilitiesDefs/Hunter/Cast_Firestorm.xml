@@ -13,6 +13,7 @@
         <aiCanUse>false</aiCanUse> <!-- TODO? -->
         <ai_IsOffensive>true</ai_IsOffensive>
         <ai_IsIncendiary>true</ai_IsIncendiary>
+        <ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
         <targetRequired>true</targetRequired>
         <hostile>true</hostile>
         <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
@@ -43,6 +44,7 @@
         <defName>Cast_Firestorm_4S</defName>
         <label>огненный шторм</label>
         <cooldownTicksRange>12000</cooldownTicksRange>
+        <spiritualityCost>1000.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_Firestorm">
                 <lifeTicks>300</lifeTicks>

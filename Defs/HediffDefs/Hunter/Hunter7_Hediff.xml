@@ -10,7 +10,7 @@
 		<sequence>7</sequence>
 		<pathway>Hunter</pathway>
 
-		<spiritualityOffset>3</spiritualityOffset>
+		<spiritualityOffset>2.5</spiritualityOffset>
 
 		<description>This person became 7 sequence beyonder - pyromaniac</description>
 		<defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
@@ -26,31 +26,29 @@
 				<label>лох</label>
 
                 <statFactors>
-					<IncomingDamageFactor>0.50</IncomingDamageFactor> 
+					<IncomingDamageFactor>0.95</IncomingDamageFactor> 
 				</statFactors>
 
 				<statOffsets>
                     <ArmorRating_Heat>0.20</ArmorRating_Heat>
 
-					<MeleeHitChance>9</MeleeHitChance>
-					<MeleeDodgeChance>9</MeleeDodgeChance>
-					<ShootingAccuracyPawn>9</ShootingAccuracyPawn>
-					<GeneralLaborSpeed>0.40</GeneralLaborSpeed>
-                    <InjuryHealingFactor>0.8</InjuryHealingFactor>
+                    <ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+
+                    <InjuryHealingFactor>0.1</InjuryHealingFactor>
 				</statOffsets>
 
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
-						<offset>0.50</offset>
+						<offset>0.05</offset>
 					</li>
 					<li>
 						<capacity>Sight</capacity>
-						<offset>0.40</offset>
+						<offset>0.05</offset>
 					</li>
 					<li>
 						<capacity>BloodPumping</capacity>
-						<offset>0.30</offset> 
+						<offset>0.05</offset> 
 					</li>
 				</capMods>
 			</li>
@@ -60,7 +58,7 @@
 				<label>нормик</label>
 
                 <statFactors>
-					<IncomingDamageFactor>0.50</IncomingDamageFactor> 
+					<IncomingDamageFactor>0.90</IncomingDamageFactor> 
 				</statFactors>
 
 				<statOffsets>
@@ -68,25 +66,25 @@
                     <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
                     <ArmorRating_Heat>0.60</ArmorRating_Heat>
 
-					<MeleeHitChance>10</MeleeHitChance>
-					<MeleeDodgeChance>10</MeleeDodgeChance>
-					<ShootingAccuracyPawn>10</ShootingAccuracyPawn>
-					<GeneralLaborSpeed>0.40</GeneralLaborSpeed>
-                    <InjuryHealingFactor>0.8</InjuryHealingFactor>
+					<MeleeHitChance>1</MeleeHitChance>
+					<MeleeDodgeChance>1</MeleeDodgeChance>
+					<ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+
+                    <InjuryHealingFactor>0.3</InjuryHealingFactor>
 				</statOffsets>
 
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
-						<offset>0.60</offset>
+						<offset>0.08</offset>
 					</li>
 					<li>
 						<capacity>Sight</capacity>
-						<offset>0.50</offset>
+						<offset>0.08</offset>
 					</li>
 					<li>
 						<capacity>BloodPumping</capacity>
-						<offset>0.40</offset> 
+						<offset>0.08</offset> 
 					</li>
 				</capMods>
 			</li>
@@ -96,33 +94,33 @@
 				<label>смешарик</label>
 
                 <statFactors>
-					<IncomingDamageFactor>0.50</IncomingDamageFactor> 
+					<IncomingDamageFactor>0.85</IncomingDamageFactor> 
 				</statFactors>
 
 				<statOffsets>
-                    <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
-                    <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+                    <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
                     <ArmorRating_Heat>0.80</ArmorRating_Heat>
 
-					<MeleeHitChance>10</MeleeHitChance>
-					<MeleeDodgeChance>10</MeleeDodgeChance>
-					<ShootingAccuracyPawn>10</ShootingAccuracyPawn>
-					<GeneralLaborSpeed>0.40</GeneralLaborSpeed>
-                    <InjuryHealingFactor>1</InjuryHealingFactor>
+					<MeleeHitChance>2</MeleeHitChance>
+					<MeleeDodgeChance>2</MeleeDodgeChance>
+					<ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+
+                    <InjuryHealingFactor>0.5</InjuryHealingFactor>
 				</statOffsets>
 
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
-						<offset>0.60</offset>
+						<offset>0.10</offset>
 					</li>
 					<li>
 						<capacity>Sight</capacity>
-						<offset>0.50</offset>
+						<offset>0.10</offset>
 					</li>
 					<li>
 						<capacity>BloodPumping</capacity>
-						<offset>0.40</offset> 
+						<offset>0.10</offset> 
 					</li>
 				</capMods>
 			</li>
@@ -135,7 +133,8 @@
         </comps>
 
         <newAbilities>
-            
+
+            <li>Cast_Fireball</li>
             <li>Cast_BlazingSpear</li>
             <li>Cast_FireRavens</li>
             <li>Cast_FireArmor</li>

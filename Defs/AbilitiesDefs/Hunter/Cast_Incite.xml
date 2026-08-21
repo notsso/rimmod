@@ -41,6 +41,7 @@
         <defName>Cast_Incite_6S</defName>
         <label>Подстрекательство</label>
         <cooldownTicksRange>1800</cooldownTicksRange>
+        <spiritualityCost>100.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityIncite">
                 <baseSuccessChance>0.6</baseSuccessChance>
@@ -58,6 +59,7 @@
         <defName>Cast_Incite_5S</defName>
         <label>Подстрекательство</label>
         <cooldownTicksRange>1200</cooldownTicksRange>
+        <spiritualityCost>120.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityIncite">
                 <baseSuccessChance>0.7</baseSuccessChance>
@@ -75,6 +77,7 @@
         <defName>Cast_Incite_4S</defName>
         <label>Подстрекательство</label>
         <cooldownTicksRange>300</cooldownTicksRange>
+        <spiritualityCost>150.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityIncite">
                 <baseSuccessChance>0.9</baseSuccessChance>
@@ -83,7 +86,7 @@
         </comps>
         <verbProperties>
             <range>25</range>
-            <warmupTime>0.5</warmupTime>
+            <warmupTime>0.2</warmupTime>
         </verbProperties>
     </AbilityDef>
 

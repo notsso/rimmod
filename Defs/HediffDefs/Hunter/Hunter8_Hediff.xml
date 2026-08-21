@@ -10,7 +10,7 @@
 		<sequence>8</sequence>
 		<pathway>Hunter</pathway>
 
-		<spiritualityOffset>0.5</spiritualityOffset>
+		<spiritualityOffset>0.3</spiritualityOffset>
 
 		<description>This person became 8 sequence beyonder - provoker</description>
 		<defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
@@ -26,29 +26,18 @@
 				<label>лох</label>
 
                 <statFactors>
-					<IncomingDamageFactor>0.60</IncomingDamageFactor> 
+					<IncomingDamageFactor>0.90</IncomingDamageFactor> 
 				</statFactors>
 
 				<statOffsets>
-					<MeleeHitChance>8</MeleeHitChance>
-					<MeleeDodgeChance>7</MeleeDodgeChance>
-					<ShootingAccuracyPawn>5</ShootingAccuracyPawn>
-					<GeneralLaborSpeed>0.30</GeneralLaborSpeed>
-                    <InjuryHealingFactor>0.5</InjuryHealingFactor>
+                    <GeneralLaborSpeed>0.10</GeneralLaborSpeed>
+                    <InjuryHealingFactor>0.1</InjuryHealingFactor>
 				</statOffsets>
 
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
-						<offset>0.40</offset>
-					</li>
-					<li>
-						<capacity>Sight</capacity>
-						<offset>0.30</offset>
-					</li>
-					<li>
-						<capacity>BloodPumping</capacity>
-						<offset>0.20</offset> 
+						<offset>0.10</offset>
 					</li>
 				</capMods>
 			</li>
@@ -57,29 +46,30 @@
 				<label>нормик</label>
 
                 <statFactors>
-					<IncomingDamageFactor>0.55</IncomingDamageFactor> 
+					<IncomingDamageFactor>0.90</IncomingDamageFactor> 
 				</statFactors>
 
 				<statOffsets>
-					<MeleeHitChance>9</MeleeHitChance>
-					<MeleeDodgeChance>8</MeleeDodgeChance>
-					<ShootingAccuracyPawn>6</ShootingAccuracyPawn>
-					<GeneralLaborSpeed>0.35</GeneralLaborSpeed>
-                    <InjuryHealingFactor>0.6</InjuryHealingFactor>
+					<MeleeHitChance>1</MeleeHitChance>
+					<MeleeDodgeChance>1</MeleeDodgeChance>
+					<ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+
+					<GeneralLaborSpeed>0.15</GeneralLaborSpeed>
+                    <InjuryHealingFactor>0.3</InjuryHealingFactor>
 				</statOffsets>
 
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
-						<offset>0.45</offset>
+						<offset>0.15</offset>
 					</li>
 					<li>
 						<capacity>Sight</capacity>
-						<offset>0.35</offset>
+						<offset>0.05</offset>
 					</li>
 					<li>
 						<capacity>BloodPumping</capacity>
-						<offset>0.25</offset> 
+						<offset>0.05</offset> 
 					</li>
 				</capMods>
 			</li>
@@ -88,29 +78,30 @@
 				<label>смешарик</label>
 
                 <statFactors>
-					<IncomingDamageFactor>0.50</IncomingDamageFactor> 
+					<IncomingDamageFactor>0.80</IncomingDamageFactor> 
 				</statFactors>
 
 				<statOffsets>
-					<MeleeHitChance>9</MeleeHitChance>
-					<MeleeDodgeChance>9</MeleeDodgeChance>
-					<ShootingAccuracyPawn>7</ShootingAccuracyPawn>
-					<GeneralLaborSpeed>0.40</GeneralLaborSpeed>
-                    <InjuryHealingFactor>0.7</InjuryHealingFactor>
+					<MeleeHitChance>2</MeleeHitChance>
+					<MeleeDodgeChance>2</MeleeDodgeChance>
+					<ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+
+					<GeneralLaborSpeed>0.20</GeneralLaborSpeed>
+                    <InjuryHealingFactor>0.5</InjuryHealingFactor>
 				</statOffsets>
 
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
-						<offset>0.50</offset>
+						<offset>0.20</offset>
 					</li>
 					<li>
 						<capacity>Sight</capacity>
-						<offset>0.40</offset>
+						<offset>0.10</offset>
 					</li>
 					<li>
 						<capacity>BloodPumping</capacity>
-						<offset>0.30</offset> 
+						<offset>0.10</offset> 
 					</li>
 				</capMods>
 			</li>
