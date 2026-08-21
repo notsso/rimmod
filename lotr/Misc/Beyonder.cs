@@ -108,16 +108,7 @@ namespace lotr {
             }
 
             if (sanityLoss.Severity >= 0.90f && Rand.Chance(0.1f)) {
-                this.pawn.Kill(null, sanityLoss);
-
-                if (this.pawn.Faction == Faction.OfPlayer) {
-                    Find.LetterStack.ReceiveLetter(
-                        "Потеря контроля",
-                        $"{this.pawn.LabelShort} полностью потерял контроль над потусторонними силами. Разум пешки окончательно разрушился, вызвав мгновенную смерть тела.",
-                        LetterDefOf.Death,
-                        this.pawn
-                    );
-                }
+                BeyonderUtility.ControlLoss(pawn);
             }
         }
 

@@ -51,6 +51,44 @@
         <researchPrerequisite>Brewing</researchPrerequisite>
     </RecipeDef>
 
+    <!-- Альтернативный рецепт Hunter9 -->
+    <RecipeDef>
+        <defName>Hunter9_PotionRecipe_Alt</defName>
+        <label>brew hunter's potion (alternative)</label>
+        <description>Brew a mysterious potion of the Hunter pathway using a single essence.</description>
+        <jobString>Brewing hunter's potion.</jobString>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+        <ingredients>
+        <li>
+            <filter>
+            <thingDefs>
+                <li>lotr_Hunter9_Essence</li>
+            </thingDefs>
+            </filter>
+            <count>1</count>
+        </li>
+        <li>
+            <filter>
+            <thingDefs>
+                <li>MedicineHerbal</li>
+            </thingDefs>
+            </filter>
+            <count>5</count>
+        </li>
+        </ingredients>
+        <products>
+        <Hunter9_Potion>1</Hunter9_Potion>
+        </products>
+        <recipeUsers>
+        <li>DrugLab</li>
+        </recipeUsers>
+        <researchPrerequisite>Brewing</researchPrerequisite>
+    </RecipeDef>
+
     <RecipeDef>
         <defName>Hunter8_PotionRecipe</defName>
         <label>brew provoker's potion</label>
@@ -101,6 +139,44 @@
         <researchPrerequisite>Brewing</researchPrerequisite>
     </RecipeDef>
 
+    <!-- Альтернативный рецепт Hunter8 -->
+    <RecipeDef>
+        <defName>Hunter8_PotionRecipe_Alt</defName>
+        <label>brew provoker's potion (alternative)</label>
+        <description>Brew a mysterious potion of the Hunter pathway using a single essence.</description>
+        <jobString>Brewing provoker's potion.</jobString>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+        <ingredients>
+        <li>
+            <filter>
+            <thingDefs>
+                <li>lotr_Hunter8_Essence</li>
+            </thingDefs>
+            </filter>
+            <count>1</count>
+        </li>
+        <li>
+            <filter>
+            <thingDefs>
+                <li>MedicineHerbal</li>
+            </thingDefs>
+            </filter>
+            <count>5</count>
+        </li>
+        </ingredients>
+        <products>
+        <Hunter8_Potion>1</Hunter8_Potion>
+        </products>
+        <recipeUsers>
+        <li>DrugLab</li>
+        </recipeUsers>
+        <researchPrerequisite>Brewing</researchPrerequisite>
+    </RecipeDef>
+
     <RecipeDef>
         <defName>Hunter7_PotionRecipe</defName>
         <label>brew pyromaniac's potion</label>
@@ -148,6 +224,44 @@
             <li>DrugLab</li>
         </recipeUsers>
         
+        <researchPrerequisite>Brewing</researchPrerequisite>
+    </RecipeDef>
+
+    <!-- Альтернативный рецепт Hunter7 -->
+    <RecipeDef>
+        <defName>Hunter7_PotionRecipe_Alt</defName>
+        <label>brew pyromaniac's potion (alternative)</label>
+        <description>Brew a mysterious potion of the Hunter pathway using a single essence.</description>
+        <jobString>Brewing pyromaniac's potion.</jobString>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+        <ingredients>
+        <li>
+            <filter>
+            <thingDefs>
+                <li>lotr_Hunter7_Essence</li>
+            </thingDefs>
+            </filter>
+            <count>1</count>
+        </li>
+        <li>
+            <filter>
+            <thingDefs>
+                <li>lotr_MagicalHerbs</li>
+            </thingDefs>
+            </filter>
+            <count>5</count>
+        </li>
+        </ingredients>
+        <products>
+        <Hunter7_Potion>1</Hunter7_Potion>
+        </products>
+        <recipeUsers>
+        <li>DrugLab</li>
+        </recipeUsers>
         <researchPrerequisite>Brewing</researchPrerequisite>
     </RecipeDef>
 
@@ -209,6 +323,52 @@
         <researchPrerequisite>Brewing</researchPrerequisite>
     </RecipeDef>
 
+    <!-- Альтернативный рецепт Hunter6 -->
+    <RecipeDef>
+        <defName>Hunter6_PotionRecipe_Alt</defName>
+        <label>brew conspirator's potion (alternative)</label>
+        <description>Brew a mysterious potion of the Hunter pathway using a single essence.</description>
+        <jobString>Brewing conspirator's potion.</jobString>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+        <ingredients>
+        <li>
+            <filter>
+            <thingDefs>
+                <li>lotr_Hunter6_Essence</li>
+            </thingDefs>
+            </filter>
+            <count>1</count>
+        </li>
+        <li>
+            <filter>
+            <thingDefs>
+                <li>lotr_MagicalHerbs</li>
+            </thingDefs>
+            </filter>
+            <count>5</count>
+        </li>
+        <li>
+            <filter>
+            <thingDefs>
+                <li>lotr_MysticalComponents</li>
+            </thingDefs>
+            </filter>
+            <count>2</count>
+        </li>
+        </ingredients>
+        <products>
+        <Hunter6_Potion>1</Hunter6_Potion>
+        </products>
+        <recipeUsers>
+        <li>DrugLab</li>
+        </recipeUsers>
+        <researchPrerequisite>Brewing</researchPrerequisite>
+    </RecipeDef>
+
     <RecipeDef>
         <defName>Hunter5_PotionRecipe</defName>
         <label>brew reaper's potion</label>
@@ -259,6 +419,44 @@
         <researchPrerequisite>Brewing</researchPrerequisite>
     </RecipeDef>
 
+    <!-- Альтернативный рецепт Hunter5 -->
+    <RecipeDef>
+        <defName>Hunter5_PotionRecipe_Alt</defName>
+        <label>brew reaper's potion (alternative)</label>
+        <description>Brew a mysterious potion of the Hunter pathway using a single essence.</description>
+        <jobString>Brewing reaper's potion.</jobString>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+        <ingredients>
+        <li>
+            <filter>
+            <thingDefs>
+                <li>lotr_Hunter5_Essence</li>
+            </thingDefs>
+            </filter>
+            <count>1</count>
+        </li>
+        <li>
+            <filter>
+            <thingDefs>
+                <li>lotr_MysticalComponents</li>
+            </thingDefs>
+            </filter>
+            <count>5</count>
+        </li>
+        </ingredients>
+        <products>
+        <Hunter5_Potion>1</Hunter5_Potion>
+        </products>
+        <recipeUsers>
+        <li>DrugLab</li>
+        </recipeUsers>
+        <researchPrerequisite>Brewing</researchPrerequisite>
+    </RecipeDef>
+
     <RecipeDef>
         <defName>Hunter4_PotionRecipe</defName>
         <label>brew knight's potion</label>
@@ -306,6 +504,44 @@
             <li>DrugLab</li>
         </recipeUsers>
         
+        <researchPrerequisite>Brewing</researchPrerequisite>
+    </RecipeDef>
+
+    <!-- Альтернативный рецепт Hunter4 -->
+    <RecipeDef>
+        <defName>Hunter4_PotionRecipe_Alt</defName>
+        <label>brew knight's potion (alternative)</label>
+        <description>Brew a mysterious potion of the Hunter pathway using a single essence.</description>
+        <jobString>Brewing knight's potion.</jobString>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+        <ingredients>
+        <li>
+            <filter>
+            <thingDefs>
+                <li>lotr_Hunter4_Essence</li>
+            </thingDefs>
+            </filter>
+            <count>1</count>
+        </li>
+        <li>
+            <filter>
+            <thingDefs>
+                <li>lotr_MysticalComponents</li>
+            </thingDefs>
+            </filter>
+            <count>10</count>
+        </li>
+        </ingredients>
+        <products>
+        <Hunter4_Potion>1</Hunter4_Potion>
+        </products>
+        <recipeUsers>
+        <li>DrugLab</li>
+        </recipeUsers>
         <researchPrerequisite>Brewing</researchPrerequisite>
     </RecipeDef>
 

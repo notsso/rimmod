@@ -409,4 +409,21 @@ namespace lotr {
             }
         }
     }
+
+    // Harmony patch - при смерти пешки с нее выпадают потусторонние черты
+    [HarmonyPatch(typeof(Pawn), nameof(Pawn.Kill))]
+    public static class Patch_Pawn_Kill_BeyonderEssence {
+        [HarmonyPrefix]
+        public static void Prefix(Pawn __instance, DamageInfo? dinfo, Hediff exactCulprit) {
+            if (__instance == null || __instance.Destroyed) return;
+
+            var beyonderHediffs = __instance.health.hediffSet.hediffs
+                .Where(h => h is Beyonder_Hediff)
+                .ToList();
+
+            foreach (var hediff in beyonderHediffs) {
+                BeyonderUtility.ExtractBeyonderEssence(__instance, hediff);
+            }
+        }
+    }
 }

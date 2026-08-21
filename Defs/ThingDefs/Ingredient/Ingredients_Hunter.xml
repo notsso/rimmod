@@ -48,6 +48,29 @@
         </tradeTags>
     </ThingDef>
 
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Hunter9_Essence</defName>
+        <label>essence of Hunter</label>
+        <description>Мистическая черта потустороннего c пути Охотника.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>500</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
+    </ThingDef>
+
     <!-- Ингредиенты для зелья Провокатора (8) -->
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_CuspidsParrotTongue</defName>
@@ -92,6 +115,29 @@
 
         <tradeTags>
             <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Hunter8_Essence</defName>
+        <label>essence of Provoker</label>
+        <description>Мистическая черта потустороннего c пути Охотника.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>1000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderItems</li>
         </tradeTags>
     </ThingDef>
 
@@ -142,6 +188,29 @@
         </tradeTags>
     </ThingDef>
 
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Hunter7_Essence</defName>
+        <label>essence of Pyromaniac</label>
+        <description>Мистическая черта потустороннего c пути Охотника.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>1600</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
+    </ThingDef>
+
     <!-- Ингредиенты для зелья Заговорщика (6) -->
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_BlackHuntingSpiderEyes</defName>
@@ -186,6 +255,29 @@
 
         <tradeTags>
             <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Hunter6_Essence</defName>
+        <label>essence of Conspirator</label>
+        <description>Мистическая черта потустороннего c пути Охотника.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>2500</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderItems</li>
         </tradeTags>
     </ThingDef>
 
@@ -236,6 +328,29 @@
         </tradeTags>
     </ThingDef>
 
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Hunter5_Essence</defName>
+        <label>essence of Reaper</label>
+        <description>Мистическая черта потустороннего c пути Охотника.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>5000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
+    </ThingDef>
+
     <!-- Ингредиенты для зелья Железнокровного рыцаря (4) -->
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_MagmaGiantCore</defName>
@@ -280,6 +395,29 @@
 
         <tradeTags>
             <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Hunter4_Essence</defName>
+        <label>essence of Iron-Blooded Knight</label>
+        <description>Мистическая черта потустороннего c пути Охотника.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_3</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>8000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderItems</li>
         </tradeTags>
     </ThingDef>
 
