@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThoughtDef>
+        <defName>lotr_TerrifyingRoarThought</defName>
+        <workerClass>ThoughtWorker_Hediff</workerClass>
+        <hediff>lotr_HediffFoulnessRoar</hediff>
+        <validWhileDespawned>true</validWhileDespawned>
+        <stages>
+            <li>
+                <label>terrifying roar</label>
+                <description>I heard a horrifying roar that still echoes in my mind. I can barely think or move.</description>
+                <baseMoodEffect>-20</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>
