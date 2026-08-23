@@ -2,8 +2,8 @@
 <Defs>
 
     <RecipeDef>
-        <defName>lotr_MakeDreamCharm</defName>
-        <label>make dream charm</label>
+        <defName>lotr_MakeSlumberCharm</defName>
+        <label>make slumber charm</label>
         <description>Create a one-use charm using spirituality.</description>
         <jobString>Creating charm.</jobString>
 
@@ -33,7 +33,7 @@
         </ingredients>
 
         <products>
-            <lotr_DreamCharm>1</lotr_DreamCharm>
+            <lotr_SlumberCharm>1</lotr_SlumberCharm>
         </products>
 
         <recipeUsers>

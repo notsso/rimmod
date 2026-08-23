@@ -5,10 +5,14 @@
         <defName>lotr_MentalTerrorCandle</defName>
         <label>mental terror candle</label>
         <description>A small candle wrapped in what looks like human skin. It allows the user to enter the deepest layers of a target's mind, offering both healing and control, but each intrusion risks permanent madness.</description>
+        <useHitPoints>false</useHitPoints>
         <graphicData>
-            <texPath>Placeholder</texPath>
-            <drawSize>(0.7,0.7)</drawSize>
+            <texPath>Things/Item/Artifact/Artifact_Visionary</texPath>
+            <drawSize>1.0</drawSize>
         </graphicData>
+        <statBases>
+            <MarketValue>2000</MarketValue>
+        </statBases>
         <apparel>
             <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
         </apparel>
@@ -55,7 +59,7 @@
                 <maxCharges>1</maxCharges>
                 <destroyOnEmpty>false</destroyOnEmpty>
                 <replenishAfterCooldown>true</replenishAfterCooldown>
-                <baseReloadTicks>60000</baseReloadTicks>
+                <baseReloadTicks>3600</baseReloadTicks>
                 <chargeNoun>charge</chargeNoun>
                 <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
             </li>

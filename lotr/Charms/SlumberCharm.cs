@@ -7,7 +7,7 @@ using Verse;
 using Verse.AI;
 
 namespace lotr {
-    public class Verb_DreamCharm : Verb_CastBase {
+    public class Verb_SlumberCharm : Verb_CastBase {
         private const float Radius = 3f;
 
         protected override bool TryCastShot() {
@@ -100,6 +100,4 @@ namespace lotr {
             }
         }
     }
-
-
 }

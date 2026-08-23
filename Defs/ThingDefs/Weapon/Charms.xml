@@ -7,20 +7,23 @@
             <li>BeyonderItems</li>
         </thingCategories>
         <graphicData>
-            <texPath>Things/Item/Equipment/WeaponSpecial/OrbitalTargeter</texPath>
+            <texPath>Placeholder</texPath>
             <graphicClass>Graphic_Single</graphicClass>
+            <onGroundRandomRotateAngle>0</onGroundRandomRotateAngle>
         </graphicData>
         <statBases>
             <MarketValue>200</MarketValue>
             <Mass>0.2</Mass>
             <Beauty>5</Beauty>
             <Flammability>0</Flammability>
+            <DeteriorationRate>0</DeteriorationRate>
         </statBases>
         <techLevel>Spacer</techLevel>
         <tradeability>Sellable</tradeability>
         <smeltable>false</smeltable>
         <soundInteract>Standard_Pickup</soundInteract>
         <tickerType>Normal</tickerType>
+        <rotatable>false</rotatable>
         <tradeTags>
             <li>BeyonderItems</li>
         </tradeTags>
@@ -44,19 +47,22 @@
     </ThingDef>
 
     <ThingDef ParentName="CharmUtilityBase">
-        <defName>lotr_DreamCharm</defName>
+        <defName>lotr_SlumberCharm</defName>
         <label>Slumber Charm</label>
         <description>Mystical charm that can forcefully put the target to sleep.</description>
         <graphicData>
-            <texPath>Placeholder</texPath>
-            <drawSize>(0.7,0.7)</drawSize>
+            <texPath>Things/Item/Charm/SlumberCharm</texPath>
+            <drawSize>1.0</drawSize>
         </graphicData>
+        <statBases>
+            <MarketValue>300</MarketValue>
+        </statBases>
         <apparel>
             <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
         </apparel>
         <verbs>
             <li>
-                <verbClass>lotr.Verb_DreamCharm</verbClass>
+                <verbClass>lotr.Verb_SlumberCharm</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
                 <useableInPocketMaps>false</useableInPocketMaps>
                 <warmupTime>1</warmupTime>
@@ -113,9 +119,12 @@
         <label>Flaring Sun Charm</label>
         <description>Mystical charm that calls forth a pure and blazing hot pillar of light from the sky.</description>
         <graphicData>
-            <texPath>Placeholder</texPath>
-            <drawSize>(0.7,0.7)</drawSize>
+            <texPath>Things/Item/Charm/FlaringSunCharm</texPath>
+            <drawSize>1.0</drawSize>
         </graphicData>
+        <statBases>
+            <MarketValue>500</MarketValue>
+        </statBases>
         <apparel>
             <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
         </apparel>
@@ -154,9 +163,12 @@
         <label>Teleportation Charm</label>
         <description>A mystical charm that instantly transports the wearer to the targeted location.</description>
         <graphicData>
-            <texPath>Placeholder</texPath>
-            <drawSize>(0.7,0.7)</drawSize>
+            <texPath>Things/Item/Charm/TeleportCharm</texPath>
+            <drawSize>1.0</drawSize>
         </graphicData>
+        <statBases>
+            <MarketValue>300</MarketValue>
+        </statBases>
         <apparel>
             <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
         </apparel>
@@ -195,9 +207,12 @@
         <label>foulness roar charm</label>
         <description>A charm that releases a terrifying otherworldly roar, slowing the minds and bodies of all who hear it. Beyonders are especially vulnerable, suffering direct damage to their sanity.</description>
         <graphicData>
-            <texPath>Placeholder</texPath>
-            <drawSize>(0.7,0.7)</drawSize>
+            <texPath>Things/Item/Charm/FoulnessRoarCharm</texPath>
+            <drawSize>1.0</drawSize>
         </graphicData>
+        <statBases>
+            <MarketValue>400</MarketValue>
+        </statBases>
         <apparel>
             <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
         </apparel>

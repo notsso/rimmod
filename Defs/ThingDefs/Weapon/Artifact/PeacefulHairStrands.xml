@@ -5,10 +5,14 @@
         <defName>lotr_PeacefulHairStrands</defName>
         <label>peaceful hair strands</label>
         <description>An artifact made of many black hair strands. Direct contact with the strands seems to drain all desires and emotions, leaving the victim silent and motionless. The user is advised to wear gloves.</description>
+        <useHitPoints>false</useHitPoints>
         <graphicData>
-            <texPath>Placeholder</texPath>
-            <drawSize>(0.7,0.7)</drawSize>
+            <texPath>Things/Item/Artifact/Artifact_Darkness</texPath>
+            <drawSize>1.0</drawSize>
         </graphicData>
+        <statBases>
+            <MarketValue>2000</MarketValue>
+        </statBases>
         <apparel>
             <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
         </apparel>

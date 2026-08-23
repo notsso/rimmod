@@ -4,10 +4,14 @@
         <defName>lotr_FlowerOfBlood</defName>
         <label>flower of blood</label>
         <description>A golden ring set with a blood-red ruby. It grants incredible regeneration and resilience, but erodes the wearer's rationality over time.</description>
+        <useHitPoints>false</useHitPoints>
         <graphicData>
-            <texPath>Placeholder</texPath>
-            <drawSize>(0.7,0.7)</drawSize>
+            <texPath>Things/Item/Artifact/Artifact_Hanged</texPath>
+            <drawSize>1.0</drawSize>
         </graphicData>
+        <statBases>
+            <MarketValue>2000</MarketValue>
+        </statBases>
         <apparel>
             <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
         </apparel>

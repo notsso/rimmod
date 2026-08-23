@@ -4,10 +4,14 @@
         <defName>lotr_ShapeshiftingHat</defName>
         <label>shapeshifting hat</label>
         <description>A hat capable of changing its shape. It grants powers over water and wind, but makes the wearer crave water and suffer on dry land.</description>
+        <useHitPoints>false</useHitPoints>
         <graphicData>
-            <texPath>Placeholder</texPath>
-            <drawSize>(0.7,0.7)</drawSize>
+            <texPath>Things/Item/Artifact/Artifact_Tyrant</texPath>
+            <drawSize>1.0</drawSize>
         </graphicData>
+        <statBases>
+            <MarketValue>2000</MarketValue>
+        </statBases>
         <apparel>
             <bodyPartGroups>
                 <li>UpperHead</li>
