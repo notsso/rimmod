@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="CharmUtilityBase">
+        <defName>lotr_PeacefulHairStrands</defName>
+        <label>peaceful hair strands</label>
+        <description>An artifact made of many black hair strands. Direct contact with the strands seems to drain all desires and emotions, leaving the victim silent and motionless. The user is advised to wear gloves.</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <drawSize>(0.7,0.7)</drawSize>
+        </graphicData>
+        <apparel>
+            <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
+        </apparel>
+        <verbs>
+            <li>
+                <verbClass>lotr.Verb_CalmTarget</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <useableInPocketMaps>false</useableInPocketMaps>
+                <warmupTime>1.5</warmupTime>
+                <range>12</range>
+                <burstShotCount>1</burstShotCount>
+                <soundAiming>OrbitalTargeter_Aiming</soundAiming>
+                <soundCast>OrbitalTargeter_Fire</soundCast>
+                <onlyManualCast>true</onlyManualCast>
+                <requireLineOfSight>true</requireLineOfSight>
+                <targetParams>
+                    <canTargetPawns>true</canTargetPawns>
+                    <canTargetLocations>false</canTargetLocations>
+                </targetParams>
+                <violent>false</violent>
+            </li>
+        </verbs>
+        <comps>
+            <li Class="CompProperties_ApparelReloadable">
+                <maxCharges>1</maxCharges>
+                <destroyOnEmpty>false</destroyOnEmpty>
+                <replenishAfterCooldown>true</replenishAfterCooldown>
+                <baseReloadTicks>3600</baseReloadTicks>
+                <chargeNoun>charge</chargeNoun>
+                <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+            </li>
+            <li Class="lotr.CompProperties_PeacefulHairStrands" />
+        </comps>
+    </ThingDef>
+
+</Defs>

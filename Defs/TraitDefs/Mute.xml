@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <TraitDef>
+        <defName>lotr_Mute</defName>
+        <label>mute</label>
+        <description>This pawn has lost the ability to speak.</description>
+        <commonality>0</commonality>
+        <disabledWorkTags>Social</disabledWorkTags>
+        <degreeDatas>
+            <li>
+                <label>mute</label>
+                <description>This pawn cannot speak and cannot perform social tasks.</description>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+</Defs>
