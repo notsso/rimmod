@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Эффект зелья силы -->
+    <HediffDef>
+        <defName>lotr_HediffStrengthPotion</defName>
+        <label>strength potion effect</label>
+        <description>Enhanced melee damage, accuracy, dodge chance and movement speed.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>3600</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MeleeDamageFactor>1.0</MeleeDamageFactor>
+                    <MeleeHitChance>5</MeleeHitChance>
+                    <MeleeDodgeChance>5</MeleeDodgeChance>
+                    <MoveSpeed>1.0</MoveSpeed>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- Эффект зелья брони -->
+    <HediffDef>
+        <defName>lotr_HediffArmorPotion</defName>
+        <label>armor potion effect</label>
+        <description>Reduced incoming damage and increased armor ratings.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>3600</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statFactors>
+                    <IncomingDamageFactor>0.5</IncomingDamageFactor>
+                </statFactors>
+
+                <statOffsets>
+                    <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+                    <ArmorRating_Heat>0.5</ArmorRating_Heat>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- Эффект зелья регенерации -->
+    <HediffDef>
+        <defName>lotr_HediffRegeneration</defName>
+        <label>regeneration</label>
+        <description>Natural healing factor is greatly increased.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>3600</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statOffsets>
+                    <InjuryHealingFactor>10.0</InjuryHealingFactor>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+</Defs>

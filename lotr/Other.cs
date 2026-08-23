@@ -134,6 +134,73 @@ namespace lotr {
         }
     }
 
+    // Лечит одну случайную болезнь и добавляет регенерацию
+    public class IngestionOutcomeDoer_HealingPotion : IngestionOutcomeDoer {
+        public HediffDef regenerationHediff;
+
+        protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount) {
+            if (pawn == null || pawn.health == null)
+                return;
+
+            // Добавляем ускоренную регенерацию
+            if (regenerationHediff != null)
+                pawn.health.AddHediff(regenerationHediff);
+
+            // Лечим одну случайную болезнь
+            CureRandomDisease(pawn);
+        }
+
+        private void CureRandomDisease(Pawn pawn) {
+            List<Hediff> diseases = new List<Hediff>();
+            foreach (Hediff hediff in pawn.health.hediffSet.hediffs) {
+                if (IsDisease(hediff))
+                    diseases.Add(hediff);
+            }
+
+            if (diseases.Count > 0) {
+                Hediff toCure = diseases.RandomElement();
+                pawn.health.RemoveHediff(toCure);
+                Messages.Message("DiseaseCured".Translate(pawn.LabelShort, toCure.LabelCap),
+                    pawn, MessageTypeDefOf.PositiveEvent, true);
+            }
+        }
+
+        private bool IsDisease(Hediff hediff) {
+            return hediff.def.HasComp(typeof(HediffCompProperties_Immunizable))
+                || hediff.def.HasComp(typeof(HediffCompProperties_TendDuration));
+        }
+    }
+
+    // Удаляет все негативные мысли и снижает SanityLoss
+    public class IngestionOutcomeDoer_CalmingPotion : IngestionOutcomeDoer {
+        public float sanityLossReduction = 0.5f;
+
+        protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount) {
+            if (pawn == null)
+                return;
+
+            // Снимаем 0.5 потери контроля (SanityLoss)
+            if (BeyonderUtility.IsBeyonder(pawn))
+                BeyonderUtility.AdjustSanityLoss(pawn, -sanityLossReduction, "Calming");
+
+            // Убираем все плохие мысли
+            RemoveNegativeThoughts(pawn);
+        }
+
+        private void RemoveNegativeThoughts(Pawn pawn) {
+            var memories = pawn.needs?.mood?.thoughts?.memories?.Memories;
+            if (memories == null)
+                return;
+
+            // Проходим с конца, чтобы безопасно удалять
+            for (int i = memories.Count - 1; i >= 0; i--) {
+                if (memories[i].MoodOffset() < 0) {
+                    pawn.needs.mood.thoughts.memories.RemoveMemory(memories[i]);
+                }
+            }
+        }
+    }
+
     public class SummonedWeaponExtension : DefModExtension {
         public ThingDef weaponDef;
         public int lifespan;

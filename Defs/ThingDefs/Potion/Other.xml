@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Зелье силы -->
+    <ThingDef ParentName="PotionBase">
+        <defName>lotr_StrengthPotion</defName>
+        <label>potion of strength</label>
+        <description>A glowing red liquid that fills the drinker with supernatural strength.</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <ingestible>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>lotr_HediffStrengthPotion</hediffDef>
+                    <severity>1</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+    </ThingDef>
+
+    <!-- Зелье брони -->
+    <ThingDef ParentName="PotionBase">
+        <defName>lotr_ArmorPotion</defName>
+        <label>potion of armor</label>
+        <description>A thick silvery liquid that hardens the skin like metal.</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <ingestible>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>lotr_HediffArmorPotion</hediffDef>
+                    <severity>1</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+    </ThingDef>
+
+    <!-- Зелье лечения -->
+    <ThingDef ParentName="PotionBase">
+        <defName>lotr_HealingPotion</defName>
+        <label>potion of healing</label>
+        <description>A warm emerald liquid that accelerates natural healing and purges disease.</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <ingestible>
+            <outcomeDoers>
+                <li Class="lotr.IngestionOutcomeDoer_HealingPotion">
+                    <regenerationHediff>lotr_HediffRegeneration</regenerationHediff>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+    </ThingDef>
+
+    <!-- Зелье успокоения -->
+    <ThingDef ParentName="PotionBase">
+        <defName>lotr_CalmingPotion</defName>
+        <label>potion of calming</label>
+        <description>A soothing blue liquid that calms the mind and removes harmful conditions.</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <ingestible>
+            <outcomeDoers>
+                <li Class="lotr.IngestionOutcomeDoer_CalmingPotion">
+                    <sanityLossReduction>0.5</sanityLossReduction>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+    </ThingDef>
+
+</Defs>
