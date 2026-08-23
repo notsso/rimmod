@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="CharmUtilityBase">
+        <defName>lotr_ShapeshiftingHat</defName>
+        <label>shapeshifting hat</label>
+        <description>A hat capable of changing its shape. It grants powers over water and wind, but makes the wearer crave water and suffer on dry land.</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <drawSize>(0.7,0.7)</drawSize>
+        </graphicData>
+        <apparel>
+            <bodyPartGroups>
+                <li>UpperHead</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+            <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
+        </apparel>
+        <verbs>
+            <li>
+                <verbClass>lotr.Verb_AzureLight</verbClass>
+                <label>azure light</label>
+                <hasStandardCommand>true</hasStandardCommand>
+                <useableInPocketMaps>false</useableInPocketMaps>
+                <warmupTime>1.5</warmupTime>
+                <range>0</range>
+                <burstShotCount>1</burstShotCount>
+                <soundAiming>OrbitalTargeter_Aiming</soundAiming>
+                <soundCast>OrbitalTargeter_Fire</soundCast>
+                <onlyManualCast>true</onlyManualCast>
+                <requireLineOfSight>false</requireLineOfSight>
+                <targetParams>
+                    <canTargetSelf>true</canTargetSelf>
+                </targetParams>
+                <violent>false</violent>
+            </li>
+            <li>
+                <verbClass>lotr.Verb_WaterHeal</verbClass>
+                <label>water heal</label>
+                <hasStandardCommand>true</hasStandardCommand>
+                <useableInPocketMaps>false</useableInPocketMaps>
+                <warmupTime>1.5</warmupTime>
+                <range>12</range>
+                <burstShotCount>1</burstShotCount>
+                <soundAiming>OrbitalTargeter_Aiming</soundAiming>
+                <soundCast>OrbitalTargeter_Fire</soundCast>
+                <onlyManualCast>true</onlyManualCast>
+                <requireLineOfSight>true</requireLineOfSight>
+                <targetParams>
+                    <canTargetPawns>true</canTargetPawns>
+                    <canTargetLocations>false</canTargetLocations>
+                    <canTargetSelf>true</canTargetSelf>
+                </targetParams>
+                <violent>false</violent>
+            </li>
+        </verbs>
+        <comps>
+            <li Class="CompProperties_ApparelReloadable">
+                <maxCharges>1</maxCharges>
+                <destroyOnEmpty>false</destroyOnEmpty>
+                <replenishAfterCooldown>true</replenishAfterCooldown>
+                <baseReloadTicks>3600</baseReloadTicks>
+                <chargeNoun>charge</chargeNoun>
+                <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+            </li>
+            <li Class="lotr.CompProperties_ShapeshiftingHat" />
+        </comps>
+    </ThingDef>
+</Defs>

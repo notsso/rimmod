@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <HediffDef>
+
+        <hediffClass>lotr.HediffWithPercents</hediffClass>
+    
+        <defName>lotr_HediffSunWorship</defName>
+        <label>sun worship</label>
+        <description>A growing obsession with the Eternal Blazing Sun. If it reaches its peak, the mind will be burned away.</description>
+
+        <isBad>true</isBad>
+        <minSeverity>0</minSeverity>
+        <maxSeverity>1</maxSeverity>
+        <initialSeverity>0.0</initialSeverity>
+        
+        <stages>
+            <li>
+                <label>sun worship</label>
+                <minSeverity>0</minSeverity>
+            </li>
+        </stages>
+
+    </HediffDef>
+</Defs>

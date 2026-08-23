@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="CharmUtilityBase">
+        <defName>lotr_FlowerOfBlood</defName>
+        <label>flower of blood</label>
+        <description>A golden ring set with a blood-red ruby. It grants incredible regeneration and resilience, but erodes the wearer's rationality over time.</description>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <drawSize>(0.7,0.7)</drawSize>
+        </graphicData>
+        <apparel>
+            <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
+        </apparel>
+        <comps>
+            <li Class="lotr.CompProperties_FlowerOfBlood" />
+        </comps>
+    </ThingDef>
+</Defs>

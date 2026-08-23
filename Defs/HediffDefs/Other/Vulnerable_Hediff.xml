@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
     <HediffDef Name="Hediff_Vulnerable">
+        
+        <hediffClass>lotr.Hediff_Vulnerable</hediffClass>
+        
         <defName>Hediff_Vulnerable</defName>
         <label>Уязвимость</label>
         <description>Пешка находится под уязвимостью - любой получаемый урон x1.5.</description>
-        <hediffClass>lotr.Hediff_Vulnerable</hediffClass>
         <isBad>true</isBad>
+
     </HediffDef>
 
     <!-- Уровень 5 -->

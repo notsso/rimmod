@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+    <!-- OBSOLETE -->
+
     <HediffDef Name="Hediff_ReaperState">
         <defName>Hediff_ReaperState</defName>
         <label>жатва</label>

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
     <HediffDef Name="Hediff_Confusion">
+
+        <hediffClass>lotr.Hediff_Confusion</hediffClass>
+
         <defName>Hediff_Confusion</defName>
         <label>замешательство</label>
-        <description>Пешка находится в замешательстве - она не знает что делать.</description>
-        <hediffClass>lotr.Hediff_Confusion</hediffClass>
+        <description>Пешка находится в замешательстве - она не знает что делать.</description>    
         <isBad>true</isBad>
+    
     </HediffDef>
 
     <!-- Уровень 6 -->

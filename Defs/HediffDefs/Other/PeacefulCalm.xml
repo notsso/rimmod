@@ -2,11 +2,14 @@
 <Defs>
 
     <HediffDef Name="Hediff_PeacefulCalm">
+        
+        <hediffClass>HediffWithComps</hediffClass>
+        
         <defName>Hediff_PeacefulCalm</defName>
         <label>peaceful calm</label>
         <description>This pawn is under the influence of the Peaceful Hair Strands, losing all motivation and standing still.</description>
-        <hediffClass>HediffWithComps</hediffClass>
         <isBad>false</isBad>
+
     </HediffDef>
 
     <!-- Эффект от Шарма Дремоты -->

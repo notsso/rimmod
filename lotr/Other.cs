@@ -260,4 +260,19 @@ namespace lotr {
             puppeteers.Remove(pawn);
         }
     }
+
+    public class HediffWithPercents : HediffWithComps {
+        public override string SeverityLabel {
+            get {
+                string baseLabel = base.SeverityLabel;
+                string percent = (this.Severity).ToStringPercent();
+
+                if (!baseLabel.NullOrEmpty()) {
+                    return $"{baseLabel} ({percent})";
+                }
+
+                return percent;
+            }
+        }
+    }
 }

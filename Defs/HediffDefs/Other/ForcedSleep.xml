@@ -2,11 +2,14 @@
 <Defs>
 
     <HediffDef Name="Hediff_ForcedSleep">
+
+        <hediffClass>HediffWithComps</hediffClass>
+        
         <defName>Hediff_ForcedSleep</defName>
         <label>сон</label>
-        <description>Тело пешки окутано мистическим пламенем, защищающим от внешних угроз.</description>
-        <hediffClass>HediffWithComps</hediffClass>
+        <description>Тело пешки окутано мистическим пламенем, защищающим от внешних угроз.</description>    
         <isBad>true</isBad>
+    
     </HediffDef>
 
     <!-- Эффект от Шарма Дремоты -->

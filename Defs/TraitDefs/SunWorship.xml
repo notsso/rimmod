@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <TraitDef>
+        <defName>lotr_SunWorship</defName>
+        <label>sun worship</label>
+        <description>The mind has been burned away by the Eternal Blazing Sun. Only mindless worship remains.</description>
+        <commonality>0</commonality>
+        <disabledWorkTags>Social,Intellectual,Animals,Artistic,Crafting,Cooking,PlantWork,Mining,Constructing</disabledWorkTags>
+        <degreeDatas>
+            <li>
+                <label>mindless worshipper</label>
+                <description>Can only perform basic tasks and praise the Sun.</description>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+</Defs>

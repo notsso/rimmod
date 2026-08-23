@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <HediffDef>
+
+        <hediffClass>lotr.HediffWithPercents</hediffClass>
+
+        <defName>lotr_HediffWaterNeed</defName>
+        <label>water need</label>
+        <description>Craving for water. Long absence from water causes weakness and eventually death.</description>
+
+        <isBad>true</isBad>
+        <minSeverity>0</minSeverity>
+        <maxSeverity>1</maxSeverity>
+        <initialSeverity>0.0</initialSeverity>
+
+        <stages>
+            <li>
+                <label>fin</label>
+                <becomeVisible>false</becomeVisible>
+            </li>
+            <li>
+                <label>dry</label>
+                <minSeverity>0.3</minSeverity>
+                <statFactors>
+                    <MoveSpeed>0.9</MoveSpeed>
+                </statFactors>
+                <capMods>
+                    <li><capacity>Consciousness</capacity><offset>-0.2</offset></li>
+                </capMods>
+                <becomeVisible>true</becomeVisible>
+            </li>
+            <li>
+                <label>parched</label>
+                <minSeverity>0.6</minSeverity>
+                <statFactors>
+                    <MoveSpeed>0.7</MoveSpeed>
+                </statFactors>
+                <capMods>
+                    <li><capacity>Consciousness</capacity><offset>-0.5</offset></li>
+                </capMods>
+            </li>
+            <li>
+                <label>dehydrated</label>
+                <minSeverity>0.9</minSeverity>
+                <statFactors>
+                    <MoveSpeed>0.5</MoveSpeed>
+                </statFactors>
+                <capMods>
+                    <li><capacity>Consciousness</capacity><offset>-0.9</offset></li>
+                </capMods>
+            </li>
+        </stages>
+        
+    </HediffDef>
+</Defs>

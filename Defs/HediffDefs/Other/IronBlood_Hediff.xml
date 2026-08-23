@@ -2,11 +2,14 @@
 <Defs>
 
     <HediffDef Name="Hediff_IronBlood">
+        
+        <hediffClass>lotr.Hediff_FireLight</hediffClass>
+
         <defName>Hediff_IronBlood</defName>
         <label>Огненная кровь</label>
         <description>Тело пешки усилено полубогом пути Охотника.</description>
-        <hediffClass>lotr.Hediff_FireLight</hediffClass>
         <isBad>false</isBad>
+        
     </HediffDef>
 
     <!-- Уровень 4 -->
