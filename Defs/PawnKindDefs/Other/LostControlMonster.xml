@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <ThingDef ParentName="BasePawn">
+    <ThingDef ParentName="Human">
         <defName>MonsterRace</defName>
         <label>lost control monster</label>
         <description>Horrifying creature born from one of those who lost control of their beyonder powers.</description>
@@ -28,9 +28,8 @@
         </statBases>
 
         <race>
-            <intelligence>ToolUser</intelligence>
+            <intelligence>Humanlike</intelligence>
             <body>Human</body>
-            <renderTree>Misc</renderTree>
             <baseBodySize>2.5</baseBodySize>
             <baseHealthScale>2.5</baseHealthScale>
             <needsRest>false</needsRest>
@@ -44,12 +43,7 @@
             <hediffGiverSets>
                 <li>OrganicStandard</li>
             </hediffGiverSets>
-            <manhunterOnDamageChance>0.5</manhunterOnDamageChance>
-            <lifeStageAges>
-                <li>
-                    <def>MonsterAdult</def>
-                </li>
-            </lifeStageAges>
+            <manhunterOnDamageChance>1</manhunterOnDamageChance>
             <thinkTreeMain>GiantThinkTree</thinkTreeMain>
             <thinkTreeConstant>GiantConstantThinkTree</thinkTreeConstant>
         </race>
@@ -93,16 +87,7 @@
         </tools>
     </ThingDef>
 
-    <LifeStageDef>
-        <defName>MonsterAdult</defName>
-        <label>adult</label>
-        <developmentalStage>Adult</developmentalStage>
-        <bodySizeFactor>1</bodySizeFactor>
-        <healthScaleFactor>1</healthScaleFactor>
-        <hungerRateFactor>1</hungerRateFactor>
-    </LifeStageDef>
-
-    <PawnKindDef>
+    <PawnKindDef ParentName="BasePlayerPawnKind">
         <defName>lotr_LostControlMonster</defName>
         <label>lost control monster</label>
         <race>MonsterRace</race>

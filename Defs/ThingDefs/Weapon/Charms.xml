@@ -123,7 +123,7 @@
             <drawSize>1.0</drawSize>
         </graphicData>
         <statBases>
-            <MarketValue>500</MarketValue>
+            <MarketValue>800</MarketValue>
         </statBases>
         <apparel>
             <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
