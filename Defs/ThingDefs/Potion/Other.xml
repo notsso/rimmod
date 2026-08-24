@@ -7,7 +7,7 @@
         <label>potion of strength</label>
         <description>A glowing red liquid that fills the drinker with supernatural strength.</description>
         <graphicData>
-            <texPath>Placeholder</texPath>
+            <texPath>Potions/Other/StrengthPotion</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <statBases>
@@ -31,7 +31,7 @@
         <label>potion of armor</label>
         <description>A thick silvery liquid that hardens the skin like metal.</description>
         <graphicData>
-            <texPath>Placeholder</texPath>
+            <texPath>Potions/Other/ArmorPotion</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <statBases>
@@ -55,7 +55,7 @@
         <label>potion of healing</label>
         <description>A warm emerald liquid that accelerates natural healing and purges disease.</description>
         <graphicData>
-            <texPath>Placeholder</texPath>
+            <texPath>Potions/Other/HealingPotion</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <statBases>
@@ -78,7 +78,7 @@
         <label>potion of calming</label>
         <description>A soothing blue liquid that calms the mind and removes harmful conditions.</description>
         <graphicData>
-            <texPath>Placeholder</texPath>
+            <texPath>Potions/Other/CalmingPotion</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <statBases>

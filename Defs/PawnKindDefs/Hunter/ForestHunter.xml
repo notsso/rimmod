@@ -32,7 +32,7 @@
         </statBases>
 
         <race>
-            <thinkTreeMain>Animal</thinkTreeMain> <!-- lotr_DemonicWolfTree -->
+            <thinkTreeMain>Animal</thinkTreeMain>
             <body>Monkey</body>
             <baseHungerRate>0.01</baseHungerRate>
             <baseBodySize>1.0</baseBodySize>

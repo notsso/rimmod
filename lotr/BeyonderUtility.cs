@@ -180,7 +180,12 @@ namespace lotr {
                 );
             }
 
-            TransformToMonster(pawn);
+            // TransformToMonster(pawn);
+            pawn.ChangeKind(DefDatabase<PawnKindDef>.GetNamed("lotr_LostControlMonster"));
+            pawn.SetFaction(null);
+            PawnHelper.MakePermanentManhunter(pawn);
+            pawn.Drawer.renderer.SetAllGraphicsDirty();
+            pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.lotr_SanityLoss));
         }
 
         private static void TransformToMonster(Pawn originalPawn) {
@@ -199,7 +204,8 @@ namespace lotr {
             // Переносим все потусторонние Hediff'ы (копируем) монстру
             foreach (Hediff hediff in originalPawn.health.hediffSet.hediffs.ToList()) {
                 if (hediff is Beyonder_Hediff) {
-                    monster.health.AddHediff(HediffMaker.MakeHediff(hediff.def, monster, hediff.Part));
+                    Hediff monsterHediff = HediffMaker.MakeHediff(hediff.def, monster);
+                    monster.health.AddHediff(monsterHediff);
                 }
             }
 
