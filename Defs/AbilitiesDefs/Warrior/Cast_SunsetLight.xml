@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_SunsetLight">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_SunsetLight" Abstract="true">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
 
@@ -25,7 +25,7 @@
 
             <verbClass>Verb_CastAbility</verbClass>
             <warmupTime>0.5</warmupTime>
-            <range>40</range>
+            <range>-1</range>
 
             <targetParams>
                 <canTargetSelf>True</canTargetSelf>
@@ -40,18 +40,15 @@
         <defName>Cast_SunsetLight_6S</defName>
 
         <verbProperties>
-            <range>40</range>
+            <range>25</range>
         </verbProperties>
 
         <comps>
             <li Class="lotr.CompProperties_GiveHediffArea">
                 <hediffDef>SunsetLightDebuff</hediffDef>
-                <radius>40</radius>
+                <radius>25</radius>
                 <severity>1</severity>
                 <targetEnemies>true</targetEnemies>
-            </li>
-            <li Class="lotr.CompProperties_DrawRadiusOnHover">
-                <radius>40</radius>
             </li>
         </comps>
 
@@ -62,18 +59,15 @@
         <defName>Cast_SunsetLight_5S</defName>
 
         <verbProperties>
-            <range>80</range>
+            <range>40</range>
         </verbProperties>
 
         <comps>
             <li Class="lotr.CompProperties_GiveHediffArea">
                 <hediffDef>SunsetLightDebuff</hediffDef>
-                <radius>80</radius>
+                <radius>40</radius>
                 <severity>4</severity>
                 <targetEnemies>true</targetEnemies>
-            </li>
-            <li Class="lotr.CompProperties_DrawRadiusOnHover">
-                <radius>80</radius>
             </li>
         </comps>
 
@@ -84,18 +78,15 @@
         <defName>Cast_SunsetLight_4S</defName>
 
         <verbProperties>
-            <range>200</range>
+            <range>60</range>
         </verbProperties>
 
         <comps>
             <li Class="lotr.CompProperties_GiveHediffArea">
                 <hediffDef>SunsetLightDebuff</hediffDef>
-                <radius>200</radius>
+                <radius>60</radius>
                 <severity>25</severity>
                 <targetEnemies>true</targetEnemies>
-            </li>
-            <li Class="lotr.CompProperties_DrawRadiusOnHover">
-                <radius>200</radius>
             </li>
         </comps>
 

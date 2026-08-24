@@ -25,7 +25,7 @@
 
             <verbClass>Verb_CastAbility</verbClass>
             <warmupTime>2.0</warmupTime>
-            <range>1</range>
+            <range>-1</range>
             <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
 
             <targetParams>

@@ -144,6 +144,7 @@
             <li>Cast_SunsetArmor</li>
             <li>Cast_SunsetLight</li>
 			<li>Cast_SunsetSword</li>
+			<li>Cast_SunsetHurricane</li>
 		</newAbilities>
 
 	</lotr.BeyonderHediffDef>
