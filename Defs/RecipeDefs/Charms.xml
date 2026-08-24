@@ -40,7 +40,7 @@
             <li>DrugLab</li>
         </recipeUsers>
         
-        <researchPrerequisite>Brewing</researchPrerequisite>
+        <researchPrerequisite>lotr_CharmCarving</researchPrerequisite>
     </RecipeDef>
 
     <RecipeDef>
@@ -82,7 +82,7 @@
             <li>DrugLab</li>
         </recipeUsers>
         
-        <researchPrerequisite>Brewing</researchPrerequisite>
+        <researchPrerequisite>lotr_CharmCarving</researchPrerequisite>
     </RecipeDef>
 
     <RecipeDef>
@@ -124,7 +124,7 @@
             <li>DrugLab</li>
         </recipeUsers>
         
-        <researchPrerequisite>Brewing</researchPrerequisite>
+        <researchPrerequisite>lotr_CharmCarving</researchPrerequisite>
     </RecipeDef>
 
     <RecipeDef>
@@ -166,7 +166,7 @@
             <li>DrugLab</li>
         </recipeUsers>
         
-        <researchPrerequisite>Brewing</researchPrerequisite>
+        <researchPrerequisite>lotr_CharmCarving</researchPrerequisite>
     </RecipeDef>
 
 </Defs>

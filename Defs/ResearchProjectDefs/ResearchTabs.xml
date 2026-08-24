@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ResearchTabDef>
+    <defName>lotr_Mysticism</defName>
+    <label>Mysticism</label>
+    <generalTitle>Mystical research</generalTitle>
+    <generalDescription>Unlock the secrets of potions, charms, mystical equipment, and artifacts.</generalDescription>
+  </ResearchTabDef>
+</Defs>

@@ -6,7 +6,7 @@ using Verse;
 using Verse.AI;
 
 namespace lotr {
-    public abstract class Verb_MentalTerrorCandleBase : Verb_CastBase {
+    public abstract class Verb_MentalTerrorCandleBase : Verb_ArtifactBase {
         private const float SuccessChance = 0.8f;
 
         protected abstract void ApplyEffect(Pawn target);

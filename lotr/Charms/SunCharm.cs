@@ -9,7 +9,7 @@ using Verse;
 using Verse.AI;
 
 namespace lotr {
-    public class Verb_SunBeam : Verb_CastBase {
+    public class Verb_SunBeam : Verb_CharmBase {
         protected override bool TryCastShot() {
             if (currentTarget.HasThing && currentTarget.Thing.Map != caster.Map)
                 return false;

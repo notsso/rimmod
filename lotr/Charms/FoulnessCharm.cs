@@ -6,7 +6,7 @@ using Verse;
 using Verse.AI;
 
 namespace lotr {
-    public class Verb_FoulnessRoar : Verb_CastBase {
+    public class Verb_FoulnessRoar : Verb_CharmBase {
         private const float Radius = 20f;
 
         protected override bool TryCastShot() {

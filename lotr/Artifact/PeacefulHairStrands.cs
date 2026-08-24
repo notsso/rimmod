@@ -54,7 +54,7 @@ namespace lotr {
         }
     }
 
-    public class Verb_CalmTarget : Verb_CastBase {
+    public class Verb_CalmTarget : Verb_ArtifactBase {
         protected override bool TryCastShot() {
             Pawn casterPawn = caster as Pawn;
             Pawn targetPawn = currentTarget.Thing as Pawn;

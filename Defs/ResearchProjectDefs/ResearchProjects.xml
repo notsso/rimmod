@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ResearchProjectDef>
+        <defName>lotr_BasicKnowledge</defName>
+        <label>basic knowledge</label>
+        <description>Fundamental understanding of the mystical arts and beyonder phenomena.</description>
+        <baseCost>500</baseCost>
+        <techLevel>Neolithic</techLevel>
+        <tab>lotr_Mysticism</tab>
+        <researchViewX>1.0</researchViewX>
+        <researchViewY>2.0</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>lotr_PotionBrewing</defName>
+        <label>potion brewing</label>
+        <description>Learn to brew basic mystical potions.</description>
+        <baseCost>800</baseCost>
+        <techLevel>Neolithic</techLevel>
+        <tab>lotr_Mysticism</tab>
+        <prerequisites>
+            <li>lotr_BasicKnowledge</li>
+            <li>DrugProduction</li>
+        </prerequisites>
+        <researchViewX>2.0</researchViewX>
+        <researchViewY>0.5</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>lotr_CharmCarving</defName>
+        <label>charm carving</label>
+        <description>Carve mystical charms that hold powerful one-use abilities.</description>
+        <baseCost>1000</baseCost>
+        <techLevel>Neolithic</techLevel>
+        <tab>lotr_Mysticism</tab>
+        <prerequisites>
+            <li>lotr_BasicKnowledge</li>
+        </prerequisites>
+        <researchViewX>2.0</researchViewX>
+        <researchViewY>1.5</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>lotr_ArtifactUsage</defName>
+        <label>artifact usage</label>
+        <description>Learn to safely handle and activate ancient beyonder artifacts.</description>
+        <baseCost>1000</baseCost>
+        <techLevel>Neolithic</techLevel>
+        <tab>lotr_Mysticism</tab>
+        <prerequisites>
+            <li>lotr_BasicKnowledge</li>
+        </prerequisites>
+        <researchViewX>2.0</researchViewX>
+        <researchViewY>4.0</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>lotr_PathHunter</defName>
+        <label>path of the hunter</label>
+        <description>Advanced potions for those who stalk the wilds and prey upon beyonder creatures.</description>
+        <baseCost>1200</baseCost>
+        <techLevel>Neolithic</techLevel>
+        <tab>lotr_Mysticism</tab>
+        <prerequisites>
+            <li>lotr_PotionBrewing</li>
+        </prerequisites>
+        <researchViewX>3.0</researchViewX>
+        <researchViewY>0.0</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>lotr_PathWarrior</defName>
+        <label>path of the warrior</label>
+        <description>Advanced potions for those who face danger head-on with blade and fist.</description>
+        <baseCost>1200</baseCost>
+        <techLevel>Neolithic</techLevel>
+        <tab>lotr_Mysticism</tab>
+        <prerequisites>
+            <li>lotr_PotionBrewing</li>
+        </prerequisites>
+        <researchViewX>3.0</researchViewX>
+        <researchViewY>1.0</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>lotr_MysticWeapons</defName>
+        <label>mystic weapons</label>
+        <description>Forge weapons imbued with beyonder energies.</description>
+        <baseCost>1200</baseCost>
+        <techLevel>Neolithic</techLevel>
+        <tab>lotr_Mysticism</tab>
+        <prerequisites>
+            <li>lotr_BasicKnowledge</li>
+            <li>Smithing</li>
+        </prerequisites>
+        <researchViewX>2.0</researchViewX>
+        <researchViewY>3.0</researchViewY>
+    </ResearchProjectDef>
+
+</Defs>

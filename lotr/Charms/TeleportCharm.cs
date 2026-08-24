@@ -4,7 +4,7 @@ using Verse;
 using Verse.AI;
 
 namespace lotr {
-    public class Verb_TeleportCharm : Verb_CastBase {
+    public class Verb_TeleportCharm : Verb_CharmBase {
         protected override bool TryCastShot() {
             Pawn pawn = caster as Pawn;
             if (pawn == null || !pawn.Spawned || !currentTarget.IsValid)

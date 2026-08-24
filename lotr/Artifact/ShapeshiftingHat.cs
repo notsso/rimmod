@@ -7,7 +7,7 @@ using Verse.AI;
 
 namespace lotr {
     // Лазурный свет: AoE вокруг кастера, замедляет врагов
-    public class Verb_AzureLight : Verb_CastBase {
+    public class Verb_AzureLight : Verb_ArtifactBase {
         private const float Radius = 12f;
 
         protected override bool TryCastShot() {
@@ -40,7 +40,7 @@ namespace lotr {
     }
 
     // Водное лечение: плохо залечивает все ранения
-    public class Verb_WaterHeal : Verb_CastBase {
+    public class Verb_WaterHeal : Verb_ArtifactBase {
         protected override bool TryCastShot() {
             Pawn targetPawn = currentTarget.Thing as Pawn;
             if (targetPawn == null || targetPawn.Dead)

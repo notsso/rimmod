@@ -7,7 +7,7 @@ using Verse;
 using Verse.AI;
 
 namespace lotr {
-    public class Verb_SlumberCharm : Verb_CastBase {
+    public class Verb_SlumberCharm : Verb_CharmBase {
         private const float Radius = 3f;
 
         protected override bool TryCastShot() {
@@ -58,10 +58,6 @@ namespace lotr {
         public override void CompPostPostRemoved() {
             base.CompPostPostRemoved();
             WakeUp();
-        }
-
-        private bool IsSleeping() {
-            return !Pawn.Awake(); // Awake() возвращает false, если пешка спит или без сознания
         }
 
         private void TryForceSleep() {

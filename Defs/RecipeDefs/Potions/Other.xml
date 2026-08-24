@@ -32,7 +32,7 @@
             <li>DrugLab</li>
         </recipeUsers>
         
-        <researchPrerequisite>Brewing</researchPrerequisite>
+        <researchPrerequisite>lotr_PotionBrewing</researchPrerequisite>
     </RecipeDef>
 
     <RecipeDef>
@@ -66,7 +66,7 @@
             <li>DrugLab</li>
         </recipeUsers>
         
-        <researchPrerequisite>Brewing</researchPrerequisite>
+        <researchPrerequisite>lotr_PotionBrewing</researchPrerequisite>
     </RecipeDef>
 
     <RecipeDef>
@@ -100,7 +100,7 @@
             <li>DrugLab</li>
         </recipeUsers>
         
-        <researchPrerequisite>Brewing</researchPrerequisite>
+        <researchPrerequisite>lotr_PotionBrewing</researchPrerequisite>
     </RecipeDef>
 
     <RecipeDef>
@@ -134,7 +134,7 @@
             <li>DrugLab</li>
         </recipeUsers>
         
-        <researchPrerequisite>Brewing</researchPrerequisite>
+        <researchPrerequisite>lotr_PotionBrewing</researchPrerequisite>
     </RecipeDef>
 
 </Defs>
