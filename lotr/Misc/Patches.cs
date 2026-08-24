@@ -395,7 +395,6 @@ namespace lotr {
         }
     }
 
-    // Harmony patch - выдаём способности потусторонним после генерации
     [HarmonyPatch(typeof(PawnGenerator), nameof(PawnGenerator.GeneratePawn), new[] { typeof(PawnGenerationRequest) })]
     public static class Patch_PawnGenerator_GeneratePawn {
         [HarmonyPostfix]
@@ -410,7 +409,6 @@ namespace lotr {
         }
     }
 
-    // Harmony patch - при смерти пешки с нее выпадают потусторонние черты
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.Kill))]
     public static class Patch_Pawn_Kill_BeyonderEssence {
         [HarmonyPrefix]
@@ -426,4 +424,69 @@ namespace lotr {
             }
         }
     }
+
+    [HarmonyPatch(typeof(Pawn), nameof(Pawn.PreApplyDamage))]
+    public static class Patch_Pawn_TakeDamage {
+        private static bool isSharingDamage = false;
+
+        [HarmonyPrefix]
+        public static void Prefix(Pawn __instance, ref DamageInfo dinfo, ref bool absorbed) {
+
+            if (isSharingDamage || __instance == null || __instance.Dead) return;
+
+            List <Hediff_Trackable> hediffs = new List<Hediff_Trackable>();
+
+            foreach (Hediff hediff in __instance.health.hediffSet.hediffs) {
+                if (hediff.def is DamageBindHediffDef && hediff is Hediff_Trackable) {
+                    hediffs.Add((Hediff_Trackable)hediff);
+                }
+            }
+
+            foreach (Hediff_Trackable hediff in hediffs) {
+                if (!hediff.target.Dead) {
+                    isSharingDamage = true;
+                    
+                    DamageBindHediffDef cur_def = (DamageBindHediffDef)hediff.def;
+
+                    float damage = dinfo.Amount;
+
+                    dinfo.SetAmount(damage * cur_def.thisPawnDamageFactor);
+
+                    DamageInfo sharedDinfo = new DamageInfo(
+                        dinfo.Def, 
+                        damage * cur_def.targetPawnDamageFactor, 
+                        dinfo.ArmorPenetrationInt * cur_def.targetPawnArmorPenetrateFactor, 
+                        dinfo.Angle, 
+                        dinfo.Instigator, 
+                        dinfo.HitPart, 
+                        dinfo.Weapon
+                    );
+
+                    hediff.target.TakeDamage(sharedDinfo);
+
+                    isSharingDamage = false;
+
+                }
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(PawnUtility), nameof(InvisibilityUtility.IsPsychologicallyInvisible))]
+    public static class Patch_PawnUtility_IsInvisible {
+    [HarmonyPatch(typeof(InvisibilityUtility), nameof(InvisibilityUtility.IsPsychologicallyInvisible))]
+    public static class Patch_InvisibilityUtility_IsPsychologicallyInvisible {
+        public static bool Prefix(Pawn pawn, ref bool __result) {
+            if (pawn?.health?.hediffSet == null) {
+                return true;
+            }
+
+            if (pawn.health.hediffSet.HasHediff(HediffDefOf.DisruptorFlash)) {
+                __result = false;
+                return false;
+            }
+            return true;
+        }
+    }
+    }
+
 }

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Guard" Abstract="true">
+
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        <defName>Cast_Guard</defName>
+        <label>guard</label>
+        <description>Caster starts entranching and guarding nearby pawns.</description>
+        <iconPath>Placeholder</iconPath>
+        <cooldownTicksRange>7200</cooldownTicksRange>
+
+        <aiCanUse>true</aiCanUse>
+        <hostile>true</hostile>
+
+        <spiritualityCost>300</spiritualityCost>
+
+        <jobDef>CastAbilityOnThingUninterruptible</jobDef>
+
+        <targetRequired>false</targetRequired>
+        <verbProperties>
+        
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>6.0</warmupTime>
+            <range>-1</range>
+
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+            </targetParams>
+
+        </verbProperties>
+        
+    </AbilityDef>
+
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Guard">
+        <defName>Cast_Guard_5S</defName>
+        <cooldownTicksRange>1800</cooldownTicksRange>
+
+        <verbProperties>
+            <range>3.9</range>
+            <warmupTime>2.0</warmupTime>
+        </verbProperties>
+
+        <comps>
+            <li Class="lotr.CompProperties_AbilityGiveHediff">
+                <hediffDef>Hediff_Guard_5S</hediffDef>
+            </li>
+            <li Class="lotr.CompProperties_GiveHediffArea">
+                <hediffDef>Hediff_PawnGuarded_5S</hediffDef>
+                <targetFriendly>true</targetFriendly>
+            </li>
+        </comps>
+
+    </AbilityDef>
+
+    <!-- Уровень 4 -->
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Guard">
+        <defName>Cast_Guard_4S</defName>
+        <cooldownTicksRange>600</cooldownTicksRange>
+
+        <verbProperties>
+            <range>6.9</range>
+            <warmupTime>0.5</warmupTime>
+        </verbProperties>
+
+        <comps>
+            <li Class="lotr.CompProperties_AbilityGiveHediff">
+                <hediffDef>Hediff_Guard_4S</hediffDef>
+            </li>
+            <li Class="lotr.CompProperties_GiveHediffArea">
+                <hediffDef>Hediff_PawnGuarded_4S</hediffDef>
+                <targetFriendly>true</targetFriendly>
+            </li>
+        </comps>
+
+    </AbilityDef>
+
+</Defs>

@@ -37,7 +37,28 @@ namespace lotr {
             }
 
             return foundPawns;
-            
+
+        }
+
+        public static Hediff AddOrAdjustHediff(Pawn pawn, HediffDef hediffDef, float severity) {
+
+            if (pawn.health.hediffSet.HasHediff(hediffDef) && severity != 0f) {
+
+                pawn.health.hediffSet.TryGetHediff(hediffDef, out Hediff hediff);
+                hediff.Severity += severity;
+
+                return hediff;
+
+            } else {
+
+                Hediff hediff = HediffMaker.MakeHediff(hediffDef, pawn);
+                if (severity != 0f) hediff.Severity = severity;
+                pawn.health.AddHediff(hediff);
+
+                return hediff;
+
+            }
+
         }
 
     }

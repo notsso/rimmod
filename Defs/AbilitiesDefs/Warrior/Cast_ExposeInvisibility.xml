@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_ExposeInvisibility" Abstract="true">
+
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
+        <defName>Cast_ExposeInvisibility</defName>
+        <label>expose invisibility</label>
+        <description>Caster exposes all unseen around.</description>
+        <iconPath>Placeholder</iconPath>
+        <cooldownTicksRange>7200</cooldownTicksRange>
+
+        <aiCanUse>true</aiCanUse>
+        <hostile>true</hostile>
+
+        <spiritualityCost>100</spiritualityCost>
+
+        <jobDef>CastAbilityOnThingUninterruptible</jobDef>
+
+        <targetRequired>false</targetRequired>
+        <verbProperties>
+        
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>6.0</warmupTime>
+            <range>-1</range>
+
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+            </targetParams>
+
+        </verbProperties>
+        
+    </AbilityDef>
+
+    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_ExposeInvisibility">
+
+        <defName>Cast_ExposeInvisibility_4S</defName>
+
+        <verbProperties>
+            <range>24.9</range>
+        </verbProperties>
+
+        <comps>
+            <li Class="lotr.CompProperties_GiveHediffArea">
+                <hediffDef>DisruptorFlash</hediffDef>
+                <radius>24.9</radius>
+                <targetEnemies>true</targetEnemies>
+            </li>
+        </comps>
+    
+    </AbilityDef>
+
+</Defs>

@@ -138,6 +138,7 @@
         </comps>
 
         <newAbilities>
+            <li>Cast_Guard</li>
         </newAbilities>
 
     </lotr.BeyonderHediffDef>

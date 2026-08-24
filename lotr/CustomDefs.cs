@@ -13,4 +13,19 @@ namespace lotr {
         
     }
 
+    public class DamageBindHediffDef : HediffDef {
+        
+        public float thisPawnDamageFactor;
+        public float targetPawnDamageFactor;
+
+        public float targetPawnArmorPenetrateFactor;
+
+    }
+
+    public class BeyonderAbilityDef : AbilityDef {
+
+        public float spiritualityCost;
+
+    }
+
 }

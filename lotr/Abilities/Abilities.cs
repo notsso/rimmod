@@ -78,7 +78,7 @@ namespace lotr {
         public bool showFleck = true;
 
         public CompProperties_AbilityGiveHediff() {
-            compClass = typeof(CompAbilityEffect_AbilityGiveHediff);
+            compClass = typeof(CompAbilityEffect_GiveHediff);
         }
     }
 
@@ -89,20 +89,13 @@ namespace lotr {
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
             base.Apply(target, dest);
 
-            Pawn targetPawn = target.Pawn;
-            if (targetPawn == null) return;
+            Pawn pawn = target.Pawn;
+            if (pawn == null) return;
 
-            if (targetPawn.health.hediffSet.HasHediff(Props.hediffDef)) return;
-
-            Hediff hediff = HediffMaker.MakeHediff(Props.hediffDef, targetPawn);
-            if (Props.severity > 0f) hediff.Severity = Props.severity;
-
-            targetPawn.health.AddHediff(hediff);
-
-            if (Props.showFleck) FleckMaker.Static(targetPawn.Position, targetPawn.Map, FleckDefOf.MicroSparks, 1.5f);
+            Hediff hediff = Utility.AddOrAdjustHediff(pawn, Props.hediffDef, Props.severity);
 
             if (hediff is lotr.Hediff_Trackable hediffT) {
-                hediffT.Instigator = parent.pawn;
+                hediffT.target = parent.pawn;
             }
 
         }
@@ -149,28 +142,13 @@ namespace lotr {
 
                 if (flag1 && flag2 && flag3) continue;
 
-                FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.MicroSparks, 1.5f);
+                Hediff hediff = Utility.AddOrAdjustHediff(pawn, Props.hediffDef, Props.severity);
 
-                if (pawn.health.hediffSet.HasHediff(Props.hediffDef) && Props.severity != 0f) {
-
-                    pawn.health.hediffSet.TryGetHediff(Props.hediffDef, out Hediff hediff);
-                    hediff.Severity += Props.severity;
-
-                    if (hediff is lotr.Hediff_Trackable hediffT) {
-                        hediffT.Instigator = caster;
-                    }
-
-                } else {
-                    
-                    Hediff hediff = HediffMaker.MakeHediff(Props.hediffDef, pawn);
-                    if (Props.severity != 0f) hediff.Severity = Props.severity;
-                    pawn.health.AddHediff(hediff);
-
-                    if (hediff is lotr.Hediff_Trackable hediffT) {
-                        hediffT.Instigator = caster;
-                    }
-
+                if (hediff is lotr.Hediff_Trackable hediffT) {
+                    hediffT.target = caster;
                 }
+
+                // FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.MicroSparks, 1.5f);
 
             }
 

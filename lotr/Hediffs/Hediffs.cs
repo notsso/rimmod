@@ -56,7 +56,12 @@ namespace lotr {
 
     public class Hediff_Trackable : HediffWithComps {
         
-        public Pawn Instigator;
+        public Pawn target;
+
+        public override void ExposeData() {
+            base.ExposeData();
+            Scribe_Values.Look(ref target, "target");
+        }
 
     }
 

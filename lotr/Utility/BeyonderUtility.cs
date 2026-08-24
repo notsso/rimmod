@@ -116,9 +116,7 @@ namespace lotr {
                     }
                 }
             }
-
-            Log.Message($"{pawn.Name} aboba: {pawn_sequence.ToString()} {((int)pawn_pathway).ToString()}");
-
+            
             return pawn_pathway;
 
         }
