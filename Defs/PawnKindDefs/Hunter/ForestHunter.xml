@@ -27,6 +27,8 @@
             <InjuryHealingFactor>3.0</InjuryHealingFactor>
             <MeleeHitChance>20</MeleeHitChance>
             <MeleeDodgeChance>20</MeleeDodgeChance>
+
+            <SpiritualityOffset>10</SpiritualityOffset>
         </statBases>
 
         <race>
@@ -145,6 +147,11 @@
         <combatPower>1000</combatPower>
         <ecoSystemWeight>1.0</ecoSystemWeight>
         
+        <abilities>
+            <li>Cast_Vulnerability_5S</li>
+            <li>Cast_Confusion_6S</li>
+        </abilities>
+
         <lifeStages>
             <li>
                 <bodyGraphicData>

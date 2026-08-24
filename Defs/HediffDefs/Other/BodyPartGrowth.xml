@@ -3,14 +3,19 @@
 
     <HediffDef>
 
+        <hediffClass>lotr.Hediff_BodyPartGrowth</hediffClass>
+        
         <defName>FragileRegeneratedPart</defName>
         <label>fragile regrown part</label>
         <description>A newly regenerated body part that is still fragile and tender. It does not heal naturally.</description>
         
-        <hediffClass>lotr.Hediff_BodyPartGrowth</hediffClass>
         <isBad>true</isBad>
         <tendable>false</tendable>
         <defaultLabelColor>(1.0, 0.8, 0.6, 1)</defaultLabelColor>
+
+        <minSeverity>0</minSeverity>
+        <maxSeverity>1</maxSeverity>
+        <initialSeverity>0.0</initialSeverity>
         
         <stages>
             <li>

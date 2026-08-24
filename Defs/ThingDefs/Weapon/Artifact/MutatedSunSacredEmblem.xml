@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="CharmUtilityBase">
+        <defName>lotr_MutatedSunSacredEmblem</defName>
+        <label>mutated sun sacred emblem</label>
+        <description>A dark-gold emblem engraved with sun signs, stained with a drop of blood from the Eternal Blazing Sun. It constantly purifies corpses and souls within fifteen meters, but its light can burn away the minds of those who stay too close.</description>
+        <useHitPoints>false</useHitPoints>
+        <graphicData>
+            <texPath>Things/Item/Artifact/Artifact_Sun</texPath>
+            <drawSize>1.0</drawSize>
+        </graphicData>
+        <statBases>
+            <MarketValue>2000</MarketValue>
+        </statBases>
+        <apparel>
+            <ai_pickUpOpportunistically>false</ai_pickUpOpportunistically>
+        </apparel>
+        <comps>
+            <li Class="lotr.CompProperties_SunEmblem" />
+        </comps>
+    </ThingDef>
+</Defs>

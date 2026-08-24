@@ -44,13 +44,12 @@
         <defName>Cast_Taunt_8S</defName>
         <label>провокация</label>
         <cooldownTicksRange>1200</cooldownTicksRange>
-
+        <spiritualityCost>20.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityProvoke">
                 <baseSuccessChance>50.0</baseSuccessChance>
             </li>
         </comps>
-
         <verbProperties>
             <range>10</range>
             <warmupTime>1</warmupTime>
@@ -62,13 +61,12 @@
         <defName>Cast_Taunt_7S</defName>
         <label>провокация</label>
         <cooldownTicksRange>600</cooldownTicksRange>
-
+        <spiritualityCost>25.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityProvoke">
                 <baseSuccessChance>70.0</baseSuccessChance>
             </li>
         </comps>
-
         <verbProperties>
             <range>20</range>
             <warmupTime>0.8</warmupTime>
@@ -80,13 +78,12 @@
         <defName>Cast_Taunt_6S</defName>
         <label>провокация</label>
         <cooldownTicksRange>300</cooldownTicksRange>
-
+        <spiritualityCost>30.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityProvoke">
                 <baseSuccessChance>90.0</baseSuccessChance>
             </li>
         </comps>
-
         <verbProperties>
             <range>30</range>
             <warmupTime>0.4</warmupTime>
@@ -98,13 +95,12 @@
         <defName>Cast_Taunt_5S</defName>
         <label>провокация</label>
         <cooldownTicksRange>180</cooldownTicksRange>
-
+        <spiritualityCost>40.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityProvoke">
                 <baseSuccessChance>95.0</baseSuccessChance>
             </li>
         </comps>
-
         <verbProperties>
             <range>40</range>
             <warmupTime>0.2</warmupTime>
@@ -115,14 +111,13 @@
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Taunt">
         <defName>Cast_Taunt_4S</defName>
         <label>провокация</label>
-        <cooldownTicksRange>60</cooldownTicksRange>
-
+        <cooldownTicksRange>120</cooldownTicksRange>
+        <spiritualityCost>50.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityProvoke">
                 <baseSuccessChance>99.0</baseSuccessChance>
             </li>
         </comps>
-
         <verbProperties>
             <range>50</range>
             <warmupTime>0.1</warmupTime>

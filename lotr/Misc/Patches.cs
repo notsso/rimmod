@@ -340,38 +340,24 @@ namespace lotr {
             foreach (FloatMenuOption option in values)
                 yield return option;
 
+            // Первая встреча
             if (__instance.kindDef.HasModExtension<DefModExtension_FirstMeeting>()) {
                 GameComponent_FirstMeeting comp = Current.Game.GetComponent<GameComponent_FirstMeeting>();
                 if (comp == null || comp.IsPawnTalked(__instance))
                     yield break;
 
-                Faction faction = __instance.Faction;
-                if (faction != null && faction != Faction.OfPlayer &&
-                    faction.def.defName == "lotr_IronAndBloodCrossOrder") {
-                    yield return new FloatMenuOption(
-                        "Поговорить с представителем",
-                        delegate { Find.WindowStack.Add(new Dialog_FirstMeeting(__instance)); },
-                        MenuOptionPriority.Default,
-                        null,
-                        null,
-                        0f,
-                        null,
-                        null,
-                        true,
-                        0
-                    );
-                }
+                yield return new FloatMenuOption(
+                    "Поговорить с представителем",
+                    delegate { Find.WindowStack.Add(new Dialog_FirstMeeting(__instance)); },
+                    MenuOptionPriority.Default, null, null, 0f, null, null, true, 0);
             }
 
             // Мирный дипломат
             if (__instance.kindDef.HasModExtension<DefModExtension_PeaceOffer>()) {
-                Faction faction = __instance.Faction;
-                if (faction != null && faction != Faction.OfPlayer && faction.def.defName == "lotr_IronAndBloodCrossOrder") {
-                    yield return new FloatMenuOption(
-                        "Поговорить с дипломатом",
-                        delegate { Find.WindowStack.Add(new Dialog_PeaceOffer(__instance)); },
-                        MenuOptionPriority.Default, null, null, 0f, null, null, true, 0);
-                }
+                yield return new FloatMenuOption(
+                    "Поговорить с дипломатом",
+                    delegate { Find.WindowStack.Add(new Dialog_PeaceOffer(__instance)); },
+                    MenuOptionPriority.Default, null, null, 0f, null, null, true, 0);
             }
         }
     }
@@ -379,7 +365,7 @@ namespace lotr {
     [HarmonyPatch(typeof(Command_Ability), "GizmoOnGUI")]
     public static class Patch_Command_Ability_GizmoOnGUI {
         // Достаем приватное поле ability
-        private static readonly AccessTools.FieldRef<Command_Ability, Ability> AbilityField = 
+        private static readonly AccessTools.FieldRef<Command_Ability, Ability> AbilityField =
             AccessTools.FieldRefAccess<Command_Ability, Ability>("ability");
 
         public static void Postfix(Command_Ability __instance, Vector2 topLeft, float maxWidth) {
@@ -391,7 +377,7 @@ namespace lotr {
             if (abilityInstance == null || abilityInstance.comps == null) return;
 
             CompDrawRadiusOnHover comp = abilityInstance.comps.OfType<CompDrawRadiusOnHover>().FirstOrDefault();
-            
+
             if (comp == null) return;
 
             // Считаем радиус
@@ -405,6 +391,38 @@ namespace lotr {
             IntVec3 center = abilityInstance.pawn.Position;
             if (center.InBounds(Find.CurrentMap)) {
                 GenDraw.DrawRadiusRing(center, radius);
+            }
+        }
+    }
+
+    // Harmony patch - выдаём способности потусторонним после генерации
+    [HarmonyPatch(typeof(PawnGenerator), nameof(PawnGenerator.GeneratePawn), new[] { typeof(PawnGenerationRequest) })]
+    public static class Patch_PawnGenerator_GeneratePawn {
+        [HarmonyPostfix]
+        public static void Postfix(ref Pawn __result) {
+            if (__result != null && BeyonderUtility.IsBeyonder(__result)) {
+                BeyonderUtility.UpdateAbilities(__result);
+                Need spiritualityNeed = __result.needs?.AllNeeds.FirstOrDefault(n => n.def.defName == "lotr_SpiritualityNeed");
+                if (spiritualityNeed != null) {
+                    spiritualityNeed.CurLevel = spiritualityNeed.MaxLevel;
+                }
+            }
+        }
+    }
+
+    // Harmony patch - при смерти пешки с нее выпадают потусторонние черты
+    [HarmonyPatch(typeof(Pawn), nameof(Pawn.Kill))]
+    public static class Patch_Pawn_Kill_BeyonderEssence {
+        [HarmonyPrefix]
+        public static void Prefix(Pawn __instance, DamageInfo? dinfo, Hediff exactCulprit) {
+            if (__instance == null || __instance.Destroyed) return;
+
+            var beyonderHediffs = __instance.health.hediffSet.hediffs
+                .Where(h => h is Beyonder_Hediff)
+                .ToList();
+
+            foreach (var hediff in beyonderHediffs) {
+                BeyonderUtility.ExtractBeyonderEssence(__instance, hediff);
             }
         }
     }

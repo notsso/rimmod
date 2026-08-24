@@ -10,7 +10,7 @@
         <description>Погасить все пожары в радиусе.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_ExtinguishFire</iconPath>
 
-        <aiCanUse>true</aiCanUse>
+        <aiCanUse>false</aiCanUse> <!-- TODO? -->
         <ai_IsOffensive>false</ai_IsOffensive>
         <ai_IsIncendiary>false</ai_IsIncendiary>
         <targetRequired>true</targetRequired>
@@ -44,6 +44,7 @@
         <defName>Cast_ExtinguishFire_7S</defName>
         <label>Тушение огня</label>
         <cooldownTicksRange>600</cooldownTicksRange>
+        <spiritualityCost>10.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityExtinguishFire">
                 <radius>2</radius>
@@ -62,6 +63,7 @@
         <defName>Cast_ExtinguishFire_6S</defName>
         <label>Тушение огня</label>
         <cooldownTicksRange>300</cooldownTicksRange>
+        <spiritualityCost>20.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityExtinguishFire">
                 <radius>4</radius>
@@ -80,6 +82,7 @@
         <defName>Cast_ExtinguishFire_5S</defName>
         <label>Тушение огня</label>
         <cooldownTicksRange>180</cooldownTicksRange>
+        <spiritualityCost>60.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityExtinguishFire">
                 <radius>6</radius>
@@ -98,6 +101,7 @@
         <defName>Cast_ExtinguishFire_4S</defName>
         <label>Тушение огня</label>
         <cooldownTicksRange>60</cooldownTicksRange>
+        <spiritualityCost>100.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityExtinguishFire">
                 <radius>10</radius>

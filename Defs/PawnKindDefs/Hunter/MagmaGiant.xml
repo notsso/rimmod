@@ -26,6 +26,8 @@
             <IncomingDamageFactor>0.10</IncomingDamageFactor> 
             <InjuryHealingFactor>10.0</InjuryHealingFactor>
             <MeleeHitChance>50</MeleeHitChance>
+
+            <SpiritualityOffset>25</SpiritualityOffset>
         </statBases>
 
         <race>
@@ -130,6 +132,12 @@
 
         <initialWillRange>1000~1200</initialWillRange>
         <initialResistanceRange>1200~1900</initialResistanceRange>
+
+        <abilities>
+            <li>Cast_Execution_4S</li>
+            <li>Cast_BlazingSpear_4S</li>
+            <li>Cast_Fireball_4S</li>
+        </abilities>
         
         <lifeStages>
             <li>

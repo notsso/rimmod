@@ -5,7 +5,7 @@
         <label>giant warrior</label>
         <description>A massive, feral humanoid with thick, knotted muscles. Its strength exceeds human norms threefold, but its hide is not impenetrable.</description>
         <statBases>
-            <MoveSpeed>3.8</MoveSpeed>
+            <MoveSpeed>4.0</MoveSpeed>
             <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
             <MeleeDodgeChance>0.15</MeleeDodgeChance>

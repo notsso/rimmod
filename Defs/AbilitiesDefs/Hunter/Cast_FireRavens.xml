@@ -10,7 +10,7 @@
         <description>Создает трех мистических ворон из багрового пламени вокруг заклинателя. Вороны обладают собственным разумом, автоматически набрасываются на ближайших врагов и взрываются при гибели.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_FireRavens</iconPath>
         
-        <aiCanUse>true</aiCanUse>
+        <aiCanUse>false</aiCanUse> <!-- TODO? -->
         <ai_IsOffensive>true</ai_IsOffensive>
         <ai_IsIncendiary>false</ai_IsIncendiary>
         <targetRequired>false</targetRequired>
@@ -42,6 +42,7 @@
         <defName>Cast_FireRavens_7S</defName>
         <label>огненные вороны</label>
         <cooldownTicksRange>120</cooldownTicksRange>
+        <spiritualityCost>50.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityLaunchFireRavens">
                 <compClass>lotr.CompAbilityEffect_LaunchFireRavens</compClass>
@@ -61,12 +62,13 @@
         <defName>Cast_FireRavens_6S</defName>
         <label>огненные вороны</label>
         <cooldownTicksRange>60</cooldownTicksRange>
+        <spiritualityCost>60.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityLaunchFireRavens">
                 <compClass>lotr.CompAbilityEffect_LaunchFireRavens</compClass>
                 <ravenPawnKind>lotr_FireRaven</ravenPawnKind>
                 <lifetime>6000</lifetime>
-                <maxCount>5</maxCount>
+                <maxCount>4</maxCount>
             </li>
         </comps>
         <verbProperties>
@@ -80,12 +82,13 @@
         <defName>Cast_FireRavens_5S</defName>
         <label>огненные вороны</label>
         <cooldownTicksRange>30</cooldownTicksRange>
+        <spiritualityCost>70.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityLaunchFireRavens">
                 <compClass>lotr.CompAbilityEffect_LaunchFireRavens</compClass>
                 <ravenPawnKind>lotr_FireRaven</ravenPawnKind>
                 <lifetime>9000</lifetime>
-                <maxCount>8</maxCount>
+                <maxCount>6</maxCount>
             </li>
         </comps>
         <verbProperties>
@@ -99,12 +102,13 @@
         <defName>Cast_FireRavens_4S</defName>
         <label>огненные вороны</label>
         <cooldownTicksRange>10</cooldownTicksRange>
+        <spiritualityCost>80.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityLaunchFireRavens">
                 <compClass>lotr.CompAbilityEffect_LaunchFireRavens</compClass>
                 <ravenPawnKind>lotr_FireRaven</ravenPawnKind>
                 <lifetime>18000</lifetime>
-                <maxCount>16</maxCount>
+                <maxCount>8</maxCount>
             </li>
         </comps>
         <verbProperties>

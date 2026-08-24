@@ -64,6 +64,11 @@ namespace lotr {
             reason = null;
             return false;
         }
+
+        public override AcceptanceReport CanCast {
+            get => base.CanCast &&
+                this.pawn.needs.TryGetNeed(LotrDefOf.lotr_SpiritualityNeed).CurLevel >= AbilityCost() * 0.01f;
+        }
     }
 
     public class CompProperties_AbilityGiveHediff : CompProperties_AbilityEffect {
@@ -77,8 +82,8 @@ namespace lotr {
         }
     }
 
-    public class CompAbilityEffect_AbilityGiveHediff : CompAbilityEffect {
-        
+    public class CompAbilityEffect_GiveHediff : CompAbilityEffect {
+
         public new CompProperties_AbilityGiveHediff Props => (CompProperties_AbilityGiveHediff)props;
 
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
@@ -102,7 +107,7 @@ namespace lotr {
 
         }
     }
-    
+
     public class CompProperties_GiveHediffArea : CompProperties_AbilityEffect {
         public float radius = 5f;
         public float severity = 0f;
@@ -115,7 +120,7 @@ namespace lotr {
             compClass = typeof(CompAbilityEffect_GiveHediffArea);
         }
     }
-    
+
     public class CompAbilityEffect_GiveHediffArea : CompAbilityEffect {
         public new CompProperties_GiveHediffArea Props => (CompProperties_GiveHediffArea)props;
 
@@ -182,7 +187,7 @@ namespace lotr {
     }
 
     public class CompProperties_SummonWeapon : CompProperties_AbilityEffect {
-        
+
         public ThingDef weaponDef;
         public int lifespan;
 
@@ -193,7 +198,7 @@ namespace lotr {
     }
 
     public class CompAbilityEffect_SummonWeapon : CompAbilityEffect {
-        
+
         public new CompProperties_SummonWeapon Props => (CompProperties_SummonWeapon)props;
 
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {

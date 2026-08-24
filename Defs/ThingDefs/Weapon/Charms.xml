@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="ApparelNoQualityBase" Name="CharmUtilityBase" Abstract="True">
+        <thingCategories>
+            <li>ApparelUtility</li>
+            <li>BeyonderItems</li>
+        </thingCategories>
+        <graphicData>
+            <texPath>Placeholder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <onGroundRandomRotateAngle>0</onGroundRandomRotateAngle>
+        </graphicData>
+        <statBases>
+            <MarketValue>200</MarketValue>
+            <Mass>0.2</Mass>
+            <Beauty>5</Beauty>
+            <Flammability>0</Flammability>
+            <DeteriorationRate>0</DeteriorationRate>
+        </statBases>
+        <techLevel>Spacer</techLevel>
+        <tradeability>Sellable</tradeability>
+        <smeltable>false</smeltable>
+        <soundInteract>Standard_Pickup</soundInteract>
+        <tickerType>Normal</tickerType>
+        <rotatable>false</rotatable>
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
+        <thingSetMakerTags>
+            <li>SingleUseWeapon</li>
+        </thingSetMakerTags>
+        <apparel>
+            <countsAsClothingForNudity>false</countsAsClothingForNudity>
+            <scoreOffset>4</scoreOffset>
+            <careIfWornByCorpse>false</careIfWornByCorpse>
+            <careIfDamaged>false</careIfDamaged>
+            <ignoredByNonViolent>true</ignoredByNonViolent>
+            <wearPerDay>0</wearPerDay>
+            <bodyPartGroups>
+                <li>Waist</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Belt</li>
+            </layers>
+        </apparel>
+    </ThingDef>
+
+    <ThingDef ParentName="CharmUtilityBase">
+        <defName>lotr_SlumberCharm</defName>
+        <label>Slumber Charm</label>
+        <description>Mystical charm that can forcefully put the target to sleep.</description>
+        <graphicData>
+            <texPath>Things/Item/Charm/SlumberCharm</texPath>
+            <drawSize>1.0</drawSize>
+        </graphicData>
+        <statBases>
+            <MarketValue>300</MarketValue>
+        </statBases>
+        <apparel>
+            <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
+        </apparel>
+        <verbs>
+            <li>
+                <verbClass>lotr.Verb_SlumberCharm</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <useableInPocketMaps>false</useableInPocketMaps>
+                <warmupTime>1</warmupTime>
+                <ai_AvoidFriendlyFireRadius>23</ai_AvoidFriendlyFireRadius>
+                <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+                <range>44.9</range>
+                <burstShotCount>1</burstShotCount>
+                <soundAiming>OrbitalTargeter_Aiming</soundAiming>
+                <soundCast>OrbitalTargeter_Fire</soundCast>
+                <onlyManualCast>true</onlyManualCast>
+                <targetParams>
+                    <canTargetLocations>true</canTargetLocations>
+                </targetParams>
+                <violent>false</violent>
+            </li>
+        </verbs>
+        <comps>
+            <li Class="CompProperties_ApparelReloadable">
+                <maxCharges>1</maxCharges>
+                <destroyOnEmpty>true</destroyOnEmpty>
+                <hotKey>Misc4</hotKey>
+                <chargeNoun>charge</chargeNoun>
+                <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="OrbitalStrikeBase">
+        <defName>lotr_SunBeam</defName>
+        <label>sun beam</label>
+        <thingClass>lotr.SunBeam</thingClass>
+        <comps>
+            <li Class="CompProperties_OrbitalBeam">
+                <width>20</width>
+                <color>(255, 240, 150, 242)</color>
+                <sound>OrbitalBeam</sound>
+            </li>
+            <li Class="CompProperties_CameraShaker">
+                <mag>0.03</mag>
+            </li>
+            <li Class="CompProperties_AffectsSky">
+                <skyColors>
+                    <sky>(255, 230, 200)</sky>
+                    <shadow>(225, 220, 185)</shadow>
+                    <overlay>(255, 255, 255)</overlay>
+                    <saturation>1.3</saturation>
+                </skyColors>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="CharmUtilityBase">
+        <defName>lotr_SunCharm</defName>
+        <label>Flaring Sun Charm</label>
+        <description>Mystical charm that calls forth a pure and blazing hot pillar of light from the sky.</description>
+        <graphicData>
+            <texPath>Things/Item/Charm/FlaringSunCharm</texPath>
+            <drawSize>1.0</drawSize>
+        </graphicData>
+        <statBases>
+            <MarketValue>500</MarketValue>
+        </statBases>
+        <apparel>
+            <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
+        </apparel>
+        <verbs>
+            <li>
+                <verbClass>lotr.Verb_SunBeam</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <useableInPocketMaps>false</useableInPocketMaps>
+                <warmupTime>1</warmupTime>
+                <ai_AvoidFriendlyFireRadius>15</ai_AvoidFriendlyFireRadius>
+                <range>30.0</range>
+                <burstShotCount>1</burstShotCount>
+                <soundAiming>OrbitalTargeter_Aiming</soundAiming>
+                <soundCast>OrbitalTargeter_Fire</soundCast>
+                <onlyManualCast>true</onlyManualCast>
+                <requireLineOfSight>false</requireLineOfSight>
+                <targetParams>
+                    <canTargetLocations>true</canTargetLocations>
+                </targetParams>
+                <violent>true</violent>
+            </li>
+        </verbs>
+        <comps>
+            <li Class="CompProperties_ApparelReloadable">
+                <maxCharges>1</maxCharges>
+                <destroyOnEmpty>true</destroyOnEmpty>
+                <hotKey>Misc4</hotKey>
+                <chargeNoun>charge</chargeNoun>
+                <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="CharmUtilityBase">
+        <defName>lotr_TeleportCharm</defName>
+        <label>Teleportation Charm</label>
+        <description>A mystical charm that instantly transports the wearer to the targeted location.</description>
+        <graphicData>
+            <texPath>Things/Item/Charm/TeleportCharm</texPath>
+            <drawSize>1.0</drawSize>
+        </graphicData>
+        <statBases>
+            <MarketValue>300</MarketValue>
+        </statBases>
+        <apparel>
+            <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
+        </apparel>
+        <verbs>
+            <li>
+                <verbClass>lotr.Verb_TeleportCharm</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <useableInPocketMaps>false</useableInPocketMaps>
+                <warmupTime>1</warmupTime>
+                <ai_AvoidFriendlyFireRadius>0</ai_AvoidFriendlyFireRadius>
+                <range>50</range>
+                <burstShotCount>1</burstShotCount>
+                <soundAiming>OrbitalTargeter_Aiming</soundAiming>
+                <soundCast>OrbitalTargeter_Fire</soundCast>
+                <onlyManualCast>true</onlyManualCast>
+                <requireLineOfSight>false</requireLineOfSight>
+                <targetParams>
+                    <canTargetLocations>true</canTargetLocations>
+                </targetParams>
+                <violent>false</violent>
+            </li>
+        </verbs>
+        <comps>
+            <li Class="CompProperties_ApparelReloadable">
+                <maxCharges>1</maxCharges>
+                <destroyOnEmpty>true</destroyOnEmpty>
+                <hotKey>Misc4</hotKey>
+                <chargeNoun>charge</chargeNoun>
+                <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="CharmUtilityBase">
+        <defName>lotr_FoulnessRoarCharm</defName>
+        <label>foulness roar charm</label>
+        <description>A charm that releases a terrifying otherworldly roar, slowing the minds and bodies of all who hear it. Beyonders are especially vulnerable, suffering direct damage to their sanity.</description>
+        <graphicData>
+            <texPath>Things/Item/Charm/FoulnessRoarCharm</texPath>
+            <drawSize>1.0</drawSize>
+        </graphicData>
+        <statBases>
+            <MarketValue>400</MarketValue>
+        </statBases>
+        <apparel>
+            <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
+        </apparel>
+        <verbs>
+            <li>
+                <verbClass>lotr.Verb_FoulnessRoar</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <useableInPocketMaps>false</useableInPocketMaps>
+                <warmupTime>1</warmupTime>
+                <ai_AvoidFriendlyFireRadius>20</ai_AvoidFriendlyFireRadius>
+                <range>-1</range>
+                <burstShotCount>1</burstShotCount>
+                <soundAiming>OrbitalTargeter_Aiming</soundAiming>
+                <soundCast>OrbitalTargeter_Fire</soundCast>
+                <onlyManualCast>true</onlyManualCast>
+                <requireLineOfSight>false</requireLineOfSight>
+                <targetParams>
+                    <canTargetSelf>true</canTargetSelf>
+                </targetParams>
+                <violent>true</violent>
+            </li>
+        </verbs>
+        <comps>
+            <li Class="CompProperties_ApparelReloadable">
+                <maxCharges>1</maxCharges>
+                <destroyOnEmpty>true</destroyOnEmpty>
+                <hotKey>Misc4</hotKey>
+                <chargeNoun>charge</chargeNoun>
+                <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+            </li>
+        </comps>
+    </ThingDef>
+
+</Defs>

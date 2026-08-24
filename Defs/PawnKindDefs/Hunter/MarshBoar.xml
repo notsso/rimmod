@@ -19,6 +19,8 @@
 
             <MeatAmount>0</MeatAmount>
             <LeatherAmount>0</LeatherAmount>
+
+            <SpiritualityOffset>0.2</SpiritualityOffset>
         </statBases>
 
         <race>

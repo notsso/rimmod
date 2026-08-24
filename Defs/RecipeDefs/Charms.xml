@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <RecipeDef>
+        <defName>lotr_MakeSlumberCharm</defName>
+        <label>make slumber charm</label>
+        <description>Create a one-use charm using spirituality.</description>
+        <jobString>Creating charm.</jobString>
+
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>1200</workAmount>
+
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Steel</li>
+                    </thingDefs>
+                </filter>
+                <count>5</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MysticalComponents</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+
+        <products>
+            <lotr_SlumberCharm>1</lotr_SlumberCharm>
+        </products>
+
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        
+        <researchPrerequisite>lotr_CharmCarving</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>lotr_MakeSunCharm</defName>
+        <label>make sun charm</label>
+        <description>Create a one-use charm using spirituality.</description>
+        <jobString>Creating charm.</jobString>
+
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>1200</workAmount>
+
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Gold</li>
+                    </thingDefs>
+                </filter>
+                <count>50</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MysticalComponents</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+
+        <products>
+            <lotr_SunCharm>1</lotr_SunCharm>
+        </products>
+
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        
+        <researchPrerequisite>lotr_CharmCarving</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>lotr_MakeTeleportCharm</defName>
+        <label>make teleportation charm</label>
+        <description>Create a one-use charm using spirituality.</description>
+        <jobString>Creating charm.</jobString>
+
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>1200</workAmount>
+
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Steel</li>
+                    </thingDefs>
+                </filter>
+                <count>5</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MysticalComponents</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+
+        <products>
+            <lotr_TeleportCharm>1</lotr_TeleportCharm>
+        </products>
+
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        
+        <researchPrerequisite>lotr_CharmCarving</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>lotr_MakeFoulnessRoarCharm</defName>
+        <label>make foulness roar charm</label>
+        <description>Create a one-use charm using spirituality.</description>
+        <jobString>Creating charm.</jobString>
+
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>1200</workAmount>
+
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Plasteel</li>
+                    </thingDefs>
+                </filter>
+                <count>5</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MysticalComponents</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+
+        <products>
+            <lotr_FoulnessRoarCharm>1</lotr_FoulnessRoarCharm>
+        </products>
+
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        
+        <researchPrerequisite>lotr_CharmCarving</researchPrerequisite>
+    </RecipeDef>
+
+</Defs>

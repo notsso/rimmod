@@ -12,7 +12,7 @@
         </graphicData>
         
         <statBases>
-            <MarketValue>300</MarketValue>
+            <MarketValue>600</MarketValue>
             <Mass>0.1</Mass> 
         </statBases>
         
@@ -22,6 +22,29 @@
 
         <tradeTags>
             <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Warrior9_Essence</defName>
+        <label>essence of Warrior</label>
+        <description>Мистическая черта потустороннего c пути Воина.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>500</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderItems</li>
         </tradeTags>
     </ThingDef>
 
@@ -36,7 +59,7 @@
         </graphicData>
         
         <statBases>
-            <MarketValue>600</MarketValue>
+            <MarketValue>1200</MarketValue>
             <Mass>0.1</Mass> 
         </statBases>
         
@@ -46,6 +69,29 @@
 
         <tradeTags>
             <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Warrior8_Essence</defName>
+        <label>essence of Gladiator</label>
+        <description>Мистическая черта потустороннего c пути Воина.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>1000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderItems</li>
         </tradeTags>
     </ThingDef>
 
@@ -60,7 +106,7 @@
         </graphicData>
         
         <statBases>
-            <MarketValue>1000</MarketValue>
+            <MarketValue>2000</MarketValue>
             <Mass>0.1</Mass> 
         </statBases>
         
@@ -70,6 +116,29 @@
 
         <tradeTags>
             <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Warrior7_Essence</defName>
+        <label>essence of Weapon Master</label>
+        <description>Мистическая черта потустороннего c пути Воина.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>1800</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderItems</li>
         </tradeTags>
     </ThingDef>
 
@@ -78,30 +147,6 @@
         <defName>lotr_DawnGiantCrystal</defName>
         <label>Dawn Giant blood crystal</label>
         <description>Ключевой ингредиент для зелья Паладина Рассвета.</description>
-        <graphicData>
-            <texPath>Things/Ingredient/Ingredient_2</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        
-        <statBases>
-            <MarketValue>1500</MarketValue>
-            <Mass>0.1</Mass> 
-        </statBases>
-        
-        <thingCategories>
-            <li>BeyonderCreatureParts</li>
-        </thingCategories>
-
-        <tradeTags>
-            <li>BeyonderTrading</li>
-        </tradeTags>
-    </ThingDef>
-
-    <!-- Ингредиенты для зелья Стража (5) -->
-    <ThingDef ParentName="ResourceBase">
-        <defName>lotr_GrayGiantHeart</defName>
-        <label>Gray Giant heart</label>
-        <description>Ключевой ингредиент для зелья Стража.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -121,6 +166,76 @@
         </tradeTags>
     </ThingDef>
 
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Warrior6_Essence</defName>
+        <label>essence of Dawn Paladin</label>
+        <description>Мистическая черта потустороннего c пути Воина.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>2500</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Стража (5) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_GrayGiantHeart</defName>
+        <label>Gray Giant heart</label>
+        <description>Ключевой ингредиент для зелья Стража.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        
+        <statBases>
+            <MarketValue>6000</MarketValue>
+            <Mass>0.1</Mass> 
+        </statBases>
+        
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Warrior5_Essence</defName>
+        <label>essence of Guardian</label>
+        <description>Мистическая черта потустороннего c пути Воина.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>5000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
+    </ThingDef>
+
     <!-- Ингредиенты для зелья Охотника на демонов (4) -->
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_DivineGiantEye</defName>
@@ -132,7 +247,7 @@
         </graphicData>
         
         <statBases>
-            <MarketValue>5000</MarketValue>
+            <MarketValue>10000</MarketValue>
             <Mass>0.1</Mass> 
         </statBases>
         
@@ -142,6 +257,29 @@
 
         <tradeTags>
             <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Warrior4_Essence</defName>
+        <label>essence of Demon Hunter</label>
+        <description>Мистическая черта потустороннего c пути Воина.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_3</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>8000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderItems</li>
         </tradeTags>
     </ThingDef>
 

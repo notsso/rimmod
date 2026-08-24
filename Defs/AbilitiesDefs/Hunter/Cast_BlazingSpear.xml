@@ -13,6 +13,7 @@
         <aiCanUse>true</aiCanUse>
         <ai_IsOffensive>true</ai_IsOffensive>
         <ai_IsIncendiary>true</ai_IsIncendiary>
+        <ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
         <targetRequired>true</targetRequired>
         <hostile>true</hostile>
         <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
@@ -43,6 +44,7 @@
         <defName>Cast_BlazingSpear_7S</defName>
         <label>Копье огня</label>
         <cooldownTicksRange>1200</cooldownTicksRange>
+        <spiritualityCost>100.0</spiritualityCost>
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_BlazingSpear_7S</projectileDef>
@@ -50,7 +52,7 @@
         </comps>
         <verbProperties>
             <range>40</range>
-            <warmupTime>2.5</warmupTime>
+            <warmupTime>2.0</warmupTime>
         </verbProperties>
     </AbilityDef>
 
@@ -59,6 +61,7 @@
         <defName>Cast_BlazingSpear_6S</defName>
         <label>Копье огня</label>
         <cooldownTicksRange>600</cooldownTicksRange>
+        <spiritualityCost>120.0</spiritualityCost>
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_BlazingSpear_6S</projectileDef>
@@ -66,7 +69,7 @@
         </comps>
         <verbProperties>
             <range>50</range>
-            <warmupTime>2.0</warmupTime>
+            <warmupTime>1.0</warmupTime>
         </verbProperties>
     </AbilityDef>
 
@@ -74,7 +77,8 @@
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_BlazingSpear">
         <defName>Cast_BlazingSpear_5S</defName>
         <label>Копье огня</label>
-        <cooldownTicksRange>360</cooldownTicksRange>
+        <cooldownTicksRange>450</cooldownTicksRange>
+        <spiritualityCost>150.0</spiritualityCost>
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_BlazingSpear_5S</projectileDef>
@@ -82,7 +86,7 @@
         </comps>
         <verbProperties>
             <range>60</range>
-            <warmupTime>1.0</warmupTime>
+            <warmupTime>0.5</warmupTime>
         </verbProperties>
     </AbilityDef>
 
@@ -90,7 +94,8 @@
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_BlazingSpear">
         <defName>Cast_BlazingSpear_4S</defName>
         <label>Копье огня</label>
-        <cooldownTicksRange>120</cooldownTicksRange>
+        <cooldownTicksRange>300</cooldownTicksRange>
+        <spiritualityCost>200.0</spiritualityCost>
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_BlazingSpear_4S</projectileDef>
@@ -98,7 +103,7 @@
         </comps>
         <verbProperties>
             <range>80</range>
-            <warmupTime>0.4</warmupTime>
+            <warmupTime>0.1</warmupTime>
         </verbProperties>
     </AbilityDef>
 

@@ -5,7 +5,7 @@
         <label>blue giant</label>
         <description>A hulking blue-skinned giant with bony protrusions along its spine. Its muscles are like iron cables, and its hide turns aside common arrows and bullets. It fights with an unnerving, bestial skill, reading weaknesses in its enemies' stances.</description>
         <statBases>
-            <MoveSpeed>4.2</MoveSpeed>
+            <MoveSpeed>6.0</MoveSpeed>
             <ArmorRating_Sharp>0.6</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.7</ArmorRating_Blunt>
             <ArmorRating_Heat>0.3</ArmorRating_Heat>
@@ -23,7 +23,7 @@
                 <labelNoLocation>fist</labelNoLocation>
                 <capacities><li>Blunt</li></capacities>
                 <power>25</power>
-                <cooldownTime>2</cooldownTime>
+                <cooldownTime>1</cooldownTime>
                 <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
                 <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
                 <armorPenetration>0.3</armorPenetration>
@@ -78,7 +78,7 @@
                 <bodyGraphicData>
                     <texPath>Things/Pawn/Giant/BlueGiant/Giant</texPath>
                     <graphicClass>Graphic_Multi</graphicClass>
-                    <drawSize>3.8</drawSize>
+                    <drawSize>4.5</drawSize>
                 </bodyGraphicData>
             </li>
         </lifeStages>

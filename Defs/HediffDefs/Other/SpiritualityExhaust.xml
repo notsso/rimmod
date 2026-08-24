@@ -3,7 +3,8 @@
 
     <HediffDef>
 
-        <hediffClass>Hediff</hediffClass>
+        <hediffClass>lotr.HediffWithPercents</hediffClass>
+
         <defName>SpiritualityExhaust</defName>
         <label>spiritual exhaustion</label>
         <description>This beyonder's inner energy or pathway need has dropped. Their physical and mythical capabilities are slightly suppressed.</description>
@@ -30,10 +31,6 @@
                     </li>
                 </capMods>
 
-                <statFactors>
-                
-                </statFactors>
-
             </li>
 
             <li>
@@ -50,10 +47,6 @@
                         <postFactor>0.80</postFactor>
                     </li>
                 </capMods>
-
-                <statFactors>
-                
-                </statFactors>
 
                 <statOffsets>
                     <MentalBreakThreshold>0.10</MentalBreakThreshold>

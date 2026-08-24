@@ -18,7 +18,6 @@ namespace lotr {
         private int nextCheckTick;
         private const int CheckIntervalTicks = 7 * 60000;
         private const int MinAllianceDelayTicks = 3 * 60000;
-        private const string FactionDefName = "lotr_IronAndBloodCrossOrder";
 
         public GameComponent_MysteryEvent(Game game) { }
 
@@ -43,39 +42,31 @@ namespace lotr {
             GameComponent_FirstMeeting firstMeetingComp = Current.Game.GetComponent<GameComponent_FirstMeeting>();
             if (firstMeetingComp == null) return;
 
-            Faction faction = Find.FactionManager.AllFactions.FirstOrDefault(f => f.def.defName == FactionDefName);
-            if (faction == null) return;
+            // Собираем фракции, с которыми союз и прошло время
+            List<Faction> availableFactions = new List<Faction>();
+            foreach (string defName in BeyonderUtility.FactionDefNames) {
+                Faction faction = Find.FactionManager.AllFactions.FirstOrDefault(f => f.def.defName == defName);
+                if (faction == null || faction.HostileTo(Faction.OfPlayer)) continue;
+                if (!firstMeetingComp.IsFactionAllied(faction)) continue;
 
-            if (faction.HostileTo(Faction.OfPlayer)) return;
+                int alliedTick = firstMeetingComp.GetAlliedTick(faction);
+                if (alliedTick < 0 || Find.TickManager.TicksGame - alliedTick < MinAllianceDelayTicks) continue;
 
-            if (!firstMeetingComp.IsFactionAllied(faction)) return;
+                availableFactions.Add(faction);
+            }
 
-            int alliedTick = firstMeetingComp.GetAlliedTick(faction);
-            if (alliedTick < 0 || Find.TickManager.TicksGame - alliedTick < MinAllianceDelayTicks) return;
+            if (availableFactions.Count == 0) return;
 
+            Faction chosenFaction = availableFactions.RandomElement();
             IncidentParms parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.Misc, Find.AnyPlayerHomeMap);
-            parms.faction = faction;
+            parms.faction = chosenFaction;
             parms.forced = true;
             Find.Storyteller.TryFire(new FiringIncident(IncidentDef.Named("lotr_MysteryVisit"), null, parms));
         }
     }
 
     public class IncidentWorker_MysteryVisit : IncidentWorker_VisitorGroup {
-        private const string FactionDefName = "lotr_IronAndBloodCrossOrder";
-        private const string TraderKindDefName = "lotr_MysteryTrader";
-
-        private const Pathway OrganizationPathway = Pathway.Hunter;
-
-        private static readonly Dictionary<int, string[]> IngredientDefsByPotionLevel =
-            new Dictionary<int, string[]>
-            {
-                { 9, new[] { "lotr_MarshCrystal", "lotr_BloodRedChestnut"}},
-                { 8, new[] { "lotr_CuspidsParrotTongue", "lotr_CorpseLilyRootstock" } },
-                { 7, new[] { "lotr_FireSalamanderGland", "lotr_MagmaElfCore" } },
-                { 6, new[] { "lotr_BlackHuntingSpiderEyes", "lotr_SphinxBrain" } },
-                { 5, new[] { "lotr_DemonicWolfClaws", "lotr_ForestHunterTongue" } },
-                { 4, new[] { "lotr_MagmaGiantCore", "lotr_StoneofCatastrophe" } }
-            };
+        private const string TraderKindDefName = "lotr_BeyonderTrader";
 
         protected override bool TryResolveParmsGeneral(IncidentParms parms) {
             Map map = (Map)parms.target;
@@ -83,20 +74,17 @@ namespace lotr {
                 !RCellFinder.TryFindRandomPawnEntryCell(out parms.spawnCenter, map, CellFinder.EdgeRoadChance_Neutral, false, null))
                 return false;
 
-            Faction faction = Find.FactionManager.AllFactions.FirstOrDefault(f => f.def.defName == FactionDefName);
-            if (faction == null) return false;
+            if (parms.faction == null)
+                return false;
 
-            parms.faction = faction;
             parms.points = 150f + Rand.Range(0, 100);
             return true;
         }
 
         protected override bool TryExecuteWorker(IncidentParms parms) {
             Map map = (Map)parms.target;
-            Faction faction = Find.FactionManager.AllFactions.FirstOrDefault(f => f.def.defName == FactionDefName);
+            Faction faction = parms.faction;
             if (faction == null) return false;
-
-            parms.faction = faction;
 
             if (!base.TryResolveParms(parms))
                 return false;
@@ -134,7 +122,9 @@ namespace lotr {
         private void MakePawnTrader(Pawn pawn, Faction faction) {
             pawn.mindState.wantsToTradeWithColony = true;
             PawnComponentsUtility.AddAndRemoveDynamicComponents(pawn, true);
-            pawn.trader.traderKind = DefDatabase<TraderKindDef>.GetNamed(TraderKindDefName, true);
+
+            pawn.trader.traderKind = DefDatabase<TraderKindDef>.GetNamed(TraderKindDefName);
+
             pawn.inventory.DestroyAll(DestroyMode.Vanish);
         }
 
@@ -149,25 +139,45 @@ namespace lotr {
                     thing.Destroy(DestroyMode.Vanish);
             }
 
-            int maxSequence = GetMaxSequenceForPathway(map, OrganizationPathway);
+            // Определяем путь и словарь ингредиентов в зависимости от фракции
+            Pathway organizationPathway = Pathway.No_pathway;
+            Dictionary<int, string[]> ingredientDefs = new Dictionary<int, string[]> { };
 
-            // Log.Message($"colony level {maxSequence}");
+            if (faction.def.defName == "lotr_ChurchOfTheGodOfCombat") {
+                organizationPathway = Pathway.Warrior;
+                ingredientDefs = new Dictionary<int, string[]> {
+                    { 9, new[] { "lotr_GiantWarriorCore" } },
+                    { 8, new[] { "lotr_GiantSquireBone" } },
+                    { 7, new[] { "lotr_BlueGiantSpine" } },
+                    { 6, new[] { "lotr_DawnGiantCrystal" } },
+                    { 5, new[] { "lotr_GrayGiantHeart" } },
+                    { 4, new[] { "lotr_DivineGiantEye" } }
+                };
+            } else if (faction.def.defName == "lotr_IronAndBloodCrossOrder") {
+                organizationPathway = Pathway.Hunter;
+                ingredientDefs = new Dictionary<int, string[]> {
+                    { 9, new[] { "lotr_MarshCrystal", "lotr_BloodRedChestnut"} },
+                    { 8, new[] { "lotr_CuspidsParrotTongue", "lotr_CorpseLilyRootstock" } },
+                    { 7, new[] { "lotr_FireSalamanderGland", "lotr_MagmaElfCore" } },
+                    { 6, new[] { "lotr_BlackHuntingSpiderEyes", "lotr_SphinxBrain" } },
+                    { 5, new[] { "lotr_DemonicWolfClaws", "lotr_ForestHunterTongue" } },
+                    { 4, new[] { "lotr_MagmaGiantCore", "lotr_StoneofCatastrophe" } }
+                };
+            }
+
+            int maxSequence = GetMaxSequenceForPathway(map, organizationPathway);
 
             for (int potionLevel = 9; potionLevel >= maxSequence - 1; potionLevel--) {
-                // Log.Message($"processing ingredients for {potionLevel}");
-
-                if (!IngredientDefsByPotionLevel.TryGetValue(potionLevel, out string[] ingredientDefs))
+                if (!ingredientDefs.TryGetValue(potionLevel, out string[] defs))
                     continue;
 
-                foreach (string defName in ingredientDefs) {
+                foreach (string defName in defs) {
                     if (Rand.Chance(0.7f)) continue;
                     ThingDef ingredientDef = ThingDef.Named(defName);
                     if (ingredientDef == null) continue;
 
                     Thing item = ThingMaker.MakeThing(ingredientDef);
                     item.stackCount = 1;
-
-                    // Log.Message($"adding {item.stackCount} of {defName} to trader");
 
                     if (!trader.inventory.innerContainer.TryAdd(item, true))
                         item.Destroy(DestroyMode.Vanish);

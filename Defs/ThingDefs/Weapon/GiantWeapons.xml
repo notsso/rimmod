@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Гигантская дубина -->
+    <ThingDef ParentName="BaseMeleeWeapon_Blunt">
+        <defName>MeleeWeapon_GiantClub</defName>
+        <label>giant club</label>
+        <description>A massive club sized for a giant's hands. Its weight alone is enough to crush armor and bone.</description>
+        <graphicData>
+            <texPath>Things/Item/Equipment/WeaponMelee/Club</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>1.5</drawSize>
+        </graphicData>
+        <techLevel>Neolithic</techLevel>
+        <weaponTags>
+            <li>GiantWeapon</li>
+            <li>GiantClub</li>
+        </weaponTags>
+        <weaponClasses>
+            <li>Neolithic</li>
+        </weaponClasses>
+        <costStuffCount>40</costStuffCount>
+        <statBases>
+            <WorkToMake>1200</WorkToMake>
+            <Mass>10</Mass>
+        </statBases>
+        <equippedAngleOffset>-65</equippedAngleOffset>
+        <stuffCategories>
+            <li>Metallic</li>
+            <li>Woody</li>
+            <li>Stony</li>
+        </stuffCategories>
+        <recipeMaker>
+            <displayPriority>0</displayPriority>
+        </recipeMaker>
+        <tools>
+            <li>
+                <label>handle</label>
+                <capacities><li>Poke</li></capacities>
+                <power>18</power>
+                <cooldownTime>1</cooldownTime>
+                <chanceFactor>0.2</chanceFactor>
+            </li>
+            <li>
+                <label>head</label>
+                <labelUsedInLogging>false</labelUsedInLogging>
+                <capacities><li>Blunt</li></capacities>
+                <power>30</power>
+                <cooldownTime>1</cooldownTime>
+            </li>
+        </tools>
+    </ThingDef>
+
+    <!-- Гигантская иква -->
+    <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+        <defName>MeleeWeapon_GiantIkwa</defName>
+        <label>giant ikwa</label>
+        <description>A huge ikwa with a broad, heavy blade. Its thrust can punch through even thick armor.</description>
+        <graphicData>
+            <texPath>Things/Item/Equipment/WeaponMelee/Ikwa</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>2.0</drawSize>
+        </graphicData>
+        <techLevel>Neolithic</techLevel>
+        <weaponTags>
+            <li>GiantWeapon</li>
+            <li>GiantIkwa</li>
+        </weaponTags>
+        <weaponClasses>
+            <li>Neolithic</li>
+        </weaponClasses>
+        <costStuffCount>50</costStuffCount>
+        <statBases>
+            <WorkToMake>5000</WorkToMake>
+            <Mass>8</Mass>
+        </statBases>
+        <equippedAngleOffset>-25</equippedAngleOffset>
+        <stuffCategories>
+            <li>Metallic</li>
+            <li>Woody</li>
+        </stuffCategories>
+        <recipeMaker>
+            <displayPriority>0</displayPriority>
+        </recipeMaker>
+        <tools>
+            <li>
+                <label>handle</label>
+                <capacities><li>Blunt</li><li>Poke</li></capacities>
+                <power>18</power>
+                <cooldownTime>1</cooldownTime>
+                <chanceFactor>0.2</chanceFactor>
+            </li>
+            <li>
+                <label>head</label>
+                <capacities><li>Stab</li></capacities>
+                <power>20</power>
+                <cooldownTime>1</cooldownTime>
+            </li>
+            <li>
+                <label>edge</label>
+                <capacities><li>Cut</li></capacities>
+                <power>22</power>
+                <cooldownTime>1</cooldownTime>
+            </li>
+        </tools>
+    </ThingDef>
+
+    <!-- Гигантский двуручный меч -->
+    <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+        <defName>MeleeWeapon_GiantLongSword</defName>
+        <label>giant longsword</label>
+        <description>A colossal longsword forged for a blue giant. Its edge can cleave a man in half with a single swing.</description>
+        <graphicData>
+            <texPath>Things/Item/Equipment/WeaponGiant/GiantLongSword</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>2.5</drawSize>
+        </graphicData>
+        <techLevel>Medieval</techLevel>
+        <weaponTags>
+            <li>GiantWeapon</li>
+            <li>GiantLongSword</li>
+        </weaponTags>
+        <costStuffCount>100</costStuffCount>
+        <statBases>
+            <WorkToMake>18000</WorkToMake>
+            <Mass>15</Mass>
+        </statBases>
+        <equippedAngleOffset>-65</equippedAngleOffset>
+        <stuffCategories>
+            <li>Metallic</li>
+            <li>Woody</li>
+        </stuffCategories>
+        <recipeMaker>
+            <displayPriority>0</displayPriority>
+        </recipeMaker>
+        <tools>
+            <li>
+                <label>handle</label>
+                <capacities><li>Blunt</li></capacities>
+                <power>24</power>
+                <cooldownTime>1</cooldownTime>
+                <chanceFactor>0.2</chanceFactor>
+            </li>
+            <li>
+                <label>point</label>
+                <capacities><li>Stab</li></capacities>
+                <power>30</power>
+                <armorPenetration>1.0</armorPenetration>
+                <cooldownTime>1.2</cooldownTime>
+            </li>
+            <li>
+                <label>edge</label>
+                <capacities><li>Cut</li></capacities>
+                <power>30</power>
+                <armorPenetration>1.0</armorPenetration>
+                <cooldownTime>1.2</cooldownTime>
+            </li>
+        </tools>
+    </ThingDef>
+
+    <ThingDef>
+        <defName>MeleeWeapon_GiantSunsetSword</defName>
+        <label>giant Sunset Sword</label>
+        <description>A colossal blade of solidified dawnlight, wielded only by Dawn Giants.</description>
+        <category>Item</category>
+
+        <thingClass>lotr.SummonedFireWeapon</thingClass>
+
+        <equipmentType>Primary</equipmentType>
+        <selectable>true</selectable>
+        <drawerType>MapMeshOnly</drawerType>
+        <drawGUIOverlay>true</drawGUIOverlay>
+        <altitudeLayer>Item</altitudeLayer>
+        <alwaysHaulable>true</alwaysHaulable>
+        <tickerType>Normal</tickerType>
+        <techLevel>Medieval</techLevel>
+        
+        <smeltable>false</smeltable>
+        <tradeability>None</tradeability>
+        <destroyOnDrop>true</destroyOnDrop>
+
+        <equippedAngleOffset>-25</equippedAngleOffset>
+
+        <graphicData>
+            <texPath>Things/Item/Equipment/WeaponGiant/SunsetSword</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+            <drawSize>3.0</drawSize>
+        </graphicData>
+
+        <statBases>
+            <MaxHitPoints>100</MaxHitPoints>
+            <Mass>1.5</Mass>
+            <MarketValue>500</MarketValue>
+            <Flammability>0.0</Flammability>
+            <DeteriorationRate>0</DeteriorationRate>
+        </statBases>
+
+        <comps>
+            <li>
+                <compClass>CompEquippable</compClass>
+            </li>
+
+            <li>
+                <compClass>CompQuality</compClass>
+            </li>
+
+            <li Class="CompProperties_Glower">
+                <glowRadius>10</glowRadius>
+                <glowColor>(253, 184, 19, 0)</glowColor>
+            </li>
+        </comps>
+
+        <tools>
+            <li>
+                <label>handle</label>
+                <capacities><li>Blunt</li></capacities>
+                <power>40</power>
+                <cooldownTime>1</cooldownTime>
+                <chanceFactor>0.2</chanceFactor>
+            </li>
+            <li>
+                <label>point</label>
+                <capacities><li>Stab</li></capacities>
+                <power>50</power>
+                <armorPenetration>1.5</armorPenetration>
+                <cooldownTime>1.0</cooldownTime>
+            </li>
+            <li>
+                <label>edge</label>
+                <capacities><li>Cut</li></capacities>
+                <power>50</power>
+                <armorPenetration>1.5</armorPenetration>
+                <cooldownTime>1.0</cooldownTime>
+            </li>
+        </tools>
+
+        <weaponClasses>
+            <li>Melee</li>
+        </weaponClasses>
+
+        <weaponTags>
+            <li>GiantWeapon</li>
+            <li>GiantSunsetSword</li>
+        </weaponTags>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
+        <defName>MeleeWeapon_GiantGreyMaul</defName>
+        <label>giant grey maul</label>
+        <description>A massive stone maul that can shatter walls and crush armored foes.</description>
+        <graphicData>
+            <texPath>Things/Item/Equipment/WeaponGiant/GiantHammer</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>3.5</drawSize>
+        </graphicData>
+        <techLevel>Medieval</techLevel>
+        <weaponTags>
+            <li>GiantWeapon</li>
+            <li>GiantGreyMaul</li>
+        </weaponTags>
+        <costStuffCount>120</costStuffCount>
+        <statBases>
+            <WorkToMake>30000</WorkToMake>
+            <Mass>30</Mass>
+        </statBases>
+        <equippedAngleOffset>-65</equippedAngleOffset>
+        <stuffCategories>
+            <li>Metallic</li>
+            <li>Woody</li>
+            <li>Stony</li>
+        </stuffCategories>
+        <tools>
+            <li>
+                <label>handle</label>
+                <capacities><li>Poke</li></capacities>
+                <power>50</power>
+                <cooldownTime>1</cooldownTime>
+            </li>
+            <li>
+                <label>head</label>
+                <labelUsedInLogging>false</labelUsedInLogging>
+                <capacities><li>Blunt</li></capacities>
+                <power>60</power>
+                <armorPenetration>1.0</armorPenetration>
+                <cooldownTime>1</cooldownTime>
+            </li>
+        </tools>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+        <defName>MeleeWeapon_GiantDivineSpear</defName>
+        <label>giant divine spear</label>
+        <description>A titanic spear that seems to drink light and bring decay to whatever it pierces.</description>
+        <graphicData>
+            <texPath>Things/Item/Equipment/WeaponGiant/GiantSpear</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>4.0</drawSize>
+        </graphicData>
+        <techLevel>Medieval</techLevel>
+        <weaponTags>
+            <li>GiantWeapon</li>
+            <li>GiantDivineSpear</li>
+        </weaponTags>
+        <costStuffCount>150</costStuffCount>
+        <statBases>
+            <WorkToMake>40000</WorkToMake>
+            <Mass>35</Mass>
+        </statBases>
+        <equippedAngleOffset>-25</equippedAngleOffset>
+        <stuffCategories>
+            <li>Metallic</li>
+            <li>Woody</li>
+        </stuffCategories>
+        <tools>
+            <li>
+                <label>shaft</label>
+                <capacities><li>Blunt</li><li>Poke</li></capacities>
+                <power>80</power>
+                <cooldownTime>1</cooldownTime>
+            </li>
+            <li>
+                <label>point</label>
+                <capacities><li>Stab</li></capacities>
+                <power>100</power>
+                <armorPenetration>2</armorPenetration>
+                <cooldownTime>1</cooldownTime>
+            </li>
+        </tools>
+    </ThingDef>
+    
+</Defs>

@@ -38,7 +38,7 @@
             <li>DrugLab</li>
         </recipeUsers>
 
-        <researchPrerequisite>Brewing</researchPrerequisite>
+        <researchPrerequisite>lotr_BasicKnowledge</researchPrerequisite>
     </RecipeDef>
 
     <RecipeDef>
@@ -78,7 +78,7 @@
             <li>DrugLab</li>
         </recipeUsers>
         
-        <researchPrerequisite>Brewing</researchPrerequisite>
+        <researchPrerequisite>lotr_BasicKnowledge</researchPrerequisite>
     </RecipeDef>
 
 </Defs>

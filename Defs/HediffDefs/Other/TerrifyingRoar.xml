@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <HediffDef>
+        
+        <hediffClass>HediffWithComps</hediffClass>
+        <defName>lotr_HediffFoulnessRoar</defName>
+
+        <label>terrifying roar</label>
+        <description>This pawn is shaken by a terrifying otherworldly roar. Movement is slowed and consciousness is clouded.</description>
+        <isBad>true</isBad>
+
+        <stages>
+            <li>
+                <statFactors>
+                    <MoveSpeed>0.5</MoveSpeed>
+                </statFactors>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.50</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>3600</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+
+    </HediffDef>
+
+</Defs>

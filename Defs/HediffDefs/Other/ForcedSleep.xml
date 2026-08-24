@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <HediffDef Name="Hediff_ForcedSleep">
+
+        <hediffClass>HediffWithComps</hediffClass>
+        
+        <defName>Hediff_ForcedSleep</defName>
+        <label>сон</label>
+        <description>Тело пешки окутано мистическим пламенем, защищающим от внешних угроз.</description>    
+        <isBad>true</isBad>
+    
+    </HediffDef>
+
+    <!-- Эффект от Шарма Дремоты -->
+    <HediffDef ParentName="Hediff_ForcedSleep">
+        <defName>Hediff_ForcedSleep_Charm</defName>
+        <label>сон</label>
+
+        <comps>
+            <li Class="lotr.HediffCompProperties_ForcedSleep" />
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>3600</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+
+        <stages>
+            <li />
+        </stages>
+    </HediffDef>
+
+</Defs>

@@ -11,7 +11,7 @@
         <description>Переводит потустороннего в состояние пожинателя душ.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_ReaperState</iconPath>
 
-        <aiCanUse>true</aiCanUse>
+        <aiCanUse>false</aiCanUse> <!-- TODO? -->
         <ai_IsOffensive>false</ai_IsOffensive>
         <ai_IsIncendiary>false</ai_IsIncendiary>
         <targetRequired>true</targetRequired>
@@ -42,6 +42,7 @@
         <defName>Cast_ReaperState_5S</defName>
         <label>Жатва</label>
         <cooldownTicksRange>7200</cooldownTicksRange>
+        <spiritualityCost>250.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityGiveHediff">
                 <hediffDef>Hediff_ReaperState_5S</hediffDef>

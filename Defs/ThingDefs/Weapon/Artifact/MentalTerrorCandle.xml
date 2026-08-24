@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="CharmUtilityBase">
+        <defName>lotr_MentalTerrorCandle</defName>
+        <label>mental terror candle</label>
+        <description>A small candle wrapped in what looks like human skin. It allows the user to enter the deepest layers of a target's mind, offering both healing and control, but each intrusion risks permanent madness.</description>
+        <useHitPoints>false</useHitPoints>
+        <graphicData>
+            <texPath>Things/Item/Artifact/Artifact_Visionary</texPath>
+            <drawSize>1.0</drawSize>
+        </graphicData>
+        <statBases>
+            <MarketValue>2000</MarketValue>
+        </statBases>
+        <apparel>
+            <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
+        </apparel>
+        <verbs>
+            <li>
+                <verbClass>lotr.Verb_MentalTherapy</verbClass>
+                <label>mental therapy</label>
+                <hasStandardCommand>true</hasStandardCommand>
+                <useableInPocketMaps>false</useableInPocketMaps>
+                <warmupTime>1</warmupTime>
+                <range>12</range>
+                <burstShotCount>1</burstShotCount>
+                <soundAiming>OrbitalTargeter_Aiming</soundAiming>
+                <soundCast>OrbitalTargeter_Fire</soundCast>
+                <onlyManualCast>true</onlyManualCast>
+                <requireLineOfSight>true</requireLineOfSight>
+                <targetParams>
+                    <canTargetPawns>true</canTargetPawns>
+                    <canTargetLocations>false</canTargetLocations>
+                </targetParams>
+                <violent>false</violent>
+            </li>
+            <li>
+                <verbClass>lotr.Verb_ReduceResistance</verbClass>
+                <label>recruit</label>
+                <hasStandardCommand>true</hasStandardCommand>
+                <useableInPocketMaps>false</useableInPocketMaps>
+                <warmupTime>1</warmupTime>
+                <range>12</range>
+                <burstShotCount>1</burstShotCount>
+                <soundAiming>OrbitalTargeter_Aiming</soundAiming>
+                <soundCast>OrbitalTargeter_Fire</soundCast>
+                <onlyManualCast>true</onlyManualCast>
+                <requireLineOfSight>true</requireLineOfSight>
+                <targetParams>
+                    <canTargetPawns>true</canTargetPawns>
+                    <canTargetLocations>false</canTargetLocations>
+                </targetParams>
+                <violent>false</violent>
+            </li>
+        </verbs>
+        <comps>
+            <li Class="CompProperties_ApparelReloadable">
+                <maxCharges>1</maxCharges>
+                <destroyOnEmpty>false</destroyOnEmpty>
+                <replenishAfterCooldown>true</replenishAfterCooldown>
+                <baseReloadTicks>3600</baseReloadTicks>
+                <chargeNoun>charge</chargeNoun>
+                <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+            </li>
+        </comps>
+    </ThingDef>
+
+</Defs>

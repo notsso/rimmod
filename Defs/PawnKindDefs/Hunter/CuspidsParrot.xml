@@ -22,10 +22,12 @@
 
             <MaxFlightTime>5</MaxFlightTime>
             <FlightCooldown>5</FlightCooldown>
+
+            <SpiritualityOffset>0.5</SpiritualityOffset>
         </statBases>
 
         <race>
-            <thinkTreeMain>Animal</thinkTreeMain> <!-- lotr_CuspidParrotTree -->
+            <thinkTreeMain>Animal</thinkTreeMain>
             <body>Bird</body>
             <baseHungerRate>0.01</baseHungerRate>
             <baseBodySize>0.3</baseBodySize>
@@ -129,6 +131,10 @@
         <flyingAnimationDrawSize>2.4</flyingAnimationDrawSize>
         <flyingAnimationDrawSizeIsMultiplier>true</flyingAnimationDrawSizeIsMultiplier>
         <flyingAnimationInheritColors>true</flyingAnimationInheritColors>
+        
+        <abilities>
+            <li>Cast_Taunt_8S</li>
+        </abilities>
 
         <lifeStages>
             <li>

@@ -12,7 +12,6 @@ using RimWorld.Planet;
 
 using UnityEngine;
 
-
 namespace lotr {
     public static class GenStepUtility {
         private static IntVec3 RandomCell(Map map) {
@@ -106,6 +105,85 @@ namespace lotr {
         public static void SpawnPawns(Map map, PawnKindDef kind, IntRange countRange, float radius, IntVec3? center = null, bool makeManhunter = true) {
             int count = Rand.Range(countRange.min, countRange.max + 1);
             SpawnPawns(map, kind, count, radius, center, makeManhunter);
+        }
+
+        public static void ClearRect(Map map, CellRect rect) {
+            foreach (IntVec3 c in rect) {
+                if (!c.InBounds(map)) continue;
+
+                // Удаляем вещи, кроме пешек
+                List<Thing> things = map.thingGrid.ThingsListAt(c).ToList();
+                for (int i = things.Count - 1; i >= 0; i--) {
+                    Thing thing = things[i];
+                    if (thing.def.category != ThingCategory.Pawn)
+                        thing.Destroy(DestroyMode.Vanish);
+                }
+
+                // Убираем горы и неподходящий терраин
+                TerrainDef terrain = map.terrainGrid.TerrainAt(c);
+                if (terrain != null) {
+                    bool canBuild = terrain.affordances.Contains(TerrainAffordanceDefOf.Heavy);
+                    if (!canBuild || terrain.defName.Contains("Rough") || terrain.defName.Contains("Rock") || terrain.defName.Contains("Mountain")) {
+                        map.terrainGrid.SetTerrain(c, TerrainDefOf.Soil);
+                    }
+                }
+
+                // Убираем крышу
+                map.roofGrid.SetRoof(c, null);
+            }
+
+            CellRect fog = rect.ExpandedBy(1);
+            Unfog(map, fog);
+        }
+
+        public static void Unfog(Map map, CellRect rect) {
+            foreach (IntVec3 c in rect) {
+                if (!c.InBounds(map)) continue;
+
+                // Снимаем туман
+                map.fogGrid.Unfog(c);
+            }
+        }
+
+        /// <summary>
+        /// Генерирует дорогу внутри заданного прямоугольника.
+        /// Чем дальше клетка от центра, тем меньше шанс поставить дорожное покрытие.
+        /// </summary>
+        /// <param name="map">Карта.</param>
+        /// <param name="roadRect">Прямоугольник, в котором создаётся дорога.</param>
+        /// <param name="center">Центр, относительно которого рассчитывается целостность дороги.</param>
+        /// <param name="roadTerrainDefName">DefName террайна дороги.</param>
+        /// <param name="intensityFalloff">Скорость уменьшения целостности с расстоянием (0..1). Больше значение — быстрее затухание.</param>
+        /// <param name="minChance">Минимальная вероятность установки дороги (даже на максимальном удалении).</param>
+        public static void GenerateRoad(Map map, CellRect roadRect, IntVec3 center, string roadTerrainDefName, float intensityFalloff = 0.7f, float minChance = 0.2f) {
+            TerrainDef road = TerrainDef.Named(roadTerrainDefName);
+            if (road == null) return;
+
+            ClearRect(map, roadRect);
+
+            // Максимальное расстояние от центра до угла прямоугольника (для нормализации)
+            float maxDist = Mathf.Max(
+                center.DistanceTo(new IntVec3(roadRect.minX, 0, roadRect.minZ)),
+                center.DistanceTo(new IntVec3(roadRect.maxX, 0, roadRect.maxZ))
+            );
+            if (maxDist <= 0f) maxDist = 1f;
+
+            foreach (IntVec3 c in roadRect) {
+                if (!c.InBounds(map)) continue;
+
+                float dist = c.DistanceTo(center); // евклидово расстояние
+                float normalizedDist = Mathf.Clamp01(dist / maxDist);
+                float chance = Mathf.Lerp(1f, minChance, normalizedDist * intensityFalloff);
+
+                if (Rand.Value < chance) {
+                    // Проверяем, что поверхность пригодна для дороги (не вода и не глубокая вода)
+                    TerrainDef curTerrain = map.terrainGrid.TerrainAt(c);
+                    if (curTerrain != null && (curTerrain.defName.Contains("WaterDeep") || curTerrain.defName.Contains("WaterOceanDeep")))
+                        continue;
+
+                    map.terrainGrid.SetTerrain(c, road);
+                }
+            }
         }
     }
 }

@@ -22,10 +22,12 @@
 
             <Flammability>0</Flammability>
             <ToxicEnvironmentResistance>0.95</ToxicEnvironmentResistance>
+
+            <SpiritualityOffset>3</SpiritualityOffset>
         </statBases>
 
         <race>
-            <thinkTreeMain>Animal</thinkTreeMain> <!-- lotr_FireSalamanderTree -->
+            <thinkTreeMain>Animal</thinkTreeMain>
             <body>QuadrupedAnimalWithClawsTailAndJowl</body>
             <baseHungerRate>0.01</baseHungerRate>
             <baseBodySize>1.8</baseBodySize>
@@ -129,28 +131,22 @@
         <combatPower>300</combatPower>
         <ecoSystemWeight>0.80</ecoSystemWeight>
 
+        <abilities>
+            <li>Cast_Fireball_7S</li>
+        </abilities>
+
         <lifeStages>
             <li>
                 <bodyGraphicData>
                     <texPath>Things/Pawn/Animal/FireSalamander/FireSalamander</texPath>
                     <drawSize>1</drawSize>
                 </bodyGraphicData>
-
-                <dessicatedBodyGraphicData>
-                    <texPath>Things/Pawn/Animal/FireSalamander/Dessicated_FireSalamander</texPath>
-                    <drawSize>1</drawSize>
-                </dessicatedBodyGraphicData>
             </li>
             <li>
                 <bodyGraphicData>
                     <texPath>Things/Pawn/Animal/FireSalamander/FireSalamander</texPath>
                     <drawSize>1.25</drawSize>
                 </bodyGraphicData>
-
-                <dessicatedBodyGraphicData>
-                    <texPath>Things/Pawn/Animal/FireSalamander/Dessicated_FireSalamander</texPath>
-                    <drawSize>1.25</drawSize>
-                </dessicatedBodyGraphicData>
             </li>
             <li>
                 <bodyGraphicData>
@@ -161,11 +157,6 @@
                         <offset>(0,0,0)</offset>
                     </shadowData>
                 </bodyGraphicData>
-
-                <dessicatedBodyGraphicData>
-                    <texPath>Things/Pawn/Animal/FireSalamander/Dessicated_FireSalamander</texPath>
-                    <drawSize>1.5</drawSize>
-                </dessicatedBodyGraphicData>
             </li>
         </lifeStages>
 

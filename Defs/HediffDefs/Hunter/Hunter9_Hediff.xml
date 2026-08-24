@@ -44,10 +44,10 @@
 				</statFactors>
 
 				<statOffsets>
-					<MeleeHitChance>4</MeleeHitChance>
-					<MeleeDodgeChance>3</MeleeDodgeChance> 
-					<ShootingAccuracyPawn>2</ShootingAccuracyPawn>
-					<GeneralLaborSpeed>0.15</GeneralLaborSpeed>
+					<MeleeHitChance>5</MeleeHitChance>
+					<MeleeDodgeChance>5</MeleeDodgeChance> 
+					<ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+					<GeneralLaborSpeed>0.10</GeneralLaborSpeed>
                     <InjuryHealingFactor>0.2</InjuryHealingFactor>
 				</statOffsets>
 
@@ -58,7 +58,7 @@
 					</li>
 					<li>
 						<capacity>Sight</capacity>
-						<offset>0.15</offset> 
+						<offset>0.10</offset> 
 					</li>
                     
 				</capMods>
@@ -68,25 +68,25 @@
 				<label>смешарик</label>
 
                 <statFactors>
-					<IncomingDamageFactor>0.65</IncomingDamageFactor>
+					<IncomingDamageFactor>0.70</IncomingDamageFactor>
 				</statFactors>
 
 				<statOffsets>
 					<MeleeHitChance>8</MeleeHitChance>
-					<MeleeDodgeChance>6</MeleeDodgeChance>
-					<ShootingAccuracyPawn>5</ShootingAccuracyPawn>
-					<GeneralLaborSpeed>0.30</GeneralLaborSpeed>
+					<MeleeDodgeChance>8</MeleeDodgeChance>
+					<ShootingAccuracyPawn>8</ShootingAccuracyPawn>
+					<GeneralLaborSpeed>0.20</GeneralLaborSpeed>
                     <InjuryHealingFactor>0.5</InjuryHealingFactor>
 				</statOffsets>
 
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
-						<offset>0.35</offset>
+						<offset>0.30</offset>
 					</li>
 					<li>
 						<capacity>Sight</capacity>
-						<offset>0.30</offset>
+						<offset>0.20</offset>
 					</li>
 					<li>
 						<capacity>BloodPumping</capacity>
@@ -104,7 +104,7 @@
         
 		<newAbilities>
 
-			<li>Cast_Fireball</li>
+			<!--<li>Cast_Fireball</li> no new abilities-->
 
 		</newAbilities>
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <HediffDef Name="Hediff_PeacefulCalm">
+        
+        <hediffClass>HediffWithComps</hediffClass>
+        
+        <defName>Hediff_PeacefulCalm</defName>
+        <label>peaceful calm</label>
+        <description>This pawn is under the influence of the Peaceful Hair Strands, losing all motivation and standing still.</description>
+        <isBad>false</isBad>
+
+    </HediffDef>
+
+    <!-- Эффект от Шарма Дремоты -->
+    <HediffDef ParentName="Hediff_PeacefulCalm">
+        <defName>Hediff_PeacefulCalm_Charm</defName>
+        <label>peaceful calm</label>
+        <comps>
+            <li Class="lotr.HediffCompProperties_CalmTarget" />
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>3600</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+        <stages>
+            <li />
+        </stages>
+    </HediffDef>
+    
+</Defs>

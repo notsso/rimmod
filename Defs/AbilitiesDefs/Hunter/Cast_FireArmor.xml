@@ -10,7 +10,7 @@
         <description>Создает плотный огненный покров вокруг тела, который плавит снаряды, согревает в любой мороз и сжигает ядовитые газы на подлете.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_FireArmor</iconPath>
         
-        <aiCanUse>true</aiCanUse>
+        <aiCanUse>false</aiCanUse> <!-- TODO? -->
         <ai_IsOffensive>false</ai_IsOffensive>
         <ai_IsIncendiary>false</ai_IsIncendiary>
         <targetRequired>true</targetRequired>
@@ -41,13 +41,14 @@
         <defName>Cast_FireArmor_7S</defName>
         <label>огненная броня</label>
         <cooldownTicksRange>7200</cooldownTicksRange>
+        <spiritualityCost>100.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityGiveHediff">
                 <hediffDef>Hediff_FireArmor_7S</hediffDef>
             </li>
         </comps>
         <verbProperties>
-            <warmupTime>5.0</warmupTime>
+            <warmupTime>4.0</warmupTime>
             <range>0</range>
             <targetParams>
                 <canTargetSelf>true</canTargetSelf>
@@ -60,13 +61,14 @@
         <defName>Cast_FireArmor_6S</defName>
         <label>огненная броня</label>
         <cooldownTicksRange>3600</cooldownTicksRange>
+        <spiritualityCost>130.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityGiveHediff">
                 <hediffDef>Hediff_FireArmor_6S</hediffDef>
             </li>
         </comps>
         <verbProperties>
-            <warmupTime>3.0</warmupTime>
+            <warmupTime>2.0</warmupTime>
             <range>5</range>
             <targetParams>
                 <canTargetPawns>true</canTargetPawns>
@@ -80,13 +82,14 @@
         <defName>Cast_FireArmor_5S</defName>
         <label>огненная броня</label>
         <cooldownTicksRange>1800</cooldownTicksRange>
+        <spiritualityCost>160.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityGiveHediff">
                 <hediffDef>Hediff_FireArmor_5S</hediffDef>
             </li>
         </comps>
         <verbProperties>
-            <warmupTime>2.0</warmupTime>
+            <warmupTime>1.0</warmupTime>
             <range>10</range>
             <targetParams>
                 <canTargetPawns>true</canTargetPawns>
@@ -100,13 +103,14 @@
         <defName>Cast_FireArmor_4S</defName>
         <label>огненная броня</label>
         <cooldownTicksRange>600</cooldownTicksRange>
+        <spiritualityCost>200.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_AbilityGiveHediff">
                 <hediffDef>Hediff_FireArmor_4S</hediffDef>
             </li>
         </comps>
         <verbProperties>
-            <warmupTime>0.5</warmupTime>
+            <warmupTime>0.2</warmupTime>
             <range>20</range>
             <targetParams>
                 <canTargetPawns>true</canTargetPawns>

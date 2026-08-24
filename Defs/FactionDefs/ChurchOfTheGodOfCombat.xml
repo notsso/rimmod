@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <FactionDef ParentName="OutlanderFactionBase">
+        <defName>lotr_ChurchOfTheGodOfCombat</defName>
+        <label>Church of the God of Combat</label>
+        <description>The Church of the God of Combat is a zealous organisation that reveres battle and strength. They trade in relics of mighty warriors and mystical ingredients tied to the Warrior pathway.</description>
+        <pawnSingular>acolyte</pawnSingular>
+        <pawnsPlural>acolytes</pawnsPlural>
+        <categoryTag>Outlander</categoryTag>
+
+        <requiredCountAtGameStart>1</requiredCountAtGameStart>
+        <settlementGenerationWeight>0</settlementGenerationWeight>
+        <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+        <configurationListOrderPriority>-1</configurationListOrderPriority>
+        <displayInFactionSelection>false</displayInFactionSelection>
+
+        <fixedName>Church of the God of Combat</fixedName>
+        <hidden>false</hidden>
+        <humanlikeFaction>true</humanlikeFaction>
+        <techLevel>Industrial</techLevel>
+
+        <leaderTitle>high priest</leaderTitle>
+        <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+        <basicMemberKind>Villager</basicMemberKind>
+
+        <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+
+        <colorSpectrum>
+            <li>(0.55, 0.15, 0.15)</li>
+            <li>(0.85, 0.45, 0.25)</li>
+        </colorSpectrum>
+
+        <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+        <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+
+        <backstoryFilters>
+            <li>
+                <categories><li>Outlander</li></categories>
+                <commonality>1</commonality>
+            </li>
+        </backstoryFilters>
+
+        <pawnGroupMakers>
+            <li>
+                <kindDef>Peaceful</kindDef>
+                <options>
+                    <Villager>10</Villager>
+                </options>
+            </li>
+            <li>
+                <kindDef>Combat</kindDef>
+                <commonality>100</commonality>
+                <options>
+                    <Mercenary_Slasher>5</Mercenary_Slasher>
+                    <Mercenary_Gunner>5</Mercenary_Gunner>
+                    <Mercenary_Elite>5</Mercenary_Elite>
+
+                    <Beyonder_Warrior9>10</Beyonder_Warrior9>
+                    <Beyonder_Warrior8>8</Beyonder_Warrior8>
+                    <Beyonder_Warrior7>6</Beyonder_Warrior7>
+                    <Beyonder_Warrior6>4</Beyonder_Warrior6>
+                    <Beyonder_Warrior5>2</Beyonder_Warrior5>
+                    <Beyonder_Warrior4>1</Beyonder_Warrior4>
+                </options>
+            </li>
+            <li>
+                <kindDef>Settlement</kindDef>
+                <options>
+                    <Town_Guard>10</Town_Guard>
+                    <Mercenary_Gunner>10</Mercenary_Gunner>
+                    <Mercenary_Elite>10</Mercenary_Elite>
+                </options>
+            </li>
+        </pawnGroupMakers>
+
+        <maxPawnCostPerTotalPointsCurve>
+            <points>
+                <li>(0, 35)</li>
+                <li>(70, 50)</li>
+                <li>(700, 100)</li>
+                <li>(1300, 150)</li>
+                <li>(100000, 10000)</li>
+            </points>
+        </maxPawnCostPerTotalPointsCurve>
+
+        <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
+        <visitorTraderKinds />
+        <caravanTraderKinds />
+        <baseTraderKinds />
+    </FactionDef>
+</Defs>

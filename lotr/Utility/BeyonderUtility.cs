@@ -48,6 +48,11 @@ namespace lotr {
             Pathway.Criminal, Pathway.Prisoner
         };
 
+        public static readonly string[] FactionDefNames = new string[] {
+            "lotr_IronAndBloodCrossOrder",
+            "lotr_ChurchOfTheGodOfCombat"
+        };
+
         // Метод для нанесения урона рассудку
         public static void AdjustSanityLoss(Pawn pawn, float amount, string reasonMote = null) {
             if (pawn == null || pawn.health == null) return;
@@ -162,8 +167,102 @@ namespace lotr {
             foreach (AbilityDef ability_def in new_abilities) {
                 pawn.abilities.GainAbility(ability_def);
             }
-
         }
 
+        // Потеря контроля
+        public static void ControlLoss(Pawn pawn) {
+            if (pawn.Faction == Faction.OfPlayer) {
+                Find.LetterStack.ReceiveLetter(
+                    "Потеря контроля",
+                    $"{pawn.LabelShort} полностью потерял контроль над потусторонними силами. Разум пешки окончательно разрушился, превратив его в ужасающее чудовище.",
+                    LetterDefOf.Death,
+                    pawn
+                );
+            }
+
+            TransformToMonster(pawn);
+        }
+
+        private static void TransformToMonster(Pawn originalPawn) {
+            if (originalPawn == null || originalPawn.Destroyed || originalPawn.Map == null) return;
+
+            Map map = originalPawn.Map;
+            IntVec3 position = originalPawn.Position;
+            Rot4 rotation = originalPawn.Rotation;
+
+            PawnKindDef monsterKind = PawnKindDef.Named("lotr_LostControlMonster");
+            if (monsterKind == null) return;
+
+            Pawn monster = PawnGenerator.GeneratePawn(monsterKind, null);
+            if (monster == null) return;
+
+            // Переносим все потусторонние Hediff'ы (копируем) монстру
+            foreach (Hediff hediff in originalPawn.health.hediffSet.hediffs.ToList()) {
+                if (hediff is Beyonder_Hediff) {
+                    monster.health.AddHediff(HediffMaker.MakeHediff(hediff.def, monster, hediff.Part));
+                }
+            }
+
+            // Выдаём способности
+            UpdateAbilities(monster);
+
+            // Переносим снаряжение и инвентарь
+            TransferEquipmentAndInventory(originalPawn, monster);
+
+            // Спавним монстра
+            GenSpawn.Spawn(monster, position, map, rotation);
+
+            // Уничтожаем исходную пешку (без Kill)
+            originalPawn.Destroy(DestroyMode.Vanish);
+        }
+
+        private static void TransferEquipmentAndInventory(Pawn from, Pawn to) {
+            // оружие
+            if (from.equipment?.Primary != null && to.equipment != null) {
+                ThingWithComps weapon = from.equipment.Primary;
+                from.equipment.Remove(weapon);
+                to.equipment.AddEquipment(weapon);
+            }
+
+            // снаряжение
+            if (from.apparel != null && to.apparel != null) {
+                var apparelList = from.apparel.WornApparel.ToList();
+                foreach (Apparel apparel in apparelList) {
+                    from.apparel.Remove(apparel);
+                    to.apparel.Wear(apparel, false);
+                }
+            }
+
+            // инвентарь
+            if (from.inventory != null && to.inventory != null) {
+                var items = from.inventory.innerContainer.ToList();
+                foreach (Thing item in items) {
+                    from.inventory.innerContainer.Remove(item);
+                    if (!to.inventory.innerContainer.TryAdd(item, true))
+                        item.Destroy(DestroyMode.Vanish);
+                }
+            }
+        }
+
+        public static void ExtractBeyonderEssence(Pawn pawn, Hediff hediff) {
+            if (hediff.def is BeyonderHediffDef beyonderDef) {
+                string essenceName = $"lotr_{beyonderDef.defName.Split('_')[0]}_Essence";
+                ThingDef essenceDef = ThingDef.Named(essenceName);
+
+                if (essenceDef == null) {
+                    Log.Message($"essenceNamed: {essenceName} not found. {beyonderDef.defName}");
+                    return;
+                }
+                Thing essence = ThingMaker.MakeThing(essenceDef);
+                essence.stackCount = 1;
+                GenPlace.TryPlaceThing(essence, pawn.Position, pawn.Map, ThingPlaceMode.Near);
+
+                // fancy way of deleting hediff without CheckForStateChange
+                hediff.PreRemoved();
+                pawn.health.hediffSet.hediffs.Remove(hediff);
+                pawn.health.hediffSet.DirtyCache();
+                hediff.PostRemoved();
+            }
+        }
     }
 }

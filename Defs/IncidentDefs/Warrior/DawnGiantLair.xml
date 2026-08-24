@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <WorldObjectDef ParentName="Site">
+    <defName>DawnGiantLair_World</defName>
+    <label>dawn giant village</label>
+    <description>A large village of giants ruled by a Dawn Giant.</description>
+    <mapGenerator>GiantVillageMapGenerator</mapGenerator>
+  </WorldObjectDef>
+
+  <SitePartDef>
+    <defName>DawnGiantLair_Site</defName>
+    <label>dawn giant village</label>
+    <description>A Dawn Giant rules over this large village.</description>
+    <workerClass>lotr.SitePartWorker_DawnGiantLair</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+  </SitePartDef>
+
+  <IncidentDef>
+    <defName>DawnGiantLair_Incident</defName>
+    <label>dawn giant village</label>
+    <baseChance>1.5</baseChance>
+    <workerClass>lotr.IncidentWorker_DawnGiantLair</workerClass>
+    <category>Misc</category>
+    <earliestDay>30</earliestDay>
+    <letterLabel>Dawn giant village</letterLabel>
+    <letterText>A large village of giants has been discovered, ruled by a Dawn Giant.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <targetTags>
+      <li>World</li>
+    </targetTags>
+  </IncidentDef>
+</Defs>

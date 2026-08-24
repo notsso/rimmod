@@ -23,6 +23,8 @@
             <Flammability>0.1</Flammability>
             <ToxicResistance>1</ToxicResistance>
             <ToxicEnvironmentResistance>0.8</ToxicEnvironmentResistance>
+
+            <SpiritualityOffset>6</SpiritualityOffset>
         </statBases>
 
         <race>
@@ -153,6 +155,10 @@
         <race>lotr_SphinxRace</race>
         <combatPower>500</combatPower>
         <ecoSystemWeight>1.0</ecoSystemWeight>
+
+        <abilities>
+            <li>Cast_Confusion_6S</li>
+        </abilities>
         
         <lifeStages>
             <li>

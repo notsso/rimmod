@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <HediffDef>
+        
+        <hediffClass>HediffWithComps</hediffClass>
+
+        <defName>lotr_HediffFlowerOfBlood</defName>
+        <label>flower of blood vitality</label>
+        <description>Enhanced regeneration and resilience granted by the Flower of Blood.</description>
+        <isBad>false</isBad>
+        
+        <stages>
+            <li>
+                <statFactors>
+                    <InjuryHealingFactor>10</InjuryHealingFactor>
+                    <IncomingDamageFactor>0.2</IncomingDamageFactor>
+                </statFactors>
+            </li>
+        </stages>
+    
+    </HediffDef>
+</Defs>

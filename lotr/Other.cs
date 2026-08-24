@@ -12,7 +12,7 @@ using RimWorld;
 using UnityEngine;
 
 namespace lotr {
-    // все используемые def'ы
+    // полезные def'ы
     [DefOf]
     public static class LotrDefOf {
         public static ThingDef Proj_BlazingSpear;
@@ -23,18 +23,20 @@ namespace lotr {
         public static ThingDef lotr_FireLightSpawner;
         public static HediffDef lotr_SanityLoss;
 
-        public static lotr.BeyonderHediffDef Hunter9_Hediff;
-        public static lotr.BeyonderHediffDef Hunter8_Hediff;
-        public static lotr.BeyonderHediffDef Hunter7_Hediff;
-        public static lotr.BeyonderHediffDef Hunter6_Hediff;
-        public static lotr.BeyonderHediffDef Hunter5_Hediff;
-        public static lotr.BeyonderHediffDef Hunter4_Hediff;
+        public static BeyonderHediffDef Hunter9_Hediff;
+        public static BeyonderHediffDef Hunter8_Hediff;
+        public static BeyonderHediffDef Hunter7_Hediff;
+        public static BeyonderHediffDef Hunter6_Hediff;
+        public static BeyonderHediffDef Hunter5_Hediff;
+        public static BeyonderHediffDef Hunter4_Hediff;
 
         public static JobDef lotr_CogitationJob; // TODO: когитацию надо скрывать, если пешка не умеет её делать
 
         public static NeedDef lotr_SpiritualityNeed;
         public static PawnKindDef lotr_Spirit;
         public static GameConditionDef BloodMoon;
+
+        public static StatDef SpiritualityOffset;
     }
 
     [StaticConstructorOnStartup]
@@ -42,16 +44,14 @@ namespace lotr {
         static ModStartup() {
             // событие - первая встреча с какой то тайной организацией
             LongEventHandler.QueueLongEvent(() => {
-                if (Current.Game != null &&
-                    !Current.Game.components.OfType<GameComponent_FirstMeeting>().Any()) {
+                if (Current.Game != null && !Current.Game.components.OfType<GameComponent_FirstMeeting>().Any()) {
                     Current.Game.components.Add(new GameComponent_FirstMeeting(Current.Game));
                 }
             }, "lotr_AddFirstMeeting", false, null);
 
             // событие - торговцы из дружественной тайной организации
             LongEventHandler.QueueLongEvent(() => {
-                if (Current.Game != null &&
-                    !Current.Game.components.OfType<GameComponent_MysteryEvent>().Any()) {
+                if (Current.Game != null && !Current.Game.components.OfType<GameComponent_MysteryEvent>().Any()) {
                     Current.Game.components.Add(new GameComponent_MysteryEvent(Current.Game));
                 }
             }, "lotr_AddMysteryEvent", false, null);
@@ -61,6 +61,12 @@ namespace lotr {
                 if (Current.Game != null && !Current.Game.components.OfType<GameComponent_PeaceOffer>().Any())
                     Current.Game.components.Add(new GameComponent_PeaceOffer(Current.Game));
             }, "lotr_AddPeaceOffer", false, null);
+
+            // обработчик событий появления на глобальной карте потусторонних существ
+            LongEventHandler.QueueLongEvent(() => {
+                if (Current.Game != null && !Current.Game.components.OfType<GameComponent_LotrPathEvents>().Any())
+                    Current.Game.components.Add(new GameComponent_LotrPathEvents(Current.Game));
+            }, "lotr_AddPathEvents", false, null);
         }
     }
 
@@ -128,6 +134,73 @@ namespace lotr {
         }
     }
 
+    // Лечит одну случайную болезнь и добавляет регенерацию
+    public class IngestionOutcomeDoer_HealingPotion : IngestionOutcomeDoer {
+        public HediffDef regenerationHediff;
+
+        protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount) {
+            if (pawn == null || pawn.health == null)
+                return;
+
+            // Добавляем ускоренную регенерацию
+            if (regenerationHediff != null)
+                pawn.health.AddHediff(regenerationHediff);
+
+            // Лечим одну случайную болезнь
+            CureRandomDisease(pawn);
+        }
+
+        private void CureRandomDisease(Pawn pawn) {
+            List<Hediff> diseases = new List<Hediff>();
+            foreach (Hediff hediff in pawn.health.hediffSet.hediffs) {
+                if (IsDisease(hediff))
+                    diseases.Add(hediff);
+            }
+
+            if (diseases.Count > 0) {
+                Hediff toCure = diseases.RandomElement();
+                pawn.health.RemoveHediff(toCure);
+                Messages.Message("DiseaseCured".Translate(pawn.LabelShort, toCure.LabelCap),
+                    pawn, MessageTypeDefOf.PositiveEvent, true);
+            }
+        }
+
+        private bool IsDisease(Hediff hediff) {
+            return hediff.def.HasComp(typeof(HediffCompProperties_Immunizable))
+                || hediff.def.HasComp(typeof(HediffCompProperties_TendDuration));
+        }
+    }
+
+    // Удаляет все негативные мысли и снижает SanityLoss
+    public class IngestionOutcomeDoer_CalmingPotion : IngestionOutcomeDoer {
+        public float sanityLossReduction = 0.5f;
+
+        protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount) {
+            if (pawn == null)
+                return;
+
+            // Снимаем 0.5 потери контроля (SanityLoss)
+            if (BeyonderUtility.IsBeyonder(pawn))
+                BeyonderUtility.AdjustSanityLoss(pawn, -sanityLossReduction, "Calming");
+
+            // Убираем все плохие мысли
+            RemoveNegativeThoughts(pawn);
+        }
+
+        private void RemoveNegativeThoughts(Pawn pawn) {
+            var memories = pawn.needs?.mood?.thoughts?.memories?.Memories;
+            if (memories == null)
+                return;
+
+            // Проходим с конца, чтобы безопасно удалять
+            for (int i = memories.Count - 1; i >= 0; i--) {
+                if (memories[i].MoodOffset() < 0) {
+                    pawn.needs.mood.thoughts.memories.RemoveMemory(memories[i]);
+                }
+            }
+        }
+    }
+
     public class SummonedWeaponExtension : DefModExtension {
         public ThingDef weaponDef;
         public int lifespan;
@@ -185,6 +258,21 @@ namespace lotr {
 
         public static void CleanUp(Pawn pawn) {
             puppeteers.Remove(pawn);
+        }
+    }
+
+    public class HediffWithPercents : HediffWithComps {
+        public override string SeverityLabel {
+            get {
+                string baseLabel = base.SeverityLabel;
+                string percent = (this.Severity).ToStringPercent();
+
+                if (!baseLabel.NullOrEmpty()) {
+                    return $"{baseLabel} ({percent})";
+                }
+
+                return percent;
+            }
         }
     }
 }

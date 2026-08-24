@@ -10,7 +10,7 @@
         <description>Увеличиват силу всех союзных пешек вокруг рыцаря.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_IronBloodArmy</iconPath>
 
-        <aiCanUse>true</aiCanUse>
+        <aiCanUse>false</aiCanUse> <!-- TODO? -->
         <ai_IsOffensive>false</ai_IsOffensive>
         <ai_IsIncendiary>false</ai_IsIncendiary>
         <targetRequired>true</targetRequired>
@@ -41,6 +41,7 @@
         <defName>Cast_IronBloodArmy_4S</defName>
         <label>Огненная кровь</label>
         <cooldownTicksRange>1800</cooldownTicksRange>
+        <spiritualityCost>300.0</spiritualityCost>
         <comps>
             <li Class="lotr.CompProperties_GiveHediffArea">
                 <hediffDef>Hediff_IronBlood_4S</hediffDef>
@@ -49,7 +50,7 @@
             </li>
         </comps>
         <verbProperties>
-            <warmupTime>5.0</warmupTime>
+            <warmupTime>2.0</warmupTime>
             <range>0</range>
         </verbProperties>
     </AbilityDef>

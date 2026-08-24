@@ -10,7 +10,7 @@
 		<sequence>6</sequence>
 		<pathway>Hunter</pathway>
 
-		<spiritualityOffset>6</spiritualityOffset>
+		<spiritualityOffset>3</spiritualityOffset>
 
 		<description>This person became 6 sequence beyonder - conspirator</description>
 		<defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
@@ -26,21 +26,21 @@
 				<label>лох</label>
 
                 <statFactors>
-					<IncomingDamageFactor>0.50</IncomingDamageFactor> 
+					<IncomingDamageFactor>0.95</IncomingDamageFactor> 
                     <Flammability>0.1</Flammability>
 				</statFactors>
 
 				<statOffsets>
-                    <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
-                    <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
-                    <ArmorRating_Heat>1.00</ArmorRating_Heat>
+                    <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+                    <ArmorRating_Heat>0.20</ArmorRating_Heat>
 
-					<MeleeHitChance>12</MeleeHitChance>
-					<MeleeDodgeChance>12</MeleeDodgeChance>
-					<ShootingAccuracyPawn>12</ShootingAccuracyPawn>
+					<MeleeHitChance>2</MeleeHitChance>
+					<MeleeDodgeChance>2</MeleeDodgeChance>
+					<ShootingAccuracyPawn>2</ShootingAccuracyPawn>
 
-					<GeneralLaborSpeed>0.50</GeneralLaborSpeed>
-                    <InjuryHealingFactor>1.5</InjuryHealingFactor>
+					<GeneralLaborSpeed>0.10</GeneralLaborSpeed>
+                    <InjuryHealingFactor>0.5</InjuryHealingFactor>
 
                     <SocialImpact>0.40</SocialImpact>
                     <TradePriceImprovement>0.15</TradePriceImprovement>
@@ -81,21 +81,21 @@
 				<label>нормик</label>
 
                 <statFactors>
-					<IncomingDamageFactor>0.40</IncomingDamageFactor> 
-                    <Flammability>0.1</Flammability>
+					<IncomingDamageFactor>0.90</IncomingDamageFactor> 
+                    <Flammability>0.2</Flammability>
 				</statFactors>
 
 				<statOffsets>
-                    <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
-                    <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
-                    <ArmorRating_Heat>1.20</ArmorRating_Heat>
+                    <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+                    <ArmorRating_Heat>0.50</ArmorRating_Heat>
 
-					<MeleeHitChance>15</MeleeHitChance>
-					<MeleeDodgeChance>15</MeleeDodgeChance>
-					<ShootingAccuracyPawn>15</ShootingAccuracyPawn>
+					<MeleeHitChance>4</MeleeHitChance>
+					<MeleeDodgeChance>4</MeleeDodgeChance>
+					<ShootingAccuracyPawn>4</ShootingAccuracyPawn>
 
-					<GeneralLaborSpeed>0.60</GeneralLaborSpeed>
-                    <InjuryHealingFactor>1.8</InjuryHealingFactor>
+					<GeneralLaborSpeed>0.20</GeneralLaborSpeed>
+                    <InjuryHealingFactor>0.8</InjuryHealingFactor>
 
                     <SocialImpact>0.50</SocialImpact>
                     <TradePriceImprovement>0.30</TradePriceImprovement>
@@ -110,15 +110,15 @@
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
-						<offset>0.80</offset>
+						<offset>0.20</offset>
 					</li>
 					<li>
 						<capacity>Sight</capacity>
-						<offset>0.80</offset>
+						<offset>0.30</offset>
 					</li>
 					<li>
 						<capacity>BloodPumping</capacity>
-						<offset>0.60</offset> 
+						<offset>0.20</offset> 
 					</li>
                     <li>
                         <capacity>Talking</capacity>
@@ -136,21 +136,21 @@
 				<label>смешарик</label>
 
                 <statFactors>
-					<IncomingDamageFactor>0.40</IncomingDamageFactor> 
+					<IncomingDamageFactor>0.85</IncomingDamageFactor> 
                     <Flammability>0.1</Flammability>
 				</statFactors>
 
 				<statOffsets>
                     <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
                     <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
-                    <ArmorRating_Heat>1.50</ArmorRating_Heat>
+                    <ArmorRating_Heat>1.0</ArmorRating_Heat>
 
-					<MeleeHitChance>16</MeleeHitChance>
-					<MeleeDodgeChance>16</MeleeDodgeChance>
-					<ShootingAccuracyPawn>16</ShootingAccuracyPawn>
+					<MeleeHitChance>6</MeleeHitChance>
+					<MeleeDodgeChance>6</MeleeDodgeChance>
+					<ShootingAccuracyPawn>6</ShootingAccuracyPawn>
 
-					<GeneralLaborSpeed>0.80</GeneralLaborSpeed>
-                    <InjuryHealingFactor>2.0</InjuryHealingFactor>
+					<GeneralLaborSpeed>0.40</GeneralLaborSpeed>
+                    <InjuryHealingFactor>1.0</InjuryHealingFactor>
 
                     <SocialImpact>0.60</SocialImpact>
                     <TradePriceImprovement>0.40</TradePriceImprovement>
@@ -165,15 +165,15 @@
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
-						<offset>0.80</offset>
+						<offset>0.20</offset>
 					</li>
 					<li>
 						<capacity>Sight</capacity>
-						<offset>0.80</offset>
+						<offset>0.30</offset>
 					</li>
 					<li>
 						<capacity>BloodPumping</capacity>
-						<offset>0.60</offset> 
+						<offset>0.20</offset> 
 					</li>
                     <li>
                         <capacity>Talking</capacity>

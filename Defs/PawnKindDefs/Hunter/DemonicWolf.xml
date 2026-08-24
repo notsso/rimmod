@@ -27,10 +27,12 @@
             <InjuryHealingFactor>3.0</InjuryHealingFactor>
             <MeleeHitChance>20</MeleeHitChance>
             <MeleeDodgeChance>20</MeleeDodgeChance>
+
+            <SpiritualityOffset>10</SpiritualityOffset>
         </statBases>
 
         <race>
-            <thinkTreeMain>Animal</thinkTreeMain> <!-- lotr_DemonicWolfTree -->
+            <thinkTreeMain>Animal</thinkTreeMain>
             <body>QuadrupedAnimalWithPawsAndTail</body>
             <baseHungerRate>0.01</baseHungerRate>
             <baseBodySize>4.0</baseBodySize>
@@ -169,6 +171,12 @@
         <combatPower>1000</combatPower>
         <ecoSystemWeight>1.0</ecoSystemWeight>
         
+        <abilities>
+            <li>Cast_Execution_5S</li>
+            <li>Cast_BlazingSpear_6S</li>
+            <li>Cast_Incite_6S</li>
+        </abilities>
+
         <lifeStages>
             <li>
                 <bodyGraphicData>
