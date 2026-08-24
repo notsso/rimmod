@@ -10,6 +10,7 @@ using Verse.AI;
 using RimWorld;
 
 using UnityEngine;
+using System.Drawing;
 
 namespace lotr {
     // определение для способности, которая тратит духовность
@@ -72,11 +73,11 @@ namespace lotr {
         public bool showFleck = true;
 
         public CompProperties_AbilityGiveHediff() {
-            compClass = typeof(CompAbilityEffect_GiveHediff);
+            compClass = typeof(CompAbilityEffect_AbilityGiveHediff);
         }
     }
 
-    public class CompAbilityEffect_GiveHediff : CompAbilityEffect {
+    public class CompAbilityEffect_AbilityGiveHediff : CompAbilityEffect {
         
         public new CompProperties_AbilityGiveHediff Props => (CompProperties_AbilityGiveHediff)props;
 
@@ -94,6 +95,11 @@ namespace lotr {
             targetPawn.health.AddHediff(hediff);
 
             if (Props.showFleck) FleckMaker.Static(targetPawn.Position, targetPawn.Map, FleckDefOf.MicroSparks, 1.5f);
+
+            if (hediff is lotr.Hediff_Trackable hediffT) {
+                hediffT.Instigator = parent.pawn;
+            }
+
         }
     }
     
@@ -124,8 +130,11 @@ namespace lotr {
             float radius = Props.radius;
             IntVec3 center = target.Cell;
 
-            IReadOnlyList<Pawn> pawns = map.mapPawns.AllPawnsSpawned;
-            foreach (Pawn pawn in pawns) {
+            IReadOnlyList<Pawn> pawns = Utility.GetPawnsInRadius(caster, Props.radius);
+
+            for (int i = 0; i < pawns.Count; ++i) {
+                Pawn pawn = pawns[i];
+
                 if (pawn == null || pawn.Dead) continue;
                 if (pawn.Position.DistanceToSquared(center) > radius * radius) continue;
 
@@ -138,14 +147,28 @@ namespace lotr {
                 FleckMaker.Static(pawn.Position, pawn.Map, FleckDefOf.MicroSparks, 1.5f);
 
                 if (pawn.health.hediffSet.HasHediff(Props.hediffDef) && Props.severity != 0f) {
+
                     pawn.health.hediffSet.TryGetHediff(Props.hediffDef, out Hediff hediff);
                     hediff.Severity += Props.severity;
+
+                    if (hediff is lotr.Hediff_Trackable hediffT) {
+                        hediffT.Instigator = caster;
+                    }
+
                 } else {
+                    
                     Hediff hediff = HediffMaker.MakeHediff(Props.hediffDef, pawn);
                     if (Props.severity != 0f) hediff.Severity = Props.severity;
                     pawn.health.AddHediff(hediff);
+
+                    if (hediff is lotr.Hediff_Trackable hediffT) {
+                        hediffT.Instigator = caster;
+                    }
+
                 }
+
             }
+
         }
     }
 

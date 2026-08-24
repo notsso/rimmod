@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
     <HediffDef Name="SunsetLightDebuff">
 
         <defName>SunsetLightDebuff</defName>
@@ -70,7 +71,7 @@
 
     </HediffDef>
 
-    <HediffDef Name="Hediff_SunsetLightArmor">
+    <HediffDef Name="Hediff_SunsetLightArmor" Abstract="true">
 
         <defName>Hediff_SunsetLightArmor</defName>
         <label>sunset armor</label>
@@ -98,7 +99,7 @@
         
         <stages>
             <li>
-                <label>armor</label>
+                <label>active</label>
                 <minSeverity>0</minSeverity>
                 
                 <statOffsets>
@@ -118,7 +119,7 @@
         
         <stages>
             <li>
-                <label>armor</label>
+                <label>active</label>
                 <minSeverity>0</minSeverity>
                 
                 <statOffsets>
@@ -138,7 +139,7 @@
         
         <stages>
             <li>
-                <label>armor</label>
+                <label>active</label>
                 <minSeverity>0</minSeverity>
                 
                 <statOffsets>
@@ -147,6 +148,128 @@
                     <ArmorRating_Heat>2</ArmorRating_Heat>
                     <IncomingDamageFactor>-0.3</IncomingDamageFactor>
                 </statOffsets>
+            </li>
+        </stages>
+
+    </HediffDef>
+
+    <HediffDef Name="Hediff_SunsetHurricane" Abstract="true">
+        <defName>Hediff_SunsetHurricane</defName>
+        <label>sunset hurricane</label>
+        <description>Sunset shards hurt enemies around this pawn.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+
+        <initialSeverity>1</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<minSeverity>0</minSeverity>
+
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-144</severityPerDay>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <HediffDef ParentName="Hediff_SunsetHurricane">
+
+        <defName>Hediff_SunsetHurricane_6S</defName>
+
+        <comps>
+            <li Class="lotr.HediffCompProperties_DamageAura">
+                <radius>3.9</radius>
+                <damageDef>lotr_Light</damageDef>
+                <damageAmount>5</damageAmount>
+                <tickInterval>60</tickInterval>
+            </li>
+        </comps>
+    
+    </HediffDef>
+
+    <HediffDef ParentName="Hediff_SunsetHurricane">
+
+        <defName>Hediff_SunsetHurricane_5S</defName>
+
+        <comps>
+            <li Class="lotr.HediffCompProperties_DamageAura">
+                <radius>4.9</radius>
+                <damageDef>lotr_Light</damageDef>
+                <damageAmount>7</damageAmount>
+                <tickInterval>50</tickInterval>
+            </li>
+        </comps>
+    
+    </HediffDef>
+
+    <HediffDef ParentName="Hediff_SunsetHurricane">
+
+        <defName>Hediff_SunsetHurricane_4S</defName>
+
+        <comps>
+            <li Class="lotr.HediffCompProperties_DamageAura">
+                <radius>15.9</radius>
+                <damageDef>lotr_Light</damageDef>
+                <damageAmount>10</damageAmount>
+                <tickInterval>30</tickInterval>
+            </li>
+        </comps>
+    
+    </HediffDef>
+
+    <HediffDef Name="Hediff_Guard" Abstract="True">
+
+        <defName>Hediff_Guard</defName>
+        <label>guard</label>
+        <description>This pawn is guarding nearby pawns.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+
+		<tendable>false</tendable>
+
+        <initialSeverity>1</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<minSeverity>0</minSeverity>
+
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-144</severityPerDay>
+            </li>
+        </comps>
+
+    </HediffDef>
+
+    <HediffDef ParentName="Hediff_Guard">
+
+        <defName>Hediff_Guard_5S</defName>
+
+        <stages>
+            <li>
+                <label>active</label>
+                <minSeverity>0</minSeverity>
+
+                <statFactors>
+                    <ArmorRating_Blunt>1.2</ArmorRating_Blunt>
+                    <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
+                    <ArmorRating_Heat>1.3</ArmorRating_Heat>
+                </statFactors>
+            </li>
+        </stages>
+
+    </HediffDef>
+
+    <HediffDef ParentName="Hediff_Guard">
+
+        <defName>Hediff_Guard_4S</defName>
+
+        <stages>
+            <li>
+                <label>active</label>
+                <minSeverity>0</minSeverity>
+
+                <statFactors>
+                    <ArmorRating_Blunt>1.4</ArmorRating_Blunt>
+                    <ArmorRating_Sharp>1.4</ArmorRating_Sharp>
+                    <ArmorRating_Heat>1.5</ArmorRating_Heat>
+                </statFactors>
             </li>
         </stages>
 
