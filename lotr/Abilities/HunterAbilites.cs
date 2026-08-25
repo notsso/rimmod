@@ -12,6 +12,7 @@ using RimWorld;
 using UnityEngine;
 
 namespace lotr {
+    // способность hunter4 (рыцарь): Огненный шторм
     public class Firestorm : Tornado {
         private int ticksToNextFlame = 0;
         public Pawn instigator;
@@ -212,6 +213,7 @@ namespace lotr {
         }
     }
 
+    // способность hunter4 (рыцарь): Огненая волна
     public class CompProperties_Firewave : CompProperties_AbilityEffect {
         public float angleDegrees = 60f;    // полный угол конуса
         public float range = 50f;
@@ -294,7 +296,6 @@ namespace lotr {
             direction.y = 0f;
             direction.Normalize();
 
-            // ВОТ ЗДЕСЬ вычисляем halfAngleRad, когда angleDegrees уже известен
             halfAngleRad = angleDegrees * 0.5f * Mathf.Deg2Rad;
         }
 
@@ -338,7 +339,7 @@ namespace lotr {
                             pawn.TakeDamage(dinfo);
                         }
 
-                        if (t is Building building && building.def.useHitPoints) {
+                        if (t.def.useHitPoints) {
                             // Наносим урон, аналогичный урону пешкам
                             DamageInfo dinfo = new DamageInfo(
                                 DamageDefOf.Crush,
@@ -346,7 +347,7 @@ namespace lotr {
                                 armorPenetration,
                                 instigator: instigator
                             );
-                            building.TakeDamage(dinfo);
+                            t.TakeDamage(dinfo);
                         }
                     }
                 }
@@ -385,15 +386,13 @@ namespace lotr {
 
     public class Mote_Firewave : Mote {
         private int lifeTicks = 0;
-        private const int MaxLifeTicks = 2; // Ровно 2 тика!
+        private const int MaxLifeTicks = 2;
 
         protected override void Tick() {
-            // Не вызываем base.Tick(), чтобы ванильная секундная логика не ломала тайминг
             if (!this.Spawned) return;
 
             lifeTicks++;
             if (lifeTicks >= MaxLifeTicks) {
-                // На второй тик объект полностью удаляется из игры
                 this.Destroy(DestroyMode.Vanish);
             }
         }
@@ -435,6 +434,7 @@ namespace lotr {
         }
     }
 
+    // способность hunter4 (рыцарь): Огненная кровь
     public class Verb_IronBloodArmy : Verb_CastAbility {
         protected override bool TryCastShot() {
             if (this.ability != null) {
@@ -466,11 +466,11 @@ namespace lotr {
         }
     }
 
+    // рандомная утилита для огненной волны
     public class ProjectileUtility {
-
         public static List<IntVec3> GetVisibleConeCells(IntVec3 origin, Vector3 direction, float maxDist, float halfAngleRad, Map map) {
             HashSet<IntVec3> cells = new HashSet<IntVec3>();
-            float angleStep = Mathf.Rad2Deg / maxDist; // примерно 1 клетка между лучами на краю
+            float angleStep = Mathf.Rad2Deg / maxDist;
             float halfAngleDeg = halfAngleRad * Mathf.Rad2Deg;
             int rayCount = Mathf.CeilToInt(2 * halfAngleDeg / angleStep);
 
@@ -517,63 +517,6 @@ namespace lotr {
 
             float halfAngleRad = angleDegrees * 0.5f * Mathf.Deg2Rad;
             return GetVisibleConeCells(origin, direction, range, halfAngleRad, map);
-        }
-    }
-
-    public class Ability_SummonWeapon : Ability_SpendSpirituality { // TODO: сделай нормально я напишу в abiblities.cs нормально
-        public Ability_SummonWeapon() : base() { }
-
-        public Ability_SummonWeapon(Pawn pawn, AbilityDef def) : base(pawn, def) { }
-
-        public override bool Activate(LocalTargetInfo target, LocalTargetInfo dest) {
-            bool result = base.Activate(target, dest);
-            if (!result) return false;
-
-            Pawn caster = this.pawn;
-            if (caster == null || caster.equipment == null) return false;
-
-            SummonedWeaponExtension ext = this.def.GetModExtension<SummonedWeaponExtension>();
-            if (ext == null || ext.weaponDef == null) {
-                Log.Warning($"Ability {this.def.defName} has no SummonedWeaponExtension or weaponDef!");
-                return false;
-            }
-
-            ThingDef weaponDef = ext.weaponDef;
-
-            // Сохраняем текущее оружие (если есть) в инвентарь или выкидываем
-            if (caster.equipment.Primary != null) {
-                ThingWithComps oldWeapon = caster.equipment.Primary;
-                caster.equipment.Remove(oldWeapon);
-                if (caster.inventory != null)
-                    caster.inventory.innerContainer.TryAdd(oldWeapon, true);
-                else
-                    caster.equipment.TryDropEquipment(oldWeapon, out var _, caster.Position);
-            }
-
-            // Создаём и экипируем новое оружие
-            SummonedFireWeapon summonedWeapon = (SummonedFireWeapon)ThingMaker.MakeThing(weaponDef);
-            summonedWeapon.ticksLeft = ext.lifespan;
-
-            caster.equipment.AddEquipment(summonedWeapon);
-
-            // Визуальные эффекты при призыве
-            OnSummon(caster);
-
-            return true;
-        }
-
-        // Виртуальный метод для эффектов при призыве
-        protected virtual void OnSummon(Pawn caster) { }
-    }
-
-    public class Ability_SummonWeaponFire : Ability_SummonWeapon {
-        public Ability_SummonWeaponFire() : base() { }
-
-        public Ability_SummonWeaponFire(Pawn pawn, AbilityDef def) : base(pawn, def) { }
-
-        protected override void OnSummon(Pawn caster) {
-            FleckMaker.Static(caster.Position, caster.Map, FleckDefOf.MicroSparks, 2.0f);
-            FleckMaker.ThrowSmoke(caster.DrawPos, caster.Map, 1.2f);
         }
     }
 
@@ -635,9 +578,10 @@ namespace lotr {
                 return;
             }
 
-            float victimPsychicSensitivity = targetPawn.GetStatValue(StatDefOf.PsychicSensitivity, true);
+            float resist = targetPawn.health.capacities.GetLevel(PawnCapacityDefOf.Consciousness);
+
             float baseSuccessChance = Props.baseSuccessChance;
-            float finalSuccessChance = baseSuccessChance * victimPsychicSensitivity;
+            float finalSuccessChance = baseSuccessChance / resist;
 
             var hediff = caster.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.Hunter8_Hediff) as Hunter8_Hediff;
             int sequence = BeyonderUtility.GetBeyonderSequence(caster);
@@ -649,20 +593,19 @@ namespace lotr {
                     if (isHunter8) {
                         float severityIncrement = 0.05f;
                         hediff.AddActingProgress(1, severityIncrement, caster);
+                        return;
                     }
                 }
-            } else {
-                if (isHunter8) {
-                    float sanityPenalty = 0.10f;
-                    BeyonderUtility.AdjustSanityLoss(caster, sanityPenalty, "Провокация провалена!");
-                }
+            }
+
+            if (isHunter8) {
+                float sanityPenalty = 0.10f;
+                BeyonderUtility.AdjustSanityLoss(caster, sanityPenalty, "Провокация провалена!");
             }
         }
 
         // Провоцирует цель - дает ей задачу на ближний бой с провокатором на 10 секунд
-        private void ProvokePawn(Pawn victim, Pawn aggressor) {
-            if (victim == null || aggressor == null) return;
-
+        private bool ProvokePawn(Pawn victim, Pawn aggressor) {
             victim.jobs.StopAll();
 
             victim.mindState.enemyTarget = aggressor;
@@ -676,6 +619,7 @@ namespace lotr {
             victim.jobs.StartJob(tauntJob, JobCondition.InterruptForced, null, false, true);
 
             MoteMaker.ThrowText(victim.DrawPos, victim.Map, "Provoked!", 3f);
+            return true;
         }
     }
 
@@ -867,15 +811,6 @@ namespace lotr {
                     FleckMaker.ThrowSmoke(building.DrawPos, building.Map, 1.5f);
                 }
             }
-
-            /*
-            // Визуальный эффект в центре
-            for (int i = 0; i < 5; i++) {
-                IntVec3 offset = new IntVec3(Rand.Range(-2, 2), 0, Rand.Range(-2, 2));
-                Vector3 pos = (center + offset).ToVector3Shifted();
-                FleckMaker.ThrowSmoke(pos, map, 0.8f);
-            }
-            */
         }
     }
 
@@ -911,50 +846,6 @@ namespace lotr {
         }
     }
 
-
-    public class CompProperties_FireTeleport : CompProperties_AbilityEffect {
-        public ThingDef projectileDef;
-        public float teleportSpeed = 50f;
-
-        public CompProperties_FireTeleport() {
-            compClass = typeof(CompAbilityEffect_FireTeleport);
-        }
-    }
-
-    public class CompAbilityEffect_FireTeleport : CompAbilityEffect {
-        public new CompProperties_FireTeleport Props => (CompProperties_FireTeleport)props;
-
-        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest) {
-            Pawn caster = parent.pawn;
-            if (caster == null || !target.Cell.IsValid) return;
-
-            Map map = caster.Map;
-            IntVec3 startPos = caster.Position;
-
-            ThingDef projectileDef = Props.projectileDef;
-            if (projectileDef == null) return;
-
-            Projectile_FireTeleport projectile = ThingMaker.MakeThing(projectileDef) as Projectile_FireTeleport;
-            if (projectile == null) return;
-
-            projectile.wasDrafted = caster.drafter.Drafted;
-            projectile.teleportPawn = caster;
-
-            projectile.Launch(
-                launcher: caster,
-                origin: startPos.ToVector3Shifted(),
-                usedTarget: target,
-                intendedTarget: target,
-                hitFlags: ProjectileHitFlags.All
-            );
-
-            caster.DeSpawn();
-
-            FleckMaker.ThrowSmoke(startPos.ToVector3(), map, 0.8f);
-            FleckMaker.Static(startPos, map, FleckDefOf.MicroSparks, 1.0f);
-        }
-    }
-
     // Способность hunter6 (conspirator): подстрекание
     public class CompProperties_AbilityIncite : CompProperties_AbilityEffect {
         public float baseSuccessChance = 0.75f;
@@ -977,8 +868,8 @@ namespace lotr {
             if (!Props.affectAllies && targetPawn.Faction == parent.pawn.Faction)
                 return;
 
-            float psychicSensitivity = targetPawn.GetStatValue(StatDefOf.PsychicSensitivity, true);
-            float finalChance = Props.baseSuccessChance * psychicSensitivity;
+            float resist = targetPawn.health.capacities.GetLevel(PawnCapacityDefOf.Consciousness);
+            float finalChance = Props.baseSuccessChance / resist;
 
             if (Rand.Chance(finalChance)) {
                 Patch_RecordBerserkCaster.CurrentCaster = caster;

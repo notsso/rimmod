@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_BlazingSword">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_BlazingSword"  Abstract="True">
         
-        <abilityClass>lotr.Ability_SummonWeapon</abilityClass>
+        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         
         <defName>Cast_BlazingSword</defName>
         <label>призыв пламенного клинка</label>
@@ -41,12 +41,12 @@
         <label>призыв пламенного клинка</label>
         <cooldownTicksRange>7200</cooldownTicksRange>
         <spiritualityCost>50.0</spiritualityCost>
-        <modExtensions>
-            <li Class="lotr.SummonedWeaponExtension">
+        <comps>
+            <li Class="lotr.CompProperties_SummonWeapon">
                 <weaponDef>Melee_BlazingSword_7S</weaponDef>
                 <lifespan>3600</lifespan>
             </li>
-        </modExtensions>
+        </comps>
         <verbProperties>
             <warmupTime>2.0</warmupTime>
         </verbProperties>
@@ -58,12 +58,12 @@
         <label>призыв пламенного клинка</label>
         <cooldownTicksRange>3600</cooldownTicksRange>
         <spiritualityCost>100.0</spiritualityCost>
-        <modExtensions>
-            <li Class="lotr.SummonedWeaponExtension">
+        <comps>
+            <li Class="lotr.CompProperties_SummonWeapon">
                 <weaponDef>Melee_BlazingSword_6S</weaponDef>
                 <lifespan>7200</lifespan>
             </li>
-        </modExtensions>
+        </comps>
         <verbProperties>
             <warmupTime>1.0</warmupTime>
         </verbProperties>
@@ -75,12 +75,12 @@
         <label>призыв пламенного клинка</label>
         <cooldownTicksRange>1800</cooldownTicksRange>
         <spiritualityCost>150.0</spiritualityCost>
-        <modExtensions>
-            <li Class="lotr.SummonedWeaponExtension">
+        <comps>
+            <li Class="lotr.CompProperties_SummonWeapon">
                 <weaponDef>Melee_BlazingSword_5S</weaponDef>
                 <lifespan>9000</lifespan>
             </li>
-        </modExtensions>
+        </comps>
         <verbProperties>
             <warmupTime>0.5</warmupTime>
         </verbProperties>
@@ -92,12 +92,12 @@
         <label>призыв пламенного клинка</label>
         <cooldownTicksRange>600</cooldownTicksRange>
         <spiritualityCost>300.0</spiritualityCost>
-        <modExtensions>
-            <li Class="lotr.SummonedWeaponExtension">
+        <comps>
+            <li Class="lotr.CompProperties_SummonWeapon">
                 <weaponDef>Melee_BlazingSword_4S</weaponDef>
                 <lifespan>18000</lifespan>
             </li>
-        </modExtensions>
+        </comps>
         <verbProperties>
             <warmupTime>0.1</warmupTime>
         </verbProperties>

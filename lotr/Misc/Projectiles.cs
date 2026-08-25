@@ -28,8 +28,6 @@ namespace lotr {
         public new ThingDef EquipmentDef => equipmentDef;
         protected List<ProjectileEffect> effects = new List<ProjectileEffect>();
 
-        // public Hediff_ReaperState linkedReaperState = null;
-        // public bool ReaperChargeUsed { get; set; } = false;
         public float currentDamageMultiplier = 1f;
         public float customArmorPenetration = -1f;
 
@@ -72,26 +70,7 @@ namespace lotr {
             OnLaunch();
         }
 
-        protected virtual void GatherEffects() {
-            // для всех снарядов добавляем проверку на ReaperStrike
-            /*
-            if (launcher is Pawn pawn && pawn.health?.hediffSet != null) {
-                Hediff_ReaperState reaperHediff = null;
-                foreach (var h in pawn.health.hediffSet.hediffs) {
-                    if (h is Hediff_ReaperState hr) {
-                        reaperHediff = hr;
-                        break;
-                    }
-                }
-
-                if (reaperHediff != null && !reaperHediff.isExpended && !reaperHediff.isReserved) {
-                    this.linkedReaperState = reaperHediff;
-                    reaperHediff.isReserved = true;
-                    effects.Add(new Effect_ReaperStrike());
-                    effects.Add(new Effect_ReaperVisuals());
-                }
-            } */
-        }
+        protected virtual void GatherEffects() { }
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false) {
             try {
@@ -312,12 +291,11 @@ namespace lotr {
 
     public class Effect_ApplyHediff : ProjectileEffect {
         public HediffDef hediff;
-        public float severity;
+        public float basicSeverity;
         public delegate bool Condition(Projectile_Base proj, Thing hit);
         public Condition condition;
 
         public override void ApplyAfterShield(Projectile_Base projectile, Thing hitThing) {
-
             if (condition != null && !condition(projectile, hitThing)) {
                 return;
             }
@@ -331,41 +309,33 @@ namespace lotr {
                 return;
             }
 
-            Hediff heatstroke = hitPawn.health.hediffSet.GetFirstHediffOfDef(hediff);
-
-            if (heatstroke != null) {
-                heatstroke.Severity += severity;
-            } else {
-                hitPawn.health.AddHediff(hediff);
-                Hediff newHeatstroke = hitPawn.health.hediffSet.GetFirstHediffOfDef(hediff);
-                if (newHeatstroke != null) {
-                    newHeatstroke.Severity = severity;
-                }
-            }
+            Utility.AddOrAdjustHediff(hitPawn, hediff, basicSeverity);
         }
     }
 
-    public class Effect_TeleportPawn : ProjectileEffect {
-        public Pawn pawn;
-        public bool wasDrafted;
+    public class Effect_ApplyHeatstroke : ProjectileEffect {
+        public HediffDef hediff = HediffDefOf.Heatstroke;
+        public float basicSeverity;
+        public delegate bool Condition(Projectile_Base proj, Thing hit);
+        public Condition condition;
 
-        public override bool ApplyBeforeShield(Projectile_Base projectile, Thing hitThing) {
-            if (pawn != null && projectile.Spawned) {
-                IntVec3 spawnPos = projectile.Position;
-                if (!spawnPos.Walkable(projectile.Map) || spawnPos.Fogged(projectile.Map))
-                    spawnPos = CellFinder.RandomClosewalkCellNear(projectile.Position, projectile.Map, 3);
-
-                GenSpawn.Spawn(pawn, spawnPos, projectile.Map);
-
-                // drafter может отсутствовать у животных или врагов
-                if (pawn.drafter != null)
-                    pawn.drafter.Drafted = wasDrafted;
-
-                FleckMaker.ThrowSmoke(projectile.ExactPosition, projectile.Map, 0.8f);
-                FleckMaker.Static(projectile.ExactPosition, projectile.Map, FleckDefOf.MicroSparks, 1.0f);
-                pawn = null;
+        public override void ApplyAfterShield(Projectile_Base projectile, Thing hitThing) {
+            if (condition != null && !condition(projectile, hitThing)) {
+                return;
             }
-            return true;
+
+            Pawn hitPawn = hitThing as Pawn;
+            if (hitPawn == null) {
+                return;
+            }
+
+            if (hitPawn.Dead) {
+                return;
+            }
+
+            float finalSeveiry = basicSeverity / (hitPawn.RaceProps.baseBodySize * hitPawn.GetStatValue(StatDefOf.ArmorRating_Heat));
+
+            Utility.AddOrAdjustHediff(hitPawn, hediff, finalSeveiry);
         }
     }
 
@@ -449,9 +419,8 @@ namespace lotr {
             // Дополнительный порез
             effects.Add(new Effect_DirectDamage { damageDef = DamageDefOf.Cut });
             // Тепловой удар
-            effects.Add(new Effect_ApplyHediff {
-                hediff = HediffDefOf.Heatstroke,
-                severity = 0.25f,
+            effects.Add(new Effect_ApplyHeatstroke {
+                basicSeverity = 0.25f,
                 condition = (proj, hit) => hit is Pawn p && p.RaceProps.FleshType == FleshTypeDefOf.Normal
             });
         }
@@ -465,20 +434,6 @@ namespace lotr {
             effects.Add(new Effect_ReaperVisuals());
             effects.Add(new Effect_ReaperStrike());
             effects.Add(new Effect_DirectDamage { damageDef = DamageDefOf.Burn });
-        }
-    }
-
-    // Класс для описания снаряда способности "огненное слияние/телепорт"
-    public class Projectile_FireTeleport : Projectile_Fire {
-        public Pawn teleportPawn;
-        public bool wasDrafted;
-
-        protected override void GatherEffects() {
-            base.GatherEffects();
-            effects.Add(new Effect_TeleportPawn {
-                pawn = teleportPawn,
-                wasDrafted = wasDrafted
-            });
         }
     }
 
