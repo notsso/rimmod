@@ -99,37 +99,43 @@ namespace lotr {
         public float severity;
 
         protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount) {
-            if (pawn == null) return;
-
-            Pathway pawn_pathway = BeyonderUtility.GetBeyonderPathway(pawn);
-            int pawn_sequence = BeyonderUtility.GetBeyonderSequence(pawn);
+            if (pawn == null || hediffToGive == null) return;
 
             BeyonderHediffDef new_hediff = (BeyonderHediffDef)hediffToGive;
-            Pathway new_hediff_pathway = BeyonderUtility.GetPathwayFromString(new_hediff.pathway);
 
-            bool flag1 = false;
-            foreach (Pathway path in BeyonderUtility.GetCorrespondingPathways(pawn_pathway)) {
-                if (path == new_hediff_pathway) {
-                    flag1 = true;
-                }
+            string reason;
+            bool canAdvance = BeyonderUtility.CanAdvance(pawn, new_hediff, out reason);
+
+            // выдаем hediff заранее, чтобы не потерять его черту в случае провала
+            Hediff newHediff = HediffMaker.MakeHediff(hediffToGive, pawn);
+            newHediff.Severity = severity;
+            pawn.health.AddHediff(newHediff);
+            BeyonderUtility.UpdateAbilities(pawn);
+
+            // В зависимости от настроения пешки, даем ей потерю контроля.
+            /*
+            Need_Joy joy = pawn.needs.TryGetNeed<Need_Joy>();
+            int joyCategory = (int)joy.CurCategory;
+            Log.Message(joyCategory);
+            if (joyCategory != (int)JoyCategory.Satisfied) {
+                int diff = joyCategory - ((int)JoyCategory.Satisfied);
+                Log.Message(diff);
+                BeyonderUtility.AdjustSanityLoss(pawn, diff * 0.15f);
+            }*/
+
+            // если во время продвижения, у нас была большая потеря контроля
+            if (pawn.health.hediffSet.GetFirstHediff<Hediff_SanityLoss>().Severity >= 0.8f) {
+                BeyonderUtility.ControlLoss(pawn);
+                Messages.Message($"{pawn.LabelShort} transformed into monster! Cause: sanity issue.", TargetInfo.Invalid, MessageTypeDefOf.NegativeEvent);
+                return;
             }
 
-            if (flag1 && new_hediff.sequence >= pawn_sequence - 1) { // TODO: проверить уровень усвоения
-
-                // И добавляем новый
-                Hediff newHediff = HediffMaker.MakeHediff(hediffToGive, pawn);
-                newHediff.Severity = severity;
-                pawn.health.AddHediff(newHediff);
-
-                BeyonderUtility.UpdateAbilities(pawn);
-
-                // Сообщение игроку
-                Messages.Message($"{pawn.LabelShort} успешно продвинулся.", pawn, MessageTypeDefOf.PositiveEvent);
+            if (canAdvance) {
+                Messages.Message($"{pawn.LabelShort} advanced successfully!", pawn, MessageTypeDefOf.PositiveEvent);
             } else {
                 pawn.Kill(null);
 
-                // Сообщение о смерти
-                Messages.Message($"{pawn.LabelShort} погиб, выпив зелье без подготовки!", TargetInfo.Invalid, MessageTypeDefOf.NegativeEvent);
+                Messages.Message($"{pawn.LabelShort} died. Cause: {reason}.", TargetInfo.Invalid, MessageTypeDefOf.NegativeEvent);
             }
         }
     }

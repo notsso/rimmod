@@ -116,7 +116,7 @@ namespace lotr {
                     }
                 }
             }
-            
+
             return pawn_pathway;
 
         }
@@ -186,68 +186,6 @@ namespace lotr {
             pawn.health.RemoveHediff(pawn.health.hediffSet.GetFirstHediffOfDef(LotrDefOf.lotr_SanityLoss));
         }
 
-        private static void TransformToMonster(Pawn originalPawn) {
-            if (originalPawn == null || originalPawn.Destroyed || originalPawn.Map == null) return;
-
-            Map map = originalPawn.Map;
-            IntVec3 position = originalPawn.Position;
-            Rot4 rotation = originalPawn.Rotation;
-
-            PawnKindDef monsterKind = PawnKindDef.Named("lotr_LostControlMonster");
-            if (monsterKind == null) return;
-
-            Pawn monster = PawnGenerator.GeneratePawn(monsterKind, null);
-            if (monster == null) return;
-
-            // Переносим все потусторонние Hediff'ы (копируем) монстру
-            foreach (Hediff hediff in originalPawn.health.hediffSet.hediffs.ToList()) {
-                if (hediff is Beyonder_Hediff) {
-                    Hediff monsterHediff = HediffMaker.MakeHediff(hediff.def, monster);
-                    monster.health.AddHediff(monsterHediff);
-                }
-            }
-
-            // Выдаём способности
-            UpdateAbilities(monster);
-
-            // Переносим снаряжение и инвентарь
-            TransferEquipmentAndInventory(originalPawn, monster);
-
-            // Спавним монстра
-            GenSpawn.Spawn(monster, position, map, rotation);
-
-            // Уничтожаем исходную пешку (без Kill)
-            originalPawn.Destroy(DestroyMode.Vanish);
-        }
-
-        private static void TransferEquipmentAndInventory(Pawn from, Pawn to) {
-            // оружие
-            if (from.equipment?.Primary != null && to.equipment != null) {
-                ThingWithComps weapon = from.equipment.Primary;
-                from.equipment.Remove(weapon);
-                to.equipment.AddEquipment(weapon);
-            }
-
-            // снаряжение
-            if (from.apparel != null && to.apparel != null) {
-                var apparelList = from.apparel.WornApparel.ToList();
-                foreach (Apparel apparel in apparelList) {
-                    from.apparel.Remove(apparel);
-                    to.apparel.Wear(apparel, false);
-                }
-            }
-
-            // инвентарь
-            if (from.inventory != null && to.inventory != null) {
-                var items = from.inventory.innerContainer.ToList();
-                foreach (Thing item in items) {
-                    from.inventory.innerContainer.Remove(item);
-                    if (!to.inventory.innerContainer.TryAdd(item, true))
-                        item.Destroy(DestroyMode.Vanish);
-                }
-            }
-        }
-
         public static void ExtractBeyonderEssence(Pawn pawn, Hediff hediff) {
             if (hediff.def is BeyonderHediffDef beyonderDef) {
                 string essenceName = $"lotr_{beyonderDef.defName.Split('_')[0]}_Essence";
@@ -266,7 +204,49 @@ namespace lotr {
                 pawn.health.hediffSet.hediffs.Remove(hediff);
                 pawn.health.hediffSet.DirtyCache();
                 hediff.PostRemoved();
+                UpdateAbilities(pawn);
             }
+        }
+
+        public static bool CanAdvance(Pawn pawn, BeyonderHediffDef newHediffDef, out string reason) {
+            // Log.Message("checking pawn");
+            if (pawn == null) {
+                reason = "pawn is null";
+                return false;
+            }
+
+            // проверка на нужную последовательность
+            // Log.Message("checking sequence");
+            int pawn_sequence = GetBeyonderSequence(pawn);
+            int hediff_sequence = newHediffDef.sequence;
+            // Log.Message($"pawn: {pawn_sequence}, hediff: {hediff_sequence}");
+            if (pawn_sequence - 1 > hediff_sequence) {
+                reason = "sequence is too small";
+                return false;
+            }
+
+            // проверка на соответствующий путь
+            // Log.Message("checking pathway");
+            Pathway pawn_pathway = GetBeyonderPathway(pawn);
+            Pathway new_hediff_pathway = GetPathwayFromString(newHediffDef.pathway);
+            if (!GetCorrespondingPathways(pawn_pathway).Contains<Pathway>(new_hediff_pathway)) {
+                reason = "isnt corresponding pathway";
+                return false;
+            }
+
+            // проверка на усвоение зелья (все черты)
+            // Log.Message("checking potion");
+            foreach (Hediff hediff in pawn.health.hediffSet.hediffs) {
+                if (hediff is Beyonder_Hediff beyonderHediff) {
+                    if (beyonderHediff.Severity != 1f) {
+                        reason = "didnt digested the potion";
+                        return false;
+                    }
+                }
+            }
+
+            reason = "";
+            return true;
         }
     }
 }

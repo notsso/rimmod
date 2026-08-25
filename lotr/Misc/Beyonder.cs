@@ -107,7 +107,8 @@ namespace lotr {
                 BeyonderUtility.AdjustSanityLoss(this.pawn, -0.001f, null);
             }
 
-            if (sanityLoss.Severity >= 0.90f && Rand.Chance(0.1f)) {
+            // начиная с severity >= 0.9f, чем выше, тем больше шанс потерять контроль (при 1.0f шанс 100%)
+            if (sanityLoss.Severity >= 0.90f && Rand.Chance((sanityLoss.Severity - 0.90f) * 10)) {
                 BeyonderUtility.ControlLoss(pawn);
             }
         }

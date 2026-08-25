@@ -368,16 +368,8 @@ namespace lotr {
             mote.Scale = size;
             mote.exactPosition = cell.ToVector3ShiftedWithAltitude(AltitudeLayer.MoteOverhead);
 
-            // 3. Хак времени жизни: 1 тик = 0.01666 секунды. 
-            // Заставляем мот думать, что его лимит существования — это время двух тиков.
-            mote.exactRotation = Rand.Range(0f, 360f); // Случайный поворот для разнообразия
+            mote.exactRotation = Rand.Range(0f, 360f);
 
-            // В зависимости от версии RimWorld, можно напрямую переписать внутреннее время:
-            // Мы рассчитываем длительность: 2 * 0.0166f = ~0.033 секунды
-            // Задаем очень высокую скорость деградации через его параметры, если это поддерживается,
-            // ЛИБО используем кастомный класс (см. Способ 2).
-
-            // Спавним мот в мир
             GenSpawn.Spawn(mote, cell, map, WipeMode.Vanish);
         }
 
