@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <lotr.BeyonderHediffDef Class="lotr.BeyonderHediffDef">
+    
+        <hediffClass>lotr.Assassin6_Hediff</hediffClass>
+        <defName>Assassin6_Hediff</defName>
+
+        <label>demoness of pleasure</label>
+        <sequence>6</sequence>
+        <pathway>Assassin</pathway>
+
+        <spiritualityOffset>3.5</spiritualityOffset>
+
+        <description>This person became 6 sequence beyonder - demoness of pleasure.</description>
+        <defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
+        <initialSeverity>0.01</initialSeverity>
+        <maxSeverity>1</maxSeverity>
+        <minSeverity>0</minSeverity>
+        <tendable>false</tendable>
+        <isBad>false</isBad>
+        
+        <stages>
+            <li>
+                <minSeverity>0.0</minSeverity>
+                <label>лох</label>
+
+                <statFactors>
+                    <IncomingDamageFactor>0.95</IncomingDamageFactor>
+                </statFactors>
+
+                <statOffsets>
+                    <MeleeHitChance>1</MeleeHitChance>
+                    <MeleeDodgeChance>2</MeleeDodgeChance>
+                    <SocialImpact>0.40</SocialImpact>
+                    <PsychicSensitivity>0.40</PsychicSensitivity>
+                    <MentalBreakThreshold>-0.10</MentalBreakThreshold>
+                    <ResearchSpeed>0.30</ResearchSpeed>
+                    <InjuryHealingFactor>0.2</InjuryHealingFactor>
+                    <ComfyTemperatureMin>-10.0</ComfyTemperatureMin>
+                    <ComfyTemperatureMax>10.0</ComfyTemperatureMax>
+                </statOffsets>
+
+                <capMods>
+                    <li><capacity>Moving</capacity><offset>0.10</offset></li>
+                    <li><capacity>Sight</capacity><offset>0.10</offset></li>
+                    <li><capacity>Talking</capacity><offset>0.20</offset></li>
+                    <li><capacity>Consciousness</capacity><offset>0.10</offset></li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.4</minSeverity>
+                <label>нормик</label>
+
+                <statFactors>
+                    <IncomingDamageFactor>0.90</IncomingDamageFactor>
+                </statFactors>
+
+                <statOffsets>
+                    <MeleeHitChance>2</MeleeHitChance>
+                    <MeleeDodgeChance>3</MeleeDodgeChance>
+                    <SocialImpact>0.60</SocialImpact>
+                    <PsychicSensitivity>0.60</PsychicSensitivity>
+                    <MentalBreakThreshold>-0.15</MentalBreakThreshold>
+                    <ResearchSpeed>0.50</ResearchSpeed>
+                    <InjuryHealingFactor>0.4</InjuryHealingFactor>
+                    <ComfyTemperatureMin>-15.0</ComfyTemperatureMin>
+                    <ComfyTemperatureMax>15.0</ComfyTemperatureMax>
+                </statOffsets>
+
+                <capMods>
+                    <li><capacity>Moving</capacity><offset>0.15</offset></li>
+                    <li><capacity>Sight</capacity><offset>0.15</offset></li>
+                    <li><capacity>Talking</capacity><offset>0.30</offset></li>
+                    <li><capacity>Consciousness</capacity><offset>0.15</offset></li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.8</minSeverity>
+                <label>смешарик</label>
+
+                <statFactors>
+                    <IncomingDamageFactor>0.85</IncomingDamageFactor>
+                </statFactors>
+
+                <statOffsets>
+                    <MeleeHitChance>3</MeleeHitChance>
+                    <MeleeDodgeChance>4</MeleeDodgeChance>
+                    <SocialImpact>0.80</SocialImpact>
+                    <PsychicSensitivity>0.80</PsychicSensitivity>
+                    <MentalBreakThreshold>-0.20</MentalBreakThreshold>
+                    <ResearchSpeed>0.70</ResearchSpeed>
+                    <InjuryHealingFactor>0.6</InjuryHealingFactor>
+                    <ComfyTemperatureMin>-20.0</ComfyTemperatureMin>
+                    <ComfyTemperatureMax>20.0</ComfyTemperatureMax>
+                </statOffsets>
+
+                <capMods>
+                    <li><capacity>Moving</capacity><offset>0.20</offset></li>
+                    <li><capacity>Sight</capacity><offset>0.20</offset></li>
+                    <li><capacity>Talking</capacity><offset>0.40</offset></li>
+                    <li><capacity>Consciousness</capacity><offset>0.20</offset></li>
+                </capMods>
+            </li>
+        </stages>
+    
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>0.01</severityPerDay>
+            </li>
+        </comps>
+
+        <newAbilities />
+
+    </lotr.BeyonderHediffDef>
+
+</Defs>

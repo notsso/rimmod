@@ -15,7 +15,7 @@ namespace lotr {
 
     public enum Pathway {
         No_pathway = -1,
-        Seer = 0, Apprentice, Savant, Assasin, Lawyer,
+        Seer = 0, Apprentice, Savant, Assassin, Lawyer,
         Sailor, Marauder, Hunter, Warrior, Pryer,
         Monster, Spectator, Suppliant, Collector, Prisoner,
         Criminal, Reader, Sleepless, Apothecary, Bard,
@@ -28,7 +28,7 @@ namespace lotr {
             new[] { Pathway.Seer, Pathway.Marauder, Pathway.Apprentice },                                 // Повелитель тайн
             new[] { Pathway.Spectator, Pathway.Bard, Pathway.Sailor, Pathway.Reader, Pathway.Suppliant }, // Бог Всемогущий
             new[] { Pathway.Sleepless, Pathway.Collector, Pathway.Warrior},                               // Вечная Тьма
-            new[] { Pathway.Assasin, Pathway.Hunter },                                                    // Бедствие разрушения
+            new[] { Pathway.Assassin, Pathway.Hunter },                                                    // Бедствие разрушения
             new[] { Pathway.Pryer, Pathway.Savant },                                                      // Демон знаний
             new[] { Pathway.Planter, Pathway.Apothecary },                                                // Богиня создания
             new[] { Pathway.Monster },                                                                    // Ключ света
@@ -40,7 +40,7 @@ namespace lotr {
             Pathway.Seer, Pathway.Marauder, Pathway.Apprentice,
             Pathway.Spectator, Pathway.Bard, Pathway.Sailor, Pathway.Reader, Pathway.Suppliant,
             Pathway.Sleepless, Pathway.Collector, Pathway.Warrior,
-            Pathway.Assasin, Pathway.Hunter,
+            Pathway.Assassin, Pathway.Hunter,
             Pathway.Pryer, Pathway.Savant,
             Pathway.Planter, Pathway.Apothecary,
             Pathway.Monster,

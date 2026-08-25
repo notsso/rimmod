@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using System;
 
 using HarmonyLib;
 
@@ -12,6 +11,61 @@ using RimWorld;
 using UnityEngine;
 
 namespace lotr {
+    // Последовательность 9 - Охотник
+    public class Hunter9_Hediff : Beyonder_Hediff {
+
+        public Hunter9_Hediff() {
+            // способы действия: охота
+            maxProgressPerCategory = 0.8f;
+
+            // анти-действия: быть жертвой (harmony patch)
+        }
+    }
+
+    // Последовательность 8 - Провокатор
+    public class Hunter8_Hediff : Beyonder_Hediff {
+
+        public Hunter8_Hediff() {
+            // способы действия: успешная провокация
+            maxProgressPerCategory = 0.8f;
+
+            // анти-действия: безуспешная провокация, быть оскорбленным
+        }
+    }
+
+    // Последовательность 7 - Пиромант
+    public class Hunter7_Hediff : Beyonder_Hediff {
+
+        public Hunter7_Hediff() {
+            // способы действия: контроль огня (готовка на костре), метание огня (blazing spear on enemy impact)
+            maxProgressPerCategory = 0.4f;
+
+            // анти-действия: получение урона от огня
+        }
+    }
+
+    // Последовательность 6 - Заговорщик
+    public class Hunter6_Hediff : Beyonder_Hediff {
+
+        public Hunter6_Hediff() {
+            // способы действия: Заговоры (враги дерутся сами с собой)
+            maxProgressPerCategory = 0.8f;
+
+            // анти-действия: Использование грубой силы (blazing spear)
+        }
+    }
+
+    // Последовательность 5 - Жнец
+    public class Hunter5_Hediff : Beyonder_Hediff {
+
+        public Hunter5_Hediff() {
+            // способы действия: Быстрые убийства (казнь)
+            maxProgressPerCategory = 0.8f;
+
+            // анти-действия: Затяжные битвы (казнь провалилась)
+        }
+    }
+
     // Последовательность 4 - Железнокровный рыцарь
     public class Hunter4_Hediff : Beyonder_Hediff {
         public Hunter4_Hediff() {
@@ -96,5 +150,4 @@ namespace lotr {
         public override float BleedRate => 0f;
         public override float PainOffset => 0f;
     }
-
 }

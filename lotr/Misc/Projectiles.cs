@@ -333,7 +333,7 @@ namespace lotr {
                 return;
             }
 
-            float finalSeveiry = basicSeverity / (hitPawn.RaceProps.baseBodySize * hitPawn.GetStatValue(StatDefOf.ArmorRating_Heat));
+            float finalSeveiry = basicSeverity / (hitPawn.RaceProps.baseBodySize * (1 + hitPawn.GetStatValue(StatDefOf.ArmorRating_Heat)));
 
             Utility.AddOrAdjustHediff(hitPawn, hediff, finalSeveiry);
         }

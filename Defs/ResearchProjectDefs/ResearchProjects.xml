@@ -84,6 +84,20 @@
     </ResearchProjectDef>
 
     <ResearchProjectDef>
+        <defName>lotr_PathAssassin</defName>
+        <label>path of the assassin</label>
+        <description>Advanced potions for those who lurk in shadows and command the forbidden arts of seduction and suffering.</description>
+        <baseCost>1200</baseCost>
+        <techLevel>Neolithic</techLevel>
+        <tab>lotr_Mysticism</tab>
+        <prerequisites>
+            <li>lotr_PotionBrewing</li>
+        </prerequisites>
+        <researchViewX>3.0</researchViewX>
+        <researchViewY>2.0</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
         <defName>lotr_MysticWeapons</defName>
         <label>mystic weapons</label>
         <description>Forge weapons imbued with beyonder energies.</description>

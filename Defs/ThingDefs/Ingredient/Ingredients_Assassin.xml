@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Ингредиенты для зелья Ассасина (9) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_ShadowPoisonFlowerRootTendrils</defName>
+        <label>Shadow Poison Flower Root Tendrils</label>
+        <description>Корневые усики мистического цветка, пропитанные теневой эссенцией. Ключевой ингредиент для зелья Ассасина.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+            <MarketValue>300</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+
+        <thingCategories>
+            <li>BeyonderPlantParts</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_SerpentMonsterBirdFeathers</defName>
+        <label>Serpent-Bodied Monster Bird Black Feathers</label>
+        <description>Черные перья хищной птицы с телом змеи, обладающие мистической силой скрытности. Ключевой ингредиент для зелья Ассасина.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+            <MarketValue>300</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Assassin9_Essence</defName>
+        <label>essence of Assassin</label>
+        <description>Мистическая черта потустороннего с пути Ассасина.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+            <MarketValue>500</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Подстрекателя (8) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_DemonThroatHoneyguideHeart</defName>
+        <label>Demon Throat Honeyguide's Heart</label>
+        <description>Сердце медоеда из горла демона, наполненное провокационной энергией. Ключевой ингредиент для зелья Подстрекателя.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+            <MarketValue>600</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_DarkProwlerPoisonSac</defName>
+        <label>Dark Prowler's Poison Sac</label>
+        <description>Ядовитый мешок тёмного бродяги, содержащий токсины, влияющие на разум. Ключевой ингредиент для зелья Подстрекателя.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+            <MarketValue>600</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Assassin8_Essence</defName>
+        <label>essence of Instigator</label>
+        <description>Мистическая черта потустороннего с пути Ассасина.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+            <MarketValue>1000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Ведьмы (7) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_AbyssDemonicFishBlood</defName>
+        <label>Abyss Demonic Fish Blood</label>
+        <description>Кровь демонической рыбы Бездны, насыщенная тёмной магией. Ключевой ингредиент для зелья Ведьмы.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+            <MarketValue>1000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_AgatePeacockEgg</defName>
+        <label>Agate Peacock Egg</label>
+        <description>Яйцо агатового павлина, минерализованное и пропитанное магией. Ключевой ингредиент для зелья Ведьмы.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+            <MarketValue>1000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Assassin7_Essence</defName>
+        <label>essence of Witch</label>
+        <description>Мистическая черта потустороннего с пути Ассасина.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+            <MarketValue>1600</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Демонесы наслаждений (6) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_SuccubusEyes</defName>
+        <label>Succubus Eyes</label>
+        <description>Пара глаз суккуба, излучающая очарование и соблазн. Ключевой ингредиент для зелья Демонессы наслаждения.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+            <MarketValue>1500</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_BlackWidowSilkGland</defName>
+        <label>Black Widow Spider Silk Gland</label>
+        <description>Паутинная железа взрослой чёрной вдовы, производящая прочные нити. Ключевой ингредиент для зелья Демонессы наслаждения.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+            <MarketValue>1500</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Assassin6_Essence</defName>
+        <label>essence of Pleasure</label>
+        <description>Мистическая черта потустороннего с пути Ассасина.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+            <MarketValue>2500</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Демонессы страданий (5) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_FlowerFacedBatHead</defName>
+        <label>Flower-Faced Bat Head</label>
+        <description>Голова летучей мыши с цветочным лицом, источник проклятий и страданий. Ключевой ингредиент для зелья Демонессы страданий.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+            <MarketValue>3000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_TwoTailedBlackSnakeGallbladder</defName>
+        <label>Two-Tailed Black Snake Gallbladder</label>
+        <description>Желчный пузырь двухвостой чёрной змеи, наполненный ядом и страданиями. Ключевой ингредиент для зелья Демонессы страданий.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+            <MarketValue>3000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Assassin5_Essence</defName>
+        <label>essence of Afflictions</label>
+        <description>Мистическая черта потустороннего с пути Ассасина.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+            <MarketValue>5000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Демонессы отчаяния (4) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_PlagueMotherSerpentVenomSac</defName>
+        <label>Plague Mother Serpent's Venom Sac</label>
+        <description>Мешок с ядом змеиной матери чумы, источник смертельных болезней. Ключевой ингредиент для зелья Демонессы отчаяния.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_3</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <statBases>
+            <MarketValue>5000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+        
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_SilverHunterCrystal</defName>
+        <label>Silver Hunter's Crystal</label>
+        <description>Кристалл серебряного охотника, аккумулирующий силу отчаяния. Ключевой ингредиент для зелья Демонессы отчаяния.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_3</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>5000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <thingCategories>
+            <li>SpecialBeyonderItems</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Assassin4_Essence</defName>
+        <label>essence of Despair</label>
+        <description>Мистическая черта потустороннего с пути Ассасина.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_3</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>8000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
+    </ThingDef>
+
+</Defs>

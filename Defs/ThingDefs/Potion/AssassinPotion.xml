@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="PotionBase">
+
+        <thingClass>ThingWithComps</thingClass>
+        <defName>Assassin9_Potion</defName>
+        <label>Assassin's potion</label>
+        <description>Dull, inconspicuous liquid that inexplicably induces thirst.
+        By drinking it, the pawn will awaken the power of the Hunter within itself.</description>
+        <descriptionHyperlinks>
+            <HediffDef>Assassin9_Hediff</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Potions/Assassin/Assassin9_Potion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <ingestible>
+            <outcomeDoers>
+                <li Class="lotr.IngestionOutcomeDoer_GiveHediffRange">
+                    <hediffDef>lotr_SanityLoss</hediffDef>
+                    <severityRange>0.15~0.75</severityRange> 
+                </li>
+
+                <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
+                    <hediffToGive>Assassin9_Hediff</hediffToGive>
+                    <severity>0.01</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+
+    </ThingDef>
+
+    <ThingDef ParentName="PotionBase">
+
+        <thingClass>ThingWithComps</thingClass>
+        <defName>Assassin8_Potion</defName>
+        <label>Instigator's potion</label>
+        <description>An obsidian potion fizzing with tiny bubbles, as though harboring hidden desires and ill intent.
+        By drinking it, the pawn will awaken the power of the Instigator within itself.</description>
+        <descriptionHyperlinks>
+            <HediffDef>Assassin8_Hediff</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Potions/Assassin/Assassin8_Potion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <ingestible>
+            <outcomeDoers>
+                <li Class="lotr.IngestionOutcomeDoer_GiveHediffRange">
+                    <hediffDef>lotr_SanityLoss</hediffDef>
+                    <severityRange>0.15~0.75</severityRange> 
+                </li>
+
+                <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
+                    <hediffToGive>Assassin8_Hediff</hediffToGive>
+                    <severity>0.01</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+
+    </ThingDef>
+
+    <ThingDef ParentName="PotionBase">
+
+        <thingClass>ThingWithComps</thingClass>
+        <defName>Assassin7_Potion</defName>
+        <label>Witch's potion</label>
+        <description>A dark-red potion with concealed shadows. It tasted icy, and illusory, like melting frost. Dreamlike, romantic rose-colored liquid.
+        By drinking it, the pawn will awaken the power of the Witch within itself.</description>
+        <descriptionHyperlinks>
+            <HediffDef>Assassin7_Hediff</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Potions/Assassin/Assassin7_Potion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <ingestible>
+            <outcomeDoers>
+                <li Class="lotr.IngestionOutcomeDoer_GiveHediffRange">
+                    <hediffDef>lotr_SanityLoss</hediffDef>
+                    <severityRange>0.15~0.75</severityRange> 
+                </li>
+
+                <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
+                    <hediffToGive>Assassin7_Hediff</hediffToGive>
+                    <severity>0.01</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+
+    </ThingDef>
+
+    <ThingDef ParentName="PotionBase">
+
+        <thingClass>ThingWithComps</thingClass>
+        <defName>Assassin6_Potion</defName>
+        <label>Demoness of Pleasure's potion</label>
+        <description>Potion emitting strands of pinkish blood hue.
+        By drinking it, the pawn will awaken the power of the Pleasure within itself.</description>
+        <descriptionHyperlinks>
+            <HediffDef>Assassin6_Hediff</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Potions/Assassin/Assassin6_Potion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <ingestible>
+            <outcomeDoers>
+                <li Class="lotr.IngestionOutcomeDoer_GiveHediffRange">
+                    <hediffDef>lotr_SanityLoss</hediffDef>
+                    <severityRange>0.15~0.75</severityRange> 
+                </li>
+
+                <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
+                    <hediffToGive>Assassin6_Hediff</hediffToGive>
+                    <severity>0.01</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+
+    </ThingDef>
+
+    <ThingDef ParentName="PotionBase">
+
+        <thingClass>ThingWithComps</thingClass>
+        <defName>Assassin5_Potion</defName>
+        <label>Demoness of Affliction's potion</label>
+        <description>Dark red near-black blood rapidly turning completely black with occasional disgusting green bubbles - resembles a collection of pathogens.
+        By drinking it, the pawn will awaken the power of the Affliction within itself.</description>
+        <descriptionHyperlinks>
+            <HediffDef>Assassin5_Hediff</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Potions/Assassin/Assassin5_Potion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <ingestible>
+            <outcomeDoers>
+                <li Class="lotr.IngestionOutcomeDoer_GiveHediffRange">
+                    <hediffDef>lotr_SanityLoss</hediffDef>
+                    <severityRange>0.15~0.75</severityRange> 
+                </li>
+
+                <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
+                    <hediffToGive>Assassin5_Hediff</hediffToGive>
+                    <severity>0.01</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+
+    </ThingDef>
+
+    <ThingDef ParentName="PotionBase">
+
+        <thingClass>ThingWithComps</thingClass>
+        <defName>Assassin4_Potion</defName>
+        <label>Demoness of Despair's potion</label>
+        <description>A dark purple potion shimmering with a rosy light.
+        By drinking it, the pawn will awaken the power of the Despair within itself.</description>
+        <descriptionHyperlinks>
+            <HediffDef>Assassin4_Hediff</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Potions/Assassin/Assassin4_Potion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <ingestible>
+            <outcomeDoers>
+                <li Class="lotr.IngestionOutcomeDoer_GiveHediffRange">
+                    <hediffDef>lotr_SanityLoss</hediffDef>
+                    <severityRange>0.15~0.75</severityRange> 
+                </li>
+
+                <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
+                    <hediffToGive>Assassin4_Hediff</hediffToGive>
+                    <severity>0.01</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+
+    </ThingDef>
+
+</Defs>
