@@ -219,4 +219,102 @@
     </startingHediffs>
   </PawnKindDef>
 
+  <!-- ========== Ассасин ========== -->
+
+  <PawnKindDef ParentName="BeyonderRaiderBase" Name="BeyonderAssassin9">
+    <defName>Beyonder_Assassin9</defName>
+    <label>beyonder assassin</label>
+    <combatPower>160</combatPower>
+    <weaponTags>
+      <li>NeolithicMeleeDecent</li>
+      <li>MedievalMeleeDecent</li>
+    </weaponTags>
+    <startingHediffs>
+      <li>
+        <def>Assassin9_Hediff</def>
+        <severity>1</severity>
+      </li>
+    </startingHediffs>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BeyonderAssassin9" Name="BeyonderAssassin8">
+    <defName>Beyonder_Assassin8</defName>
+    <label>beyonder instigator</label>
+    <combatPower>260</combatPower>
+    <weaponTags>
+      <li>NeolithicMeleeAdvanced</li>
+      <li>MedievalMeleeAdvanced</li>
+    </weaponTags>
+    <startingHediffs>
+      <li>
+        <def>Assassin8_Hediff</def>
+        <severity>1</severity>
+      </li>
+    </startingHediffs>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BeyonderAssassin8" Name="BeyonderAssassin7">
+    <defName>Beyonder_Assassin7</defName>
+    <label>beyonder witch</label>
+    <combatPower>360</combatPower>
+    <weaponTags>
+      <li>MedievalMeleeAdvanced</li>
+      <li>NeolithicRangedDecent</li>
+    </weaponTags>
+    <startingHediffs>
+      <li>
+        <def>Assassin7_Hediff</def>
+        <severity>1</severity>
+      </li>
+    </startingHediffs>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BeyonderAssassin7" Name="BeyonderAssassin6">
+    <defName>Beyonder_Assassin6</defName>
+    <label>beyonder pleasure demoness</label>
+    <combatPower>520</combatPower>
+    <weaponTags>
+      <li>MedievalMeleeSuper</li>
+      <li>IndustrialGunBasic</li>
+    </weaponTags>
+    <startingHediffs>
+      <li>
+        <def>Assassin6_Hediff</def>
+        <severity>1</severity>
+      </li>
+    </startingHediffs>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BeyonderAssassin6" Name="BeyonderAssassin5">
+    <defName>Beyonder_Assassin5</defName>
+    <label>beyonder affliction demoness</label>
+    <combatPower>700</combatPower>
+    <weaponTags>
+      <li>MedievalMeleeSuper</li>
+      <li>IndustrialGunAdvanced</li>
+    </weaponTags>
+    <startingHediffs>
+      <li>
+        <def>Assassin5_Hediff</def>
+        <severity>1</severity>
+      </li>
+    </startingHediffs>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BeyonderAssassin5" Name="BeyonderAssassin4">
+    <defName>Beyonder_Assassin4</defName>
+    <label>beyonder despair demoness</label>
+    <combatPower>1000</combatPower>
+    <weaponTags>
+      <li>MedievalMeleeSuper</li>
+      <li>SpacerGun</li>
+    </weaponTags>
+    <startingHediffs>
+      <li>
+        <def>Assassin4_Hediff</def>
+        <severity>1</severity>
+      </li>
+    </startingHediffs>
+  </PawnKindDef>
+
 </Defs>

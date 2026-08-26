@@ -16,10 +16,6 @@ namespace lotr {
         private const int CheckIntervalTicks = 60000;      // раз в день
         private const float ChancePerCheck = 0.1f;         // 10% в день
         private const int MinIntervalTicks = 60 * 60000;   // год (60 дней)
-        private static readonly string[] FactionDefNames = new string[] {
-            "lotr_IronAndBloodCrossOrder",
-            "lotr_ChurchOfTheGodOfCombat"
-        };
 
         public GameComponent_PeaceOffer(Game game) { }
 
@@ -45,7 +41,7 @@ namespace lotr {
             GameComponent_FirstMeeting firstMeetingComp = Current.Game.GetComponent<GameComponent_FirstMeeting>();
             if (firstMeetingComp == null) return;
 
-            foreach (string defName in FactionDefNames) {
+            foreach (string defName in BeyonderUtility.FactionDefNames) {
                 Faction faction = Find.FactionManager.AllFactions.FirstOrDefault(f => f.def.defName == defName);
                 if (faction == null || !faction.HostileTo(Faction.OfPlayer)) continue;
                 if (!firstMeetingComp.IsFactionAllied(faction)) continue;
@@ -132,7 +128,7 @@ namespace lotr {
 
         public override void DoWindowContents(Rect inRect) {
             Text.Font = GameFont.Medium;
-            Widgets.Label(new Rect(0f, 0f, inRect.width, 40f), "Дипломат Ордена");
+            Widgets.Label(new Rect(0f, 0f, inRect.width, 40f), $"Дипломат {faction.Name}");
             Text.Font = GameFont.Small;
             string message = $"Дипломат фракции {faction.Name} предлагает забыть обиды и восстановить нейтралитет.";
             Widgets.Label(new Rect(0f, 40f, inRect.width, 100f), message);

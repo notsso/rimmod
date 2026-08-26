@@ -163,6 +163,16 @@ namespace lotr {
                     { 5, new[] { "lotr_DemonicWolfClaws", "lotr_ForestHunterTongue" } },
                     { 4, new[] { "lotr_MagmaGiantCore", "lotr_StoneofCatastrophe" } }
                 };
+            } else if (faction.def.defName == "lotr_DemonessSect") {
+                organizationPathway = Pathway.Assassin;
+                ingredientDefs = new Dictionary<int, string[]> {
+                    { 9, new[] { "lotr_ShadowPoisonFlowerRootTendrils", "lotr_SerpentMonsterBirdFeathers" } },
+                    { 8, new[] { "lotr_DemonThroatHoneyguideHeart", "lotr_DarkProwlerPoisonSac" } },
+                    { 7, new[] { "lotr_AgatePeacockEgg", "lotr_AbyssDemonicFishBlood" } },
+                    { 6, new[] { "lotr_SuccubusEyes", "lotr_BlackWidowSilkGland" } },
+                    { 5, new[] { "lotr_FlowerFacedBatHead", "lotr_TwoTailedBlackSnakeGallbladder" } },
+                    { 4, new[] { "lotr_PlagueMotherSerpentVenomSac", "lotr_SilverHunterCrystal" } }
+                };
             }
 
             int maxSequence = GetMaxSequenceForPathway(map, organizationPathway);

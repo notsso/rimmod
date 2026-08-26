@@ -68,9 +68,9 @@ namespace lotr {
         }
 
         private bool TryTriggerEvent() {
+            Log.Message("triggering first meeting incident");
             if (Find.AnyPlayerHomeMap == null) return false;
 
-            // Собираем фракции, с которыми ещё нет союза
             List<Faction> availableFactions = new List<Faction>();
             foreach (string defName in BeyonderUtility.FactionDefNames) {
                 Faction faction = Find.FactionManager.AllFactions
@@ -79,7 +79,10 @@ namespace lotr {
                     availableFactions.Add(faction);
             }
 
-            if (availableFactions.Count == 0) return false;
+            if (availableFactions.Count == 0) {
+                Log.Message("No available faction found");
+                return false;
+            }
 
             Faction chosenFaction = availableFactions.RandomElement();
             IncidentDef incident = IncidentDef.Named("lotr_FirstMeeting");
@@ -183,7 +186,7 @@ namespace lotr {
 
         public override void DoWindowContents(Rect inRect) {
             Text.Font = GameFont.Medium;
-            Widgets.Label(new Rect(0f, 0f, inRect.width, 40f), "Представитель Ордена");
+            Widgets.Label(new Rect(0f, 0f, inRect.width, 40f), $"Представитель {faction.Name}");
             Text.Font = GameFont.Small;
             string message = $"Представитель фракции {faction.Name} предлагает вам присоединиться к тайному союзу.";
             Widgets.Label(new Rect(0f, 40f, inRect.width, 100f), message);

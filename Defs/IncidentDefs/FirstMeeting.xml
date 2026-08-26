@@ -10,7 +10,7 @@
         <targetTags>
             <li>Map_PlayerHome</li>
         </targetTags>
-        <letterText>A lone figure approaches your settlement, claiming to represent the Iron and Blood Cross Order. They request an audience.</letterText>
+        <letterText>A lone figure approaches your settlement, claiming to represent a mysterious faction. They request an audience.</letterText>
         <letterLabel>Mysterious envoy</letterLabel>
         <baseChance>0</baseChance>
         
