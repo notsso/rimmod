@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект -->
+    <WorldObjectDef ParentName="Site">
+        <defName>DemonThroatHoneyguideLair_World</defName>
+        <label>demon throat honeyguide lair</label>
+        <description>A secluded forest clearing, where a cunning honeyguide makes its den.</description>
+        <mapGenerator>DemonThroatHoneyguideLairGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>DemonThroatHoneyguideLair_Site</defName>
+        <label>honeyguide lair</label>
+        <description>A dangerous beast lurks in this forest clearing, mimicking voices to lure prey.</description>
+        <workerClass>lotr.SitePartWorker_DemonThroatHoneyguideLair</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>DemonThroatHoneyguideLair_Incident</defName>
+        <label>demon throat honeyguide lair</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_DemonThroatHoneyguideLair</workerClass>
+        <category>Misc</category>
+        <earliestDay>6</earliestDay>
+        <letterLabel>Honeyguide's lair</letterLabel>
+        <letterText>Travelers speak of a cunning beast in the woods that can mimic voices. A small clearing seems to be its territory.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация существа -->
+    <GenStepDef>
+        <defName>DemonThroatHoneyguide</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_DemonThroatHoneyguide"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты -->
+    <MapGeneratorDef>
+        <defName>DemonThroatHoneyguideLairGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>RocksFromGrid</li>
+            <li>TemperateForestTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>TemperateForestPlants</li>
+            <li>DemonThroatHoneyguide</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

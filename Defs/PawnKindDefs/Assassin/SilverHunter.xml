@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="AnimalThingBase">
+        <defName>lotr_SilverHunterRace</defName>
+        <label>Silver Hunter</label>
+        <description>A shimmering, almost ethereal humanoid predator. Its silver fur reflects light like polished metal, and its eyes burn with cold intellect. It moves with preternatural silence, hunting beyonder and mortal alike. Its crystal core is the final ingredient for the Despair potion.</description>
+        
+        <statBases>
+            <MoveSpeed>15.0</MoveSpeed>
+            <MarketValue>5000</MarketValue>
+            <ComfyTemperatureMin>-200</ComfyTemperatureMin>
+            <ComfyTemperatureMax>200</ComfyTemperatureMax>
+            <ArmorRating_Blunt>1.3</ArmorRating_Blunt>
+            <ArmorRating_Sharp>1.3</ArmorRating_Sharp>
+            <ArmorRating_Heat>1.3</ArmorRating_Heat>
+            <Wildness>1</Wildness>
+            <MeatAmount>0</MeatAmount>
+            <LeatherAmount>0</LeatherAmount>
+            <Flammability>0.0</Flammability>
+            <ToxicResistance>1</ToxicResistance>
+            <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+            <IncomingDamageFactor>0.35</IncomingDamageFactor>
+            <InjuryHealingFactor>4.0</InjuryHealingFactor>
+            <MeleeHitChance>30</MeleeHitChance>
+            <MeleeDodgeChance>30</MeleeDodgeChance>
+            <SpiritualityOffset>20</SpiritualityOffset>
+            <PsychicSensitivity>0.5</PsychicSensitivity>
+        </statBases>
+
+        <race>
+            <thinkTreeMain>Animal</thinkTreeMain>
+            <body>Monkey</body>
+            <baseHungerRate>0.01</baseHungerRate>
+            <baseBodySize>1.5</baseBodySize>
+            <baseHealthScale>10.0</baseHealthScale>
+            <foodType>CarnivoreAnimal, OvivoreAnimal</foodType>
+            <predator>true</predator>
+            <trainability>None</trainability>
+            <lifeExpectancy>800</lifeExpectancy>
+            <manhunterOnDamageChance>1</manhunterOnDamageChance>
+            <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
+            <herdAnimal>false</herdAnimal>
+            <lifeStageAges>
+                <li><def>AnimalBaby</def><minAge>0</minAge></li>
+                <li><def>AnimalJuvenile</def><minAge>0.1</minAge></li>
+                <li><def>AnimalAdult</def><minAge>0.2</minAge><soundWounded>Pawn_Monkey_Wounded</soundWounded><soundDeath>Pawn_Monkey_Death</soundDeath><soundCall>Pawn_Monkey_Call</soundCall><soundAngry>Pawn_Monkey_Angry</soundAngry></li>
+            </lifeStageAges>
+            <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+            <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+            <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+            <soundEating>PredatorLarge_Eat</soundEating>
+            <headPosPerRotation>
+                <li>(0.0, 0, 0.09)</li>
+                <li>(0.21, 0, -0.04)</li>
+                <li>(0.0, 0, -0.18)</li>
+                <li>(-0.21, 0, -0.04)</li>
+            </headPosPerRotation>
+        </race>
+
+        <tools>
+            <li>
+                <label>left fist</label>
+                <labelNoLocation>fist</labelNoLocation>
+                <capacities><li>Blunt</li></capacities>
+                <power>35</power>
+                <cooldownTime>0.5</cooldownTime>
+                <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+                <armorPenetration>0.6</armorPenetration>
+            </li>
+            <li>
+                <label>right fist</label>
+                <labelNoLocation>fist</labelNoLocation>
+                <capacities><li>Blunt</li></capacities>
+                <power>35</power>
+                <cooldownTime>0.5</cooldownTime>
+                <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+                <armorPenetration>0.6</armorPenetration>
+            </li>
+            <li>
+                <capacities><li>Bite</li></capacities>
+                <power>45</power>
+                <cooldownTime>1.0</cooldownTime>
+                <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+                <chanceFactor>0.7</chanceFactor>
+                <armorPenetration>0.7</armorPenetration>
+            </li>
+            <li>
+                <label>head</label>
+                <capacities><li>Blunt</li></capacities>
+                <power>30</power>
+                <cooldownTime>1.0</cooldownTime>
+                <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+                <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+                <chanceFactor>0.2</chanceFactor>
+                <armorPenetration>0.5</armorPenetration>
+            </li>
+        </tools>
+
+        <butcherProducts>
+            <lotr_SilverHunterCrystal>1</lotr_SilverHunterCrystal>
+            <lotr_MysticalComponents>3</lotr_MysticalComponents>
+        </butcherProducts>
+    </ThingDef>
+
+    <PawnKindDef ParentName="AnimalKindBase">
+        <defName>lotr_SilverHunter</defName>
+        <label>Silver Hunter</label>
+        <race>lotr_SilverHunterRace</race>
+        <combatPower>2500</combatPower>
+        <ecoSystemWeight>0.10</ecoSystemWeight>
+
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Monkey/Monkey</texPath>
+                    <drawSize>1.8</drawSize>
+                    <color>(192,192,192)</color>
+                </bodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Monkey/Monkey</texPath>
+                    <drawSize>3.0</drawSize>
+                    <color>(192,192,192)</color>
+                    <shadowData>
+                        <volume>(0.3, 0.4, 0.3)</volume>
+                        <offset>(0,0,-0.15)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Monkey/Monkey</texPath>
+                    <drawSize>4.5</drawSize>
+                    <color>(192,192,192)</color>
+                    <shadowData>
+                        <volume>(0.4, 0.5, 0.4)</volume>
+                        <offset>(0,0,-0.15)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+            </li>
+        </lifeStages>
+    </PawnKindDef>
+
+</Defs>

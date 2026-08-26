@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект -->
+    <WorldObjectDef ParentName="Site">
+        <defName>PlagueSerpentLair_World</defName>
+        <label>plague mother serpent lair</label>
+        <description>A fetid swamp that reeks of disease, where a colossal serpent nests.</description>
+        <mapGenerator>PlagueSerpentLairGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>PlagueSerpentLair_Site</defName>
+        <label>plague serpent lair</label>
+        <description>A disease-ridden swamp guarded by a monstrous serpent.</description>
+        <workerClass>lotr.SitePartWorker_PlagueSerpentLair</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>PlagueSerpentLair_Incident</defName>
+        <label>plague mother serpent lair</label>
+        <baseChance>1.0</baseChance>
+        <workerClass>lotr.IncidentWorker_PlagueSerpentLair</workerClass>
+        <category>Misc</category>
+        <earliestDay>45</earliestDay>
+        <letterLabel>Plague serpent lair</letterLabel>
+        <letterText>A fetid swamp has been discovered, its waters tainted by disease. A colossal serpent makes its nest within.</letterText>
+        <letterDef>ThreatBig</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация змеи -->
+    <GenStepDef>
+        <defName>PlagueMotherSerpent</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_PlagueMotherSerpent"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты (используем готовые болотные GenStep) -->
+    <MapGeneratorDef>
+        <defName>PlagueSerpentLairGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>RocksFromGrid</li>
+            <li>CentralSwampTerrain</li>
+            <li>CentralSwampLair</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>CentralSwampPlants</li>
+            <li>PlagueMotherSerpent</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

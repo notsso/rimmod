@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект -->
+    <WorldObjectDef ParentName="Site">
+        <defName>TwoTailedSnakeHollow_World</defName>
+        <label>two-tailed snake hollow</label>
+        <description>A desolate hollow overgrown with tall grass, ideal for an ambush predator.</description>
+        <mapGenerator>TwoTailedSnakeHollowGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>TwoTailedSnakeHollow_Site</defName>
+        <label>two-tailed snake hollow</label>
+        <description>A dangerous snake lurks in this grassy hollow, waiting for prey.</description>
+        <workerClass>lotr.SitePartWorker_TwoTailedSnakeHollow</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>TwoTailedSnakeHollow_Incident</defName>
+        <label>two-tailed snake hollow</label>
+        <baseChance>1.2</baseChance>
+        <workerClass>lotr.IncidentWorker_TwoTailedSnakeHollow</workerClass>
+        <category>Misc</category>
+        <earliestDay>25</earliestDay>
+        <letterLabel>Two-tailed snake hollow</letterLabel>
+        <letterText>A hollow overgrown with tall grass has been discovered. A dangerous two-tailed black snake makes its den there.</letterText>
+        <letterDef>ThreatBig</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация логова -->
+    <GenStepDef>
+        <defName>TwoTailedSnakeHollow</defName>
+        <order>1600</order>
+        <genStep Class="lotr.GenStep_TwoTailedSnakeHollow"/>
+    </GenStepDef>
+
+    <!-- Генерация змеи -->
+    <GenStepDef>
+        <defName>TwoTailedBlackSnake</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_TwoTailedBlackSnake"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты -->
+    <MapGeneratorDef>
+        <defName>TwoTailedSnakeHollowGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>RocksFromGrid</li>
+            <li>TemperateForestTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>TemperateForestPlants</li>
+            <li>TwoTailedSnakeHollow</li>
+            <li>TwoTailedBlackSnake</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

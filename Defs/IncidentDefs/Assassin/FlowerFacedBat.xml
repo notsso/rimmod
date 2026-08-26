@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект -->
+    <WorldObjectDef ParentName="Site">
+        <defName>FlowerFacedBatCave_World</defName>
+        <label>flower-faced bat cave</label>
+        <description>A dark cave system where flower-faced bats roost in large numbers.</description>
+        <mapGenerator>FlowerFacedBatCaveGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>FlowerFacedBatCave_Site</defName>
+        <label>flower-faced bat cave</label>
+        <description>A foggy forest with a cave entrance, swarming with bats.</description>
+        <workerClass>lotr.SitePartWorker_FlowerFacedBatCave</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>FlowerFacedBatCave_Incident</defName>
+        <label>flower-faced bat cave</label>
+        <baseChance>1.2</baseChance>
+        <workerClass>lotr.IncidentWorker_FlowerFacedBatCave</workerClass>
+        <category>Misc</category>
+        <earliestDay>25</earliestDay>
+        <letterLabel>Flower-faced bat cave</letterLabel>
+        <letterText>A dark cave has been discovered, its entrance covered in night-blooming flowers. A dangerous bat colony lurks within.</letterText>
+        <letterDef>ThreatBig</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация пещеры -->
+    <GenStepDef>
+        <defName>FlowerFacedBatCave</defName>
+        <order>1600</order>
+        <genStep Class="lotr.GenStep_FlowerFacedBatCave"/>
+    </GenStepDef>
+
+    <!-- Генерация летучих мышей -->
+    <GenStepDef>
+        <defName>FlowerFacedBat</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_FlowerFacedBat"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты -->
+    <MapGeneratorDef>
+        <defName>FlowerFacedBatCaveGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>RocksFromGrid</li>
+            <li>TemperateForestTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>TemperateForestPlants</li>
+            <li>FlowerFacedBatCave</li>
+            <li>FlowerFacedBat</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

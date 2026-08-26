@@ -37,6 +37,18 @@ namespace lotr {
                         { 5, new List<IncidentDef> { IncidentDef.Named("FoggyForest_Incident"), IncidentDef.Named("JungleCabin_Incident") } },
                         { 4, new List<IncidentDef> { IncidentDef.Named("MagmaGiantVolcano_Incident") } }
                     }
+                },
+                {
+                    Pathway.Assassin,
+                    new Dictionary<int, List<IncidentDef>>
+                    {
+                        { 9, new List<IncidentDef> { IncidentDef.Named("SerpentBirdTower_Incident") } },
+                        { 8, new List<IncidentDef> { IncidentDef.Named("DemonThroatHoneyguideLair_Incident") } },
+                        { 7, new List<IncidentDef> { IncidentDef.Named("AgatePeacockMeadow_Incident") } },
+                        { 6, new List<IncidentDef> { IncidentDef.Named("BlackWidowForest_Incident"), IncidentDef.Named("SuccubusTemple_Incident") } },
+                        { 5, new List<IncidentDef> { IncidentDef.Named("FlowerFacedBatCave_Incident"), IncidentDef.Named("TwoTailedSnakeHollow_Incident") } },
+                        { 4, new List<IncidentDef> { IncidentDef.Named("PlagueSerpentLair_Incident"), IncidentDef.Named("SilverHunterTerritory_Incident") } }
+                    }
                 }
             };
 

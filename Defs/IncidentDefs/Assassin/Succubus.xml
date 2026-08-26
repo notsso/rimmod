@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект -->
+    <WorldObjectDef ParentName="Site">
+        <defName>SuccubusTemple_World</defName>
+        <label>abandoned temple of temptation</label>
+        <description>An ancient temple now corrupted by a succubus. Its halls whisper with forbidden allure.</description>
+        <mapGenerator>SuccubusTempleGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>SuccubusTemple_Site</defName>
+        <label>succubus temple</label>
+        <description>A ruined temple in the woods, haunted by a succubus.</description>
+        <workerClass>lotr.SitePartWorker_SuccubusTemple</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>SuccubusTemple_Incident</defName>
+        <label>abandoned temple of temptation</label>
+        <baseChance>1.2</baseChance>
+        <workerClass>lotr.IncidentWorker_SuccubusTemple</workerClass>
+        <category>Misc</category>
+        <earliestDay>20</earliestDay>
+        <letterLabel>Succubus temple</letterLabel>
+        <letterText>A ruined temple has been found deep in the woods. A beautiful but deadly creature is said to dwell within, luring travelers to their doom.</letterText>
+        <letterDef>ThreatBig</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация храма -->
+    <GenStepDef>
+        <defName>SuccubusTemple</defName>
+        <order>1600</order>
+        <genStep Class="lotr.GenStep_SuccubusTemple"/>
+    </GenStepDef>
+
+    <!-- Генерация суккуба -->
+    <GenStepDef>
+        <defName>Succubus</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_Succubus"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты -->
+    <MapGeneratorDef>
+        <defName>SuccubusTempleGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>RocksFromGrid</li>
+            <li>TemperateForestTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>TemperateForestPlants</li>
+            <li>SuccubusTemple</li>
+            <li>Succubus</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

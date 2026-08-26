@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="AnimalThingBase">
+        <defName>lotr_TwoTailedBlackSnakeRace</defName>
+        <label>Two-Tailed Black Snake</label>
+        <description>A sinuous black serpent with two twitching tails. Its venom causes searing pain and organ failure, and it moves with unnerving silence. Its gallbladder is prized by alchemists for affliction potions.</description>
+        
+        <statBases>
+            <MoveSpeed>10.0</MoveSpeed>
+            <MarketValue>3000</MarketValue>
+            <ComfyTemperatureMin>-80</ComfyTemperatureMin>
+            <ComfyTemperatureMax>80</ComfyTemperatureMax>
+            <ArmorRating_Blunt>0.85</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.85</ArmorRating_Heat>
+            <Wildness>1</Wildness>
+            <MeatAmount>0</MeatAmount>
+            <LeatherAmount>0</LeatherAmount>
+            <Flammability>0.05</Flammability>
+            <ToxicResistance>1</ToxicResistance>
+            <ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+            <IncomingDamageFactor>0.65</IncomingDamageFactor>
+            <InjuryHealingFactor>2.5</InjuryHealingFactor>
+            <MeleeHitChance>18</MeleeHitChance>
+            <MeleeDodgeChance>18</MeleeDodgeChance>
+            <SpiritualityOffset>8</SpiritualityOffset>
+            <PsychicSensitivity>0.8</PsychicSensitivity>
+        </statBases>
+
+        <race>
+            <thinkTreeMain>Animal</thinkTreeMain>
+            <body>Snake</body>
+            <baseHungerRate>0.01</baseHungerRate>
+            <baseBodySize>1.5</baseBodySize>
+            <baseHealthScale>8.0</baseHealthScale>
+            <foodType>CarnivoreAnimal</foodType>
+            <predator>true</predator>
+            <trainability>None</trainability>
+            <lifeExpectancy>90</lifeExpectancy>
+            <manhunterOnDamageChance>1</manhunterOnDamageChance>
+            <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
+            <lifeStageAges>
+                <li><def>AnimalBaby</def><minAge>0</minAge></li>
+                <li><def>AnimalJuvenile</def><minAge>0.1</minAge></li>
+                <li><def>AnimalAdult</def><minAge>0.2</minAge>
+                    <soundWounded>Pawn_Cobra_Wounded</soundWounded>
+                    <soundDeath>Pawn_Cobra_Death</soundDeath>
+                    <soundCall>Pawn_Cobra_Call</soundCall>
+                    <soundAngry>Pawn_Cobra_Angry</soundAngry>
+                </li>
+            </lifeStageAges>
+            <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+            <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+            <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+            <soundEating>Reptile_Eat</soundEating>
+            <headPosPerRotation>
+                <li>(-0.01, 0, 0.3)</li>
+                <li>(0.35, 0, 0.05)</li>
+                <li>(0.0, 0, -0.24)</li>
+                <li>(-0.35, 0, 0.05)</li>
+            </headPosPerRotation>
+        </race>
+
+        <tools>
+            <li>
+                <label>fangs</label>
+                <capacities><li>ToxicBite</li></capacities>
+                <power>30</power>
+                <cooldownTime>1.0</cooldownTime>
+                <linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
+                <armorPenetration>0.5</armorPenetration>
+                <extraMeleeDamages>
+                    <li>
+                        <def>ToxicBite</def>
+                        <amount>20</amount>
+                    </li>
+                </extraMeleeDamages>
+            </li>
+            <li>
+                <label>head</label>
+                <capacities><li>Blunt</li></capacities>
+                <power>15</power>
+                <cooldownTime>1.0</cooldownTime>
+                <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+                <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+                <chanceFactor>0.2</chanceFactor>
+            </li>
+        </tools>
+
+        <butcherProducts>
+            <lotr_TwoTailedBlackSnakeGallbladder>1</lotr_TwoTailedBlackSnakeGallbladder>
+            <lotr_MysticalComponents>1</lotr_MysticalComponents>
+        </butcherProducts>
+    </ThingDef>
+
+    <PawnKindDef ParentName="AnimalKindBase">
+        <defName>lotr_TwoTailedBlackSnake</defName>
+        <label>Two-Tailed Black Snake</label>
+        <race>lotr_TwoTailedBlackSnakeRace</race>
+        <combatPower>950</combatPower>
+        <ecoSystemWeight>0.30</ecoSystemWeight>
+
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Cobra/Cobra</texPath>
+                    <drawSize>1.2</drawSize>
+                    <color>(20,20,20)</color>
+                </bodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Cobra/Cobra</texPath>
+                    <drawSize>2.0</drawSize>
+                    <color>(15,15,15)</color>
+                    <shadowData>
+                        <volume>(0.3, 0.4, 0.3)</volume>
+                        <offset>(0,0,-0.05)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Cobra/Cobra</texPath>
+                    <drawSize>2.8</drawSize>
+                    <color>(10,10,10)</color>
+                    <shadowData>
+                        <volume>(0.35, 0.45, 0.35)</volume>
+                        <offset>(0,0,-0.05)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+            </li>
+        </lifeStages>
+    </PawnKindDef>
+
+</Defs>

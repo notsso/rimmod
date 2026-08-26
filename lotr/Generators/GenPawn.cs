@@ -84,4 +84,85 @@ namespace lotr {
             GenStepUtility.SpawnPawns(map, kind, 1, 0f);
         }
     }
+
+    public class GenStep_SerpentMonsterBird : GenStep {
+        public override int SeedPart => 12371;
+
+        public override void Generate(Map map, GenStepParams parms) {
+            var kind = PawnKindDef.Named("lotr_SerpentMonsterBird");
+            GenStepUtility.SpawnPawns(map, kind, 1, 5f);
+        }
+    }
+
+    public class GenStep_DemonThroatHoneyguide : GenStep {
+        public override int SeedPart => 12372;
+
+        public override void Generate(Map map, GenStepParams parms) {
+            var kind = PawnKindDef.Named("lotr_DemonThroatHoneyguide");
+            GenStepUtility.SpawnPawns(map, kind, 1, 0f);
+        }
+    }
+
+    public class GenStep_AgatePeacock : GenStep {
+        public override int SeedPart => 12373;
+
+        public override void Generate(Map map, GenStepParams parms) {
+            var kind = PawnKindDef.Named("lotr_AgatePeacock");
+            GenStepUtility.SpawnPawns(map, kind, 1, 0f);
+        }
+    }
+
+    public class GenStep_Succubus : GenStep {
+        public override int SeedPart => 12375;
+
+        public override void Generate(Map map, GenStepParams parms) {
+            var kind = PawnKindDef.Named("lotr_Succubus");
+            GenStepUtility.SpawnPawns(map, kind, 1, 2f);
+        }
+    }
+
+    public class GenStep_BlackWidowSpider : GenStep {
+        public override int SeedPart => 12376;
+
+        public override void Generate(Map map, GenStepParams parms) {
+            var kind = PawnKindDef.Named("lotr_BlackWidowSpider");
+            GenStepUtility.SpawnPawns(map, kind, 1, 0f);
+        }
+    }
+
+    public class GenStep_FlowerFacedBat : GenStep {
+        public override int SeedPart => 12378;
+
+        public override void Generate(Map map, GenStepParams parms) {
+            var kind = PawnKindDef.Named("lotr_FlowerFacedBat");
+            GenStepUtility.SpawnPawns(map, kind, 1, 0f);
+        }
+    }
+
+    public class GenStep_TwoTailedBlackSnake : GenStep {
+        public override int SeedPart => 12380;
+
+        public override void Generate(Map map, GenStepParams parms) {
+            var kind = PawnKindDef.Named("lotr_TwoTailedBlackSnake");
+            GenStepUtility.SpawnPawns(map, kind, 1, 0f);
+        }
+    }
+
+    public class GenStep_PlagueMotherSerpent : GenStep {
+        public override int SeedPart => 12381;
+
+        public override void Generate(Map map, GenStepParams parms) {
+            var kind = PawnKindDef.Named("lotr_PlagueMotherSerpent");
+            GenStepUtility.SpawnPawns(map, kind, 1, 0f);
+        }
+    }
+
+    public class GenStep_SilverHunter : GenStep {
+        public override int SeedPart => 12382;
+
+        public override void Generate(Map map, GenStepParams parms) {
+            var kind = PawnKindDef.Named("lotr_SilverHunter");
+            GenStepUtility.SpawnPawns(map, kind, 1, 0f);
+        }
+    }
 }

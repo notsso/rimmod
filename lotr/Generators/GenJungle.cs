@@ -130,4 +130,59 @@ namespace lotr {
             }
         }
     }
+
+    public class GenStep_SerpentBirdTower : GenStep {
+        public override int SeedPart => 12370;
+
+        public override void Generate(Map map, GenStepParams parms) {
+            IntVec3 center = map.Center;
+            TerrainDef ancientTile = TerrainDef.Named("AncientTile");
+            ThingDef wallDef = ThingDef.Named("Wall");
+            ThingDef stoneBlock = ThingDef.Named("BlocksSandstone");
+            if (stoneBlock == null) stoneBlock = ThingDef.Named("BlocksGranite");
+
+            // Размеры башни (примерно 9x9 внутреннего помещения)
+            const int innerSize = 7;
+
+            // Пол из древней плитки
+            CellRect floorRect = CellRect.CenteredOn(center, innerSize, innerSize);
+            foreach (IntVec3 cell in floorRect) {
+                if (cell.InBounds(map) && Rand.Value < 0.8f)
+                    map.terrainGrid.SetTerrain(cell, ancientTile);
+            }
+
+            // Стены по периметру с пропусками (полуразрушенная башня)
+            foreach (IntVec3 cell in floorRect) {
+                bool isEdge = cell.x == floorRect.minX || cell.x == floorRect.maxX ||
+                              cell.z == floorRect.minZ || cell.z == floorRect.maxZ;
+                if (!isEdge) continue;
+
+                // Вход с одной стороны (юг), иногда пропускаем стены
+                if (cell.z == floorRect.maxZ && cell.x == floorRect.CenterCell.x)
+                    continue; // дверной проём
+
+                if (Rand.Value < 0.3f) continue; // разрушенная стена
+
+                if (cell.InBounds(map) && wallDef != null) {
+                    Thing wall = ThingMaker.MakeThing(wallDef, stoneBlock);
+                    GenSpawn.Spawn(wall, cell, map);
+                }
+            }
+
+            // Крыша над центром (частично)
+            foreach (IntVec3 cell in floorRect) {
+                if (cell.InBounds(map) && Rand.Value < 0.5f)
+                    map.roofGrid.SetRoof(cell, RoofDefOf.RoofConstructed);
+            }
+
+            // Немного мусора на полу
+            for (int i = 0; i < 3; i++) {
+                IntVec3 pos = floorRect.RandomCell;
+                if (pos.InBounds(map)) {
+                    Thing filth = ThingMaker.MakeThing(ThingDef.Named("Filth_RubbleRock"));
+                    GenSpawn.Spawn(filth, pos, map);
+                }
+            }
+        }
+    }
 }

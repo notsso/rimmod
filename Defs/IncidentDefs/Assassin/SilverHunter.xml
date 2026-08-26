@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект -->
+    <WorldObjectDef ParentName="Site">
+        <defName>SilverHunterTerritory_World</defName>
+        <label>silver hunter territory</label>
+        <description>A frozen mountain valley, where a silver-furred predator reigns supreme.</description>
+        <mapGenerator>SilverHunterTerritoryGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>SilverHunterTerritory_Site</defName>
+        <label>silver hunter territory</label>
+        <description>A silver-furred predator guards this frozen valley.</description>
+        <workerClass>lotr.SitePartWorker_SilverHunterTerritory</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>SilverHunterTerritory_Incident</defName>
+        <label>silver hunter territory</label>
+        <baseChance>1.0</baseChance>
+        <workerClass>lotr.IncidentWorker_SilverHunterTerritory</workerClass>
+        <category>Misc</category>
+        <earliestDay>50</earliestDay>
+        <letterLabel>Silver hunter territory</letterLabel>
+        <letterText>A frozen valley has been spotted, where a silver-furred predator is said to hunt.</letterText>
+        <letterDef>ThreatBig</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация существа -->
+    <GenStepDef>
+        <defName>SilverHunter</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_SilverHunter"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты -->
+    <MapGeneratorDef>
+        <defName>SilverHunterTerritoryGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>RocksFromGrid</li>
+            <li>TemperateForestTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>TemperateForestPlants</li>
+            <li>SilverHunter</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

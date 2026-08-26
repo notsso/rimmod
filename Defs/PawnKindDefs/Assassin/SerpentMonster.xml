@@ -3,40 +3,40 @@
 
     <ThingDef ParentName="AnimalThingBase">
 
-        <defName>lotr_CuspidsParrotRace</defName>
-        <label>Острозубый попугай</label>
-        <description>Эти попугаи обладают зачатками разума и известны тем, что имитируют голоса людей, выкрикивая невероятно обидные, злые и провокационные фразы, чтобы выманить хищников на ловушки.</description>
+        <defName>lotr_SerpentMonsterBirdRace</defName>
+        <label>Птица-монстр с телом змеи</label>
+        <description>Хищная птица, чьё тело напоминает змею, а чёрные перья источают тёмную энергию. Она бесшумно парит над болотами, высматривая добычу, и атакует с неожиданной стороны. Её перья используются в зельях пути Ассасина.</description>
         
         <statBases>
-            <MoveSpeed>5</MoveSpeed>
-            <MarketValue>500</MarketValue>
-            <ComfyTemperatureMin>-30</ComfyTemperatureMin>
-            <ComfyTemperatureMax>60</ComfyTemperatureMax>
-            <ArmorRating_Blunt>0.30</ArmorRating_Blunt>
-            <ArmorRating_Sharp>0.30</ArmorRating_Sharp>
-            <ArmorRating_Heat>0.30</ArmorRating_Heat>
+            <MoveSpeed>5.5</MoveSpeed>
+            <MarketValue>300</MarketValue>
+            <ComfyTemperatureMin>-25</ComfyTemperatureMin>
+            <ComfyTemperatureMax>50</ComfyTemperatureMax>
+            <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.20</ArmorRating_Heat>
             <Wildness>1</Wildness>
 
             <MeatAmount>0</MeatAmount>
             <LeatherAmount>0</LeatherAmount>
 
-            <MaxFlightTime>5</MaxFlightTime>
-            <FlightCooldown>5</FlightCooldown>
+            <MaxFlightTime>4</MaxFlightTime>
+            <FlightCooldown>6</FlightCooldown>
 
-            <SpiritualityOffset>0.5</SpiritualityOffset>
+            <SpiritualityOffset>0.25</SpiritualityOffset>
         </statBases>
 
         <race>
             <thinkTreeMain>Animal</thinkTreeMain>
             <body>Bird</body>
             <baseHungerRate>0.01</baseHungerRate>
-            <baseBodySize>0.3</baseBodySize>
-            <baseHealthScale>3.0</baseHealthScale>
+            <baseBodySize>0.4</baseBodySize>
+            <baseHealthScale>2.0</baseHealthScale>
 
             <foodType>OmnivoreRoughAnimal</foodType>
             <predator>true</predator>
             <trainability>None</trainability>
-            <lifeExpectancy>10</lifeExpectancy>
+            <lifeExpectancy>12</lifeExpectancy>
             <manhunterOnDamageChance>1</manhunterOnDamageChance>
             <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
 
@@ -53,11 +53,11 @@
                 </li>
                 <li>
                     <def>AnimalJuvenile</def>
-                    <minAge>0.12</minAge>
+                    <minAge>0.15</minAge>
                 </li>
                 <li>
                     <def>AnimalAdult</def>
-                    <minAge>0.2</minAge>
+                    <minAge>0.3</minAge>
                     <soundWounded>Pawn_Chicken_Wounded</soundWounded>
                     <soundDeath>Pawn_Chicken_Death</soundDeath>
                     <soundCall>Pawn_Chicken_Call</soundCall>
@@ -80,29 +80,29 @@
 
         <tools>
             <li>
-                <label>claws</label>
+                <label>когти</label>
                 <capacities>
                     <li>Scratch</li>
                 </capacities>
-                <power>6</power>
+                <power>8</power>
                 <cooldownTime>1.0</cooldownTime>
                 <linkedBodyPartsGroup>Feet</linkedBodyPartsGroup>
             </li>
             <li>
-                <label>beak</label>
+                <label>клюв</label>
                 <capacities>
                     <li>Bite</li>
                 </capacities>
-                <power>8</power>
-                <cooldownTime>1.0</cooldownTime>
+                <power>10</power>
+                <cooldownTime>1.2</cooldownTime>
                 <linkedBodyPartsGroup>Beak</linkedBodyPartsGroup>
             </li>
             <li>
-                <label>head</label>
+                <label>голова</label>
                 <capacities>
                     <li>Blunt</li>
                 </capacities>
-                <power>4</power>
+                <power>5</power>
                 <cooldownTime>0.5</cooldownTime>
                 <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
                 <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
@@ -111,51 +111,46 @@
         </tools>
 
         <butcherProducts>
-            <lotr_CuspidsParrotTongue>1</lotr_CuspidsParrotTongue>
-            <lotr_MysticalComponents>1</lotr_MysticalComponents>
+            <lotr_SerpentMonsterBirdFeathers>1</lotr_SerpentMonsterBirdFeathers>
         </butcherProducts>
 
     </ThingDef>
 
     <PawnKindDef ParentName="AnimalKindBase">
 
-        <defName>lotr_CuspidsParrot</defName>
-        <label>Острозубый попугай</label>
-        <race>lotr_CuspidsParrotRace</race>
-        <combatPower>200</combatPower>
-        <ecoSystemWeight>0.30</ecoSystemWeight>
+        <defName>lotr_SerpentMonsterBird</defName>
+        <label>Serpent-Bodied Monster Bird</label>
+        <race>lotr_SerpentMonsterBirdRace</race>
+        <combatPower>130</combatPower>
+        <ecoSystemWeight>0.5</ecoSystemWeight>
 
         <flyingAnimationFramePathPrefix>Things/Pawn/Animal/Chicken/Chicken_Flying_</flyingAnimationFramePathPrefix>
         <flyingAnimationFrameCount>8</flyingAnimationFrameCount>
         <flyingAnimationTicksPerFrame>2</flyingAnimationTicksPerFrame>
-        <flyingAnimationDrawSize>2.4</flyingAnimationDrawSize>
+        <flyingAnimationDrawSize>1.2</flyingAnimationDrawSize>
         <flyingAnimationDrawSizeIsMultiplier>true</flyingAnimationDrawSizeIsMultiplier>
         <flyingAnimationInheritColors>true</flyingAnimationInheritColors>
-        
-        <abilities>
-            <li>Cast_Taunt_8S</li>
-        </abilities>
 
         <lifeStages>
             <li>
                 <bodyGraphicData>
                     <texPath>Things/Pawn/Animal/Chicken/Chicken</texPath>
-                    <drawSize>0.45</drawSize>
-                    <color>(223,219,108)</color>
+                    <drawSize>0.5</drawSize>
+                    <color>(60,60,60)</color>
                 </bodyGraphicData>
             </li>
             <li>
                 <bodyGraphicData>
                     <texPath>Things/Pawn/Animal/Chicken/Chicken</texPath>
-                    <drawSize>0.75</drawSize>
-                    <color>(200,150,85)</color>
+                    <drawSize>0.8</drawSize>
+                    <color>(50,50,50)</color>
                 </bodyGraphicData>
             </li>
             <li>
                 <bodyGraphicData>
                     <texPath>Things/Pawn/Animal/Chicken/Chicken</texPath>
-                    <drawSize>0.87</drawSize>
-                    <color>(200,150,85)</color>
+                    <drawSize>0.9</drawSize>
+                    <color>(40,40,40)</color>
                     <shadowData>
                         <volume>(0.3, 0.4, 0.3)</volume>
                         <offset>(0,0,-0.05)</offset>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект -->
+    <WorldObjectDef ParentName="Site">
+        <defName>SerpentBirdTower_World</defName>
+        <label>serpent-bird tower ruins</label>
+        <description>An ancient ruined tower, now a nesting ground for a serpent-bodied monster bird.</description>
+        <mapGenerator>SerpentBirdTowerGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>SerpentBirdTower_Site</defName>
+        <label>serpent-bird tower</label>
+        <description>A ruined tower in the jungle, guarded by a deadly bird.</description>
+        <workerClass>lotr.SitePartWorker_SerpentBirdTower</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>SerpentBirdTower_Incident</defName>
+        <label>serpent-bird tower ruins</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_SerpentBirdTower</workerClass>
+        <category>Misc</category>
+        <earliestDay>5</earliestDay>
+        <letterLabel>Serpent-bird tower</letterLabel>
+        <letterText>A ruined tower has been spotted in the jungle. A monstrous bird with black feathers guards its nest.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация башни -->
+    <GenStepDef>
+        <defName>SerpentBirdTower</defName>
+        <order>1600</order>
+        <genStep Class="lotr.GenStep_SerpentBirdTower"/>
+    </GenStepDef>
+
+    <!-- Генерация птицы -->
+    <GenStepDef>
+        <defName>SerpentMonsterBird</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_SerpentMonsterBird"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты -->
+    <MapGeneratorDef>
+        <defName>SerpentBirdTowerGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>JungleTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>JunglePlants</li>
+            <li>SerpentBirdTower</li>
+            <li>SerpentMonsterBird</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

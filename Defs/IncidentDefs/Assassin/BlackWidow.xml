@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект -->
+    <WorldObjectDef ParentName="Site">
+        <defName>BlackWidowForest_World</defName>
+        <label>black widow forest</label>
+        <description>A dark forest covered in thick webs. A monstrous black widow spider hunts within.</description>
+        <mapGenerator>BlackWidowForestGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>BlackWidowForest_Site</defName>
+        <label>black widow forest</label>
+        <description>A fog-covered forest infested by a giant spider.</description>
+        <workerClass>lotr.SitePartWorker_BlackWidowForest</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>BlackWidowForest_Incident</defName>
+        <label>black widow forest</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_BlackWidowForest</workerClass>
+        <category>Misc</category>
+        <earliestDay>15</earliestDay>
+        <letterLabel>Black widow forest</letterLabel>
+        <letterText>A thick fog has settled over a nearby forest. A monstrous black widow spider has made its lair in the webs.</letterText>
+        <letterDef>ThreatBig</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация паука -->
+    <GenStepDef>
+        <defName>BlackWidowSpider</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_BlackWidowSpider"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты -->
+    <MapGeneratorDef>
+        <defName>BlackWidowForestGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>RocksFromGrid</li>
+            <li>TemperateForestTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>TemperateForestPlants</li>
+            <li>BlackWidowSpider</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект -->
+    <WorldObjectDef ParentName="Site">
+        <defName>AgatePeacockMeadow_World</defName>
+        <label>agate peacock meadow</label>
+        <description>A strange meadow where the grass shimmers like agate, and a magnificent peacock guards its territory.</description>
+        <mapGenerator>AgatePeacockMeadowGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>AgatePeacockMeadow_Site</defName>
+        <label>agate peacock meadow</label>
+        <description>A mystical meadow, home to an agate peacock.</description>
+        <workerClass>lotr.SitePartWorker_AgatePeacockMeadow</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>AgatePeacockMeadow_Incident</defName>
+        <label>agate peacock meadow</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_AgatePeacockMeadow</workerClass>
+        <category>Misc</category>
+        <earliestDay>10</earliestDay>
+        <letterLabel>Agate meadow</letterLabel>
+        <letterText>A beautiful meadow has been discovered, but its guardian is a dangerous agate peacock.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация существа -->
+    <GenStepDef>
+        <defName>AgatePeacock</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_AgatePeacock"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты -->
+    <MapGeneratorDef>
+        <defName>AgatePeacockMeadowGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>RocksFromGrid</li>
+            <li>TemperateForestTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>TemperateForestPlants</li>
+            <li>AgatePeacock</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

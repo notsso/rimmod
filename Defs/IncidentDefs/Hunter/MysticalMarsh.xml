@@ -16,8 +16,8 @@
         <label>Mystical marsh</label>
         <description>Болото наполнено мистической энергией.</description>
         <workerClass>lotr.SitePartWorker_MysticalMarsh</workerClass>
-        <siteTexture>World/WorldObjects/MysticalMarsh</siteTexture>
-        <expandingIconTexture>World/WorldObjects/MysticalMarsh</expandingIconTexture>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
 
     </SitePartDef>
 

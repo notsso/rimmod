@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="BasePawn">
+        <defName>lotr_SuccubusRace</defName>
+        <label>succubus</label>
+        <description>A fiendishly charming demoness with an intoxicating aura. Her eyes shimmer with forbidden allure, and her movements are impossibly graceful. She feeds on desire and despair, leaving broken minds in her wake. Her eyes are prized by alchemists.</description>
+
+        <statBases>
+            <Mass>60</Mass>
+            <Flammability>0.1</Flammability>
+            <LeatherAmount>0</LeatherAmount>
+            <MeatAmount>0</MeatAmount>
+            <MoveSpeed>6.0</MoveSpeed>
+            <ComfyTemperatureMin>-50</ComfyTemperatureMin>
+            <ComfyTemperatureMax>80</ComfyTemperatureMax>
+            <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.5</ArmorRating_Heat>
+            <PsychicSensitivity>1.5</PsychicSensitivity>
+            <SocialImpact>2.0</SocialImpact>
+            <MeleeDodgeChance>0.15</MeleeDodgeChance>
+            <MeleeHitChance>0.10</MeleeHitChance>
+            <IncomingDamageFactor>0.9</IncomingDamageFactor>
+            <SpiritualityOffset>6</SpiritualityOffset>
+            <ToxicResistance>0.8</ToxicResistance>
+        </statBases>
+
+        <race>
+            <intelligence>ToolUser</intelligence>
+            <body>Human</body>
+            <renderTree>Misc</renderTree>
+            <baseBodySize>1.2</baseBodySize>
+            <baseHealthScale>3.0</baseHealthScale>
+            <needsRest>false</needsRest>
+            <foodType>None</foodType>
+            <hasGenders>false</hasGenders>
+            <bloodDef>Filth_Blood</bloodDef>
+            <bloodSmearDef>Filth_BloodSmear</bloodSmearDef>
+            <leatherDef>Leather_Human</leatherDef>
+            <lifeExpectancy>200</lifeExpectancy>
+            <trainability>None</trainability>
+            <hediffGiverSets>
+                <li>OrganicStandard</li>
+            </hediffGiverSets>
+            <manhunterOnDamageChance>1</manhunterOnDamageChance>
+            <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
+            <lifeStageAges>
+                <li>
+                    <def>SuccubusAdult</def>
+                </li>
+            </lifeStageAges>
+            <thinkTreeMain>GiantThinkTree</thinkTreeMain>
+            <thinkTreeConstant>GiantConstantThinkTree</thinkTreeConstant>
+        </race>
+
+        <tools>
+            <li>
+                <label>left claw</label>
+                <labelNoLocation>claw</labelNoLocation>
+                <capacities><li>Scratch</li></capacities>
+                <power>18</power>
+                <cooldownTime>1</cooldownTime>
+                <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+                <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+                <armorPenetration>0.2</armorPenetration>
+            </li>
+            <li>
+                <label>right claw</label>
+                <labelNoLocation>claw</labelNoLocation>
+                <capacities><li>Scratch</li></capacities>
+                <power>18</power>
+                <cooldownTime>1</cooldownTime>
+                <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+                <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+                <armorPenetration>0.2</armorPenetration>
+            </li>
+            <li>
+                <label>teeth</label>
+                <capacities><li>Bite</li></capacities>
+                <power>14</power>
+                <cooldownTime>1</cooldownTime>
+                <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+                <chanceFactor>0.07</chanceFactor>
+                <armorPenetration>0.1</armorPenetration>
+            </li>
+            <li>
+                <label>head</label>
+                <capacities><li>Blunt</li></capacities>
+                <power>10</power>
+                <cooldownTime>1</cooldownTime>
+                <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+                <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+                <chanceFactor>0.2</chanceFactor>
+            </li>
+        </tools>
+
+        <butcherProducts>
+            <lotr_SuccubusEyes>1</lotr_SuccubusEyes>
+            <lotr_MysticalComponents>1</lotr_MysticalComponents>
+        </butcherProducts>
+    </ThingDef>
+
+    <LifeStageDef>
+        <defName>SuccubusAdult</defName>
+        <label>adult</label>
+        <developmentalStage>Adult</developmentalStage>
+        <bodySizeFactor>1</bodySizeFactor>
+        <healthScaleFactor>1</healthScaleFactor>
+        <hungerRateFactor>1</hungerRateFactor>
+    </LifeStageDef>
+
+    <PawnKindDef>
+        <defName>lotr_Succubus</defName>
+        <label>succubus</label>
+        <race>lotr_SuccubusRace</race>
+        <combatPower>500</combatPower>
+        <canMeleeAttack>true</canMeleeAttack>
+        <hostileToAll>true</hostileToAll>
+        <initialWillRange>0~0</initialWillRange>
+        <initialResistanceRange>0~0</initialResistanceRange>
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Succubus/Succubus</texPath>
+                    <graphicClass>Graphic_Multi</graphicClass>
+                    <drawSize>1.5</drawSize>
+                </bodyGraphicData>
+            </li>
+        </lifeStages>
+        <apparelMoney>0~0</apparelMoney>
+        <weaponMoney>0~0</weaponMoney>
+        <nakedChance>0</nakedChance>
+        <ecoSystemWeight>0</ecoSystemWeight>
+        <wildGroupSize>1</wildGroupSize>
+    </PawnKindDef>
+
+</Defs>
