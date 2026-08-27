@@ -10,18 +10,18 @@
             <!-- Серебро торговца -->
             <li Class="StockGenerator_SingleDef">
                 <thingDef>Silver</thingDef>
-                <countRange>500~1500</countRange>
+                <countRange>5000~15000</countRange>
             </li>
 
             <!-- Базовые товары -->
             <li Class="StockGenerator_SingleDef">
                 <thingDef>lotr_MagicalHerbs</thingDef>
-                <countRange>1~3</countRange>
+                <countRange>10~30</countRange>
             </li>
 
             <li Class="StockGenerator_SingleDef">
                 <thingDef>lotr_MysticalComponents</thingDef>
-                <countRange>0~2</countRange>
+                <countRange>4~10</countRange>
             </li>
 
             <!-- Торговец покупает потусторонние ингредиенты -->

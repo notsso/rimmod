@@ -62,11 +62,17 @@ namespace lotr {
                     Current.Game.components.Add(new GameComponent_PeaceOffer(Current.Game));
             }, "lotr_AddPeaceOffer", false, null);
 
-            // обработчик событий появления на глобальной карте потусторонних существ
+            // событие - потусторонние существа
             LongEventHandler.QueueLongEvent(() => {
                 if (Current.Game != null && !Current.Game.components.OfType<GameComponent_LotrPathEvents>().Any())
                     Current.Game.components.Add(new GameComponent_LotrPathEvents(Current.Game));
             }, "lotr_AddPathEvents", false, null);
+
+            // событие - собрание потусторонних
+            LongEventHandler.QueueLongEvent(() => {
+                if (Current.Game != null && !Current.Game.components.OfType<GameComponent_BeyonderGatheringScheduler>().Any())
+                    Current.Game.components.Add(new GameComponent_BeyonderGatheringScheduler(Current.Game));
+            }, "lotr_AddBeyonderGatheringScheduler", false, null);
         }
     }
 

@@ -48,12 +48,14 @@ namespace lotr {
             Pathway.Criminal, Pathway.Prisoner
         };
 
-        public static readonly string[] FactionDefNames = new string[] {
-            "lotr_IronAndBloodCrossOrder",
-            "lotr_ChurchOfTheGodOfCombat",
-            "lotr_DemonessSect",
-            "lotr_ChurchOfTheEternalBlazingSun"
+        public static readonly Dictionary<string, Pathway[]> MysticalFactions = new Dictionary<string, Pathway[]>{
+            { "lotr_ChurchOfTheGodOfCombat", new[] { Pathway.Warrior } },
+            { "lotr_IronAndBloodCrossOrder", new[] { Pathway.Hunter } },
+            { "lotr_DemonessSect", new[] { Pathway.Assassin } },
+            { "lotr_ChurchOfTheEternalBlazingSun", new[] { Pathway.Bard } }
         };
+
+        public static string[] FactionDefNames => MysticalFactions.Keys.ToArray();
 
         // Метод для нанесения урона рассудку
         public static void AdjustSanityLoss(Pawn pawn, float amount, string reasonMote = null) {
@@ -248,6 +250,90 @@ namespace lotr {
             }
 
             reason = "";
+            return true;
+        }
+
+        // Возвращает словарь ингредиентов для пути
+        public static bool TryGetPathwayIngredients(Pathway pathway, out Dictionary<int, string[]> ingredientDefs) {
+            ingredientDefs = new Dictionary<int, string[]>();
+
+            switch (pathway) {
+                case Pathway.Warrior:
+                    ingredientDefs = new Dictionary<int, string[]>
+                    {
+                        { 9, new[] { "lotr_GiantWarriorCore" } },
+                        { 8, new[] { "lotr_GiantSquireBone" } },
+                        { 7, new[] { "lotr_BlueGiantSpine" } },
+                        { 6, new[] { "lotr_DawnGiantCrystal" } },
+                        { 5, new[] { "lotr_GrayGiantHeart" } },
+                        { 4, new[] { "lotr_DivineGiantEye" } }
+                    };
+                    return true;
+
+                case Pathway.Hunter:
+                    ingredientDefs = new Dictionary<int, string[]>
+                    {
+                        { 9, new[] { "lotr_MarshCrystal", "lotr_BloodRedChestnut" } },
+                        { 8, new[] { "lotr_CuspidsParrotTongue", "lotr_CorpseLilyRootstock" } },
+                        { 7, new[] { "lotr_FireSalamanderGland", "lotr_MagmaElfCore" } },
+                        { 6, new[] { "lotr_BlackHuntingSpiderEyes", "lotr_SphinxBrain" } },
+                        { 5, new[] { "lotr_DemonicWolfClaws", "lotr_ForestHunterTongue" } },
+                        { 4, new[] { "lotr_MagmaGiantCore", "lotr_StoneofCatastrophe" } }
+                    };
+                    return true;
+
+                case Pathway.Assassin:
+                    ingredientDefs = new Dictionary<int, string[]>
+                    {
+                        { 9, new[] { "lotr_ShadowPoisonFlowerRootTendrils", "lotr_SerpentMonsterBirdFeathers" } },
+                        { 8, new[] { "lotr_DemonThroatHoneyguideHeart", "lotr_DarkProwlerPoisonSac" } },
+                        { 7, new[] { "lotr_AgatePeacockEgg", "lotr_AbyssDemonicFishBlood" } },
+                        { 6, new[] { "lotr_SuccubusEyes", "lotr_BlackWidowSilkGland" } },
+                        { 5, new[] { "lotr_FlowerFacedBatHead", "lotr_TwoTailedBlackSnakeGallbladder" } },
+                        { 4, new[] { "lotr_PlagueMotherSerpentVenomSac", "lotr_SilverHunterCrystal" } }
+                    };
+                    return true;
+
+                case Pathway.Bard:
+                    ingredientDefs = new Dictionary<int, string[]>
+                    {
+                        { 9, new[] { "lotr_FireBirdTailFeather", "lotr_SingingSunflower" } },
+                        { 8, new[] { "lotr_BrillianceRock", "lotr_MirrorHedgehogBlood" } },
+                        { 7, new[] { "lotr_DawnRoosterComb", "lotr_RadianceSpiritPactTreeFruit" } },
+                        { 6, new[] { "lotr_CrystallizedElderTreeRoots", "lotr_SpiritPactBirdFeathers" } },
+                        { 5, new[] { "lotr_DawnRoosterKingComb", "lotr_PureWhiteBrilliantRock" } },
+                        { 4, new[] { "lotr_SunDivineBirdFeathers", "lotr_HolyBrillianceRock" } }
+                    };
+                    return true;
+
+                default:
+                    return false;
+            }
+        }
+
+        public static bool TryGetFactionIngredients(string faction, out Dictionary<int, string[]> ingredientDefs) {
+            ingredientDefs = new Dictionary<int, string[]> { };
+            if (!MysticalFactions.ContainsKey(faction)) return false;
+
+            Pathway[] paths = MysticalFactions[faction];
+
+            foreach (Pathway path in paths) {
+                if (TryGetPathwayIngredients(path, out var pathIngredients)) {
+                    foreach (var kvp in pathIngredients) {
+                        int sequence = kvp.Key;
+                        string[] defs = kvp.Value;
+
+                        if (ingredientDefs.ContainsKey(sequence)) {
+                            ingredientDefs[sequence] = ingredientDefs[sequence]
+                                .Union(defs)
+                                .ToArray();
+                        } else {
+                            ingredientDefs[sequence] = defs.ToArray();
+                        }
+                    }
+                }
+            }
+
             return true;
         }
     }

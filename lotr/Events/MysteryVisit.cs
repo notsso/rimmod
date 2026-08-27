@@ -139,66 +139,30 @@ namespace lotr {
                     thing.Destroy(DestroyMode.Vanish);
             }
 
-            // Определяем путь и словарь ингредиентов в зависимости от фракции
-            Pathway organizationPathway = Pathway.No_pathway;
-            Dictionary<int, string[]> ingredientDefs = new Dictionary<int, string[]> { };
+            // Получаем все пути фракции
+            if (!BeyonderUtility.MysticalFactions.TryGetValue(faction.def.defName, out Pathway[] pathways))
+                return;
 
-            if (faction.def.defName == "lotr_ChurchOfTheGodOfCombat") {
-                organizationPathway = Pathway.Warrior;
-                ingredientDefs = new Dictionary<int, string[]> {
-                    { 9, new[] { "lotr_GiantWarriorCore" } },
-                    { 8, new[] { "lotr_GiantSquireBone" } },
-                    { 7, new[] { "lotr_BlueGiantSpine" } },
-                    { 6, new[] { "lotr_DawnGiantCrystal" } },
-                    { 5, new[] { "lotr_GrayGiantHeart" } },
-                    { 4, new[] { "lotr_DivineGiantEye" } }
-                };
-            } else if (faction.def.defName == "lotr_IronAndBloodCrossOrder") {
-                organizationPathway = Pathway.Hunter;
-                ingredientDefs = new Dictionary<int, string[]> {
-                    { 9, new[] { "lotr_MarshCrystal", "lotr_BloodRedChestnut"} },
-                    { 8, new[] { "lotr_CuspidsParrotTongue", "lotr_CorpseLilyRootstock" } },
-                    { 7, new[] { "lotr_FireSalamanderGland", "lotr_MagmaElfCore" } },
-                    { 6, new[] { "lotr_BlackHuntingSpiderEyes", "lotr_SphinxBrain" } },
-                    { 5, new[] { "lotr_DemonicWolfClaws", "lotr_ForestHunterTongue" } },
-                    { 4, new[] { "lotr_MagmaGiantCore", "lotr_StoneofCatastrophe" } }
-                };
-            } else if (faction.def.defName == "lotr_DemonessSect") {
-                organizationPathway = Pathway.Assassin;
-                ingredientDefs = new Dictionary<int, string[]> {
-                    { 9, new[] { "lotr_ShadowPoisonFlowerRootTendrils", "lotr_SerpentMonsterBirdFeathers" } },
-                    { 8, new[] { "lotr_DemonThroatHoneyguideHeart", "lotr_DarkProwlerPoisonSac" } },
-                    { 7, new[] { "lotr_AgatePeacockEgg", "lotr_AbyssDemonicFishBlood" } },
-                    { 6, new[] { "lotr_SuccubusEyes", "lotr_BlackWidowSilkGland" } },
-                    { 5, new[] { "lotr_FlowerFacedBatHead", "lotr_TwoTailedBlackSnakeGallbladder" } },
-                    { 4, new[] { "lotr_PlagueMotherSerpentVenomSac", "lotr_SilverHunterCrystal" } }
-                };
-            } else if (faction.def.defName == "lotr_RadiantDawn") {
-                organizationPathway = Pathway.Bard;
-                ingredientDefs = new Dictionary<int, string[]> {
-                    { 9, new[] { "lotr_FireBirdTailFeather", "lotr_SingingSunflower" } },
-                    { 8, new[] { "lotr_BrillianceRock", "lotr_MirrorHedgehogBlood" } },
-                    { 7, new[] { "lotr_DawnRoosterComb", "lotr_RadianceSpiritPactTreeFruit" } },
-                    { 6, new[] { "lotr_CrystallizedElderTreeRoots", "lotr_SpiritPactBirdFeathers" } },
-                    { 5, new[] { "lotr_DawnRoosterKingComb", "lotr_PureWhiteBrilliantRock" } },
-                    { 4, new[] { "lotr_SunDivineBirdFeathers", "lotr_HolyBrillianceRock" } }
-                };
-            }
-
-            int maxSequence = GetMaxSequenceForPathway(map, organizationPathway);
-
-            for (int potionLevel = 9; potionLevel >= maxSequence - 1; potionLevel--) {
-                if (!ingredientDefs.TryGetValue(potionLevel, out string[] defs))
+            foreach (Pathway pathway in pathways) {
+                if (!BeyonderUtility.TryGetPathwayIngredients(pathway, out var ingredientDefs))
                     continue;
 
-                foreach (string defName in defs) {
-                    if (Rand.Chance(0.7f)) continue;
-                    ThingDef ingredientDef = ThingDef.Named(defName);
+                int maxSequence = GetMaxSequenceForPathway(map, pathway);
+
+                for (int seq = 9; seq >= maxSequence - 1; seq--) {
+                    if (!ingredientDefs.TryGetValue(seq, out string[] defs))
+                        continue;
+
+                    float chance = 0.7f;
+                    if (!Rand.Chance(chance))
+                        continue;
+
+                    string selectedDef = defs.RandomElement();
+                    ThingDef ingredientDef = ThingDef.Named(selectedDef);
                     if (ingredientDef == null) continue;
 
                     Thing item = ThingMaker.MakeThing(ingredientDef);
                     item.stackCount = 1;
-
                     if (!trader.inventory.innerContainer.TryAdd(item, true))
                         item.Destroy(DestroyMode.Vanish);
                 }

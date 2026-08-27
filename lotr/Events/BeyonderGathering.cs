@@ -83,7 +83,6 @@ namespace lotr {
         private bool goodsGenerated;
         private int randomPriceFactorSeed;
 
-        public bool hasTraded = false;      // было ли открыто окно торговли
         public int expirationTick = -1;     // таймаут (3 дня)
 
         public const int TimeoutTicks = 3 * 60000; // 3 игровых дня
@@ -111,7 +110,6 @@ namespace lotr {
             Scribe_Collections.Look(ref goods, "goods", LookMode.Deep);
             Scribe_Values.Look(ref goodsGenerated, "goodsGenerated", false);
             Scribe_Values.Look(ref randomPriceFactorSeed, "randomPriceFactorSeed", 0);
-            Scribe_Values.Look(ref hasTraded, "hasTraded", false);
             Scribe_Values.Look(ref expirationTick, "expirationTick", -1);
         }
 
@@ -124,8 +122,7 @@ namespace lotr {
                 yield break;
 
             // Проверка таймаута
-            if (!hasTraded && expirationTick > 0 && Find.TickManager.TicksGame >= expirationTick) {
-                parent.Destroy();
+            if (expirationTick > 0 && Find.TickManager.TicksGame >= expirationTick) {
                 yield break;
             }
 
@@ -141,7 +138,6 @@ namespace lotr {
                     }
 
                     EnsureGoodsGenerated();
-                    hasTraded = true;
                     Find.WindowStack.Add(new Dialog_Trade(negotiator, this));
                 }
             };
@@ -170,19 +166,23 @@ namespace lotr {
                 goods.Add(thing);
             }
 
-            // Редкие потусторонние ингредиенты с рандомным шансом
-            AddRandomIngredient("lotr_MarshCrystal", 0.6f);
-            AddRandomIngredient("lotr_BloodRedChestnut", 0.6f);
-            AddRandomIngredient("lotr_CuspidsParrotTongue", 0.5f);
-            AddRandomIngredient("lotr_CorpseLilyRootstock", 0.5f);
-            AddRandomIngredient("lotr_FireSalamanderGland", 0.4f);
-            AddRandomIngredient("lotr_MagmaElfCore", 0.4f);
-            AddRandomIngredient("lotr_BlackHuntingSpiderEyes", 0.3f);
-            AddRandomIngredient("lotr_SphinxBrain", 0.3f);
-            AddRandomIngredient("lotr_DemonicWolfClaws", 0.2f);
-            AddRandomIngredient("lotr_ForestHunterTongue", 0.2f);
-            AddRandomIngredient("lotr_MagmaGiantCore", 0.1f);
-            AddRandomIngredient("lotr_StoneofCatastrophe", 0.1f);
+            // Для каждого пути генерируем ингредиенты с шансом по последовательности
+            foreach (Pathway pathway in BeyonderUtility.AllPathways) {
+                if (!BeyonderUtility.TryGetPathwayIngredients(pathway, out var ingredientDefs))
+                    continue;
+
+                // Проходим по последовательностям 9..4
+                for (int seq = 9; seq >= 4; seq--) {
+                    if (!ingredientDefs.TryGetValue(seq, out string[] defs))
+                        continue;
+
+                    foreach (string defName in defs) {
+                        // Шанс: 0.6 для 9, 0.5 для 8, ..., 0.1 для 4
+                        float chance = 0.6f - (9 - seq) * 0.1f;
+                        AddRandomIngredient(defName, chance);
+                    }
+                }
+            }
         }
 
         private void AddRandomIngredient(string defName, float chance) {
@@ -227,16 +227,47 @@ namespace lotr {
         public override void CompTick() {
             base.CompTick();
 
-            // Если торговали и окно торговли закрылось – удаляем объект
-            if (hasTraded && Find.WindowStack.WindowOfType<Dialog_Trade>() == null) {
-                parent.Destroy();
+            // Если открыто окно торговли, не уничтожаем объект
+            if (Find.WindowStack.WindowOfType<Dialog_Trade>() != null)
                 return;
-            }
 
             // Если не торговали и истёк таймаут – удаляем объект
-            if (!hasTraded && expirationTick > 0 && Find.TickManager.TicksGame >= expirationTick) {
+            if (expirationTick > 0 && Find.TickManager.TicksGame >= expirationTick) {
+                Messages.Message("Beyonder gathering ended", MessageTypeDefOf.NeutralEvent);
                 parent.Destroy();
             }
+        }
+    }
+
+    public class GameComponent_BeyonderGatheringScheduler : GameComponent {
+        private int nextGatheringTick = -1;
+        private const int GatheringIntervalTicks = 28 * 60000; // 28 дней
+
+        public GameComponent_BeyonderGatheringScheduler(Game game) { }
+
+        public override void ExposeData() {
+            base.ExposeData();
+            Scribe_Values.Look(ref nextGatheringTick, "nextGatheringTick", -1);
+        }
+
+        public override void GameComponentTick() {
+            base.GameComponentTick();
+
+            if (nextGatheringTick < 0)
+                nextGatheringTick = Find.TickManager.TicksGame + GatheringIntervalTicks;
+
+            if (Find.TickManager.TicksGame < nextGatheringTick)
+                return;
+
+            // Пора запускать событие
+            IncidentDef incident = IncidentDef.Named("BeyonderGathering_Incident");
+            if (incident != null) {
+                IncidentParms parms = StorytellerUtility.DefaultParmsNow(incident.category, Find.World);
+                parms.forced = true;
+                Find.Storyteller.TryFire(new FiringIncident(incident, null, parms));
+            }
+
+            nextGatheringTick = Find.TickManager.TicksGame + GatheringIntervalTicks;
         }
     }
 }
