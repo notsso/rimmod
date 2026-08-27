@@ -29,7 +29,7 @@
         <earliestDay>45</earliestDay>
         <letterLabel>Plague serpent lair</letterLabel>
         <letterText>A fetid swamp has been discovered, its waters tainted by disease. A colossal serpent makes its nest within.</letterText>
-        <letterDef>ThreatBig</letterDef>
+        <letterDef>PositiveEvent</letterDef>
         <targetTags>
             <li>World</li>
         </targetTags>

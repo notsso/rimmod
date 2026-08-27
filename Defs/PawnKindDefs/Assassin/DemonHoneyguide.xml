@@ -85,8 +85,10 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_DemonThroatHoneyguideHeart>1</lotr_DemonThroatHoneyguideHeart>
+        </killedLeavings>
+        <butcherProducts>
             <lotr_MysticalComponents>1</lotr_MysticalComponents>
         </butcherProducts>
     </ThingDef>

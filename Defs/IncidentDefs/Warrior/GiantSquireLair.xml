@@ -26,7 +26,7 @@
     <earliestDay>12</earliestDay>
     <letterLabel>Giant squire lair</letterLabel>
     <letterText>A stone house has appeared in the wilderness. A menacing giant squire now dwells within.</letterText>
-    <letterDef>ThreatBig</letterDef>
+    <letterDef>PositiveEvent</letterDef>
     <targetTags>
       <li>World</li>
     </targetTags>

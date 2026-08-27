@@ -26,7 +26,7 @@
     <earliestDay>20</earliestDay>
     <letterLabel>Blue giant ruins</letterLabel>
     <letterText>Ancient ruins have been discovered, restored by unknown hands. A blue giant now guards them.</letterText>
-    <letterDef>ThreatBig</letterDef>
+    <letterDef>PositiveEvent</letterDef>
     <targetTags>
       <li>World</li>
     </targetTags>

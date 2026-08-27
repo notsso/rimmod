@@ -97,8 +97,10 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_SilverHunterCrystal>1</lotr_SilverHunterCrystal>
+        </killedLeavings>
+        <butcherProducts>
             <lotr_MysticalComponents>3</lotr_MysticalComponents>
         </butcherProducts>
     </ThingDef>

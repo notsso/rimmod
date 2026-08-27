@@ -104,8 +104,10 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_BlackHuntingSpiderEyes>1</lotr_BlackHuntingSpiderEyes>
+        </killedLeavings>
+        <butcherProducts>
             <lotr_MysticalComponents>1</lotr_MysticalComponents>
         </butcherProducts>
 

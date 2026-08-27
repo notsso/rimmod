@@ -141,8 +141,10 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_SphinxBrain>1</lotr_SphinxBrain>
+        </killedLeavings>
+        <butcherProducts>
             <lotr_MysticalComponents>1</lotr_MysticalComponents>
         </butcherProducts>
 

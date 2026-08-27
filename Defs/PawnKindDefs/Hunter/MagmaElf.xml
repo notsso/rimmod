@@ -91,8 +91,10 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_FireSalamanderGland>1</lotr_FireSalamanderGland>
+        </killedLeavings>
+        <butcherProducts>
             <lotr_MysticalComponents>1</lotr_MysticalComponents>
         </butcherProducts>
 

@@ -95,8 +95,10 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_SuccubusEyes>1</lotr_SuccubusEyes>
+        </killedLeavings>
+        <butcherProducts>
             <lotr_MysticalComponents>1</lotr_MysticalComponents>
         </butcherProducts>
     </ThingDef>

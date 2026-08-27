@@ -26,7 +26,7 @@
         <earliestDay>20</earliestDay>
         <letterLabel>Spirit pact bird grove</letterLabel>
         <letterText>A sacred grove has been found, guarded by a single spirit pact bird. Its feathers are said to bind oaths.</letterText>
-        <letterDef>ThreatBig</letterDef>
+        <letterDef>PositiveEvent</letterDef>
         <targetTags><li>World</li></targetTags>
     </IncidentDef>
 

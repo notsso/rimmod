@@ -59,8 +59,11 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_BlueGiantSpine>1</lotr_BlueGiantSpine>
+        </killedLeavings>
+        <butcherProducts>
+            <lotr_MysticalComponents>1</lotr_MysticalComponents>
         </butcherProducts>
     </ThingDef>
 

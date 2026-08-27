@@ -26,7 +26,7 @@
         <earliestDay>30</earliestDay>
         <letterLabel>Throne of the dawn rooster king</letterLabel>
         <letterText>A scorched hill has been found, upon which the king of dawn roosters rules. Its comb shines like a second sun.</letterText>
-        <letterDef>ThreatBig</letterDef>
+        <letterDef>PositiveEvent</letterDef>
         <targetTags><li>World</li></targetTags>
     </IncidentDef>
 

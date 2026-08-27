@@ -58,8 +58,11 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_DawnGiantCrystal>1</lotr_DawnGiantCrystal>
+        </killedLeavings>
+        <butcherProducts>
+            <lotr_MysticalComponents>1</lotr_MysticalComponents>
         </butcherProducts>
     </ThingDef>
 

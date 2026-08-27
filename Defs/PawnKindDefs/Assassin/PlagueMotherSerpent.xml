@@ -89,8 +89,10 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_PlagueMotherSerpentVenomSac>1</lotr_PlagueMotherSerpentVenomSac>
+        </killedLeavings>
+        <butcherProducts>
             <lotr_MysticalComponents>3</lotr_MysticalComponents>
         </butcherProducts>
     </ThingDef>

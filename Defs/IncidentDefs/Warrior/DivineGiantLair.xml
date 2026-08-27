@@ -25,7 +25,7 @@
     <earliestDay>60</earliestDay>
     <letterLabel>Divine giant palace</letterLabel>
     <letterText>A massive palace of the Divine Giant has been erected, with roads leading in all directions.</letterText>
-    <letterDef>ThreatBig</letterDef>
+    <letterDef>PositiveEvent</letterDef>
     <targetTags>
       <li>World</li>
     </targetTags>

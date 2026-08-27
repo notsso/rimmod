@@ -156,8 +156,10 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_DemonicWolfClaws>1</lotr_DemonicWolfClaws>
+        </killedLeavings>
+        <butcherProducts>
             <lotr_MysticalComponents>2</lotr_MysticalComponents>
         </butcherProducts>
 

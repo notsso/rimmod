@@ -83,8 +83,10 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_BlackWidowSilkGland>1</lotr_BlackWidowSilkGland>
+        </killedLeavings>
+        <butcherProducts>
             <lotr_MysticalComponents>1</lotr_MysticalComponents>
         </butcherProducts>
     </ThingDef>

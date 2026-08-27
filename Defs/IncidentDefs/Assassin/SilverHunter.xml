@@ -29,7 +29,7 @@
         <earliestDay>50</earliestDay>
         <letterLabel>Silver hunter territory</letterLabel>
         <letterText>A frozen valley has been spotted, where a silver-furred predator is said to hunt.</letterText>
-        <letterDef>ThreatBig</letterDef>
+        <letterDef>PositiveEvent</letterDef>
         <targetTags>
             <li>World</li>
         </targetTags>

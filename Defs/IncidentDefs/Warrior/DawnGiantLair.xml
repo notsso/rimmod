@@ -25,7 +25,7 @@
     <earliestDay>30</earliestDay>
     <letterLabel>Dawn giant village</letterLabel>
     <letterText>A large village of giants has been discovered, ruled by a Dawn Giant.</letterText>
-    <letterDef>ThreatBig</letterDef>
+    <letterDef>PositiveEvent</letterDef>
     <targetTags>
       <li>World</li>
     </targetTags>

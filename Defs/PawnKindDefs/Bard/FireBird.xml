@@ -96,9 +96,10 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_FireBirdTailFeather>1</lotr_FireBirdTailFeather>
-        </butcherProducts>
+        </killedLeavings>
+        <butcherProducts />
 
         <comps>
             <li Class="lotr.CompProperties_MovingGlower">

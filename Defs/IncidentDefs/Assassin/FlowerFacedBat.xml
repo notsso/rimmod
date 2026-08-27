@@ -29,7 +29,7 @@
         <earliestDay>25</earliestDay>
         <letterLabel>Flower-faced bat cave</letterLabel>
         <letterText>A dark cave has been discovered, its entrance covered in night-blooming flowers. A dangerous bat colony lurks within.</letterText>
-        <letterDef>ThreatBig</letterDef>
+        <letterDef>PositiveEvent</letterDef>
         <targetTags>
             <li>World</li>
         </targetTags>

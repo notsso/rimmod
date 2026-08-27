@@ -132,8 +132,10 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_ForestHunterTongue>1</lotr_ForestHunterTongue>
+        </killedLeavings>
+        <butcherProducts>
             <lotr_MysticalComponents>2</lotr_MysticalComponents>
         </butcherProducts>
 

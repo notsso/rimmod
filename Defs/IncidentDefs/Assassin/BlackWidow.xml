@@ -29,7 +29,7 @@
         <earliestDay>15</earliestDay>
         <letterLabel>Black widow forest</letterLabel>
         <letterText>A thick fog has settled over a nearby forest. A monstrous black widow spider has made its lair in the webs.</letterText>
-        <letterDef>ThreatBig</letterDef>
+        <letterDef>PositiveEvent</letterDef>
         <targetTags>
             <li>World</li>
         </targetTags>

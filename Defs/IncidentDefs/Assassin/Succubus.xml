@@ -29,7 +29,7 @@
         <earliestDay>20</earliestDay>
         <letterLabel>Succubus temple</letterLabel>
         <letterText>A ruined temple has been found deep in the woods. A beautiful but deadly creature is said to dwell within, luring travelers to their doom.</letterText>
-        <letterDef>ThreatBig</letterDef>
+        <letterDef>PositiveEvent</letterDef>
         <targetTags>
             <li>World</li>
         </targetTags>

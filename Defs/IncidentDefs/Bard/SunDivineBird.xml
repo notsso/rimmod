@@ -26,7 +26,7 @@
         <earliestDay>60</earliestDay>
         <letterLabel>Peak of the sun divine bird</letterLabel>
         <letterText>A sacred mountain has been revealed, crowned by the nest of a sun divine bird. Its light banishes all shadows.</letterText>
-        <letterDef>ThreatBig</letterDef>
+        <letterDef>PositiveEvent</letterDef>
         <targetTags><li>World</li></targetTags>
     </IncidentDef>
 

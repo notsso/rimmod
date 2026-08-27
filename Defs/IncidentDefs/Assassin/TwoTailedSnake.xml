@@ -29,7 +29,7 @@
         <earliestDay>25</earliestDay>
         <letterLabel>Two-tailed snake hollow</letterLabel>
         <letterText>A hollow overgrown with tall grass has been discovered. A dangerous two-tailed black snake makes its den there.</letterText>
-        <letterDef>ThreatBig</letterDef>
+        <letterDef>PositiveEvent</letterDef>
         <targetTags>
             <li>World</li>
         </targetTags>

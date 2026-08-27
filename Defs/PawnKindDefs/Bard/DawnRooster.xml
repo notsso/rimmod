@@ -98,8 +98,11 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_DawnRoosterComb>1</lotr_DawnRoosterComb>
+        </killedLeavings>
+        <butcherProducts>
+            <lotr_MysticalComponents>1</lotr_MysticalComponents>
         </butcherProducts>
 
         <comps>

@@ -104,8 +104,10 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_DawnRoosterKingComb>1</lotr_DawnRoosterKingComb>
+        </killedLeavings>
+        <butcherProducts>
             <lotr_MysticalComponents>2</lotr_MysticalComponents>
         </butcherProducts>
 

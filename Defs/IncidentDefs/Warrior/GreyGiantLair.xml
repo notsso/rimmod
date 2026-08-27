@@ -25,7 +25,7 @@
     <earliestDay>40</earliestDay>
     <letterLabel>Grey giant palace</letterLabel>
     <letterText>A small palace of the Grey Giant has been spotted, surrounded by lesser dwellings.</letterText>
-    <letterDef>ThreatBig</letterDef>
+    <letterDef>PositiveEvent</letterDef>
     <targetTags>
       <li>World</li>
     </targetTags>

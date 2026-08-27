@@ -29,7 +29,7 @@
     <earliestDay>7</earliestDay>
     <letterLabel>Giant warrior lair</letterLabel>
     <letterText>A crude wooden hut has appeared in the wilderness. A ferocious giant warrior has made it its lair.</letterText>
-    <letterDef>ThreatBig</letterDef>
+    <letterDef>PositiveEvent</letterDef>
     <targetTags>
       <li>World</li>
     </targetTags>

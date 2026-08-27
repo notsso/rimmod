@@ -106,10 +106,10 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_CuspidsParrotTongue>1</lotr_CuspidsParrotTongue>
-            <lotr_MysticalComponents>1</lotr_MysticalComponents>
-        </butcherProducts>
+        </killedLeavings>
+        <butcherProducts />
 
     </ThingDef>
 

@@ -88,9 +88,11 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_FlowerFacedBatHead>1</lotr_FlowerFacedBatHead>
-            <lotr_MysticalComponents>1</lotr_MysticalComponents>
+        </killedLeavings>
+        <butcherProducts>
+            <lotr_MysticalComponents>2</lotr_MysticalComponents>
         </butcherProducts>
     </ThingDef>
 

@@ -16,9 +16,10 @@
             <baseHealthScale>3.0</baseHealthScale>
         </race>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_GiantSquireBone>1</lotr_GiantSquireBone>
-        </butcherProducts>
+        </killedLeavings>
+        <butcherProducts />
     </ThingDef>
 
     <PawnKindDef>

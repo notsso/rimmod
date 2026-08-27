@@ -110,9 +110,10 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_SerpentMonsterBirdFeathers>1</lotr_SerpentMonsterBirdFeathers>
-        </butcherProducts>
+        </killedLeavings>
+        <butcherProducts />
 
     </ThingDef>
 

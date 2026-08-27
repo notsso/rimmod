@@ -76,9 +76,10 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_MirrorHedgehogBlood>1</lotr_MirrorHedgehogBlood>
-        </butcherProducts>
+        </killedLeavings>
+        <butcherProducts />
     </ThingDef>
 
     <PawnKindDef ParentName="AnimalKindBase">

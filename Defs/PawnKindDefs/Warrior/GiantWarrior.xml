@@ -15,9 +15,10 @@
             <baseHealthScale>2.2</baseHealthScale>
         </race>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_GiantWarriorCore>1</lotr_GiantWarriorCore>
-        </butcherProducts>
+        </killedLeavings>
+        <butcherProducts />
     </ThingDef>
 
     <PawnKindDef>

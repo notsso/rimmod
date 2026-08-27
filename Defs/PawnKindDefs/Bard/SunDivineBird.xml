@@ -118,8 +118,10 @@
             </li>
         </tools>
 
-        <butcherProducts>
+        <killedLeavings>
             <lotr_SunDivineBirdFeathers>1</lotr_SunDivineBirdFeathers>
+        </killedLeavings>
+        <butcherProducts>
             <lotr_MysticalComponents>3</lotr_MysticalComponents>
         </butcherProducts>
 
