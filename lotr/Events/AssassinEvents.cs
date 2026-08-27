@@ -16,12 +16,30 @@ namespace lotr {
         public override void PostMapGenerate(Map map) { }
     }
 
+    public class IncidentWorker_ShadowPoisonSwamp : IncidentWorker_WorldSiteBase {
+        protected override SitePartDef GetSitePartDef() => DefDatabase<SitePartDef>.GetNamed("ShadowPoisonSwamp_Site");
+        protected override WorldObjectDef GetWorldObjectDef() => DefDatabase<WorldObjectDef>.GetNamed("ShadowPoisonSwamp_World");
+    }
+
+    public class SitePartWorker_ShadowPoisonSwamp : SitePartWorker {
+        public override void PostMapGenerate(Map map) { }
+    }
+
     public class IncidentWorker_DemonThroatHoneyguideLair : IncidentWorker_WorldSiteBase {
         protected override SitePartDef GetSitePartDef() => DefDatabase<SitePartDef>.GetNamed("DemonThroatHoneyguideLair_Site");
         protected override WorldObjectDef GetWorldObjectDef() => DefDatabase<WorldObjectDef>.GetNamed("DemonThroatHoneyguideLair_World");
     }
 
     public class SitePartWorker_DemonThroatHoneyguideLair : SitePartWorker {
+        public override void PostMapGenerate(Map map) { }
+    }
+
+    public class IncidentWorker_DarkProwlerDen : IncidentWorker_WorldSiteBase {
+        protected override SitePartDef GetSitePartDef() => DefDatabase<SitePartDef>.GetNamed("DarkProwlerDen_Site");
+        protected override WorldObjectDef GetWorldObjectDef() => DefDatabase<WorldObjectDef>.GetNamed("DarkProwlerDen_World");
+    }
+
+    public class SitePartWorker_DarkProwlerDen : SitePartWorker {
         public override void PostMapGenerate(Map map) { }
     }
 

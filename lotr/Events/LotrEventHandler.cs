@@ -30,7 +30,7 @@ namespace lotr {
                     Pathway.Hunter,
                     new Dictionary<int, List<IncidentDef>>
                     {
-                        { 9, new List<IncidentDef> { IncidentDef.Named("MysticalMarsh_Incident") } },
+                        { 9, new List<IncidentDef> { IncidentDef.Named("MysticalMarsh_Incident"),  IncidentDef.Named("BloodRedChestnutGrove_Incident")} },
                         { 8, new List<IncidentDef> { IncidentDef.Named("JungleParrot_Incident") } },
                         { 7, new List<IncidentDef> { IncidentDef.Named("FireSalamanderRuins_Incident"), IncidentDef.Named("StrangeVolcano_Incident") } },
                         { 6, new List<IncidentDef> { IncidentDef.Named("SpiderForest_Incident"), IncidentDef.Named("DesertRuins_Incident") } },
@@ -42,8 +42,8 @@ namespace lotr {
                     Pathway.Assassin,
                     new Dictionary<int, List<IncidentDef>>
                     {
-                        { 9, new List<IncidentDef> { IncidentDef.Named("SerpentBirdTower_Incident") } },
-                        { 8, new List<IncidentDef> { IncidentDef.Named("DemonThroatHoneyguideLair_Incident") } },
+                        { 9, new List<IncidentDef> { IncidentDef.Named("SerpentBirdTower_Incident"), IncidentDef.Named("ShadowPoisonSwamp_Incident") } },
+                        { 8, new List<IncidentDef> { IncidentDef.Named("DemonThroatHoneyguideLair_Incident"), IncidentDef.Named("DarkProwlerDen_Incident")} },
                         { 7, new List<IncidentDef> { IncidentDef.Named("AgatePeacockMeadow_Incident") } },
                         { 6, new List<IncidentDef> { IncidentDef.Named("BlackWidowForest_Incident"), IncidentDef.Named("SuccubusTemple_Incident") } },
                         { 5, new List<IncidentDef> { IncidentDef.Named("FlowerFacedBatCave_Incident"), IncidentDef.Named("TwoTailedSnakeHollow_Incident") } },
@@ -54,10 +54,10 @@ namespace lotr {
                     Pathway.Bard,
                     new Dictionary<int, List<IncidentDef>>
                     {
-                        { 9, new List<IncidentDef> { IncidentDef.Named("FireBirdNest_Incident") } },
+                        { 9, new List<IncidentDef> { IncidentDef.Named("FireBirdNest_Incident"), IncidentDef.Named("SingingSunflowerGlade_Incident") } },
                         { 8, new List<IncidentDef> { IncidentDef.Named("MirrorHedgehogGlade_Incident") } },
-                        { 7, new List<IncidentDef> { IncidentDef.Named("DawnRoosterMeadow_Incident") } },
-                        { 6, new List<IncidentDef> { IncidentDef.Named("SpiritPactBirdGrove_Incident") } },
+                        { 7, new List<IncidentDef> { IncidentDef.Named("DawnRoosterMeadow_Incident"), IncidentDef.Named("RadianceSpiritPactTreeGrove_Incident") } },
+                        { 6, new List<IncidentDef> { IncidentDef.Named("SpiritPactBirdGrove_Incident"), IncidentDef.Named("CrystallizedElderTreeForest_Incident") } },
                         { 5, new List<IncidentDef> { IncidentDef.Named("DawnRoosterKingThrone_Incident") } },
                         { 4, new List<IncidentDef> { IncidentDef.Named("SunDivineBirdPeak_Incident") } }
                     }

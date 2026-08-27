@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Растение: Поющий подсолнух -->
+    <ThingDef ParentName="PlantBase">
+        <thingClass>Plant</thingClass>
+        <defName>lotr_Plant_SingingSunflower</defName>
+        <label>singing sunflower</label>
+        <description>A mystical sunflower that hums a faint, uplifting melody. Its petals radiate warm sunlight, and it is prized by alchemists for bard potions.</description>
+
+        <statBases>
+            <MaxHitPoints>100</MaxHitPoints>
+            <Nutrition>0.05</Nutrition>
+            <Beauty>25</Beauty>
+            <BeautyOutdoors>25</BeautyOutdoors>
+            <DeteriorationRate>-5</DeteriorationRate>
+        </statBases>
+
+        <graphicData>
+            <texPath>Things/Plant/Daylily</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>CutoutPlant</shaderType>
+        </graphicData>
+
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <pathCost>14</pathCost>
+
+        <ingestible />
+
+        <plant>
+            <harvestedThingDef>lotr_SingingSunflower</harvestedThingDef>
+            <harvestYield>1</harvestYield>
+            <harvestAfterGrowth>0.50</harvestAfterGrowth>
+            <harvestTag>Standard</harvestTag>
+            <harvestWork>500</harvestWork>
+            <dieIfLeafless>false</dieIfLeafless>
+            <wildOrder>1</wildOrder>
+            <purpose>Misc</purpose>
+            <growDays>2</growDays>
+            <growMinGlow>0.5</growMinGlow>
+            <minGrowthTemperature>-10</minGrowthTemperature>
+            <maxGrowthTemperature>50</maxGrowthTemperature>
+            <visualSizeRange>0.6~1.2</visualSizeRange>
+            <topWindExposure>0.1</topWindExposure>
+            <allowAutoCut>false</allowAutoCut>
+        </plant>
+
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>6</glowRadius>
+                <glowColor>(255, 200, 50, 0)</glowColor>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <!-- Дерево: Древо Духовного Договора Сияния -->
+    <ThingDef ParentName="DeciduousTreeBase">
+        <defName>lotr_Plant_RadianceSpiritPactTree</defName>
+        <label>radiance spirit pact tree</label>
+        <description>A sacred tree with silver-white bark and golden glowing leaves. Its fruit shines like a tiny sun and is used in sun high priest potions.</description>
+
+        <thingClass>Plant</thingClass>
+
+        <graphicData>
+            <texPath>Things/Plant/TreeOak</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <color>(200, 180, 120)</color>
+            <shadowData>
+                <volume>(0.2, 0.35, 0.13)</volume>
+                <offset>(-0.03,0,-0.44)</offset>
+            </shadowData>
+        </graphicData>
+
+        <statBases>
+            <Beauty>8</Beauty>
+            <BeautyOutdoors>8</BeautyOutdoors>
+            <Nutrition>1.5</Nutrition>
+            <MaxHitPoints>250</MaxHitPoints>
+        </statBases>
+
+        <plant>
+            <growDays>30</growDays>
+            <harvestWork>1400</harvestWork>
+            <harvestYield>1</harvestYield>
+            <harvestTag>Standard</harvestTag>
+            <harvestedThingDef>lotr_RadianceSpiritPactTreeFruit</harvestedThingDef>
+            <harvestAfterGrowth>0.50</harvestAfterGrowth>
+            <leaflessGraphicPath>Things/Plant/TreeOak_Leafless</leaflessGraphicPath>
+            <immatureGraphicPath>Things/Plant/TreeOak_Immature</immatureGraphicPath>
+            <leaflessImmatureGraphicPath>Things/Plant/TreeOak_LeaflessImmature</leaflessImmatureGraphicPath>
+            <leaflessSnowOverlayGraphicPath>Things/Plant/TreeOak_LeaflessSnowy</leaflessSnowOverlayGraphicPath>
+            <immatureSnowOverlayGraphicPath>Things/Plant/TreeOak_LeaflessSnowyImmature</immatureSnowOverlayGraphicPath>
+        </plant>
+
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>8</glowRadius>
+                <glowColor>(255, 220, 100, 0)</glowColor>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <!-- Дерево: Кристаллизованное Древо Старейшин -->
+    <ThingDef ParentName="DeciduousTreeBase">
+        <defName>lotr_Plant_CrystallizedElderTree</defName>
+        <label>crystallized elder tree</label>
+        <description>An ancient, gigantic tree with silver bark and crystalline golden veins. Its roots are infused with the power of contracts and are a key ingredient for notary potions.</description>
+
+        <thingClass>Plant</thingClass>
+
+        <graphicData>
+            <texPath>Things/Plant/TreeOak</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <color>(180, 180, 200)</color>
+            <drawSize>2.2</drawSize>
+            <shadowData>
+                <volume>(0.3, 0.5, 0.2)</volume>
+                <offset>(-0.05,0,-0.6)</offset>
+            </shadowData>
+        </graphicData>
+
+        <statBases>
+            <Beauty>12</Beauty>
+            <BeautyOutdoors>12</BeautyOutdoors>
+            <Nutrition>2.0</Nutrition>
+            <MaxHitPoints>400</MaxHitPoints>
+        </statBases>
+
+        <plant>
+            <growDays>40</growDays>
+            <harvestWork>2000</harvestWork>
+            <harvestYield>1</harvestYield>
+            <harvestTag>Standard</harvestTag>
+            <harvestedThingDef>lotr_CrystallizedElderTreeRoots</harvestedThingDef>
+            <harvestAfterGrowth>0.60</harvestAfterGrowth>
+            <leaflessGraphicPath>Things/Plant/TreeOak_Leafless</leaflessGraphicPath>
+            <immatureGraphicPath>Things/Plant/TreeOak_Immature</immatureGraphicPath>
+            <leaflessImmatureGraphicPath>Things/Plant/TreeOak_LeaflessImmature</leaflessImmatureGraphicPath>
+            <leaflessSnowOverlayGraphicPath>Things/Plant/TreeOak_LeaflessSnowy</leaflessSnowOverlayGraphicPath>
+            <immatureSnowOverlayGraphicPath>Things/Plant/TreeOak_LeaflessSnowyImmature</immatureSnowOverlayGraphicPath>
+        </plant>
+
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>10</glowRadius>
+                <glowColor>(200, 180, 255, 0)</glowColor>
+            </li>
+        </comps>
+    </ThingDef>
+
+</Defs>

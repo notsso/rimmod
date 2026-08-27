@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <WorldObjectDef ParentName="Site">
+        <defName>BloodRedChestnutGrove_World</defName>
+        <label>blood red chestnut grove</label>
+        <description>A dark forest grove where blood red chestnut trees grow, guarded by spirits.</description>
+        <mapGenerator>BloodRedChestnutGroveGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <SitePartDef>
+        <defName>BloodRedChestnutGrove_Site</defName>
+        <label>blood red chestnut grove</label>
+        <description>A grove of blood red chestnut trees surrounded by spirits.</description>
+        <workerClass>lotr.SitePartWorker_BloodRedChestnutGrove</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <IncidentDef>
+        <defName>BloodRedChestnutGrove_Incident</defName>
+        <label>blood red chestnut grove</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_BloodRedChestnutGrove</workerClass>
+        <category>Misc</category>
+        <earliestDay>5</earliestDay>
+        <letterLabel>Blood red chestnut grove</letterLabel>
+        <letterText>A grove of blood red chestnut trees has been discovered. Spirits roam beneath their crimson leaves.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags><li>World</li></targetTags>
+    </IncidentDef>
+
+    <GenStepDef>
+        <defName>BloodRedChestnutGrove</defName>
+        <order>1600</order>
+        <genStep Class="lotr.GenStep_BloodRedChestnutGrove"/>
+    </GenStepDef>
+
+    <MapGeneratorDef>
+        <defName>BloodRedChestnutGroveGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>RocksFromGrid</li>
+            <li>TemperateForestTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>TemperateForestPlants</li>
+            <li>BloodRedChestnutGrove</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+</Defs>

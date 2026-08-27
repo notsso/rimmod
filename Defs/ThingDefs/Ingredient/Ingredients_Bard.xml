@@ -311,7 +311,7 @@
         </tradeTags>
     </ThingDef>
 
-    <!-- Ингредиенты для зелья Незатенённый (5) -->
+    <!-- Ингредиенты для зелья Незатенённый (4) -->
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_SunDivineBirdFeathers</defName>
         <label>sun divine bird tail feathers</label>

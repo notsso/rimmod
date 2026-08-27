@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект: поляна с поющим подсолнухом -->
+    <WorldObjectDef ParentName="Site">
+        <defName>SingingSunflowerGlade_World</defName>
+        <label>singing sunflower glade</label>
+        <description>A serene forest clearing where a mystical sunflower hums in the center, guarded by wandering spirits.</description>
+        <mapGenerator>SingingSunflowerGladeGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>SingingSunflowerGlade_Site</defName>
+        <label>singing sunflower glade</label>
+        <description>A small meadow in the woods with a radiant sunflower and restless spirits.</description>
+        <workerClass>lotr.SitePartWorker_SingingSunflowerGlade</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>SingingSunflowerGlade_Incident</defName>
+        <label>singing sunflower glade</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_SingingSunflowerGlade</workerClass>
+        <category>Misc</category>
+        <earliestDay>5</earliestDay>
+        <letterLabel>Singing sunflower glade</letterLabel>
+        <letterText>A hidden meadow has been discovered in the forest. At its heart grows a radiant sunflower, and spirits drift around it.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация поляны, растения и духов -->
+    <GenStepDef>
+        <defName>SingingSunflowerGlade</defName>
+        <order>1600</order>
+        <genStep Class="lotr.GenStep_SingingSunflowerGlade"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты -->
+    <MapGeneratorDef>
+        <defName>SingingSunflowerGladeGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>RocksFromGrid</li>
+            <li>TemperateForestTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>TemperateForestPlants</li>
+            <li>SingingSunflowerGlade</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

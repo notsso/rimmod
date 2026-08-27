@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WorldObjectDef ParentName="Site">
+        <defName>DarkProwlerDen_World</defName>
+        <label>dark prowler den</label>
+        <description>A secluded den hidden deep within the forest, home to a venomous dark prowler.</description>
+        <mapGenerator>DarkProwlerDenGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <SitePartDef>
+        <defName>DarkProwlerDen_Site</defName>
+        <label>dark prowler den</label>
+        <description>A dangerous predator lairs in this shadowy forest den.</description>
+        <workerClass>lotr.SitePartWorker_DarkProwlerDen</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <IncidentDef>
+        <defName>DarkProwlerDen_Incident</defName>
+        <label>dark prowler den</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_DarkProwlerDen</workerClass>
+        <category>Misc</category>
+        <earliestDay>6</earliestDay>
+        <letterLabel>Dark prowler den</letterLabel>
+        <letterText>A foreboding den has been discovered in the woods. Travelers speak of a venomous beast that strikes from the shadows.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags><li>World</li></targetTags>
+    </IncidentDef>
+
+    <GenStepDef>
+        <defName>DarkProwler</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_DarkProwler"/>
+    </GenStepDef>
+
+    <MapGeneratorDef>
+        <defName>DarkProwlerDenGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>RocksFromGrid</li>
+            <li>TemperateForestTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>TemperateForestPlants</li>
+            <li>DarkProwler</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

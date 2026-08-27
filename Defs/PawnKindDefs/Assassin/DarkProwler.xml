@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="AnimalThingBase">
+        <defName>lotr_DarkProwlerRace</defName>
+        <label>dark prowler</label>
+        <description>A sinuous, shadowy predator that stalks the night. Its bite injects a venom that clouds the mind, making its victims paranoid and aggressive. Its poison sac is prized by alchemists.</description>
+
+        <statBases>
+            <MoveSpeed>6.0</MoveSpeed>
+            <MarketValue>600</MarketValue>
+            <ComfyTemperatureMin>-30</ComfyTemperatureMin>
+            <ComfyTemperatureMax>60</ComfyTemperatureMax>
+            <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.35</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.35</ArmorRating_Heat>
+            <Wildness>1</Wildness>
+            <MeatAmount>0</MeatAmount>
+            <LeatherAmount>0</LeatherAmount>
+            <Flammability>0.1</Flammability>
+            <ToxicResistance>1</ToxicResistance>
+            <IncomingDamageFactor>0.85</IncomingDamageFactor>
+            <InjuryHealingFactor>1.5</InjuryHealingFactor>
+            <MeleeHitChance>0.10</MeleeHitChance>
+            <MeleeDodgeChance>0.15</MeleeDodgeChance>
+            <SpiritualityOffset>0.5</SpiritualityOffset>
+        </statBases>
+
+        <race>
+            <thinkTreeMain>Animal</thinkTreeMain>
+            <body>QuadrupedAnimalWithPawsAndTail</body>
+            <baseHungerRate>0.01</baseHungerRate>
+            <baseBodySize>0.9</baseBodySize>
+            <baseHealthScale>2.5</baseHealthScale>
+            <foodType>CarnivoreAnimal</foodType>
+            <predator>true</predator>
+            <trainability>None</trainability>
+            <lifeExpectancy>15</lifeExpectancy>
+            <manhunterOnDamageChance>1</manhunterOnDamageChance>
+            <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
+
+            <lifeStageAges>
+                <li><def>AnimalBaby</def><minAge>0</minAge></li>
+                <li><def>AnimalJuvenile</def><minAge>0.1</minAge></li>
+                <li>
+                    <def>AnimalAdult</def>
+                    <minAge>0.2</minAge>
+                    <soundWounded>Pawn_Dog_Injured</soundWounded>
+                    <soundDeath>Pawn_Dog_Death</soundDeath>
+                    <soundCall>Pawn_Dog_Call</soundCall>
+                    <soundAngry>Pawn_Dog_Angry</soundAngry>
+                </li>
+            </lifeStageAges>
+
+            <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+            <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+            <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+            <soundEating>PredatorSmall_Eat</soundEating>
+        </race>
+
+        <tools>
+            <li>
+                <label>claws</label>
+                <capacities><li>Scratch</li></capacities>
+                <power>12</power>
+                <cooldownTime>1.0</cooldownTime>
+                <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+            </li>
+            <li>
+                <label>claws</label>
+                <capacities><li>Scratch</li></capacities>
+                <power>12</power>
+                <cooldownTime>1.0</cooldownTime>
+                <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+            </li>
+            <li>
+                <label>fangs</label>
+                <capacities><li>Bite</li></capacities>
+                <power>18</power>
+                <cooldownTime>1.2</cooldownTime>
+                <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+                <extraMeleeDamages>
+                    <li>
+                        <def>ToxicBite</def>
+                        <amount>10</amount>
+                    </li>
+                </extraMeleeDamages>
+            </li>
+            <li>
+                <label>head</label>
+                <capacities><li>Blunt</li></capacities>
+                <power>8</power>
+                <cooldownTime>0.8</cooldownTime>
+                <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+                <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+                <chanceFactor>0.2</chanceFactor>
+            </li>
+        </tools>
+
+        <killedLeavings>
+            <lotr_DarkProwlerPoisonSac>1</lotr_DarkProwlerPoisonSac>
+        </killedLeavings>
+    </ThingDef>
+
+    <PawnKindDef ParentName="AnimalKindBase">
+        <defName>lotr_DarkProwler</defName>
+        <label>dark prowler</label>
+        <race>lotr_DarkProwlerRace</race>
+        <combatPower>200</combatPower>
+        <ecoSystemWeight>0.3</ecoSystemWeight>
+
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Wolf_Timber/Wolf_Timber</texPath>
+                    <drawSize>1.0</drawSize>
+                    <color>(50,50,60)</color>
+                </bodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Wolf_Timber/Wolf_Timber</texPath>
+                    <drawSize>1.3</drawSize>
+                    <color>(40,40,50)</color>
+                </bodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Wolf_Timber/Wolf_Timber</texPath>
+                    <drawSize>1.5</drawSize>
+                    <color>(30,30,40)</color>
+                    <shadowData>
+                        <volume>(0.3, 0.4, 0.3)</volume>
+                        <offset>(0,0,-0.05)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+            </li>
+        </lifeStages>
+    </PawnKindDef>
+
+</Defs>

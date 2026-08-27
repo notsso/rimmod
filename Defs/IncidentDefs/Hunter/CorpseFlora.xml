@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    
+    <IncidentDef>
+    
+        <defName>CorpseFlora_Incident</defName>
+        <label>Corpse lily growth</label>
+        <baseChance>14.0</baseChance> 
+        <workerClass>lotr.IncidentWorker_CorpseFloraGrown</workerClass>
+        <category>Misc</category> 
+        
+        <letterLabel>Трупная флора</letterLabel>
+        <letterText>Горы трупов пропитали местность духовной энергией, которая привлекла опасную флору.</letterText>
+        <letterDef>NegativeEvent</letterDef>
+
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+    
+    </IncidentDef>
+
+    <WorldObjectDef ParentName="Site">
+        <defName>CorpseLilyMarsh_World</defName>
+        <label>corpse lily marsh</label>
+        <description>A fetid marsh overgrown with corpse lilies, where spirits linger among the dead.</description>
+        <mapGenerator>CorpseLilyMarshGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <SitePartDef>
+        <defName>CorpseLilyMarsh_Site</defName>
+        <label>corpse lily marsh</label>
+        <description>A marsh filled with corpse lilies and restless spirits.</description>
+        <workerClass>lotr.SitePartWorker_CorpseLilyMarsh</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <IncidentDef>
+        <defName>CorpseLilyMarsh_Incident</defName>
+        <label>corpse lily marsh</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_CorpseLilyMarsh</workerClass>
+        <category>Misc</category>
+        <earliestDay>6</earliestDay>
+        <letterLabel>Corpse lily marsh</letterLabel>
+        <letterText>A foul marsh has been found, blooming with corpse lilies and haunted by spirits.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags><li>World</li></targetTags>
+    </IncidentDef>
+
+    <GenStepDef>
+        <defName>CorpseLilyMarsh</defName>
+        <order>1600</order>
+        <genStep Class="lotr.GenStep_CorpseLilyMarsh"/>
+    </GenStepDef>
+
+    <MapGeneratorDef>
+        <defName>CorpseLilyMarshGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>RocksFromGrid</li>
+            <li>CentralSwampTerrain</li>
+            <li>CentralSwampLair</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>CentralSwampPlants</li>
+            <li>CorpseLilyMarsh</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

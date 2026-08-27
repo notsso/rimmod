@@ -55,7 +55,8 @@
     </ThingDef>
 
     <ThingDef ParentName="DeciduousTreeBase">
-        <defName>Plant_BloodRedChestnut</defName>
+
+        <defName>lotr_BloodRedChestnutTree</defName>
         <label>Blood Red Chestnut</label>
         <description>A rare hardwood tree with deep crimson bark. When cut, it releases a fragment of beyonder essence.</description>
 
@@ -64,6 +65,8 @@
         <graphicData>
             <texPath>Things/Plant/TreeOak</texPath>
             <graphicClass>Graphic_Random</graphicClass>
+            <color>(200, 30, 30)</color>
+            <drawSize>1.2</drawSize>
             <shadowData>
                 <volume>(0.2, 0.35, 0.13)</volume>
                 <offset>(-0.03,0,-0.44)</offset>
@@ -71,8 +74,10 @@
         </graphicData>
 
         <statBases>
-            <Beauty>2</Beauty>
-            <BeautyOutdoors>2</BeautyOutdoors>
+            <Beauty>3</Beauty>
+            <BeautyOutdoors>3</BeautyOutdoors>
+            <Nutrition>1.5</Nutrition>
+            <MaxHitPoints>300</MaxHitPoints>
         </statBases>
 
         <plant>
@@ -88,6 +93,14 @@
             <leaflessSnowOverlayGraphicPath>Things/Plant/TreeOak_LeaflessSnowy</leaflessSnowOverlayGraphicPath>
             <immatureSnowOverlayGraphicPath>Things/Plant/TreeOak_LeaflessSnowyImmature</immatureSnowOverlayGraphicPath>
         </plant>
+
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>5</glowRadius>
+                <glowColor>(200,30,30,0)</glowColor>
+            </li>
+        </comps>
+
     </ThingDef>
     
 </Defs>

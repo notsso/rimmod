@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект: лес с Кристаллизованным Древом Старейшин -->
+    <WorldObjectDef ParentName="Site">
+        <defName>CrystallizedElderTreeForest_World</defName>
+        <label>crystallized elder tree forest</label>
+        <description>A deep forest where an ancient crystallized elder tree stands, surrounded by many spirits.</description>
+        <mapGenerator>CrystallizedElderTreeForestGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>CrystallizedElderTreeForest_Site</defName>
+        <label>crystallized elder tree forest</label>
+        <description>A forest guarded by a powerful tree and numerous spirits.</description>
+        <workerClass>lotr.SitePartWorker_CrystallizedElderTreeForest</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>CrystallizedElderTreeForest_Incident</defName>
+        <label>crystallized elder tree forest</label>
+        <baseChance>1.0</baseChance>
+        <workerClass>lotr.IncidentWorker_CrystallizedElderTreeForest</workerClass>
+        <category>Misc</category>
+        <earliestDay>20</earliestDay>
+        <letterLabel>Crystallized elder tree forest</letterLabel>
+        <letterText>A forest with an enormous crystallized elder tree has been discovered. Many spirits linger around it.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация дерева и духов -->
+    <GenStepDef>
+        <defName>CrystallizedElderTreeForest</defName>
+        <order>1600</order>
+        <genStep Class="lotr.GenStep_CrystallizedElderTreeForest"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты -->
+    <MapGeneratorDef>
+        <defName>CrystallizedElderTreeForestGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>RocksFromGrid</li>
+            <li>TemperateForestTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>TemperateForestPlants</li>
+            <li>CrystallizedElderTreeForest</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

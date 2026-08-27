@@ -13,106 +13,6 @@ using RimWorld.Planet;
 using UnityEngine;
 
 namespace lotr {
-    public class IncidentWorker_CorpseFloraGrown : IncidentWorker {
-        // НАСТРОЙКИ БАЛАНСА И ЛОРА
-        private const int MinCorpsesInCluster = 5; // Минимальный размер "горы трупов" для накопления духовности
-        private const float SearchRadius = 5.9f;    // Радиус плотности кучи тел
-        private const int MaxPlantsToSpawn = 3;    // Сколько максимум цветов может прорасти за один инцидент
-
-        // 1. ПРОВЕРКА УСЛОВИЙ (Вызывается игрой перед запуском события)
-        protected override bool CanFireNowSub(IncidentParms parms) {
-            if (!base.CanFireNowSub(parms)) return false;
-
-            // Нам нужна карта, на которой происходит событие
-            Map map = (Map)parms.target;
-            if (map == null) return false;
-
-            // Ищем, есть ли на карте хотя бы один подходящий эпицентр смерти
-            return FindCorpseEpicenters(map).Any();
-        }
-
-        // 2. ВЫПОЛНЕНИЕ ИНЦИДЕНТА
-        protected override bool TryExecuteWorker(IncidentParms parms) {
-            Map map = (Map)parms.target;
-            if (map == null) return false;
-
-            // Получаем список всех трупов, вокруг которых скопилась духовность
-            List<Corpse> epicenters = FindCorpseEpicenters(map);
-            if (epicenters.Count == 0) return false;
-
-            int plantsSpawned = 0;
-            IntVec3 lastSpawnCell = IntVec3.Invalid;
-
-            // Пытаемся заспавнить цветы рядом с этими местами
-            foreach (var corpse in epicenters.InRandomOrder()) {
-                if (plantsSpawned >= MaxPlantsToSpawn) break;
-
-                // Ищем свободную клетку для мистического цветка в радиусе 2 клеток от трупа
-                if (CellFinder.TryFindRandomCellNear(corpse.Position, map, 2, c => IsValidForBloodPlant(c, map), out IntVec3 spawnCell)) {
-                    ThingDef plantDef = ThingDef.Named("lotr_CorpseLily");
-                    if (plantDef != null) {
-                        // Спавним багровый цветок
-                        Plant newPlant = (Plant)GenSpawn.Spawn(plantDef, spawnCell, map, WipeMode.Vanish);
-                        newPlant.Growth = 0.05f; // Появляется как маленький росток
-
-                        // Эпичный визуальный эффект ударной волны/вспышки на 1 тик в клетке прорастания
-                        FleckMaker.Static(spawnCell, map, FleckDefOf.ExplosionFlash, 0.6f);
-
-                        lastSpawnCell = spawnCell;
-                        plantsSpawned++;
-                    }
-                }
-            }
-
-            // Если хотя бы одно растение успешно проросло, выводим уведомление игроку
-            if (plantsSpawned > 0) {
-                if (PawnUtility.ShouldSendNotificationAbout(map.mapPawns.FreeColonists.FirstOrDefault())) {
-                    Messages.Message("Трупы привлекли опасную флору.", new TargetInfo(lastSpawnCell, map), MessageTypeDefOf.PositiveEvent, true);
-                }
-                return true;
-            }
-
-            return false;
-        }
-
-        // Вспомогательный метод для поиска кучи трупов
-        private List<Corpse> FindCorpseEpicenters(Map map) {
-            List<Corpse> result = new List<Corpse>();
-
-            // Собираем все трупы на земле
-            List<Corpse> allCorpses = map.listerThings.ThingsInGroup(ThingRequestGroup.Corpse)
-                .Cast<Corpse>()
-                .Where(c => c != null && c.Spawned)
-                .ToList();
-
-            if (allCorpses.Count < MinCorpsesInCluster) return result;
-
-            foreach (var corpse in allCorpses) {
-                // Считаем соседей в радиусе
-                int count = allCorpses.Count(other => other.Position.InHorDistOf(corpse.Position, SearchRadius));
-                if (count >= MinCorpsesInCluster) {
-                    result.Add(corpse);
-                }
-            }
-
-            return result;
-        }
-
-        private bool IsValidForBloodPlant(IntVec3 cell, Map map) {
-            if (!cell.InBounds(map)) return false;
-            TerrainDef terrain = cell.GetTerrain(map);
-            if (terrain == null || terrain.IsWater) return false;
-
-            List<Thing> thingList = cell.GetThingList(map);
-            for (int i = 0; i < thingList.Count; i++) {
-                if (thingList[i].def.category == ThingCategory.Plant || thingList[i].def.category == ThingCategory.Building) {
-                    return false;
-                }
-            }
-            return true;
-        }
-    }
-
     public class Plant_CorpseLily : Plant {
         private const int ConsumeCheckInterval = 60;          // порог для счётчика (с учётом TickLong даёт ~3.3 сек)
         private const int DamageToCorpse = 10;                // урон трупу
@@ -236,4 +136,16 @@ namespace lotr {
             return null;
         }
     }
+
+    public class Plant_BloodRedChestnut : Plant {
+        public override void PlantCollected(Pawn by, PlantDestructionMode plantDestructionMode) {
+            Thing ingredient = ThingMaker.MakeThing(ThingDef.Named("lotr_BloodRedChestnut"));
+            ingredient.stackCount = 1;
+            GenPlace.TryPlaceThing(ingredient, Position, Map, ThingPlaceMode.Near);
+
+            this.Destroy(DestroyMode.KillFinalizeLeavingsOnly);
+        }
+    }
+
+    public class Plant_ShadowPoisonFlower : Plant { }
 }

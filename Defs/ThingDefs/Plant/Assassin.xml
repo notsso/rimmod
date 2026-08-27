@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="PlantBase">
+        <thingClass>lotr.Plant_ShadowPoisonFlower</thingClass>
+        <defName>lotr_ShadowPoisonFlower</defName>
+        <label>Shadow Poison Flower</label>
+        <description>A sinister black-violet flower that thrives in the darkest swamps. Its roots absorb shadow essence, making them a key ingredient for assassin potions.</description>
+
+        <statBases>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Nutrition>0.05</Nutrition>
+            <BeautyOutdoors>15</BeautyOutdoors>
+            <DeteriorationRate>-5</DeteriorationRate>
+        </statBases>
+
+        <graphicData>
+            <texPath>Things/Plant/DayLily</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <color>(80, 40, 110)</color>
+        </graphicData>
+
+        <selectable>true</selectable>
+        <neverMultiSelect>false</neverMultiSelect>
+        <pathCost>14</pathCost>
+
+        <ingestible />
+
+        <plant>
+            <harvestedThingDef>lotr_ShadowPoisonFlowerRootTendrils</harvestedThingDef>
+            <harvestYield>1</harvestYield>
+            <harvestAfterGrowth>0.50</harvestAfterGrowth>
+            <harvestTag>Standard</harvestTag>
+            <harvestWork>500</harvestWork>
+            <dieIfLeafless>false</dieIfLeafless>
+            <wildOrder>2</wildOrder>
+            <purpose>Misc</purpose>
+            <growDays>2</growDays>
+            <growMinGlow>0</growMinGlow>
+            <minGrowthTemperature>-50</minGrowthTemperature>
+            <maxGrowthTemperature>50</maxGrowthTemperature>
+            <visualSizeRange>0.3~1.0</visualSizeRange>
+            <topWindExposure>0.1</topWindExposure>
+            <allowAutoCut>false</allowAutoCut>
+        </plant>
+
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>4</glowRadius>
+                <glowColor>(120, 0, 180, 0)</glowColor>
+            </li>
+        </comps>
+    </ThingDef>
+</Defs>

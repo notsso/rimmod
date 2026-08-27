@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект -->
+    <WorldObjectDef ParentName="Site">
+        <defName>ShadowPoisonSwamp_World</defName>
+        <label>shadow poison swamp</label>
+        <description>A dark, misty swamp where spirits roam and a rare shadow poison flower blooms at its heart.</description>
+        <mapGenerator>ShadowPoisonSwampGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>ShadowPoisonSwamp_Site</defName>
+        <label>shadow poison swamp</label>
+        <description>A corrupted swamp guarded by restless spirits and a deadly flower.</description>
+        <workerClass>lotr.SitePartWorker_ShadowPoisonSwamp</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>ShadowPoisonSwamp_Incident</defName>
+        <label>shadow poison swamp</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_ShadowPoisonSwamp</workerClass>
+        <category>Misc</category>
+        <earliestDay>5</earliestDay>
+        <letterLabel>Shadow poison swamp</letterLabel>
+        <letterText>A foul swamp has been discovered, shrouded in shadow. Spirits wander there, and at its center grows a rare flower.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация духов и растения -->
+    <GenStepDef>
+        <defName>ShadowSwampSpiritsAndFlower</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_ShadowSwampSpiritsAndFlower"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты -->
+    <MapGeneratorDef>
+        <defName>ShadowPoisonSwampGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>Terrain</li>
+            <li>CentralSwampTerrain</li>
+            <li>CentralSwampLair</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>CentralSwampPlants</li>
+            <li>ShadowSwampSpiritsAndFlower</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

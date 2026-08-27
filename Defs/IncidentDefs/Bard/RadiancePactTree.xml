@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Мировой объект: священная роща с Древом Сияния -->
+    <WorldObjectDef ParentName="Site">
+        <defName>RadianceSpiritPactTreeGrove_World</defName>
+        <label>radiance spirit pact tree grove</label>
+        <description>A holy grove where a radiant tree grows, guarded by many spirits.</description>
+        <mapGenerator>RadianceSpiritPactTreeGroveGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <!-- Часть сайта -->
+    <SitePartDef>
+        <defName>RadianceSpiritPactTreeGrove_Site</defName>
+        <label>radiance spirit pact tree grove</label>
+        <description>A mystical grove with a shining tree and wandering spirits.</description>
+        <workerClass>lotr.SitePartWorker_RadianceSpiritPactTreeGrove</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <!-- Инцидент -->
+    <IncidentDef>
+        <defName>RadianceSpiritPactTreeGrove_Incident</defName>
+        <label>radiance spirit pact tree grove</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_RadianceSpiritPactTreeGrove</workerClass>
+        <category>Misc</category>
+        <earliestDay>10</earliestDay>
+        <letterLabel>Radiance spirit pact tree grove</letterLabel>
+        <letterText>A sacred grove has been discovered, centered around a radiant tree. Spirits gather beneath its glowing branches.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+    <!-- Генерация рощи, дерева и духов -->
+    <GenStepDef>
+        <defName>RadianceSpiritPactTreeGrove</defName>
+        <order>1600</order>
+        <genStep Class="lotr.GenStep_RadianceSpiritPactTreeGrove"/>
+    </GenStepDef>
+
+    <!-- Основной генератор карты -->
+    <MapGeneratorDef>
+        <defName>RadianceSpiritPactTreeGroveGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>RocksFromGrid</li>
+            <li>TemperateForestTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>TemperateForestPlants</li>
+            <li>RadianceSpiritPactTreeGrove</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>
