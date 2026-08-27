@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WorldObjectDef ParentName="Site">
+        <defName>FireBirdNest_World</defName>
+        <label>fire bird nest ruins</label>
+        <description>Ancient desert ruins, now a nesting ground for a fire bird.</description>
+        <mapGenerator>FireBirdNestGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <SitePartDef>
+        <defName>FireBirdNest_Site</defName>
+        <label>fire bird nest</label>
+        <description>Desert ruins guarded by a fiery bird.</description>
+        <workerClass>lotr.SitePartWorker_FireBirdNest</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <IncidentDef>
+        <defName>FireBirdNest_Incident</defName>
+        <label>fire bird nest</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_FireBirdNest</workerClass>
+        <category>Misc</category>
+        <earliestDay>5</earliestDay>
+        <letterLabel>Fire bird nest</letterLabel>
+        <letterText>Ancient ruins in the desert have become a nesting ground for a fire bird.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags><li>World</li></targetTags>
+    </IncidentDef>
+
+    <GenStepDef>
+        <defName>FireBird</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_FireBird"/>
+    </GenStepDef>
+
+    <MapGeneratorDef>
+        <defName>FireBirdNestGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>RocksFromGrid</li>
+            <li>TemperateForestTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>TemperateForestPlants</li>
+            <li>FireBird</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

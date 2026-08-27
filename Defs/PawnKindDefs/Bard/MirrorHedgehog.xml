@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="AnimalThingBase">
+        <defName>lotr_MirrorHedgehogRace</defName>
+        <label>mirror hedgehog</label>
+        <description>A small, timid creature covered in quills that reflect magic and light. It rolls into a ball when threatened, creating a dazzling mirror surface. Its blood is used in light suppliant potions.</description>
+
+        <statBases>
+            <MoveSpeed>6.0</MoveSpeed>
+            <MarketValue>600</MarketValue>
+            <ComfyTemperatureMin>-30</ComfyTemperatureMin>
+            <ComfyTemperatureMax>60</ComfyTemperatureMax>
+            <ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.30</ArmorRating_Heat>
+            <Wildness>1</Wildness>
+            <MeatAmount>0</MeatAmount>
+            <LeatherAmount>0</LeatherAmount>
+            <SpiritualityOffset>0.8</SpiritualityOffset>
+            <PsychicSensitivity>0.5</PsychicSensitivity>
+        </statBases>
+
+        <race>
+            <thinkTreeMain>Animal</thinkTreeMain>
+            <body>QuadrupedAnimalWithPaws</body>
+            <baseHungerRate>0.01</baseHungerRate>
+            <baseBodySize>0.3</baseBodySize>
+            <baseHealthScale>4.0</baseHealthScale>
+
+            <foodType>OmnivoreRoughAnimal</foodType>
+            <predator>true</predator>
+            <trainability>None</trainability>
+            <lifeExpectancy>10</lifeExpectancy>
+            <manhunterOnDamageChance>1</manhunterOnDamageChance>
+            <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
+
+            <lifeStageAges>
+                <li>
+                    <def>AnimalBaby</def>
+                    <minAge>0</minAge>
+                </li>
+                <li>
+                    <def>AnimalJuvenile</def>
+                    <minAge>0.1</minAge>
+                </li>
+                <li>
+                    <def>AnimalAdult</def>
+                    <minAge>0.2</minAge>
+                    <soundWounded>Pawn_Rodent_Wounded</soundWounded>
+                    <soundDeath>Pawn_Rodent_Death</soundDeath>
+                    <soundCall>Pawn_Rodent_Call</soundCall>
+                    <soundAngry>Pawn_Rodent_Angry</soundAngry>
+                </li>
+            </lifeStageAges>
+
+            <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+            <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+            <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+            <soundEating>Herbivore_Eat</soundEating>
+        </race>
+
+        <tools>
+            <li>
+                <label>quills</label>
+                <capacities><li>Scratch</li></capacities>
+                <power>10</power>
+                <cooldownTime>1.0</cooldownTime>
+            </li>
+            <li>
+                <label>teeth</label>
+                <capacities><li>Bite</li></capacities>
+                <power>10</power>
+                <cooldownTime>1.0</cooldownTime>
+                <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+            </li>
+        </tools>
+
+        <butcherProducts>
+            <lotr_MirrorHedgehogBlood>1</lotr_MirrorHedgehogBlood>
+        </butcherProducts>
+    </ThingDef>
+
+    <PawnKindDef ParentName="AnimalKindBase">
+        <defName>lotr_MirrorHedgehog</defName>
+        <label>mirror hedgehog</label>
+        <race>lotr_MirrorHedgehogRace</race>
+        <combatPower>100</combatPower>
+        <ecoSystemWeight>0.5</ecoSystemWeight>
+
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Squirrel/Squirrel</texPath>
+                    <drawSize>1.0</drawSize>
+                    <color>(200,200,220)</color>
+                </bodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Squirrel/Squirrel</texPath>
+                    <drawSize>1.5</drawSize>
+                    <color>(190,190,210)</color>
+                </bodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Squirrel/Squirrel</texPath>
+                    <drawSize>2.00</drawSize>
+                    <color>(180,180,200)</color>
+                </bodyGraphicData>
+            </li>
+        </lifeStages>
+    </PawnKindDef>
+
+</Defs>

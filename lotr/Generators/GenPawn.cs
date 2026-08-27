@@ -13,6 +13,7 @@ using RimWorld.Planet;
 using UnityEngine;
 
 namespace lotr {
+    // Hunter creatures
     public class GenStep_MagmaElf : GenStep {
         public override int SeedPart => 12347;
         public override void Generate(Map map, GenStepParams parms) {
@@ -85,6 +86,7 @@ namespace lotr {
         }
     }
 
+    // Assassin creatures
     public class GenStep_SerpentMonsterBird : GenStep {
         public override int SeedPart => 12371;
 
@@ -162,6 +164,55 @@ namespace lotr {
 
         public override void Generate(Map map, GenStepParams parms) {
             var kind = PawnKindDef.Named("lotr_SilverHunter");
+            GenStepUtility.SpawnPawns(map, kind, 1, 0f);
+        }
+    }
+
+    // Bard creatures
+    public class GenStep_FireBird : GenStep {
+        public override int SeedPart => 12390;
+        public override void Generate(Map map, GenStepParams parms) {
+            var kind = PawnKindDef.Named("lotr_FireBird");
+            GenStepUtility.SpawnPawns(map, kind, 1, 0f);
+        }
+    }
+
+    public class GenStep_MirrorHedgehog : GenStep {
+        public override int SeedPart => 12391;
+        public override void Generate(Map map, GenStepParams parms) {
+            var kind = PawnKindDef.Named("lotr_MirrorHedgehog");
+            GenStepUtility.SpawnPawns(map, kind, 1, 0f);
+        }
+    }
+
+    public class GenStep_DawnRooster : GenStep {
+        public override int SeedPart => 12392;
+        public override void Generate(Map map, GenStepParams parms) {
+            var kind = PawnKindDef.Named("lotr_DawnRooster");
+            GenStepUtility.SpawnPawns(map, kind, 1, 0f);
+        }
+    }
+
+    public class GenStep_SpiritPactBird : GenStep {
+        public override int SeedPart => 12393;
+        public override void Generate(Map map, GenStepParams parms) {
+            var kind = PawnKindDef.Named("lotr_SpiritPactBird");
+            GenStepUtility.SpawnPawns(map, kind, 1, 0f);
+        }
+    }
+
+    public class GenStep_DawnRoosterKing : GenStep {
+        public override int SeedPart => 12394;
+        public override void Generate(Map map, GenStepParams parms) {
+            var kind = PawnKindDef.Named("lotr_DawnRoosterKing");
+            GenStepUtility.SpawnPawns(map, kind, 1, 0f);
+        }
+    }
+
+    public class GenStep_SunDivineBird : GenStep {
+        public override int SeedPart => 12395;
+        public override void Generate(Map map, GenStepParams parms) {
+            var kind = PawnKindDef.Named("lotr_SunDivineBird");
             GenStepUtility.SpawnPawns(map, kind, 1, 0f);
         }
     }

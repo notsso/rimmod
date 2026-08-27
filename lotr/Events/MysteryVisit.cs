@@ -173,6 +173,16 @@ namespace lotr {
                     { 5, new[] { "lotr_FlowerFacedBatHead", "lotr_TwoTailedBlackSnakeGallbladder" } },
                     { 4, new[] { "lotr_PlagueMotherSerpentVenomSac", "lotr_SilverHunterCrystal" } }
                 };
+            } else if (faction.def.defName == "lotr_RadiantDawn") {
+                organizationPathway = Pathway.Bard;
+                ingredientDefs = new Dictionary<int, string[]> {
+                    { 9, new[] { "lotr_FireBirdTailFeather", "lotr_SingingSunflower" } },
+                    { 8, new[] { "lotr_BrillianceRock", "lotr_MirrorHedgehogBlood" } },
+                    { 7, new[] { "lotr_DawnRoosterComb", "lotr_RadianceSpiritPactTreeFruit" } },
+                    { 6, new[] { "lotr_CrystallizedElderTreeRoots", "lotr_SpiritPactBirdFeathers" } },
+                    { 5, new[] { "lotr_DawnRoosterKingComb", "lotr_PureWhiteBrilliantRock" } },
+                    { 4, new[] { "lotr_SunDivineBirdFeathers", "lotr_HolyBrillianceRock" } }
+                };
             }
 
             int maxSequence = GetMaxSequenceForPathway(map, organizationPathway);

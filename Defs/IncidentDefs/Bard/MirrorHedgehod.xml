@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WorldObjectDef ParentName="Site">
+        <defName>MirrorHedgehogGlade_World</defName>
+        <label>mirror hedgehog glade</label>
+        <description>A sunlit glade where mirror hedgehogs gather in numbers, their quills catching the light.</description>
+        <mapGenerator>MirrorHedgehogGladeGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <SitePartDef>
+        <defName>MirrorHedgehogGlade_Site</defName>
+        <label>mirror hedgehog glade</label>
+        <description>A peaceful-looking glade, but the hedgehogs can be surprisingly dangerous when cornered.</description>
+        <workerClass>lotr.SitePartWorker_MirrorHedgehogGlade</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <IncidentDef>
+        <defName>MirrorHedgehogGlade_Incident</defName>
+        <label>mirror hedgehog glade</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_MirrorHedgehogGlade</workerClass>
+        <category>Misc</category>
+        <earliestDay>6</earliestDay>
+        <letterLabel>Mirror hedgehog glade</letterLabel>
+        <letterText>A glade full of mirror hedgehogs has been spotted. Their quills gleam like silver in the sun.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags><li>World</li></targetTags>
+    </IncidentDef>
+
+    <GenStepDef>
+        <defName>MirrorHedgehog</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_MirrorHedgehog"/>
+    </GenStepDef>
+
+    <MapGeneratorDef>
+        <defName>MirrorHedgehogGladeGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>TemperateForestTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>TemperateForestPlants</li>
+            <li>MirrorHedgehog</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

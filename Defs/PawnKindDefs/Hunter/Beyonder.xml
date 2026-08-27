@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <PawnKindDef ParentName="BeyonderRaiderBase" Name="BeyonderHunter9">
+        <defName>Beyonder_Hunter9</defName>
+        <label>beyonder hunter</label>
+        <combatPower>160</combatPower>
+        <weaponTags>
+            <li>NeolithicRangedBasic</li>
+            <li>IndustrialGunBasic</li>
+        </weaponTags>
+        <startingHediffs>
+            <li>
+                <def>Hunter9_Hediff</def>
+                <severity>1</severity>
+            </li>
+        </startingHediffs>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="BeyonderHunter9" Name="BeyonderHunter8">
+        <defName>Beyonder_Hunter8</defName>
+        <label>beyonder provoker</label>
+        <combatPower>260</combatPower>
+        <weaponTags>
+            <li>NeolithicRangedDecent</li>
+            <li>IndustrialGunBasic</li>
+        </weaponTags>
+        <startingHediffs>
+            <li>
+                <def>Hunter8_Hediff</def>
+                <severity>1</severity>
+            </li>
+        </startingHediffs>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="BeyonderHunter8" Name="BeyonderHunter7">
+        <defName>Beyonder_Hunter7</defName>
+        <label>beyonder pyromaniac</label>
+        <combatPower>360</combatPower>
+        <weaponTags>
+            <li>NeolithicRangedAdvanced</li>
+            <li>IndustrialGunAdvanced</li>
+        </weaponTags>
+        <startingHediffs>
+            <li>
+                <def>Hunter7_Hediff</def>
+                <severity>1</severity>
+            </li>
+        </startingHediffs>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="BeyonderHunter7" Name="BeyonderHunter6">
+        <defName>Beyonder_Hunter6</defName>
+        <label>beyonder conspirator</label>
+        <combatPower>520</combatPower>
+        <weaponTags>
+            <li>IndustrialGunAdvanced</li>
+        </weaponTags>
+        <startingHediffs>
+            <li>
+                <def>Hunter6_Hediff</def>
+                <severity>1</severity>
+            </li>
+        </startingHediffs>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="BeyonderHunter6" Name="BeyonderHunter5">
+        <defName>Beyonder_Hunter5</defName>
+        <label>beyonder reaper</label>
+        <combatPower>700</combatPower>
+        <weaponTags>
+            <li>IndustrialGunAdvanced</li>
+        </weaponTags>
+        <startingHediffs>
+            <li>
+                <def>Hunter5_Hediff</def>
+                <severity>1</severity>
+            </li>
+        </startingHediffs>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="BeyonderHunter5" Name="BeyonderHunter4">
+        <defName>Beyonder_Hunter4</defName>
+        <label>beyonder knight</label>
+        <combatPower>1000</combatPower>
+        <weaponTags>
+            <li>IndustrialGunAdvanced</li>
+            <li>SpacerGun</li>
+        </weaponTags>
+        <startingHediffs>
+            <li>
+                <def>Hunter4_Hediff</def>
+                <severity>1</severity>
+            </li>
+        </startingHediffs>
+    </PawnKindDef>
+
+</Defs>

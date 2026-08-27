@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WorldObjectDef ParentName="Site">
+        <defName>DawnRoosterMeadow_World</defName>
+        <label>dawn rooster meadow</label>
+        <description>A mystical meadow where dawn roosters gather to sing at first light.</description>
+        <mapGenerator>DawnRoosterMeadowGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <SitePartDef>
+        <defName>DawnRoosterMeadow_Site</defName>
+        <label>dawn rooster meadow</label>
+        <description>A sunlit meadow guarded by aggressive dawn roosters.</description>
+        <workerClass>lotr.SitePartWorker_DawnRoosterMeadow</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <IncidentDef>
+        <defName>DawnRoosterMeadow_Incident</defName>
+        <label>dawn rooster meadow</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_DawnRoosterMeadow</workerClass>
+        <category>Misc</category>
+        <earliestDay>10</earliestDay>
+        <letterLabel>Dawn rooster meadow</letterLabel>
+        <letterText>A meadow filled with dawn roosters has been spotted. Their morning crows can be heard for miles.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags><li>World</li></targetTags>
+    </IncidentDef>
+
+    <GenStepDef>
+        <defName>DawnRooster</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_DawnRooster"/>
+    </GenStepDef>
+
+    <MapGeneratorDef>
+        <defName>DawnRoosterMeadowGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>TemperateForestTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>TemperateForestPlants</li>
+            <li>DawnRooster</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

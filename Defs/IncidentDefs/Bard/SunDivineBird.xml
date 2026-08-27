@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WorldObjectDef ParentName="Site">
+        <defName>SunDivineBirdPeak_World</defName>
+        <label>sun divine bird peak</label>
+        <description>A sacred mountain peak where a sun divine bird nests, bathing the land in eternal golden light.</description>
+        <mapGenerator>SunDivineBirdPeakGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <SitePartDef>
+        <defName>SunDivineBirdPeak_Site</defName>
+        <label>sun divine bird peak</label>
+        <description>A legendary bird guards this holy mountain.</description>
+        <workerClass>lotr.SitePartWorker_SunDivineBirdPeak</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <IncidentDef>
+        <defName>SunDivineBirdPeak_Incident</defName>
+        <label>sun divine bird peak</label>
+        <baseChance>1.0</baseChance>
+        <workerClass>lotr.IncidentWorker_SunDivineBirdPeak</workerClass>
+        <category>Misc</category>
+        <earliestDay>60</earliestDay>
+        <letterLabel>Peak of the sun divine bird</letterLabel>
+        <letterText>A sacred mountain has been revealed, crowned by the nest of a sun divine bird. Its light banishes all shadows.</letterText>
+        <letterDef>ThreatBig</letterDef>
+        <targetTags><li>World</li></targetTags>
+    </IncidentDef>
+
+    <GenStepDef>
+        <defName>SunDivineBird</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_SunDivineBird"/>
+    </GenStepDef>
+
+    <MapGeneratorDef>
+        <defName>SunDivineBirdPeakGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>DesertTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>SunDivineBird</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

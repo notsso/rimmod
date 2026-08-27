@@ -49,6 +49,18 @@ namespace lotr {
                         { 5, new List<IncidentDef> { IncidentDef.Named("FlowerFacedBatCave_Incident"), IncidentDef.Named("TwoTailedSnakeHollow_Incident") } },
                         { 4, new List<IncidentDef> { IncidentDef.Named("PlagueSerpentLair_Incident"), IncidentDef.Named("SilverHunterTerritory_Incident") } }
                     }
+                },
+                {
+                    Pathway.Bard,
+                    new Dictionary<int, List<IncidentDef>>
+                    {
+                        { 9, new List<IncidentDef> { IncidentDef.Named("FireBirdNest_Incident") } },
+                        { 8, new List<IncidentDef> { IncidentDef.Named("MirrorHedgehogGlade_Incident") } },
+                        { 7, new List<IncidentDef> { IncidentDef.Named("DawnRoosterMeadow_Incident") } },
+                        { 6, new List<IncidentDef> { IncidentDef.Named("SpiritPactBirdGrove_Incident") } },
+                        { 5, new List<IncidentDef> { IncidentDef.Named("DawnRoosterKingThrone_Incident") } },
+                        { 4, new List<IncidentDef> { IncidentDef.Named("SunDivineBirdPeak_Incident") } }
+                    }
                 }
             };
 

@@ -51,7 +51,8 @@ namespace lotr {
         public static readonly string[] FactionDefNames = new string[] {
             "lotr_IronAndBloodCrossOrder",
             "lotr_ChurchOfTheGodOfCombat",
-            "lotr_DemonessSect"
+            "lotr_DemonessSect",
+            "lotr_ChurchOfTheEternalBlazingSun"
         };
 
         // Метод для нанесения урона рассудку

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <PawnKindDef ParentName="BeyonderRaiderBase" Name="BeyonderBard9">
+        <defName>Beyonder_Bard9</defName>
+        <label>beyonder bard</label>
+        <combatPower>160</combatPower>
+        <weaponTags>
+            <li>NeolithicRangedBasic</li>
+            <li>IndustrialGunBasic</li>
+        </weaponTags>
+        <startingHediffs>
+            <li>
+                <def>Bard9_Hediff</def>
+                <severity>1</severity>
+            </li>
+        </startingHediffs>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="BeyonderBard9" Name="BeyonderBard8">
+        <defName>Beyonder_Bard8</defName>
+        <label>beyonder light suppliant</label>
+        <combatPower>260</combatPower>
+        <weaponTags>
+            <li>NeolithicRangedDecent</li>
+            <li>IndustrialGunBasic</li>
+        </weaponTags>
+        <startingHediffs>
+            <li>
+                <def>Bard8_Hediff</def>
+                <severity>1</severity>
+            </li>
+        </startingHediffs>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="BeyonderBard8" Name="BeyonderBard7">
+        <defName>Beyonder_Bard7</defName>
+        <label>beyonder sun high priest</label>
+        <combatPower>360</combatPower>
+        <weaponTags>
+            <li>NeolithicRangedAdvanced</li>
+            <li>IndustrialGunAdvanced</li>
+        </weaponTags>
+        <startingHediffs>
+            <li>
+                <def>Bard7_Hediff</def>
+                <severity>1</severity>
+            </li>
+        </startingHediffs>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="BeyonderBard7" Name="BeyonderBard6">
+        <defName>Beyonder_Bard6</defName>
+        <label>beyonder notary</label>
+        <combatPower>520</combatPower>
+        <weaponTags>
+            <li>IndustrialGunAdvanced</li>
+        </weaponTags>
+        <startingHediffs>
+            <li>
+                <def>Bard6_Hediff</def>
+                <severity>1</severity>
+            </li>
+        </startingHediffs>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="BeyonderBard6" Name="BeyonderBard5">
+        <defName>Beyonder_Bard5</defName>
+        <label>beyonder priest of light</label>
+        <combatPower>700</combatPower>
+        <weaponTags>
+            <li>IndustrialGunAdvanced</li>
+        </weaponTags>
+        <startingHediffs>
+            <li>
+                <def>Bard5_Hediff</def>
+                <severity>1</severity>
+            </li>
+        </startingHediffs>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="BeyonderBard5" Name="BeyonderBard4">
+        <defName>Beyonder_Bard4</defName>
+        <label>beyonder unshadowed</label>
+        <combatPower>1000</combatPower>
+        <weaponTags>
+            <li>IndustrialGunAdvanced</li>
+            <li>SpacerGun</li>
+        </weaponTags>
+        <startingHediffs>
+            <li>
+                <def>Bard4_Hediff</def>
+                <severity>1</severity>
+            </li>
+        </startingHediffs>
+    </PawnKindDef>
+
+</Defs>

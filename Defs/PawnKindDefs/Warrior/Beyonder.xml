@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <PawnKindDef ParentName="BeyonderRaiderBase" Name="BeyonderWarrior9">
+        <defName>Beyonder_Warrior9</defName>
+        <label>beyonder warrior</label>
+        <combatPower>160</combatPower>
+        <weaponTags>
+            <li>MedievalMeleeDecent</li>
+            <li>NeolithicMeleeDecent</li>
+        </weaponTags>
+        <startingHediffs>
+            <li>
+                <def>Warrior9_Hediff</def>
+                <severity>1</severity>
+            </li>
+        </startingHediffs>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="BeyonderWarrior9" Name="BeyonderWarrior8">
+        <defName>Beyonder_Warrior8</defName>
+        <label>beyonder gladiator</label>
+        <combatPower>260</combatPower>
+        <weaponTags>
+            <li>MedievalMeleeAdvanced</li>
+            <li>NeolithicMeleeAdvanced</li>
+        </weaponTags>
+        <startingHediffs>
+            <li>
+                <def>Warrior8_Hediff</def>
+                <severity>1</severity>
+            </li>
+        </startingHediffs>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="BeyonderWarrior8" Name="BeyonderWarrior7">
+        <defName>Beyonder_Warrior7</defName>
+        <label>beyonder weapon master</label>
+        <combatPower>360</combatPower>
+        <weaponTags>
+            <li>MedievalMeleeAdvanced</li>
+        </weaponTags>
+        <startingHediffs>
+            <li>
+                <def>Warrior7_Hediff</def>
+                <severity>1</severity>
+            </li>
+        </startingHediffs>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="BeyonderWarrior7" Name="BeyonderWarrior6">
+        <defName>Beyonder_Warrior6</defName>
+        <label>beyonder dawn paladin</label>
+        <combatPower>520</combatPower>
+        <weaponTags>
+            <li>MedievalMeleeAdvanced</li>
+            <li>MedievalMeleeSuper</li>
+        </weaponTags>
+        <startingHediffs>
+            <li>
+                <def>Warrior6_Hediff</def>
+                <severity>1</severity>
+            </li>
+        </startingHediffs>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="BeyonderWarrior6" Name="BeyonderWarrior5">
+        <defName>Beyonder_Warrior5</defName>
+        <label>beyonder guardian</label>
+        <combatPower>700</combatPower>
+        <weaponTags>
+            <li>MedievalMeleeSuper</li>
+        </weaponTags>
+        <startingHediffs>
+            <li>
+                <def>Warrior5_Hediff</def>
+                <severity>1</severity>
+            </li>
+        </startingHediffs>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="BeyonderWarrior5" Name="BeyonderWarrior4">
+        <defName>Beyonder_Warrior4</defName>
+        <label>beyonder demon hunter</label>
+        <combatPower>1000</combatPower>
+        <weaponTags>
+            <li>MedievalMeleeSuper</li>
+        </weaponTags>
+        <startingHediffs>
+            <li>
+                <def>Warrior4_Hediff</def>
+                <severity>1</severity>
+            </li>
+        </startingHediffs>
+    </PawnKindDef>
+</Defs>

@@ -13,14 +13,7 @@ namespace lotr {
     }
 
     public class SitePartWorker_SerpentBirdTower : SitePartWorker {
-        public override void PostMapGenerate(Map map) {
-            if (map.IsPlayerHome) return;
-            if (!(map.Parent is Site site)) return;
-
-            var def = DefDatabase<SitePartDef>.GetNamed("SerpentBirdTower_Site");
-            SitePart sitePart = site.parts.FirstOrDefault(p => p.def == def);
-            if (sitePart == null) return;
-        }
+        public override void PostMapGenerate(Map map) { }
     }
 
     public class IncidentWorker_DemonThroatHoneyguideLair : IncidentWorker_WorldSiteBase {
@@ -29,14 +22,7 @@ namespace lotr {
     }
 
     public class SitePartWorker_DemonThroatHoneyguideLair : SitePartWorker {
-        public override void PostMapGenerate(Map map) {
-            if (map.IsPlayerHome) return;
-            if (!(map.Parent is Site site)) return;
-
-            var def = DefDatabase<SitePartDef>.GetNamed("DemonThroatHoneyguideLair_Site");
-            SitePart sitePart = site.parts.FirstOrDefault(p => p.def == def);
-            if (sitePart == null) return;
-        }
+        public override void PostMapGenerate(Map map) { }
     }
 
     public class IncidentWorker_AgatePeacockMeadow : IncidentWorker_WorldSiteBase {
@@ -45,14 +31,7 @@ namespace lotr {
     }
 
     public class SitePartWorker_AgatePeacockMeadow : SitePartWorker {
-        public override void PostMapGenerate(Map map) {
-            if (map.IsPlayerHome) return;
-            if (!(map.Parent is Site site)) return;
-
-            var def = DefDatabase<SitePartDef>.GetNamed("AgatePeacockMeadow_Site");
-            SitePart sitePart = site.parts.FirstOrDefault(p => p.def == def);
-            if (sitePart == null) return;
-        }
+        public override void PostMapGenerate(Map map) { }
     }
 
     public class IncidentWorker_SuccubusTemple : IncidentWorker_WorldSiteBase {
@@ -61,14 +40,7 @@ namespace lotr {
     }
 
     public class SitePartWorker_SuccubusTemple : SitePartWorker {
-        public override void PostMapGenerate(Map map) {
-            if (map.IsPlayerHome) return;
-            if (!(map.Parent is Site site)) return;
-
-            var def = DefDatabase<SitePartDef>.GetNamed("SuccubusTemple_Site");
-            SitePart sitePart = site.parts.FirstOrDefault(p => p.def == def);
-            if (sitePart == null) return;
-        }
+        public override void PostMapGenerate(Map map) { }
     }
 
     public class IncidentWorker_BlackWidowForest : IncidentWorker_WorldSiteBase {
@@ -95,14 +67,7 @@ namespace lotr {
     }
 
     public class SitePartWorker_FlowerFacedBatCave : SitePartWorker {
-        public override void PostMapGenerate(Map map) {
-            if (map.IsPlayerHome) return;
-            if (!(map.Parent is Site site)) return;
-
-            var def = DefDatabase<SitePartDef>.GetNamed("FlowerFacedBatCave_Site");
-            SitePart sitePart = site.parts.FirstOrDefault(p => p.def == def);
-            if (sitePart == null) return;
-        }
+        public override void PostMapGenerate(Map map) { }
     }
 
     public class IncidentWorker_TwoTailedSnakeHollow : IncidentWorker_WorldSiteBase {
@@ -111,14 +76,7 @@ namespace lotr {
     }
 
     public class SitePartWorker_TwoTailedSnakeHollow : SitePartWorker {
-        public override void PostMapGenerate(Map map) {
-            if (map.IsPlayerHome) return;
-            if (!(map.Parent is Site site)) return;
-
-            var def = DefDatabase<SitePartDef>.GetNamed("TwoTailedSnakeHollow_Site");
-            SitePart sitePart = site.parts.FirstOrDefault(p => p.def == def);
-            if (sitePart == null) return;
-        }
+        public override void PostMapGenerate(Map map) { }
     }
 
     public class IncidentWorker_PlagueSerpentLair : IncidentWorker_WorldSiteBase {
@@ -127,14 +85,7 @@ namespace lotr {
     }
 
     public class SitePartWorker_PlagueSerpentLair : SitePartWorker {
-        public override void PostMapGenerate(Map map) {
-            if (map.IsPlayerHome) return;
-            if (!(map.Parent is Site site)) return;
-
-            var def = DefDatabase<SitePartDef>.GetNamed("PlagueSerpentLair_Site");
-            SitePart sitePart = site.parts.FirstOrDefault(p => p.def == def);
-            if (sitePart == null) return;
-        }
+        public override void PostMapGenerate(Map map) { }
     }
 
     public class IncidentWorker_SilverHunterTerritory : IncidentWorker_WorldSiteBase {
@@ -143,13 +94,6 @@ namespace lotr {
     }
 
     public class SitePartWorker_SilverHunterTerritory : SitePartWorker {
-        public override void PostMapGenerate(Map map) {
-            if (map.IsPlayerHome) return;
-            if (!(map.Parent is Site site)) return;
-
-            var def = DefDatabase<SitePartDef>.GetNamed("SilverHunterTerritory_Site");
-            SitePart sitePart = site.parts.FirstOrDefault(p => p.def == def);
-            if (sitePart == null) return;
-        }
+        public override void PostMapGenerate(Map map) { }
     }
 }

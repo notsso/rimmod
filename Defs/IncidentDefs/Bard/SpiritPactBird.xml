@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WorldObjectDef ParentName="Site">
+        <defName>SpiritPactBirdGrove_World</defName>
+        <label>spirit pact bird grove</label>
+        <description>A quiet, ancient grove where a spirit pact bird guards its sacred territory.</description>
+        <mapGenerator>SpiritPactBirdGroveGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <SitePartDef>
+        <defName>SpiritPactBirdGrove_Site</defName>
+        <label>spirit pact bird grove</label>
+        <description>A mystical grove, home to a dangerous spirit pact bird.</description>
+        <workerClass>lotr.SitePartWorker_SpiritPactBirdGrove</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <IncidentDef>
+        <defName>SpiritPactBirdGrove_Incident</defName>
+        <label>spirit pact bird grove</label>
+        <baseChance>1.2</baseChance>
+        <workerClass>lotr.IncidentWorker_SpiritPactBirdGrove</workerClass>
+        <category>Misc</category>
+        <earliestDay>20</earliestDay>
+        <letterLabel>Spirit pact bird grove</letterLabel>
+        <letterText>A sacred grove has been found, guarded by a single spirit pact bird. Its feathers are said to bind oaths.</letterText>
+        <letterDef>ThreatBig</letterDef>
+        <targetTags><li>World</li></targetTags>
+    </IncidentDef>
+
+    <GenStepDef>
+        <defName>SpiritPactBird</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_SpiritPactBird"/>
+    </GenStepDef>
+
+    <MapGeneratorDef>
+        <defName>SpiritPactBirdGroveGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>TemperateForestTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>TemperateForestPlants</li>
+            <li>SpiritPactBird</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

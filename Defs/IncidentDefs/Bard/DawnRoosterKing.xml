@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WorldObjectDef ParentName="Site">
+        <defName>DawnRoosterKingThrone_World</defName>
+        <label>throne of the dawn rooster king</label>
+        <description>A sun-scorched hill where the king of dawn roosters rules over his flock.</description>
+        <mapGenerator>DawnRoosterKingThroneGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <SitePartDef>
+        <defName>DawnRoosterKingThrone_Site</defName>
+        <label>dawn rooster king throne</label>
+        <description>A dangerous rooster king guards this sacred hill.</description>
+        <workerClass>lotr.SitePartWorker_DawnRoosterKingThrone</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <IncidentDef>
+        <defName>DawnRoosterKingThrone_Incident</defName>
+        <label>dawn rooster king throne</label>
+        <baseChance>1.2</baseChance>
+        <workerClass>lotr.IncidentWorker_DawnRoosterKingThrone</workerClass>
+        <category>Misc</category>
+        <earliestDay>30</earliestDay>
+        <letterLabel>Throne of the dawn rooster king</letterLabel>
+        <letterText>A scorched hill has been found, upon which the king of dawn roosters rules. Its comb shines like a second sun.</letterText>
+        <letterDef>ThreatBig</letterDef>
+        <targetTags><li>World</li></targetTags>
+    </IncidentDef>
+
+    <GenStepDef>
+        <defName>DawnRoosterKing</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_DawnRoosterKing"/>
+    </GenStepDef>
+
+    <MapGeneratorDef>
+        <defName>DawnRoosterKingThroneGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>TemperateForestTerrain</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>TemperateForestPlants</li>
+            <li>DawnRoosterKing</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>

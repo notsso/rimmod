@@ -68,7 +68,7 @@ namespace lotr {
         }
 
         private bool TryTriggerEvent() {
-            Log.Message("triggering first meeting incident");
+            // Log.Message("triggering first meeting incident");
             if (Find.AnyPlayerHomeMap == null) return false;
 
             List<Faction> availableFactions = new List<Faction>();
@@ -80,7 +80,7 @@ namespace lotr {
             }
 
             if (availableFactions.Count == 0) {
-                Log.Message("No available faction found");
+                // Log.Message("No available faction found");
                 return false;
             }
 

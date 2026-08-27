@@ -2,44 +2,43 @@
 <Defs>
 
     <ThingDef ParentName="AnimalThingBase">
+        <defName>lotr_SpiritPactBirdRace</defName>
+        <label>spirit pact bird</label>
+        <description>A graceful bird whose feathers are used to seal sacred pacts. It exudes an aura of authority and can bind foes with magical contracts, forcing them to hesitate. Its feathers are razor-sharp when thrown.</description>
 
-        <defName>lotr_CuspidsParrotRace</defName>
-        <label>Острозубый попугай</label>
-        <description>Эти попугаи обладают зачатками разума и известны тем, что имитируют голоса людей, выкрикивая невероятно обидные, злые и провокационные фразы, чтобы выманить хищников на ловушки.</description>
-        
         <statBases>
-            <MoveSpeed>5</MoveSpeed>
-            <MarketValue>500</MarketValue>
-            <ComfyTemperatureMin>-30</ComfyTemperatureMin>
-            <ComfyTemperatureMax>60</ComfyTemperatureMax>
-            <ArmorRating_Blunt>0.30</ArmorRating_Blunt>
-            <ArmorRating_Sharp>0.30</ArmorRating_Sharp>
-            <ArmorRating_Heat>0.30</ArmorRating_Heat>
+            <MoveSpeed>7.0</MoveSpeed>
+            <MarketValue>1500</MarketValue>
+            <ComfyTemperatureMin>-80</ComfyTemperatureMin>
+            <ComfyTemperatureMax>80</ComfyTemperatureMax>
+            <ArmorRating_Blunt>0.70</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.70</ArmorRating_Sharp>
+            <ArmorRating_Heat>0.70</ArmorRating_Heat>
             <Wildness>1</Wildness>
-
             <MeatAmount>0</MeatAmount>
             <LeatherAmount>0</LeatherAmount>
-
-            <MaxFlightTime>5</MaxFlightTime>
-            <FlightCooldown>5</FlightCooldown>
-
-            <SpiritualityOffset>0.5</SpiritualityOffset>
+            <MaxFlightTime>7</MaxFlightTime>
+            <FlightCooldown>3</FlightCooldown>
+            <Flammability>0.1</Flammability>
+            <SpiritualityOffset>5.0</SpiritualityOffset>
+            <PsychicSensitivity>1.5</PsychicSensitivity>
+            <IncomingDamageFactor>0.85</IncomingDamageFactor>
+            <InjuryHealingFactor>1.5</InjuryHealingFactor>
+            <MeleeDodgeChance>0.15</MeleeDodgeChance>
         </statBases>
 
         <race>
             <thinkTreeMain>Animal</thinkTreeMain>
             <body>Bird</body>
             <baseHungerRate>0.01</baseHungerRate>
-            <baseBodySize>0.3</baseBodySize>
-            <baseHealthScale>3.0</baseHealthScale>
-
-            <foodType>OmnivoreRoughAnimal</foodType>
+            <baseBodySize>1.0</baseBodySize>
+            <baseHealthScale>5.0</baseHealthScale>
+            <foodType>CarnivoreAnimal</foodType>
             <predator>true</predator>
             <trainability>None</trainability>
-            <lifeExpectancy>10</lifeExpectancy>
+            <lifeExpectancy>150</lifeExpectancy>
             <manhunterOnDamageChance>1</manhunterOnDamageChance>
             <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
-
             <flightStartChanceOnJobStart>1.0</flightStartChanceOnJobStart>
 
             <lifeStageAges>
@@ -49,11 +48,11 @@
                 </li>
                 <li>
                     <def>AnimalJuvenile</def>
-                    <minAge>0.1</minAge>
+                    <minAge>0.2</minAge>
                 </li>
                 <li>
                     <def>AnimalAdult</def>
-                    <minAge>0.2</minAge>
+                    <minAge>0.4</minAge>
                     <soundWounded>Pawn_Chicken_Wounded</soundWounded>
                     <soundDeath>Pawn_Chicken_Death</soundDeath>
                     <soundCall>Pawn_Chicken_Call</soundCall>
@@ -77,29 +76,31 @@
         <tools>
             <li>
                 <label>claws</label>
-                <capacities>
-                    <li>Scratch</li>
-                </capacities>
-                <power>6</power>
+                <capacities><li>Scratch</li></capacities>
+                <power>20</power>
                 <cooldownTime>1.0</cooldownTime>
                 <linkedBodyPartsGroup>Feet</linkedBodyPartsGroup>
+                <armorPenetration>0.2</armorPenetration>
             </li>
             <li>
                 <label>beak</label>
-                <capacities>
-                    <li>Bite</li>
-                </capacities>
-                <power>8</power>
+                <capacities><li>Bite</li></capacities>
+                <power>20</power>
                 <cooldownTime>1.0</cooldownTime>
                 <linkedBodyPartsGroup>Beak</linkedBodyPartsGroup>
+                <armorPenetration>0.5</armorPenetration>
+            </li>
+            <li>
+                <label>feather blades</label>
+                <capacities><li>Cut</li></capacities>
+                <power>30</power>
+                <cooldownTime>1.5</cooldownTime>
             </li>
             <li>
                 <label>head</label>
-                <capacities>
-                    <li>Blunt</li>
-                </capacities>
-                <power>4</power>
-                <cooldownTime>0.5</cooldownTime>
+                <capacities><li>Blunt</li></capacities>
+                <power>20</power>
+                <cooldownTime>0.8</cooldownTime>
                 <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
                 <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
                 <chanceFactor>0.2</chanceFactor>
@@ -107,51 +108,45 @@
         </tools>
 
         <butcherProducts>
-            <lotr_CuspidsParrotTongue>1</lotr_CuspidsParrotTongue>
+            <lotr_SpiritPactBirdFeathers>1</lotr_SpiritPactBirdFeathers>
             <lotr_MysticalComponents>1</lotr_MysticalComponents>
         </butcherProducts>
-
     </ThingDef>
 
     <PawnKindDef ParentName="AnimalKindBase">
-
-        <defName>lotr_CuspidsParrot</defName>
-        <label>Острозубый попугай</label>
-        <race>lotr_CuspidsParrotRace</race>
-        <combatPower>200</combatPower>
-        <ecoSystemWeight>0.30</ecoSystemWeight>
+        <defName>lotr_SpiritPactBird</defName>
+        <label>spirit pact bird</label>
+        <race>lotr_SpiritPactBirdRace</race>
+        <combatPower>500</combatPower>
+        <ecoSystemWeight>0.15</ecoSystemWeight>
 
         <flyingAnimationFramePathPrefix>Things/Pawn/Animal/Chicken/Chicken_Flying_</flyingAnimationFramePathPrefix>
         <flyingAnimationFrameCount>8</flyingAnimationFrameCount>
         <flyingAnimationTicksPerFrame>2</flyingAnimationTicksPerFrame>
-        <flyingAnimationDrawSize>2.4</flyingAnimationDrawSize>
+        <flyingAnimationDrawSize>1.2</flyingAnimationDrawSize>
         <flyingAnimationDrawSizeIsMultiplier>true</flyingAnimationDrawSizeIsMultiplier>
         <flyingAnimationInheritColors>true</flyingAnimationInheritColors>
-        
-        <abilities>
-            <li>Cast_Taunt_8S</li>
-        </abilities>
 
         <lifeStages>
             <li>
                 <bodyGraphicData>
                     <texPath>Things/Pawn/Animal/Chicken/Chicken</texPath>
-                    <drawSize>0.45</drawSize>
-                    <color>(223,219,108)</color>
+                    <drawSize>0.8</drawSize>
+                    <color>(180,200,220)</color>
                 </bodyGraphicData>
             </li>
             <li>
                 <bodyGraphicData>
                     <texPath>Things/Pawn/Animal/Chicken/Chicken</texPath>
-                    <drawSize>0.75</drawSize>
-                    <color>(200,150,85)</color>
+                    <drawSize>1.2</drawSize>
+                    <color>(160,180,210)</color>
                 </bodyGraphicData>
             </li>
             <li>
                 <bodyGraphicData>
                     <texPath>Things/Pawn/Animal/Chicken/Chicken</texPath>
-                    <drawSize>0.87</drawSize>
-                    <color>(200,150,85)</color>
+                    <drawSize>1.5</drawSize>
+                    <color>(140,160,200)</color>
                     <shadowData>
                         <volume>(0.3, 0.4, 0.3)</volume>
                         <offset>(0,0,-0.05)</offset>
@@ -159,7 +154,6 @@
                 </bodyGraphicData>
             </li>
         </lifeStages>
-
     </PawnKindDef>
 
 </Defs>

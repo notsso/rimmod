@@ -9,7 +9,7 @@
         
         <statBases>
             <MoveSpeed>5.0</MoveSpeed>
-            <MarketValue>100</MarketValue>
+            <MarketValue>1000</MarketValue>
             <ComfyTemperatureMin>-30</ComfyTemperatureMin>
             <ComfyTemperatureMax>180</ComfyTemperatureMax>
             <ArmorRating_Blunt>0.50</ArmorRating_Blunt>
@@ -41,7 +41,7 @@
             <foodType>OmnivoreRoughAnimal</foodType>
             <predator>true</predator>
             <trainability>None</trainability>
-            <lifeExpectancy>100</lifeExpectancy>
+            <lifeExpectancy>200</lifeExpectancy>
             <manhunterOnDamageChance>1</manhunterOnDamageChance>
             <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
 

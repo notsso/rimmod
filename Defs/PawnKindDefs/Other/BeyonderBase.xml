@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <PawnKindDef Name="BeyonderRaiderBase" Abstract="True">
+        <race>Human</race>
+        <isFighter>true</isFighter>
+        <itemQuality>Normal</itemQuality>
+        <gearHealthRange>0.7~2.5</gearHealthRange>
+        <apparelTags>
+            <li>IndustrialMilitaryBasic</li>
+            <li>IndustrialMilitaryAdvanced</li>
+            <li>BeltDefensePop</li>
+        </apparelTags>
+        <apparelMoney>500~1200</apparelMoney>
+        <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+        <weaponMoney>400~900</weaponMoney>
+        <techHediffsChance>0.08</techHediffsChance>
+        <techHediffsMoney>500~1200</techHediffsMoney>
+        <techHediffsTags>
+            <li>Simple</li>
+            <li>Advanced</li>
+            <li>ImplantEmpireCommon</li>
+        </techHediffsTags>
+        <initialWillRange>0~0</initialWillRange>
+        <initialResistanceRange>0~0</initialResistanceRange>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+    </PawnKindDef>
+
+</Defs>

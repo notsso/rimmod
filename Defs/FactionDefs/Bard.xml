@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
     <FactionDef ParentName="OutlanderFactionBase">
-        <defName>lotr_ChurchOfTheGodOfCombat</defName>
-        <label>Church of the God of Combat</label>
-        <description>The Church of the God of Combat is a zealous organisation that reveres battle and strength. They trade in relics of mighty warriors and mystical ingredients tied to the Warrior pathway.</description>
-        <pawnSingular>acolyte</pawnSingular>
-        <pawnsPlural>acolytes</pawnsPlural>
+        <defName>lotr_ChurchOfTheEternalBlazingSun</defName>
+        <label>Church of the Eternal Blazing Sun</label>
+        <description>Church of the Eternal Blazing Sun is a secretive order devoted to the veneration of light and the destruction of darkness. They seek to spread their faith through song and sacred fire, trading in relics of the Bard pathway and holy ingredients.</description>
+        <pawnSingular>member</pawnSingular>
+        <pawnsPlural>members</pawnsPlural>
         <categoryTag>Outlander</categoryTag>
 
         <requiredCountAtGameStart>1</requiredCountAtGameStart>
@@ -14,7 +14,7 @@
         <configurationListOrderPriority>-1</configurationListOrderPriority>
         <displayInFactionSelection>false</displayInFactionSelection>
 
-        <fixedName>Church of the God of Combat</fixedName>
+        <fixedName>Church of the Eternal Blazing Sun</fixedName>
         <hidden>false</hidden>
         <humanlikeFaction>true</humanlikeFaction>
         <techLevel>Industrial</techLevel>
@@ -26,8 +26,8 @@
         <factionNameMaker>NamerFactionOutlander</factionNameMaker>
 
         <colorSpectrum>
-            <li>(0.55, 0.15, 0.15)</li>
-            <li>(0.85, 0.45, 0.25)</li>
+            <li>(0.9, 0.8, 0.2)</li>
+            <li>(1.0, 0.95, 0.6)</li>
         </colorSpectrum>
 
         <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
@@ -55,12 +55,12 @@
                     <Mercenary_Gunner>5</Mercenary_Gunner>
                     <Mercenary_Elite>5</Mercenary_Elite>
 
-                    <Beyonder_Warrior9>10</Beyonder_Warrior9>
-                    <Beyonder_Warrior8>8</Beyonder_Warrior8>
-                    <Beyonder_Warrior7>6</Beyonder_Warrior7>
-                    <Beyonder_Warrior6>4</Beyonder_Warrior6>
-                    <Beyonder_Warrior5>2</Beyonder_Warrior5>
-                    <Beyonder_Warrior4>1</Beyonder_Warrior4>
+                    <Beyonder_Bard9>10</Beyonder_Bard9>
+                    <Beyonder_Bard8>8</Beyonder_Bard8>
+                    <Beyonder_Bard7>6</Beyonder_Bard7>
+                    <Beyonder_Bard6>4</Beyonder_Bard6>
+                    <Beyonder_Bard5>2</Beyonder_Bard5>
+                    <Beyonder_Bard4>1</Beyonder_Bard4>
                 </options>
             </li>
             <li>

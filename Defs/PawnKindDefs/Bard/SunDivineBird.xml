@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="AnimalThingBase">
+        <defName>lotr_SunDivineBirdRace</defName>
+        <label>sun divine bird</label>
+        <description>A legendary avian whose feathers are woven from pure sunlight. It soars above the world, leaving trails of holy fire. Its very presence burns the wicked and inspires the righteous. Only the mightiest can hope to claim its tail feathers.</description>
+
+        <statBases>
+            <MoveSpeed>10.0</MoveSpeed>
+            <MarketValue>5000</MarketValue>
+            <ComfyTemperatureMin>-200</ComfyTemperatureMin>
+            <ComfyTemperatureMax>1000</ComfyTemperatureMax>
+            <ArmorRating_Blunt>1.2</ArmorRating_Blunt>
+            <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
+            <ArmorRating_Heat>1.5</ArmorRating_Heat>
+            <Wildness>1</Wildness>
+            <MeatAmount>0</MeatAmount>
+            <LeatherAmount>0</LeatherAmount>
+            <MaxFlightTime>10</MaxFlightTime>
+            <FlightCooldown>2</FlightCooldown>
+            <Flammability>0.0</Flammability>
+            <ToxicResistance>1.0</ToxicResistance>
+            <ToxicEnvironmentResistance>1.0</ToxicEnvironmentResistance>
+            <IncomingDamageFactor>0.30</IncomingDamageFactor>
+            <InjuryHealingFactor>5.0</InjuryHealingFactor>
+            <MeleeHitChance>30</MeleeHitChance>
+            <MeleeDodgeChance>30</MeleeDodgeChance>
+            <SpiritualityOffset>30</SpiritualityOffset>
+            <PsychicSensitivity>2.0</PsychicSensitivity>
+        </statBases>
+
+        <race>
+            <thinkTreeMain>Animal</thinkTreeMain>
+            <body>Bird</body>
+            <baseHungerRate>0</baseHungerRate>
+            <baseBodySize>5.0</baseBodySize>
+            <baseHealthScale>10.0</baseHealthScale>
+            <foodType>CarnivoreAnimal</foodType>
+            <predator>true</predator>
+            <trainability>None</trainability>
+            <lifeExpectancy>2000</lifeExpectancy>
+            <manhunterOnDamageChance>1</manhunterOnDamageChance>
+            <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
+            <flightStartChanceOnJobStart>1.0</flightStartChanceOnJobStart>
+
+            <lifeStageAges>
+                <li>
+                    <def>AnimalBaby</def>
+                    <minAge>0</minAge>
+                </li>
+                <li>
+                    <def>AnimalJuvenile</def>
+                    <minAge>0.5</minAge>
+                </li>
+                <li>
+                    <def>AnimalAdult</def>
+                    <minAge>1.0</minAge>
+                    <soundWounded>Pawn_Chicken_Wounded</soundWounded>
+                    <soundDeath>Pawn_Chicken_Death</soundDeath>
+                    <soundCall>Pawn_Chicken_Call</soundCall>
+                    <soundAngry>Pawn_Chicken_Angry</soundAngry>
+                </li>
+            </lifeStageAges>
+
+            <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+            <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+            <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+            <soundEating>Bird_Eat</soundEating>
+
+            <headPosPerRotation>
+                <li>(0.0, 0, 0.24)</li>
+                <li>(0.25, 0, 0.18)</li>
+                <li>(0.0, 0, 0.07)</li>
+                <li>(-0.25, 0, 0.18)</li>
+            </headPosPerRotation>
+        </race>
+
+        <tools>
+            <li>
+                <label>claws</label>
+                <capacities><li>Scratch</li></capacities>
+                <power>50</power>
+                <cooldownTime>1.0</cooldownTime>
+                <linkedBodyPartsGroup>Feet</linkedBodyPartsGroup>
+                <armorPenetration>0.6</armorPenetration>
+            </li>
+            <li>
+                <label>beak</label>
+                <capacities><li>Bite</li></capacities>
+                <power>60</power>
+                <cooldownTime>1.2</cooldownTime>
+                <linkedBodyPartsGroup>Beak</linkedBodyPartsGroup>
+                <armorPenetration>1</armorPenetration>
+            </li>
+            <li>
+                <label>sunfire feathers</label>
+                <capacities><li>Cut</li></capacities>
+                <power>100</power>
+                <cooldownTime>2.0</cooldownTime>
+                <armorPenetration>0.5</armorPenetration>
+                <extraMeleeDamages>
+                    <li>
+                        <def>Flame</def>
+                        <amount>20</amount>
+                    </li>
+                </extraMeleeDamages>
+            </li>
+            <li>
+                <label>head</label>
+                <capacities><li>Blunt</li></capacities>
+                <power>40</power>
+                <cooldownTime>0.8</cooldownTime>
+                <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+                <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+                <chanceFactor>0.2</chanceFactor>
+                <armorPenetration>0.5</armorPenetration>
+            </li>
+        </tools>
+
+        <butcherProducts>
+            <lotr_SunDivineBirdFeathers>1</lotr_SunDivineBirdFeathers>
+            <lotr_MysticalComponents>3</lotr_MysticalComponents>
+        </butcherProducts>
+
+        <comps>
+            <li Class="lotr.CompProperties_MovingGlower">
+                <glowRadius>15</glowRadius>
+                <glowColor>(255, 100, 20, 0)</glowColor>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <PawnKindDef ParentName="AnimalKindBase">
+        <defName>lotr_SunDivineBird</defName>
+        <label>sun divine bird</label>
+        <race>lotr_SunDivineBirdRace</race>
+        <combatPower>3000</combatPower>
+        <ecoSystemWeight>0.02</ecoSystemWeight>
+
+        <flyingAnimationFramePathPrefix>Things/Pawn/Animal/Chicken/Chicken_Flying_</flyingAnimationFramePathPrefix>
+        <flyingAnimationFrameCount>8</flyingAnimationFrameCount>
+        <flyingAnimationTicksPerFrame>2</flyingAnimationTicksPerFrame>
+        <flyingAnimationDrawSize>0.5</flyingAnimationDrawSize>
+        <flyingAnimationDrawSizeIsMultiplier>true</flyingAnimationDrawSizeIsMultiplier>
+        <flyingAnimationInheritColors>true</flyingAnimationInheritColors>
+
+        <lifeStages>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Chicken/Chicken</texPath>
+                    <drawSize>2.0</drawSize>
+                    <color>(255,240,150)</color>
+                </bodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Chicken/Chicken</texPath>
+                    <drawSize>3.0</drawSize>
+                    <color>(255,230,120)</color>
+                    <shadowData>
+                        <volume>(0.4, 0.5, 0.4)</volume>
+                        <offset>(0,0,-0.05)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Chicken/Chicken</texPath>
+                    <drawSize>4.0</drawSize>
+                    <color>(255,220,100)</color>
+                    <shadowData>
+                        <volume>(0.5, 0.6, 0.5)</volume>
+                        <offset>(0,0,-0.1)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+            </li>
+        </lifeStages>
+    </PawnKindDef>
+
+</Defs>
