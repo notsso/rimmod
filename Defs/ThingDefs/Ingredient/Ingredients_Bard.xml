@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Ингредиенты для зелья Бард (9) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_FireBirdTailFeather</defName>
+        <label>fire bird tail feather</label>
+        <description>A tail feather from a fire bird, glowing with inner heat. A key ingredient for bard potions.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>300</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_SingingSunflower</defName>
+        <label>singing sunflower</label>
+        <description>A mystical sunflower that hums a faint, uplifting melody. A key ingredient for bard potions.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>300</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <thingCategories>
+            <li>BeyonderPlantParts</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Bard9_Essence</defName>
+        <label>essence of Bard</label>
+        <description>A mystical characteristic of a Beyonder from the Bard pathway.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>500</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Проситель света (8) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_BrillianceRock</defName>
+        <label>piece of brilliance rock</label>
+        <description>A fragment of a radiant mineral that seems to glow from within. A key ingredient for light suppliant potions.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>600</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <thingCategories>
+            <li>SpecialBeyonderItems</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_MirrorHedgehogBlood</defName>
+        <label>mirror hedgehog blood</label>
+        <description>Blood of a mirror hedgehog, shimmering with reflective properties. A key ingredient for light suppliant potions.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>600</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Bard8_Essence</defName>
+        <label>essence of Light Suppliant</label>
+        <description>A mystical characteristic of a Beyonder from the Bard pathway.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_1</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>1000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Солнечный первосвященник (7) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_DawnRoosterComb</defName>
+        <label>red comb of a dawn rooster</label>
+        <description>A vibrant red comb from a rooster that greets the dawn with holy light. A key ingredient for sun high priest potions.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>1000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_RadianceSpiritPactTreeFruit</defName>
+        <label>fruit of radiance spirit pact tree</label>
+        <description>A fruit from a mystical tree that shines with sacred light. A key ingredient for sun high priest potions.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>1000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <thingCategories>
+            <li>BeyonderPlantParts</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Bard7_Essence</defName>
+        <label>essence of Sun High Priest</label>
+        <description>A mystical characteristic of a Beyonder from the Bard pathway.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>1600</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Нотариус (6) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_CrystallizedElderTreeRoots</defName>
+        <label>crystallized roots of the tree of elders</label>
+        <description>Glittering roots from an ancient tree, infused with the power of contracts. A key ingredient for notary potions.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>1500</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <thingCategories>
+            <li>BeyonderPlantParts</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_SpiritPactBirdFeathers</defName>
+        <label>spirit pact bird feathers</label>
+        <description>Feathers from a mystical bird that seals spiritual pacts. A key ingredient for notary potions.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>1500</MarketValue>
+            <Mass>0.10</Mass>
+        </statBases>
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Bard6_Essence</defName>
+        <label>essence of Notary</label>
+        <description>A mystical characteristic of a Beyonder from the Bard pathway.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>2500</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Священник света (5) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_DawnRoosterKingComb</defName>
+        <label>red comb of a king of dawn roosters</label>
+        <description>A majestic red comb from the king of dawn roosters, radiating holy power. A key ingredient for priest of light potions.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>3000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_PureWhiteBrilliantRock</defName>
+        <label>pure white brilliant rock</label>
+        <description>A flawless white mineral that purifies all it touches. A key ingredient for priest of light potions.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>3000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <thingCategories>
+            <li>SpecialBeyonderItems</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Bard5_Essence</defName>
+        <label>essence of Priest of Light</label>
+        <description>A mystical characteristic of a Beyonder from the Bard pathway.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_2</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>5000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- Ингредиенты для зелья Незатенённый (5) -->
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_SunDivineBirdFeathers</defName>
+        <label>sun divine bird tail feathers</label>
+        <description>Radiant feathers from a divine bird of the sun, shimmering with celestial fire. A key ingredient for unshadowed potions.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_3</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>5000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <thingCategories>
+            <li>BeyonderCreatureParts</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_HolyBrillianceRock</defName>
+        <label>holy brilliance rock</label>
+        <description>A sacred mineral that channels the purest light of heaven. A key ingredient for unshadowed potions.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_3</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>5000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <thingCategories>
+            <li>SpecialBeyonderItems</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderTrading</li>
+        </tradeTags>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>lotr_Bard4_Essence</defName>
+        <label>essence of Unshadowed</label>
+        <description>A mystical characteristic of a Beyonder from the Bard pathway.</description>
+        <graphicData>
+            <texPath>Things/Ingredient/Ingredient_3</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>8000</MarketValue>
+            <Mass>0.1</Mass>
+        </statBases>
+        <useHitPoints>false</useHitPoints>
+        <thingCategories>
+            <li>BeyonderItems</li>
+        </thingCategories>
+        <tradeTags>
+            <li>BeyonderItems</li>
+        </tradeTags>
+    </ThingDef>
+
+</Defs>

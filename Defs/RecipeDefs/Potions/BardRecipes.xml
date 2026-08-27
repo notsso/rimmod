@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <RecipeDef>
+        <defName>Bard9_PotionRecipe</defName>
+        <label>brew bard's potion</label>
+        <description>Brew a mysterious potion of the Bard pathway.</description>
+        <jobString>Brewing bard's potion.</jobString>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_FireBirdTailFeather</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_SingingSunflower</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>MedicineHerbal</li>
+                    </thingDefs>
+                </filter>
+                <count>5</count>
+            </li>
+        </ingredients>
+        <products>
+            <Bard9_Potion>1</Bard9_Potion>
+        </products>
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        <researchPrerequisite>lotr_PathBard</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>Bard9_PotionRecipe_Alt</defName>
+        <label>brew bard's potion (alternative)</label>
+        <description>Brew a mysterious potion of the Bard pathway using a single essence.</description>
+        <jobString>Brewing bard's potion.</jobString>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_Bard9_Essence</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>MedicineHerbal</li>
+                    </thingDefs>
+                </filter>
+                <count>5</count>
+            </li>
+        </ingredients>
+        <products>
+            <Bard9_Potion>1</Bard9_Potion>
+        </products>
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        <researchPrerequisite>lotr_PathBard</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>Bard8_PotionRecipe</defName>
+        <label>brew light suppliant's potion</label>
+        <description>Brew a mysterious potion of the Bard pathway.</description>
+        <jobString>Brewing light suppliant's potion.</jobString>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_BrillianceRock</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MirrorHedgehogBlood</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>MedicineHerbal</li>
+                    </thingDefs>
+                </filter>
+                <count>5</count>
+            </li>
+        </ingredients>
+        <products>
+            <Bard8_Potion>1</Bard8_Potion>
+        </products>
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        <researchPrerequisite>lotr_PathBard</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>Bard8_PotionRecipe_Alt</defName>
+        <label>brew light suppliant's potion (alternative)</label>
+        <description>Brew a mysterious potion of the Bard pathway using a single essence.</description>
+        <jobString>Brewing light suppliant's potion.</jobString>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_Bard8_Essence</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>MedicineHerbal</li>
+                    </thingDefs>
+                </filter>
+                <count>5</count>
+            </li>
+        </ingredients>
+        <products>
+            <Bard8_Potion>1</Bard8_Potion>
+        </products>
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        <researchPrerequisite>lotr_PathBard</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>Bard7_PotionRecipe</defName>
+        <label>brew sun high priest's potion</label>
+        <description>Brew a mysterious potion of the Bard pathway.</description>
+        <jobString>Brewing sun high priest's potion.</jobString>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_DawnRoosterComb</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_RadianceSpiritPactTreeFruit</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MagicalHerbs</li>
+                    </thingDefs>
+                </filter>
+                <count>5</count>
+            </li>
+        </ingredients>
+        <products>
+            <Bard7_Potion>1</Bard7_Potion>
+        </products>
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        <researchPrerequisite>lotr_PathBard</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>Bard7_PotionRecipe_Alt</defName>
+        <label>brew sun high priest's potion (alternative)</label>
+        <description>Brew a mysterious potion of the Bard pathway using a single essence.</description>
+        <jobString>Brewing sun high priest's potion.</jobString>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_Bard7_Essence</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MagicalHerbs</li>
+                    </thingDefs>
+                </filter>
+                <count>5</count>
+            </li>
+        </ingredients>
+        <products>
+            <Bard7_Potion>1</Bard7_Potion>
+        </products>
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        <researchPrerequisite>lotr_PathBard</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>Bard6_PotionRecipe</defName>
+        <label>brew notary's potion</label>
+        <description>Brew a mysterious potion of the Bard pathway.</description>
+        <jobString>Brewing notary's potion.</jobString>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_CrystallizedElderTreeRoots</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_SpiritPactBirdFeathers</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MagicalHerbs</li>
+                    </thingDefs>
+                </filter>
+                <count>5</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MysticalComponents</li>
+                    </thingDefs>
+                </filter>
+                <count>2</count>
+            </li>
+        </ingredients>
+        <products>
+            <Bard6_Potion>1</Bard6_Potion>
+        </products>
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        <researchPrerequisite>lotr_PathBard</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>Bard6_PotionRecipe_Alt</defName>
+        <label>brew notary's potion (alternative)</label>
+        <description>Brew a mysterious potion of the Bard pathway using a single essence.</description>
+        <jobString>Brewing notary's potion.</jobString>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_Bard6_Essence</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MagicalHerbs</li>
+                    </thingDefs>
+                </filter>
+                <count>5</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MysticalComponents</li>
+                    </thingDefs>
+                </filter>
+                <count>2</count>
+            </li>
+        </ingredients>
+        <products>
+            <Bard6_Potion>1</Bard6_Potion>
+        </products>
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        <researchPrerequisite>lotr_PathBard</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>Bard5_PotionRecipe</defName>
+        <label>brew priest of light's potion</label>
+        <description>Brew a mysterious potion of the Bard pathway.</description>
+        <jobString>Brewing priest of light's potion.</jobString>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_DawnRoosterKingComb</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_PureWhiteBrilliantRock</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MysticalComponents</li>
+                    </thingDefs>
+                </filter>
+                <count>5</count>
+            </li>
+        </ingredients>
+        <products>
+            <Bard5_Potion>1</Bard5_Potion>
+        </products>
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        <researchPrerequisite>lotr_PathBard</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>Bard5_PotionRecipe_Alt</defName>
+        <label>brew priest of light's potion (alternative)</label>
+        <description>Brew a mysterious potion of the Bard pathway using a single essence.</description>
+        <jobString>Brewing priest of light's potion.</jobString>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_Bard5_Essence</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MysticalComponents</li>
+                    </thingDefs>
+                </filter>
+                <count>5</count>
+            </li>
+        </ingredients>
+        <products>
+            <Bard5_Potion>1</Bard5_Potion>
+        </products>
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        <researchPrerequisite>lotr_PathBard</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>Bard4_PotionRecipe</defName>
+        <label>brew unshadowed's potion</label>
+        <description>Brew a mysterious potion of the Bard pathway.</description>
+        <jobString>Brewing unshadowed's potion.</jobString>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_SunDivineBirdFeathers</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_HolyBrillianceRock</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MysticalComponents</li>
+                    </thingDefs>
+                </filter>
+                <count>10</count>
+            </li>
+        </ingredients>
+        <products>
+            <Bard4_Potion>1</Bard4_Potion>
+        </products>
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        <researchPrerequisite>lotr_PathBard</researchPrerequisite>
+    </RecipeDef>
+
+    <RecipeDef>
+        <defName>Bard4_PotionRecipe_Alt</defName>
+        <label>brew unshadowed's potion (alternative)</label>
+        <description>Brew a mysterious potion of the Bard pathway using a single essence.</description>
+        <jobString>Brewing unshadowed's potion.</jobString>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Drug</soundWorking>
+        <workAmount>100</workAmount>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_Bard4_Essence</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>lotr_MysticalComponents</li>
+                    </thingDefs>
+                </filter>
+                <count>10</count>
+            </li>
+        </ingredients>
+        <products>
+            <Bard4_Potion>1</Bard4_Potion>
+        </products>
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        <researchPrerequisite>lotr_PathBard</researchPrerequisite>
+    </RecipeDef>
+
+</Defs>

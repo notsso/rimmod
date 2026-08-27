@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <lotr.BeyonderHediffDef Class="lotr.BeyonderHediffDef">
+        <hediffClass>lotr.Bard8_Hediff</hediffClass>
+        <defName>Bard8_Hediff</defName>
+        <label>Light Supplicant</label>
+        <sequence>8</sequence>
+        <pathway>Bard</pathway>
+
+        <spiritualityOffset>2</spiritualityOffset>
+
+        <description>This person became 8 sequence beyonder - light supplicant.</description>
+        <defaultLabelColor>(1.0, 0.8, 0.0)</defaultLabelColor>
+        <initialSeverity>0.01</initialSeverity>
+        <maxSeverity>1</maxSeverity>
+        <minSeverity>0</minSeverity>
+        <tendable>false</tendable>
+        <isBad>false</isBad>
+
+        <stages>
+            <li>
+                <minSeverity>0.0</minSeverity>
+                <label>лох</label>
+                <statFactors>
+                    <IncomingDamageFactor>0.95</IncomingDamageFactor>
+                </statFactors>
+                <statOffsets>
+                    <PsychicSensitivity>0.30</PsychicSensitivity>
+                    <SocialImpact>0.20</SocialImpact>
+                    <MentalBreakThreshold>-0.10</MentalBreakThreshold>
+                    <ArmorRating_Heat>0.10</ArmorRating_Heat>
+                </statOffsets>
+                <capMods>
+                    <li><capacity>Sight</capacity><offset>0.10</offset></li>
+                    <li><capacity>Moving</capacity><offset>0.10</offset></li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.4</minSeverity>
+                <label>нормик</label>
+                <statFactors>
+                    <IncomingDamageFactor>0.92</IncomingDamageFactor>
+                </statFactors>
+                <statOffsets>
+                    <PsychicSensitivity>0.50</PsychicSensitivity>
+                    <SocialImpact>0.35</SocialImpact>
+                    <MentalBreakThreshold>-0.15</MentalBreakThreshold>
+                    <ArmorRating_Heat>0.15</ArmorRating_Heat>
+                </statOffsets>
+                <capMods>
+                    <li><capacity>Sight</capacity><offset>0.15</offset></li>
+                    <li><capacity>Moving</capacity><offset>0.15</offset></li>
+                    <li><capacity>BloodPumping</capacity><offset>0.15</offset></li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.8</minSeverity>
+                <label>смешарик</label>
+                <statFactors>
+                    <IncomingDamageFactor>0.90</IncomingDamageFactor>
+                </statFactors>
+                <statOffsets>
+                    <MeleeHitChance>2</MeleeHitChance>
+					<MeleeDodgeChance>2</MeleeDodgeChance>
+					<ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+                    <PsychicSensitivity>0.70</PsychicSensitivity>
+                    <SocialImpact>0.50</SocialImpact>
+                    <MentalBreakThreshold>-0.20</MentalBreakThreshold>
+                    <ArmorRating_Heat>0.20</ArmorRating_Heat>
+                </statOffsets>
+                <capMods>
+                    <li><capacity>Sight</capacity><offset>0.20</offset></li>
+                    <li><capacity>Moving</capacity><offset>0.20</offset></li>
+                    <li><capacity>BloodPumping</capacity><offset>0.20</offset></li>
+                </capMods>
+            </li>
+        </stages>
+
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>0.03</severityPerDay>
+            </li>
+        </comps>
+
+        <newAbilities />
+    </lotr.BeyonderHediffDef>
+
+</Defs>

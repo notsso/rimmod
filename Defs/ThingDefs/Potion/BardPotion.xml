@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef ParentName="PotionBase">
+        <thingClass>ThingWithComps</thingClass>
+        <defName>Bard9_Potion</defName>
+        <label>barde's potion</label>
+        <description>A constantly churning crimson liquid.
+        By drinking it, the pawn will awaken the power of the Bard within itself.</description>
+        <descriptionHyperlinks>
+            <HediffDef>Bard9_Hediff</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Potions/Bard/Bard9_Potion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <ingestible>
+            <outcomeDoers>
+                <li Class="lotr.IngestionOutcomeDoer_GiveHediffRange">
+                    <hediffDef>lotr_SanityLoss</hediffDef>
+                    <severityRange>0.15~0.75</severityRange>
+                </li>
+
+                <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
+                    <hediffToGive>Bard9_Hediff</hediffToGive>
+                    <severity>0.01</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+    </ThingDef>
+
+    <ThingDef ParentName="PotionBase">
+        <thingClass>ThingWithComps</thingClass>
+        <defName>Bard8_Potion</defName>
+        <label>light suppliant's potion</label>
+        <description>Blazing white magma.
+        By drinking it, the pawn will awaken the power of the Light Suppliant within itself.</description>
+        <descriptionHyperlinks>
+            <HediffDef>Bard8_Hediff</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Potions/Bard/Bard8_Potion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <ingestible>
+            <outcomeDoers>
+                <li Class="lotr.IngestionOutcomeDoer_GiveHediffRange">
+                    <hediffDef>lotr_SanityLoss</hediffDef>
+                    <severityRange>0.15~0.75</severityRange>
+                </li>
+
+                <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
+                    <hediffToGive>Bard8_Hediff</hediffToGive>
+                    <severity>0.01</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+    </ThingDef>
+
+    <ThingDef ParentName="PotionBase">
+        <thingClass>ThingWithComps</thingClass>
+        <defName>Bard7_Potion</defName>
+        <label>sun high priest's potion</label>
+        <description>Golden in color and scorching hot in temperature.
+        By drinking it, the pawn will awaken the power of the Sun High Priest within itself.</description>
+        <descriptionHyperlinks>
+            <HediffDef>Bard7_Hediff</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Potions/Bard/Bard7_Potion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <ingestible>
+            <outcomeDoers>
+                <li Class="lotr.IngestionOutcomeDoer_GiveHediffRange">
+                    <hediffDef>lotr_SanityLoss</hediffDef>
+                    <severityRange>0.15~0.75</severityRange>
+                </li>
+
+                <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
+                    <hediffToGive>Bard7_Hediff</hediffToGive>
+                    <severity>0.01</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+    </ThingDef>
+
+    <ThingDef ParentName="PotionBase">
+        <thingClass>ThingWithComps</thingClass>
+        <defName>Bard6_Potion</defName>
+        <label>notary's potion</label>
+        <description>A dark golden liquid, crystal clear and translucent, seemingly able to reflect one's inner heart.
+        By drinking it, the pawn will awaken the power of the Notary within itself.</description>
+        <descriptionHyperlinks>
+            <HediffDef>Bard6_Hediff</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Potions/Bard/Bard6_Potion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <ingestible>
+            <outcomeDoers>
+                <li Class="lotr.IngestionOutcomeDoer_GiveHediffRange">
+                    <hediffDef>lotr_SanityLoss</hediffDef>
+                    <severityRange>0.15~0.75</severityRange>
+                </li>
+
+                <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
+                    <hediffToGive>Bard6_Hediff</hediffToGive>
+                    <severity>0.01</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+    </ThingDef>
+
+    <ThingDef ParentName="PotionBase">
+        <thingClass>ThingWithComps</thingClass>
+        <defName>Bard5_Potion</defName>
+        <label>priest of light's potion</label>
+        <description>A hot, golden liquid that emits light.
+        By drinking it, the pawn will awaken the power of the Priest Of Light within itself.</description>
+        <descriptionHyperlinks>
+            <HediffDef>Bard5_Hediff</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Potions/Bard/Bard5_Potion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <ingestible>
+            <outcomeDoers>
+                <li Class="lotr.IngestionOutcomeDoer_GiveHediffRange">
+                    <hediffDef>lotr_SanityLoss</hediffDef>
+                    <severityRange>0.15~0.75</severityRange>
+                </li>
+
+                <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
+                    <hediffToGive>Bard5_Hediff</hediffToGive>
+                    <severity>0.01</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+    </ThingDef>
+
+    <ThingDef ParentName="PotionBase">
+        <thingClass>ThingWithComps</thingClass>
+        <defName>Bard4_Potion</defName>
+        <label>unshadowed's potion</label>
+        <description>A golden concoction without any impurities. A hot, violent liquid.
+        By drinking it, the pawn will awaken the power of the Unshadowed within itself.</description>
+        <descriptionHyperlinks>
+            <HediffDef>Bard4_Hediff</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Potions/Bard/Bard4_Potion</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+
+        <ingestible>
+            <outcomeDoers>
+                <li Class="lotr.IngestionOutcomeDoer_GiveHediffRange">
+                    <hediffDef>lotr_SanityLoss</hediffDef>
+                    <severityRange>0.15~0.75</severityRange>
+                </li>
+
+                <li Class="lotr.IngestionOutcomeDoer_SequenceAdvance">
+                    <hediffToGive>Bard4_Hediff</hediffToGive>
+                    <severity>0.01</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+    </ThingDef>
+
+</Defs>

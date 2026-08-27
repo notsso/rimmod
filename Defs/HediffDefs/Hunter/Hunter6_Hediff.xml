@@ -55,23 +55,23 @@
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
-						<offset>0.70</offset>
+						<offset>0.10</offset>
 					</li>
 					<li>
 						<capacity>Sight</capacity>
-						<offset>0.70</offset>
+						<offset>0.10</offset>
 					</li>
 					<li>
 						<capacity>BloodPumping</capacity>
-						<offset>0.50</offset> 
+						<offset>0.10</offset> 
 					</li>
                     <li>
                         <capacity>Talking</capacity>
-                        <offset>0.20</offset>
+                        <offset>0.10</offset>
                     </li>
                     <li>
                         <capacity>Consciousness</capacity>
-                        <offset>0.30</offset>
+                        <offset>0.10</offset>
                     </li>
 				</capMods>
 			</li>
@@ -165,7 +165,7 @@
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
-						<offset>0.20</offset>
+						<offset>0.30</offset>
 					</li>
 					<li>
 						<capacity>Sight</capacity>
@@ -173,7 +173,7 @@
 					</li>
 					<li>
 						<capacity>BloodPumping</capacity>
-						<offset>0.20</offset> 
+						<offset>0.30</offset> 
 					</li>
                     <li>
                         <capacity>Talking</capacity>
