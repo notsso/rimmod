@@ -7,7 +7,7 @@
         <description>A nightmarish amphibious predator that lurks in the darkest swamps. Its scales shimmer with an unnatural blue glow, and its blood is thick with dark magic. It moves with eerie silence, striking from the water's edge.</description>
 
         <statBases>
-            <MoveSpeed>3.0</MoveSpeed>
+            <MoveSpeed>5.0</MoveSpeed>
             <MarketValue>1000</MarketValue>
             <ComfyTemperatureMin>-30</ComfyTemperatureMin>
             <ComfyTemperatureMax>180</ComfyTemperatureMax>
@@ -114,6 +114,7 @@
         <defName>lotr_AbyssDemonicFish</defName>
         <label>abyss demonic fish</label>
         <race>lotr_AbyssDemonicFishRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>300</combatPower>
         <ecoSystemWeight>0.80</ecoSystemWeight>
 

@@ -97,6 +97,7 @@
         <defName>lotr_DemonThroatHoneyguide</defName>
         <label>Demon Throat Honeyguide</label>
         <race>lotr_DemonThroatHoneyguideRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>200</combatPower>
         <ecoSystemWeight>0.30</ecoSystemWeight>
 

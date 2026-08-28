@@ -118,6 +118,7 @@
         <defName>lotr_CuspidsParrot</defName>
         <label>Острозубый попугай</label>
         <race>lotr_CuspidsParrotRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>200</combatPower>
         <ecoSystemWeight>0.30</ecoSystemWeight>
 

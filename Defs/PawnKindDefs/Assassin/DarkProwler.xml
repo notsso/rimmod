@@ -106,6 +106,7 @@
         <defName>lotr_DarkProwler</defName>
         <label>dark prowler</label>
         <race>lotr_DarkProwlerRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>200</combatPower>
         <ecoSystemWeight>0.3</ecoSystemWeight>
 

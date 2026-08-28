@@ -123,6 +123,7 @@
         <defName>lotr_DawnRoosterKing</defName>
         <label>king of dawn roosters</label>
         <race>lotr_DawnRoosterKingRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>1000</combatPower>
         <ecoSystemWeight>0.05</ecoSystemWeight>
 

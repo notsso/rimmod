@@ -119,6 +119,7 @@
         <defName>lotr_SpiritPactBird</defName>
         <label>spirit pact bird</label>
         <race>lotr_SpiritPactBirdRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>500</combatPower>
         <ecoSystemWeight>0.15</ecoSystemWeight>
 

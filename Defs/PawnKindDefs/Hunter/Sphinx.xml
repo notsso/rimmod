@@ -155,6 +155,7 @@
         <defName>lotr_Sphinx</defName>
         <label>Sphinx</label>
         <race>lotr_SphinxRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>500</combatPower>
         <ecoSystemWeight>1.0</ecoSystemWeight>
 

@@ -137,6 +137,7 @@
         <defName>lotr_SunDivineBird</defName>
         <label>sun divine bird</label>
         <race>lotr_SunDivineBirdRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>3000</combatPower>
         <ecoSystemWeight>0.02</ecoSystemWeight>
 

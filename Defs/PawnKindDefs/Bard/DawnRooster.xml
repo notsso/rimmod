@@ -117,6 +117,7 @@
         <defName>lotr_DawnRooster</defName>
         <label>dawn rooster</label>
         <race>lotr_DawnRoosterRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>300</combatPower>
         <ecoSystemWeight>0.30</ecoSystemWeight>
 

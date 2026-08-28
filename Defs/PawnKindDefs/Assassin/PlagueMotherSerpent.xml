@@ -101,6 +101,7 @@
         <defName>lotr_PlagueMotherSerpent</defName>
         <label>Plague Mother Serpent</label>
         <race>lotr_PlagueMotherSerpentRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>2500</combatPower>
         <ecoSystemWeight>0.10</ecoSystemWeight>
 

@@ -71,9 +71,9 @@
         <defName>lotr_BlueGiant</defName>
         <label>blue giant</label>
         <race>lotr_BlueGiantRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>800</combatPower>
         <canMeleeAttack>true</canMeleeAttack>
-        <hostileToAll>true</hostileToAll>
         <initialWillRange>0~0</initialWillRange>
         <initialResistanceRange>0~0</initialResistanceRange>
         <lifeStages>

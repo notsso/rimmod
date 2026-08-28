@@ -129,6 +129,7 @@
         <defName>lotr_MagmaGiant</defName>
         <label>Magma Giant</label>
         <race>lotr_MagmaGiantRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>3000</combatPower>
         <ecoSystemWeight>1.0</ecoSystemWeight>
 

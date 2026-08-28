@@ -100,6 +100,7 @@
         <defName>lotr_TwoTailedBlackSnake</defName>
         <label>Two-Tailed Black Snake</label>
         <race>lotr_TwoTailedBlackSnakeRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>950</combatPower>
         <ecoSystemWeight>0.30</ecoSystemWeight>
 

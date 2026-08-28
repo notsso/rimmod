@@ -113,6 +113,7 @@
         <defName>lotr_FireBird</defName>
         <label>fire bird</label>
         <race>lotr_FireBirdRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>140</combatPower>
         <ecoSystemWeight>0.4</ecoSystemWeight>
 

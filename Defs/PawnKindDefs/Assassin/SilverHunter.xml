@@ -109,6 +109,7 @@
         <defName>lotr_SilverHunter</defName>
         <label>Silver Hunter</label>
         <race>lotr_SilverHunterRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>2500</combatPower>
         <ecoSystemWeight>0.10</ecoSystemWeight>
 

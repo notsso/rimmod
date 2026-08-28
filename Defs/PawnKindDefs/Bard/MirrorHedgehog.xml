@@ -86,6 +86,7 @@
         <defName>lotr_MirrorHedgehog</defName>
         <label>mirror hedgehog</label>
         <race>lotr_MirrorHedgehogRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>100</combatPower>
         <ecoSystemWeight>0.5</ecoSystemWeight>
 

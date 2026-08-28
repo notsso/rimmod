@@ -95,8 +95,10 @@
         <defName>lotr_BlackWidowSpider</defName>
         <label>Black Widow Spider</label>
         <race>lotr_BlackWidowSpiderRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>500</combatPower>
         <ecoSystemWeight>1.00</ecoSystemWeight>
+        
         <lifeStages>
             <li>
                 <bodyGraphicData>

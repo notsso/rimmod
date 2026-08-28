@@ -95,6 +95,7 @@
         <defName>lotr_MarshBoar</defName>
         <label>Marsh Boar</label>
         <race>lotr_MarshBoarRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>120</combatPower>
         <ecoSystemWeight>0.6</ecoSystemWeight>
         

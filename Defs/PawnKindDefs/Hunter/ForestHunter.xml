@@ -146,6 +146,7 @@
         <defName>lotr_ForestHunter</defName>
         <label>Forest Hunter</label>
         <race>lotr_ForestHunterRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>1000</combatPower>
         <ecoSystemWeight>1.0</ecoSystemWeight>
         

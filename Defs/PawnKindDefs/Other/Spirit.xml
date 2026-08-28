@@ -121,6 +121,7 @@
         <defName>lotr_Spirit</defName>
         <label>Spirit</label>
         <race>lotr_SpiritRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>100</combatPower>
 
         <abilities />

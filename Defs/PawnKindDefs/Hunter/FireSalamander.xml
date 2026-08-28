@@ -8,7 +8,7 @@
         <description>These large lizards normally feed on plant matter. However, when angered, their tough hide and sharp claws make them quite dangerous.\n\nResting iguanas hold their heads high, giving them an amusing 'proud' look. But they're not proud; they're just trying to see predators so they don't get eaten.</description>
         
         <statBases>
-            <MoveSpeed>3.0</MoveSpeed>
+            <MoveSpeed>5.0</MoveSpeed>
             <MarketValue>100</MarketValue>
             <ComfyTemperatureMin>-30</ComfyTemperatureMin>
             <ComfyTemperatureMax>180</ComfyTemperatureMax>
@@ -130,6 +130,7 @@
         <defName>lotr_FireSalamander</defName>
         <label>Fire salamander</label>
         <race>lotr_FireSalamanderRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>300</combatPower>
         <ecoSystemWeight>0.80</ecoSystemWeight>
 

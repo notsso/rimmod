@@ -118,6 +118,7 @@
         <defName>lotr_BlackHuntingSpider</defName>
         <label>Black Hunting Spider</label>
         <race>lotr_BlackHuntingSpiderRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>500</combatPower>
         <ecoSystemWeight>1.00</ecoSystemWeight>
 

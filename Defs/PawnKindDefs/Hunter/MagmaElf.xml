@@ -8,7 +8,7 @@
         <description>Elementals born from pure fiery substance in deep underground lava lakes</description>
         
         <statBases>
-            <MoveSpeed>5.0</MoveSpeed>
+            <MoveSpeed>6.0</MoveSpeed>
             <MarketValue>1000</MarketValue>
             <ComfyTemperatureMin>-30</ComfyTemperatureMin>
             <ComfyTemperatureMax>180</ComfyTemperatureMax>
@@ -112,6 +112,7 @@
         <defName>lotr_MagmaElf</defName>
         <label>Magma elf</label>
         <race>lotr_MagmaElfRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>300</combatPower>
         <ecoSystemWeight>0.80</ecoSystemWeight>
 

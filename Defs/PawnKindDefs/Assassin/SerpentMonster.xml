@@ -122,6 +122,7 @@
         <defName>lotr_SerpentMonsterBird</defName>
         <label>Serpent-Bodied Monster Bird</label>
         <race>lotr_SerpentMonsterBirdRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>130</combatPower>
         <ecoSystemWeight>0.5</ecoSystemWeight>
 

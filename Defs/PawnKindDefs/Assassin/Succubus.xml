@@ -11,7 +11,7 @@
             <Flammability>0.1</Flammability>
             <LeatherAmount>0</LeatherAmount>
             <MeatAmount>0</MeatAmount>
-            <MoveSpeed>6.0</MoveSpeed>
+            <MoveSpeed>8.0</MoveSpeed>
             <ComfyTemperatureMin>-50</ComfyTemperatureMin>
             <ComfyTemperatureMax>80</ComfyTemperatureMax>
             <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
@@ -116,11 +116,12 @@
         <defName>lotr_Succubus</defName>
         <label>succubus</label>
         <race>lotr_SuccubusRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>500</combatPower>
         <canMeleeAttack>true</canMeleeAttack>
-        <hostileToAll>true</hostileToAll>
         <initialWillRange>0~0</initialWillRange>
         <initialResistanceRange>0~0</initialResistanceRange>
+
         <lifeStages>
             <li>
                 <bodyGraphicData>

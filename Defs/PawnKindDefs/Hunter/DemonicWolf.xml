@@ -170,6 +170,7 @@
         <defName>lotr_DemonicWolf</defName>
         <label>Demonic Wolf</label>
         <race>lotr_DemonicWolfRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>1000</combatPower>
         <ecoSystemWeight>1.0</ecoSystemWeight>
         

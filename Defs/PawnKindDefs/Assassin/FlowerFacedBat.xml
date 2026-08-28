@@ -100,6 +100,7 @@
         <defName>lotr_FlowerFacedBat</defName>
         <label>Flower-Faced Bat</label>
         <race>lotr_FlowerFacedBatRace</race>
+        <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>900</combatPower>
         <ecoSystemWeight>0.30</ecoSystemWeight>
 
