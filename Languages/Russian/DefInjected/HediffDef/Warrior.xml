@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Warrior9_Hediff.label>Воин</Warrior9_Hediff.label>
+    <Warrior9_Hediff.description>Этот человек стал Потусторонним 9 последовательности - воин.</Warrior9_Hediff.description>
+    <Warrior8_Hediff.label>Гладиатор</Warrior8_Hediff.label>
+    <Warrior8_Hediff.description>Этот человек стал Потусторонним 8 последовательности - гладиатор.</Warrior8_Hediff.description>
+    <Warrior7_Hediff.label>Мастер оружия</Warrior7_Hediff.label>
+    <Warrior7_Hediff.description>Этот человек стал Потусторонним 7 последовательности - мастер оружия.</Warrior7_Hediff.description>
+    <Warrior6_Hediff.label>Рассветный паладин</Warrior6_Hediff.label>
+    <Warrior6_Hediff.description>Этот человек стал Потусторонним 6 последовательности - рассветный паладин.</Warrior6_Hediff.description>
+    <Warrior5_Hediff.label>Хранитель</Warrior5_Hediff.label>
+    <Warrior5_Hediff.description>Этот человек стал Потусторонним 5 последовательности - хранитель.</Warrior5_Hediff.description>
+    <Warrior4_Hediff.label>Охотник на демонов</Warrior4_Hediff.label>
+    <Warrior4_Hediff.description>Этот человек стал Потусторонним 4 последовательности - охотник на демонов.</Warrior4_Hediff.description>
+
+    <Warrior4_Hediff.stages.0.label>лох</Warrior4_Hediff.stages.0.label>
+    <Warrior4_Hediff.stages.1.label>нормик</Warrior4_Hediff.stages.1.label>
+    <Warrior4_Hediff.stages.2.label>смешарик</Warrior4_Hediff.stages.2.label>
+
+    <Warrior5_Hediff.stages.0.label>лох</Warrior5_Hediff.stages.0.label>
+    <Warrior5_Hediff.stages.1.label>нормик</Warrior5_Hediff.stages.1.label>
+    <Warrior5_Hediff.stages.2.label>смешарик</Warrior5_Hediff.stages.2.label>
+
+    <Warrior6_Hediff.stages.0.label>лох</Warrior6_Hediff.stages.0.label>
+    <Warrior6_Hediff.stages.1.label>нормик</Warrior6_Hediff.stages.1.label>
+    <Warrior6_Hediff.stages.2.label>смешарик</Warrior6_Hediff.stages.2.label>
+
+    <Warrior7_Hediff.stages.0.label>лох</Warrior7_Hediff.stages.0.label>
+    <Warrior7_Hediff.stages.1.label>нормик</Warrior7_Hediff.stages.1.label>
+    <Warrior7_Hediff.stages.2.label>смешарик</Warrior7_Hediff.stages.2.label>
+
+    <Warrior8_Hediff.stages.0.label>лох</Warrior8_Hediff.stages.0.label>
+    <Warrior8_Hediff.stages.1.label>нормик</Warrior8_Hediff.stages.1.label>
+    <Warrior8_Hediff.stages.2.label>смешарик</Warrior8_Hediff.stages.2.label>
+
+    <Warrior9_Hediff.stages.0.label>лох</Warrior9_Hediff.stages.0.label>
+    <Warrior9_Hediff.stages.1.label>нормик</Warrior9_Hediff.stages.1.label>
+    <Warrior9_Hediff.stages.2.label>смешарик</Warrior9_Hediff.stages.2.label>
+    
+</LanguageData>

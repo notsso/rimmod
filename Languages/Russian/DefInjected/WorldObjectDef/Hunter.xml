@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <BloodRedChestnutGrove_World.label>кроваво-красная каштановая роща</BloodRedChestnutGrove_World.label>
+    <BloodRedChestnutGrove_World.description>Тёмная лесная роща, где растут кроваво-красные каштаны, охраняемая духами.</BloodRedChestnutGrove_World.description>
+
+    <CorpseLilyMarsh_World.label>болото трупных лилий</CorpseLilyMarsh_World.label>
+    <CorpseLilyMarsh_World.description>Зловонное болото, заросшее трупными лилиями, где среди мёртвых бродят духи.</CorpseLilyMarsh_World.description>
+
+    <FireSalamanderRuins_World.label>пустынные руины огненной саламандры</FireSalamanderRuins_World.label>
+    <FireSalamanderRuins_World.description>Древние пустынные руины, ныне дом огненной саламандры.</FireSalamanderRuins_World.description>
+
+    <DesertRuins_World.label>древние пустынные руины</DesertRuins_World.label>
+    <DesertRuins_World.description>Руины старой империи наполовину погребены в песках пустыни. Что-то охраняет их.</DesertRuins_World.description>
+
+    <SpiderForest_World.label>туманный паучий лес</SpiderForest_World.label>
+    <SpiderForest_World.description>Густой умеренный лес, окутанный густым туманом. Внутри охотится чудовищный паук.</SpiderForest_World.description>
+
+    <TemperateForest_World.label>туманный умеренный лес</TemperateForest_World.label>
+    <TemperateForest_World.description>Густой умеренный лес, окутанный густым туманом. Внутри скрывается нечто опасное.</TemperateForest_World.description>
+
+    <MysticalMarsh_World.label>мистическое болото</MysticalMarsh_World.label>
+    <MysticalMarsh_World.description>Странное, плотное болото проявилось на карте мира...</MysticalMarsh_World.description>
+
+    <StoneofCatastropheSanctuary_World.label>святилище камня катастрофы</StoneofCatastropheSanctuary_World.label>
+    <StoneofCatastropheSanctuary_World.description>Заброшенное святилище с лабиринтом. Внутри находится камень катастрофы.</StoneofCatastropheSanctuary_World.description>
+
+    <JungleParrot_World.label>территория джунглевого попугая</JungleParrot_World.label>
+    <JungleParrot_World.description>Густой тропический лес. Чудовищный попугай правит этим владением.</JungleParrot_World.description>
+
+    <JungleCabin_World.label>заброшенная хижина в джунглях</JungleCabin_World.label>
+    <JungleCabin_World.description>Полуразрушенная деревянная хижина глубоко в джунглях. Изнутри доносятся странные звуки.</JungleCabin_World.description>
+
+    <StrangeVolcano_World.label>необычный спящий вулкан</StrangeVolcano_World.label>
+    <StrangeVolcano_World.description>Образовалась странная вулканическая местность. Земля покрыта грубым камнем, есть лавовые озёра и древние руины.</StrangeVolcano_World.description>
+
+    <MagmaGiantVolcano_World.label>вулканическое логово магмового гиганта</MagmaGiantVolcano_World.label>
+    <MagmaGiantVolcano_World.description>Спящий вулкан, населённый могучим магмовым гигантом.</MagmaGiantVolcano_World.description>
+
+</LanguageData>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <BrillianceRockSanctuary_Site.label>святилище камня сияния</BrillianceRockSanctuary_Site.label>
+    <BrillianceRockSanctuary_Site.description>Небольшой лабиринт, охраняемый духами, с камнем сияния в центре.</BrillianceRockSanctuary_Site.description>
+
+    <CrystallizedElderTreeForest_Site.label>лес кристаллизованного древнего древа</CrystallizedElderTreeForest_Site.label>
+    <CrystallizedElderTreeForest_Site.description>Лес, охраняемый могучим древом и многочисленными духами.</CrystallizedElderTreeForest_Site.description>
+
+    <DawnRoosterMeadow_Site.label>луг рассветного петуха</DawnRoosterMeadow_Site.label>
+    <DawnRoosterMeadow_Site.description>Залитый солнцем луг, охраняемый агрессивными рассветными петухами.</DawnRoosterMeadow_Site.description>
+
+    <DawnRoosterKingThrone_Site.label>трон короля рассветных петухов</DawnRoosterKingThrone_Site.label>
+    <DawnRoosterKingThrone_Site.description>Опасный петушиный король охраняет этот священный холм.</DawnRoosterKingThrone_Site.description>
+
+    <FireBirdNest_Site.label>гнездо огненной птицы</FireBirdNest_Site.label>
+    <FireBirdNest_Site.description>Пустынные руины, охраняемые огненной птицей.</FireBirdNest_Site.description>
+
+    <HolyBrillianceRockSanctuary_Site.label>святилище святого камня сияния</HolyBrillianceRockSanctuary_Site.label>
+    <HolyBrillianceRockSanctuary_Site.description>Огромный лабиринт, наполненный могущественными духами.</HolyBrillianceRockSanctuary_Site.description>
+
+    <MirrorHedgehogGlade_Site.label>поляна зеркальных ежей</MirrorHedgehogGlade_Site.label>
+    <MirrorHedgehogGlade_Site.description>Мирная на вид поляна, но ежи могут быть опасны, если их загнать в угол.</MirrorHedgehogGlade_Site.description>
+
+    <PureWhiteBrilliantRockSanctuary_Site.label>святилище чистейшего белого сияющего камня</PureWhiteBrilliantRockSanctuary_Site.label>
+    <PureWhiteBrilliantRockSanctuary_Site.description>Средний лабиринт, охраняемый более сильными духами.</PureWhiteBrilliantRockSanctuary_Site.description>
+
+    <RadianceSpiritPactTreeGrove_Site.label>роща сияющего древа пакта духов</RadianceSpiritPactTreeGrove_Site.label>
+    <RadianceSpiritPactTreeGrove_Site.description>Мистическая роща с сияющим древом и блуждающими духами.</RadianceSpiritPactTreeGrove_Site.description>
+
+    <SingingSunflowerGlade_Site.label>поляна поющего подсолнуха</SingingSunflowerGlade_Site.label>
+    <SingingSunflowerGlade_Site.description>Небольшой луг в лесу с сияющим подсолнухом и беспокойными духами.</SingingSunflowerGlade_Site.description>
+
+    <SpiritPactBirdGrove_Site.label>роща птицы пакта духов</SpiritPactBirdGrove_Site.label>
+    <SpiritPactBirdGrove_Site.description>Мистическая роща, дом опасной птицы пакта духов.</SpiritPactBirdGrove_Site.description>
+
+    <SunDivineBirdPeak_Site.label>пик божественной солнечной птицы</SunDivineBirdPeak_Site.label>
+    <SunDivineBirdPeak_Site.description>Легендарная птица охраняет эту святую гору.</SunDivineBirdPeak_Site.description>
+
+</LanguageData>

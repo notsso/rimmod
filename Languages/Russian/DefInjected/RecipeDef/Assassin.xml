@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Assassin9_PotionRecipe.label>сварить зелье ассасина</Assassin9_PotionRecipe.label>
+    <Assassin9_PotionRecipe.description>Сварить таинственное зелье пути Ассасина.</Assassin9_PotionRecipe.description>
+    <Assassin9_PotionRecipe.jobString>Варка зелья ассасина.</Assassin9_PotionRecipe.jobString>
+    <Assassin9_PotionRecipe_Alt.label>сварить зелье ассасина (альтернатива)</Assassin9_PotionRecipe_Alt.label>
+    <Assassin9_PotionRecipe_Alt.description>Сварить таинственное зелье пути Ассасина, используя одну эссенцию.</Assassin9_PotionRecipe_Alt.description>
+    <Assassin9_PotionRecipe_Alt.jobString>Варка зелья ассасина.</Assassin9_PotionRecipe_Alt.jobString>
+
+    <Assassin8_PotionRecipe.label>сварить зелье подстрекателя</Assassin8_PotionRecipe.label>
+    <Assassin8_PotionRecipe.description>Сварить таинственное зелье пути Ассасина.</Assassin8_PotionRecipe.description>
+    <Assassin8_PotionRecipe.jobString>Варка зелья подстрекателя.</Assassin8_PotionRecipe.jobString>
+    <Assassin8_PotionRecipe_Alt.label>сварить зелье подстрекателя (альтернатива)</Assassin8_PotionRecipe_Alt.label>
+    <Assassin8_PotionRecipe_Alt.description>Сварить таинственное зелье пути Ассасина, используя одну эссенцию.</Assassin8_PotionRecipe_Alt.description>
+    <Assassin8_PotionRecipe_Alt.jobString>Варка зелья подстрекателя.</Assassin8_PotionRecipe_Alt.jobString>
+
+    <Assassin7_PotionRecipe.label>сварить зелье ведьмы</Assassin7_PotionRecipe.label>
+    <Assassin7_PotionRecipe.description>Сварить таинственное зелье пути Ассасина.</Assassin7_PotionRecipe.description>
+    <Assassin7_PotionRecipe.jobString>Варка зелья ведьмы.</Assassin7_PotionRecipe.jobString>
+    <Assassin7_PotionRecipe_Alt.label>сварить зелье ведьмы (альтернатива)</Assassin7_PotionRecipe_Alt.label>
+    <Assassin7_PotionRecipe_Alt.description>Сварить таинственное зелье пути Ассасина, используя одну эссенцию.</Assassin7_PotionRecipe_Alt.description>
+    <Assassin7_PotionRecipe_Alt.jobString>Варка зелья ведьмы.</Assassin7_PotionRecipe_Alt.jobString>
+
+    <Assassin6_PotionRecipe.label>сварить зелье наслаждения</Assassin6_PotionRecipe.label>
+    <Assassin6_PotionRecipe.description>Сварить таинственное зелье пути Ассасина.</Assassin6_PotionRecipe.description>
+    <Assassin6_PotionRecipe.jobString>Варка зелья наслаждения.</Assassin6_PotionRecipe.jobString>
+    <Assassin6_PotionRecipe_Alt.label>сварить зелье наслаждения (альтернатива)</Assassin6_PotionRecipe_Alt.label>
+    <Assassin6_PotionRecipe_Alt.description>Сварить таинственное зелье пути Ассасина, используя одну эссенцию.</Assassin6_PotionRecipe_Alt.description>
+    <Assassin6_PotionRecipe_Alt.jobString>Варка зелья наслаждения.</Assassin6_PotionRecipe_Alt.jobString>
+
+    <Assassin5_PotionRecipe.label>сварить зелье страданий</Assassin5_PotionRecipe.label>
+    <Assassin5_PotionRecipe.description>Сварить таинственное зелье пути Ассасина.</Assassin5_PotionRecipe.description>
+    <Assassin5_PotionRecipe.jobString>Варка зелья страданий.</Assassin5_PotionRecipe.jobString>
+    <Assassin5_PotionRecipe_Alt.label>сварить зелье страданий (альтернатива)</Assassin5_PotionRecipe_Alt.label>
+    <Assassin5_PotionRecipe_Alt.description>Сварить таинственное зелье пути Ассасина, используя одну эссенцию.</Assassin5_PotionRecipe_Alt.description>
+    <Assassin5_PotionRecipe_Alt.jobString>Варка зелья страданий.</Assassin5_PotionRecipe_Alt.jobString>
+
+    <Assassin4_PotionRecipe.label>сварить зелье отчаяния</Assassin4_PotionRecipe.label>
+    <Assassin4_PotionRecipe.description>Сварить таинственное зелье пути Ассасина.</Assassin4_PotionRecipe.description>
+    <Assassin4_PotionRecipe.jobString>Варка зелья отчаяния.</Assassin4_PotionRecipe.jobString>
+    <Assassin4_PotionRecipe_Alt.label>сварить зелье отчаяния (альтернатива)</Assassin4_PotionRecipe_Alt.label>
+    <Assassin4_PotionRecipe_Alt.description>Сварить таинственное зелье пути Ассасина, используя одну эссенцию.</Assassin4_PotionRecipe_Alt.description>
+    <Assassin4_PotionRecipe_Alt.jobString>Варка зелья отчаяния.</Assassin4_PotionRecipe_Alt.jobString>
+
+</LanguageData>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_FireArmor">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_FireArmor" Abstract="True">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         
         <defName>Cast_FireArmor</defName>
-        <label>огненная броня</label>
-        <description>Создает плотный огненный покров вокруг тела, который плавит снаряды, согревает в любой мороз и сжигает ядовитые газы на подлете.</description>
+        <label>Fire armor</label>
+        <description>Creates a dense fiery cover around the body that melts projectiles, warms in any frost and burns toxic gases as they approach.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_FireArmor</iconPath>
         
         <aiCanUse>false</aiCanUse> <!-- TODO? -->
@@ -39,9 +39,9 @@
     <!-- Уровень 7 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireArmor">
         <defName>Cast_FireArmor_7S</defName>
-        <label>огненная броня</label>
         <cooldownTicksRange>7200</cooldownTicksRange>
         <spiritualityCost>100.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_AbilityGiveHediff">
                 <hediffDef>Hediff_FireArmor_7S</hediffDef>
@@ -59,9 +59,9 @@
     <!-- Уровень 6 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireArmor">
         <defName>Cast_FireArmor_6S</defName>
-        <label>огненная броня</label>
         <cooldownTicksRange>3600</cooldownTicksRange>
         <spiritualityCost>130.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_AbilityGiveHediff">
                 <hediffDef>Hediff_FireArmor_6S</hediffDef>
@@ -80,9 +80,9 @@
     <!-- Уровень 5 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireArmor">
         <defName>Cast_FireArmor_5S</defName>
-        <label>огненная броня</label>
         <cooldownTicksRange>1800</cooldownTicksRange>
         <spiritualityCost>160.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_AbilityGiveHediff">
                 <hediffDef>Hediff_FireArmor_5S</hediffDef>
@@ -101,9 +101,9 @@
     <!-- Уровень 4 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireArmor">
         <defName>Cast_FireArmor_4S</defName>
-        <label>огненная броня</label>
         <cooldownTicksRange>600</cooldownTicksRange>
         <spiritualityCost>200.0</spiritualityCost>
+        
         <comps>
             <li Class="lotr.CompProperties_AbilityGiveHediff">
                 <hediffDef>Hediff_FireArmor_4S</hediffDef>

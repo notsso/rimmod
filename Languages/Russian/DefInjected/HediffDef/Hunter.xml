@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Hunter9_Hediff.label>Охотник</Hunter9_Hediff.label>
+    <Hunter9_Hediff.description>Этот человек стал Потусторонним 9 последовательности - охотник.</Hunter9_Hediff.description>
+    <Hunter8_Hediff.label>Провокатор</Hunter8_Hediff.label>
+    <Hunter8_Hediff.description>Этот человек стал Потусторонним 8 последовательности - провокатор.</Hunter8_Hediff.description>
+    <Hunter7_Hediff.label>Пироман</Hunter7_Hediff.label>
+    <Hunter7_Hediff.description>Этот человек стал Потусторонним 7 последовательности - пироман.</Hunter7_Hediff.description>
+    <Hunter6_Hediff.label>Заговорщик</Hunter6_Hediff.label>
+    <Hunter6_Hediff.description>Этот человек стал Потусторонним 6 последовательности - заговорщик.</Hunter6_Hediff.description>
+    <Hunter5_Hediff.label>Жнец</Hunter5_Hediff.label>
+    <Hunter5_Hediff.description>Этот человек стал Потусторонним 5 последовательности - жнец.</Hunter5_Hediff.description>
+    <Hunter4_Hediff.label>Железнокровный рыцарь</Hunter4_Hediff.label>
+    <Hunter4_Hediff.description>Этот человек стал Потусторонним 4 последовательности - железнокровный рыцарь.</Hunter4_Hediff.description>
+
+    <Hunter4_Hediff.stages.0.label>лох</Hunter4_Hediff.stages.0.label>
+    <Hunter4_Hediff.stages.1.label>нормик</Hunter4_Hediff.stages.1.label>
+    <Hunter4_Hediff.stages.2.label>смешарик</Hunter4_Hediff.stages.2.label>
+
+    <Hunter5_Hediff.stages.0.label>лох</Hunter5_Hediff.stages.0.label>
+    <Hunter5_Hediff.stages.1.label>нормик</Hunter5_Hediff.stages.1.label>
+    <Hunter5_Hediff.stages.2.label>смешарик</Hunter5_Hediff.stages.2.label>
+
+    <Hunter6_Hediff.stages.0.label>лох</Hunter6_Hediff.stages.0.label>
+    <Hunter6_Hediff.stages.1.label>нормик</Hunter6_Hediff.stages.1.label>
+    <Hunter6_Hediff.stages.2.label>смешарик</Hunter6_Hediff.stages.2.label>
+
+    <Hunter7_Hediff.stages.0.label>лох</Hunter7_Hediff.stages.0.label>
+    <Hunter7_Hediff.stages.1.label>нормик</Hunter7_Hediff.stages.1.label>
+    <Hunter7_Hediff.stages.2.label>смешарик</Hunter7_Hediff.stages.2.label>
+
+    <Hunter8_Hediff.stages.0.label>лох</Hunter8_Hediff.stages.0.label>
+    <Hunter8_Hediff.stages.1.label>нормик</Hunter8_Hediff.stages.1.label>
+    <Hunter8_Hediff.stages.2.label>смешарик</Hunter8_Hediff.stages.2.label>
+
+    <Hunter9_Hediff.stages.0.label>лох</Hunter9_Hediff.stages.0.label>
+    <Hunter9_Hediff.stages.1.label>нормик</Hunter9_Hediff.stages.1.label>
+    <Hunter9_Hediff.stages.2.label>смешарик</Hunter9_Hediff.stages.2.label>
+</LanguageData>

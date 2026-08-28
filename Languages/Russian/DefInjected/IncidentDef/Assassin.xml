@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <AbyssDemonicFishMarsh_Incident.label>Болото бездонной демонической рыбы</AbyssDemonicFishMarsh_Incident.label>
+    <AbyssDemonicFishMarsh_Incident.letterLabel>Болото бездонной демонической рыбы</AbyssDemonicFishMarsh_Incident.letterLabel>
+    <AbyssDemonicFishMarsh_Incident.letterText>Обнаружено странное болото, его воды слабо светятся. Говорят, внутри скрывается опасный хищник.</AbyssDemonicFishMarsh_Incident.letterText>
+
+    <AgatePeacockMeadow_Incident.label>Агатовый павлиний луг</AgatePeacockMeadow_Incident.label>
+    <AgatePeacockMeadow_Incident.letterLabel>Агатовый луг</AgatePeacockMeadow_Incident.letterLabel>
+    <AgatePeacockMeadow_Incident.letterText>Обнаружен прекрасный луг, но его страж — опасный агатовый павлин.</AgatePeacockMeadow_Incident.letterText>
+
+    <BlackWidowForest_Incident.label>Лес чёрной вдовы</BlackWidowForest_Incident.label>
+    <BlackWidowForest_Incident.letterLabel>Лес чёрной вдовы</BlackWidowForest_Incident.letterLabel>
+    <BlackWidowForest_Incident.letterText>Густой туман опустился на близлежащий лес. Чудовищная чёрная вдова устроила логово в паутине.</BlackWidowForest_Incident.letterText>
+
+    <DarkProwlerDen_Incident.label>Логово тёмного хищника</DarkProwlerDen_Incident.label>
+    <DarkProwlerDen_Incident.letterLabel>Логово тёмного хищника</DarkProwlerDen_Incident.letterLabel>
+    <DarkProwlerDen_Incident.letterText>В лесу обнаружено зловещее логово. Путники рассказывают о ядовитом звере, нападающем из тени.</DarkProwlerDen_Incident.letterText>
+
+    <DemonThroatHoneyguideLair_Incident.label>Логово демонического медоуказчика</DemonThroatHoneyguideLair_Incident.label>
+    <DemonThroatHoneyguideLair_Incident.letterLabel>Логово медоуказчика</DemonThroatHoneyguideLair_Incident.letterLabel>
+    <DemonThroatHoneyguideLair_Incident.letterText>Путники рассказывают о хитром звере в лесу, который умеет подражать голосам. Небольшая поляна, похоже, является его территорией.</DemonThroatHoneyguideLair_Incident.letterText>
+
+    <FlowerFacedBatCave_Incident.label>Пещера цветколицых летучих мышей</FlowerFacedBatCave_Incident.label>
+    <FlowerFacedBatCave_Incident.letterLabel>Пещера цветколицых летучих мышей</FlowerFacedBatCave_Incident.letterLabel>
+    <FlowerFacedBatCave_Incident.letterText>Обнаружена тёмная пещера, вход в которую покрыт цветами, распускающимися ночью. Внутри скрывается опасная колония летучих мышей.</FlowerFacedBatCave_Incident.letterText>
+
+    <PlagueSerpentLair_Incident.label>Логово чумной матери-змеи</PlagueSerpentLair_Incident.label>
+    <PlagueSerpentLair_Incident.letterLabel>Логово чумной змеи</PlagueSerpentLair_Incident.letterLabel>
+    <PlagueSerpentLair_Incident.letterText>Обнаружено зловонное болото, воды которого заражены болезнями. Внутри гнездится колоссальная змея.</PlagueSerpentLair_Incident.letterText>
+
+    <SerpentBirdTower_Incident.label>Руины башни змее-птицы</SerpentBirdTower_Incident.label>
+    <SerpentBirdTower_Incident.letterLabel>Башня змее-птицы</SerpentBirdTower_Incident.letterLabel>
+    <SerpentBirdTower_Incident.letterText>В джунглях замечена разрушенная башня. Чудовищная птица с чёрными перьями охраняет своё гнездо.</SerpentBirdTower_Incident.letterText>
+
+    <ShadowPoisonSwamp_Incident.label>Болото теневого яда</ShadowPoisonSwamp_Incident.label>
+    <ShadowPoisonSwamp_Incident.letterLabel>Болото теневого яда</ShadowPoisonSwamp_Incident.letterLabel>
+    <ShadowPoisonSwamp_Incident.letterText>Обнаружено мерзкое болото, окутанное тенью. Там бродят духи, а в центре растёт редкий цветок.</ShadowPoisonSwamp_Incident.letterText>
+
+    <SilverHunterTerritory_Incident.label>Территория серебряного охотника</SilverHunterTerritory_Incident.label>
+    <SilverHunterTerritory_Incident.letterLabel>Территория серебряного охотника</SilverHunterTerritory_Incident.letterLabel>
+    <SilverHunterTerritory_Incident.letterText>Замечена замёрзшая долина, где, говорят, охотится хищник с серебристым мехом.</SilverHunterTerritory_Incident.letterText>
+
+    <SuccubusTemple_Incident.label>Заброшенный храм искушения</SuccubusTemple_Incident.label>
+    <SuccubusTemple_Incident.letterLabel>Храм суккуба</SuccubusTemple_Incident.letterLabel>
+    <SuccubusTemple_Incident.letterText>Глубоко в лесу найден разрушенный храм. Говорят, внутри обитает прекрасное, но смертоносное существо, заманивающее путников на погибель.</SuccubusTemple_Incident.letterText>
+
+    <TwoTailedSnakeHollow_Incident.label>Лощина двухвостой змеи</TwoTailedSnakeHollow_Incident.label>
+    <TwoTailedSnakeHollow_Incident.letterLabel>Лощина двухвостой змеи</TwoTailedSnakeHollow_Incident.letterLabel>
+    <TwoTailedSnakeHollow_Incident.letterText>Обнаружена лощина, заросшая высокой травой. Там устроила своё логово опасная двухвостая чёрная змея.</TwoTailedSnakeHollow_Incident.letterText>
+
+</LanguageData>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Taunt">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Taunt" Abstract="True">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         
         <defName>Cast_Taunt</defName>
-        <label>провокация</label>
-        <description>Привлекает внимание противника, заставляя его атаковать вас в ближнем бою.</description>
+        <label>Taunt</label>
+        <description>Attracts the enemy's attention, forcing them to attack you in melee combat.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Taunt</iconPath>
 
         <aiCanUse>true</aiCanUse>
@@ -42,9 +42,9 @@
     <!-- Уровень 8 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Taunt">
         <defName>Cast_Taunt_8S</defName>
-        <label>провокация</label>
         <cooldownTicksRange>1200</cooldownTicksRange>
         <spiritualityCost>20.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_AbilityProvoke">
                 <baseSuccessChance>50.0</baseSuccessChance>
@@ -59,9 +59,9 @@
     <!-- Уровень 7 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Taunt">
         <defName>Cast_Taunt_7S</defName>
-        <label>провокация</label>
         <cooldownTicksRange>600</cooldownTicksRange>
         <spiritualityCost>25.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_AbilityProvoke">
                 <baseSuccessChance>70.0</baseSuccessChance>
@@ -76,9 +76,9 @@
     <!-- Уровень 6 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Taunt">
         <defName>Cast_Taunt_6S</defName>
-        <label>провокация</label>
         <cooldownTicksRange>300</cooldownTicksRange>
         <spiritualityCost>30.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_AbilityProvoke">
                 <baseSuccessChance>90.0</baseSuccessChance>
@@ -93,9 +93,9 @@
     <!-- Уровень 5 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Taunt">
         <defName>Cast_Taunt_5S</defName>
-        <label>провокация</label>
         <cooldownTicksRange>180</cooldownTicksRange>
         <spiritualityCost>40.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_AbilityProvoke">
                 <baseSuccessChance>95.0</baseSuccessChance>
@@ -110,9 +110,9 @@
     <!-- Уровень 4 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Taunt">
         <defName>Cast_Taunt_4S</defName>
-        <label>провокация</label>
         <cooldownTicksRange>120</cooldownTicksRange>
         <spiritualityCost>50.0</spiritualityCost>
+        
         <comps>
             <li Class="lotr.CompProperties_AbilityProvoke">
                 <baseSuccessChance>99.0</baseSuccessChance>

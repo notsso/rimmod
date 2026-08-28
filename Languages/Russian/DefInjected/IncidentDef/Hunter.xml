@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <BloodRedChestnutGrove_Incident.label>кроваво-красная каштановая роща</BloodRedChestnutGrove_Incident.label>
+    <BloodRedChestnutGrove_Incident.letterLabel>Кроваво-красная каштановая роща</BloodRedChestnutGrove_Incident.letterLabel>
+    <BloodRedChestnutGrove_Incident.letterText>Обнаружена роща кроваво-красных каштанов. Под их багряными листьями бродят духи.</BloodRedChestnutGrove_Incident.letterText>
+
+    <CorpseFlora_Incident.label>рост трупной лилии</CorpseFlora_Incident.label>
+    <CorpseFlora_Incident.letterLabel>Трупная флора</CorpseFlora_Incident.letterLabel>
+    <CorpseFlora_Incident.letterText>Горы трупов пропитали местность духовной энергией, которая привлекла опасную флору.</CorpseFlora_Incident.letterText>
+
+    <CorpseLilyMarsh_Incident.label>болото трупных лилий</CorpseLilyMarsh_Incident.label>
+    <CorpseLilyMarsh_Incident.letterLabel>Болото трупных лилий</CorpseLilyMarsh_Incident.letterLabel>
+    <CorpseLilyMarsh_Incident.letterText>Найдено зловонное болото, цветущее трупными лилиями и населённое духами.</CorpseLilyMarsh_Incident.letterText>
+
+    <FireSalamanderRuins_Incident.label>руины огненной саламандры</FireSalamanderRuins_Incident.label>
+    <FireSalamanderRuins_Incident.letterLabel>Руины огненной саламандры</FireSalamanderRuins_Incident.letterLabel>
+    <FireSalamanderRuins_Incident.letterText>Среди пустынных руин огненная саламандра устроила своё логово.</FireSalamanderRuins_Incident.letterText>
+
+    <DesertRuins_Incident.label>древние пустынные руины</DesertRuins_Incident.label>
+    <DesertRuins_Incident.letterLabel>Древние руины</DesertRuins_Incident.letterLabel>
+    <DesertRuins_Incident.letterText>В пустыне обнаружено древнее сооружение. Оно выглядит заброшенным, но легенды говорят о страже.</DesertRuins_Incident.letterText>
+
+    <SpiderForest_Incident.label>туманный паучий лес</SpiderForest_Incident.label>
+    <SpiderForest_Incident.letterLabel>Туманный паучий лес</SpiderForest_Incident.letterLabel>
+    <SpiderForest_Incident.letterText>Густой туман опустился на близлежащий лес. Гигантский паук устроил логово в тумане.</SpiderForest_Incident.letterText>
+
+    <FoggyForest_Incident.label>туманный лес</FoggyForest_Incident.label>
+    <FoggyForest_Incident.letterLabel>Туманный лес</FoggyForest_Incident.letterLabel>
+    <FoggyForest_Incident.letterText>Густой туман опустился на близлежащий лес. Путники говорят о чудовищном волке, охотящемся в тумане.</FoggyForest_Incident.letterText>
+
+    <MysticalMarsh_Incident.label>найдено мистическое болото</MysticalMarsh_Incident.label>
+    <MysticalMarsh_Incident.letterLabel>Мистическое болото</MysticalMarsh_Incident.letterLabel>
+    <MysticalMarsh_Incident.letterText>Неподалёку замечено странное мистическое болото. Ходят слухи о могущественном существе, охраняющем древнюю тайну пути.</MysticalMarsh_Incident.letterText>
+
+    <StoneofCatastropheSanctuary_Incident.label>святилище камня катастрофы</StoneofCatastropheSanctuary_Incident.label>
+    <StoneofCatastropheSanctuary_Incident.letterLabel>Святилище камня катастрофы</StoneofCatastropheSanctuary_Incident.letterLabel>
+    <StoneofCatastropheSanctuary_Incident.letterText>Найдено опасное святилище, содержащее камень катастрофы.</StoneofCatastropheSanctuary_Incident.letterText>
+
+    <JungleParrot_Incident.label>джунглевый попугай</JungleParrot_Incident.label>
+    <JungleParrot_Incident.letterLabel>Джунглевый попугай</JungleParrot_Incident.letterLabel>
+    <JungleParrot_Incident.letterText>В джунглях замечен гигантский попугай. Он выглядит крайне агрессивным.</JungleParrot_Incident.letterText>
+
+    <JungleCabin_Incident.label>заброшенная хижина в джунглях</JungleCabin_Incident.label>
+    <JungleCabin_Incident.letterLabel>Хижина в джунглях</JungleCabin_Incident.letterLabel>
+    <JungleCabin_Incident.letterText>Глубоко в джунглях замечена разрушенная деревянная хижина. Местность кажется заброшенной, но внутри может скрываться нечто опасное.</JungleCabin_Incident.letterText>
+
+    <StrangeVolcano_Incident.label>необычный спящий вулкан</StrangeVolcano_Incident.label>
+    <StrangeVolcano_Incident.letterLabel>Замечен необычный вулкан</StrangeVolcano_Incident.letterLabel>
+    <StrangeVolcano_Incident.letterText>Неподалёку обнаружен спящий вулкан. Из его центра исходит странная энергия.</StrangeVolcano_Incident.letterText>
+
+    <MagmaGiantVolcano_Incident.label>вулкан магмового гиганта</MagmaGiantVolcano_Incident.label>
+    <MagmaGiantVolcano_Incident.letterLabel>Вулкан магмового гиганта</MagmaGiantVolcano_Incident.letterLabel>
+    <MagmaGiantVolcano_Incident.letterText>Вулкан стал активным. В его сердце пробуждается магмовый гигант.</MagmaGiantVolcano_Incident.letterText>
+
+</LanguageData>

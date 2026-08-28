@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <AbyssDemonicFishMarsh_Site.label>Болото бездонной демонической рыбы</AbyssDemonicFishMarsh_Site.label>
+    <AbyssDemonicFishMarsh_Site.description>Опасное болото, охраняемое бездонной демонической рыбой.</AbyssDemonicFishMarsh_Site.description>
+
+    <AgatePeacockMeadow_Site.label>Агатовый павлиний луг</AgatePeacockMeadow_Site.label>
+    <AgatePeacockMeadow_Site.description>Мистический луг, дом агатового павлина.</AgatePeacockMeadow_Site.description>
+
+    <BlackWidowForest_Site.label>Лес чёрной вдовы</BlackWidowForest_Site.label>
+    <BlackWidowForest_Site.description>Лес, окутанный туманом, кишащий гигантским пауком.</BlackWidowForest_Site.description>
+
+    <DarkProwlerDen_Site.label>Логово тёмного хищника</DarkProwlerDen_Site.label>
+    <DarkProwlerDen_Site.description>Опасный хищник устроил логово в этой тенистой лесной норе.</DarkProwlerDen_Site.description>
+
+    <DemonThroatHoneyguideLair_Site.label>Логово медоуказчика</DemonThroatHoneyguideLair_Site.label>
+    <DemonThroatHoneyguideLair_Site.description>Опасный зверь скрывается на этой лесной поляне, подражая голосам, чтобы заманить добычу.</DemonThroatHoneyguideLair_Site.description>
+
+    <FlowerFacedBatCave_Site.label>Пещера цветколицых летучих мышей</FlowerFacedBatCave_Site.label>
+    <FlowerFacedBatCave_Site.description>Туманный лес с входом в пещеру, кишащий летучими мышами.</FlowerFacedBatCave_Site.description>
+
+    <PlagueSerpentLair_Site.label>Логово чумной змеи</PlagueSerpentLair_Site.label>
+    <PlagueSerpentLair_Site.description>Болото, заражённое болезнями, охраняемое чудовищной змеёй.</PlagueSerpentLair_Site.description>
+
+    <SerpentBirdTower_Site.label>Башня змее-птицы</SerpentBirdTower_Site.label>
+    <SerpentBirdTower_Site.description>Разрушенная башня в джунглях, охраняемая смертоносной птицей.</SerpentBirdTower_Site.description>
+
+    <ShadowPoisonSwamp_Site.label>Болото теневого яда</ShadowPoisonSwamp_Site.label>
+    <ShadowPoisonSwamp_Site.description>Проклятое болото, охраняемое беспокойными духами и смертоносным цветком.</ShadowPoisonSwamp_Site.description>
+
+    <SilverHunterTerritory_Site.label>Территория серебряного охотника</SilverHunterTerritory_Site.label>
+    <SilverHunterTerritory_Site.description>Хищник с серебристым мехом охраняет эту замёрзшую долину.</SilverHunterTerritory_Site.description>
+
+    <SuccubusTemple_Site.label>Храм суккуба</SuccubusTemple_Site.label>
+    <SuccubusTemple_Site.description>Разрушенный храм в лесу, населённый суккубом.</SuccubusTemple_Site.description>
+
+    <TwoTailedSnakeHollow_Site.label>Лощина двухвостой змеи</TwoTailedSnakeHollow_Site.label>
+    <TwoTailedSnakeHollow_Site.description>Опасная змея скрывается в этой травянистой лощине, поджидая добычу.</TwoTailedSnakeHollow_Site.description>
+
+</LanguageData>

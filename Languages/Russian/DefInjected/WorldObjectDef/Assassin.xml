@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <AbyssDemonicFishMarsh_World.label>Болото бездонной демонической рыбы</AbyssDemonicFishMarsh_World.label>
+    <AbyssDemonicFishMarsh_World.description>Зловонное болото, где под мутной водой скрывается неестественный хищник с синей чешуёй.</AbyssDemonicFishMarsh_World.description>
+
+    <AgatePeacockMeadow_World.label>Агатовый павлиний луг</AgatePeacockMeadow_World.label>
+    <AgatePeacockMeadow_World.description>Странный луг, где трава мерцает, как агат, и великолепный павлин охраняет свою территорию.</AgatePeacockMeadow_World.description>
+
+    <BlackWidowForest_World.label>Лес чёрной вдовы</BlackWidowForest_World.label>
+    <BlackWidowForest_World.description>Тёмный лес, покрытый густой паутиной. Внутри охотится чудовищный паук чёрная вдова.</BlackWidowForest_World.description>
+
+    <DarkProwlerDen_World.label>Логово тёмного хищника</DarkProwlerDen_World.label>
+    <DarkProwlerDen_World.description>Уединённое логово, скрытое глубоко в лесу, дом ядовитого тёмного хищника.</DarkProwlerDen_World.description>
+
+    <DemonThroatHoneyguideLair_World.label>Логово демонического медоуказчика</DemonThroatHoneyguideLair_World.label>
+    <DemonThroatHoneyguideLair_World.description>Уединённая лесная поляна, где устраивает своё логово хитрый медоуказчик.</DemonThroatHoneyguideLair_World.description>
+
+    <FlowerFacedBatCave_World.label>Пещера цветколицых летучих мышей</FlowerFacedBatCave_World.label>
+    <FlowerFacedBatCave_World.description>Тёмная система пещер, где в больших количествах гнездятся цветколицые летучие мыши.</FlowerFacedBatCave_World.description>
+
+    <PlagueSerpentLair_World.label>Логово чумной матери-змеи</PlagueSerpentLair_World.label>
+    <PlagueSerpentLair_World.description>Зловонное болото, пропахшее болезнями, где гнездится колоссальная змея.</PlagueSerpentLair_World.description>
+
+    <SerpentBirdTower_World.label>Руины башни змее-птицы</SerpentBirdTower_World.label>
+    <SerpentBirdTower_World.description>Древняя разрушенная башня, ныне ставшая гнездовьем чудовищной птицы со змеиным телом.</SerpentBirdTower_World.description>
+
+    <ShadowPoisonSwamp_World.label>Болото теневого яда</ShadowPoisonSwamp_World.label>
+    <ShadowPoisonSwamp_World.description>Тёмное, туманное болото, где бродят духи, а в сердце его цветёт редкий цветок теневого яда.</ShadowPoisonSwamp_World.description>
+
+    <SilverHunterTerritory_World.label>Территория серебряного охотника</SilverHunterTerritory_World.label>
+    <SilverHunterTerritory_World.description>Замёрзшая горная долина, где безраздельно властвует хищник с серебристым мехом.</SilverHunterTerritory_World.description>
+
+    <SuccubusTemple_World.label>Заброшенный храм искушения</SuccubusTemple_World.label>
+    <SuccubusTemple_World.description>Древний храм, ныне осквернённый суккубом. Его залы шепчут запретным очарованием.</SuccubusTemple_World.description>
+
+    <TwoTailedSnakeHollow_World.label>Лощина двухвостой змеи</TwoTailedSnakeHollow_World.label>
+    <TwoTailedSnakeHollow_World.description>Пустынная лощина, заросшая высокой травой, идеальное место для засадного хищника.</TwoTailedSnakeHollow_World.description>
+
+</LanguageData>

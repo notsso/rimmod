@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <BlueGiantLair_World.label>древние руины синего гиганта</BlueGiantLair_World.label>
+    <BlueGiantLair_World.description>Древние, частично восстановленные руины теперь служат логовом синего гиганта.</BlueGiantLair_World.description>
+
+    <DawnGiantLair_World.label>деревня рассветного гиганта</DawnGiantLair_World.label>
+    <DawnGiantLair_World.description>Большая деревня гигантов, управляемая Рассветным Гигантом.</DawnGiantLair_World.description>
+
+    <DivineGiantLair_World.label>дворец божественного гиганта</DivineGiantLair_World.label>
+    <DivineGiantLair_World.description>Огромный дворец Божественного Гиганта с дорогами, ведущими во все стороны.</DivineGiantLair_World.description>
+
+    <GiantSquireLair_World.label>логово гигантского оруженосца</GiantSquireLair_World.label>
+    <GiantSquireLair_World.description>Крепкий каменный дом в дикой местности. Гигантский оруженосец сделал его своим логовом.</GiantSquireLair_World.description>
+
+    <GiantWarriorLair_World.label>логово гигантского воина</GiantWarriorLair_World.label>
+    <GiantWarriorLair_World.description>Грубая деревянная хижина в дикой местности, населённая враждебным гигантским воином.</GiantWarriorLair_World.description>
+
+    <GreyGiantLair_World.label>дворец серого гиганта</GreyGiantLair_World.label>
+    <GreyGiantLair_World.description>Небольшой дворец Серого Гиганта, окружённый меньшими жилищами.</GreyGiantLair_World.description>
+
+</LanguageData>

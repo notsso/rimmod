@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Beyonder_Hunter9.label>потусторонний охотник</Beyonder_Hunter9.label>
+    <Beyonder_Hunter8.label>потусторонний провокатор</Beyonder_Hunter8.label>
+    <Beyonder_Hunter7.label>потусторонний пироман</Beyonder_Hunter7.label>
+    <Beyonder_Hunter6.label>потусторонний заговорщик</Beyonder_Hunter6.label>
+    <Beyonder_Hunter5.label>потусторонний жнец</Beyonder_Hunter5.label>
+    <Beyonder_Hunter4.label>потусторонний рыцарь</Beyonder_Hunter4.label>
+    
+    <lotr_BlackHuntingSpider.label>чёрный охотничий паук</lotr_BlackHuntingSpider.label>
+    <lotr_CuspidsParrot.label>острозубый попугай</lotr_CuspidsParrot.label>
+    <lotr_DemonicWolf.label>демонический волк</lotr_DemonicWolf.label>
+    <lotr_FireSalamander.label>огненная саламандра</lotr_FireSalamander.label>
+    <lotr_ForestHunter.label>лесной охотник</lotr_ForestHunter.label>
+    <lotr_MagmaElf.label>магмовый эльф</lotr_MagmaElf.label>
+    <lotr_MagmaGiant.label>магмовый гигант</lotr_MagmaGiant.label>
+    <lotr_MarshBoar.label>болотный вепрь</lotr_MarshBoar.label>
+    <lotr_Sphinx.label>сфинкс</lotr_Sphinx.label>
+
+</LanguageData>

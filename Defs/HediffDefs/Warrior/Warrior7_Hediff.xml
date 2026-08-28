@@ -28,7 +28,7 @@
 		<stages>
 			<li>
 				<minSeverity>0.0</minSeverity>
-				<label>лох</label>
+				<label>noob</label>
                 <statOffsets>
 					<MeleeHitChance>2</MeleeHitChance>
 					<MeleeDodgeChance>2</MeleeDodgeChance>
@@ -58,7 +58,7 @@
 			</li>
 			<li>
 				<minSeverity>0.4</minSeverity>
-				<label>нормик</label>
+				<label>fin</label>
                 <statOffsets>
 					<MeleeHitChance>2.5</MeleeHitChance>
 					<MeleeDodgeChance>2.5</MeleeDodgeChance>
@@ -88,7 +88,7 @@
 			</li>
             <li>
 				<minSeverity>0.8</minSeverity>
-				<label>смешарик</label>
+				<label>pro</label>
                 <statOffsets>
 					<MeleeHitChance>3.0</MeleeHitChance>
 					<MeleeDodgeChance>3.0</MeleeDodgeChance>
@@ -96,7 +96,7 @@
 					<GeneralLaborSpeed>0.30</GeneralLaborSpeed>
                     <InjuryHealingFactor>0.9</InjuryHealingFactor>
 
-                    <ArmorRating_Sharp>0.25</ArmorRating_Sharp> <!-- Усиленная прибавка к броне -->
+                    <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
                     <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
                     <ArmorRating_Heat>0.30</ArmorRating_Heat>
 

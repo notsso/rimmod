@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_FireRavens">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_FireRavens" Abstract="True">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         
         <defName>Cast_FireRavens</defName>
-        <label>огненные вороны</label>
-        <description>Создает трех мистических ворон из багрового пламени вокруг заклинателя. Вороны обладают собственным разумом, автоматически набрасываются на ближайших врагов и взрываются при гибели.</description>
+        <label>Fire ravens</label>
+        <description>Creates a mystical crow of flame around the caster, capable of attacking nearby enemies.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_FireRavens</iconPath>
         
         <aiCanUse>false</aiCanUse> <!-- TODO? -->
@@ -38,11 +38,10 @@
 
     <!-- Уровень 7 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireRavens">
-        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_FireRavens_7S</defName>
-        <label>огненные вороны</label>
         <cooldownTicksRange>120</cooldownTicksRange>
         <spiritualityCost>50.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_AbilityLaunchFireRavens">
                 <compClass>lotr.CompAbilityEffect_LaunchFireRavens</compClass>
@@ -58,11 +57,10 @@
 
     <!-- Уровень 6 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireRavens">
-        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_FireRavens_6S</defName>
-        <label>огненные вороны</label>
         <cooldownTicksRange>60</cooldownTicksRange>
         <spiritualityCost>60.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_AbilityLaunchFireRavens">
                 <compClass>lotr.CompAbilityEffect_LaunchFireRavens</compClass>
@@ -78,11 +76,10 @@
 
     <!-- Уровень 5 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireRavens">
-        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_FireRavens_5S</defName>
-        <label>огненные вороны</label>
         <cooldownTicksRange>30</cooldownTicksRange>
         <spiritualityCost>70.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_AbilityLaunchFireRavens">
                 <compClass>lotr.CompAbilityEffect_LaunchFireRavens</compClass>
@@ -98,11 +95,10 @@
 
     <!-- Уровень 4 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireRavens">
-        <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         <defName>Cast_FireRavens_4S</defName>
-        <label>огненные вороны</label>
         <cooldownTicksRange>10</cooldownTicksRange>
         <spiritualityCost>80.0</spiritualityCost>
+        
         <comps>
             <li Class="lotr.CompProperties_AbilityLaunchFireRavens">
                 <compClass>lotr.CompAbilityEffect_LaunchFireRavens</compClass>

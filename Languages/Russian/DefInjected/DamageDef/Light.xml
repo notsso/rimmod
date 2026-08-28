@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <lotr_Light.label>свет</lotr_Light.label>
+  <lotr_Light.deathMessage>{0} был испепелён священным светом.</lotr_Light.deathMessage>
+</LanguageData>

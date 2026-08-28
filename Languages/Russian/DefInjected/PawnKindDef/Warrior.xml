@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Beyonder_Warrior9.label>потусторонний воин</Beyonder_Warrior9.label>
+    <Beyonder_Warrior8.label>потусторонний гладиатор</Beyonder_Warrior8.label>
+    <Beyonder_Warrior7.label>потусторонний мастер оружия</Beyonder_Warrior7.label>
+    <Beyonder_Warrior6.label>потусторонний рассветный паладин</Beyonder_Warrior6.label>
+    <Beyonder_Warrior5.label>потусторонний хранитель</Beyonder_Warrior5.label>
+    <Beyonder_Warrior4.label>потусторонний охотник на демонов</Beyonder_Warrior4.label>
+
+    <Giant.label>гигант</Giant.label>
+    <lotr_BlueGiant.label>синий гигант</lotr_BlueGiant.label>
+    <lotr_DawnGiant.label>рассветный гигант</lotr_DawnGiant.label>
+    <lotr_DivineGiant.label>божественный гигант</lotr_DivineGiant.label>
+    <lotr_GiantSquire.label>гигантский оруженосец</lotr_GiantSquire.label>
+    <lotr_GiantWarrior.label>гигантский воин</lotr_GiantWarrior.label>
+    <lotr_GreyGiant.label>серый гигант</lotr_GreyGiant.label>
+
+</LanguageData>

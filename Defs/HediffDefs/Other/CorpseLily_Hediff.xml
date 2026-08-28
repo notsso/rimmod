@@ -6,8 +6,8 @@
         <hediffClass>lotr.HediffWithPercents</hediffClass>
 
         <defName>CorpseLilyDebuff</defName>
-        <label>растительный яд</label>
-        <description>Растение впрыскивает парализующий токсин.</description>
+        <label>natural poison</label>
+        <description>Plant sprayed pawn with anesthetic poison.</description>
 
         <isBad>true</isBad>
         <tendable>false</tendable>
@@ -15,7 +15,7 @@
 
         <stages>
             <li>
-                <label>лёгкое онемение</label>
+                <label>slight numbness</label>
                 <minSeverity>0</minSeverity>
 
                 <capMods>
@@ -30,7 +30,7 @@
                 </capMods>
             </li>
             <li>
-                <label>сильное угнетение</label>
+                <label>numbness</label>
                 <minSeverity>0.5</minSeverity>
 
                 <capMods>
@@ -45,7 +45,7 @@
                 </capMods>
             </li>
             <li>
-                <label>паралич</label>
+                <label>paralysis</label>
                 <minSeverity>0.9</minSeverity>
 
                 <capMods>

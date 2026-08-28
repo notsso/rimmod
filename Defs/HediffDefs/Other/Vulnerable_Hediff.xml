@@ -5,8 +5,8 @@
         <hediffClass>lotr.Hediff_Vulnerable</hediffClass>
         
         <defName>Hediff_Vulnerable</defName>
-        <label>Уязвимость</label>
-        <description>Пешка находится под уязвимостью - любой получаемый урон x1.5.</description>
+        <label>vulnerable</label>
+        <description>Pawn is vulnerable - any damage received is x1.5.</description>
         <isBad>true</isBad>
 
     </HediffDef>
@@ -14,7 +14,7 @@
     <!-- Уровень 5 -->
     <HediffDef ParentName="Hediff_Vulnerable">
         <defName>Hediff_Vulnerable_5S</defName>
-        <label>Уязвимость</label>
+        <label>vulnerable</label>
 
         <comps>
             <li Class="HediffCompProperties_Disappears">
@@ -31,7 +31,7 @@
     <!-- Уровень 4 -->
     <HediffDef ParentName="Hediff_Vulnerable">
         <defName>Hediff_Vulnerable_4S</defName>
-        <label>Уязвимость</label>
+        <label>vulnerable</label>
 
         <comps>
             <li Class="HediffCompProperties_Disappears">

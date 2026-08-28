@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_BlazingSpear">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_BlazingSpear" Abstract="true">
     
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
 
         <defName>Cast_BlazingSpear</defName>
-        <label>Копье огня</label>
-        <description>Создание и бросок сверхмощного, сжатого снаряда из пламени, который пробивает броню и взрывается при попадании.</description>
+        <label>Blazing spear</label>
+        <description>Creates and throws a super-powerful, compressed projectile of flame that pierces armor and explodes on impact.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_BlazingSpear</iconPath>
 
         <aiCanUse>true</aiCanUse>
@@ -42,9 +42,9 @@
     <!-- Уровень 7 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_BlazingSpear">
         <defName>Cast_BlazingSpear_7S</defName>
-        <label>Копье огня</label>
         <cooldownTicksRange>1200</cooldownTicksRange>
         <spiritualityCost>100.0</spiritualityCost>
+
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_BlazingSpear_7S</projectileDef>
@@ -59,9 +59,9 @@
     <!-- Уровень 6 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_BlazingSpear">
         <defName>Cast_BlazingSpear_6S</defName>
-        <label>Копье огня</label>
         <cooldownTicksRange>600</cooldownTicksRange>
         <spiritualityCost>120.0</spiritualityCost>
+
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_BlazingSpear_6S</projectileDef>
@@ -76,9 +76,9 @@
     <!-- Уровень 5 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_BlazingSpear">
         <defName>Cast_BlazingSpear_5S</defName>
-        <label>Копье огня</label>
         <cooldownTicksRange>450</cooldownTicksRange>
         <spiritualityCost>150.0</spiritualityCost>
+
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_BlazingSpear_5S</projectileDef>
@@ -93,9 +93,9 @@
     <!-- Уровень 4 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_BlazingSpear">
         <defName>Cast_BlazingSpear_4S</defName>
-        <label>Копье огня</label>
         <cooldownTicksRange>300</cooldownTicksRange>
         <spiritualityCost>200.0</spiritualityCost>
+        
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_BlazingSpear_4S</projectileDef>

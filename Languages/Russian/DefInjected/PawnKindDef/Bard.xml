@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  
+    <Beyonder_Bard9.label>потусторонний бард</Beyonder_Bard9.label>
+    <Beyonder_Bard8.label>потусторонний проситель света</Beyonder_Bard8.label>
+    <Beyonder_Bard7.label>потусторонний верховный жрец солнца</Beyonder_Bard7.label>
+    <Beyonder_Bard6.label>потусторонний нотариус</Beyonder_Bard6.label>
+    <Beyonder_Bard5.label>потусторонний жрец света</Beyonder_Bard5.label>
+    <Beyonder_Bard4.label>потусторонний незатенённый</Beyonder_Bard4.label>
+
+    <lotr_DawnRooster.label>рассветный петух</lotr_DawnRooster.label>
+    <lotr_DawnRoosterKing.label>король рассветных петухов</lotr_DawnRoosterKing.label>
+    <lotr_FireBird.label>огненная птица</lotr_FireBird.label>
+    <lotr_MirrorHedgehog.label>зеркальный ёж</lotr_MirrorHedgehog.label>
+    <lotr_SpiritPactBird.label>птица пакта духов</lotr_SpiritPactBird.label>
+    <lotr_SunDivineBird.label>божественная солнечная птица</lotr_SunDivineBird.label>
+
+</LanguageData>

@@ -4,8 +4,8 @@
     <GameConditionDef>
 
         <defName>BloodMoon</defName>
-        <label>Кровавая Луна</label>
-        <description>Небеса наливаются багрянцем, потусторонние сущности теряют контроль над разумом.</description>
+        <label>Blood moon</label>
+        <description>The skies are filled with crimson, otherworldly entities are losing control of the mind.</description>
         <conditionClass>lotr.GameCondition_BloodMoon</conditionClass>
 
     </GameConditionDef>
@@ -13,13 +13,13 @@
     <IncidentDef>
 
         <defName>BloodMoon</defName>
-        <label>Кровавая Луна</label>
+        <label>Blood moon</label>
         <baseChance>1.2</baseChance>
         <workerClass>lotr.IncidentWorker_BloodMoon</workerClass>
         <category>ThreatBig</category>
         
-        <letterLabel>Кровавая Луна</letterLabel>
-        <letterText>Небеса наливаются багрянцем, и потусторонние сущности теряют контроль над разумом.</letterText>
+        <letterLabel>Blood moon</letterLabel>
+        <letterText>The skies are filled with crimson, otherworldly entities are losing control of the mind.</letterText>
         <letterDef>NegativeEvent</letterDef>
 
         <targetTags>

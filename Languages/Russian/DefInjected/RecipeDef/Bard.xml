@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Bard9_PotionRecipe.label>сварить зелье барда</Bard9_PotionRecipe.label>
+    <Bard9_PotionRecipe.description>Сварить таинственное зелье пути Барда.</Bard9_PotionRecipe.description>
+    <Bard9_PotionRecipe.jobString>Варка зелья барда.</Bard9_PotionRecipe.jobString>
+    <Bard9_PotionRecipe_Alt.label>сварить зелье барда (альтернатива)</Bard9_PotionRecipe_Alt.label>
+    <Bard9_PotionRecipe_Alt.description>Сварить таинственное зелье пути Барда, используя одну эссенцию.</Bard9_PotionRecipe_Alt.description>
+    <Bard9_PotionRecipe_Alt.jobString>Варка зелья барда.</Bard9_PotionRecipe_Alt.jobString>
+
+    <Bard8_PotionRecipe.label>сварить зелье просителя света</Bard8_PotionRecipe.label>
+    <Bard8_PotionRecipe.description>Сварить таинственное зелье пути Барда.</Bard8_PotionRecipe.description>
+    <Bard8_PotionRecipe.jobString>Варка зелья просителя света.</Bard8_PotionRecipe.jobString>
+    <Bard8_PotionRecipe_Alt.label>сварить зелье просителя света (альтернатива)</Bard8_PotionRecipe_Alt.label>
+    <Bard8_PotionRecipe_Alt.description>Сварить таинственное зелье пути Барда, используя одну эссенцию.</Bard8_PotionRecipe_Alt.description>
+    <Bard8_PotionRecipe_Alt.jobString>Варка зелья просителя света.</Bard8_PotionRecipe_Alt.jobString>
+
+    <Bard7_PotionRecipe.label>сварить зелье верховного жреца солнца</Bard7_PotionRecipe.label>
+    <Bard7_PotionRecipe.description>Сварить таинственное зелье пути Барда.</Bard7_PotionRecipe.description>
+    <Bard7_PotionRecipe.jobString>Варка зелья верховного жреца солнца.</Bard7_PotionRecipe.jobString>
+    <Bard7_PotionRecipe_Alt.label>сварить зелье верховного жреца солнца (альтернатива)</Bard7_PotionRecipe_Alt.label>
+    <Bard7_PotionRecipe_Alt.description>Сварить таинственное зелье пути Барда, используя одну эссенцию.</Bard7_PotionRecipe_Alt.description>
+    <Bard7_PotionRecipe_Alt.jobString>Варка зелья верховного жреца солнца.</Bard7_PotionRecipe_Alt.jobString>
+
+    <Bard6_PotionRecipe.label>сварить зелье нотариуса</Bard6_PotionRecipe.label>
+    <Bard6_PotionRecipe.description>Сварить таинственное зелье пути Барда.</Bard6_PotionRecipe.description>
+    <Bard6_PotionRecipe.jobString>Варка зелья нотариуса.</Bard6_PotionRecipe.jobString>
+    <Bard6_PotionRecipe_Alt.label>сварить зелье нотариуса (альтернатива)</Bard6_PotionRecipe_Alt.label>
+    <Bard6_PotionRecipe_Alt.description>Сварить таинственное зелье пути Барда, используя одну эссенцию.</Bard6_PotionRecipe_Alt.description>
+    <Bard6_PotionRecipe_Alt.jobString>Варка зелья нотариуса.</Bard6_PotionRecipe_Alt.jobString>
+
+    <Bard5_PotionRecipe.label>сварить зелье жреца света</Bard5_PotionRecipe.label>
+    <Bard5_PotionRecipe.description>Сварить таинственное зелье пути Барда.</Bard5_PotionRecipe.description>
+    <Bard5_PotionRecipe.jobString>Варка зелья жреца света.</Bard5_PotionRecipe.jobString>
+    <Bard5_PotionRecipe_Alt.label>сварить зелье жреца света (альтернатива)</Bard5_PotionRecipe_Alt.label>
+    <Bard5_PotionRecipe_Alt.description>Сварить таинственное зелье пути Барда, используя одну эссенцию.</Bard5_PotionRecipe_Alt.description>
+    <Bard5_PotionRecipe_Alt.jobString>Варка зелья жреца света.</Bard5_PotionRecipe_Alt.jobString>
+
+    <Bard4_PotionRecipe.label>сварить зелье незатенённого</Bard4_PotionRecipe.label>
+    <Bard4_PotionRecipe.description>Сварить таинственное зелье пути Барда.</Bard4_PotionRecipe.description>
+    <Bard4_PotionRecipe.jobString>Варка зелья незатенённого.</Bard4_PotionRecipe.jobString>
+    <Bard4_PotionRecipe_Alt.label>сварить зелье незатенённого (альтернатива)</Bard4_PotionRecipe_Alt.label>
+    <Bard4_PotionRecipe_Alt.description>Сварить таинственное зелье пути Барда, используя одну эссенцию.</Bard4_PotionRecipe_Alt.description>
+    <Bard4_PotionRecipe_Alt.jobString>Варка зелья незатенённого.</Bard4_PotionRecipe_Alt.jobString>
+
+</LanguageData>

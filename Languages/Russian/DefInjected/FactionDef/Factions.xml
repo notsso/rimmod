@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <!-- Demoness Sect -->
+    <lotr_DemonessSect.label>Секта Демонесс</lotr_DemonessSect.label>
+    <lotr_DemonessSect.description>Секта Демонесс — теневая кабала соблазнительниц, отравительниц и безмолвных убийц. Они почитают путь Ассасина и стремятся изменить мир шёпотом и скрытыми клинками. Члены торгуют экзотическими ингредиентами, связанными с путём Ассасина.</lotr_DemonessSect.description>
+
+    <lotr_DemonessSect.fixedName>Секта Демонесс</lotr_DemonessSect.fixedName>
+    <lotr_DemonessSect.leaderTitle>матриарх</lotr_DemonessSect.leaderTitle>
+    <lotr_DemonessSect.messageDefendersAttacking>{0} из {1} атакуют ваше {2}.</lotr_DemonessSect.messageDefendersAttacking>
+    <lotr_DemonessSect.pawnSingular>член</lotr_DemonessSect.pawnSingular>
+    <lotr_DemonessSect.pawnsPlural>члены</lotr_DemonessSect.pawnsPlural>
+
+    <!-- Church of the Eternal Blazing Sun -->
+    <lotr_ChurchOfTheEternalBlazingSun.label>Церковь Вечного Пылающего Солнца</lotr_ChurchOfTheEternalBlazingSun.label>
+    <lotr_ChurchOfTheEternalBlazingSun.description>Церковь Вечного Пылающего Солнца — тайный орден, посвящённый почитанию света и уничтожению тьмы. Они стремятся распространять свою веру через песнопения и священный огонь, торгуя реликвиями пути Барда и священными ингредиентами.</lotr_ChurchOfTheEternalBlazingSun.description>
+
+    <lotr_ChurchOfTheEternalBlazingSun.fixedName>Церковь Вечного Пылающего Солнца</lotr_ChurchOfTheEternalBlazingSun.fixedName>
+    <lotr_ChurchOfTheEternalBlazingSun.leaderTitle>верховный жрец</lotr_ChurchOfTheEternalBlazingSun.leaderTitle>
+    <lotr_ChurchOfTheEternalBlazingSun.messageDefendersAttacking>{0} из {1} атакуют ваше {2}.</lotr_ChurchOfTheEternalBlazingSun.messageDefendersAttacking>
+    <lotr_ChurchOfTheEternalBlazingSun.pawnSingular>член</lotr_ChurchOfTheEternalBlazingSun.pawnSingular>
+    <lotr_ChurchOfTheEternalBlazingSun.pawnsPlural>члены</lotr_ChurchOfTheEternalBlazingSun.pawnsPlural>
+
+    <!-- Iron and Blood Cross Order -->
+    <lotr_IronAndBloodCrossOrder.label>Орден Железного и Кровавого Креста</lotr_IronAndBloodCrossOrder.label>
+    <lotr_IronAndBloodCrossOrder.description>Орден Железного и Кровавого Креста — недавно основанная тайная организация, существующая всего 200 лет. Они стремятся создать мир под своим началом, где таинственное и сверхъестественное открыто для всех, а не скрыто за завесой тайн.</lotr_IronAndBloodCrossOrder.description>
+
+    <lotr_IronAndBloodCrossOrder.fixedName>Орден Железного и Кровавого Креста</lotr_IronAndBloodCrossOrder.fixedName>
+    <lotr_IronAndBloodCrossOrder.leaderTitle>полубог</lotr_IronAndBloodCrossOrder.leaderTitle>
+    <lotr_IronAndBloodCrossOrder.messageDefendersAttacking>{0} из {1} атакуют ваше {2}.</lotr_IronAndBloodCrossOrder.messageDefendersAttacking>
+    <lotr_IronAndBloodCrossOrder.pawnSingular>член</lotr_IronAndBloodCrossOrder.pawnSingular>
+    <lotr_IronAndBloodCrossOrder.pawnsPlural>члены</lotr_IronAndBloodCrossOrder.pawnsPlural>
+
+    <!-- Mystical Creatures -->
+    <lotr_MysticalCreatures.label>Мистические существа</lotr_MysticalCreatures.label>
+    <lotr_MysticalCreatures.description>Враждебные потусторонние существа, атакующие всех, кого увидят.</lotr_MysticalCreatures.description>
+
+    <lotr_MysticalCreatures.fixedName>Мистические существа</lotr_MysticalCreatures.fixedName>
+    <lotr_MysticalCreatures.leaderTitle>вожак</lotr_MysticalCreatures.leaderTitle>
+    <lotr_MysticalCreatures.messageDefendersAttacking>{0} из {1} атакуют ваше {2}.</lotr_MysticalCreatures.messageDefendersAttacking>
+    <lotr_MysticalCreatures.pawnSingular>существо</lotr_MysticalCreatures.pawnSingular>
+    <lotr_MysticalCreatures.pawnsPlural>существа</lotr_MysticalCreatures.pawnsPlural>
+
+    <!-- Church of the God of Combat -->
+    <lotr_ChurchOfTheGodOfCombat.label>Церковь Бога Битвы</lotr_ChurchOfTheGodOfCombat.label>
+    <lotr_ChurchOfTheGodOfCombat.description>Церковь Бога Битвы — фанатичная организация, почитающая битву и силу. Они торгуют реликвиями могучих воинов и мистическими ингредиентами, связанными с путём Воина.</lotr_ChurchOfTheGodOfCombat.description>
+
+    <lotr_ChurchOfTheGodOfCombat.fixedName>Церковь Бога Битвы</lotr_ChurchOfTheGodOfCombat.fixedName>
+    <lotr_ChurchOfTheGodOfCombat.leaderTitle>верховный жрец</lotr_ChurchOfTheGodOfCombat.leaderTitle>
+    <lotr_ChurchOfTheGodOfCombat.messageDefendersAttacking>{0} из {1} атакуют ваше {2}.</lotr_ChurchOfTheGodOfCombat.messageDefendersAttacking>
+    <lotr_ChurchOfTheGodOfCombat.pawnSingular>послушник</lotr_ChurchOfTheGodOfCombat.pawnSingular>
+    <lotr_ChurchOfTheGodOfCombat.pawnsPlural>послушники</lotr_ChurchOfTheGodOfCombat.pawnsPlural>
+
+</LanguageData>

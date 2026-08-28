@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Confusion">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Confusion" Abstract="True">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         
         <defName>Cast_Confusion</defName>
-        <label>Замешательство</label>
-        <description>Дезориентирует врага, заставляя его путаться.</description>
+        <label>Confusion</label>
+        <description>Disorients the enemy, causing them to become confused.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Confusion</iconPath>
 
         <aiCanUse>true</aiCanUse>
@@ -39,9 +39,9 @@
     <!-- Уровень 6 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Confusion">
         <defName>Cast_Confusion_6S</defName>
-        <label>Замешательство</label>
         <cooldownTicksRange>3600</cooldownTicksRange>
         <spiritualityCost>100.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_AbilityGiveHediff">
                 <hediffDef>Hediff_Confusion_6S</hediffDef>
@@ -60,9 +60,9 @@
     <!-- Уровень 5 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Confusion">
         <defName>Cast_Confusion_5S</defName>
-        <label>Замешательство</label>
         <cooldownTicksRange>1800</cooldownTicksRange>
         <spiritualityCost>200.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_AbilityGiveHediff">
                 <hediffDef>Hediff_Confusion_5S</hediffDef>
@@ -81,9 +81,9 @@
     <!-- Уровень 4 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Confusion">
         <defName>Cast_Confusion_4S</defName>
-        <label>Замешательство</label>
         <cooldownTicksRange>600</cooldownTicksRange>
         <spiritualityCost>300.0</spiritualityCost>
+        
         <comps>
             <li Class="lotr.CompProperties_AbilityGiveHediff">
                 <hediffDef>Hediff_Confusion_4S</hediffDef>

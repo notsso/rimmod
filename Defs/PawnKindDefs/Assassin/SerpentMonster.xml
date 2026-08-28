@@ -4,8 +4,8 @@
     <ThingDef ParentName="AnimalThingBase">
 
         <defName>lotr_SerpentMonsterBirdRace</defName>
-        <label>Птица-монстр с телом змеи</label>
-        <description>Хищная птица, чьё тело напоминает змею, а чёрные перья источают тёмную энергию. Она бесшумно парит над болотами, высматривая добычу, и атакует с неожиданной стороны. Её перья используются в зельях пути Ассасина.</description>
+        <label>Serpent-bodied Monster Bird</label>
+        <description>A predatory bird whose body resembles a snake and whose black feathers exude dark energy. It glides silently over the swamps, stalking prey and attacking from an unexpected angle. Its feathers are used in Assassin's Path potions.</description>
         
         <statBases>
             <MoveSpeed>5.5</MoveSpeed>

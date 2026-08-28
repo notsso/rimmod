@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
     
-    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Fireball">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Fireball" Abstract="True">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         
         <defName>Cast_Fireball</defName>
-        <label>огненный шар</label>
-        <description>кусок огня</description>
+        <label>Fireball</label>
+        <description>Throw a ball of fire, which explodes upon impact.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Fireball</iconPath>
         
         <aiCanUse>true</aiCanUse>
@@ -39,46 +39,12 @@
 
     </AbilityDef>
 
-    <!-- Уровень 9, OBSOLETE -->
-    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Fireball">
-        <defName>Cast_Fireball_9S</defName>
-        <label>огненный шар</label>
-        <cooldownTicksRange>600</cooldownTicksRange>
-        <spiritualityCost>15.0</spiritualityCost>
-        <comps>
-            <li Class="CompProperties_AbilityLaunchProjectile">
-                <projectileDef>Proj_Fireball_9S</projectileDef>
-            </li>
-        </comps>
-        <verbProperties>
-            <range>10</range>
-            <warmupTime>2.0</warmupTime>
-        </verbProperties>
-    </AbilityDef>
-
-    <!-- Уровень 8, OBSOLETE -->
-    <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Fireball">
-        <defName>Cast_Fireball_8S</defName>
-        <label>огненный шар</label>
-        <cooldownTicksRange>300</cooldownTicksRange>
-        <spiritualityCost>15.0</spiritualityCost>
-        <comps>
-            <li Class="CompProperties_AbilityLaunchProjectile">
-                <projectileDef>Proj_Fireball_8S</projectileDef>
-            </li>
-        </comps>
-        <verbProperties>
-            <range>15</range>
-            <warmupTime>1.0</warmupTime>
-        </verbProperties>
-    </AbilityDef>
-
     <!-- Уровень 7 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Fireball">
         <defName>Cast_Fireball_7S</defName>
-        <label>огненный шар</label>
         <cooldownTicksRange>300</cooldownTicksRange>
         <spiritualityCost>30.0</spiritualityCost>
+
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_Fireball_7S</projectileDef>
@@ -93,9 +59,9 @@
     <!-- Уровень 6 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Fireball">
         <defName>Cast_Fireball_6S</defName>
-        <label>огненный шар</label>
         <cooldownTicksRange>240</cooldownTicksRange>
         <spiritualityCost>50.0</spiritualityCost>
+
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_Fireball_6S</projectileDef>
@@ -110,9 +76,9 @@
     <!-- Уровень 5 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Fireball">
         <defName>Cast_Fireball_5S</defName>
-        <label>огненный шар</label>
         <cooldownTicksRange>180</cooldownTicksRange>
         <spiritualityCost>80.0</spiritualityCost>
+
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_Fireball_5S</projectileDef>
@@ -127,9 +93,9 @@
     <!-- Уровень 4 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Fireball">
         <defName>Cast_Fireball_4S</defName>
-        <label>огненный шар</label>
         <cooldownTicksRange>120</cooldownTicksRange>
         <spiritualityCost>100.0</spiritualityCost>
+        
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_Fireball_4S</projectileDef>

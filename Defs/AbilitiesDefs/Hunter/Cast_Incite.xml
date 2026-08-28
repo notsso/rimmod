@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Incite">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Incite" Abstract="True">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
 
         <defName>Cast_Incite</defName>
-        <label>Подстрекательство</label>
-        <description>Заставляет врага впасть в бешенство.</description>
+        <label>Incite</label>
+        <description>Causes the enemy to go berserk.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Incite</iconPath>
 
         <aiCanUse>true</aiCanUse>
@@ -39,9 +39,9 @@
     <!-- Уровень 6 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Incite">
         <defName>Cast_Incite_6S</defName>
-        <label>Подстрекательство</label>
         <cooldownTicksRange>1800</cooldownTicksRange>
         <spiritualityCost>100.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_AbilityIncite">
                 <baseSuccessChance>0.6</baseSuccessChance>
@@ -57,9 +57,9 @@
     <!-- Уровень 5 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Incite">
         <defName>Cast_Incite_5S</defName>
-        <label>Подстрекательство</label>
         <cooldownTicksRange>1200</cooldownTicksRange>
         <spiritualityCost>120.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_AbilityIncite">
                 <baseSuccessChance>0.7</baseSuccessChance>
@@ -75,9 +75,9 @@
     <!-- Уровень 4 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Incite">
         <defName>Cast_Incite_4S</defName>
-        <label>Подстрекательство</label>
         <cooldownTicksRange>300</cooldownTicksRange>
         <spiritualityCost>150.0</spiritualityCost>
+        
         <comps>
             <li Class="lotr.CompProperties_AbilityIncite">
                 <baseSuccessChance>0.9</baseSuccessChance>

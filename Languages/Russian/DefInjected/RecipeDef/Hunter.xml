@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Hunter9_PotionRecipe.label>сварить зелье охотника</Hunter9_PotionRecipe.label>
+    <Hunter9_PotionRecipe.description>Сварить таинственное зелье пути Охотника.</Hunter9_PotionRecipe.description>
+    <Hunter9_PotionRecipe.jobString>Варка зелья охотника.</Hunter9_PotionRecipe.jobString>
+    <Hunter9_PotionRecipe_Alt.label>сварить зелье охотника (альтернатива)</Hunter9_PotionRecipe_Alt.label>
+    <Hunter9_PotionRecipe_Alt.description>Сварить таинственное зелье пути Охотника, используя одну эссенцию.</Hunter9_PotionRecipe_Alt.description>
+    <Hunter9_PotionRecipe_Alt.jobString>Варка зелья охотника.</Hunter9_PotionRecipe_Alt.jobString>
+
+    <Hunter8_PotionRecipe.label>сварить зелье провокатора</Hunter8_PotionRecipe.label>
+    <Hunter8_PotionRecipe.description>Сварить таинственное зелье пути Охотника.</Hunter8_PotionRecipe.description>
+    <Hunter8_PotionRecipe.jobString>Варка зелья провокатора.</Hunter8_PotionRecipe.jobString>
+    <Hunter8_PotionRecipe_Alt.label>сварить зелье провокатора (альтернатива)</Hunter8_PotionRecipe_Alt.label>
+    <Hunter8_PotionRecipe_Alt.description>Сварить таинственное зелье пути Охотника, используя одну эссенцию.</Hunter8_PotionRecipe_Alt.description>
+    <Hunter8_PotionRecipe_Alt.jobString>Варка зелья провокатора.</Hunter8_PotionRecipe_Alt.jobString>
+
+    <Hunter7_PotionRecipe.label>сварить зелье пиромана</Hunter7_PotionRecipe.label>
+    <Hunter7_PotionRecipe.description>Сварить таинственное зелье пути Охотника.</Hunter7_PotionRecipe.description>
+    <Hunter7_PotionRecipe.jobString>Варка зелья пиромана.</Hunter7_PotionRecipe.jobString>
+    <Hunter7_PotionRecipe_Alt.label>сварить зелье пиромана (альтернатива)</Hunter7_PotionRecipe_Alt.label>
+    <Hunter7_PotionRecipe_Alt.description>Сварить таинственное зелье пути Охотника, используя одну эссенцию.</Hunter7_PotionRecipe_Alt.description>
+    <Hunter7_PotionRecipe_Alt.jobString>Варка зелья пиромана.</Hunter7_PotionRecipe_Alt.jobString>
+
+    <Hunter6_PotionRecipe.label>сварить зелье заговорщика</Hunter6_PotionRecipe.label>
+    <Hunter6_PotionRecipe.description>Сварить таинственное зелье пути Охотника.</Hunter6_PotionRecipe.description>
+    <Hunter6_PotionRecipe.jobString>Варка зелья заговорщика.</Hunter6_PotionRecipe.jobString>
+    <Hunter6_PotionRecipe_Alt.label>сварить зелье заговорщика (альтернатива)</Hunter6_PotionRecipe_Alt.label>
+    <Hunter6_PotionRecipe_Alt.description>Сварить таинственное зелье пути Охотника, используя одну эссенцию.</Hunter6_PotionRecipe_Alt.description>
+    <Hunter6_PotionRecipe_Alt.jobString>Варка зелья заговорщика.</Hunter6_PotionRecipe_Alt.jobString>
+
+    <Hunter5_PotionRecipe.label>сварить зелье жнеца</Hunter5_PotionRecipe.label>
+    <Hunter5_PotionRecipe.description>Сварить таинственное зелье пути Охотника.</Hunter5_PotionRecipe.description>
+    <Hunter5_PotionRecipe.jobString>Варка зелья жнеца.</Hunter5_PotionRecipe.jobString>
+    <Hunter5_PotionRecipe_Alt.label>сварить зелье жнеца (альтернатива)</Hunter5_PotionRecipe_Alt.label>
+    <Hunter5_PotionRecipe_Alt.description>Сварить таинственное зелье пути Охотника, используя одну эссенцию.</Hunter5_PotionRecipe_Alt.description>
+    <Hunter5_PotionRecipe_Alt.jobString>Варка зелья жнеца.</Hunter5_PotionRecipe_Alt.jobString>
+
+    <Hunter4_PotionRecipe.label>сварить зелье рыцаря</Hunter4_PotionRecipe.label>
+    <Hunter4_PotionRecipe.description>Сварить таинственное зелье пути Охотника.</Hunter4_PotionRecipe.description>
+    <Hunter4_PotionRecipe.jobString>Варка зелья рыцаря.</Hunter4_PotionRecipe.jobString>
+    <Hunter4_PotionRecipe_Alt.label>сварить зелье рыцаря (альтернатива)</Hunter4_PotionRecipe_Alt.label>
+    <Hunter4_PotionRecipe_Alt.description>Сварить таинственное зелье пути Охотника, используя одну эссенцию.</Hunter4_PotionRecipe_Alt.description>
+    <Hunter4_PotionRecipe_Alt.jobString>Варка зелья рыцаря.</Hunter4_PotionRecipe_Alt.jobString>
+    
+</LanguageData>

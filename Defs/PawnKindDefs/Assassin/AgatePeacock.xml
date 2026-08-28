@@ -3,8 +3,8 @@
 
     <ThingDef ParentName="AnimalThingBase">
         <defName>lotr_AgatePeacockRace</defName>
-        <label>Агатовый павлин</label>
-        <description>Великолепная птица, чьё оперение переливается, словно агат. Она источает ауру магии льда и зеркал, заставляя жертв видеть собственные отражения и терять ориентацию. Очень быстра и агрессивна, особенно защищая своё гнездо. Её яйца — ценнейший ингредиент для зелья Ведьмы.</description>
+        <label>Agate peacock</label>
+        <description>A magnificent bird whose plumage shimmers like agate. It exudes an aura of ice and mirror magic, causing its victims to see their own reflections and become disoriented. It is extremely fast and aggressive, especially when defending its nest. Its eggs are a valuable ingredient in the Witch's potion.</description>
         
         <statBases>
             <MoveSpeed>6.0</MoveSpeed>

@@ -5,70 +5,68 @@
 
         <hediffClass>lotr.Hediff_SanityLoss</hediffClass>
         <defName>lotr_SanityLoss</defName>
-        <label>искажение разума</label>
-        <description>Потусторонняя энергия Сиквенций выходит из-под контроля, разрушая человеческий разум и перестраивая плоть. Если тяжесть дойдет до максимума, пешка окончательно потеряет человечность.</description>
-        <!-- Пурпурный магический цвет текста в интерфейсе здоровья -->
+        <label>sanity loss</label>
+        <description>The otherworldly energy is spiraling out of control, destroying the human mind and reshaping flesh. If the gravity reaches its maximum, the pawn will completely lose their humanity.</description>
+
         <defaultLabelColor>(0.7, 0.2, 0.8)</defaultLabelColor>
         <initialSeverity>0.01</initialSeverity>
         <maxSeverity>1.0</maxSeverity>
         <minSeverity>0</minSeverity>
         <tendable>false</tendable>
-        <isBad>true</isBad> <!-- Игра считает это тяжелой болезнью -->
+        <isBad>true</isBad>
         
         <stages>
             <li>
                 <minSeverity>0.0</minSeverity>
-                <label>иллюзии</label>
-                <!-- Пешка начинает хуже соображать из-за голосов в голове -->
+                <label>illusions</label>
                 <statOffsets>
-                <MentalBreakThreshold>0.08</MentalBreakThreshold> <!-- Повышает порог нервного срыва на 8% -->
+                    <MentalBreakThreshold>0.08</MentalBreakThreshold>
                 </statOffsets>
                 <capMods>
                 <li>
                     <capacity>Consciousness</capacity>
-                    <offset>-0.05</offset> <!-- Сознание -5% -->
+                    <offset>-0.05</offset>
                 </li>
                 </capMods>
             </li>
 
             <li>
                 <minSeverity>0.4</minSeverity>
-                <label>одержимость</label>
+                <label>obsession</label>
                 <statOffsets>
-                <MentalBreakThreshold>0.20</MentalBreakThreshold> <!-- Порог срыва повышается на 20%! -->
-                <MeleeHitChance>2</MeleeHitChance> <!-- Безумная ярость помогает драться вблизи -->
+                    <MentalBreakThreshold>0.20</MentalBreakThreshold>
+                    <MeleeHitChance>2</MeleeHitChance>
                 </statOffsets>
                 <capMods>
                 <li>
                     <capacity>Consciousness</capacity>
-                    <offset>-0.15</offset> <!-- Сознание -15% -->
+                    <offset>-0.15</offset>
                 </li>
                 <li>
                     <capacity>Manipulation</capacity>
-                    <offset>-0.10</offset> <!-- Руки начинают дрожать, работа замедляется -->
+                    <offset>-0.10</offset>
                 </li>
                 </capMods>
             </li>
 
             <li>
                 <minSeverity>0.7</minSeverity>
-                <label>мутация плоти</label>
-                <!-- Человеческий разум почти угас, тело перестраивается в монстра -->
+                <label>flesh mutation</label>
                 <statFactors>
-                <IncomingDamageFactor>0.75</IncomingDamageFactor> <!-- Из-за мутировавшей кожи получает на 25% меньше урона -->
+                    <IncomingDamageFactor>0.75</IncomingDamageFactor>
                 </statFactors>
                 <statOffsets>
-                <MeleeHitChance>6</MeleeHitChance>
-                <MoveSpeed>0.5</MoveSpeed> <!-- Скорость бега увеличивается (звериные инстинкты) -->
+                    <MeleeHitChance>6</MeleeHitChance>
+                    <MoveSpeed>0.5</MoveSpeed>
                 </statOffsets>
                 <capMods>
                 <li>
                     <capacity>Consciousness</capacity>
-                    <offset>-0.40</offset> <!-- Пешка едва соображает, что делает -->
+                    <offset>-0.40</offset>
                 </li>
                 <li>
                     <capacity>Talking</capacity>
-                    <offset>-0.80</offset> <!-- Способность говорить почти полностью утрачена -->
+                    <offset>-0.80</offset>
                 </li>
                 </capMods>
             </li>

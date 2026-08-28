@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <BeyonderGathering_Incident.label>собрание потусторонних</BeyonderGathering_Incident.label>
+    <BeyonderGathering_Incident.letterLabel>Собрание потусторонних</BeyonderGathering_Incident.letterLabel>
+    <BeyonderGathering_Incident.letterText>Рядом с вашей базой появилось таинственное собрание потусторонних. Они готовы торговать.</BeyonderGathering_Incident.letterText>
+
+    <BloodMoon.label>Кровавая Луна</BloodMoon.label>
+    <BloodMoon.letterLabel>Кровавая Луна</BloodMoon.letterLabel>
+    <BloodMoon.letterText>Небеса наливаются багрянцем, и потусторонние сущности теряют контроль над разумом.</BloodMoon.letterText>
+
+    <lotr_FirstMeeting.label>таинственный посланник</lotr_FirstMeeting.label>
+    <lotr_FirstMeeting.letterLabel>Таинственный посланник</lotr_FirstMeeting.letterLabel>
+    <lotr_FirstMeeting.letterText>Одинокая фигура приближается к вашему поселению, утверждая, что представляет таинственную фракцию. Они просят аудиенции.</lotr_FirstMeeting.letterText>
+
+    <lotr_MysteryVisit.label>таинственные гости</lotr_MysteryVisit.label>
+    <lotr_MysteryVisit.letterLabel>Таинственные гости</lotr_MysteryVisit.letterLabel>
+    <lotr_MysteryVisit.letterText>Члены таинственного ордена остановились недалеко от вашего поселения. Они держатся особняком.</lotr_MysteryVisit.letterText>
+
+    <lotr_PeaceOffer.label>предложение мира</lotr_PeaceOffer.label>
+    <lotr_PeaceOffer.letterLabel>Предложение мира</lotr_PeaceOffer.letterLabel>
+    <lotr_PeaceOffer.letterText>Дипломат из Ордена Железного и Кровавого Креста приближается, предлагая забыть прошлые обиды и восстановить нейтралитет.</lotr_PeaceOffer.letterText>
+
+</LanguageData>

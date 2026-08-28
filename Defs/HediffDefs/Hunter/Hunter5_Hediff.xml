@@ -12,7 +12,7 @@
 
         <spiritualityOffset>4</spiritualityOffset>
 
-        <description>This person became 5 sequence beyonder - reaper. This person sees vulnerabilities and can reap souls.</description>
+        <description>This person became 5 sequence beyonder - reaper.</description>
         <defaultLabelColor>(1.0, 0.0, 0.0)</defaultLabelColor>
         <initialSeverity>0.01</initialSeverity>
         <maxSeverity>1</maxSeverity>
@@ -23,7 +23,7 @@
         <stages>
             <li>
                 <minSeverity>0.0</minSeverity>
-                <label>лох</label>
+                <label>noob</label>
 
                 <statFactors>
                     <IncomingDamageFactor>0.90</IncomingDamageFactor>
@@ -80,7 +80,7 @@
 
             <li>
                 <minSeverity>0.4</minSeverity>
-                <label>нормик</label>
+                <label>fin</label>
 
                 <statFactors>
                     <IncomingDamageFactor>0.75</IncomingDamageFactor>
@@ -136,7 +136,7 @@
 
             <li>
                 <minSeverity>0.8</minSeverity>
-                <label>смешарик</label>
+                <label>pro</label>
 
                 <statFactors>
                     <IncomingDamageFactor>0.60</IncomingDamageFactor>

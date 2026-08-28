@@ -3,8 +3,8 @@
 
     <ThingDef ParentName="AnimalThingBase">
         <defName>lotr_DemonThroatHoneyguideRace</defName>
-        <label>Медовый гид из глотки демона</label>
-        <description>Хитрый зверь, чей голос способен подражать любым звукам, от криков о помощи до боевых кличей. Он использует эту способность, чтобы манипулировать другими существами, заставляя их атаковать друг друга или заходить в ловушки. Его сердце переполнено энергией подстрекательства.</description>
+        <label>Demon throat Honeyguide</label>
+        <description>A cunning beast whose voice can imitate any sound, from cries for help to battle cries. It uses this ability to manipulate other creatures, forcing them to attack each other or walk into traps. Its heart overflows with the energy of incitement.</description>
         
         <statBases>
             <MoveSpeed>5.0</MoveSpeed>
@@ -95,7 +95,7 @@
 
     <PawnKindDef ParentName="AnimalKindBase">
         <defName>lotr_DemonThroatHoneyguide</defName>
-        <label>Demon Throat Honeyguide</label>
+        <label>Demon throat honeyguide</label>
         <race>lotr_DemonThroatHoneyguideRace</race>
         <defaultFactionType>lotr_MysticalCreatures</defaultFactionType>
         <combatPower>200</combatPower>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Firewave">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Firewave" Abstract="True">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         
         <defName>Cast_Firewave</defName>
-        <label>Волна огня</label>
-        <description>Поджигает все вокруг.</description>
+        <label>Firewave</label>
+        <description>Create a firewave, what sets on fire entire fields.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Firewave</iconPath>
 
         <aiCanUse>false</aiCanUse> <!-- TODO? -->
@@ -43,9 +43,9 @@
     <!-- Уровень 4 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Firewave">
         <defName>Cast_Firewave_4S</defName>
-        <label>Волна огня</label>
         <cooldownTicksRange>6000</cooldownTicksRange>
         <spiritualityCost>500.0</spiritualityCost>
+        
         <comps>
             <li Class="lotr.CompProperties_Firewave">
                 <angleDegrees>60</angleDegrees>

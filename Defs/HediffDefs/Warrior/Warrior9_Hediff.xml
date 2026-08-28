@@ -25,7 +25,7 @@
 		<stages>
 			<li>
 				<minSeverity>0.0</minSeverity>
-				<label>лох</label>
+				<label>noob</label>
                 <statOffsets>
 					<MeleeHitChance>0.3</MeleeHitChance>
 					<MeleeDodgeChance>0.3</MeleeDodgeChance>
@@ -58,7 +58,7 @@
 			</li>
 			<li>
 				<minSeverity>0.4</minSeverity>
-				<label>нормик</label>
+				<label>fin</label>
                 <statOffsets>
 					<MeleeHitChance>0.6</MeleeHitChance>
 					<MeleeDodgeChance>0.6</MeleeDodgeChance>
@@ -91,7 +91,7 @@
 			</li>
 			<li>
 				<minSeverity>0.8</minSeverity>
-				<label>смешарик</label>
+				<label>pro</label>
                 <statOffsets>
 					<MeleeHitChance>1</MeleeHitChance>
 					<MeleeDodgeChance>1</MeleeDodgeChance>

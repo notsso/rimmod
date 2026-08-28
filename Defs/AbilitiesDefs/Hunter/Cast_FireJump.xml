@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_FireJump">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_FireJump" Abstract="True">
         
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         
         <defName>Cast_FireJump</defName>
-        <label>Огненный прыжок</label>
-        <description>Превратиться в сгусток пламени и переместиться в указанную точку.</description>
+        <label>Fire jump</label>
+        <description>Turn into a clot of flame and move to the specified point.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_FireTeleport</iconPath>
 
         <aiCanUse>false</aiCanUse> <!-- TODO? -->
@@ -41,9 +41,9 @@
     <!-- Уровень 6 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireJump">
         <defName>Cast_FireJump_6S</defName>
-        <label>Огненный прыжок</label>
         <cooldownTicksRange>600</cooldownTicksRange>
         <spiritualityCost>30.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_FireJump">
                 <flyerDef>FireTeleportFlyer</flyerDef>
@@ -59,9 +59,9 @@
     <!-- Уровень 5 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireJump">
         <defName>Cast_FireJump_5S</defName>
-        <label>Огненный прыжок</label>
         <cooldownTicksRange>300</cooldownTicksRange>
         <spiritualityCost>40.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_FireJump">
                 <flyerDef>FireTeleportFlyer</flyerDef>
@@ -77,9 +77,9 @@
     <!-- Уровень 4 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_FireJump">
         <defName>Cast_FireJump_4S</defName>
-        <label>Огненный прыжок</label>
         <cooldownTicksRange>60</cooldownTicksRange>
         <spiritualityCost>50.0</spiritualityCost>
+        
         <comps>
             <li Class="lotr.CompProperties_FireJump">
                 <flyerDef>FireTeleportFlyer</flyerDef>

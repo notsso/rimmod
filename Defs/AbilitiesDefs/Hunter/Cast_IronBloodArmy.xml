@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_IronBloodArmy">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_IronBloodArmy" Abstract="True">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         
         <defName>Cast_IronBloodArmy</defName>
-        <label>Огненная кровь</label>
-        <description>Увеличиват силу всех союзных пешек вокруг рыцаря.</description>
+        <label>Iron-blood army</label>
+        <description>Increases the power of all allied pawns around the knight.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_IronBloodArmy</iconPath>
 
         <aiCanUse>false</aiCanUse> <!-- TODO? -->
@@ -39,9 +39,9 @@
     <!-- Уровень 4 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_IronBloodArmy">
         <defName>Cast_IronBloodArmy_4S</defName>
-        <label>Огненная кровь</label>
         <cooldownTicksRange>1800</cooldownTicksRange>
         <spiritualityCost>300.0</spiritualityCost>
+        
         <comps>
             <li Class="lotr.CompProperties_GiveHediffArea">
                 <hediffDef>Hediff_IronBlood_4S</hediffDef>

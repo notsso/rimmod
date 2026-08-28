@@ -21,7 +21,7 @@
         <stages>
             <li>
                 <minSeverity>0.0</minSeverity>
-                <label>лох</label>
+                <label>noob</label>
                 <statFactors>
                     <IncomingDamageFactor>0.95</IncomingDamageFactor>
                 </statFactors>
@@ -37,7 +37,7 @@
             </li>
             <li>
                 <minSeverity>0.4</minSeverity>
-                <label>нормик</label>
+                <label>fin</label>
                 <statFactors>
                     <IncomingDamageFactor>0.93</IncomingDamageFactor>
                 </statFactors>
@@ -57,7 +57,7 @@
             </li>
             <li>
                 <minSeverity>0.8</minSeverity>
-                <label>смешарик</label>
+                <label>pro</label>
                 <statFactors>
                     <IncomingDamageFactor>0.90</IncomingDamageFactor>
                 </statFactors>

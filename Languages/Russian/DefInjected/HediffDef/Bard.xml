@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Bard9_Hediff.label>Бард</Bard9_Hediff.label>
+    <Bard9_Hediff.description>Этот человек стал Потусторонним 9 последовательности - бард.</Bard9_Hediff.description>
+    <Bard8_Hediff.label>Проситель Света</Bard8_Hediff.label>
+    <Bard8_Hediff.description>Этот человек стал Потусторонним 8 последовательности - проситель света.</Bard8_Hediff.description>
+    <Bard7_Hediff.label>Верховный жрец Солнца</Bard7_Hediff.label>
+    <Bard7_Hediff.description>Этот человек стал Потусторонним 7 последовательности - верховный жрец солнца.</Bard7_Hediff.description>
+    <Bard6_Hediff.label>Нотариус</Bard6_Hediff.label>
+    <Bard6_Hediff.description>Этот человек стал Потусторонним 6 последовательности - нотариус.</Bard6_Hediff.description>
+    <Bard5_Hediff.label>Жрец Света</Bard5_Hediff.label>
+    <Bard5_Hediff.description>Этот человек стал Потусторонним 5 последовательности - жрец света.</Bard5_Hediff.description>
+    <Bard4_Hediff.label>Незатенённый</Bard4_Hediff.label>
+    <Bard4_Hediff.description>Этот человек стал Потусторонним 4 последовательности - незатенённый.</Bard4_Hediff.description>
+
+    <Bard4_Hediff.stages.0.label>лох</Bard4_Hediff.stages.0.label>
+    <Bard4_Hediff.stages.1.label>нормик</Bard4_Hediff.stages.1.label>
+    <Bard4_Hediff.stages.2.label>смешарик</Bard4_Hediff.stages.2.label>
+
+    <Bard5_Hediff.stages.0.label>лох</Bard5_Hediff.stages.0.label>
+    <Bard5_Hediff.stages.1.label>нормик</Bard5_Hediff.stages.1.label>
+    <Bard5_Hediff.stages.2.label>смешарик</Bard5_Hediff.stages.2.label>
+
+    <Bard6_Hediff.stages.0.label>лох</Bard6_Hediff.stages.0.label>
+    <Bard6_Hediff.stages.1.label>нормик</Bard6_Hediff.stages.1.label>
+    <Bard6_Hediff.stages.2.label>смешарик</Bard6_Hediff.stages.2.label>
+
+    <Bard7_Hediff.stages.0.label>лох</Bard7_Hediff.stages.0.label>
+    <Bard7_Hediff.stages.1.label>нормик</Bard7_Hediff.stages.1.label>
+    <Bard7_Hediff.stages.2.label>смешарик</Bard7_Hediff.stages.2.label>
+
+    <Bard8_Hediff.stages.0.label>лох</Bard8_Hediff.stages.0.label>
+    <Bard8_Hediff.stages.1.label>нормик</Bard8_Hediff.stages.1.label>
+    <Bard8_Hediff.stages.2.label>смешарик</Bard8_Hediff.stages.2.label>
+
+    <Bard9_Hediff.stages.0.label>лох</Bard9_Hediff.stages.0.label>
+    <Bard9_Hediff.stages.1.label>нормик</Bard9_Hediff.stages.1.label>
+    <Bard9_Hediff.stages.2.label>смешарик</Bard9_Hediff.stages.2.label>
+    
+</LanguageData>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <BrillianceRockSanctuary_Incident.label>святилище камня сияния</BrillianceRockSanctuary_Incident.label>
+    <BrillianceRockSanctuary_Incident.letterLabel>Святилище камня сияния</BrillianceRockSanctuary_Incident.letterLabel>
+    <BrillianceRockSanctuary_Incident.letterText>Найдено старое святилище. Говорят, внутри лабиринта находится осколок камня сияния.</BrillianceRockSanctuary_Incident.letterText>
+
+    <CrystallizedElderTreeForest_Incident.label>лес кристаллизованного древнего древа</CrystallizedElderTreeForest_Incident.label>
+    <CrystallizedElderTreeForest_Incident.letterLabel>Лес кристаллизованного древнего древа</CrystallizedElderTreeForest_Incident.letterLabel>
+    <CrystallizedElderTreeForest_Incident.letterText>Обнаружен лес с огромным кристаллизованным древним древом. Вокруг него витает множество духов.</CrystallizedElderTreeForest_Incident.letterText>
+
+    <DawnRoosterMeadow_Incident.label>луг рассветного петуха</DawnRoosterMeadow_Incident.label>
+    <DawnRoosterMeadow_Incident.letterLabel>Луг рассветного петуха</DawnRoosterMeadow_Incident.letterLabel>
+    <DawnRoosterMeadow_Incident.letterText>Замечен луг, полный рассветных петухов. Их утреннее пение слышно за многие мили.</DawnRoosterMeadow_Incident.letterText>
+
+    <DawnRoosterKingThrone_Incident.label>трон короля рассветных петухов</DawnRoosterKingThrone_Incident.label>
+    <DawnRoosterKingThrone_Incident.letterLabel>Трон короля рассветных петухов</DawnRoosterKingThrone_Incident.letterLabel>
+    <DawnRoosterKingThrone_Incident.letterText>Найден выжженный холм, на котором правит король рассветных петухов. Его гребень сияет, как второе солнце.</DawnRoosterKingThrone_Incident.letterText>
+
+    <FireBirdNest_Incident.label>гнездо огненной птицы</FireBirdNest_Incident.label>
+    <FireBirdNest_Incident.letterLabel>Гнездо огненной птицы</FireBirdNest_Incident.letterLabel>
+    <FireBirdNest_Incident.letterText>Древние руины в пустыне стали гнездовьем огненной птицы.</FireBirdNest_Incident.letterText>
+
+    <HolyBrillianceRockSanctuary_Incident.label>святилище святого камня сияния</HolyBrillianceRockSanctuary_Incident.label>
+    <HolyBrillianceRockSanctuary_Incident.letterLabel>Святилище святого камня сияния</HolyBrillianceRockSanctuary_Incident.letterLabel>
+    <HolyBrillianceRockSanctuary_Incident.letterText>Найдено колоссальное святилище, содержащее святой камень сияния.</HolyBrillianceRockSanctuary_Incident.letterText>
+
+    <MirrorHedgehogGlade_Incident.label>поляна зеркальных ежей</MirrorHedgehogGlade_Incident.label>
+    <MirrorHedgehogGlade_Incident.letterLabel>Поляна зеркальных ежей</MirrorHedgehogGlade_Incident.letterLabel>
+    <MirrorHedgehogGlade_Incident.letterText>Замечена поляна, полная зеркальных ежей. Их иглы сверкают, как серебро, на солнце.</MirrorHedgehogGlade_Incident.letterText>
+
+    <PureWhiteBrilliantRockSanctuary_Incident.label>святилище чистейшего белого сияющего камня</PureWhiteBrilliantRockSanctuary_Incident.label>
+    <PureWhiteBrilliantRockSanctuary_Incident.letterLabel>Святилище чистейшего белого сияющего камня</PureWhiteBrilliantRockSanctuary_Incident.letterLabel>
+    <PureWhiteBrilliantRockSanctuary_Incident.letterText>Обнаружено более крупное святилище, содержащее чистейший белый сияющий камень.</PureWhiteBrilliantRockSanctuary_Incident.letterText>
+
+    <RadianceSpiritPactTreeGrove_Incident.label>роща сияющего древа пакта духов</RadianceSpiritPactTreeGrove_Incident.label>
+    <RadianceSpiritPactTreeGrove_Incident.letterLabel>Роща сияющего древа пакта духов</RadianceSpiritPactTreeGrove_Incident.letterLabel>
+    <RadianceSpiritPactTreeGrove_Incident.letterText>Обнаружена священная роща, в центре которой растёт сияющее древо. Духи собираются под его светящимися ветвями.</RadianceSpiritPactTreeGrove_Incident.letterText>
+
+    <SingingSunflowerGlade_Incident.label>поляна поющего подсолнуха</SingingSunflowerGlade_Incident.label>
+    <SingingSunflowerGlade_Incident.letterLabel>Поляна поющего подсолнуха</SingingSunflowerGlade_Incident.letterLabel>
+    <SingingSunflowerGlade_Incident.letterText>В лесу обнаружена скрытая поляна. В её сердце растёт сияющий подсолнух, а вокруг витают духи.</SingingSunflowerGlade_Incident.letterText>
+
+    <SpiritPactBirdGrove_Incident.label>роща птицы пакта духов</SpiritPactBirdGrove_Incident.label>
+    <SpiritPactBirdGrove_Incident.letterLabel>Роща птицы пакта духов</SpiritPactBirdGrove_Incident.letterLabel>
+    <SpiritPactBirdGrove_Incident.letterText>Найдена священная роща, охраняемая единственной птицей пакта духов. Говорят, её перья скрепляют клятвы.</SpiritPactBirdGrove_Incident.letterText>
+
+    <SunDivineBirdPeak_Incident.label>пик божественной солнечной птицы</SunDivineBirdPeak_Incident.label>
+    <SunDivineBirdPeak_Incident.letterLabel>Пик божественной солнечной птицы</SunDivineBirdPeak_Incident.letterLabel>
+    <SunDivineBirdPeak_Incident.letterText>Явлена священная гора, увенчанная гнездом божественной солнечной птицы. Её свет разгоняет все тени.</SunDivineBirdPeak_Incident.letterText>
+
+</LanguageData>

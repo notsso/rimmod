@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <lotr_MakeSlumberCharm.label>создать амулет дремоты</lotr_MakeSlumberCharm.label>
+    <lotr_MakeSlumberCharm.description>Создать одноразовый амулет, используя духовность.</lotr_MakeSlumberCharm.description>
+    <lotr_MakeSlumberCharm.jobString>Создание амулета.</lotr_MakeSlumberCharm.jobString>
+
+    <lotr_MakeSunCharm.label>создать солнечный амулет</lotr_MakeSunCharm.label>
+    <lotr_MakeSunCharm.description>Создать одноразовый амулет, используя духовность.</lotr_MakeSunCharm.description>
+    <lotr_MakeSunCharm.jobString>Создание амулета.</lotr_MakeSunCharm.jobString>
+
+    <lotr_MakeTeleportCharm.label>создать амулет телепортации</lotr_MakeTeleportCharm.label>
+    <lotr_MakeTeleportCharm.description>Создать одноразовый амулет, используя духовность.</lotr_MakeTeleportCharm.description>
+    <lotr_MakeTeleportCharm.jobString>Создание амулета.</lotr_MakeTeleportCharm.jobString>
+
+    <lotr_MakeFoulnessRoarCharm.label>создать амулет ужасающего рёва</lotr_MakeFoulnessRoarCharm.label>
+    <lotr_MakeFoulnessRoarCharm.description>Создать одноразовый амулет, используя духовность.</lotr_MakeFoulnessRoarCharm.description>
+    <lotr_MakeFoulnessRoarCharm.jobString>Создание амулета.</lotr_MakeFoulnessRoarCharm.jobString>
+
+    <ConvertBeyonderCreatureParts.label>извлечь мистические компоненты</ConvertBeyonderCreatureParts.label>
+    <ConvertBeyonderCreatureParts.description>Разобрать части потусторонних существ на мистические компоненты.</ConvertBeyonderCreatureParts.description>
+    <ConvertBeyonderCreatureParts.jobString>Извлечение мистических компонентов.</ConvertBeyonderCreatureParts.jobString>
+
+    <ConvertBeyonderPlantParts.label>извлечь магические травы</ConvertBeyonderPlantParts.label>
+    <ConvertBeyonderPlantParts.description>Преобразовать часть потустороннего растения в магические травы для более распространённого использования.</ConvertBeyonderPlantParts.description>
+    <ConvertBeyonderPlantParts.jobString>Извлечение магических трав.</ConvertBeyonderPlantParts.jobString>
+
+    <StrengthPotionRecipe.label>сварить зелье силы</StrengthPotionRecipe.label>
+    <StrengthPotionRecipe.description>Сварить таинственное зелье.</StrengthPotionRecipe.description>
+    <StrengthPotionRecipe.jobString>Варка зелья.</StrengthPotionRecipe.jobString>
+
+    <ArmorPotionRecipe.label>сварить зелье брони</ArmorPotionRecipe.label>
+    <ArmorPotionRecipe.description>Сварить таинственное зелье.</ArmorPotionRecipe.description>
+    <ArmorPotionRecipe.jobString>Варка зелья.</ArmorPotionRecipe.jobString>
+
+    <HealingPotionRecipe.label>сварить целебное зелье</HealingPotionRecipe.label>
+    <HealingPotionRecipe.description>Сварить таинственное зелье.</HealingPotionRecipe.description>
+    <HealingPotionRecipe.jobString>Варка зелья.</HealingPotionRecipe.jobString>
+
+    <CalmingPotionRecipe.label>сварить успокаивающее зелье</CalmingPotionRecipe.label>
+    <CalmingPotionRecipe.description>Сварить таинственное зелье.</CalmingPotionRecipe.description>
+    <CalmingPotionRecipe.jobString>Варка зелья.</CalmingPotionRecipe.jobString>
+
+</LanguageData>

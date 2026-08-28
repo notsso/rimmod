@@ -4,7 +4,7 @@
     <JobDef>
         <defName>lotr_CogitationJob</defName>
         <driverClass>lotr.JobDriver_Cogitation</driverClass>
-        <reportString>занимается когитацией разума.</reportString>
+        <reportString>doing cogitation.</reportString>
         <casualInterruptible>true</casualInterruptible> 
         <playerInterruptible>true</playerInterruptible>
     </JobDef>

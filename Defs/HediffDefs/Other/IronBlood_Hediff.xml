@@ -6,8 +6,8 @@
         <hediffClass>lotr.Hediff_FireLight</hediffClass>
 
         <defName>Hediff_IronBlood</defName>
-        <label>Огненная кровь</label>
-        <description>Тело пешки усилено полубогом пути Охотника.</description>
+        <label>Iron blood</label>
+        <description>Pawn is strengthened by a demigod of the Hunter's path.</description>
         <isBad>false</isBad>
         
     </HediffDef>

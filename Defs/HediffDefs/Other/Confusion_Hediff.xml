@@ -5,8 +5,8 @@
         <hediffClass>lotr.Hediff_Confusion</hediffClass>
 
         <defName>Hediff_Confusion</defName>
-        <label>замешательство</label>
-        <description>Пешка находится в замешательстве - она не знает что делать.</description>    
+        <label>confusion</label>
+        <description>Pawn is confused - she doesn't know what to do.</description>    
         <isBad>true</isBad>
     
     </HediffDef>
@@ -14,7 +14,7 @@
     <!-- Уровень 6 -->
     <HediffDef ParentName="Hediff_Confusion">
         <defName>Hediff_Confusion_6S</defName>
-        <label>замешательство</label>
+        <label>confusion</label>
 
         <comps>
             <li Class="HediffCompProperties_Disappears">
@@ -35,7 +35,7 @@
     <!-- Уровень 5 -->
     <HediffDef ParentName="Hediff_Confusion">
         <defName>Hediff_Confusion_5S</defName>
-        <label>замешательство</label>
+        <label>confusion</label>
 
         <comps>
             <li Class="HediffCompProperties_Disappears">
@@ -56,7 +56,7 @@
     <!-- Уровень 4 -->
     <HediffDef ParentName="Hediff_Confusion">
         <defName>Hediff_Confusion_4S</defName>
-        <label>замешательство</label>
+        <label>confusion</label>
 
         <comps>
             <li Class="HediffCompProperties_Disappears">

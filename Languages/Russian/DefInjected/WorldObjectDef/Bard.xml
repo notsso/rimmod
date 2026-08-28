@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <BrillianceRockSanctuary_World.label>святилище камня сияния</BrillianceRockSanctuary_World.label>
+    <BrillianceRockSanctuary_World.description>Заброшенное святилище с лабиринтом. Говорят, в его сердце скрыт осколок камня сияния.</BrillianceRockSanctuary_World.description>
+
+    <CrystallizedElderTreeForest_World.label>лес кристаллизованного древнего древа</CrystallizedElderTreeForest_World.label>
+    <CrystallizedElderTreeForest_World.description>Глубокий лес, где стоит древнее кристаллизованное древо старейшин, окружённое множеством духов.</CrystallizedElderTreeForest_World.description>
+
+    <DawnRoosterMeadow_World.label>луг рассветного петуха</DawnRoosterMeadow_World.label>
+    <DawnRoosterMeadow_World.description>Мистический луг, где рассветные петухи собираются петь на рассвете.</DawnRoosterMeadow_World.description>
+
+    <DawnRoosterKingThrone_World.label>трон короля рассветных петухов</DawnRoosterKingThrone_World.label>
+    <DawnRoosterKingThrone_World.description>Выжженный солнцем холм, где король рассветных петухов правит своей стаей.</DawnRoosterKingThrone_World.description>
+
+    <FireBirdNest_World.label>руины гнезда огненной птицы</FireBirdNest_World.label>
+    <FireBirdNest_World.description>Древние руины в пустыне, ставшие гнездовьем огненной птицы.</FireBirdNest_World.description>
+
+    <HolyBrillianceRockSanctuary_World.label>святилище святого камня сияния</HolyBrillianceRockSanctuary_World.label>
+    <HolyBrillianceRockSanctuary_World.description>Заброшенное святилище с большим лабиринтом. В его сердце скрыт святой камень сияния.</HolyBrillianceRockSanctuary_World.description>
+
+    <MirrorHedgehogGlade_World.label>поляна зеркальных ежей</MirrorHedgehogGlade_World.label>
+    <MirrorHedgehogGlade_World.description>Залитая солнцем поляна, где собираются зеркальные ежи, чьи иглы ловят свет.</MirrorHedgehogGlade_World.description>
+
+    <PureWhiteBrilliantRockSanctuary_World.label>святилище чистейшего белого сияющего камня</PureWhiteBrilliantRockSanctuary_World.label>
+    <PureWhiteBrilliantRockSanctuary_World.description>Заброшенное святилище с лабиринтом. В его центре скрыт чистейший белый сияющий камень.</PureWhiteBrilliantRockSanctuary_World.description>
+
+    <RadianceSpiritPactTreeGrove_World.label>роща сияющего древа пакта духов</RadianceSpiritPactTreeGrove_World.label>
+    <RadianceSpiritPactTreeGrove_World.description>Священная роща, где растёт сияющее древо, охраняемое множеством духов.</RadianceSpiritPactTreeGrove_World.description>
+
+    <SingingSunflowerGlade_World.label>поляна поющего подсолнуха</SingingSunflowerGlade_World.label>
+    <SingingSunflowerGlade_World.description>Тихая лесная поляна, где в центре гудит мистический подсолнух, охраняемый блуждающими духами.</SingingSunflowerGlade_World.description>
+
+    <SpiritPactBirdGrove_World.label>роща птицы пакта духов</SpiritPactBirdGrove_World.label>
+    <SpiritPactBirdGrove_World.description>Тихая древняя роща, где птица пакта духов охраняет свою священную территорию.</SpiritPactBirdGrove_World.description>
+
+    <SunDivineBirdPeak_World.label>пик божественной солнечной птицы</SunDivineBirdPeak_World.label>
+    <SunDivineBirdPeak_World.description>Священный горный пик, где гнездится божественная солнечная птица, заливая землю вечным золотым светом.</SunDivineBirdPeak_World.description>
+
+</LanguageData>

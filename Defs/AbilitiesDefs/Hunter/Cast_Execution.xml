@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Execution">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Execution" Abstract="True">
     
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         
         <defName>Cast_Execution</defName>
-        <label>Казнь</label>
-        <description>Создание и бросок сверхмощного, сверхсжатого снаряда из белого пламени. Снаряд пропитан эссенцией смерти, пробивает броню и способен ранить полубогов.</description>
+        <label>Execution</label>
+        <description>Create and launch a super-powerful, highly compressed projectile of white flame. The projectile is imbued with the essence of death, penetrates armor, and is capable of injuring demigods.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Execution</iconPath>
 
         <aiCanUse>true</aiCanUse>
@@ -42,9 +42,9 @@
     <!-- Уровень 5 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Execution">
         <defName>Cast_Execution_5S</defName>
-        <label>Казнь</label>
         <cooldownTicksRange>6000</cooldownTicksRange>
         <spiritualityCost>300.0</spiritualityCost>
+
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_Execution_5S</projectileDef>
@@ -56,12 +56,12 @@
         </verbProperties>
     </AbilityDef>
 
-    <!-- Уровень 5 -->
+    <!-- Уровень 4 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Execution">
         <defName>Cast_Execution_4S</defName>
-        <label>Казнь</label>
         <cooldownTicksRange>1800</cooldownTicksRange>
         <spiritualityCost>500.0</spiritualityCost>
+        
         <comps>
             <li Class="CompProperties_AbilityLaunchProjectile">
                 <projectileDef>Proj_Execution_4S</projectileDef>

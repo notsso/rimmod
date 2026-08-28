@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <!-- Expose Invisibility -->
+    <Cast_ExposeInvisibility_4S.label>Разоблачение невидимости</Cast_ExposeInvisibility_4S.label>
+    <Cast_ExposeInvisibility_4S.description>Заклинатель раскрывает всё скрытое вокруг.</Cast_ExposeInvisibility_4S.description>
+
+    <!-- Guard -->
+    <Cast_Guard_5S.label>Защита</Cast_Guard_5S.label>
+    <Cast_Guard_5S.description>Заклинатель окапывается и защищает ближайших союзников.</Cast_Guard_5S.description>
+    <Cast_Guard_4S.label>Защита</Cast_Guard_4S.label>
+    <Cast_Guard_4S.description>Заклинатель окапывается и защищает ближайших союзников.</Cast_Guard_4S.description>
+
+    <!-- Sunset Armor -->
+    <Cast_SunsetArmor_6S.label>Броня закатного света</Cast_SunsetArmor_6S.label>
+    <Cast_SunsetArmor_6S.description>Заклинатель создаёт серебряную броню из рассветного света.</Cast_SunsetArmor_6S.description>
+    <Cast_SunsetArmor_5S.label>Броня закатного света</Cast_SunsetArmor_5S.label>
+    <Cast_SunsetArmor_5S.description>Заклинатель создаёт серебряную броню из рассветного света.</Cast_SunsetArmor_5S.description>
+    <Cast_SunsetArmor_4S.label>Броня закатного света</Cast_SunsetArmor_4S.label>
+    <Cast_SunsetArmor_4S.description>Заклинатель создаёт серебряную броню из рассветного света.</Cast_SunsetArmor_4S.description>
+
+    <!-- Sunset Hurricane -->
+    <Cast_SunsetHurricane_6S.label>Ураган закатного света</Cast_SunsetHurricane_6S.label>
+    <Cast_SunsetHurricane_6S.description>Заклинатель создаёт серебряный меч из рассветного света, а затем разбивает его на бесчисленные осколки заката, ранящие всё вокруг.</Cast_SunsetHurricane_6S.description>
+    <Cast_SunsetHurricane_5S.label>Ураган закатного света</Cast_SunsetHurricane_5S.label>
+    <Cast_SunsetHurricane_5S.description>Заклинатель создаёт серебряный меч из рассветного света, а затем разбивает его на бесчисленные осколки заката, ранящие всё вокруг.</Cast_SunsetHurricane_5S.description>
+    <Cast_SunsetHurricane_4S.label>Ураган закатного света</Cast_SunsetHurricane_4S.label>
+    <Cast_SunsetHurricane_4S.description>Заклинатель создаёт серебряный меч из рассветного света, а затем разбивает его на бесчисленные осколки заката, ранящие всё вокруг.</Cast_SunsetHurricane_4S.description>
+
+    <!-- Sunset Light -->
+    <Cast_SunsetLight_6S.label>Закатный свет</Cast_SunsetLight_6S.label>
+    <Cast_SunsetLight_6S.description>Паладин излучает концентрированный свет вокруг себя, рассеивающий иллюзии, изгоняющий тени и ослабляющий вражеских призраков или существ запредельного.</Cast_SunsetLight_6S.description>
+    <Cast_SunsetLight_5S.label>Закатный свет</Cast_SunsetLight_5S.label>
+    <Cast_SunsetLight_5S.description>Паладин излучает концентрированный свет вокруг себя, рассеивающий иллюзии, изгоняющий тени и ослабляющий вражеских призраков или существ запредельного.</Cast_SunsetLight_5S.description>
+    <Cast_SunsetLight_4S.label>Закатный свет</Cast_SunsetLight_4S.label>
+    <Cast_SunsetLight_4S.description>Паладин излучает концентрированный свет вокруг себя, рассеивающий иллюзии, изгоняющий тени и ослабляющий вражеских призраков или существ запредельного.</Cast_SunsetLight_4S.description>
+
+    <!-- Sunset Sword -->
+    <Cast_SunsetSword_6S.label>Призыв закатного оружия</Cast_SunsetSword_6S.label>
+    <Cast_SunsetSword_6S.description>Потусторонний концентрирует духовность, чтобы сформировать оружие из заката.</Cast_SunsetSword_6S.description>
+    <Cast_SunsetSword_5S.label>Призыв закатного оружия</Cast_SunsetSword_5S.label>
+    <Cast_SunsetSword_5S.description>Потусторонний концентрирует духовность, чтобы сформировать оружие из заката.</Cast_SunsetSword_5S.description>
+    <Cast_SunsetSword_4S.label>Призыв закатного оружия</Cast_SunsetSword_4S.label>
+    <Cast_SunsetSword_4S.description>Потусторонний концентрирует духовность, чтобы сформировать оружие из заката.</Cast_SunsetSword_4S.description>
+
+</LanguageData>

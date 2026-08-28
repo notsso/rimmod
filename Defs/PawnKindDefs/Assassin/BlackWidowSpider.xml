@@ -4,7 +4,7 @@
     <ThingDef ParentName="AnimalThingBase">
         <defName>lotr_BlackWidowSpiderRace</defName>
         <label>Black Widow Spider</label>
-        <description>Огромный паук с глянцево-чёрным хитином, чьи паутинные железы вырабатывают невероятно прочную шёлковую нить. Этот хищник предпочитает подстерегать добычу в тени, опутывая её коконом. Его железа — ценнейший ингредиент для зелий Демонессы наслаждения.</description>
+        <description>A huge spider with glossy black chitin, whose spinnerets produce incredibly strong silk thread. This predator prefers to lie in wait for its prey in the shadows, wrapping it in a cocoon. Its spinnerets are a valuable ingredient in the Demoness of Pleasure's potions.</description>
         
         <statBases>
             <MoveSpeed>8.0</MoveSpeed>

@@ -6,8 +6,8 @@
         <hediffClass>HediffWithComps</hediffClass>
         
         <defName>Hediff_ForcedSleep</defName>
-        <label>сон</label>
-        <description>Тело пешки окутано мистическим пламенем, защищающим от внешних угроз.</description>    
+        <label>Sleep</label>
+        <description>Pawn was forced into sleep.</description>    
         <isBad>true</isBad>
     
     </HediffDef>
@@ -15,7 +15,7 @@
     <!-- Эффект от Шарма Дремоты -->
     <HediffDef ParentName="Hediff_ForcedSleep">
         <defName>Hediff_ForcedSleep_Charm</defName>
-        <label>сон</label>
+        <label>Sleep</label>
 
         <comps>
             <li Class="lotr.HediffCompProperties_ForcedSleep" />

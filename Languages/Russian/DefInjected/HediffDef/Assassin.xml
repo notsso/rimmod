@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Assassin9_Hediff.label>Ассасин</Assassin9_Hediff.label>
+    <Assassin9_Hediff.description>Этот человек стал Потусторонним 9 последовательности - ассасин.</Assassin9_Hediff.description>
+    <Assassin8_Hediff.label>Подстрекатель</Assassin8_Hediff.label>
+    <Assassin8_Hediff.description>Этот человек стал Потусторонним 8 последовательности - подстрекатель.</Assassin8_Hediff.description>
+    <Assassin7_Hediff.label>Ведьма</Assassin7_Hediff.label>
+    <Assassin7_Hediff.description>Этот человек стал Потусторонним 7 последовательности - ведьма.</Assassin7_Hediff.description>
+    <Assassin6_Hediff.label>Демонесса наслаждения</Assassin6_Hediff.label>
+    <Assassin6_Hediff.description>Этот человек стал Потусторонним 6 последовательности - демонесса наслаждения.</Assassin6_Hediff.description>
+    <Assassin5_Hediff.label>Демонесса страданий</Assassin5_Hediff.label>
+    <Assassin5_Hediff.description>Этот человек стал Потусторонним 5 последовательности - демонесса страданий.</Assassin5_Hediff.description>
+    <Assassin4_Hediff.label>Демонесса отчаяния</Assassin4_Hediff.label>
+    <Assassin4_Hediff.description>Этот человек стал Потусторонним 4 последовательности - демонесса отчаяния.</Assassin4_Hediff.description>
+
+    <Assassin4_Hediff.stages.0.label>лох</Assassin4_Hediff.stages.0.label>
+    <Assassin4_Hediff.stages.1.label>нормик</Assassin4_Hediff.stages.1.label>
+    <Assassin4_Hediff.stages.2.label>смешарик</Assassin4_Hediff.stages.2.label>
+
+    <Assassin5_Hediff.stages.0.label>лох</Assassin5_Hediff.stages.0.label>
+    <Assassin5_Hediff.stages.1.label>нормик</Assassin5_Hediff.stages.1.label>
+    <Assassin5_Hediff.stages.2.label>смешарик</Assassin5_Hediff.stages.2.label>
+
+    <Assassin6_Hediff.stages.0.label>лох</Assassin6_Hediff.stages.0.label>
+    <Assassin6_Hediff.stages.1.label>нормик</Assassin6_Hediff.stages.1.label>
+    <Assassin6_Hediff.stages.2.label>смешарик</Assassin6_Hediff.stages.2.label>
+
+    <Assassin7_Hediff.stages.0.label>лох</Assassin7_Hediff.stages.0.label>
+    <Assassin7_Hediff.stages.1.label>нормик</Assassin7_Hediff.stages.1.label>
+    <Assassin7_Hediff.stages.2.label>смешарик</Assassin7_Hediff.stages.2.label>
+
+    <Assassin8_Hediff.stages.0.label>лох</Assassin8_Hediff.stages.0.label>
+    <Assassin8_Hediff.stages.1.label>нормик</Assassin8_Hediff.stages.1.label>
+    <Assassin8_Hediff.stages.2.label>смешарик</Assassin8_Hediff.stages.2.label>
+
+    <Assassin9_Hediff.stages.0.label>лох</Assassin9_Hediff.stages.0.label>
+    <Assassin9_Hediff.stages.1.label>нормик</Assassin9_Hediff.stages.1.label>
+    <Assassin9_Hediff.stages.2.label>смешарик</Assassin9_Hediff.stages.2.label>
+    
+</LanguageData>

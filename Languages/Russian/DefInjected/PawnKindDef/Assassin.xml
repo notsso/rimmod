@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Beyonder_Assassin9.label>потусторонний ассасин</Beyonder_Assassin9.label>
+    <Beyonder_Assassin8.label>потусторонний подстрекатель</Beyonder_Assassin8.label>
+    <Beyonder_Assassin7.label>потусторонняя ведьма</Beyonder_Assassin7.label>
+    <Beyonder_Assassin6.label>потусторонняя демонесса наслаждения</Beyonder_Assassin6.label>
+    <Beyonder_Assassin5.label>потусторонняя демонесса страданий</Beyonder_Assassin5.label>
+    <Beyonder_Assassin4.label>потусторонняя демонесса отчаяния</Beyonder_Assassin4.label>
+
+    <lotr_AbyssDemonicFish.label>бездонная демоническая рыба</lotr_AbyssDemonicFish.label>
+    <lotr_AgatePeacock.label>агатовый павлин</lotr_AgatePeacock.label>
+    <lotr_BlackWidowSpider.label>чёрная вдова</lotr_BlackWidowSpider.label>
+    <lotr_DarkProwler.label>тёмный хищник</lotr_DarkProwler.label>
+    <lotr_DemonThroatHoneyguide.label>демонический медоуказчик</lotr_DemonThroatHoneyguide.label>
+    <lotr_FlowerFacedBat.label>цветколицая летучая мышь</lotr_FlowerFacedBat.label>
+    <lotr_PlagueMotherSerpent.label>чумная мать-змея</lotr_PlagueMotherSerpent.label>
+    <lotr_SerpentMonsterBird.label>птица-монстр со змеиным телом</lotr_SerpentMonsterBird.label>
+    <lotr_SilverHunter.label>серебряный охотник</lotr_SilverHunter.label>
+    <lotr_Succubus.label>суккуб</lotr_Succubus.label>
+    <lotr_TwoTailedBlackSnake.label>двухвостая чёрная змея</lotr_TwoTailedBlackSnake.label>
+
+</LanguageData>

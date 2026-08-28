@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <BloodRedChestnutGrove_Site.label>кроваво-красная каштановая роща</BloodRedChestnutGrove_Site.label>
+    <BloodRedChestnutGrove_Site.description>Роща кроваво-красных каштанов, окружённая духами.</BloodRedChestnutGrove_Site.description>
+
+    <CorpseLilyMarsh_Site.label>болото трупных лилий</CorpseLilyMarsh_Site.label>
+    <CorpseLilyMarsh_Site.description>Болото, заполненное трупными лилиями и беспокойными духами.</CorpseLilyMarsh_Site.description>
+
+    <FireSalamanderRuins_Site.label>руины огненной саламандры</FireSalamanderRuins_Site.label>
+    <FireSalamanderRuins_Site.description>Пустынные руины, охраняемые огненной саламандрой.</FireSalamanderRuins_Site.description>
+
+    <DesertRuins_Site.label>пустынные руины</DesertRuins_Site.label>
+    <DesertRuins_Site.description>Знойная пустыня с древними каменными руинами в сердце.</DesertRuins_Site.description>
+
+    <SpiderForest_Site.label>паучий лес</SpiderForest_Site.label>
+    <SpiderForest_Site.description>Лес, окутанный туманом, кишащий гигантским пауком.</SpiderForest_Site.description>
+
+    <TemperateForest_Site.label>умеренный лес</TemperateForest_Site.label>
+    <TemperateForest_Site.description>Лес, окутанный туманом, со зловещим присутствием в его сердце.</TemperateForest_Site.description>
+
+    <MysticalMarsh_Site.label>мистическое болото</MysticalMarsh_Site.label>
+    <MysticalMarsh_Site.description>Болото наполнено мистической энергией.</MysticalMarsh_Site.description>
+
+    <StoneofCatastropheSanctuary_Site.label>святилище камня катастрофы</StoneofCatastropheSanctuary_Site.label>
+    <StoneofCatastropheSanctuary_Site.description>Огромный лабиринт, охраняемый могущественными духами.</StoneofCatastropheSanctuary_Site.description>
+
+    <JungleParrot_Site.label>джунглевый попугай</JungleParrot_Site.label>
+    <JungleParrot_Site.description>Тропические джунгли, населённые опасным попугаем.</JungleParrot_Site.description>
+
+    <JungleCabin_Site.label>хижина в джунглях</JungleCabin_Site.label>
+    <JungleCabin_Site.description>Густой тропический лес с разрушенной хижиной.</JungleCabin_Site.description>
+
+    <StrangeVolcano_Site.label>вулканический регион</StrangeVolcano_Site.label>
+    <StrangeVolcano_Site.description>Вулканическая местность с таинственным логовом в центре.</StrangeVolcano_Site.description>
+
+    <MagmaGiantVolcano_Site.label>вулкан магмового гиганта</MagmaGiantVolcano_Site.label>
+    <MagmaGiantVolcano_Site.description>Вулканическая местность, охраняемая магмовым гигантом.</MagmaGiantVolcano_Site.description>
+
+</LanguageData>

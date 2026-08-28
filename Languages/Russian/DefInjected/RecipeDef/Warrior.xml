@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Warrior9_PotionRecipe.label>сварить зелье воина</Warrior9_PotionRecipe.label>
+    <Warrior9_PotionRecipe.description>Сварить таинственное зелье пути Воина.</Warrior9_PotionRecipe.description>
+    <Warrior9_PotionRecipe.jobString>Варка зелья воина.</Warrior9_PotionRecipe.jobString>
+    <Warrior9_PotionRecipe_Alt.label>сварить зелье воина (альтернатива)</Warrior9_PotionRecipe_Alt.label>
+    <Warrior9_PotionRecipe_Alt.description>Сварить таинственное зелье пути Воина, используя одну эссенцию.</Warrior9_PotionRecipe_Alt.description>
+    <Warrior9_PotionRecipe_Alt.jobString>Варка зелья воина.</Warrior9_PotionRecipe_Alt.jobString>
+
+    <Warrior8_PotionRecipe.label>сварить зелье гладиатора</Warrior8_PotionRecipe.label>
+    <Warrior8_PotionRecipe.description>Сварить таинственное зелье пути Воина.</Warrior8_PotionRecipe.description>
+    <Warrior8_PotionRecipe.jobString>Варка зелья гладиатора.</Warrior8_PotionRecipe.jobString>
+    <Warrior8_PotionRecipe_Alt.label>сварить зелье гладиатора (альтернатива)</Warrior8_PotionRecipe_Alt.label>
+    <Warrior8_PotionRecipe_Alt.description>Сварить таинственное зелье пути Воина, используя одну эссенцию.</Warrior8_PotionRecipe_Alt.description>
+    <Warrior8_PotionRecipe_Alt.jobString>Варка зелья гладиатора.</Warrior8_PotionRecipe_Alt.jobString>
+
+    <Warrior7_PotionRecipe.label>сварить зелье мастера оружия</Warrior7_PotionRecipe.label>
+    <Warrior7_PotionRecipe.description>Сварить таинственное зелье пути Воина.</Warrior7_PotionRecipe.description>
+    <Warrior7_PotionRecipe.jobString>Варка зелья мастера оружия.</Warrior7_PotionRecipe.jobString>
+    <Warrior7_PotionRecipe_Alt.label>сварить зелье мастера оружия (альтернатива)</Warrior7_PotionRecipe_Alt.label>
+    <Warrior7_PotionRecipe_Alt.description>Сварить таинственное зелье пути Воина, используя одну эссенцию.</Warrior7_PotionRecipe_Alt.description>
+    <Warrior7_PotionRecipe_Alt.jobString>Варка зелья мастера оружия.</Warrior7_PotionRecipe_Alt.jobString>
+
+    <Warrior6_PotionRecipe.label>сварить зелье рассветного паладина</Warrior6_PotionRecipe.label>
+    <Warrior6_PotionRecipe.description>Сварить таинственное зелье пути Воина.</Warrior6_PotionRecipe.description>
+    <Warrior6_PotionRecipe.jobString>Варка зелья рассветного паладина.</Warrior6_PotionRecipe.jobString>
+    <Warrior6_PotionRecipe_Alt.label>сварить зелье рассветного паладина (альтернатива)</Warrior6_PotionRecipe_Alt.label>
+    <Warrior6_PotionRecipe_Alt.description>Сварить таинственное зелье пути Воина, используя одну эссенцию.</Warrior6_PotionRecipe_Alt.description>
+    <Warrior6_PotionRecipe_Alt.jobString>Варка зелья рассветного паладина.</Warrior6_PotionRecipe_Alt.jobString>
+
+    <Warrior5_PotionRecipe.label>сварить зелье хранителя</Warrior5_PotionRecipe.label>
+    <Warrior5_PotionRecipe.description>Сварить таинственное зелье пути Воина.</Warrior5_PotionRecipe.description>
+    <Warrior5_PotionRecipe.jobString>Варка зелья хранителя.</Warrior5_PotionRecipe.jobString>
+    <Warrior5_PotionRecipe_Alt.label>сварить зелье хранителя (альтернатива)</Warrior5_PotionRecipe_Alt.label>
+    <Warrior5_PotionRecipe_Alt.description>Сварить таинственное зелье пути Воина, используя одну эссенцию.</Warrior5_PotionRecipe_Alt.description>
+    <Warrior5_PotionRecipe_Alt.jobString>Варка зелья хранителя.</Warrior5_PotionRecipe_Alt.jobString>
+
+    <Warrior4_PotionRecipe.label>сварить зелье охотника на демонов</Warrior4_PotionRecipe.label>
+    <Warrior4_PotionRecipe.description>Сварить таинственное зелье пути Воина.</Warrior4_PotionRecipe.description>
+    <Warrior4_PotionRecipe.jobString>Варка зелья охотника на демонов.</Warrior4_PotionRecipe.jobString>
+    <Warrior4_PotionRecipe_Alt.label>сварить зелье охотника на демонов (альтернатива)</Warrior4_PotionRecipe_Alt.label>
+    <Warrior4_PotionRecipe_Alt.description>Сварить таинственное зелье пути Воина, используя одну эссенцию.</Warrior4_PotionRecipe_Alt.description>
+    <Warrior4_PotionRecipe_Alt.jobString>Варка зелья охотника на демонов.</Warrior4_PotionRecipe_Alt.jobString>
+    
+</LanguageData>

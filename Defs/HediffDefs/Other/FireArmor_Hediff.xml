@@ -6,8 +6,8 @@
         <hediffClass>lotr.Hediff_FireLight</hediffClass>
 
         <defName>Hediff_FireArmor</defName>
-        <label>огненный покров</label>
-        <description>Тело пешки окутано мистическим пламенем, защищающим от внешних угроз.</description>
+        <label>fire armor</label>
+        <description>Pawn is shrouded in mystical flames, protecting it from external threats.</description>
         <isBad>false</isBad>
 
     </HediffDef>
@@ -15,7 +15,7 @@
     <!-- Уровень 7 -->
     <HediffDef ParentName="Hediff_FireArmor">
         <defName>Hediff_FireArmor_7S</defName>
-        <label>огненный покров</label>
+        <label>fire armor</label>
 
         <comps>
             <li Class="HediffCompProperties_Disappears">
@@ -44,7 +44,7 @@
     <!-- Уровень 6 -->
     <HediffDef ParentName="Hediff_FireArmor">
         <defName>Hediff_FireArmor_6S</defName>
-        <label>огненный покров</label>
+        <label>fire armor</label>
 
         <comps>
             <li Class="HediffCompProperties_Disappears">
@@ -72,7 +72,7 @@
     <!-- Уровень 5 -->
     <HediffDef ParentName="Hediff_FireArmor">
         <defName>Hediff_FireArmor_5S</defName>
-        <label>огненный покров</label>
+        <label>fire armor</label>
 
         <comps>
             <li Class="HediffCompProperties_Disappears">
@@ -100,7 +100,7 @@
     <!-- Уровень 4 -->
     <HediffDef ParentName="Hediff_FireArmor">
         <defName>Hediff_FireArmor_4S</defName>
-        <label>огненный покров</label>
+        <label>fire armor</label>
 
         <comps>
             <li Class="HediffCompProperties_Disappears">

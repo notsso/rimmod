@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_BlazingSword"  Abstract="True">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_BlazingSword" Abstract="True">
         
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         
         <defName>Cast_BlazingSword</defName>
-        <label>призыв пламенного клинка</label>
-        <description>Концентрирует духовную энергию, материализуя в руках заклинателя легендарный огненный меч. Если в руках было другое оружие, оно автоматически убирается в инвентарь.</description>
+        <label>Blazing sword</label>
+        <description>Concentrates spiritual energy, materializing a legendary fiery sword in the caster's hands. If another weapon was wielded, it is automatically stored in the caster's inventory.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_BlazingSword</iconPath> 
         
         <aiCanUse>false</aiCanUse> <!-- TODO? -->
@@ -38,9 +38,9 @@
     <!-- Уровень 7 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_BlazingSword">
         <defName>Cast_BlazingSword_7S</defName>
-        <label>призыв пламенного клинка</label>
         <cooldownTicksRange>7200</cooldownTicksRange>
         <spiritualityCost>50.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_SummonWeapon">
                 <weaponDef>Melee_BlazingSword_7S</weaponDef>
@@ -55,9 +55,9 @@
     <!-- Уровень 6 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_BlazingSword">
         <defName>Cast_BlazingSword_6S</defName>
-        <label>призыв пламенного клинка</label>
         <cooldownTicksRange>3600</cooldownTicksRange>
         <spiritualityCost>100.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_SummonWeapon">
                 <weaponDef>Melee_BlazingSword_6S</weaponDef>
@@ -72,9 +72,9 @@
     <!-- Уровень 5 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_BlazingSword">
         <defName>Cast_BlazingSword_5S</defName>
-        <label>призыв пламенного клинка</label>
         <cooldownTicksRange>1800</cooldownTicksRange>
         <spiritualityCost>150.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_SummonWeapon">
                 <weaponDef>Melee_BlazingSword_5S</weaponDef>
@@ -89,9 +89,9 @@
     <!-- Уровень 4 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_BlazingSword">
         <defName>Cast_BlazingSword_4S</defName>
-        <label>призыв пламенного клинка</label>
         <cooldownTicksRange>600</cooldownTicksRange>
         <spiritualityCost>300.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_SummonWeapon">
                 <weaponDef>Melee_BlazingSword_4S</weaponDef>

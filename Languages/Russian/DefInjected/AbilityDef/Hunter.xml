@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <!-- Blazing Spear -->
+    <Cast_BlazingSpear_7S.label>Копье огня</Cast_BlazingSpear_7S.label>
+    <Cast_BlazingSpear_7S.description>Создание и бросок сверхмощного, сжатого снаряда из пламени, который пробивает броню и взрывается при попадании.</Cast_BlazingSpear_7S.description>
+    <Cast_BlazingSpear_6S.label>Копье огня</Cast_BlazingSpear_6S.label>
+    <Cast_BlazingSpear_6S.description>Создание и бросок сверхмощного, сжатого снаряда из пламени, который пробивает броню и взрывается при попадании.</Cast_BlazingSpear_6S.description>
+    <Cast_BlazingSpear_5S.label>Копье огня</Cast_BlazingSpear_5S.label>
+    <Cast_BlazingSpear_5S.description>Создание и бросок сверхмощного, сжатого снаряда из пламени, который пробивает броню и взрывается при попадании.</Cast_BlazingSpear_5S.description>
+    <Cast_BlazingSpear_4S.label>Копье огня</Cast_BlazingSpear_4S.label>
+    <Cast_BlazingSpear_4S.description>Создание и бросок сверхмощного, сжатого снаряда из пламени, который пробивает броню и взрывается при попадании.</Cast_BlazingSpear_4S.description>
+
+    <!-- Blazing Sword -->
+    <Cast_BlazingSword_7S.label>Призыв пламенного клинка</Cast_BlazingSword_7S.label>
+    <Cast_BlazingSword_7S.description>Концентрирует духовную энергию, материализуя в руках заклинателя легендарный огненный меч. Если в руках было другое оружие, оно автоматически убирается в инвентарь.</Cast_BlazingSword_7S.description>
+    <Cast_BlazingSword_6S.label>Призыв пламенного клинка</Cast_BlazingSword_6S.label>
+    <Cast_BlazingSword_6S.description>Концентрирует духовную энергию, материализуя в руках заклинателя легендарный огненный меч. Если в руках было другое оружие, оно автоматически убирается в инвентарь.</Cast_BlazingSword_6S.description>
+    <Cast_BlazingSword_5S.label>Призыв пламенного клинка</Cast_BlazingSword_5S.label>
+    <Cast_BlazingSword_5S.description>Концентрирует духовную энергию, материализуя в руках заклинателя легендарный огненный меч. Если в руках было другое оружие, оно автоматически убирается в инвентарь.</Cast_BlazingSword_5S.description>
+    <Cast_BlazingSword_4S.label>Призыв пламенного клинка</Cast_BlazingSword_4S.label>
+    <Cast_BlazingSword_4S.description>Концентрирует духовную энергию, материализуя в руках заклинателя легендарный огненный меч. Если в руках было другое оружие, оно автоматически убирается в инвентарь.</Cast_BlazingSword_4S.description>
+
+    <!-- Confusion -->
+    <Cast_Confusion_6S.label>Замешательство</Cast_Confusion_6S.label>
+    <Cast_Confusion_6S.description>Дезориентирует врага, заставляя его путаться.</Cast_Confusion_6S.description>
+    <Cast_Confusion_5S.label>Замешательство</Cast_Confusion_5S.label>
+    <Cast_Confusion_5S.description>Дезориентирует врага, заставляя его путаться.</Cast_Confusion_5S.description>
+    <Cast_Confusion_4S.label>Замешательство</Cast_Confusion_4S.label>
+    <Cast_Confusion_4S.description>Дезориентирует врага, заставляя его путаться.</Cast_Confusion_4S.description>
+
+    <!-- Execution -->
+    <Cast_Execution_5S.label>Казнь</Cast_Execution_5S.label>
+    <Cast_Execution_5S.description>Создание и бросок сверхмощного, сверхсжатого снаряда из белого пламени. Снаряд пропитан эссенцией смерти, пробивает броню и способен ранить полубогов.</Cast_Execution_5S.description>
+    <Cast_Execution_4S.label>Казнь</Cast_Execution_4S.label>
+    <Cast_Execution_4S.description>Создание и бросок сверхмощного, сверхсжатого снаряда из белого пламени. Снаряд пропитан эссенцией смерти, пробивает броню и способен ранить полубогов.</Cast_Execution_4S.description>
+
+    <!-- Extinguish Fire -->
+    <Cast_ExtinguishFire_7S.label>Тушение огня</Cast_ExtinguishFire_7S.label>
+    <Cast_ExtinguishFire_7S.description>Погасить все пожары в радиусе.</Cast_ExtinguishFire_7S.description>
+    <Cast_ExtinguishFire_6S.label>Тушение огня</Cast_ExtinguishFire_6S.label>
+    <Cast_ExtinguishFire_6S.description>Погасить все пожары в радиусе.</Cast_ExtinguishFire_6S.description>
+    <Cast_ExtinguishFire_5S.label>Тушение огня</Cast_ExtinguishFire_5S.label>
+    <Cast_ExtinguishFire_5S.description>Погасить все пожары в радиусе.</Cast_ExtinguishFire_5S.description>
+    <Cast_ExtinguishFire_4S.label>Тушение огня</Cast_ExtinguishFire_4S.label>
+    <Cast_ExtinguishFire_4S.description>Погасить все пожары в радиусе.</Cast_ExtinguishFire_4S.description>
+
+    <!-- Fire Armor -->
+    <Cast_FireArmor_7S.label>Огненная броня</Cast_FireArmor_7S.label>
+    <Cast_FireArmor_7S.description>Создает плотный огненный покров вокруг тела, который плавит снаряды, согревает в любой мороз и сжигает ядовитые газы на подлете.</Cast_FireArmor_7S.description>
+    <Cast_FireArmor_6S.label>Огненная броня</Cast_FireArmor_6S.label>
+    <Cast_FireArmor_6S.description>Создает плотный огненный покров вокруг тела, который плавит снаряды, согревает в любой мороз и сжигает ядовитые газы на подлете.</Cast_FireArmor_6S.description>
+    <Cast_FireArmor_5S.label>Огненная броня</Cast_FireArmor_5S.label>
+    <Cast_FireArmor_5S.description>Создает плотный огненный покров вокруг тела, который плавит снаряды, согревает в любой мороз и сжигает ядовитые газы на подлете.</Cast_FireArmor_5S.description>
+    <Cast_FireArmor_4S.label>Огненная броня</Cast_FireArmor_4S.label>
+    <Cast_FireArmor_4S.description>Создает плотный огненный покров вокруг тела, который плавит снаряды, согревает в любой мороз и сжигает ядовитые газы на подлете.</Cast_FireArmor_4S.description>
+
+    <!-- Fireball -->
+    <Cast_Fireball_7S.label>Огненный шар</Cast_Fireball_7S.label>
+    <Cast_Fireball_7S.description>Кусок огня.</Cast_Fireball_7S.description>
+    <Cast_Fireball_6S.label>Огненный шар</Cast_Fireball_6S.label>
+    <Cast_Fireball_6S.description>Кусок огня.</Cast_Fireball_6S.description>
+    <Cast_Fireball_5S.label>Огненный шар</Cast_Fireball_5S.label>
+    <Cast_Fireball_5S.description>Кусок огня.</Cast_Fireball_5S.description>
+    <Cast_Fireball_4S.label>Огненный шар</Cast_Fireball_4S.label>
+    <Cast_Fireball_4S.description>Кусок огня.</Cast_Fireball_4S.description>
+
+    <!-- Fire Jump -->
+    <Cast_FireJump_6S.label>Огненный прыжок</Cast_FireJump_6S.label>
+    <Cast_FireJump_6S.description>Превратиться в сгусток пламени и переместиться в указанную точку.</Cast_FireJump_6S.description>
+    <Cast_FireJump_5S.label>Огненный прыжок</Cast_FireJump_5S.label>
+    <Cast_FireJump_5S.description>Превратиться в сгусток пламени и переместиться в указанную точку.</Cast_FireJump_5S.description>
+    <Cast_FireJump_4S.label>Огненный прыжок</Cast_FireJump_4S.label>
+    <Cast_FireJump_4S.description>Превратиться в сгусток пламени и переместиться в указанную точку.</Cast_FireJump_4S.description>
+
+    <!-- Fire Ravens -->
+    <Cast_FireRavens_7S.label>Огненные вороны</Cast_FireRavens_7S.label>
+    <Cast_FireRavens_7S.description>Создает мистическую ворону из пламени вокруг заклинателя, атакующий врагов поблизости.</Cast_FireRavens_7S.description>
+    <Cast_FireRavens_6S.label>Огненные вороны</Cast_FireRavens_6S.label>
+    <Cast_FireRavens_6S.description>Создает мистическую ворону из пламени вокруг заклинателя, атакующий врагов поблизости.</Cast_FireRavens_6S.description>
+    <Cast_FireRavens_5S.label>Огненные вороны</Cast_FireRavens_5S.label>
+    <Cast_FireRavens_5S.description>Создает мистическую ворону из пламени вокруг заклинателя, атакующий врагов поблизости.</Cast_FireRavens_5S.description>
+    <Cast_FireRavens_4S.label>Огненные вороны</Cast_FireRavens_4S.label>
+    <Cast_FireRavens_4S.description>Создает мистическую ворону из пламени вокруг заклинателя, атакующий врагов поблизости.</Cast_FireRavens_4S.description>
+
+    <!-- Firestorm -->
+    <Cast_Firestorm_4S.label>Огненный шторм</Cast_Firestorm_4S.label>
+    <Cast_Firestorm_4S.description>Смертоносный огненный шторм.</Cast_Firestorm_4S.description>
+
+    <!-- Firewave -->
+    <Cast_Firewave_4S.label>Волна огня</Cast_Firewave_4S.label>
+    <Cast_Firewave_4S.description>Поджигает все вокруг.</Cast_Firewave_4S.description>
+
+    <!-- Incite -->
+    <Cast_Incite_6S.label>Подстрекательство</Cast_Incite_6S.label>
+    <Cast_Incite_6S.description>Заставляет врага впасть в бешенство.</Cast_Incite_6S.description>
+    <Cast_Incite_5S.label>Подстрекательство</Cast_Incite_5S.label>
+    <Cast_Incite_5S.description>Заставляет врага впасть в бешенство.</Cast_Incite_5S.description>
+    <Cast_Incite_4S.label>Подстрекательство</Cast_Incite_4S.label>
+    <Cast_Incite_4S.description>Заставляет врага впасть в бешенство.</Cast_Incite_4S.description>
+
+    <!-- Iron Blood Army -->
+    <Cast_IronBloodArmy_4S.label>Огненная кровь</Cast_IronBloodArmy_4S.label>
+    <Cast_IronBloodArmy_4S.description>Увеличиват силу всех союзных пешек вокруг рыцаря.</Cast_IronBloodArmy_4S.description>
+
+    <!-- Taunt -->
+    <Cast_Taunt_8S.label>Провокация</Cast_Taunt_8S.label>
+    <Cast_Taunt_8S.description>Привлекает внимание противника, заставляя его атаковать вас в ближнем бою.</Cast_Taunt_8S.description>
+    <Cast_Taunt_7S.label>Провокация</Cast_Taunt_7S.label>
+    <Cast_Taunt_7S.description>Привлекает внимание противника, заставляя его атаковать вас в ближнем бою.</Cast_Taunt_7S.description>
+    <Cast_Taunt_6S.label>Провокация</Cast_Taunt_6S.label>
+    <Cast_Taunt_6S.description>Привлекает внимание противника, заставляя его атаковать вас в ближнем бою.</Cast_Taunt_6S.description>
+    <Cast_Taunt_5S.label>Провокация</Cast_Taunt_5S.label>
+    <Cast_Taunt_5S.description>Привлекает внимание противника, заставляя его атаковать вас в ближнем бою.</Cast_Taunt_5S.description>
+    <Cast_Taunt_4S.label>Провокация</Cast_Taunt_4S.label>
+    <Cast_Taunt_4S.description>Привлекает внимание противника, заставляя его атаковать вас в ближнем бою.</Cast_Taunt_4S.description>
+
+    <!-- Vulnerability -->
+    <Cast_Vulnerability_5S.label>Уязвимость</Cast_Vulnerability_5S.label>
+    <Cast_Vulnerability_5S.description>Находит и обозначает на враге уязвимость.</Cast_Vulnerability_5S.description>
+    <Cast_Vulnerability_4S.label>Уязвимость</Cast_Vulnerability_4S.label>
+    <Cast_Vulnerability_4S.description>Находит и обозначает на враге уязвимость.</Cast_Vulnerability_4S.description>
+
+</LanguageData>

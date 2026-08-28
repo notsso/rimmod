@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
     
-    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Firestorm">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_Firestorm" Abstract="True">
 
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         
         <defName>Cast_Firestorm</defName>
-        <label>огненный шторм</label>
-        <description>смертоносный огненный шторм</description>
+        <label>Firestorm</label>
+        <description>Summon deadly firestorm.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_Firestorm</iconPath>
 
         <aiCanUse>false</aiCanUse> <!-- TODO? -->
@@ -42,9 +42,9 @@
     <!-- Уровень 4 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_Firestorm">
         <defName>Cast_Firestorm_4S</defName>
-        <label>огненный шторм</label>
         <cooldownTicksRange>12000</cooldownTicksRange>
         <spiritualityCost>1000.0</spiritualityCost>
+        
         <comps>
             <li Class="lotr.CompProperties_Firestorm">
                 <lifeTicks>300</lifeTicks>

@@ -6,7 +6,7 @@
         <needClass>lotr.Need_Spirituality</needClass>
         <label>spirituality</label>
         <description>Amount of beyonder energy.</description>
-        <listPriority>500</listPriority> <!-- Позиция шкалы в списке (выше или ниже еды) -->
+        <listPriority>500</listPriority>
         <major>true</major>
     </NeedDef>
 

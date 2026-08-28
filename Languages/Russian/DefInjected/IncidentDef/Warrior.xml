@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <BlueGiantLair_Incident.label>руины синего гиганта</BlueGiantLair_Incident.label>
+    <BlueGiantLair_Incident.letterLabel>Руины синего гиганта</BlueGiantLair_Incident.letterLabel>
+    <BlueGiantLair_Incident.letterText>Обнаружены древние руины, восстановленные неизвестными руками. Теперь их охраняет синий гигант.</BlueGiantLair_Incident.letterText>
+
+    <DawnGiantLair_Incident.label>деревня рассветного гиганта</DawnGiantLair_Incident.label>
+    <DawnGiantLair_Incident.letterLabel>Деревня рассветного гиганта</DawnGiantLair_Incident.letterLabel>
+    <DawnGiantLair_Incident.letterText>Обнаружена большая деревня гигантов, управляемая Рассветным Гигантом.</DawnGiantLair_Incident.letterText>
+
+    <DivineGiantLair_Incident.label>дворец божественного гиганта</DivineGiantLair_Incident.label>
+    <DivineGiantLair_Incident.letterLabel>Дворец божественного гиганта</DivineGiantLair_Incident.letterLabel>
+    <DivineGiantLair_Incident.letterText>Воздвигнут огромный дворец Божественного Гиганта с дорогами, ведущими во все стороны.</DivineGiantLair_Incident.letterText>
+
+    <GiantSquireLair_Incident.label>логово гигантского оруженосца</GiantSquireLair_Incident.label>
+    <GiantSquireLair_Incident.letterLabel>Логово гигантского оруженосца</GiantSquireLair_Incident.letterLabel>
+    <GiantSquireLair_Incident.letterText>В дикой местности появился каменный дом. Теперь в нём обитает грозный гигантский оруженосец.</GiantSquireLair_Incident.letterText>
+
+    <GiantWarriorLair_Incident.label>логово гигантского воина</GiantWarriorLair_Incident.label>
+    <GiantWarriorLair_Incident.letterLabel>Логово гигантского воина</GiantWarriorLair_Incident.letterLabel>
+    <GiantWarriorLair_Incident.letterText>В дикой местности появилась грубая деревянная хижина. Свирепый гигантский воин сделал её своим логовом.</GiantWarriorLair_Incident.letterText>
+
+    <GreyGiantLair_Incident.label>дворец серого гиганта</GreyGiantLair_Incident.label>
+    <GreyGiantLair_Incident.letterLabel>Дворец серого гиганта</GreyGiantLair_Incident.letterLabel>
+    <GreyGiantLair_Incident.letterText>Замечен небольшой дворец Серого Гиганта, окружённый меньшими жилищами.</GreyGiantLair_Incident.letterText>
+
+</LanguageData>

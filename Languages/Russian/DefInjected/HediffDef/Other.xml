@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <!-- Sunset Light Debuff -->
+    <SunsetLightDebuff.label>Сияние закатного света</SunsetLightDebuff.label>
+    <SunsetLightDebuff.description>Этот поселенец страдает от закатного света.</SunsetLightDebuff.description>
+    <SunsetLightDebuff.stages.0.label>Слабость</SunsetLightDebuff.stages.0.label>
+    <SunsetLightDebuff.stages.1.label>Страдание</SunsetLightDebuff.stages.1.label>
+    <SunsetLightDebuff.stages.2.label>Истощение</SunsetLightDebuff.stages.2.label>
+
+    <!-- Sunset Light Armor --><!--
+    <Hediff_SunsetLightArmor.label>Закатная броня</Hediff_SunsetLightArmor.label>
+    <Hediff_SunsetLightArmor.description>Этот поселенец защищён закатной бронёй рассветного паладина.</Hediff_SunsetLightArmor.description>
+    -->
+    <Hediff_SunsetLightArmor_6S.label>закатная броня</Hediff_SunsetLightArmor_6S.label>
+    <Hediff_SunsetLightArmor_6S.description>Этот поселенец защищён закатной бронёй рассветного паладина.</Hediff_SunsetLightArmor_6S.description>
+    <Hediff_SunsetLightArmor_5S.label>закатная броня</Hediff_SunsetLightArmor_5S.label>
+    <Hediff_SunsetLightArmor_5S.description>Этот поселенец защищён закатной бронёй рассветного паладина.</Hediff_SunsetLightArmor_5S.description>
+    <Hediff_SunsetLightArmor_4S.label>закатная броня</Hediff_SunsetLightArmor_4S.label>
+    <Hediff_SunsetLightArmor_4S.description>Этот поселенец защищён закатной бронёй рассветного паладина.</Hediff_SunsetLightArmor_4S.description>
+    <Hediff_SunsetLightArmor_6S.stages.0.label>Активна</Hediff_SunsetLightArmor_6S.stages.0.label>
+    <Hediff_SunsetLightArmor_5S.stages.0.label>Активна</Hediff_SunsetLightArmor_5S.stages.0.label>
+    <Hediff_SunsetLightArmor_4S.stages.0.label>Активна</Hediff_SunsetLightArmor_4S.stages.0.label>
+
+    <!-- Sunset Hurricane --> <!--
+    <Hediff_SunsetHurricane.label>Закатный ураган</Hediff_SunsetHurricane.label>
+    <Hediff_SunsetHurricane.description>Закатные осколки ранят врагов вокруг этого поселенца.</Hediff_SunsetHurricane.description>
+    -->
+    <Hediff_SunsetHurricane_6S.label>закатный ураган</Hediff_SunsetHurricane_6S.label>
+    <Hediff_SunsetHurricane_6S.description>Закатные осколки ранят врагов вокруг этого поселенца.</Hediff_SunsetHurricane_6S.description>
+    <Hediff_SunsetHurricane_5S.label>закатный ураган</Hediff_SunsetHurricane_5S.label>
+    <Hediff_SunsetHurricane_5S.description>Закатные осколки ранят врагов вокруг этого поселенца.</Hediff_SunsetHurricane_5S.description>
+    <Hediff_SunsetHurricane_4S.label>закатный ураган</Hediff_SunsetHurricane_4S.label>
+    <Hediff_SunsetHurricane_4S.description>Закатные осколки ранят врагов вокруг этого поселенца.</Hediff_SunsetHurricane_4S.description>
+
+    <!-- Guard --> <!--
+    <Hediff_Guard.label>Защита</Hediff_Guard.label>
+    <Hediff_Guard.description>Этот поселенец защищает ближайших поселенцев.</Hediff_Guard.description>
+    -->
+    <Hediff_Guard_5S.label>защита</Hediff_Guard_5S.label>
+    <Hediff_Guard_5S.description>Этот поселенец защищает ближайших поселенцев.</Hediff_Guard_5S.description>
+    <Hediff_Guard_4S.label>защита</Hediff_Guard_4S.label>
+    <Hediff_Guard_4S.description>Этот поселенец защищает ближайших поселенцев.</Hediff_Guard_4S.description>
+    <Hediff_Guard_5S.stages.0.label>Активна</Hediff_Guard_5S.stages.0.label>
+    <Hediff_Guard_4S.stages.0.label>Активна</Hediff_Guard_4S.stages.0.label>
+
+    <!-- Pawn Guarded --> <!--
+    <Hediff_PawnGuarded.label>Под защитой</Hediff_PawnGuarded.label>
+    <Hediff_PawnGuarded.description>Этот поселенец находится под защитой способности Защита.</Hediff_PawnGuarded.description>
+    -->
+    <Hediff_PawnGuarded_5S.label>под защитой</Hediff_PawnGuarded_5S.label>
+    <Hediff_PawnGuarded_5S.description>Этот поселенец находится под защитой способности Защита.</Hediff_PawnGuarded_5S.description>
+    <Hediff_PawnGuarded_4S.label>под защитой</Hediff_PawnGuarded_4S.label>
+    <Hediff_PawnGuarded_4S.description>Этот поселенец находится под защитой способности Защита.</Hediff_PawnGuarded_4S.description>
+
+    <!-- Sanity Loss -->
+    <lotr_SanityLoss.label>Искажение разума</lotr_SanityLoss.label>
+    <lotr_SanityLoss.description>Потусторонняя энергия Сиквенций выходит из-под контроля, разрушая человеческий разум и перестраивая плоть. Если тяжесть дойдет до максимума, пешка окончательно потеряет человечность.</lotr_SanityLoss.description>
+    <lotr_SanityLoss.stages.0.label>Иллюзии</lotr_SanityLoss.stages.0.label>
+    <lotr_SanityLoss.stages.1.label>Одержимость</lotr_SanityLoss.stages.1.label>
+    <lotr_SanityLoss.stages.2.label>Мутация плоти</lotr_SanityLoss.stages.2.label>
+
+    <!-- Azure Slow -->
+    <lotr_HediffAzureSlow.label>Лазурное замедление</lotr_HediffAzureSlow.label>
+    <lotr_HediffAzureSlow.description>Замедлен лазурным светом.</lotr_HediffAzureSlow.description>
+
+    <!-- Fragile Regenerated Part -->
+    <FragileRegeneratedPart.label>Хрупкая заново выросшая часть тела</FragileRegeneratedPart.label>
+    <FragileRegeneratedPart.description>Недавно регенерированная часть тела, которая всё ещё хрупкая и чувствительная. Она не заживает естественным образом.</FragileRegeneratedPart.description>
+    <FragileRegeneratedPart.stages.0.label>Хрупкая</FragileRegeneratedPart.stages.0.label>
+    <FragileRegeneratedPart.stages.1.label>Чувствительная</FragileRegeneratedPart.stages.1.label>
+    <FragileRegeneratedPart.stages.2.label>Заживающая</FragileRegeneratedPart.stages.2.label>
+    <FragileRegeneratedPart.stages.3.label>Восстанавливающаяся</FragileRegeneratedPart.stages.3.label>
+
+    <!-- Confusion -->
+    <Hediff_Confusion.label>Замешательство</Hediff_Confusion.label>
+    <Hediff_Confusion_6S.label>Замешательство</Hediff_Confusion_6S.label>
+    <Hediff_Confusion_5S.label>Замешательство</Hediff_Confusion_5S.label>
+    <Hediff_Confusion_4S.label>Замешательство</Hediff_Confusion_4S.label>
+    <Hediff_Confusion.description>Пешка находится в замешательстве - она не знает что делать.</Hediff_Confusion.description>
+    <Hediff_Confusion_6S.description>Пешка находится в замешательстве - она не знает что делать.</Hediff_Confusion_6S.description>
+    <Hediff_Confusion_5S.description>Пешка находится в замешательстве - она не знает что делать.</Hediff_Confusion_5S.description>
+    <Hediff_Confusion_4S.description>Пешка находится в замешательстве - она не знает что делать.</Hediff_Confusion_4S.description>
+
+    <!-- Corpse Lily Debuff -->
+    <CorpseLilyDebuff.label>Растительный яд</CorpseLilyDebuff.label>
+    <CorpseLilyDebuff.description>Растение впрыскивает парализующий токсин.</CorpseLilyDebuff.description>
+    <CorpseLilyDebuff.stages.0.label>Лёгкое онемение</CorpseLilyDebuff.stages.0.label>
+    <CorpseLilyDebuff.stages.1.label>Сильное угнетение</CorpseLilyDebuff.stages.1.label>
+    <CorpseLilyDebuff.stages.2.label>Паралич</CorpseLilyDebuff.stages.2.label>
+
+    <!-- Fire Armor -->
+    <Hediff_FireArmor.label>Огненный покров</Hediff_FireArmor.label>
+    <Hediff_FireArmor_7S.label>Огненный покров</Hediff_FireArmor_7S.label>
+    <Hediff_FireArmor_6S.label>Огненный покров</Hediff_FireArmor_6S.label>
+    <Hediff_FireArmor_5S.label>Огненный покров</Hediff_FireArmor_5S.label>
+    <Hediff_FireArmor_4S.label>Огненный покров</Hediff_FireArmor_4S.label>
+    <Hediff_FireArmor.description>Тело пешки окутано мистическим пламенем, защищающим от внешних угроз.</Hediff_FireArmor.description>
+    <Hediff_FireArmor_7S.description>Тело пешки окутано мистическим пламенем, защищающим от внешних угроз.</Hediff_FireArmor_7S.description>
+    <Hediff_FireArmor_6S.description>Тело пешки окутано мистическим пламенем, защищающим от внешних угроз.</Hediff_FireArmor_6S.description>
+    <Hediff_FireArmor_5S.description>Тело пешки окутано мистическим пламенем, защищающим от внешних угроз.</Hediff_FireArmor_5S.description>
+    <Hediff_FireArmor_4S.description>Тело пешки окутано мистическим пламенем, защищающим от внешних угроз.</Hediff_FireArmor_4S.description>
+
+    <!-- Flower of Blood Vitality -->
+    <lotr_HediffFlowerOfBlood.label>Жизненная сила цветка крови</lotr_HediffFlowerOfBlood.label>
+    <lotr_HediffFlowerOfBlood.description>Усиленная регенерация и стойкость, дарованные Цветком Крови.</lotr_HediffFlowerOfBlood.description>
+
+    <!-- Forced Sleep -->
+    <Hediff_ForcedSleep.label>Сон</Hediff_ForcedSleep.label>
+    <Hediff_ForcedSleep_Charm.label>Сон</Hediff_ForcedSleep_Charm.label>
+    <Hediff_ForcedSleep.description>Пешка была принудительно погружена в сон.</Hediff_ForcedSleep.description>
+    <Hediff_ForcedSleep_Charm.description>Пешка была принудительно погружена в сон.</Hediff_ForcedSleep_Charm.description>
+
+    <!-- Iron Blood -->
+    <Hediff_IronBlood.label>Огненная кровь</Hediff_IronBlood.label>
+    <Hediff_IronBlood_4S.label>Огненная кровь</Hediff_IronBlood_4S.label>
+    <Hediff_IronBlood.description>Тело пешки усилено полубогом пути Охотника.</Hediff_IronBlood.description>
+    <Hediff_IronBlood_4S.description>Тело пешки усилено полубогом пути Охотника.</Hediff_IronBlood_4S.description>
+
+    <!-- Peaceful Calm -->
+    <Hediff_PeacefulCalm.label>Мирное спокойствие</Hediff_PeacefulCalm.label>
+    <Hediff_PeacefulCalm_Charm.label>Мирное спокойствие</Hediff_PeacefulCalm_Charm.label>
+    <Hediff_PeacefulCalm.description>Пешка находится под воздействием Прядей Мирного Спокойствия, теряя всякую мотивацию и застывая на месте.</Hediff_PeacefulCalm.description>
+    <Hediff_PeacefulCalm_Charm.description>Пешка находится под воздействием Прядей Мирного Спокойствия, теряя всякую мотивацию и застывая на месте.</Hediff_PeacefulCalm_Charm.description>
+
+    <!-- Potions -->
+    <lotr_HediffStrengthPotion.label>Эффект зелья силы</lotr_HediffStrengthPotion.label>
+    <lotr_HediffStrengthPotion.description>Повышенный урон в ближнем бою, точность, шанс уклонения и скорость передвижения.</lotr_HediffStrengthPotion.description>
+    <lotr_HediffArmorPotion.label>Эффект зелья брони</lotr_HediffArmorPotion.label>
+    <lotr_HediffArmorPotion.description>Снижен входящий урон и повышены показатели брони.</lotr_HediffArmorPotion.description>
+    <lotr_HediffRegeneration.label>Регенерация</lotr_HediffRegeneration.label>
+    <lotr_HediffRegeneration.description>Естественный фактор заживления значительно увеличен.</lotr_HediffRegeneration.description>
+
+    <!-- Spiritual Exhaustion -->
+    <SpiritualityExhaust.label>Духовное истощение</SpiritualityExhaust.label>
+    <SpiritualityExhaust.description>Внутренняя энергия или потребность пути этого потустороннего упали. Их физические и мифические возможности слегка подавлены.</SpiritualityExhaust.description>
+    <SpiritualityExhaust.stages.0.label>Истощение</SpiritualityExhaust.stages.0.label>
+    <SpiritualityExhaust.stages.1.label>Серьёзное истощение</SpiritualityExhaust.stages.1.label>
+
+    <!-- Sun Worship -->
+    <lotr_HediffSunWorship.label>Поклонение солнцу</lotr_HediffSunWorship.label>
+    <lotr_HediffSunWorship.description>Растущая одержимость Вечным Пылающим Солнцем. Если она достигнет пика, разум будет сожжён.</lotr_HediffSunWorship.description>
+    <lotr_HediffSunWorship.stages.0.label>Поклонение солнцу</lotr_HediffSunWorship.stages.0.label>
+
+    <!-- Foulness Roar -->
+    <lotr_HediffFoulnessRoar.label>Ужасающий рёв</lotr_HediffFoulnessRoar.label>
+    <lotr_HediffFoulnessRoar.description>Этот поселенец потрясён ужасающим потусторонним рёвом. Движение замедлено, сознание затуманено.</lotr_HediffFoulnessRoar.description>
+
+    <!-- Vulnerability -->
+    <Hediff_Vulnerable.label>Уязвимость</Hediff_Vulnerable.label>
+    <Hediff_Vulnerable_5S.label>Уязвимость</Hediff_Vulnerable_5S.label>
+    <Hediff_Vulnerable_4S.label>Уязвимость</Hediff_Vulnerable_4S.label>
+    <Hediff_Vulnerable.description>Пешка находится под уязвимостью - любой получаемый урон x1.5.</Hediff_Vulnerable.description>
+    <Hediff_Vulnerable_5S.description>Пешка находится под уязвимостью - любой получаемый урон x1.5.</Hediff_Vulnerable_5S.description>
+    <Hediff_Vulnerable_4S.description>Пешка находится под уязвимостью - любой получаемый урон x1.5.</Hediff_Vulnerable_4S.description>
+
+    <!-- Water Need -->
+    <lotr_HediffWaterNeed.label>Потребность в воде</lotr_HediffWaterNeed.label>
+    <lotr_HediffWaterNeed.description>Жажда воды. Длительное отсутствие воды вызывает слабость и в конечном итоге смерть.</lotr_HediffWaterNeed.description>
+    <lotr_HediffWaterNeed.stages.0.label>Нет жажды</lotr_HediffWaterNeed.stages.0.label>
+    <lotr_HediffWaterNeed.stages.1.label>Сухость</lotr_HediffWaterNeed.stages.1.label>
+    <lotr_HediffWaterNeed.stages.2.label>Иссушение</lotr_HediffWaterNeed.stages.2.label>
+    <lotr_HediffWaterNeed.stages.3.label>Обезвоживание</lotr_HediffWaterNeed.stages.3.label>
+
+</LanguageData>

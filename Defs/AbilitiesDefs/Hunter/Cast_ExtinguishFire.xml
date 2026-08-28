@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
     
-    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_ExtinguishFire">
+    <AbilityDef Class="lotr.BeyonderAbilityDef" Name="Cast_ExtinguishFire" Abstract="True">
         
         <abilityClass>lotr.Ability_SpendSpirituality</abilityClass>
         
         <defName>Cast_ExtinguishFire</defName>
-        <label>Тушение огня</label>
-        <description>Погасить все пожары в радиусе.</description>
+        <label>Extinguish fire</label>
+        <description>Extinguish all fires within the radius.</description>
         <iconPath>UI/Icons/Abilities/Hunter/Cast_ExtinguishFire</iconPath>
 
         <aiCanUse>false</aiCanUse> <!-- TODO? -->
@@ -42,9 +42,9 @@
     <!-- Уровень 7 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_ExtinguishFire">
         <defName>Cast_ExtinguishFire_7S</defName>
-        <label>Тушение огня</label>
         <cooldownTicksRange>600</cooldownTicksRange>
         <spiritualityCost>10.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_AbilityExtinguishFire">
                 <radius>2</radius>
@@ -61,9 +61,9 @@
     <!-- Уровень 6 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_ExtinguishFire">
         <defName>Cast_ExtinguishFire_6S</defName>
-        <label>Тушение огня</label>
         <cooldownTicksRange>300</cooldownTicksRange>
         <spiritualityCost>20.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_AbilityExtinguishFire">
                 <radius>4</radius>
@@ -80,9 +80,9 @@
     <!-- Уровень 5 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_ExtinguishFire">
         <defName>Cast_ExtinguishFire_5S</defName>
-        <label>Тушение огня</label>
         <cooldownTicksRange>180</cooldownTicksRange>
         <spiritualityCost>60.0</spiritualityCost>
+
         <comps>
             <li Class="lotr.CompProperties_AbilityExtinguishFire">
                 <radius>6</radius>
@@ -99,9 +99,9 @@
     <!-- Уровень 4 -->
     <AbilityDef Class="lotr.BeyonderAbilityDef" ParentName="Cast_ExtinguishFire">
         <defName>Cast_ExtinguishFire_4S</defName>
-        <label>Тушение огня</label>
         <cooldownTicksRange>60</cooldownTicksRange>
         <spiritualityCost>100.0</spiritualityCost>
+        
         <comps>
             <li Class="lotr.CompProperties_AbilityExtinguishFire">
                 <radius>10</radius>
