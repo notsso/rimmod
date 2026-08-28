@@ -162,16 +162,7 @@ namespace lotr {
         protected override WorldObjectDef GetWorldObjectDef() => DefDatabase<WorldObjectDef>.GetNamed("FireSalamanderRuins_World");
     }
 
-    public class SitePartWorker_FireSalamanderRuins : SitePartWorker {
-        public override void PostMapGenerate(Map map) {
-            if (map.IsPlayerHome) return;
-            if (!(map.Parent is Site site)) return;
-
-            var def = DefDatabase<SitePartDef>.GetNamed("FireSalamanderRuins_Site");
-            SitePart sitePart = site.parts.FirstOrDefault(p => p.def == def);
-            if (sitePart == null) return;
-        }
-    }
+    public class SitePartWorker_FireSalamanderRuins : SitePartWorker { }
 
     // ========== Магмовый эльф (7): Странный вулкан ==========
     public class IncidentWorker_StrangeVolcano : IncidentWorker_WorldSiteBase {
@@ -179,17 +170,7 @@ namespace lotr {
         protected override WorldObjectDef GetWorldObjectDef() => DefDatabase<WorldObjectDef>.GetNamed("StrangeVolcano_World");
     }
 
-    public class SitePartWorker_StrangeVolcano : SitePartWorker {
-        public override void PostMapGenerate(Map map) {
-            if (!(map.Parent is Site site)) return;
-
-            var def = DefDatabase<SitePartDef>.GetNamed("StrangeVolcano_Site");
-            SitePart sitePart = site.parts.FirstOrDefault(p => p.def == def);
-            if (sitePart == null) return;
-
-            float threatPoints = sitePart.parms.threatPoints;
-        }
-    }
+    public class SitePartWorker_StrangeVolcano : SitePartWorker { }
 
     // ========== Черный охотничий паук (6): туманный лес ==========
     public class IncidentWorker_SpiderForest : IncidentWorker_WorldSiteBase {
@@ -216,16 +197,7 @@ namespace lotr {
         protected override WorldObjectDef GetWorldObjectDef() => DefDatabase<WorldObjectDef>.GetNamed("DesertRuins_World");
     }
 
-    public class SitePartWorker_DesertRuins : SitePartWorker {
-        public override void PostMapGenerate(Map map) {
-            if (map.IsPlayerHome) return;
-            if (!(map.Parent is Site site)) return;
-
-            var def = DefDatabase<SitePartDef>.GetNamed("DesertRuins_Site");
-            SitePart sitePart = site.parts.FirstOrDefault(p => p.def == def);
-            if (sitePart == null) return;
-        }
-    }
+    public class SitePartWorker_DesertRuins : SitePartWorker { }
 
     // ========== Демонический волк (5): туманный лес ==========
     public class IncidentWorker_TemperateForest : IncidentWorker_WorldSiteBase {
@@ -252,16 +224,7 @@ namespace lotr {
         protected override WorldObjectDef GetWorldObjectDef() => DefDatabase<WorldObjectDef>.GetNamed("JungleCabin_World");
     }
 
-    public class SitePartWorker_JungleCabin : SitePartWorker {
-        public override void PostMapGenerate(Map map) {
-            if (map.IsPlayerHome) return;
-            if (!(map.Parent is Site site)) return;
-
-            var def = DefDatabase<SitePartDef>.GetNamed("JungleCabin_Site");
-            SitePart sitePart = site.parts.FirstOrDefault(p => p.def == def);
-            if (sitePart == null) return;
-        }
-    }
+    public class SitePartWorker_JungleCabin : SitePartWorker { }
 
     // ========== Магматический гигант (4): странный вулкан ==========
     public class IncidentWorker_MagmaGiantVolcano : IncidentWorker_WorldSiteBase {
@@ -269,14 +232,38 @@ namespace lotr {
         protected override WorldObjectDef GetWorldObjectDef() => DefDatabase<WorldObjectDef>.GetNamed("MagmaGiantVolcano_World");
     }
 
-    public class SitePartWorker_MagmaGiantVolcano : SitePartWorker {
+    public class SitePartWorker_MagmaGiantVolcano : SitePartWorker { }
+
+    // ========== Камень катастроф (4): Заброшенный храм ==========
+
+    public class IncidentWorker_StoneofCatastropheSanctuary : IncidentWorker_WorldSiteBase {
+        protected override SitePartDef GetSitePartDef() => DefDatabase<SitePartDef>.GetNamed("StoneofCatastropheSanctuary_Site");
+        protected override WorldObjectDef GetWorldObjectDef() => DefDatabase<WorldObjectDef>.GetNamed("StoneofCatastropheSanctuary_World");
+    }
+
+    public class SitePartWorker_StoneofCatastropheSanctuary : SitePartWorker {
         public override void PostMapGenerate(Map map) {
             if (map.IsPlayerHome) return;
             if (!(map.Parent is Site site)) return;
-
-            var def = DefDatabase<SitePartDef>.GetNamed("MagmaGiantVolcano_Site");
+            var def = DefDatabase<SitePartDef>.GetNamed("StoneofCatastropheSanctuary_Site");
             SitePart sitePart = site.parts.FirstOrDefault(p => p.def == def);
             if (sitePart == null) return;
+
+            var param = new SanctuaryLabyrinthParams();
+            param.roomsPerSide = 5;
+            param.spiritsPerRoom = new IntRange(3, 4);
+            param.spiritChancePerRoom = 0.8f;
+            param.addBossSpirit = true;
+            param.lootDef = ThingDef.Named("lotr_StoneofCatastrophe");
+            param.lootCount = 1;
+            param.mysticalComponentsCount = 3;
+            param.sideLootChance = 0.6f;
+            param.wallStuff = ThingDefOf.BlocksGranite;
+            param.floorTerrain = TerrainDef.Named("AncientTile");
+            param.useDoors = false;
+            param.useFog = true;
+
+            SanctuaryLabyrinthGenerator.Generate(map, param);
         }
     }
 }

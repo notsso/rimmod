@@ -311,6 +311,44 @@ namespace lotr {
             }
         }
 
+        public static bool TryGetPathwayArtifacts(Pathway pathway, out List<string> artifacts) {
+            artifacts = new List<string> { };
+            switch (pathway) {
+                case Pathway.Spectator:
+                    artifacts = new List<string> {
+                        "lotr_MentalTerrorCandle"
+                    };
+                    return true;
+
+                case Pathway.Bard:
+                    artifacts = new List<string> {
+                        "lotr_MutatedSunSacredEmblem"
+                    };
+                    return true;
+
+                case Pathway.Sailor:
+                    artifacts = new List<string> {
+                        "lotr_ShapeshiftingHat"
+                    };
+                    return true;
+
+                case Pathway.Suppliant:
+                    artifacts = new List<string> {
+                        "lotr_FlowerOfBlood"
+                    };
+                    return true;
+
+                case Pathway.Sleepless:
+                    artifacts = new List<string> {
+                        "lotr_PeacefulHairStrands"
+                    };
+                    return true;
+
+                default:
+                    return false;
+            }
+        }
+
         public static bool TryGetFactionIngredients(string faction, out Dictionary<int, string[]> ingredientDefs) {
             ingredientDefs = new Dictionary<int, string[]> { };
             if (!MysticalFactions.ContainsKey(faction)) return false;

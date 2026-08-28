@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WorldObjectDef ParentName="Site">
+        <defName>BrillianceRockSanctuary_World</defName>
+        <label>brilliance rock sanctuary</label>
+        <description>An abandoned sanctuary containing a labyrinth. A piece of brilliance rock is said to be hidden at its heart.</description>
+    </WorldObjectDef>
+
+    <SitePartDef>
+        <defName>BrillianceRockSanctuary_Site</defName>
+        <label>brilliance rock sanctuary</label>
+        <description>A small labyrinth guarded by spirits, with a brilliance rock at its center.</description>
+        <workerClass>lotr.SitePartWorker_BrillianceRockSanctuary</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <IncidentDef>
+        <defName>BrillianceRockSanctuary_Incident</defName>
+        <label>brilliance rock sanctuary</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_BrillianceRockSanctuary</workerClass>
+        <category>Misc</category>
+        <earliestDay>10</earliestDay>
+        <letterLabel>Brilliance rock sanctuary</letterLabel>
+        <letterText>An old sanctuary has been found. A labyrinth inside is said to contain a piece of brilliance rock.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags>
+            <li>World</li>
+        </targetTags>
+    </IncidentDef>
+
+</Defs>

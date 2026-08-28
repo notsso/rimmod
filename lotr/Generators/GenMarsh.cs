@@ -97,48 +97,4 @@ namespace lotr {
             GenStepUtility.SpawnWeightedPlants(map, trees, 0.5f);
         }
     }
-
-    public class GenStep_CentralSwampLair : GenStep {
-        public override int SeedPart => 12348;
-
-        // Параметры логова (можно вынести в XML, если захотите)
-        private const float LairSizeFraction = 0.15f; // доля от меньшей стороны карты
-        private const int MinLairRadius = 12;
-        private const int MaxLairRadius = 30;
-        private const float MarshRingFraction = 0.8f; // внешнее кольцо болота
-        private const float WaterPoolFraction = 0.3f; // центральная вода
-        private const float WaterChance = 0.7f;
-
-        public override void Generate(Map map, GenStepParams parms) {
-            IntVec3 center = map.Center;
-            int lairRadius = Mathf.Clamp(
-                Mathf.RoundToInt(Mathf.Min(map.Size.x, map.Size.z) * LairSizeFraction),
-                MinLairRadius,
-                MaxLairRadius
-            );
-
-            // Внешнее кольцо – болото (Marsh)
-            int marshRadius = lairRadius;
-            foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, marshRadius, true)) {
-                if (!cell.InBounds(map)) continue;
-                float dist = cell.DistanceTo(center);
-                if (dist > lairRadius * MarshRingFraction)
-                    map.terrainGrid.SetTerrain(cell, TerrainDef.Named("Marsh"));
-            }
-
-            // Основная часть – грязь (Mud)
-            int mudRadius = Mathf.RoundToInt(lairRadius * MarshRingFraction);
-            foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, mudRadius, true)) {
-                if (cell.InBounds(map))
-                    map.terrainGrid.SetTerrain(cell, TerrainDef.Named("MarshyTerrain"));
-            }
-
-            // Центральные лужи воды (WaterShallow)
-            int waterRadius = Mathf.Clamp(Mathf.RoundToInt(lairRadius * WaterPoolFraction), 2, 8);
-            foreach (IntVec3 cell in GenRadial.RadialCellsAround(center, waterRadius, true)) {
-                if (cell.InBounds(map) && Rand.Value < WaterChance)
-                    map.terrainGrid.SetTerrain(cell, TerrainDef.Named("WaterShallow"));
-            }
-        }
-    }
 }

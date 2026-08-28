@@ -7,7 +7,7 @@ using RimWorld;
 using RimWorld.Planet;
 
 namespace lotr {
-    // ========== Гигант-Воин: деревянный дом ==========
+    // ========== Гигант-Воин (9): деревянный дом ==========
     public class IncidentWorker_GiantWarriorLair : IncidentWorker_WorldSiteBase {
         protected override SitePartDef GetSitePartDef() => DefDatabase<SitePartDef>.GetNamed("GiantWarriorLair_Site");
         protected override WorldObjectDef GetWorldObjectDef() => DefDatabase<WorldObjectDef>.GetNamed("GiantWarriorLair_World");
@@ -41,7 +41,7 @@ namespace lotr {
         }
     }
 
-    // ========== Гигант-Оруженосец: каменный дом ==========
+    // ========== Гигант-Оруженосец (8): каменный дом ==========
     public class IncidentWorker_GiantSquireLair : IncidentWorker_WorldSiteBase {
         protected override SitePartDef GetSitePartDef() => DefDatabase<SitePartDef>.GetNamed("GiantSquireLair_Site");
         protected override WorldObjectDef GetWorldObjectDef() => DefDatabase<WorldObjectDef>.GetNamed("GiantSquireLair_World");
@@ -76,7 +76,7 @@ namespace lotr {
         }
     }
 
-    // ========== Синий Гигант: заброшенная деревня ==========
+    // ========== Синий Гигант (7): заброшенная деревня ==========
     public class IncidentWorker_BlueGiantLair : IncidentWorker_WorldSiteBase {
         protected override SitePartDef GetSitePartDef() => DefDatabase<SitePartDef>.GetNamed("BlueGiantLair_Site");
         protected override WorldObjectDef GetWorldObjectDef() => DefDatabase<WorldObjectDef>.GetNamed("BlueGiantLair_World");
@@ -111,7 +111,7 @@ namespace lotr {
         }
     }
 
-    // ========== Рассветный гигант: древние руины ==========
+    // ========== Рассветный гигант (6): древние руины ==========
     public class IncidentWorker_DawnGiantLair : IncidentWorker_WorldSiteBase {
         protected override SitePartDef GetSitePartDef() => DefDatabase<SitePartDef>.GetNamed("DawnGiantLair_Site");
         protected override WorldObjectDef GetWorldObjectDef() => DefDatabase<WorldObjectDef>.GetNamed("DawnGiantLair_World");
@@ -145,7 +145,7 @@ namespace lotr {
         }
     }
 
-    // ========== Серый Гигант: забытый замок ==========
+    // ========== Серый Гигант (5): забытый замок ==========
     public class IncidentWorker_GreyGiantLair : IncidentWorker_WorldSiteBase {
         protected override SitePartDef GetSitePartDef() => DefDatabase<SitePartDef>.GetNamed("GreyGiantLair_Site");
         protected override WorldObjectDef GetWorldObjectDef() => DefDatabase<WorldObjectDef>.GetNamed("GreyGiantLair_World");
@@ -179,7 +179,7 @@ namespace lotr {
         }
     }
 
-    // ========== Святой Гигант: древний дворец ==========
+    // ========== Святой Гигант (4): древний дворец ==========
     public class IncidentWorker_DivineGiantLair : IncidentWorker_WorldSiteBase {
         protected override SitePartDef GetSitePartDef() => DefDatabase<SitePartDef>.GetNamed("DivineGiantLair_Site");
         protected override WorldObjectDef GetWorldObjectDef() => DefDatabase<WorldObjectDef>.GetNamed("DivineGiantLair_World");

@@ -249,6 +249,15 @@ namespace lotr {
         }
     }
 
+    public class GenStep_AbyssDemonicFish : GenStep {
+        public override int SeedPart => 12403;
+
+        public override void Generate(Map map, GenStepParams parms) {
+            var kind = PawnKindDef.Named("lotr_AbyssDemonicFish");
+            GenStepUtility.SpawnPawns(map, kind, 1, 0f);
+        }
+    }
+
     public class GenStep_Succubus : GenStep {
         public override int SeedPart => 12375;
 

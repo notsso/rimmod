@@ -15,6 +15,9 @@
         <apparel>
             <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
         </apparel>
+        <thingCategories>
+            <li>SpecialBeyonderItems</li>
+        </thingCategories>
         <comps>
             <li Class="lotr.CompProperties_FlowerOfBlood" />
         </comps>

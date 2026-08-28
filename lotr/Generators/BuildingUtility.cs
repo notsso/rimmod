@@ -432,4 +432,163 @@ namespace lotr {
             }
         }
     }
+
+    // Параметры святилища-лабиринта
+    public class SanctuaryLabyrinthParams {
+        public int roomsPerSide = 3;
+        public IntRange spiritsPerRoom = new IntRange(1, 1); // меньше по умолчанию
+        public float spiritChancePerRoom = 0.6f; // шанс появления духов в комнате
+        public bool addBossSpirit = false;
+        public ThingDef lootDef;
+        public int lootCount = 1;
+        public int mysticalComponentsCount = 0;
+        public float sideLootChance = 0.4f; // шанс доп. лута в боковой комнате
+        public ThingDef wallStuff = ThingDefOf.BlocksGranite;
+        public TerrainDef floorTerrain = TerrainDef.Named("AncientTile");
+        public bool useDoors = true;
+        public bool useFog = true;
+    }
+
+    public static class SanctuaryLabyrinthGenerator {
+        private const int RoomSize = 7;
+        private const int WallThickness = 1;
+
+        public static void Generate(Map map, SanctuaryLabyrinthParams param) {
+            if (param == null || param.roomsPerSide <= 0) return;
+
+            IntVec3 center = map.Center;
+            int totalWidth = param.roomsPerSide * RoomSize + (param.roomsPerSide - 1) * WallThickness;
+            CellRect totalRect = CellRect.CenteredOn(center, totalWidth, totalWidth);
+
+            // Очистка
+            GenStepUtility.ClearRect(map, totalRect);
+
+            // Пол
+            foreach (IntVec3 cell in totalRect)
+                if (cell.InBounds(map))
+                    map.terrainGrid.SetTerrain(cell, param.floorTerrain);
+
+            // Внешние стены (по периметру)
+            BuildOuterWalls(map, totalRect, param);
+
+            // Внутренние стены (без дверей)
+            BuildInnerWalls(map, totalRect, param);
+
+            // Крыша над всей областью лабиринта
+            foreach (IntVec3 cell in totalRect)
+                if (cell.InBounds(map))
+                    map.roofGrid.SetRoof(cell, RoofDefOf.RoofConstructed);
+
+            // Туман
+            if (param.useFog)
+                map.fogGrid.Refog(totalRect.ExpandedBy(-1));
+
+            // Содержимое
+            SpawnContents(map, totalRect, param);
+        }
+
+        private static void BuildOuterWalls(Map map, CellRect rect, SanctuaryLabyrinthParams param) {
+            ThingDef wallDef = ThingDefOf.Wall;
+            for (int x = rect.minX; x <= rect.maxX; x++) {
+                for (int z = rect.minZ; z <= rect.maxZ; z++) {
+                    bool isEdge = x == rect.minX || x == rect.maxX || z == rect.minZ || z == rect.maxZ;
+                    if (!isEdge) continue;
+
+                    IntVec3 c = new IntVec3(x, 0, z);
+                    if (c.InBounds(map)) {
+                        Thing wall = ThingMaker.MakeThing(wallDef, param.wallStuff);
+                        GenSpawn.Spawn(wall, c, map);
+                    }
+                }
+            }
+        }
+
+        private static void BuildInnerWalls(Map map, CellRect rect, SanctuaryLabyrinthParams param) {
+            ThingDef wallDef = ThingDefOf.Wall;
+            for (int x = rect.minX; x <= rect.maxX; x++) {
+                for (int z = rect.minZ; z <= rect.maxZ; z++) {
+                    IntVec3 c = new IntVec3(x, 0, z);
+                    if (!c.InBounds(map)) continue;
+
+                    bool isWallX = (x - rect.minX) % (RoomSize + WallThickness) == RoomSize;
+                    bool isWallZ = (z - rect.minZ) % (RoomSize + WallThickness) == RoomSize;
+
+                    if (isWallX || isWallZ) {
+                        // Пропускаем внешние стены (уже построены)
+                        if (x == rect.minX || x == rect.maxX || z == rect.minZ || z == rect.maxZ)
+                            continue;
+
+                        Thing wall = ThingMaker.MakeThing(wallDef, param.wallStuff);
+                        GenSpawn.Spawn(wall, c, map);
+                    }
+                }
+            }
+        }
+
+        private static void SpawnContents(Map map, CellRect totalRect, SanctuaryLabyrinthParams param) {
+            int step = RoomSize + WallThickness;
+            PawnKindDef spiritKind = PawnKindDef.Named("lotr_Spirit");
+
+            for (int x = 0; x < param.roomsPerSide; x++) {
+                for (int z = 0; z < param.roomsPerSide; z++) {
+                    IntVec3 roomCenter = new IntVec3(
+                        totalRect.minX + x * step + RoomSize / 2,
+                        0,
+                        totalRect.minZ + z * step + RoomSize / 2
+                    );
+
+                    bool isCenter = (x == param.roomsPerSide / 2 && z == param.roomsPerSide / 2);
+
+                    // Духи
+                    if (!isCenter && spiritKind != null && Rand.Chance(param.spiritChancePerRoom)) {
+                        int count = Rand.RangeInclusive(param.spiritsPerRoom.min, param.spiritsPerRoom.max);
+                        for (int i = 0; i < count; i++) {
+                            IntVec3 pos = roomCenter + new IntVec3(Rand.Range(-2, 2), 0, Rand.Range(-2, 2));
+                            if (pos.InBounds(map)) {
+                                Pawn spirit = PawnGenerator.GeneratePawn(spiritKind, null);
+                                GenSpawn.Spawn(spirit, pos, map);
+                            }
+                        }
+                    }
+
+                    if (isCenter) {
+                        // Главный лут
+                        if (param.lootDef != null) {
+                            Thing loot = ThingMaker.MakeThing(param.lootDef);
+                            loot.stackCount = param.lootCount;
+                            GenSpawn.Spawn(loot, roomCenter, map);
+                        }
+                        // Босс-дух (1 шт.)
+                        if (param.addBossSpirit && spiritKind != null) {
+                            Pawn boss = PawnGenerator.GeneratePawn(spiritKind, null);
+                            GenSpawn.Spawn(boss, roomCenter, map);
+                        }
+                    } else {
+                        // Дополнительный лут с шансом
+                        if (Rand.Chance(param.sideLootChance))
+                            SpawnRandomLoot(map, roomCenter, param);
+                    }
+                }
+            }
+        }
+
+        private static void SpawnRandomLoot(Map map, IntVec3 roomCenter, SanctuaryLabyrinthParams param) {
+            // Возможные виды лута
+            var lootTable = new List<(ThingDef def, int minCount, int maxCount, float chance)>
+            {
+            (ThingDefOf.Silver, 50, 150, 0.5f),
+            (ThingDef.Named("lotr_MysticalComponents"), 1, param.mysticalComponentsCount, 0.3f),
+            (ThingDef.Named("lotr_MagicalHerbs"), 1, 2, 0.3f),
+            (ThingDef.Named("MedicineHerbal"), 1, 2, 0.2f)
+        };
+
+            foreach (var entry in lootTable.Where(l => l.def != null && l.chance >= Rand.Value)) {
+                Thing thing = ThingMaker.MakeThing(entry.def);
+                thing.stackCount = Rand.RangeInclusive(entry.minCount, entry.maxCount);
+                IntVec3 pos = roomCenter + new IntVec3(Rand.Range(-2, 2), 0, Rand.Range(-2, 2));
+                if (pos.InBounds(map))
+                    GenSpawn.Spawn(thing, pos, map);
+            }
+        }
+    }
 }

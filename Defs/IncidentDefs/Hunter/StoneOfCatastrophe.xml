@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <WorldObjectDef ParentName="Site">
+        <defName>StoneofCatastropheSanctuary_World</defName>
+        <label>stone of catastrophe sanctuary</label>
+        <description>An abandoned sanctuary containing a labyrinth. A stone of catastrophe lies within.</description>
+    </WorldObjectDef>
+
+    <SitePartDef>
+        <defName>StoneofCatastropheSanctuary_Site</defName>
+        <label>stone of catastrophe sanctuary</label>
+        <description>A massive labyrinth guarded by powerful spirits.</description>
+        <workerClass>lotr.SitePartWorker_StoneofCatastropheSanctuary</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <IncidentDef>
+        <defName>StoneofCatastropheSanctuary_Incident</defName>
+        <label>stone of catastrophe sanctuary</label>
+        <baseChance>1.0</baseChance>
+        <workerClass>lotr.IncidentWorker_StoneofCatastropheSanctuary</workerClass>
+        <category>Misc</category>
+        <earliestDay>45</earliestDay>
+        <letterLabel>Stone of catastrophe sanctuary</letterLabel>
+        <letterText>A dangerous sanctuary has been found, containing a stone of catastrophe.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags><li>World</li></targetTags>
+    </IncidentDef>
+</Defs>

@@ -126,12 +126,19 @@ namespace lotr {
                 yield break;
             }
 
+            // Находим переговорщика заранее, чтобы отключить кнопку, если его нет
+            Pawn negotiator = BestNegotiator(caravan);
+            bool hasNegotiator = negotiator != null;
+
+            string disabledReason = hasNegotiator ? null : "No negotiator available.";
+
             yield return new Command_Action {
                 defaultLabel = "Trade",
                 defaultDesc = "Trade with the beyonder gathering.",
                 icon = ContentFinder<Texture2D>.Get("UI/Commands/Trade", true),
+                disabledReason = disabledReason,
                 action = delegate {
-                    Pawn negotiator = BestNegotiator(caravan);
+                    // На всякий случай повторно проверяем (вдруг состояние изменилось)
                     if (negotiator == null) {
                         Messages.Message("No negotiator available.", MessageTypeDefOf.RejectInput, false);
                         return;
@@ -145,7 +152,8 @@ namespace lotr {
 
         private Pawn BestNegotiator(Caravan caravan) {
             return caravan.PawnsListForReading
-                .Where(p => p.RaceProps.Humanlike && !p.Dead && !p.Downed)
+                .Where(p => p.RaceProps.Humanlike && !p.Dead && !p.Downed && p.health.capacities.CapableOf(PawnCapacityDefOf.Talking))
+                .Where(p => p.skills.GetSkill(SkillDefOf.Social).Level > 0)
                 .OrderByDescending(p => p.GetStatValue(StatDefOf.TradePriceImprovement))
                 .FirstOrDefault();
         }
@@ -179,13 +187,22 @@ namespace lotr {
                     foreach (string defName in defs) {
                         // Шанс: 0.6 для 9, 0.5 для 8, ..., 0.1 для 4
                         float chance = 0.6f - (9 - seq) * 0.1f;
-                        AddRandomIngredient(defName, chance);
+                        AddItemChance(defName, chance);
                     }
                 }
             }
+
+            // Даем один рандомный артефакт с рандомным шансом
+            List<string> artifacts = new List<string> { };
+            foreach (Pathway pathway in BeyonderUtility.AllPathways) {
+                BeyonderUtility.TryGetPathwayArtifacts(pathway, out var newArtifacts);
+                foreach (string element in newArtifacts)
+                    artifacts.Add(element);
+            }
+            AddItemChance(artifacts.ToArray()[Rand.Range(0, artifacts.Count - 1)], 1.0f);
         }
 
-        private void AddRandomIngredient(string defName, float chance) {
+        private void AddItemChance(string defName, float chance) {
             if (!Rand.Chance(chance))
                 return;
 

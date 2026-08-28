@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <WorldObjectDef ParentName="Site">
+        <defName>PureWhiteBrilliantRockSanctuary_World</defName>
+        <label>pure white brilliant rock sanctuary</label>
+        <description>An abandoned sanctuary containing a labyrinth. A pure white brilliant rock is hidden at its center.</description>
+    </WorldObjectDef>
+
+    <SitePartDef>
+        <defName>PureWhiteBrilliantRockSanctuary_Site</defName>
+        <label>pure white brilliant rock sanctuary</label>
+        <description>A medium labyrinth guarded by stronger spirits.</description>
+        <workerClass>lotr.SitePartWorker_PureWhiteBrilliantRockSanctuary</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <IncidentDef>
+        <defName>PureWhiteBrilliantRockSanctuary_Incident</defName>
+        <label>pure white brilliant rock sanctuary</label>
+        <baseChance>1.2</baseChance>
+        <workerClass>lotr.IncidentWorker_PureWhiteBrilliantRockSanctuary</workerClass>
+        <category>Misc</category>
+        <earliestDay>25</earliestDay>
+        <letterLabel>Pure white brilliant rock sanctuary</letterLabel>
+        <letterText>A larger sanctuary has been discovered, containing a pure white brilliant rock.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags><li>World</li></targetTags>
+    </IncidentDef>
+</Defs>

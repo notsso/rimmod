@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <WorldObjectDef ParentName="Site">
+        <defName>HolyBrillianceRockSanctuary_World</defName>
+        <label>holy brilliance rock sanctuary</label>
+        <description>An abandoned sanctuary containing a large labyrinth. A holy brilliance rock is hidden at its heart.</description>
+    </WorldObjectDef>
+
+    <SitePartDef>
+        <defName>HolyBrillianceRockSanctuary_Site</defName>
+        <label>holy brilliance rock sanctuary</label>
+        <description>A massive labyrinth filled with powerful spirits.</description>
+        <workerClass>lotr.SitePartWorker_HolyBrillianceRockSanctuary</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <IncidentDef>
+        <defName>HolyBrillianceRockSanctuary_Incident</defName>
+        <label>holy brilliance rock sanctuary</label>
+        <baseChance>1.0</baseChance>
+        <workerClass>lotr.IncidentWorker_HolyBrillianceRockSanctuary</workerClass>
+        <category>Misc</category>
+        <earliestDay>45</earliestDay>
+        <letterLabel>Holy brilliance rock sanctuary</letterLabel>
+        <letterText>A colossal sanctuary has been found, containing a holy brilliance rock.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags><li>World</li></targetTags>
+    </IncidentDef>
+</Defs>

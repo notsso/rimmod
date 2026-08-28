@@ -54,6 +54,9 @@
                 <violent>false</violent>
             </li>
         </verbs>
+        <thingCategories>
+            <li>SpecialBeyonderItems</li>
+        </thingCategories>
         <comps>
             <li Class="CompProperties_ApparelReloadable">
                 <maxCharges>1</maxCharges>

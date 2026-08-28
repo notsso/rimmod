@@ -15,6 +15,9 @@
         <apparel>
             <ai_pickUpOpportunistically>false</ai_pickUpOpportunistically>
         </apparel>
+        <thingCategories>
+            <li>SpecialBeyonderItems</li>
+        </thingCategories>
         <comps>
             <li Class="lotr.CompProperties_SunEmblem" />
         </comps>

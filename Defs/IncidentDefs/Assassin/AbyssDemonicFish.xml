@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <WorldObjectDef ParentName="Site">
+        <defName>AbyssDemonicFishMarsh_World</defName>
+        <label>abyss demonic fish marsh</label>
+        <description>A fetid swamp where an unnatural blue-scaled predator lurks beneath the murky water.</description>
+        <mapGenerator>AbyssDemonicFishMarshGenerator</mapGenerator>
+    </WorldObjectDef>
+
+    <SitePartDef>
+        <defName>AbyssDemonicFishMarsh_Site</defName>
+        <label>abyss demonic fish marsh</label>
+        <description>A dangerous swamp guarded by an abyss demonic fish.</description>
+        <workerClass>lotr.SitePartWorker_AbyssDemonicFishMarsh</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Sites/GenericSite</expandingIconTexture>
+    </SitePartDef>
+
+    <IncidentDef>
+        <defName>AbyssDemonicFishMarsh_Incident</defName>
+        <label>abyss demonic fish marsh</label>
+        <baseChance>1.5</baseChance>
+        <workerClass>lotr.IncidentWorker_AbyssDemonicFishMarsh</workerClass>
+        <category>Misc</category>
+        <earliestDay>10</earliestDay>
+        <letterLabel>Abyss demonic fish marsh</letterLabel>
+        <letterText>A strange swamp has been discovered, its waters glowing faintly. A dangerous predator is said to lurk within.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <targetTags><li>World</li></targetTags>
+    </IncidentDef>
+
+    <GenStepDef>
+        <defName>AbyssDemonicFish</defName>
+        <order>1200</order>
+        <genStep Class="lotr.GenStep_AbyssDemonicFish"/>
+    </GenStepDef>
+
+    <MapGeneratorDef>
+        <defName>AbyssDemonicFishMarshGenerator</defName>
+        <genSteps>
+            <li>ElevationFertility</li>
+            <li>MutatorPostElevationFertility</li>
+            <li>Terrain</li>
+            <li>CentralSwampTerrain</li>
+            <li>CentralSwampLair</li>
+            <li>FindPlayerStartSpot</li>
+            <li>ScenParts</li>
+            <li>CentralSwampPlants</li>
+            <li>AbyssDemonicFish</li>
+            <li>Fog</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+</Defs>
