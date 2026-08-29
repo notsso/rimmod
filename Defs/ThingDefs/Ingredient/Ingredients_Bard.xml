@@ -5,7 +5,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_FireBirdTailFeather</defName>
         <label>fire bird tail feather</label>
-        <description>A tail feather from a fire bird, glowing with inner heat. A key ingredient for bard potions.</description>
+        <description>A tail feather from a fire bird, glowing with inner heat. A key ingredient for Bard potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -25,7 +25,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_SingingSunflower</defName>
         <label>singing sunflower</label>
-        <description>A mystical sunflower that hums a faint, uplifting melody. A key ingredient for bard potions.</description>
+        <description>A mystical sunflower that hums a faint, uplifting melody. A key ingredient for Bard potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -45,7 +45,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Bard9_Essence</defName>
         <label>essence of Bard</label>
-        <description>A mystical characteristic of a Beyonder from the Bard pathway.</description>
+        <description>Beyonder essence from the Bard pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -67,7 +67,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_BrillianceRock</defName>
         <label>piece of brilliance rock</label>
-        <description>A fragment of a radiant mineral that seems to glow from within. A key ingredient for light suppliant potions.</description>
+        <description>A fragment of a radiant mineral that seems to glow from within. A key ingredient for Light Suppliant potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -87,7 +87,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_MirrorHedgehogBlood</defName>
         <label>mirror hedgehog blood</label>
-        <description>Blood of a mirror hedgehog, shimmering with reflective properties. A key ingredient for light suppliant potions.</description>
+        <description>Blood of a mirror hedgehog, shimmering with reflective properties. A key ingredient for Light Suppliant potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -107,7 +107,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Bard8_Essence</defName>
         <label>essence of Light Suppliant</label>
-        <description>A mystical characteristic of a Beyonder from the Bard pathway.</description>
+        <description>Beyonder essence from the Bard pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -129,7 +129,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_DawnRoosterComb</defName>
         <label>red comb of a dawn rooster</label>
-        <description>A vibrant red comb from a rooster that greets the dawn with holy light. A key ingredient for sun high priest potions.</description>
+        <description>A vibrant red comb from a rooster that greets the dawn with holy light. A key ingredient for Sun High Priest potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -149,7 +149,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_RadianceSpiritPactTreeFruit</defName>
         <label>fruit of radiance spirit pact tree</label>
-        <description>A fruit from a mystical tree that shines with sacred light. A key ingredient for sun high priest potions.</description>
+        <description>A fruit from a mystical tree that shines with sacred light. A key ingredient for Sun High Priest potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -169,7 +169,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Bard7_Essence</defName>
         <label>essence of Sun High Priest</label>
-        <description>A mystical characteristic of a Beyonder from the Bard pathway.</description>
+        <description>Beyonder essence from the Bard pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -191,7 +191,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_CrystallizedElderTreeRoots</defName>
         <label>crystallized roots of the tree of elders</label>
-        <description>Glittering roots from an ancient tree, infused with the power of contracts. A key ingredient for notary potions.</description>
+        <description>Glittering roots from an ancient tree, infused with the power of contracts. A key ingredient for Notary potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -211,7 +211,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_SpiritPactBirdFeathers</defName>
         <label>spirit pact bird feathers</label>
-        <description>Feathers from a mystical bird that seals spiritual pacts. A key ingredient for notary potions.</description>
+        <description>Feathers from a mystical bird that seals spiritual pacts. A key ingredient for Notary potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -231,7 +231,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Bard6_Essence</defName>
         <label>essence of Notary</label>
-        <description>A mystical characteristic of a Beyonder from the Bard pathway.</description>
+        <description>Beyonder essence from the Bard pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -253,7 +253,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_DawnRoosterKingComb</defName>
         <label>red comb of a king of dawn roosters</label>
-        <description>A majestic red comb from the king of dawn roosters, radiating holy power. A key ingredient for priest of light potions.</description>
+        <description>A majestic red comb from the king of dawn roosters, radiating holy power. A key ingredient for Priest of Light potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -273,7 +273,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_PureWhiteBrilliantRock</defName>
         <label>pure white brilliant rock</label>
-        <description>A flawless white mineral that purifies all it touches. A key ingredient for priest of light potions.</description>
+        <description>A flawless white mineral that purifies all it touches. A key ingredient for Priest of Light potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -293,7 +293,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Bard5_Essence</defName>
         <label>essence of Priest of Light</label>
-        <description>A mystical characteristic of a Beyonder from the Bard pathway.</description>
+        <description>Beyonder essence from the Bard pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -315,7 +315,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_SunDivineBirdFeathers</defName>
         <label>sun divine bird tail feathers</label>
-        <description>Radiant feathers from a divine bird of the sun, shimmering with celestial fire. A key ingredient for unshadowed potions.</description>
+        <description>Radiant feathers from a divine bird of the sun, shimmering with celestial fire. A key ingredient for Unshadowed potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_3</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -335,7 +335,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_HolyBrillianceRock</defName>
         <label>holy brilliance rock</label>
-        <description>A sacred mineral that channels the purest light of heaven. A key ingredient for unshadowed potions.</description>
+        <description>A sacred mineral that channels the purest light of heaven. A key ingredient for Unshadowed potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_3</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -355,7 +355,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Bard4_Essence</defName>
         <label>essence of Unshadowed</label>
-        <description>A mystical characteristic of a Beyonder from the Bard pathway.</description>
+        <description>Beyonder essence from the Bard pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_3</texPath>
             <graphicClass>Graphic_Single</graphicClass>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <lotr_BasicKnowledge.label>базовые знания</lotr_BasicKnowledge.label>
+    <lotr_BasicKnowledge.description>Фундаментальное понимание мистических искусств и феноменов потустороннего.</lotr_BasicKnowledge.description>
+
+    <lotr_PotionBrewing.label>зельеварение</lotr_PotionBrewing.label>
+    <lotr_PotionBrewing.description>Научитесь варить базовые мистические зелья.</lotr_PotionBrewing.description>
+
+    <lotr_CharmCarving.label>вырезание амулетов</lotr_CharmCarving.label>
+    <lotr_CharmCarving.description>Вырезайте мистические амулеты, содержащие мощные одноразовые способности.</lotr_CharmCarving.description>
+
+    <lotr_ArtifactUsage.label>использование артефактов</lotr_ArtifactUsage.label>
+    <lotr_ArtifactUsage.description>Научитесь безопасно обращаться с древними потусторонними артефактами и активировать их.</lotr_ArtifactUsage.description>
+
+    <lotr_PathBard.label>путь барда</lotr_PathBard.label>
+    <lotr_PathBard.description>Продвинутые зелья для тех, кто владеет силой песни и святого света, чтобы изгонять тьму и вдохновлять союзников.</lotr_PathBard.description>
+
+    <lotr_PathWarrior.label>путь воина</lotr_PathWarrior.label>
+    <lotr_PathWarrior.description>Продвинутые зелья для тех, кто встречает опасность лицом к лицу с клинком и кулаком.</lotr_PathWarrior.description>
+
+    <lotr_PathAssassin.label>путь ассасина</lotr_PathAssassin.label>
+    <lotr_PathAssassin.description>Продвинутые зелья для тех, кто скрывается в тенях и повелевает запретными искусствами соблазна и страдания.</lotr_PathAssassin.description>
+
+    <lotr_PathHunter.label>путь охотника</lotr_PathHunter.label>
+    <lotr_PathHunter.description>Продвинутые зелья для тех, кто преследует дикую природу и охотится на потусторонних существ.</lotr_PathHunter.description>
+
+</LanguageData>

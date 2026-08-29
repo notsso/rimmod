@@ -4,8 +4,8 @@
     <ThingDef ParentName="AnimalThingBase">
 
         <defName>lotr_ForestHunterRace</defName>
-        <label>Лесной охотник</label>
-        <description>Антропоморфное существо, покрытое жесткой, маскирующей шерстью древесных оттенков. У него длинные, неестественно сильные конечности и острые клыки.</description>
+        <label>Forest hunter</label>
+        <description>An anthropomorphic creature covered in coarse, camouflaging fur of woody hues. It has long, unnaturally strong limbs and sharp fangs.</description>
         
         <statBases>
             <MoveSpeed>15.0</MoveSpeed>

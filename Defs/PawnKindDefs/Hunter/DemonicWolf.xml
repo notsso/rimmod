@@ -4,8 +4,8 @@
     <ThingDef ParentName="AnimalThingBase">
 
         <defName>lotr_DemonicWolfRace</defName>
-        <label>Серый демонический волк</label>
-        <description>Массивный хищник, который гораздо крупнее обычного лесного волка. Его шерсть имеет грязно-серый, пепельный оттенок, способный сливаться с тенями. Обычные люди или слабые Потусторонние сходят с ума или цепенеют от одного только рыка этого зверя.</description>
+        <label>Gray demonic wolf</label>
+        <description>A massive predator, much larger than a typical timber wolf. Its fur is a dirty, ash-gray hue that blends into the shadows. Ordinary humans or weak Beyonders are driven mad or paralyzed by the mere roar of this beast.</description>
         
         <statBases>
             <MoveSpeed>10.0</MoveSpeed>

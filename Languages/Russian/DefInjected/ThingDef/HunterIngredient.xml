@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <lotr_MarshCrystal.label>Активированный болотный кристалл</lotr_MarshCrystal.label>
+    <lotr_MarshCrystal.description>Минерализованный сгусток энергии, формированный в глубине мистических болот. Ключевой ингредиент для зелий Охотника.</lotr_MarshCrystal.description>
+
+    <lotr_BloodRedChestnut.label>Кроваво-красный каштан</lotr_BloodRedChestnut.label>
+    <lotr_BloodRedChestnut.description>Особый вид мистического плода, который впитал в себя остаточную духовную энергию. Ключевой ингредиент для зелий Охотника.</lotr_BloodRedChestnut.description>
+
+    <lotr_Hunter9_Essence.label>эссенция Охотника</lotr_Hunter9_Essence.label>
+    <lotr_Hunter9_Essence.description>Мистическая черта потустороннего пути Охотника.</lotr_Hunter9_Essence.description>
+
+    <lotr_CuspidsParrotTongue.label>Язык острозубого попугая</lotr_CuspidsParrotTongue.label>
+    <lotr_CuspidsParrotTongue.description>Потусторонний орган острозубого попугая. Ключевой ингредиент для зелья Провокатора.</lotr_CuspidsParrotTongue.description>
+
+    <lotr_CorpseLilyRootstock.label>Корневище трупной лилии</lotr_CorpseLilyRootstock.label>
+    <lotr_CorpseLilyRootstock.description>Корни мистического, плотоядного растения. Ключевой ингредиент для зелья Провокатора.</lotr_CorpseLilyRootstock.description>
+
+    <lotr_Hunter8_Essence.label>эссенция Провокатора</lotr_Hunter8_Essence.label>
+    <lotr_Hunter8_Essence.description>Мистическая черта потустороннего пути Охотника.</lotr_Hunter8_Essence.description>
+
+    <lotr_FireSalamanderGland.label>Железа огненной саламандры</lotr_FireSalamanderGland.label>
+    <lotr_FireSalamanderGland.description>Внутренний орган Огненной саламандры. Ключевой ингредиент для зелья Пироманта.</lotr_FireSalamanderGland.description>
+
+    <lotr_MagmaElfCore.label>Ядро магмового эльфа</lotr_MagmaElfCore.label>
+    <lotr_MagmaElfCore.description>Кристаллизованное сердце элементального существа из чистой магмы. Ключевой ингредиент для зелья Пироманта.</lotr_MagmaElfCore.description>
+
+    <lotr_Hunter7_Essence.label>эссенция Пиромана</lotr_Hunter7_Essence.label>
+    <lotr_Hunter7_Essence.description>Мистическая черта потустороннего пути Охотника.</lotr_Hunter7_Essence.description>
+
+    <lotr_BlackHuntingSpiderEyes.label>Сложные глаза чёрного охотничьего паука</lotr_BlackHuntingSpiderEyes.label>
+    <lotr_BlackHuntingSpiderEyes.description>Композитные глаза черного охотничьего паука. Ключевой ингредиент для зелья Заговорщика.</lotr_BlackHuntingSpiderEyes.description>
+
+    <lotr_SphinxBrain.label>Мозг сфинкса</lotr_SphinxBrain.label>
+    <lotr_SphinxBrain.description>Орган легендарного мистического существа, известного своим интеллектом, загадками и способностью запутывать разум людей. Ключевой ингредиент для зелья Заговорщика.</lotr_SphinxBrain.description>
+
+    <lotr_Hunter6_Essence.label>эссенция Заговорщика</lotr_Hunter6_Essence.label>
+    <lotr_Hunter6_Essence.description>Мистическая черта потустороннего пути Охотника.</lotr_Hunter6_Essence.description>
+
+    <lotr_DemonicWolfClaws.label>Когти демонического волка</lotr_DemonicWolfClaws.label>
+    <lotr_DemonicWolfClaws.description>Когти опасного существа из Духовного или реального мира. Ключевой ингредиент для зелья Жнеца.</lotr_DemonicWolfClaws.description>
+
+    <lotr_ForestHunterTongue.label>Язык лесного охотника</lotr_ForestHunterTongue.label>
+    <lotr_ForestHunterTongue.description>Орган уникального гуманоидного мистического существа - Лесного Охотника. Ключевой ингредиент для зелья Жнеца.</lotr_ForestHunterTongue.description>
+
+    <lotr_Hunter5_Essence.label>эссенция Жнеца</lotr_Hunter5_Essence.label>
+    <lotr_Hunter5_Essence.description>Мистическая черта потустороннего пути Охотника.</lotr_Hunter5_Essence.description>
+
+    <lotr_MagmaGiantCore.label>Ядро магматического гиганта</lotr_MagmaGiantCore.label>
+    <lotr_MagmaGiantCore.description>Сердце огромного, древнего элементаля - Магматического Гиганта. Ключевой ингредиент для зелья Железнокровного рыцаря.</lotr_MagmaGiantCore.description>
+
+    <lotr_StoneofCatastrophe.label>Камень катастрофы</lotr_StoneofCatastrophe.label>
+    <lotr_StoneofCatastrophe.description>Особый мистический минерал, который формируется исключительно в эпицентре масштабных природных или техногенных катастроф. Ключевой ингредиент для зелья Железнокровного рыцаря.</lotr_StoneofCatastrophe.description>
+
+    <lotr_Hunter4_Essence.label>эссенция Железнокровного рыцаря</lotr_Hunter4_Essence.label>
+    <lotr_Hunter4_Essence.description>Мистическая черта потустороннего пути Охотника.</lotr_Hunter4_Essence.description>
+
+</LanguageData>

@@ -80,7 +80,7 @@
 
         <tools>
             <li>
-                <label>когти</label>
+                <label>claws</label>
                 <capacities>
                     <li>Scratch</li>
                 </capacities>
@@ -89,7 +89,7 @@
                 <linkedBodyPartsGroup>Feet</linkedBodyPartsGroup>
             </li>
             <li>
-                <label>клюв</label>
+                <label>beak</label>
                 <capacities>
                     <li>Bite</li>
                 </capacities>
@@ -98,7 +98,7 @@
                 <linkedBodyPartsGroup>Beak</linkedBodyPartsGroup>
             </li>
             <li>
-                <label>голова</label>
+                <label>head</label>
                 <capacities>
                     <li>Blunt</li>
                 </capacities>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <lotr_Mute.label>немой</lotr_Mute.label>
+    <lotr_Mute.description>Этот поселенец потерял способность говорить.</lotr_Mute.description>
+    <lotr_Mute.degreeDatas.0.label>немой</lotr_Mute.degreeDatas.0.label>
+    <lotr_Mute.degreeDatas.0.description>Этот поселенец не может говорить и не может выполнять социальные задачи.</lotr_Mute.degreeDatas.0.description>
+
+    <lotr_SunWorship.label>поклонение солнцу</lotr_SunWorship.label>
+    <lotr_SunWorship.description>Разум выжжен Вечным Пылающим Солнцем. Осталось лишь бездумное поклонение.</lotr_SunWorship.description>
+    <lotr_SunWorship.degreeDatas.0.label>бездумный поклоняющийся</lotr_SunWorship.degreeDatas.0.label>
+    <lotr_SunWorship.degreeDatas.0.description>Может выполнять только базовые задачи и восхвалять Солнце.</lotr_SunWorship.degreeDatas.0.description>
+
+</LanguageData>

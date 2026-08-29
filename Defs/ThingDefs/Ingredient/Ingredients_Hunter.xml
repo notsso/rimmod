@@ -5,7 +5,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_MarshCrystal</defName>
         <label>Activated Matsh Crystal</label>
-        <description>Минерализованный сгусток энергии, формированный в глубине мистических болот. Ключевой ингредиент для зелий Охотника.</description>
+        <description>A mineralized energy clot formed in the depths of mystical swamps. A key ingredient for Hunter potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -28,7 +28,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_BloodRedChestnut</defName>
         <label>Blood-Red Chestnut</label>
-        <description>Особый вид мистического плода, который впитал в себя остаточную духовную энергию. Ключевой ингредиент для зелий Охотника.</description>
+        <description>A special type of mystical fruit that has absorbed residual spiritual energy. A key ingredient for Hunter potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -51,7 +51,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Hunter9_Essence</defName>
         <label>essence of Hunter</label>
-        <description>Мистическая черта потустороннего c пути Охотника.</description>
+        <description>Beyonder essence from the Hunter pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -75,7 +75,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_CuspidsParrotTongue</defName>
         <label>Cuspids Parrot Tongue</label>
-        <description>Потусторонний орган острозубого попугая. Ключевой ингредиент для зелья Провокатора.</description>
+        <description>The otherworldly organ of the sharp-toothed parrot. A key ingredient for Provoker potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -98,7 +98,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_CorpseLilyRootstock</defName>
         <label>Corpse Lily Rootstock</label>
-        <description>Корни мистического, плотоядного растения. Ключевой ингредиент для зелья Провокатора.</description>
+        <description>The roots of a mystical, carnivorous plant. A key ingredient for Provoker potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -121,7 +121,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Hunter8_Essence</defName>
         <label>essence of Provoker</label>
-        <description>Мистическая черта потустороннего c пути Охотника.</description>
+        <description>Beyonder essence from the Hunter pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -145,7 +145,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_FireSalamanderGland</defName>
         <label>Fire Salamander Gland</label>
-        <description>Внутренний орган Огненной саламандры. Ключевой ингредиент для зелья Пироманта.</description>
+        <description>The internal organ of a Fire Salamander. A key ingredient for Pyromaniac potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -168,7 +168,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_MagmaElfCore</defName>
         <label>Magma Elf Core</label>
-        <description>Кристаллизованное сердце элементального существа из чистой магмы. Ключевой ингредиент для зелья Пироманта.</description>
+        <description>The crystallized heart of an elemental creature made of pure magma. A key ingredient for Pyromaniac potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -191,7 +191,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Hunter7_Essence</defName>
         <label>essence of Pyromaniac</label>
-        <description>Мистическая черта потустороннего c пути Охотника.</description>
+        <description>Beyonder essence from the Hunter pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -215,7 +215,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_BlackHuntingSpiderEyes</defName>
         <label>Composite Black Hunting Spider Eyes</label>
-        <description>Композитные глаза черного охотничьего паука. Ключевой ингредиент для зелья Заговорщика.</description>
+        <description>Composite eyes of a black hunting spider. A key ingredient for Conspirator potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -238,7 +238,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_SphinxBrain</defName>
         <label>Sphinx Brain</label>
-        <description>Орган легендарного мистического существа, известного своим интеллектом, загадками и способностью запутывать разум людей. Ключевой ингредиент для зелья Заговорщика.</description>
+        <description>The organ of a legendary mystical creature known for its intelligence, riddles, and ability to confound people's minds. A key ingredient for Conspirator potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -261,7 +261,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Hunter6_Essence</defName>
         <label>essence of Conspirator</label>
-        <description>Мистическая черта потустороннего c пути Охотника.</description>
+        <description>Beyonder essence from the Hunter pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -285,7 +285,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_DemonicWolfClaws</defName>
         <label>Demonic Wolf Claws</label>
-        <description>Когти опасного существа из Духовного или реального мира. Ключевой ингредиент для зелья Жнеца.</description>
+        <description>The claws of a dangerous creature from the Spirit or Realm. A key ingredient for Reaper potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -308,7 +308,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_ForestHunterTongue</defName>
         <label>Forest Hunter Tongue</label>
-        <description>Орган уникального гуманоидного мистического существа - Лесного Охотника. Ключевой ингредиент для зелья Жнеца.</description>
+        <description>The organ of a unique humanoid mystical creature—the Forest Hunter. A key ingredient for Reaper potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -331,7 +331,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Hunter5_Essence</defName>
         <label>essence of Reaper</label>
-        <description>Мистическая черта потустороннего c пути Охотника.</description>
+        <description>Beyonder essence from the Hunter pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -355,7 +355,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_MagmaGiantCore</defName>
         <label>Magma Giant Core</label>
-        <description>Сердце огромного, древнего элементаля - Магматического Гиганта. Ключевой ингредиент для зелья Железнокровного рыцаря.</description>
+        <description>The heart of a massive, ancient elemental—the Magma Giant. A key ingredient for Iron-Blooded Knight potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_3</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -378,7 +378,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_StoneofCatastrophe</defName>
         <label>Stone of Catastrophe</label>
-        <description>Особый мистический минерал, который формируется исключительно в эпицентре масштабных природных или техногенных катастроф. Ключевой ингредиент для зелья Железнокровного рыцаря.</description>
+        <description>A special mystical mineral that forms exclusively at the epicenter of large-scale natural or man-made disasters. A key ingredient for Iron-Blooded Knight potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_3</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -401,7 +401,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Hunter4_Essence</defName>
         <label>essence of Iron-Blooded Knight</label>
-        <description>Мистическая черта потустороннего c пути Охотника.</description>
+        <description>Beyonder essence from the Hunter pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_3</texPath>
             <graphicClass>Graphic_Single</graphicClass>

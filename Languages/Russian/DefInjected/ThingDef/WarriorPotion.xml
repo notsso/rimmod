@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Warrior9_Potion.label>Зелье воина</Warrior9_Potion.label>
+    <Warrior9_Potion.description>Кроваво-красная жидкость с сильным рыбным запахом. Выпив его, пешка пробудит в себе силу Воина.</Warrior9_Potion.description>
+    <Warrior9_Potion.ingestible.ingestCommandString>Выпить {0}</Warrior9_Potion.ingestible.ingestCommandString>
+    <Warrior9_Potion.ingestible.ingestReportString>Выпивает {0}.</Warrior9_Potion.ingestible.ingestReportString>
+
+    <Warrior8_Potion.label>Зелье гладиатора</Warrior8_Potion.label>
+    <Warrior8_Potion.description>Чисто белый гной с прожилками крови. Выпив его, пешка откроет в себе силу Гладиатора.</Warrior8_Potion.description>
+    <Warrior8_Potion.ingestible.ingestCommandString>Выпить {0}</Warrior8_Potion.ingestible.ingestCommandString>
+    <Warrior8_Potion.ingestible.ingestReportString>Выпивает {0}.</Warrior8_Potion.ingestible.ingestReportString>
+
+    <Warrior7_Potion.label>Зелье мастера оружия</Warrior7_Potion.label>
+    <Warrior7_Potion.description>Черная жидкость с плавающей на ней ржавчиной. На вкус как будто проглотил горсть тонких иголок. Выпив его, пешка откроет в себе силу Оружейного Мастера.</Warrior7_Potion.description>
+    <Warrior7_Potion.ingestible.ingestCommandString>Выпить {0}</Warrior7_Potion.ingestible.ingestCommandString>
+    <Warrior7_Potion.ingestible.ingestReportString>Выпивает {0}.</Warrior7_Potion.ingestible.ingestReportString>
+
+    <Warrior6_Potion.label>Зелье рассветного паладина</Warrior6_Potion.label>
+    <Warrior6_Potion.description>Прозрачная жидкость, словно освещённая утренним солнцем. Выпив его, пешка откроет в себе силу Паладина Рассвета.</Warrior6_Potion.description>
+    <Warrior6_Potion.ingestible.ingestCommandString>Выпить {0}</Warrior6_Potion.ingestible.ingestCommandString>
+    <Warrior6_Potion.ingestible.ingestReportString>Выпивает {0}.</Warrior6_Potion.ingestible.ingestReportString>
+
+    <Warrior5_Potion.label>Зелье хранителя</Warrior5_Potion.label>
+    <Warrior5_Potion.description>Бледно-кровавая, окутанная мощным лучом рассвета. Выпив его, пешка откроет в себе силу Стража.</Warrior5_Potion.description>
+    <Warrior5_Potion.ingestible.ingestCommandString>Выпить {0}</Warrior5_Potion.ingestible.ingestCommandString>
+    <Warrior5_Potion.ingestible.ingestReportString>Выпивает {0}.</Warrior5_Potion.ingestible.ingestReportString>
+
+    <Warrior4_Potion.label>Зелье охотника на демонов</Warrior4_Potion.label>
+    <Warrior4_Potion.description>Тёмно-зелёная жидкость. Выпив его, пешка откроет в себе силу Охотника на демонов.</Warrior4_Potion.description>
+    <Warrior4_Potion.ingestible.ingestCommandString>Выпить {0}</Warrior4_Potion.ingestible.ingestCommandString>
+    <Warrior4_Potion.ingestible.ingestReportString>Выпивает {0}.</Warrior4_Potion.ingestible.ingestReportString>
+
+</LanguageData>

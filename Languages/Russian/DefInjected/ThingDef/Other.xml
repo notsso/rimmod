@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Mote_Firewave.label>огненная частица</Mote_Firewave.label>
+    <FireTeleportFlyer.label>огненный шар</FireTeleportFlyer.label>
+    <lotr_FireLightSpawner.label>мистическое свечение</lotr_FireLightSpawner.label>
+
+    <FirestormThing.label>мифический огненный шторм</FirestormThing.label>
+    <FirestormThing.description>Разрушительный вихрь сильно сжатого мифического пламени, призванный Железнокровным Рыцарем.</FirestormThing.description>
+
+    <FirewaveEffect.label>эффект огненной волны</FirewaveEffect.label>
+    
+</LanguageData>

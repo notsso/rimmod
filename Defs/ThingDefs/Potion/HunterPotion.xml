@@ -6,9 +6,8 @@
         <thingClass>ThingWithComps</thingClass>
         <defName>Hunter9_Potion</defName>
         <label>hunter's potion</label>
-        <description>Жидкость насыщенного красного цвета, бурлящая, словно кровь окрашивает весь флакон.
-        У неё резкий запах крови, который заполнил бы их ноздри.
-        Выпив его, пешка пробудит в себе силу Охотника.</description>
+        <description>A deep red liquid, bubbling as if blood is staining the entire glass. It has a pungent odor of blood that would fill their nostrils.
+        By drinking it, the pawn will awaken the power of the Hunter within itself.</description>
         <descriptionHyperlinks>
             <HediffDef>Hunter9_Hediff</HediffDef>
         </descriptionHyperlinks>
@@ -38,9 +37,8 @@
         <thingClass>ThingWithComps</thingClass>
         <defName>Hunter8_Potion</defName>
         <label>provoker's potion</label>
-        <description>Вязкий напиток с тошнотворным вкусом и резким запахом.
-        Один вид этого зелья вызывает желание выбросить его и растоптать.
-        Он отвратителен и имеет резкий запах. Выпив его, пешка откроет в себе силу Провокатора</description>
+        <description>A pitch-black, viscous liquor with a nauseating taste and a pungent stench. Just seeing this potion evokes an urge to throw it away and stomp on it. It is foul and pungent.
+        By drinking it, the pawn will awaken the power of the Provoker within itself.</description>
         <descriptionHyperlinks>
             <HediffDef>Hunter8_Hediff</HediffDef>
         </descriptionHyperlinks>
@@ -70,9 +68,8 @@
         <thingClass>ThingWithComps</thingClass>
         <defName>Hunter7_Potion</defName>
         <label>pyromaniac's potion</label>
-        <description>Желтоватая жидкость с плавающими на ней красными пузырьками, в центре которой находится «сердце», окруженное кровавым туманом.
-        При употреблении она обжигает, распространяясь от рта, по пищеводу, в желудок и поражая сердце.
-        Выпив его, пешка откроет в себе силу Пироманьяка</description>
+        <description>A yellowish liquid with red bubbles floating on it, with a "heart" at its center surrounded by a mist of blood. When drinking it, it burns from their mouth, down their esophagus, into their stomach, and sears into their heart.
+        By drinking it, the pawn will awaken the power of the Pyromaniac within itself.</description>
         <descriptionHyperlinks>
             <HediffDef>Hunter7_Hediff</HediffDef>
         </descriptionHyperlinks>
@@ -102,9 +99,8 @@
         <thingClass>ThingWithComps</thingClass>
         <defName>Hunter6_Potion</defName>
         <label>conspirator's potion</label>
-        <description>Черная как железо, с большим количеством плавающих на поверхности красноватых пятен ржавчины.
-        Зелье имеет сильный ржавый вкус, холодное, как змея, скользкая и ледяная.
-        Выпив его, пешка откроет в себе силу Заговорщика</description>
+        <description>Iron-black, with a large amount of reddish rust floating on it. The potion has a strong rusty taste, cold like a serpent slithering in the darkness, slippery and icy.
+        By drinking it, the pawn will awaken the power of the Conspirator within itself.</description>
         <descriptionHyperlinks>
             <HediffDef>Hunter6_Hediff</HediffDef>
         </descriptionHyperlinks>
@@ -134,9 +130,8 @@
         <thingClass>ThingWithComps</thingClass>
         <defName>Hunter5_Potion</defName>
         <label>reaper's potion</label>
-        <description>Свежая красная кровь с плавающими в ней вкраплениями чёрного вещества, похожего на железные опилки, словно внутри разлетелось железное оружие.
-        У зелья резкий запах крови, непривычный привкус ржавчины и при употреблении возникает жгучее ощущение, которое мгновенно заполняет рот и пронзает мозг.
-        Выпив его, пешка откроет в себе силу Пожинателя</description>
+        <description>Fresh red blood with specks of black, iron-fillings-like matter floating in it, as though an iron weapon had shattered inside. It has a pungent smell of blood. There is an unfamiliar taste of rust. And there's burning sensation that instantly fills their mouth and pierces their brain on consumption.
+        By drinking it, the pawn will awaken the power of the Reaper within itself.</description>
         <descriptionHyperlinks>
             <HediffDef>Hunter5_Hediff</HediffDef>
         </descriptionHyperlinks>
@@ -166,8 +161,8 @@
         <thingClass>ThingWithComps</thingClass>
         <defName>Hunter4_Potion</defName>
         <label>knight's potion</label>
-        <description>Как расплавленное железо, пылающее красным, высокотемпературное и яркое.
-        Выпив его, пешка откроет в себе силу Железнокровного Рыцаря</description>
+        <description>Like molten iron, blazing red, high temperature, and vivid.
+        By drinking it, the pawn will awaken the power of the Iron-Blooded Knight within itself.</description>
         <descriptionHyperlinks>
             <HediffDef>Hunter4_Hediff</HediffDef>
         </descriptionHyperlinks>

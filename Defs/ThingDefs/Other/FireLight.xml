@@ -3,8 +3,8 @@
 
   <ThingDef>
     <defName>lotr_FireLightSpawner</defName>
-    <label>мистическое свечение</label>
-    <category>Ethereal</category> <!-- Тип Ethereal делает объект абсолютно неосязаемым и невидимым -->
+    <label>Light</label>
+    <category>Ethereal</category>
     <thingClass>ThingWithComps</thingClass>
     <tickerType>Normal</tickerType>
     <useHitPoints>false</useHitPoints>
@@ -17,8 +17,8 @@
 
     <comps>
       <li Class="CompProperties_Glower">
-        <glowRadius>4.5</glowRadius> <!-- Радиус света вокруг пешки -->
-        <glowColor>(255, 120, 30, 0)</glowColor> <!-- Теплый огненный свет -->
+        <glowRadius>4.5</glowRadius>
+        <glowColor>(255, 120, 30, 0)</glowColor>
       </li>
     </comps>
   </ThingDef>

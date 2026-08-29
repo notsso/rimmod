@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <ThingDef Name="Melee_BlazingSword">
+    <ThingDef Name="Melee_BlazingSword" Abstract="True">
         <defName>Melee_BlazingSword</defName>
-        <label>огненный меч</label>
-        <description>Мистический клинок, призываемый из чистого концентрированного пламени.</description>
+        <label>Blazing sword</label>
+        <description>A mystical blade summoned from pure, concentrated flame.</description>
         <category>Item</category>
         
         <thingClass>lotr.SummonedFireWeapon</thingClass>
@@ -53,7 +53,7 @@
 
         <tools>
             <li>
-                <label>лезвие</label>
+                <label>blade</label>
                 <capacities>
                     <li>Cut</li>
                 </capacities>
@@ -68,7 +68,7 @@
                 </extraMeleeDamages>
             </li>
             <li>
-                <label>острие</label>
+                <label>point</label>
                 <capacities>
                     <li>Stab</li>
                 </capacities>
@@ -100,16 +100,16 @@
     <!-- Уровень 7 -->
     <ThingDef ParentName="Melee_BlazingSword">
         <defName>Melee_BlazingSword_7S</defName>
-        <label>огненный меч</label>
+        <label>Blazing sword</label>
     </ThingDef>
 
     <!-- Уровень 6 -->
     <ThingDef ParentName="Melee_BlazingSword">
         <defName>Melee_BlazingSword_6S</defName>
-        <label>огненный меч</label>
+        <label>Blazing sword</label>
         <tools>
             <li>
-                <label>мощное лезвие</label>
+                <label>blade</label>
                 <capacities>
                     <li>Cut</li>
                 </capacities>
@@ -129,10 +129,10 @@
     <!-- Уровень 5 -->
     <ThingDef ParentName="Melee_BlazingSword">
         <defName>Melee_BlazingSword_5S</defName>
-        <label>огненный меч</label>
+        <label>Blazing sword</label>
         <tools>
             <li>
-                <label>мощное лезвие</label>
+                <label>blade</label>
                 <capacities>
                     <li>Cut</li>
                 </capacities>
@@ -167,10 +167,10 @@
     <!-- Уровень 4 -->
     <ThingDef ParentName="Melee_BlazingSword">
         <defName>Melee_BlazingSword_4S</defName>
-        <label>огненный меч</label>
+        <label>Blazing sword</label>
         <tools>
             <li>
-                <label>мощное лезвие</label>
+                <label>blade</label>
                 <capacities>
                     <li>Cut</li>
                 </capacities>
@@ -185,7 +185,7 @@
                 </extraMeleeDamages>
             </li>
             <li>
-                <label>острие</label>
+                <label>point</label>
                 <capacities>
                     <li>Stab</li>
                 </capacities>

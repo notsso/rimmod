@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <lotr_ShadowPoisonFlower.label>Теневой ядовитый цветок</lotr_ShadowPoisonFlower.label>
+    <lotr_ShadowPoisonFlower.description>Зловещий чёрно-фиолетовый цветок, процветающий в самых тёмных болотах. Его корни впитывают теневую эссенцию, что делает их ключевым ингредиентом для зелий ассасина.</lotr_ShadowPoisonFlower.description>
+
+    <lotr_Plant_SingingSunflower.label>Поющий подсолнух</lotr_Plant_SingingSunflower.label>
+    <lotr_Plant_SingingSunflower.description>Мистический подсолнух, напевающий тихую, воодушевляющую мелодию. Его лепестки излучают тёплый солнечный свет, и он ценится алхимиками для зелий барда.</lotr_Plant_SingingSunflower.description>
+
+    <lotr_Plant_RadianceSpiritPactTree.label>Сияющее древо пакта духов</lotr_Plant_RadianceSpiritPactTree.label>
+    <lotr_Plant_RadianceSpiritPactTree.description>Священное дерево с серебристо-белой корой и золотыми светящимися листьями. Его плод сияет, как маленькое солнце, и используется в зельях верховного жреца солнца.</lotr_Plant_RadianceSpiritPactTree.description>
+
+    <lotr_Plant_CrystallizedElderTree.label>Кристаллизованное древо старейшин</lotr_Plant_CrystallizedElderTree.label>
+    <lotr_Plant_CrystallizedElderTree.description>Древнее, гигантское дерево с серебряной корой и кристаллическими золотыми прожилками. Его корни наделены силой контрактов и являются ключевым ингредиентом для зелий нотариуса.</lotr_Plant_CrystallizedElderTree.description>
+
+    <lotr_CorpseLily.label>Трупные лилии</lotr_CorpseLily.label>
+    <lotr_CorpseLily.description>Зловещий багровый цветок, питающийся остаточной жизненной энергией свежих трупов. Его лепестки слегка светятся тёплым, плотским жаром.</lotr_CorpseLily.description>
+
+    <lotr_BloodRedChestnutTree.label>Кроваво-красный каштан</lotr_BloodRedChestnutTree.label>
+    <lotr_BloodRedChestnutTree.description>Редкое дерево с твёрдой древесиной и тёмно-багровой корой. При рубке оно высвобождает фрагмент потусторонней эссенции.</lotr_BloodRedChestnutTree.description>
+
+</LanguageData>

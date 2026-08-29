@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Hunter9_Potion.label>Зелье охотника</Hunter9_Potion.label>
+    <Hunter9_Potion.description>Жидкость насыщенного красного цвета, бурлящая, словно кровь окрашивает весь флакон. У неё резкий запах крови, который заполнил бы их ноздри. Выпив его, пешка пробудит в себе силу Охотника.</Hunter9_Potion.description>
+    <Hunter9_Potion.ingestible.ingestCommandString>Выпить {0}</Hunter9_Potion.ingestible.ingestCommandString>
+    <Hunter9_Potion.ingestible.ingestReportString>Выпивает {0}.</Hunter9_Potion.ingestible.ingestReportString>
+
+    <Hunter8_Potion.label>Зелье провокатора</Hunter8_Potion.label>
+    <Hunter8_Potion.description>Вязкий напиток с тошнотворным вкусом и резким запахом. Один вид этого зелья вызывает желание выбросить его и растоптать. Он отвратителен и имеет резкий запах. Выпив его, пешка откроет в себе силу Провокатора.</Hunter8_Potion.description>
+    <Hunter8_Potion.ingestible.ingestCommandString>Выпить {0}</Hunter8_Potion.ingestible.ingestCommandString>
+    <Hunter8_Potion.ingestible.ingestReportString>Выпивает {0}.</Hunter8_Potion.ingestible.ingestReportString>
+
+    <Hunter7_Potion.label>Зелье пиромана</Hunter7_Potion.label>
+    <Hunter7_Potion.description>Желтоватая жидкость с плавающими на ней красными пузырьками, в центре которой находится «сердце», окружённое кровавым туманом. При употреблении она обжигает, распространяясь от рта, по пищеводу, в желудок и поражая сердце. Выпив его, пешка откроет в себе силу Пироманьяка.</Hunter7_Potion.description>
+    <Hunter7_Potion.ingestible.ingestCommandString>Выпить {0}</Hunter7_Potion.ingestible.ingestCommandString>
+    <Hunter7_Potion.ingestible.ingestReportString>Выпивает {0}.</Hunter7_Potion.ingestible.ingestReportString>
+
+    <Hunter6_Potion.label>Зелье заговорщика</Hunter6_Potion.label>
+    <Hunter6_Potion.description>Чёрная как железо, с большим количеством плавающих на поверхности красноватых пятен ржавчины. Зелье имеет сильный ржавый вкус, холодное, как змея, скользкая и ледяная. Выпив его, пешка откроет в себе силу Заговорщика.</Hunter6_Potion.description>
+    <Hunter6_Potion.ingestible.ingestCommandString>Выпить {0}</Hunter6_Potion.ingestible.ingestCommandString>
+    <Hunter6_Potion.ingestible.ingestReportString>Выпивает {0}.</Hunter6_Potion.ingestible.ingestReportString>
+
+    <Hunter5_Potion.label>Зелье жнеца</Hunter5_Potion.label>
+    <Hunter5_Potion.description>Свежая красная кровь с плавающими в ней вкраплениями чёрного вещества, похожего на железные опилки, словно внутри разлетелось железное оружие. У зелья резкий запах крови, непривычный привкус ржавчины и при употреблении возникает жгучее ощущение, которое мгновенно заполняет рот и пронзает мозг. Выпив его, пешка откроет в себе силу Пожинателя.</Hunter5_Potion.description>
+    <Hunter5_Potion.ingestible.ingestCommandString>Выпить {0}</Hunter5_Potion.ingestible.ingestCommandString>
+    <Hunter5_Potion.ingestible.ingestReportString>Выпивает {0}.</Hunter5_Potion.ingestible.ingestReportString>
+
+    <Hunter4_Potion.label>Зелье рыцаря</Hunter4_Potion.label>
+    <Hunter4_Potion.description>Как расплавленное железо, пылающее красным, высокотемпературное и яркое. Выпив его, пешка откроет в себе силу Железнокровного Рыцаря.</Hunter4_Potion.description>
+    <Hunter4_Potion.ingestible.ingestCommandString>Выпить {0}</Hunter4_Potion.ingestible.ingestCommandString>
+    <Hunter4_Potion.ingestible.ingestReportString>Выпивает {0}.</Hunter4_Potion.ingestible.ingestReportString>
+
+</LanguageData>

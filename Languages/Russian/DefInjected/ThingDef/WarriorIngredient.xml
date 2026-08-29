@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <lotr_GiantWarriorCore.label>Мышечное ядро гигантского воина</lotr_GiantWarriorCore.label>
+    <lotr_GiantWarriorCore.description>Ключевой ингредиент для зелий Воина.</lotr_GiantWarriorCore.description>
+
+    <lotr_Warrior9_Essence.label>эссенция Воина</lotr_Warrior9_Essence.label>
+    <lotr_Warrior9_Essence.description>Мистическая черта потустороннего пути Воина.</lotr_Warrior9_Essence.description>
+
+    <lotr_GiantSquireBone.label>Пястная кость гигантского оруженосца</lotr_GiantSquireBone.label>
+    <lotr_GiantSquireBone.description>Ключевой ингредиент для зелья Гладиатора.</lotr_GiantSquireBone.description>
+
+    <lotr_Warrior8_Essence.label>эссенция Гладиатора</lotr_Warrior8_Essence.label>
+    <lotr_Warrior8_Essence.description>Мистическая черта потустороннего пути Воина.</lotr_Warrior8_Essence.description>
+
+    <lotr_BlueGiantSpine.label>Позвоночник синего гиганта</lotr_BlueGiantSpine.label>
+    <lotr_BlueGiantSpine.description>Ключевой ингредиент для зелья Оружейного Мастера.</lotr_BlueGiantSpine.description>
+
+    <lotr_Warrior7_Essence.label>эссенция Мастера оружия</lotr_Warrior7_Essence.label>
+    <lotr_Warrior7_Essence.description>Мистическая черта потустороннего пути Воина.</lotr_Warrior7_Essence.description>
+
+    <lotr_DawnGiantCrystal.label>Кровавый кристалл рассветного гиганта</lotr_DawnGiantCrystal.label>
+    <lotr_DawnGiantCrystal.description>Ключевой ингредиент для зелья Паладина Рассвета.</lotr_DawnGiantCrystal.description>
+
+    <lotr_Warrior6_Essence.label>эссенция Рассветного паладина</lotr_Warrior6_Essence.label>
+    <lotr_Warrior6_Essence.description>Мистическая черта потустороннего пути Воина.</lotr_Warrior6_Essence.description>
+
+    <lotr_GrayGiantHeart.label>Сердце серого гиганта</lotr_GrayGiantHeart.label>
+    <lotr_GrayGiantHeart.description>Ключевой ингредиент для зелья Стража.</lotr_GrayGiantHeart.description>
+
+    <lotr_Warrior5_Essence.label>эссенция Хранителя</lotr_Warrior5_Essence.label>
+    <lotr_Warrior5_Essence.description>Мистическая черта потустороннего пути Воина.</lotr_Warrior5_Essence.description>
+
+    <lotr_DivineGiantEye.label>Глаз божественного гиганта</lotr_DivineGiantEye.label>
+    <lotr_DivineGiantEye.description>Ключевой ингредиент для зелья Охотника на демонов.</lotr_DivineGiantEye.description>
+
+    <lotr_Warrior4_Essence.label>эссенция Охотника на демонов</lotr_Warrior4_Essence.label>
+    <lotr_Warrior4_Essence.description>Мистическая черта потустороннего пути Воина.</lotr_Warrior4_Essence.description>
+
+</LanguageData>

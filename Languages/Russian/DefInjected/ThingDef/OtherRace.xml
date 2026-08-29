@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <MonsterRace.label>монстр, потерявший контроль</MonsterRace.label>
+    <MonsterRace.description>Ужасающее существо, рождённое от того, кто потерял контроль над своими потусторонними силами.</MonsterRace.description>
+    <MonsterRace.tools.left_fist-0.label>левый кулак</MonsterRace.tools.left_fist-0.label>
+    <MonsterRace.tools.left_fist-0.labelNoLocation>кулак</MonsterRace.tools.left_fist-0.labelNoLocation>
+    <MonsterRace.tools.right_fist-0.label>правый кулак</MonsterRace.tools.right_fist-0.label>
+    <MonsterRace.tools.right_fist-0.labelNoLocation>кулак</MonsterRace.tools.right_fist-0.labelNoLocation>
+    <MonsterRace.tools.teeth-0.label>зубы</MonsterRace.tools.teeth-0.label>
+    <MonsterRace.tools.head-0.label>голова</MonsterRace.tools.head-0.label>
+    <MonsterRace.tools.left_fist-1.label>левый кулак</MonsterRace.tools.left_fist-1.label>
+    <MonsterRace.tools.left_fist-1.labelNoLocation>кулак</MonsterRace.tools.left_fist-1.labelNoLocation>
+    <MonsterRace.tools.right_fist-1.label>правый кулак</MonsterRace.tools.right_fist-1.label>
+    <MonsterRace.tools.right_fist-1.labelNoLocation>кулак</MonsterRace.tools.right_fist-1.labelNoLocation>
+    <MonsterRace.tools.teeth-1.label>зубы</MonsterRace.tools.teeth-1.label>
+    <MonsterRace.tools.head-1.label>голова</MonsterRace.tools.head-1.label>
+
+    <lotr_SpiritRace.label>дух</lotr_SpiritRace.label>
+    <lotr_SpiritRace.description>Оставшийся дух мёртвого существа.</lotr_SpiritRace.description>
+    <lotr_SpiritRace.tools.left_fist.label>левый кулак</lotr_SpiritRace.tools.left_fist.label>
+    <lotr_SpiritRace.tools.left_fist.labelNoLocation>кулак</lotr_SpiritRace.tools.left_fist.labelNoLocation>
+    <lotr_SpiritRace.tools.right_fist.label>правый кулак</lotr_SpiritRace.tools.right_fist.label>
+    <lotr_SpiritRace.tools.right_fist.labelNoLocation>кулак</lotr_SpiritRace.tools.right_fist.labelNoLocation>
+    <lotr_SpiritRace.tools.head.label>голова</lotr_SpiritRace.tools.head.label>
+
+</LanguageData>

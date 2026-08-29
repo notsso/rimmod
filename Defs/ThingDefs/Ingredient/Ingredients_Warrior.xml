@@ -5,7 +5,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_GiantWarriorCore</defName>
         <label>Giant Warrior's muscle core</label>
-        <description>Ключевой ингредиент для зелий Воина.</description>
+        <description>A key ingredient for Warrior potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -28,7 +28,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Warrior9_Essence</defName>
         <label>essence of Warrior</label>
-        <description>Мистическая черта потустороннего c пути Воина.</description>
+        <description>Beyonder essence from the Warrior pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -52,7 +52,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_GiantSquireBone</defName>
         <label>Giant Squire's metacarpal bone</label>
-        <description>Ключевой ингредиент для зелья Гладиатора.</description>
+        <description>A key ingredient for Gladiator potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -75,7 +75,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Warrior8_Essence</defName>
         <label>essence of Gladiator</label>
-        <description>Мистическая черта потустороннего c пути Воина.</description>
+        <description>Beyonder essence from the Warrior pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -99,7 +99,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_BlueGiantSpine</defName>
         <label>Blue Giant's spine</label>
-        <description>Ключевой ингредиент для зелья Оружейного Мастера.</description>
+        <description>A key ingredient for Weapon Master potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -122,7 +122,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Warrior7_Essence</defName>
         <label>essence of Weapon Master</label>
-        <description>Мистическая черта потустороннего c пути Воина.</description>
+        <description>Beyonder essence from the Warrior pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -146,7 +146,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_DawnGiantCrystal</defName>
         <label>Dawn Giant blood crystal</label>
-        <description>Ключевой ингредиент для зелья Паладина Рассвета.</description>
+        <description>A key ingredient for Dawn Paladin potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -169,7 +169,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Warrior6_Essence</defName>
         <label>essence of Dawn Paladin</label>
-        <description>Мистическая черта потустороннего c пути Воина.</description>
+        <description>Beyonder essence from the Warrior pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -193,7 +193,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_GrayGiantHeart</defName>
         <label>Gray Giant heart</label>
-        <description>Ключевой ингредиент для зелья Стража.</description>
+        <description>A key ingredient for Guardian potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -216,7 +216,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Warrior5_Essence</defName>
         <label>essence of Guardian</label>
-        <description>Мистическая черта потустороннего c пути Воина.</description>
+        <description>Beyonder essence from the Warrior pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -240,7 +240,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_DivineGiantEye</defName>
         <label>Divine Giant eye</label>
-        <description>Ключевой ингредиент для зелья Охотника на демонов.</description>
+        <description>A key ingredient for Demon Hunter potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_3</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -263,7 +263,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Warrior4_Essence</defName>
         <label>essence of Demon Hunter</label>
-        <description>Мистическая черта потустороннего c пути Воина.</description>
+        <description>Beyonder essence from the Warrior pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_3</texPath>
             <graphicClass>Graphic_Single</graphicClass>

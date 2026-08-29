@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Proj_BlazingSpear.label>Копье огня</Proj_BlazingSpear.label>
+    <Proj_BlazingSpear_7S.label>Копье огня</Proj_BlazingSpear_7S.label>
+    <Proj_BlazingSpear_6S.label>Копье огня</Proj_BlazingSpear_6S.label>
+    <Proj_BlazingSpear_5S.label>Копье огня</Proj_BlazingSpear_5S.label>
+    <Proj_BlazingSpear_4S.label>Копье огня</Proj_BlazingSpear_4S.label>
+
+    <Proj_Execution.label>Копье белого огня</Proj_Execution.label>
+    <Proj_Execution_5S.label>Копье белого огня</Proj_Execution_5S.label>
+    <Proj_Execution_4S.label>Копье белого огня</Proj_Execution_4S.label>
+
+    <Proj_Fireball.label>огненный шар</Proj_Fireball.label>
+    <Proj_Fireball_9S.label>огненный шар</Proj_Fireball_9S.label>
+    <Proj_Fireball_8S.label>огненный шар</Proj_Fireball_8S.label>
+    <Proj_Fireball_7S.label>огненный шар</Proj_Fireball_7S.label>
+    <Proj_Fireball_6S.label>огненный шар</Proj_Fireball_6S.label>
+    <Proj_Fireball_5S.label>огненный шар</Proj_Fireball_5S.label>
+    <Proj_Fireball_4S.label>огненный шар</Proj_Fireball_4S.label>
+    
+</LanguageData>

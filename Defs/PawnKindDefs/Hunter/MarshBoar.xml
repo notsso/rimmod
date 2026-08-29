@@ -4,8 +4,8 @@
     <ThingDef ParentName="AnimalThingBase">
 
         <defName>lotr_MarshBoarRace</defName>
-        <label>Болотная свинья</label>
-        <description>Опасный кабан-ищейка, мутировавший под воздействием потусторонней энергии на ядовитых болотах. Обладает невероятным нюхом и огромной выносливостью. Почуяв кровь, он будет преследовать жертву километрами. Его внутренние органы подверглись частичной кристаллизации.</description>
+        <label>Marsh boar</label>
+        <description>A dangerous boar-hunter, mutated by the otherworldly energy of toxic swamps. It possesses an incredible sense of smell and immense endurance. Upon sensing blood, it will pursue its prey for kilometers. Its internal organs have undergone partial crystallization.</description>
         
         <statBases>
             <MoveSpeed>5.5</MoveSpeed>
@@ -64,7 +64,7 @@
 
         <tools>
             <li>
-                <label>бивни</label>
+                <label>tusks</label>
                 <capacities>
                     <li>Stab</li>
                 </capacities>
@@ -73,7 +73,7 @@
                 <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
             </li>
             <li>
-                <label>зубы</label>
+                <label>teeth</label>
                 <capacities>
                     <li>Bite</li>
                 </capacities>

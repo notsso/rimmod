@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <lotr_FireBirdRace.label>огненная птица</lotr_FireBirdRace.label>
+    <lotr_FireBirdRace.description>Великолепный хищник, чьи перья переливаются внутренним жаром. Оставляет за собой следы искр в полёте и яростно территориален. Его хвостовые перья ценятся алхимиками.</lotr_FireBirdRace.description>
+    <lotr_FireBirdRace.tools.claws.label>когти</lotr_FireBirdRace.tools.claws.label>
+    <lotr_FireBirdRace.tools.beak.label>клюв</lotr_FireBirdRace.tools.beak.label>
+    <lotr_FireBirdRace.tools.head.label>голова</lotr_FireBirdRace.tools.head.label>
+
+    <lotr_MirrorHedgehogRace.label>зеркальный ёж</lotr_MirrorHedgehogRace.label>
+    <lotr_MirrorHedgehogRace.description>Маленькое пугливое существо, покрытое иглами, отражающими магию и свет. При угрозе сворачивается в клубок, создавая ослепительную зеркальную поверхность. Его кровь используется в зельях просителя света.</lotr_MirrorHedgehogRace.description>
+    <lotr_MirrorHedgehogRace.tools.quills.label>иглы</lotr_MirrorHedgehogRace.tools.quills.label>
+    <lotr_MirrorHedgehogRace.tools.teeth.label>зубы</lotr_MirrorHedgehogRace.tools.teeth.label>
+
+    <lotr_DawnRoosterRace.label>рассветный петух</lotr_DawnRoosterRace.label>
+    <lotr_DawnRoosterRace.description>Крупная гордая птица с ярко-красным гребнем, светящимся на рассвете. Его крик может ослепить врагов священным светом, а острый клюв пробивает броню. Яростно защищает свою стаю.</lotr_DawnRoosterRace.description>
+    <lotr_DawnRoosterRace.tools.claws.label>когти</lotr_DawnRoosterRace.tools.claws.label>
+    <lotr_DawnRoosterRace.tools.beak.label>клюв</lotr_DawnRoosterRace.tools.beak.label>
+    <lotr_DawnRoosterRace.tools.head.label>голова</lotr_DawnRoosterRace.tools.head.label>
+
+    <lotr_DawnRoosterKingRace.label>король рассветных петухов</lotr_DawnRoosterKingRace.label>
+    <lotr_DawnRoosterKingRace.description>Колоссальный петух, чей багровый гребень пылает, как второе солнце. Повелевает меньшими рассветными петухами и может испускать разрушительные волны святого света. Его гребень — легендарный ингредиент для зелий жреца света.</lotr_DawnRoosterKingRace.description>
+    <lotr_DawnRoosterKingRace.tools.claws.label>когти</lotr_DawnRoosterKingRace.tools.claws.label>
+    <lotr_DawnRoosterKingRace.tools.beak.label>клюв</lotr_DawnRoosterKingRace.tools.beak.label>
+    <lotr_DawnRoosterKingRace.tools.head.label>голова</lotr_DawnRoosterKingRace.tools.head.label>
+
+    <lotr_SpiritPactBirdRace.label>птица пакта духов</lotr_SpiritPactBirdRace.label>
+    <lotr_SpiritPactBirdRace.description>Грациозная птица, чьи перья используются для скрепления священных пактов. Источает ауру власти и может связывать врагов магическими контрактами, заставляя их колебаться. Её перья остры, как бритва, когда брошены.</lotr_SpiritPactBirdRace.description>
+    <lotr_SpiritPactBirdRace.tools.claws.label>когти</lotr_SpiritPactBirdRace.tools.claws.label>
+    <lotr_SpiritPactBirdRace.tools.beak.label>клюв</lotr_SpiritPactBirdRace.tools.beak.label>
+    <lotr_SpiritPactBirdRace.tools.feather_blades.label>перьевые клинки</lotr_SpiritPactBirdRace.tools.feather_blades.label>
+    <lotr_SpiritPactBirdRace.tools.head.label>голова</lotr_SpiritPactBirdRace.tools.head.label>
+
+    <lotr_SunDivineBirdRace.label>божественная солнечная птица</lotr_SunDivineBirdRace.label>
+    <lotr_SunDivineBirdRace.description>Легендарная птица, чьи перья сотканы из чистого солнечного света. Парит над миром, оставляя за собой следы святого огня. Само её присутствие сжигает нечестивых и вдохновляет праведников. Лишь сильнейшие могут надеяться заполучить её хвостовые перья.</lotr_SunDivineBirdRace.description>
+    <lotr_SunDivineBirdRace.tools.claws.label>когти</lotr_SunDivineBirdRace.tools.claws.label>
+    <lotr_SunDivineBirdRace.tools.beak.label>клюв</lotr_SunDivineBirdRace.tools.beak.label>
+    <lotr_SunDivineBirdRace.tools.sunfire_feathers.label>перья солнечного огня</lotr_SunDivineBirdRace.tools.sunfire_feathers.label>
+    <lotr_SunDivineBirdRace.tools.head.label>голова</lotr_SunDivineBirdRace.tools.head.label>
+
+</LanguageData>

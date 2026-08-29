@@ -3,7 +3,7 @@
   <StatDef>
     <defName>SpiritualityOffset</defName>
     <label>spirituality offset</label>
-    <description>Дополнительный максимум духовности, зависящий от расы существа.</description>
+    <description>Additional spirituality.</description>
     <category>Basics</category>
     <defaultBaseValue>0</defaultBaseValue>
     <toStringStyle>FloatTwo</toStringStyle>

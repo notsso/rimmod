@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <BeyonderItems.label>потусторонние предметы</BeyonderItems.label>
+    <BeyonderPotions.label>потусторонние зелья</BeyonderPotions.label>
+    <BeyonderCreatureParts.label>части потусторонних существ</BeyonderCreatureParts.label>
+    <BeyonderPlantParts.label>части потусторонних растений</BeyonderPlantParts.label>
+    <SpecialBeyonderItems.label>особые потусторонние предметы</SpecialBeyonderItems.label>
+
+</LanguageData>

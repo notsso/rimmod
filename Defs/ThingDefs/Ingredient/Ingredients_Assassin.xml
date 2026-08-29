@@ -5,7 +5,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_ShadowPoisonFlowerRootTendrils</defName>
         <label>Shadow Poison Flower Root Tendrils</label>
-        <description>Корневые усики мистического цветка, пропитанные теневой эссенцией. Ключевой ингредиент для зелья Ассасина.</description>
+        <description>The root tendrils of a mystical flower, imbued with shadow essence. A key ingredient for Assassin potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -28,7 +28,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_SerpentMonsterBirdFeathers</defName>
         <label>Serpent-Bodied Monster Bird Black Feathers</label>
-        <description>Черные перья хищной птицы с телом змеи, обладающие мистической силой скрытности. Ключевой ингредиент для зелья Ассасина.</description>
+        <description>Black feathers of a bird of prey with the body of a snake, possessing the mystical power of stealth. A key ingredient for Assassin potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -51,7 +51,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Assassin9_Essence</defName>
         <label>essence of Assassin</label>
-        <description>Мистическая черта потустороннего с пути Ассасина.</description>
+        <description>Beyonder essence from the Assassin pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -76,7 +76,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_DemonThroatHoneyguideHeart</defName>
         <label>Demon Throat Honeyguide's Heart</label>
-        <description>Сердце медоеда из горла демона, наполненное провокационной энергией. Ключевой ингредиент для зелья Подстрекателя.</description>
+        <description>A honeyguide's heart from a demon's throat, imbued with provocative energy. A key ingredient for Instigator potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -99,7 +99,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_DarkProwlerPoisonSac</defName>
         <label>Dark Prowler's Poison Sac</label>
-        <description>Ядовитый мешок тёмного бродяги, содержащий токсины, влияющие на разум. Ключевой ингредиент для зелья Подстрекателя.</description>
+        <description>A dark prowler's poison sac, containing mind-altering toxins. A key ingredient for Instigator potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -122,7 +122,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Assassin8_Essence</defName>
         <label>essence of Instigator</label>
-        <description>Мистическая черта потустороннего с пути Ассасина.</description>
+        <description>Beyonder essence from the Assassin pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_1</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -147,7 +147,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_AbyssDemonicFishBlood</defName>
         <label>Abyss Demonic Fish Blood</label>
-        <description>Кровь демонической рыбы Бездны, насыщенная тёмной магией. Ключевой ингредиент для зелья Ведьмы.</description>
+        <description>The blood of the demonic fish of the Abyss, imbued with dark magic. A key ingredient for Witch potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -170,7 +170,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_AgatePeacockEgg</defName>
         <label>Agate Peacock Egg</label>
-        <description>Яйцо агатового павлина, минерализованное и пропитанное магией. Ключевой ингредиент для зелья Ведьмы.</description>
+        <description>An agate peacock egg, mineralized and imbued with magic. A key ingredient for Witch potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -193,7 +193,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Assassin7_Essence</defName>
         <label>essence of Witch</label>
-        <description>Мистическая черта потустороннего с пути Ассасина.</description>
+        <description>Beyonder essence from the Assassin pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -218,7 +218,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_SuccubusEyes</defName>
         <label>Succubus Eyes</label>
-        <description>Пара глаз суккуба, излучающая очарование и соблазн. Ключевой ингредиент для зелья Демонессы наслаждения.</description>
+        <description>A pair of succubus eyes, radiating charm and seduction. A key ingredient for Demoness of Pleasure potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -241,7 +241,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_BlackWidowSilkGland</defName>
         <label>Black Widow Spider Silk Gland</label>
-        <description>Паутинная железа взрослой чёрной вдовы, производящая прочные нити. Ключевой ингредиент для зелья Демонессы наслаждения.</description>
+        <description>The spinneret gland of an adult black widow, which produces strong threads. A key ingredient for Demoness of Pleasure potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -264,7 +264,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Assassin6_Essence</defName>
         <label>essence of Pleasure</label>
-        <description>Мистическая черта потустороннего с пути Ассасина.</description>
+        <description>Beyonder essence from the Assassin pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -289,7 +289,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_FlowerFacedBatHead</defName>
         <label>Flower-Faced Bat Head</label>
-        <description>Голова летучей мыши с цветочным лицом, источник проклятий и страданий. Ключевой ингредиент для зелья Демонессы страданий.</description>
+        <description>A flower-faced bat head, the source of curses and suffering. A key ingredient for Demoness of Afflictions potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -312,7 +312,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_TwoTailedBlackSnakeGallbladder</defName>
         <label>Two-Tailed Black Snake Gallbladder</label>
-        <description>Желчный пузырь двухвостой чёрной змеи, наполненный ядом и страданиями. Ключевой ингредиент для зелья Демонессы страданий.</description>
+        <description>The gallbladder of a two-tailed black snake, filled with venom and suffering. A key ingredient for Demoness of Afflictions potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -335,7 +335,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Assassin5_Essence</defName>
         <label>essence of Afflictions</label>
-        <description>Мистическая черта потустороннего с пути Ассасина.</description>
+        <description>Beyonder essence from the Assassin pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_2</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -360,7 +360,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_PlagueMotherSerpentVenomSac</defName>
         <label>Plague Mother Serpent's Venom Sac</label>
-        <description>Мешок с ядом змеиной матери чумы, источник смертельных болезней. Ключевой ингредиент для зелья Демонессы отчаяния.</description>
+        <description>A sac containing the venom of the Plague Mother, the source of deadly diseases. A key ingredient for Demoness of Despair potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_3</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -383,7 +383,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_SilverHunterCrystal</defName>
         <label>Silver Hunter's Crystal</label>
-        <description>Кристалл серебряного охотника, аккумулирующий силу отчаяния. Ключевой ингредиент для зелья Демонессы отчаяния.</description>
+        <description>A silver hunter's crystal that accumulates the power of despair. A key ingredient for Demoness of Despair potion.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_3</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -403,7 +403,7 @@
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_Assassin4_Essence</defName>
         <label>essence of Despair</label>
-        <description>Мистическая черта потустороннего с пути Ассасина.</description>
+        <description>Beyonder essence from the Assassin pathway.</description>
         <graphicData>
             <texPath>Things/Ingredient/Ingredient_3</texPath>
             <graphicClass>Graphic_Single</graphicClass>

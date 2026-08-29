@@ -4,8 +4,8 @@
     <ThingDef ParentName="BasePawn">
 
         <defName>lotr_MagmaGiantRace</defName>
-        <label>Магматический гигант</label>
-        <description>Это колоссальное гуманоидное существо. Его тело состоит из сплава разумной полужидкой магмы и застывшей черной вулканической породы (базальта), которая служит ему прочной броней.</description>
+        <label>Magma giant</label>
+        <description>This colossal humanoid creature is composed of a fusion of sentient, semi-liquid magma and solidified black volcanic rock (basalt), which serves as its durable armor.</description>
 
         <statBases>
             <MoveSpeed>5.0</MoveSpeed>

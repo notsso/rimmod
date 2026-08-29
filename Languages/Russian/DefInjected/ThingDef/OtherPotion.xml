@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <lotr_StrengthPotion.label>Зелье силы</lotr_StrengthPotion.label>
+    <lotr_StrengthPotion.description>Светящаяся красная жидкость, наполняющая пьющего сверхъестественной силой.</lotr_StrengthPotion.description>
+    <lotr_StrengthPotion.ingestible.ingestCommandString>Выпить {0}</lotr_StrengthPotion.ingestible.ingestCommandString>
+    <lotr_StrengthPotion.ingestible.ingestReportString>Выпивает {0}.</lotr_StrengthPotion.ingestible.ingestReportString>
+
+    <lotr_ArmorPotion.label>Зелье брони</lotr_ArmorPotion.label>
+    <lotr_ArmorPotion.description>Густая серебристая жидкость, делающая кожу твёрдой, как металл.</lotr_ArmorPotion.description>
+    <lotr_ArmorPotion.ingestible.ingestCommandString>Выпить {0}</lotr_ArmorPotion.ingestible.ingestCommandString>
+    <lotr_ArmorPotion.ingestible.ingestReportString>Выпивает {0}.</lotr_ArmorPotion.ingestible.ingestReportString>
+
+    <lotr_HealingPotion.label>Зелье лечения</lotr_HealingPotion.label>
+    <lotr_HealingPotion.description>Тёплая изумрудная жидкость, ускоряющая естественное заживление и изгоняющая болезни.</lotr_HealingPotion.description>
+    <lotr_HealingPotion.ingestible.ingestCommandString>Выпить {0}</lotr_HealingPotion.ingestible.ingestCommandString>
+    <lotr_HealingPotion.ingestible.ingestReportString>Выпивает {0}.</lotr_HealingPotion.ingestible.ingestReportString>
+
+    <lotr_CalmingPotion.label>Успокаивающее зелье</lotr_CalmingPotion.label>
+    <lotr_CalmingPotion.description>Умиротворяющая голубая жидкость, успокаивающая разум и снимающая вредные состояния.</lotr_CalmingPotion.description>
+    <lotr_CalmingPotion.ingestible.ingestCommandString>Выпить {0}</lotr_CalmingPotion.ingestible.ingestCommandString>
+    <lotr_CalmingPotion.ingestible.ingestReportString>Выпивает {0}.</lotr_CalmingPotion.ingestible.ingestReportString>
+
+</LanguageData>

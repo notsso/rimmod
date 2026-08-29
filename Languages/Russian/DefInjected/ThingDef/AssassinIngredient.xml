@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <lotr_ShadowPoisonFlowerRootTendrils.label>Корневые усики теневого ядовитого цветка</lotr_ShadowPoisonFlowerRootTendrils.label>
+    <lotr_ShadowPoisonFlowerRootTendrils.description>Корневые усики мистического цветка, пропитанные теневой эссенцией. Ключевой ингредиент для зелья Ассасина.</lotr_ShadowPoisonFlowerRootTendrils.description>
+
+    <lotr_SerpentMonsterBirdFeathers.label>Чёрные перья птицы-монстра со змеиным телом</lotr_SerpentMonsterBirdFeathers.label>
+    <lotr_SerpentMonsterBirdFeathers.description>Черные перья хищной птицы с телом змеи, обладающие мистической силой скрытности. Ключевой ингредиент для зелья Ассасина.</lotr_SerpentMonsterBirdFeathers.description>
+
+    <lotr_Assassin9_Essence.label>эссенция Ассасина</lotr_Assassin9_Essence.label>
+    <lotr_Assassin9_Essence.description>Мистическая черта потустороннего с пути Ассасина.</lotr_Assassin9_Essence.description>
+
+    <lotr_DemonThroatHoneyguideHeart.label>Сердце демонического медоуказчика</lotr_DemonThroatHoneyguideHeart.label>
+    <lotr_DemonThroatHoneyguideHeart.description>Сердце медоеда из горла демона, наполненное провокационной энергией. Ключевой ингредиент для зелья Подстрекателя.</lotr_DemonThroatHoneyguideHeart.description>
+
+    <lotr_DarkProwlerPoisonSac.label>Ядовитый мешок тёмного хищника</lotr_DarkProwlerPoisonSac.label>
+    <lotr_DarkProwlerPoisonSac.description>Ядовитый мешок тёмного бродяги, содержащий токсины, влияющие на разум. Ключевой ингредиент для зелья Подстрекателя.</lotr_DarkProwlerPoisonSac.description>
+
+    <lotr_Assassin8_Essence.label>эссенция Подстрекателя</lotr_Assassin8_Essence.label>
+    <lotr_Assassin8_Essence.description>Мистическая черта потустороннего с пути Ассасина.</lotr_Assassin8_Essence.description>
+
+    <lotr_AbyssDemonicFishBlood.label>Кровь бездонной демонической рыбы</lotr_AbyssDemonicFishBlood.label>
+    <lotr_AbyssDemonicFishBlood.description>Кровь демонической рыбы Бездны, насыщенная тёмной магией. Ключевой ингредиент для зелья Ведьмы.</lotr_AbyssDemonicFishBlood.description>
+
+    <lotr_AgatePeacockEgg.label>Яйцо агатового павлина</lotr_AgatePeacockEgg.label>
+    <lotr_AgatePeacockEgg.description>Яйцо агатового павлина, минерализованное и пропитанное магией. Ключевой ингредиент для зелья Ведьмы.</lotr_AgatePeacockEgg.description>
+
+    <lotr_Assassin7_Essence.label>эссенция Ведьмы</lotr_Assassin7_Essence.label>
+    <lotr_Assassin7_Essence.description>Мистическая черта потустороннего с пути Ассасина.</lotr_Assassin7_Essence.description>
+
+    <lotr_SuccubusEyes.label>Глаза суккуба</lotr_SuccubusEyes.label>
+    <lotr_SuccubusEyes.description>Пара глаз суккуба, излучающая очарование и соблазн. Ключевой ингредиент для зелья Демонессы наслаждения.</lotr_SuccubusEyes.description>
+
+    <lotr_BlackWidowSilkGland.label>Паутинная железа чёрной вдовы</lotr_BlackWidowSilkGland.label>
+    <lotr_BlackWidowSilkGland.description>Паутинная железа взрослой чёрной вдовы, производящая прочные нити. Ключевой ингредиент для зелья Демонессы наслаждения.</lotr_BlackWidowSilkGland.description>
+
+    <lotr_Assassin6_Essence.label>эссенция Наслаждения</lotr_Assassin6_Essence.label>
+    <lotr_Assassin6_Essence.description>Мистическая черта потустороннего с пути Ассасина.</lotr_Assassin6_Essence.description>
+
+    <lotr_FlowerFacedBatHead.label>Голова цветколицей летучей мыши</lotr_FlowerFacedBatHead.label>
+    <lotr_FlowerFacedBatHead.description>Голова летучей мыши с цветочным лицом, источник проклятий и страданий. Ключевой ингредиент для зелья Демонессы страданий.</lotr_FlowerFacedBatHead.description>
+
+    <lotr_TwoTailedBlackSnakeGallbladder.label>Желчный пузырь двухвостой чёрной змеи</lotr_TwoTailedBlackSnakeGallbladder.label>
+    <lotr_TwoTailedBlackSnakeGallbladder.description>Желчный пузырь двухвостой чёрной змеи, наполненный ядом и страданиями. Ключевой ингредиент для зелья Демонессы страданий.</lotr_TwoTailedBlackSnakeGallbladder.description>
+
+    <lotr_Assassin5_Essence.label>эссенция Страданий</lotr_Assassin5_Essence.label>
+    <lotr_Assassin5_Essence.description>Мистическая черта потустороннего с пути Ассасина.</lotr_Assassin5_Essence.description>
+
+    <lotr_PlagueMotherSerpentVenomSac.label>Ядовитый мешок чумной матери-змеи</lotr_PlagueMotherSerpentVenomSac.label>
+    <lotr_PlagueMotherSerpentVenomSac.description>Мешок с ядом змеиной матери чумы, источник смертельных болезней. Ключевой ингредиент для зелья Демонессы отчаяния.</lotr_PlagueMotherSerpentVenomSac.description>
+
+    <lotr_SilverHunterCrystal.label>Кристалл серебряного охотника</lotr_SilverHunterCrystal.label>
+    <lotr_SilverHunterCrystal.description>Кристалл серебряного охотника, аккумулирующий силу отчаяния. Ключевой ингредиент для зелья Демонессы отчаяния.</lotr_SilverHunterCrystal.description>
+
+    <lotr_Assassin4_Essence.label>эссенция Отчаяния</lotr_Assassin4_Essence.label>
+    <lotr_Assassin4_Essence.description>Мистическая черта потустороннего с пути Ассасина.</lotr_Assassin4_Essence.description>
+
+</LanguageData>

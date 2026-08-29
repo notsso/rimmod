@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Giant.label>гигант</Giant.label>
+    <Giant.description>Огромное гуманоидное существо невероятной силы, но лишённое высших способностей истинных людей.</Giant.description>
+    <Giant.tools.left_fist.label>левый кулак</Giant.tools.left_fist.label>
+    <Giant.tools.left_fist.labelNoLocation>кулак</Giant.tools.left_fist.labelNoLocation>
+    <Giant.tools.right_fist.label>правый кулак</Giant.tools.right_fist.label>
+    <Giant.tools.right_fist.labelNoLocation>кулак</Giant.tools.right_fist.labelNoLocation>
+    <Giant.tools.teeth.label>зубы</Giant.tools.teeth.label>
+    <Giant.tools.head.label>голова</Giant.tools.head.label>
+
+    <lotr_BlueGiantRace.label>синий гигант</lotr_BlueGiantRace.label>
+    <lotr_BlueGiantRace.description>Громадный синекожий гигант с костяными наростами вдоль позвоночника. Его мышцы подобны железным канатам, а шкура отводит обычные стрелы и пули. Он сражается с неестественной, звериной ловкостью, читая слабости в стойках врагов.</lotr_BlueGiantRace.description>
+    <lotr_BlueGiantRace.tools.left_fist-0.label>левый кулак</lotr_BlueGiantRace.tools.left_fist-0.label>
+    <lotr_BlueGiantRace.tools.left_fist-0.labelNoLocation>кулак</lotr_BlueGiantRace.tools.left_fist-0.labelNoLocation>
+    <lotr_BlueGiantRace.tools.right_fist-0.label>правый кулак</lotr_BlueGiantRace.tools.right_fist-0.label>
+    <lotr_BlueGiantRace.tools.right_fist-0.labelNoLocation>кулак</lotr_BlueGiantRace.tools.right_fist-0.labelNoLocation>
+    <lotr_BlueGiantRace.tools.teeth-0.label>зубы</lotr_BlueGiantRace.tools.teeth-0.label>
+    <lotr_BlueGiantRace.tools.head-0.label>голова</lotr_BlueGiantRace.tools.head-0.label>
+    <lotr_BlueGiantRace.tools.left_fist-1.label>левый кулак</lotr_BlueGiantRace.tools.left_fist-1.label>
+    <lotr_BlueGiantRace.tools.left_fist-1.labelNoLocation>кулак</lotr_BlueGiantRace.tools.left_fist-1.labelNoLocation>
+    <lotr_BlueGiantRace.tools.right_fist-1.label>правый кулак</lotr_BlueGiantRace.tools.right_fist-1.label>
+    <lotr_BlueGiantRace.tools.right_fist-1.labelNoLocation>кулак</lotr_BlueGiantRace.tools.right_fist-1.labelNoLocation>
+    <lotr_BlueGiantRace.tools.teeth-1.label>зубы</lotr_BlueGiantRace.tools.teeth-1.label>
+    <lotr_BlueGiantRace.tools.head-1.label>голова</lotr_BlueGiantRace.tools.head-1.label>
+
+    <lotr_DawnGiantRace.label>рассветный гигант</lotr_DawnGiantRace.label>
+    <lotr_DawnGiantRace.description>Колоссальный гигант, способный проявлять броню из живого рассветного света. Его тело покрыто жгутами мышц, а атаки несут след очищающего утреннего света.</lotr_DawnGiantRace.description>
+    <lotr_DawnGiantRace.tools.left_fist-0.label>левый кулак</lotr_DawnGiantRace.tools.left_fist-0.label>
+    <lotr_DawnGiantRace.tools.left_fist-0.labelNoLocation>кулак</lotr_DawnGiantRace.tools.left_fist-0.labelNoLocation>
+    <lotr_DawnGiantRace.tools.right_fist-0.label>правый кулак</lotr_DawnGiantRace.tools.right_fist-0.label>
+    <lotr_DawnGiantRace.tools.right_fist-0.labelNoLocation>кулак</lotr_DawnGiantRace.tools.right_fist-0.labelNoLocation>
+    <lotr_DawnGiantRace.tools.teeth-0.label>зубы</lotr_DawnGiantRace.tools.teeth-0.label>
+    <lotr_DawnGiantRace.tools.head-0.label>голова</lotr_DawnGiantRace.tools.head-0.label>
+    <lotr_DawnGiantRace.tools.left_fist-1.label>левый кулак</lotr_DawnGiantRace.tools.left_fist-1.label>
+    <lotr_DawnGiantRace.tools.left_fist-1.labelNoLocation>кулак</lotr_DawnGiantRace.tools.left_fist-1.labelNoLocation>
+    <lotr_DawnGiantRace.tools.right_fist-1.label>правый кулак</lotr_DawnGiantRace.tools.right_fist-1.label>
+    <lotr_DawnGiantRace.tools.right_fist-1.labelNoLocation>кулак</lotr_DawnGiantRace.tools.right_fist-1.labelNoLocation>
+    <lotr_DawnGiantRace.tools.teeth-1.label>зубы</lotr_DawnGiantRace.tools.teeth-1.label>
+    <lotr_DawnGiantRace.tools.head-1.label>голова</lotr_DawnGiantRace.tools.head-1.label>
+
+    <lotr_DivineGiantRace.label>божественный гигант</lotr_DivineGiantRace.label>
+    <lotr_DivineGiantRace.description>Титан забытой эпохи, его кожа как грозовые тучи, а глаза горят потусторонним огнём. Само его присутствие несёт тлен недостойным.</lotr_DivineGiantRace.description>
+    <lotr_DivineGiantRace.tools.left_fist-0.label>левый кулак</lotr_DivineGiantRace.tools.left_fist-0.label>
+    <lotr_DivineGiantRace.tools.left_fist-0.labelNoLocation>кулак</lotr_DivineGiantRace.tools.left_fist-0.labelNoLocation>
+    <lotr_DivineGiantRace.tools.right_fist-0.label>правый кулак</lotr_DivineGiantRace.tools.right_fist-0.label>
+    <lotr_DivineGiantRace.tools.right_fist-0.labelNoLocation>кулак</lotr_DivineGiantRace.tools.right_fist-0.labelNoLocation>
+    <lotr_DivineGiantRace.tools.teeth-0.label>зубы</lotr_DivineGiantRace.tools.teeth-0.label>
+    <lotr_DivineGiantRace.tools.head-0.label>голова</lotr_DivineGiantRace.tools.head-0.label>
+    <lotr_DivineGiantRace.tools.left_fist-1.label>левый кулак</lotr_DivineGiantRace.tools.left_fist-1.label>
+    <lotr_DivineGiantRace.tools.left_fist-1.labelNoLocation>кулак</lotr_DivineGiantRace.tools.left_fist-1.labelNoLocation>
+    <lotr_DivineGiantRace.tools.right_fist-1.label>правый кулак</lotr_DivineGiantRace.tools.right_fist-1.label>
+    <lotr_DivineGiantRace.tools.right_fist-1.labelNoLocation>кулак</lotr_DivineGiantRace.tools.right_fist-1.labelNoLocation>
+    <lotr_DivineGiantRace.tools.teeth-1.label>зубы</lotr_DivineGiantRace.tools.teeth-1.label>
+    <lotr_DivineGiantRace.tools.head-1.label>голова</lotr_DivineGiantRace.tools.head-1.label>
+
+    <lotr_GiantSquireRace.label>гигантский оруженосец</lotr_GiantSquireRace.label>
+    <lotr_GiantSquireRace.description>Высокий, плотный гигант с пепельно-серой кожей и неестественно широкими ладонями. Его кости и мышцы гораздо плотнее, чем у меньших гигантов, и он игнорирует слабую магию и ментальные атаки.</lotr_GiantSquireRace.description>
+    <lotr_GiantSquireRace.tools.left_fist.label>левый кулак</lotr_GiantSquireRace.tools.left_fist.label>
+    <lotr_GiantSquireRace.tools.left_fist.labelNoLocation>кулак</lotr_GiantSquireRace.tools.left_fist.labelNoLocation>
+    <lotr_GiantSquireRace.tools.right_fist.label>правый кулак</lotr_GiantSquireRace.tools.right_fist.label>
+    <lotr_GiantSquireRace.tools.right_fist.labelNoLocation>кулак</lotr_GiantSquireRace.tools.right_fist.labelNoLocation>
+    <lotr_GiantSquireRace.tools.teeth.label>зубы</lotr_GiantSquireRace.tools.teeth.label>
+    <lotr_GiantSquireRace.tools.head.label>голова</lotr_GiantSquireRace.tools.head.label>
+
+    <lotr_GiantWarriorRace.label>гигантский воин</lotr_GiantWarriorRace.label>
+    <lotr_GiantWarriorRace.description>Массивный, дикий гуманоид с толстыми, узловатыми мышцами. Его сила втрое превосходит человеческую, но шкура не является непробиваемой.</lotr_GiantWarriorRace.description>
+    <lotr_GiantWarriorRace.tools.left_fist.label>левый кулак</lotr_GiantWarriorRace.tools.left_fist.label>
+    <lotr_GiantWarriorRace.tools.left_fist.labelNoLocation>кулак</lotr_GiantWarriorRace.tools.left_fist.labelNoLocation>
+    <lotr_GiantWarriorRace.tools.right_fist.label>правый кулак</lotr_GiantWarriorRace.tools.right_fist.label>
+    <lotr_GiantWarriorRace.tools.right_fist.labelNoLocation>кулак</lotr_GiantWarriorRace.tools.right_fist.labelNoLocation>
+    <lotr_GiantWarriorRace.tools.teeth.label>зубы</lotr_GiantWarriorRace.tools.teeth.label>
+    <lotr_GiantWarriorRace.tools.head.label>голова</lotr_GiantWarriorRace.tools.head.label>
+
+    <lotr_GreyGiantRace.label>серый гигант</lotr_GreyGiantRace.label>
+    <lotr_GreyGiantRace.description>Монолитный серый гигант, его плоть подобна древнему граниту. Движется с неумолимой тяжестью и переносит раны, которые свалили бы меньших существ.</lotr_GreyGiantRace.description>
+    <lotr_GreyGiantRace.tools.left_fist-0.label>левый кулак</lotr_GreyGiantRace.tools.left_fist-0.label>
+    <lotr_GreyGiantRace.tools.left_fist-0.labelNoLocation>кулак</lotr_GreyGiantRace.tools.left_fist-0.labelNoLocation>
+    <lotr_GreyGiantRace.tools.right_fist-0.label>правый кулак</lotr_GreyGiantRace.tools.right_fist-0.label>
+    <lotr_GreyGiantRace.tools.right_fist-0.labelNoLocation>кулак</lotr_GreyGiantRace.tools.right_fist-0.labelNoLocation>
+    <lotr_GreyGiantRace.tools.teeth-0.label>зубы</lotr_GreyGiantRace.tools.teeth-0.label>
+    <lotr_GreyGiantRace.tools.head-0.label>голова</lotr_GreyGiantRace.tools.head-0.label>
+    <lotr_GreyGiantRace.tools.left_fist-1.label>левый кулак</lotr_GreyGiantRace.tools.left_fist-1.label>
+    <lotr_GreyGiantRace.tools.left_fist-1.labelNoLocation>кулак</lotr_GreyGiantRace.tools.left_fist-1.labelNoLocation>
+    <lotr_GreyGiantRace.tools.right_fist-1.label>правый кулак</lotr_GreyGiantRace.tools.right_fist-1.label>
+    <lotr_GreyGiantRace.tools.right_fist-1.labelNoLocation>кулак</lotr_GreyGiantRace.tools.right_fist-1.labelNoLocation>
+    <lotr_GreyGiantRace.tools.teeth-1.label>зубы</lotr_GreyGiantRace.tools.teeth-1.label>
+    <lotr_GreyGiantRace.tools.head-1.label>голова</lotr_GreyGiantRace.tools.head-1.label>
+
+</LanguageData>

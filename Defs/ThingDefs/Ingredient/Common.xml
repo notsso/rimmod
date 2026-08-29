@@ -3,8 +3,8 @@
 
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_MagicalHerbs</defName>
-        <label>Магические травы</label>
-        <description>Смесь из различных магических трав.</description>
+        <label>magical herbs</label>
+        <description>A mixture of various magical herbs.</description>
         <graphicData>
             <texPath>Things/Ingredient/MagicalHerbs</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -26,8 +26,8 @@
 
     <ThingDef ParentName="ResourceBase">
         <defName>lotr_MysticalComponents</defName>
-        <label>Мистический компонент</label>
-        <description>Богатый мистической энергией компонент</description>
+        <label>mystical component</label>
+        <description>Components imbued with mystical energy.</description>
         <graphicData>
             <texPath>Things/Ingredient/MysticalComponents</texPath>
             <graphicClass>Graphic_Single</graphicClass>

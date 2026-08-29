@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <lotr_AbyssDemonicFishRace.label>бездонная демоническая рыба</lotr_AbyssDemonicFishRace.label>
+    <lotr_AbyssDemonicFishRace.description>Кошмарный земноводный хищник, обитающий в самых тёмных болотах. Его чешуя мерцает неестественным синим светом, а кровь густа от тёмной магии. Движется с жуткой тишиной, нападая с кромки воды.</lotr_AbyssDemonicFishRace.description>
+    <lotr_AbyssDemonicFishRace.tools.left_claw.label>левая клешня</lotr_AbyssDemonicFishRace.tools.left_claw.label>
+    <lotr_AbyssDemonicFishRace.tools.left_claw.labelNoLocation>клешня</lotr_AbyssDemonicFishRace.tools.left_claw.labelNoLocation>
+    <lotr_AbyssDemonicFishRace.tools.right_claw.label>правая клешня</lotr_AbyssDemonicFishRace.tools.right_claw.label>
+    <lotr_AbyssDemonicFishRace.tools.right_claw.labelNoLocation>клешня</lotr_AbyssDemonicFishRace.tools.right_claw.labelNoLocation>
+    <lotr_AbyssDemonicFishRace.tools.head.label>голова</lotr_AbyssDemonicFishRace.tools.head.label>
+
+    <lotr_AgatePeacockRace.label>агатовый павлин</lotr_AgatePeacockRace.label>
+    <lotr_AgatePeacockRace.description>Великолепная птица, чьё оперение переливается, как агат. Источает ауру льда и зеркальной магии, заставляя жертв видеть собственные отражения и терять ориентацию. Чрезвычайно быстр и агрессивен, особенно защищая гнездо. Его яйца — ценный ингредиент для зелья Ведьмы.</lotr_AgatePeacockRace.description>
+    <lotr_AgatePeacockRace.tools.claws.label>когти</lotr_AgatePeacockRace.tools.claws.label>
+    <lotr_AgatePeacockRace.tools.beak.label>клюв</lotr_AgatePeacockRace.tools.beak.label>
+    <lotr_AgatePeacockRace.tools.head.label>голова</lotr_AgatePeacockRace.tools.head.label>
+
+    <lotr_BlackWidowSpiderRace.label>чёрная вдова</lotr_BlackWidowSpiderRace.label>
+    <lotr_BlackWidowSpiderRace.description>Огромный паук с глянцево-чёрным хитином, чьи паутинные железы производят невероятно прочную шёлковую нить. Предпочитает подстерегать добычу в тени, заворачивая её в кокон. Его паутинные железы — ценный ингредиент для зелий Демонессы наслаждения.</lotr_BlackWidowSpiderRace.description>
+    <lotr_BlackWidowSpiderRace.tools.mandibles.label>жвала</lotr_BlackWidowSpiderRace.tools.mandibles.label>
+    <lotr_BlackWidowSpiderRace.tools.head.label>голова</lotr_BlackWidowSpiderRace.tools.head.label>
+
+    <lotr_DarkProwlerRace.label>тёмный хищник</lotr_DarkProwlerRace.label>
+    <lotr_DarkProwlerRace.description>Извилистый, теневой хищник, преследующий добычу по ночам. Его укус впрыскивает яд, затуманивающий разум, делающий жертв параноидальными и агрессивными. Его ядовитый мешок высоко ценится алхимиками.</lotr_DarkProwlerRace.description>
+    <lotr_DarkProwlerRace.tools.claws-0.label>когти</lotr_DarkProwlerRace.tools.claws-0.label>
+    <lotr_DarkProwlerRace.tools.claws-1.label>когти</lotr_DarkProwlerRace.tools.claws-1.label>
+    <lotr_DarkProwlerRace.tools.fangs.label>клыки</lotr_DarkProwlerRace.tools.fangs.label>
+    <lotr_DarkProwlerRace.tools.head.label>голова</lotr_DarkProwlerRace.tools.head.label>
+
+    <lotr_DemonThroatHoneyguideRace.label>демонический медоуказчик</lotr_DemonThroatHoneyguideRace.label>
+    <lotr_DemonThroatHoneyguideRace.description>Хитрый зверь, чей голос может имитировать любые звуки — от криков о помощи до боевых кличей. Использует эту способность, чтобы манипулировать другими существами, заставляя их нападать друг на друга или идти в ловушки. Его сердце переполнено энергией подстрекательства.</lotr_DemonThroatHoneyguideRace.description>
+    <lotr_DemonThroatHoneyguideRace.tools.claws-0.label>когти</lotr_DemonThroatHoneyguideRace.tools.claws-0.label>
+    <lotr_DemonThroatHoneyguideRace.tools.claws-1.label>когти</lotr_DemonThroatHoneyguideRace.tools.claws-1.label>
+    <lotr_DemonThroatHoneyguideRace.tools.teeth.label>зубы</lotr_DemonThroatHoneyguideRace.tools.teeth.label>
+    <lotr_DemonThroatHoneyguideRace.tools.head.label>голова</lotr_DemonThroatHoneyguideRace.tools.head.label>
+
+    <lotr_FlowerFacedBatRace.label>цветколицая летучая мышь</lotr_FlowerFacedBatRace.label>
+    <lotr_FlowerFacedBatRace.description>Зловещая летучая мышь, чья морда напоминает распустившийся ночной цветок. Испускает снотворную пыльцу, притупляющую разум жертв, делая их уязвимыми для укуса. Её голова — ключевой ингредиент для зелий страданий.</lotr_FlowerFacedBatRace.description>
+    <lotr_FlowerFacedBatRace.tools.claws.label>когти</lotr_FlowerFacedBatRace.tools.claws.label>
+    <lotr_FlowerFacedBatRace.tools.fangs.label>клыки</lotr_FlowerFacedBatRace.tools.fangs.label>
+    <lotr_FlowerFacedBatRace.tools.head.label>голова</lotr_FlowerFacedBatRace.tools.head.label>
+
+    <lotr_PlagueMotherSerpentRace.label>чумная мать-змея</lotr_PlagueMotherSerpentRace.label>
+    <lotr_PlagueMotherSerpentRace.description>Исполинская змея, чьё дыхание несёт заразу. Чешуя блестит болезненным блеском, а яд может сгноить плоть за секунды. Легенды гласят, что она гнездится в сердце проклятых земель, порождая бесконечные эпидемии. Её ядовитый мешок — ключевой ингредиент для зелья Демонессы отчаяния.</lotr_PlagueMotherSerpentRace.description>
+    <lotr_PlagueMotherSerpentRace.tools.fangs.label>клыки</lotr_PlagueMotherSerpentRace.tools.fangs.label>
+    <lotr_PlagueMotherSerpentRace.tools.head.label>голова</lotr_PlagueMotherSerpentRace.tools.head.label>
+
+    <lotr_SerpentMonsterBirdRace.label>птица-монстр со змеиным телом</lotr_SerpentMonsterBirdRace.label>
+    <lotr_SerpentMonsterBirdRace.description>Хищная птица, чьё тело напоминает змею, а чёрные перья источают тёмную энергию. Бесшумно парит над болотами, выслеживая добычу и атакуя с неожиданного угла. Её перья используются в зельях пути Ассасина.</lotr_SerpentMonsterBirdRace.description>
+    <lotr_SerpentMonsterBirdRace.tools.0.label>когти</lotr_SerpentMonsterBirdRace.tools.0.label>
+    <lotr_SerpentMonsterBirdRace.tools.1.label>клюв</lotr_SerpentMonsterBirdRace.tools.1.label>
+    <lotr_SerpentMonsterBirdRace.tools.2.label>голова</lotr_SerpentMonsterBirdRace.tools.2.label>
+
+    <lotr_SilverHunterRace.label>серебряный охотник</lotr_SilverHunterRace.label>
+    <lotr_SilverHunterRace.description>Мерцающий, почти эфирный гуманоидный хищник. Серебристый мех отражает свет, как полированный металл, а глаза горят холодным интеллектом. Движется со сверхъестественной тишиной, охотясь на потусторонних и смертных. Его кристаллическое ядро — последний ингредиент для зелья Демонессы отчаяния.</lotr_SilverHunterRace.description>
+    <lotr_SilverHunterRace.tools.left_fist.label>левый кулак</lotr_SilverHunterRace.tools.left_fist.label>
+    <lotr_SilverHunterRace.tools.left_fist.labelNoLocation>кулак</lotr_SilverHunterRace.tools.left_fist.labelNoLocation>
+    <lotr_SilverHunterRace.tools.right_fist.label>правый кулак</lotr_SilverHunterRace.tools.right_fist.label>
+    <lotr_SilverHunterRace.tools.right_fist.labelNoLocation>кулак</lotr_SilverHunterRace.tools.right_fist.labelNoLocation>
+    <lotr_SilverHunterRace.tools.head.label>голова</lotr_SilverHunterRace.tools.head.label>
+
+    <lotr_SuccubusRace.label>суккуб</lotr_SuccubusRace.label>
+    <lotr_SuccubusRace.description>Дьявольски обворожительная демонесса с опьяняющей аурой. Её глаза мерцают запретным очарованием, а движения невероятно грациозны. Питается желанием и отчаянием, оставляя после себя сломленные умы. Её глаза высоко ценятся алхимиками.</lotr_SuccubusRace.description>
+    <lotr_SuccubusRace.tools.left_claw.label>левая клешня</lotr_SuccubusRace.tools.left_claw.label>
+    <lotr_SuccubusRace.tools.left_claw.labelNoLocation>клешня</lotr_SuccubusRace.tools.left_claw.labelNoLocation>
+    <lotr_SuccubusRace.tools.right_claw.label>правая клешня</lotr_SuccubusRace.tools.right_claw.label>
+    <lotr_SuccubusRace.tools.right_claw.labelNoLocation>клешня</lotr_SuccubusRace.tools.right_claw.labelNoLocation>
+    <lotr_SuccubusRace.tools.teeth.label>зубы</lotr_SuccubusRace.tools.teeth.label>
+    <lotr_SuccubusRace.tools.head.label>голова</lotr_SuccubusRace.tools.head.label>
+
+    <lotr_TwoTailedBlackSnakeRace.label>двухвостая чёрная змея</lotr_TwoTailedBlackSnakeRace.label>
+    <lotr_TwoTailedBlackSnakeRace.description>Извилистая чёрная змея с двумя подрагивающими хвостами. Её яд вызывает жгучую боль и отказ органов, движется с пугающей тишиной. Её желчный пузырь ценится алхимиками для зелий страданий.</lotr_TwoTailedBlackSnakeRace.description>
+    <lotr_TwoTailedBlackSnakeRace.tools.fangs.label>клыки</lotr_TwoTailedBlackSnakeRace.tools.fangs.label>
+    <lotr_TwoTailedBlackSnakeRace.tools.head.label>голова</lotr_TwoTailedBlackSnakeRace.tools.head.label>
+
+</LanguageData>

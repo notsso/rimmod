@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Bard9_Potion.label>Зелье барда</Bard9_Potion.label>
+    <Bard9_Potion.description>Постоянно бурлящая багровая жидкость. Выпив его, пешка пробудит в себе силу Барда.</Bard9_Potion.description>
+    <Bard9_Potion.ingestible.ingestCommandString>Выпить {0}</Bard9_Potion.ingestible.ingestCommandString>
+    <Bard9_Potion.ingestible.ingestReportString>Выпивает {0}.</Bard9_Potion.ingestible.ingestReportString>
+
+    <Bard8_Potion.label>Зелье просителя света</Bard8_Potion.label>
+    <Bard8_Potion.description>Пылающая белая магма. Выпив его, пешка пробудит в себе силу Просителя Света.</Bard8_Potion.description>
+    <Bard8_Potion.ingestible.ingestCommandString>Выпить {0}</Bard8_Potion.ingestible.ingestCommandString>
+    <Bard8_Potion.ingestible.ingestReportString>Выпивает {0}.</Bard8_Potion.ingestible.ingestReportString>
+
+    <Bard7_Potion.label>Зелье верховного жреца солнца</Bard7_Potion.label>
+    <Bard7_Potion.description>Золотистая и обжигающе горячая жидкость. Выпив его, пешка пробудит в себе силу Верховного Жреца Солнца.</Bard7_Potion.description>
+    <Bard7_Potion.ingestible.ingestCommandString>Выпить {0}</Bard7_Potion.ingestible.ingestCommandString>
+    <Bard7_Potion.ingestible.ingestReportString>Выпивает {0}.</Bard7_Potion.ingestible.ingestReportString>
+
+    <Bard6_Potion.label>Зелье нотариуса</Bard6_Potion.label>
+    <Bard6_Potion.description>Тёмно-золотая жидкость, кристально чистая и прозрачная, способная, кажется, отражать внутреннее сердце. Выпив его, пешка пробудит в себе силу Нотариуса.</Bard6_Potion.description>
+    <Bard6_Potion.ingestible.ingestCommandString>Выпить {0}</Bard6_Potion.ingestible.ingestCommandString>
+    <Bard6_Potion.ingestible.ingestReportString>Выпивает {0}.</Bard6_Potion.ingestible.ingestReportString>
+
+    <Bard5_Potion.label>Зелье жреца света</Bard5_Potion.label>
+    <Bard5_Potion.description>Горячая золотистая жидкость, излучающая свет. Выпив его, пешка пробудит в себе силу Жреца Света.</Bard5_Potion.description>
+    <Bard5_Potion.ingestible.ingestCommandString>Выпить {0}</Bard5_Potion.ingestible.ingestCommandString>
+    <Bard5_Potion.ingestible.ingestReportString>Выпивает {0}.</Bard5_Potion.ingestible.ingestReportString>
+
+    <Bard4_Potion.label>Зелье незатенённого</Bard4_Potion.label>
+    <Bard4_Potion.description>Золотистая смесь без каких-либо примесей. Горячая, бурная жидкость. Выпив его, пешка пробудит в себе силу Незатенённого.</Bard4_Potion.description>
+    <Bard4_Potion.ingestible.ingestCommandString>Выпить {0}</Bard4_Potion.ingestible.ingestCommandString>
+    <Bard4_Potion.ingestible.ingestReportString>Выпивает {0}.</Bard4_Potion.ingestible.ingestReportString>
+
+</LanguageData>

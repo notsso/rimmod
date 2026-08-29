@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <lotr_MagicalHerbs.label>Магические травы</lotr_MagicalHerbs.label>
+    <lotr_MagicalHerbs.description>Смесь из различных магических трав.</lotr_MagicalHerbs.description>
+
+    <lotr_MysticalComponents.label>Мистический компонент</lotr_MysticalComponents.label>
+    <lotr_MysticalComponents.description>Богатый мистической энергией компонент.</lotr_MysticalComponents.description>
+
+</LanguageData>

@@ -4,8 +4,8 @@
     <ThingDef ParentName="AnimalThingBase">
 
         <defName>lotr_SphinxRace</defName>
-        <label>Сфинкс</label>
-        <description>Крайне коварные, высокоинтеллектуальные и скрытные хищники, обитающие в глубинах Духовного мира или в аномальных зонах.</description>
+        <label>Sphinx</label>
+        <description>Extremely cunning, highly intelligent and secretive predators that inhabit the depths of the Spirit World or in anomalous zones.</description>
         
         <statBases>
             <MoveSpeed>8.0</MoveSpeed>

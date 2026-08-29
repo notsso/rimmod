@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <lotr_SlumberCharm.label>Амулет дремоты</lotr_SlumberCharm.label>
+    <lotr_SlumberCharm.description>Мистический амулет, способный принудительно усыпить цель.</lotr_SlumberCharm.description>
+    <lotr_SlumberCharm.comps.CompApparelReloadable.chargeNoun>заряд</lotr_SlumberCharm.comps.CompApparelReloadable.chargeNoun>
+    <lotr_SlumberCharm.comps.CompApparelReloadable.cooldownGerund>перезарядка</lotr_SlumberCharm.comps.CompApparelReloadable.cooldownGerund>
+    <lotr_SlumberCharm.verbs.Verb_SlumberCharm.label>Амулет дремоты</lotr_SlumberCharm.verbs.Verb_SlumberCharm.label>
+
+    <lotr_SunBeam.label>солнечный луч</lotr_SunBeam.label>
+
+    <lotr_SunCharm.label>Амулет пылающего солнца</lotr_SunCharm.label>
+    <lotr_SunCharm.description>Мистический амулет, призывающий с небес чистый и обжигающий столп света.</lotr_SunCharm.description>
+    <lotr_SunCharm.comps.CompApparelReloadable.chargeNoun>заряд</lotr_SunCharm.comps.CompApparelReloadable.chargeNoun>
+    <lotr_SunCharm.comps.CompApparelReloadable.cooldownGerund>перезарядка</lotr_SunCharm.comps.CompApparelReloadable.cooldownGerund>
+    <lotr_SunCharm.verbs.Verb_SunBeam.label>Амулет пылающего солнца</lotr_SunCharm.verbs.Verb_SunBeam.label>
+
+    <lotr_TeleportCharm.label>Амулет телепортации</lotr_TeleportCharm.label>
+    <lotr_TeleportCharm.description>Мистический амулет, мгновенно переносящий владельца в указанное место.</lotr_TeleportCharm.description>
+    <lotr_TeleportCharm.comps.CompApparelReloadable.chargeNoun>заряд</lotr_TeleportCharm.comps.CompApparelReloadable.chargeNoun>
+    <lotr_TeleportCharm.comps.CompApparelReloadable.cooldownGerund>перезарядка</lotr_TeleportCharm.comps.CompApparelReloadable.cooldownGerund>
+    <lotr_TeleportCharm.verbs.Verb_TeleportCharm.label>Амулет телепортации</lotr_TeleportCharm.verbs.Verb_TeleportCharm.label>
+
+    <lotr_FoulnessRoarCharm.label>Амулет ужасающего рёва</lotr_FoulnessRoarCharm.label>
+    <lotr_FoulnessRoarCharm.description>Амулет, испускающий ужасающий потусторонний рёв, замедляющий разум и тела всех, кто его слышит. Потусторонние особенно уязвимы и получают прямой урон по рассудку.</lotr_FoulnessRoarCharm.description>
+    <lotr_FoulnessRoarCharm.comps.CompApparelReloadable.chargeNoun>заряд</lotr_FoulnessRoarCharm.comps.CompApparelReloadable.chargeNoun>
+    <lotr_FoulnessRoarCharm.comps.CompApparelReloadable.cooldownGerund>перезарядка</lotr_FoulnessRoarCharm.comps.CompApparelReloadable.cooldownGerund>
+    <lotr_FoulnessRoarCharm.verbs.Verb_FoulnessRoar.label>амулет ужасающего рёва</lotr_FoulnessRoarCharm.verbs.Verb_FoulnessRoar.label>
+
+    <lotr_FlowerOfBlood.label>Цветок крови</lotr_FlowerOfBlood.label>
+    <lotr_FlowerOfBlood.description>Золотое кольцо с кроваво-красным рубином. Дарует невероятную регенерацию и стойкость, но со временем разрушает рассудок владельца.</lotr_FlowerOfBlood.description>
+
+    <lotr_MentalTerrorCandle.label>Свеча ментального ужаса</lotr_MentalTerrorCandle.label>
+    <lotr_MentalTerrorCandle.description>Небольшая свеча, обёрнутая в нечто, похожее на человеческую кожу. Позволяет проникать в глубочайшие слои разума цели, предлагая как исцеление, так и контроль, но каждое вторжение рискует обернуться безумием.</lotr_MentalTerrorCandle.description>
+    <lotr_MentalTerrorCandle.comps.CompApparelReloadable.chargeNoun>заряд</lotr_MentalTerrorCandle.comps.CompApparelReloadable.chargeNoun>
+    <lotr_MentalTerrorCandle.comps.CompApparelReloadable.cooldownGerund>перезарядка</lotr_MentalTerrorCandle.comps.CompApparelReloadable.cooldownGerund>
+    <lotr_MentalTerrorCandle.verbs.mental_therapy.label>ментальная терапия</lotr_MentalTerrorCandle.verbs.mental_therapy.label>
+    <lotr_MentalTerrorCandle.verbs.recruit.label>вербовка</lotr_MentalTerrorCandle.verbs.recruit.label>
+
+    <lotr_MutatedSunSacredEmblem.label>Священная эмблема мутировавшего солнца</lotr_MutatedSunSacredEmblem.label>
+    <lotr_MutatedSunSacredEmblem.description>Тёмно-золотая эмблема с выгравированными знаками солнца, запятнанная каплей крови Вечного Пылающего Солнца. Постоянно очищает трупы и души в радиусе пятнадцати метров, но её свет может сжечь разум тех, кто находится слишком близко.</lotr_MutatedSunSacredEmblem.description>
+
+    <lotr_PeacefulHairStrands.label>Пряди умиротворения</lotr_PeacefulHairStrands.label>
+    <lotr_PeacefulHairStrands.description>Артефакт из множества чёрных волосяных прядей. Прямой контакт с ними, кажется, вытягивает все желания и эмоции, оставляя жертву безмолвной и неподвижной. Пользователю рекомендуется надевать перчатки.</lotr_PeacefulHairStrands.description>
+    <lotr_PeacefulHairStrands.comps.CompApparelReloadable.chargeNoun>заряд</lotr_PeacefulHairStrands.comps.CompApparelReloadable.chargeNoun>
+    <lotr_PeacefulHairStrands.comps.CompApparelReloadable.cooldownGerund>перезарядка</lotr_PeacefulHairStrands.comps.CompApparelReloadable.cooldownGerund>
+    <lotr_PeacefulHairStrands.verbs.Verb_CalmTarget.label>пряди умиротворения</lotr_PeacefulHairStrands.verbs.Verb_CalmTarget.label>
+
+    <lotr_ShapeshiftingHat.label>Изменчивая шляпа</lotr_ShapeshiftingHat.label>
+    <lotr_ShapeshiftingHat.description>Шляпа, способная менять свою форму. Дарует власть над водой и ветром, но заставляет владельца жаждать воды и страдать на суше.</lotr_ShapeshiftingHat.description>
+    <lotr_ShapeshiftingHat.comps.CompApparelReloadable.chargeNoun>заряд</lotr_ShapeshiftingHat.comps.CompApparelReloadable.chargeNoun>
+    <lotr_ShapeshiftingHat.comps.CompApparelReloadable.cooldownGerund>перезарядка</lotr_ShapeshiftingHat.comps.CompApparelReloadable.cooldownGerund>
+    <lotr_ShapeshiftingHat.verbs.azure_light.label>лазурный свет</lotr_ShapeshiftingHat.verbs.azure_light.label>
+    <lotr_ShapeshiftingHat.verbs.water_heal.label>водное исцеление</lotr_ShapeshiftingHat.verbs.water_heal.label>
+
+</LanguageData>

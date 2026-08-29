@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <lotr_BlackHuntingSpiderRace.label>чёрный охотничий паук</lotr_BlackHuntingSpiderRace.label>
+    <lotr_BlackHuntingSpiderRace.description>Чёрный охотничий паук</lotr_BlackHuntingSpiderRace.description>
+    <lotr_BlackHuntingSpiderRace.tools.mandibles.label>жвала</lotr_BlackHuntingSpiderRace.tools.mandibles.label>
+    <lotr_BlackHuntingSpiderRace.tools.head.label>голова</lotr_BlackHuntingSpiderRace.tools.head.label>
+
+    <lotr_CuspidsParrotRace.label>острозубый попугай</lotr_CuspidsParrotRace.label>
+    <lotr_CuspidsParrotRace.description>Эти попугаи обладают зачатками разума и известны тем, что имитируют голоса людей, выкрикивая невероятно обидные, злые и провокационные фразы, чтобы выманить хищников на ловушки.</lotr_CuspidsParrotRace.description>
+    <lotr_CuspidsParrotRace.tools.claws.label>когти</lotr_CuspidsParrotRace.tools.claws.label>
+    <lotr_CuspidsParrotRace.tools.beak.label>клюв</lotr_CuspidsParrotRace.tools.beak.label>
+    <lotr_CuspidsParrotRace.tools.head.label>голова</lotr_CuspidsParrotRace.tools.head.label>
+
+    <lotr_DemonicWolfRace.label>серый демонический волк</lotr_DemonicWolfRace.label>
+    <lotr_DemonicWolfRace.description>Массивный хищник, который гораздо крупнее обычного лесного волка. Его шерсть имеет грязно-серый, пепельный оттенок, способный сливаться с тенями. Обычные люди или слабые Потусторонние сходят с ума или цепенеют от одного только рыка этого зверя.</lotr_DemonicWolfRace.description>
+    <lotr_DemonicWolfRace.tools.left_claw.label>левая клешня</lotr_DemonicWolfRace.tools.left_claw.label>
+    <lotr_DemonicWolfRace.tools.left_claw.labelNoLocation>клешня</lotr_DemonicWolfRace.tools.left_claw.labelNoLocation>
+    <lotr_DemonicWolfRace.tools.right_claw.label>правая клешня</lotr_DemonicWolfRace.tools.right_claw.label>
+    <lotr_DemonicWolfRace.tools.right_claw.labelNoLocation>клешня</lotr_DemonicWolfRace.tools.right_claw.labelNoLocation>
+    <lotr_DemonicWolfRace.tools.head.label>голова</lotr_DemonicWolfRace.tools.head.label>
+
+    <lotr_FireSalamanderRace.label>огненная саламандра</lotr_FireSalamanderRace.label>
+    <lotr_FireSalamanderRace.description>Эти крупные ящерицы обычно питаются растительной пищей. Однако в гневе их прочная шкура и острые когти делают их весьма опасными.</lotr_FireSalamanderRace.description>
+    <lotr_FireSalamanderRace.tools.left_claw.label>левая клешня</lotr_FireSalamanderRace.tools.left_claw.label>
+    <lotr_FireSalamanderRace.tools.left_claw.labelNoLocation>клешня</lotr_FireSalamanderRace.tools.left_claw.labelNoLocation>
+    <lotr_FireSalamanderRace.tools.right_claw.label>правая клешня</lotr_FireSalamanderRace.tools.right_claw.label>
+    <lotr_FireSalamanderRace.tools.right_claw.labelNoLocation>клешня</lotr_FireSalamanderRace.tools.right_claw.labelNoLocation>
+    <lotr_FireSalamanderRace.tools.head.label>голова</lotr_FireSalamanderRace.tools.head.label>
+
+    <lotr_ForestHunterRace.label>лесной охотник</lotr_ForestHunterRace.label>
+    <lotr_ForestHunterRace.description>Антропоморфное существо, покрытое жесткой, маскирующей шерстью древесных оттенков. У него длинные, неестественно сильные конечности и острые клыки.</lotr_ForestHunterRace.description>
+    <lotr_ForestHunterRace.tools.left_fist.label>левый кулак</lotr_ForestHunterRace.tools.left_fist.label>
+    <lotr_ForestHunterRace.tools.left_fist.labelNoLocation>кулак</lotr_ForestHunterRace.tools.left_fist.labelNoLocation>
+    <lotr_ForestHunterRace.tools.right_fist.label>правый кулак</lotr_ForestHunterRace.tools.right_fist.label>
+    <lotr_ForestHunterRace.tools.right_fist.labelNoLocation>кулак</lotr_ForestHunterRace.tools.right_fist.labelNoLocation>
+    <lotr_ForestHunterRace.tools.head.label>голова</lotr_ForestHunterRace.tools.head.label>
+
+    <lotr_MagmaElfRace.label>магмовый эльф</lotr_MagmaElfRace.label>
+    <lotr_MagmaElfRace.description>Элементали, рождённые из чистой огненной субстанции в глубоких подземных лавовых озёрах.</lotr_MagmaElfRace.description>
+    <lotr_MagmaElfRace.tools.bite.label>укус</lotr_MagmaElfRace.tools.bite.label>
+    <lotr_MagmaElfRace.tools.head.label>голова</lotr_MagmaElfRace.tools.head.label>
+
+    <lotr_MagmaGiantRace.label>магматический гигант</lotr_MagmaGiantRace.label>
+    <lotr_MagmaGiantRace.description>Это колоссальное гуманоидное существо. Его тело состоит из сплава разумной полужидкой магмы и застывшей чёрной вулканической породы (базальта), которая служит ему прочной бронёй.</lotr_MagmaGiantRace.description>
+    <lotr_MagmaGiantRace.tools.left_fist.label>левый кулак</lotr_MagmaGiantRace.tools.left_fist.label>
+    <lotr_MagmaGiantRace.tools.left_fist.labelNoLocation>кулак</lotr_MagmaGiantRace.tools.left_fist.labelNoLocation>
+    <lotr_MagmaGiantRace.tools.right_fist.label>правый кулак</lotr_MagmaGiantRace.tools.right_fist.label>
+    <lotr_MagmaGiantRace.tools.right_fist.labelNoLocation>кулак</lotr_MagmaGiantRace.tools.right_fist.labelNoLocation>
+    <lotr_MagmaGiantRace.tools.head.label>голова</lotr_MagmaGiantRace.tools.head.label>
+
+    <lotr_MarshBoarRace.label>болотная свинья</lotr_MarshBoarRace.label>
+    <lotr_MarshBoarRace.description>Опасный кабан-ищейка, мутировавший под воздействием потусторонней энергии на ядовитых болотах. Обладает невероятным нюхом и огромной выносливостью. Почуяв кровь, он будет преследовать жертву километрами. Его внутренние органы подверглись частичной кристаллизации.</lotr_MarshBoarRace.description>
+    <lotr_MarshBoarRace.tools.0.label>бивни</lotr_MarshBoarRace.tools.0.label>
+    <lotr_MarshBoarRace.tools.1.label>зубы</lotr_MarshBoarRace.tools.1.label>
+
+    <lotr_SphinxRace.label>сфинкс</lotr_SphinxRace.label>
+    <lotr_SphinxRace.description>Крайне коварные, высокоинтеллектуальные и скрытные хищники, обитающие в глубинах Духовного мира или в аномальных зонах.</lotr_SphinxRace.description>
+    <lotr_SphinxRace.tools.left_claw.label>левая клешня</lotr_SphinxRace.tools.left_claw.label>
+    <lotr_SphinxRace.tools.left_claw.labelNoLocation>клешня</lotr_SphinxRace.tools.left_claw.labelNoLocation>
+    <lotr_SphinxRace.tools.right_claw.label>правая клешня</lotr_SphinxRace.tools.right_claw.label>
+    <lotr_SphinxRace.tools.right_claw.labelNoLocation>клешня</lotr_SphinxRace.tools.right_claw.labelNoLocation>
+    <lotr_SphinxRace.tools.head.label>голова</lotr_SphinxRace.tools.head.label>
+
+    <lotr_FireRavenRace.label>огненная ворона</lotr_FireRavenRace.label>
+    <lotr_FireRavenRace.description>Призванное создание из чистого духовного пламени. Ищет плоть, чтобы сжечь её.</lotr_FireRavenRace.description>
+    <lotr_FireRavenRace.tools.0.label>пламенный клюв</lotr_FireRavenRace.tools.0.label>
+
+</LanguageData>

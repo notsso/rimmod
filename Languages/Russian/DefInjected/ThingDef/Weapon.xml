@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Melee_BlazingSword_7S.label>огненный меч</Melee_BlazingSword_7S.label>
+    <Melee_BlazingSword_7S.description>Мистический клинок, призываемый из чистого концентрированного пламени.</Melee_BlazingSword_7S.description>
+    <Melee_BlazingSword_7S.tools.blade.label>лезвие</Melee_BlazingSword_7S.tools.blade.label>
+    <Melee_BlazingSword_7S.tools.point.label>острие</Melee_BlazingSword_7S.tools.point.label>
+
+    <Melee_BlazingSword_6S.label>огненный меч</Melee_BlazingSword_6S.label>
+    <Melee_BlazingSword_6S.description>Мистический клинок, призываемый из чистого концентрированного пламени.</Melee_BlazingSword_6S.description>
+    <Melee_BlazingSword_6S.tools.blade-0.label>лезвие</Melee_BlazingSword_6S.tools.blade-0.label>
+    <Melee_BlazingSword_6S.tools.point.label>острие</Melee_BlazingSword_6S.tools.point.label>
+    <Melee_BlazingSword_6S.tools.2.label>лезвие</Melee_BlazingSword_6S.tools.2.label>
+
+    <Melee_BlazingSword_5S.label>огненный меч</Melee_BlazingSword_5S.label>
+    <Melee_BlazingSword_5S.description>Мистический клинок, призываемый из чистого концентрированного пламени.</Melee_BlazingSword_5S.description>
+    <Melee_BlazingSword_5S.tools.blade-0.label>лезвие</Melee_BlazingSword_5S.tools.blade-0.label>
+    <Melee_BlazingSword_5S.tools.point.label>острие</Melee_BlazingSword_5S.tools.point.label>
+    <Melee_BlazingSword_5S.tools.2.label>лезвие</Melee_BlazingSword_5S.tools.2.label>
+    <Melee_BlazingSword_5S.tools.3.label>острие</Melee_BlazingSword_5S.tools.3.label>
+
+    <Melee_BlazingSword_4S.label>огненный меч</Melee_BlazingSword_4S.label>
+    <Melee_BlazingSword_4S.description>Мистический клинок, призываемый из чистого концентрированного пламени.</Melee_BlazingSword_4S.description>
+    <Melee_BlazingSword_4S.tools.2.label>лезвие</Melee_BlazingSword_4S.tools.2.label>
+    <Melee_BlazingSword_4S.tools.3.label>острие</Melee_BlazingSword_4S.tools.3.label>
+    <Melee_BlazingSword_4S.tools.blade-0.label>лезвие</Melee_BlazingSword_4S.tools.blade-0.label>
+    <Melee_BlazingSword_4S.tools.point-0.label>острие</Melee_BlazingSword_4S.tools.point-0.label>
+
+    <Melee_SunsetSword_6S.label>закатный меч</Melee_SunsetSword_6S.label>
+    <Melee_SunsetSword_6S.description>Мистическое оружие, сформированное из заката.</Melee_SunsetSword_6S.description>
+    <Melee_SunsetSword_6S.tools.blade.label>лезвие</Melee_SunsetSword_6S.tools.blade.label>
+    <Melee_SunsetSword_6S.tools.point.label>острие</Melee_SunsetSword_6S.tools.point.label>
+
+    <Melee_SunsetSword_5S.label>закатный меч</Melee_SunsetSword_5S.label>
+    <Melee_SunsetSword_5S.description>Мистическое оружие, сформированное из заката.</Melee_SunsetSword_5S.description>
+    <Melee_SunsetSword_5S.tools.blade.label>лезвие</Melee_SunsetSword_5S.tools.blade.label>
+    <Melee_SunsetSword_5S.tools.point.label>острие</Melee_SunsetSword_5S.tools.point.label>
+
+    <Melee_SunsetSword_4S.label>огненный меч</Melee_SunsetSword_4S.label>
+    <Melee_SunsetSword_4S.description>Мистический клинок, призываемый из чистого концентрированного пламени.</Melee_SunsetSword_4S.description>
+    <Melee_SunsetSword_4S.tools.blade.label>лезвие</Melee_SunsetSword_4S.tools.blade.label>
+    <Melee_SunsetSword_4S.tools.point.label>острие</Melee_SunsetSword_4S.tools.point.label>
+
+    <MeleeWeapon_GiantClub.label>гигантская дубина</MeleeWeapon_GiantClub.label>
+    <MeleeWeapon_GiantClub.description>Массивная дубина, созданная под руку гиганта. Одного её веса достаточно, чтобы сокрушить броню и кости.</MeleeWeapon_GiantClub.description>
+    <MeleeWeapon_GiantClub.tools.handle.label>рукоять</MeleeWeapon_GiantClub.tools.handle.label>
+    <MeleeWeapon_GiantClub.tools.head.label>головка</MeleeWeapon_GiantClub.tools.head.label>
+
+    <MeleeWeapon_GiantIkwa.label>гигантская иква</MeleeWeapon_GiantIkwa.label>
+    <MeleeWeapon_GiantIkwa.description>Огромная иква с широким тяжёлым лезвием. Её укол пробивает даже толстую броню.</MeleeWeapon_GiantIkwa.description>
+    <MeleeWeapon_GiantIkwa.tools.handle.label>рукоять</MeleeWeapon_GiantIkwa.tools.handle.label>
+    <MeleeWeapon_GiantIkwa.tools.head.label>головка</MeleeWeapon_GiantIkwa.tools.head.label>
+    <MeleeWeapon_GiantIkwa.tools.edge.label>лезвие</MeleeWeapon_GiantIkwa.tools.edge.label>
+
+    <MeleeWeapon_GiantLongSword.label>гигантский длинный меч</MeleeWeapon_GiantLongSword.label>
+    <MeleeWeapon_GiantLongSword.description>Колоссальный длинный меч, выкованный для синего гиганта. Его лезвие может разрубить человека пополам одним взмахом.</MeleeWeapon_GiantLongSword.description>
+    <MeleeWeapon_GiantLongSword.tools.handle.label>рукоять</MeleeWeapon_GiantLongSword.tools.handle.label>
+    <MeleeWeapon_GiantLongSword.tools.point.label>остриё</MeleeWeapon_GiantLongSword.tools.point.label>
+    <MeleeWeapon_GiantLongSword.tools.edge.label>лезвие</MeleeWeapon_GiantLongSword.tools.edge.label>
+
+    <MeleeWeapon_GiantSunsetSword.label>гигантский закатный меч</MeleeWeapon_GiantSunsetSword.label>
+    <MeleeWeapon_GiantSunsetSword.description>Колоссальный клинок из отвердевшего рассветного света, которым владеют только Рассветные Гиганты.</MeleeWeapon_GiantSunsetSword.description>
+    <MeleeWeapon_GiantSunsetSword.tools.handle.label>рукоять</MeleeWeapon_GiantSunsetSword.tools.handle.label>
+    <MeleeWeapon_GiantSunsetSword.tools.point.label>остриё</MeleeWeapon_GiantSunsetSword.tools.point.label>
+    <MeleeWeapon_GiantSunsetSword.tools.edge.label>лезвие</MeleeWeapon_GiantSunsetSword.tools.edge.label>
+
+    <MeleeWeapon_GiantGreyMaul.label>гигантский серый молот</MeleeWeapon_GiantGreyMaul.label>
+    <MeleeWeapon_GiantGreyMaul.description>Массивный каменный молот, способный крушить стены и сокрушать бронированных врагов.</MeleeWeapon_GiantGreyMaul.description>
+    <MeleeWeapon_GiantGreyMaul.tools.handle.label>рукоять</MeleeWeapon_GiantGreyMaul.tools.handle.label>
+    <MeleeWeapon_GiantGreyMaul.tools.head.label>головка</MeleeWeapon_GiantGreyMaul.tools.head.label>
+
+    <MeleeWeapon_GiantDivineSpear.label>гигантское божественное копьё</MeleeWeapon_GiantDivineSpear.label>
+    <MeleeWeapon_GiantDivineSpear.description>Титаническое копьё, которое, кажется, пьёт свет и приносит тлен всему, что пронзает.</MeleeWeapon_GiantDivineSpear.description>
+    <MeleeWeapon_GiantDivineSpear.tools.shaft.label>древко</MeleeWeapon_GiantDivineSpear.tools.shaft.label>
+    <MeleeWeapon_GiantDivineSpear.tools.point.label>остриё</MeleeWeapon_GiantDivineSpear.tools.point.label>
+
+</LanguageData>

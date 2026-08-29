@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <Assassin9_Potion.label>Зелье ассасина</Assassin9_Potion.label>
+    <Assassin9_Potion.description>Тусклая, неприметная жидкость, inexplicably вызывающая жажду. Выпив её, пешка пробудит в себе силу Охотника.</Assassin9_Potion.description>
+    <Assassin9_Potion.ingestible.ingestCommandString>Выпить {0}</Assassin9_Potion.ingestible.ingestCommandString>
+    <Assassin9_Potion.ingestible.ingestReportString>Выпивает {0}.</Assassin9_Potion.ingestible.ingestReportString>
+
+    <Assassin8_Potion.label>Зелье подстрекателя</Assassin8_Potion.label>
+    <Assassin8_Potion.description>Обсидиановое зелье, пузырящееся крошечными пузырьками, словно скрывающее тайные желания и злые умыслы. Выпив его, пешка пробудит в себе силу Подстрекателя.</Assassin8_Potion.description>
+    <Assassin8_Potion.ingestible.ingestCommandString>Выпить {0}</Assassin8_Potion.ingestible.ingestCommandString>
+    <Assassin8_Potion.ingestible.ingestReportString>Выпивает {0}.</Assassin8_Potion.ingestible.ingestReportString>
+
+    <Assassin7_Potion.label>Зелье ведьмы</Assassin7_Potion.label>
+    <Assassin7_Potion.description>Тёмно-красное зелье со скрытыми тенями. На вкус ледяное и иллюзорное, как тающий иней. Мечтательная, романтичная розовая жидкость. Выпив его, пешка пробудит в себе силу Ведьмы.</Assassin7_Potion.description>
+    <Assassin7_Potion.ingestible.ingestCommandString>Выпить {0}</Assassin7_Potion.ingestible.ingestCommandString>
+    <Assassin7_Potion.ingestible.ingestReportString>Выпивает {0}.</Assassin7_Potion.ingestible.ingestReportString>
+
+    <Assassin6_Potion.label>Зелье демонессы наслаждения</Assassin6_Potion.label>
+    <Assassin6_Potion.description>Зелье, испускающее струйки розовато-кровавого оттенка. Выпив его, пешка пробудит в себе силу Наслаждения.</Assassin6_Potion.description>
+    <Assassin6_Potion.ingestible.ingestCommandString>Выпить {0}</Assassin6_Potion.ingestible.ingestCommandString>
+    <Assassin6_Potion.ingestible.ingestReportString>Выпивает {0}.</Assassin6_Potion.ingestible.ingestReportString>
+
+    <Assassin5_Potion.label>Зелье демонессы страданий</Assassin5_Potion.label>
+    <Assassin5_Potion.description>Тёмно-красная, почти чёрная кровь, быстро становящаяся полностью чёрной с редкими отвратительными зелёными пузырями — напоминает скопление патогенов. Выпив его, пешка пробудит в себе силу Страданий.</Assassin5_Potion.description>
+    <Assassin5_Potion.ingestible.ingestCommandString>Выпить {0}</Assassin5_Potion.ingestible.ingestCommandString>
+    <Assassin5_Potion.ingestible.ingestReportString>Выпивает {0}.</Assassin5_Potion.ingestible.ingestReportString>
+
+    <Assassin4_Potion.label>Зелье демонессы отчаяния</Assassin4_Potion.label>
+    <Assassin4_Potion.description>Тёмно-фиолетовое зелье, мерцающее розовым светом. Выпив его, пешка пробудит в себе силу Отчаяния.</Assassin4_Potion.description>
+    <Assassin4_Potion.ingestible.ingestCommandString>Выпить {0}</Assassin4_Potion.ingestible.ingestCommandString>
+    <Assassin4_Potion.ingestible.ingestReportString>Выпивает {0}.</Assassin4_Potion.ingestible.ingestReportString>
+
+</LanguageData>

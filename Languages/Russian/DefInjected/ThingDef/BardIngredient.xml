@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <lotr_FireBirdTailFeather.label>хвостовое перо огненной птицы</lotr_FireBirdTailFeather.label>
+    <lotr_FireBirdTailFeather.description>Хвостовое перо огненной птицы, светящееся внутренним жаром. Ключевой ингредиент для зелий барда.</lotr_FireBirdTailFeather.description>
+
+    <lotr_SingingSunflower.label>поющий подсолнух</lotr_SingingSunflower.label>
+    <lotr_SingingSunflower.description>Мистический подсолнух, напевающий тихую, воодушевляющую мелодию. Ключевой ингредиент для зелий барда.</lotr_SingingSunflower.description>
+
+    <lotr_Bard9_Essence.label>эссенция Барда</lotr_Bard9_Essence.label>
+    <lotr_Bard9_Essence.description>Мистическая черта потустороннего пути Барда.</lotr_Bard9_Essence.description>
+
+    <lotr_BrillianceRock.label>осколок камня сияния</lotr_BrillianceRock.label>
+    <lotr_BrillianceRock.description>Фрагмент сияющего минерала, который, кажется, светится изнутри. Ключевой ингредиент для зелий просителя света.</lotr_BrillianceRock.description>
+
+    <lotr_MirrorHedgehogBlood.label>кровь зеркального ежа</lotr_MirrorHedgehogBlood.label>
+    <lotr_MirrorHedgehogBlood.description>Кровь зеркального ежа, мерцающая отражающими свойствами. Ключевой ингредиент для зелий просителя света.</lotr_MirrorHedgehogBlood.description>
+
+    <lotr_Bard8_Essence.label>эссенция Просителя Света</lotr_Bard8_Essence.label>
+    <lotr_Bard8_Essence.description>Мистическая черта потустороннего пути Барда.</lotr_Bard8_Essence.description>
+
+    <lotr_DawnRoosterComb.label>красный гребень рассветного петуха</lotr_DawnRoosterComb.label>
+    <lotr_DawnRoosterComb.description>Ярко-красный гребень петуха, встречающего рассвет святым светом. Ключевой ингредиент для зелий верховного жреца солнца.</lotr_DawnRoosterComb.description>
+
+    <lotr_RadianceSpiritPactTreeFruit.label>плод сияющего древа пакта духов</lotr_RadianceSpiritPactTreeFruit.label>
+    <lotr_RadianceSpiritPactTreeFruit.description>Плод мистического дерева, сияющего священным светом. Ключевой ингредиент для зелий верховного жреца солнца.</lotr_RadianceSpiritPactTreeFruit.description>
+
+    <lotr_Bard7_Essence.label>эссенция Верховного жреца Солнца</lotr_Bard7_Essence.label>
+    <lotr_Bard7_Essence.description>Мистическая черта потустороннего пути Барда.</lotr_Bard7_Essence.description>
+
+    <lotr_CrystallizedElderTreeRoots.label>кристаллизованные корни древа старейшин</lotr_CrystallizedElderTreeRoots.label>
+    <lotr_CrystallizedElderTreeRoots.description>Сверкающие корни древнего дерева, наделённые силой контрактов. Ключевой ингредиент для зелий нотариуса.</lotr_CrystallizedElderTreeRoots.description>
+
+    <lotr_SpiritPactBirdFeathers.label>перья птицы пакта духов</lotr_SpiritPactBirdFeathers.label>
+    <lotr_SpiritPactBirdFeathers.description>Перья мистической птицы, скрепляющей духовные пакты. Ключевой ингредиент для зелий нотариуса.</lotr_SpiritPactBirdFeathers.description>
+
+    <lotr_Bard6_Essence.label>эссенция Нотариуса</lotr_Bard6_Essence.label>
+    <lotr_Bard6_Essence.description>Мистическая черта потустороннего пути Барда.</lotr_Bard6_Essence.description>
+
+    <lotr_DawnRoosterKingComb.label>красный гребень короля рассветных петухов</lotr_DawnRoosterKingComb.label>
+    <lotr_DawnRoosterKingComb.description>Величественный красный гребень короля рассветных петухов, излучающий святую силу. Ключевой ингредиент для зелий жреца света.</lotr_DawnRoosterKingComb.description>
+
+    <lotr_PureWhiteBrilliantRock.label>чистейший белый сияющий камень</lotr_PureWhiteBrilliantRock.label>
+    <lotr_PureWhiteBrilliantRock.description>Безупречный белый минерал, очищающий всё, к чему прикасается. Ключевой ингредиент для зелий жреца света.</lotr_PureWhiteBrilliantRock.description>
+
+    <lotr_Bard5_Essence.label>эссенция Жреца Света</lotr_Bard5_Essence.label>
+    <lotr_Bard5_Essence.description>Мистическая черта потустороннего пути Барда.</lotr_Bard5_Essence.description>
+
+    <lotr_SunDivineBirdFeathers.label>хвостовые перья божественной солнечной птицы</lotr_SunDivineBirdFeathers.label>
+    <lotr_SunDivineBirdFeathers.description>Сияющие перья божественной птицы солнца, переливающиеся небесным огнём. Ключевой ингредиент для зелий незатенённого.</lotr_SunDivineBirdFeathers.description>
+
+    <lotr_HolyBrillianceRock.label>святой камень сияния</lotr_HolyBrillianceRock.label>
+    <lotr_HolyBrillianceRock.description>Священный минерал, проводящий чистейший свет небес. Ключевой ингредиент для зелий незатенённого.</lotr_HolyBrillianceRock.description>
+
+    <lotr_Bard4_Essence.label>эссенция Незатенённого</lotr_Bard4_Essence.label>
+    <lotr_Bard4_Essence.description>Мистическая черта потустороннего пути Барда.</lotr_Bard4_Essence.description>
+
+</LanguageData>

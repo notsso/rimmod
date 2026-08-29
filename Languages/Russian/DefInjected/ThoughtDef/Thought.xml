@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <lotr_SanityLossThought.stages.0.label>потусторонний шепот</lotr_SanityLossThought.stages.0.label>
+  <lotr_SanityLossThought.stages.0.description>В моей голове постоянно кто-то шепчет...</lotr_SanityLossThought.stages.0.description>
+
+  <lotr_SanityLossThought.stages.1.label>нарастающее безумие</lotr_SanityLossThought.stages.1.label>
+  <lotr_SanityLossThought.stages.1.description>Голоса стали громче! Я едва контролирую свои руки!</lotr_SanityLossThought.stages.1.description>
+
+  <lotr_SanityLossThought.stages.2.label>угасание разума</lotr_SanityLossThought.stages.2.label>
+  <lotr_SanityLossThought.stages.2.description>...</lotr_SanityLossThought.stages.2.description>
+
+  <lotr_TerrifyingRoarThought.stages.0.label>ужасающий рёв</lotr_TerrifyingRoarThought.stages.0.label>
+  <lotr_TerrifyingRoarThought.stages.0.description>Я услышал ужасающий рёв, который всё ещё эхом звучит в моём разуме. Я едва могу думать или двигаться.</lotr_TerrifyingRoarThought.stages.0.description>
+</LanguageData>
